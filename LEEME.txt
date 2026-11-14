@@ -1,0 +1,2 @@
+Repositorio privado para renderizar los videos de Lo Que No Sabias en GitHub Actions.
+Actions > Render videos > Run workflow. Al terminar, descarga el artefacto "videos".

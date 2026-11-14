@@ -1,0 +1,82 @@
+{
+  "titulo": "Eligieron a dos hombres para saltar sobre el Ártico 🧊",
+  "formato": "short",
+  "plataforma": "youtube",
+  "audio": "audio/serie-s3.mp3",
+  "musica": null,
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "publicacion": {
+    "titulo": "Eligieron a dos hombres para saltar sobre el Ártico 🧊",
+    "descripcion": "Así eligió la CIA a los dos hombres que saltarían sobre la base soviética.\n\nLa Operación Coldfeet fue una misión real de la CIA en 1962. ¿Locura o genialidad? Tú decides en los comentarios 👇\n\nSígueme para ver la siguiente parte de la serie.\n\nFuentes: Wikipedia (Project Coldfeet) y Spotter Up (historia del sistema de recogida Fulton). Resumen de una operación real de 1962; las fuentes difieren en algunos detalles menores.\n\n#Shorts #historia #CIA #GuerraFria #misterio #curiosidades #LoQueNoSabias "
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Eligieron a dos hombres para saltar.",
+      "fondo": [
+        "pixelavion:paracaidas",
+        "pixelartico"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Un mayor de la Fuerza Aérea, paracaidista experimentado, que hablaba ruso.",
+      "fondo": [
+        "pixelavion:paracaidas",
+        "pixelartico"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Había vivido en estaciones flotantes de Estados Unidos en el Ártico.",
+      "fondo": [
+        "pixelartico:base",
+        "pixelartico"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Y un teniente de la Marina, geofísico, que había trabajado en la Antártida.",
+      "fondo": [
+        "pixelartico",
+        "pixelsonar"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Tenía un problema: nunca había saltado en paracaídas.",
+      "fondo": [
+        "pixelmisterio",
+        "pixelavion:paracaidas"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Tuvo que aprenderlo en un curso de la Marina.",
+      "fondo": [
+        "pixelavion:paracaidas",
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: entrenaron con el sistema de rescate en Maryland, junto a la tripulación de un avión de la Marina.",
+      "fondo": [
+        "pixelavion:rescate",
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "Uno sabía saltar, el otro tuvo que aprender. ¿Locura o genialidad? Tú decides. Y sígueme para la parte cuatro.",
+      "fondo": [
+        "pixelveredicto:locura",
+        "pixelexito",
+        "pixelveredicto:locura"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "titulo": "Operación Coldfeet: la CIA saltó sobre una base soviética fantasma en el Ártico",
+  "formato": "largo",
+  "plataforma": "youtube",
+  "audio": "audio/serie-largo.mp3",
+  "musica": null,
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "publicacion": {
+    "titulo": "Operación Coldfeet: la CIA saltó sobre una base soviética fantasma en el Ártico",
+    "descripcion": "La historia real de la Operación Coldfeet (1962): dos hombres saltaron en paracaídas sobre una base soviética abandonada en el hielo del Ártico y salieron colgados de un globo. ¿Locura o genialidad? Tú decides en los comentarios 👇\n\nSígueme para la próxima historia.\n\nFuentes: Wikipedia (Project Coldfeet) y Spotter Up (historia del sistema de recogida Fulton). Resumen de una operación real de 1962; las fuentes difieren en algunos detalles menores.\n\n#historia #CIA #GuerraFria #Artico #misterio #curiosidades #LoQueNoSabias "
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Dos hombres saltaron sobre una base soviética abandonada.",
+      "fondo": [
+        "pixelavion:paracaidas",
+        "pixelartico:base"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Era mil novecientos sesenta y uno, en plena Guerra Fría. Un avión de la Marina de Estados Unidos sobrevoló el Ártico y descubrió algo que no esperaba: una estación científica soviética, flotando a la deriva sobre el hielo, y abandonada.",
+      "fondo": [
+        "pixelartico",
+        "pixelartico:base",
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Un año antes, la Marina había montado una red de micrófonos submarinos para vigilar el Ártico. Y suponía que los soviéticos tenían algo parecido, para seguir a los submarinos bajo el hielo. Pero no tenía ninguna prueba.",
+      "fondo": [
+        "pixelsonar",
+        "pixelartico",
+        "pixelsonar"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Aquella estación podía tener las respuestas. El problema era llegar: estaba demasiado adentro del hielo para un rompehielos, y fuera del alcance de los helicópteros.",
+      "fondo": [
+        "pixelartico",
+        "pixelartico:base",
+        "pixelavion"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Hasta que, en marzo de mil novecientos sesenta y dos, llegó otra noticia: los soviéticos habían abandonado otra estación, más nueva y más fácil de alcanzar desde bases de Canadá. Se llamaba N P ocho.",
+      "fondo": [
+        "pixelartico:base",
+        "pixelavion",
+        "pixelartico"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Esta vez no había excusas. La CIA convirtió un bombardero B-diecisiete en un avión especial, y le instaló un sistema casi de ciencia ficción para recoger personas del suelo en pleno vuelo.",
+      "fondo": [
+        "pixelavion",
+        "pixelmisterio",
+        "pixelavion:rescate"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Eligieron a dos hombres. Un mayor de la Fuerza Aérea, paracaidista experimentado, que hablaba ruso y ya había vivido en estaciones flotantes de Estados Unidos en el Ártico.",
+      "fondo": [
+        "pixelavion:paracaidas",
+        "pixelartico:base",
+        "pixelartico"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Y un teniente de la Marina, geofísico, que había trabajado en la Antártida y montado sistemas de escucha submarina. Tenía un problema: nunca había saltado en paracaídas. Tuvo que aprender en un curso de la Marina.",
+      "fondo": [
+        "pixelsonar",
+        "pixelavion:paracaidas",
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El sistema se llamaba Fulton. Un globo inflable levantaba una cuerda en el aire, y la persona se sujetaba a un arnés. Un avión pasaba, enganchaba la cuerda, y se la llevaba al cielo. La CIA lo había desarrollado a principios de los años cincuenta.",
+      "fondo": [
+        "pixelavion:rescate",
+        "pixelavion",
+        "pixelavion:rescate",
+        "pixelexito"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El veintiocho de mayo de mil novecientos sesenta y dos, el B-diecisiete se acercó a la estación, y los dos hombres saltaron.",
+      "fondo": [
+        "pixelavion:paracaidas",
+        "pixelartico:base"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Registraron la estación abandonada. Reunieron documentos, equipo, núcleos de hielo, datos meteorológicos y muestras biológicas. Y antes de irse, colocaron cargas de demolición para destruir la base.",
+      "fondo": [
+        "pixelartico:base",
+        "pixeldocs",
+        "pixelartico",
+        "pixelexito"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Llegó el primero de junio. El avión volvió, preparó el sistema, y empezó la parte más arriesgada.",
+      "fondo": [
+        "pixelavion",
+        "pixelavion:rescate"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Y lo que descubrieron cambió la forma de ver la guerra bajo el hielo: la base mostraba investigación soviética avanzada en sistemas acústicos, para detectar submarinos estadounidenses bajo el hielo del Ártico.",
+      "fondo": [
+        "pixelsonar",
+        "pixelmisterio",
+        "pixelsonar"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Los soviéticos también trabajaban para desarrollar técnicas de guerra antisubmarina en el Ártico.",
+      "fondo": [
+        "pixeldocs",
+        "pixelsonar"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Hubo tres extracciones seguidas. Primero salió el equipo soviético. Luego, el teniente. Y por último, el mayor. La misión se consideró un éxito.",
+      "fondo": [
+        "pixelavion:rescate",
+        "pixelexito",
+        "pixelavion:rescate"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El sistema Fulton siguió usándose hasta los años noventa, por la CIA, la Fuerza Aérea y la Marina. Su único accidente mortal ocurrió en mil novecientos ochenta y dos, cuando falló una pieza del mecanismo.",
+      "fondo": [
+        "pixelavion",
+        "pixelmisterio",
+        "pixelavion"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "Dos paracaídas, un globo y un avión, para espiar una base fantasma. ¿Locura o genialidad? Tú decides, en los comentarios. Y sígueme para la próxima historia.",
+      "fondo": [
+        "pixelveredicto:locura",
+        "pixelexito",
+        "pixelveredicto:locura"
+      ]
+    }
+  ]
+}

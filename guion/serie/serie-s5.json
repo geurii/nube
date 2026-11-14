@@ -1,0 +1,82 @@
+{
+  "titulo": "Tres rescates colgados de un globo 🎈",
+  "formato": "short",
+  "plataforma": "youtube",
+  "audio": "audio/serie-s5.mp3",
+  "musica": null,
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "publicacion": {
+    "titulo": "Tres rescates colgados de un globo 🎈",
+    "descripcion": "Así terminó la Operación Coldfeet: tres rescates colgados de un globo.\n\nLa Operación Coldfeet fue una misión real de la CIA en 1962. ¿Locura o genialidad? Tú decides en los comentarios 👇\n\nSígueme para ver la siguiente parte de la serie.\n\nFuentes: Wikipedia (Project Coldfeet) y Spotter Up (historia del sistema de recogida Fulton). Resumen de una operación real de 1962; las fuentes difieren en algunos detalles menores.\n\n#Shorts #historia #CIA #GuerraFria #misterio #curiosidades #LoQueNoSabias "
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Tres rescates colgados de un globo.",
+      "fondo": [
+        "pixelavion:rescate",
+        "pixelartico"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El primero de junio, el avión volvió.",
+      "fondo": [
+        "pixelavion",
+        "pixelartico:base"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Primero sacaron el equipo soviético.",
+      "fondo": [
+        "pixelavion:rescate",
+        "pixeldocs"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Después subió el teniente.",
+      "fondo": [
+        "pixelavion:rescate",
+        "pixelartico"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Y al final, el mayor.",
+      "fondo": [
+        "pixelavion:rescate",
+        "pixelexito"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Tres extracciones seguidas. La misión fue un éxito.",
+      "fondo": [
+        "pixelavion:rescate",
+        "pixelexito"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: los soviéticos también trabajaban en técnicas de guerra antisubmarina en el Ártico.",
+      "fondo": [
+        "pixelsonar",
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "Dos paracaídas, un globo y un avión. ¿Locura o genialidad? Tú decides. Y sígueme para la próxima historia.",
+      "fondo": [
+        "pixelveredicto:locura",
+        "pixelexito",
+        "pixelveredicto:locura"
+      ]
+    }
+  ]
+}

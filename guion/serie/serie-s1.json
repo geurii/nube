@@ -1,0 +1,82 @@
+{
+  "titulo": "La CIA saltó sobre una base soviética abandonada 😱",
+  "formato": "short",
+  "plataforma": "youtube",
+  "audio": "audio/serie-s1.mp3",
+  "musica": null,
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "publicacion": {
+    "titulo": "La CIA saltó sobre una base soviética abandonada 😱",
+    "descripcion": "La CIA saltó en paracaídas sobre una base soviética abandonada en el Ártico.\n\nLa Operación Coldfeet fue una misión real de la CIA en 1962. ¿Locura o genialidad? Tú decides en los comentarios 👇\n\nSígueme para ver la siguiente parte de la serie.\n\nFuentes: Wikipedia (Project Coldfeet) y Spotter Up (historia del sistema de recogida Fulton). Resumen de una operación real de 1962; las fuentes difieren en algunos detalles menores.\n\n#Shorts #historia #CIA #GuerraFria #misterio #curiosidades #LoQueNoSabias "
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "La CIA saltó sobre una base soviética.",
+      "fondo": [
+        "pixelartico:base",
+        "pixelavion:paracaidas"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En mil novecientos sesenta y uno, un avión de la Marina descubrió una estación soviética abandonada, flotando sobre el hielo del Ártico.",
+      "fondo": [
+        "pixelartico:base",
+        "pixelartico"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Estados Unidos sospechaba que los soviéticos escuchaban a sus submarinos bajo el hielo, pero no tenía pruebas.",
+      "fondo": [
+        "pixelsonar",
+        "pixelartico:base"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Esa estación podía tener las respuestas, pero estaba demasiado adentro del hielo para un rompehielos.",
+      "fondo": [
+        "pixelartico",
+        "pixelartico:base"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El plan se canceló, porque la estación derivó demasiado lejos.",
+      "fondo": [
+        "pixelartico:base",
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Hasta que, un año después, apareció otra.",
+      "fondo": [
+        "pixelartico:base",
+        "pixelartico"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: para sacar a los dos hombres de ahí, usarían un globo y un avión.",
+      "fondo": [
+        "pixelavion:rescate",
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "Dos paracaídas, un globo y un avión. ¿Locura o genialidad? Tú decides. Y sígueme para la parte dos.",
+      "fondo": [
+        "pixelveredicto:locura",
+        "pixelexito",
+        "pixelveredicto:locura"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,702 @@
+[
+  {
+    "escena": 0,
+    "desdeChar": 0,
+    "hastaChar": 9,
+    "inicio": 0.1,
+    "fin": 0.713
+  },
+  {
+    "escena": 0,
+    "desdeChar": 10,
+    "hastaChar": 11,
+    "inicio": 0.725,
+    "fin": 0.75
+  },
+  {
+    "escena": 0,
+    "desdeChar": 12,
+    "hastaChar": 15,
+    "inicio": 0.763,
+    "fin": 1.025
+  },
+  {
+    "escena": 0,
+    "desdeChar": 16,
+    "hastaChar": 23,
+    "inicio": 1.038,
+    "fin": 1.375
+  },
+  {
+    "escena": 0,
+    "desdeChar": 24,
+    "hastaChar": 28,
+    "inicio": 1.388,
+    "fin": 1.588
+  },
+  {
+    "escena": 0,
+    "desdeChar": 29,
+    "hastaChar": 35,
+    "inicio": 1.6,
+    "fin": 2.163
+  },
+  {
+    "escena": 1,
+    "desdeChar": 0,
+    "hastaChar": 2,
+    "inicio": 3.47,
+    "fin": 3.62
+  },
+  {
+    "escena": 1,
+    "desdeChar": 3,
+    "hastaChar": 8,
+    "inicio": 3.633,
+    "fin": 3.97
+  },
+  {
+    "escena": 1,
+    "desdeChar": 9,
+    "hastaChar": 11,
+    "inicio": 3.983,
+    "fin": 4.07
+  },
+  {
+    "escena": 1,
+    "desdeChar": 12,
+    "hastaChar": 14,
+    "inicio": 4.083,
+    "fin": 4.183
+  },
+  {
+    "escena": 1,
+    "desdeChar": 15,
+    "hastaChar": 21,
+    "inicio": 4.195,
+    "fin": 4.595
+  },
+  {
+    "escena": 1,
+    "desdeChar": 22,
+    "hastaChar": 27,
+    "inicio": 4.608,
+    "fin": 5.033
+  },
+  {
+    "escena": 1,
+    "desdeChar": 29,
+    "hastaChar": 41,
+    "inicio": 5.308,
+    "fin": 5.995
+  },
+  {
+    "escena": 1,
+    "desdeChar": 42,
+    "hastaChar": 55,
+    "inicio": 6.008,
+    "fin": 6.87
+  },
+  {
+    "escena": 1,
+    "desdeChar": 57,
+    "hastaChar": 60,
+    "inicio": 7.133,
+    "fin": 7.245
+  },
+  {
+    "escena": 1,
+    "desdeChar": 61,
+    "hastaChar": 68,
+    "inicio": 7.258,
+    "fin": 7.608
+  },
+  {
+    "escena": 1,
+    "desdeChar": 69,
+    "hastaChar": 73,
+    "inicio": 7.62,
+    "fin": 8.045
+  },
+  {
+    "escena": 2,
+    "desdeChar": 0,
+    "hastaChar": 5,
+    "inicio": 9.36,
+    "fin": 9.71
+  },
+  {
+    "escena": 2,
+    "desdeChar": 6,
+    "hastaChar": 12,
+    "inicio": 9.723,
+    "fin": 10.06
+  },
+  {
+    "escena": 2,
+    "desdeChar": 13,
+    "hastaChar": 15,
+    "inicio": 10.073,
+    "fin": 10.135
+  },
+  {
+    "escena": 2,
+    "desdeChar": 16,
+    "hastaChar": 26,
+    "inicio": 10.147,
+    "fin": 10.698
+  },
+  {
+    "escena": 2,
+    "desdeChar": 27,
+    "hastaChar": 36,
+    "inicio": 10.71,
+    "fin": 11.26
+  },
+  {
+    "escena": 2,
+    "desdeChar": 37,
+    "hastaChar": 39,
+    "inicio": 11.273,
+    "fin": 11.36
+  },
+  {
+    "escena": 2,
+    "desdeChar": 40,
+    "hastaChar": 47,
+    "inicio": 11.372,
+    "fin": 11.81
+  },
+  {
+    "escena": 2,
+    "desdeChar": 48,
+    "hastaChar": 54,
+    "inicio": 11.823,
+    "fin": 12.223
+  },
+  {
+    "escena": 2,
+    "desdeChar": 55,
+    "hastaChar": 57,
+    "inicio": 12.235,
+    "fin": 12.323
+  },
+  {
+    "escena": 2,
+    "desdeChar": 58,
+    "hastaChar": 60,
+    "inicio": 12.335,
+    "fin": 12.46
+  },
+  {
+    "escena": 2,
+    "desdeChar": 61,
+    "hastaChar": 67,
+    "inicio": 12.473,
+    "fin": 12.948
+  },
+  {
+    "escena": 3,
+    "desdeChar": 0,
+    "hastaChar": 1,
+    "inicio": 14.27,
+    "fin": 14.408
+  },
+  {
+    "escena": 3,
+    "desdeChar": 2,
+    "hastaChar": 4,
+    "inicio": 14.42,
+    "fin": 14.558
+  },
+  {
+    "escena": 3,
+    "desdeChar": 5,
+    "hastaChar": 13,
+    "inicio": 14.57,
+    "fin": 15.02
+  },
+  {
+    "escena": 3,
+    "desdeChar": 14,
+    "hastaChar": 16,
+    "inicio": 15.033,
+    "fin": 15.133
+  },
+  {
+    "escena": 3,
+    "desdeChar": 17,
+    "hastaChar": 19,
+    "inicio": 15.145,
+    "fin": 15.22
+  },
+  {
+    "escena": 3,
+    "desdeChar": 20,
+    "hastaChar": 26,
+    "inicio": 15.233,
+    "fin": 15.658
+  },
+  {
+    "escena": 3,
+    "desdeChar": 28,
+    "hastaChar": 37,
+    "inicio": 15.92,
+    "fin": 16.608
+  },
+  {
+    "escena": 3,
+    "desdeChar": 39,
+    "hastaChar": 42,
+    "inicio": 16.87,
+    "fin": 16.983
+  },
+  {
+    "escena": 3,
+    "desdeChar": 43,
+    "hastaChar": 48,
+    "inicio": 16.995,
+    "fin": 17.283
+  },
+  {
+    "escena": 3,
+    "desdeChar": 49,
+    "hastaChar": 58,
+    "inicio": 17.295,
+    "fin": 17.82
+  },
+  {
+    "escena": 3,
+    "desdeChar": 59,
+    "hastaChar": 61,
+    "inicio": 17.833,
+    "fin": 17.895
+  },
+  {
+    "escena": 3,
+    "desdeChar": 62,
+    "hastaChar": 64,
+    "inicio": 17.908,
+    "fin": 17.958
+  },
+  {
+    "escena": 3,
+    "desdeChar": 65,
+    "hastaChar": 74,
+    "inicio": 17.97,
+    "fin": 18.645
+  },
+  {
+    "escena": 4,
+    "desdeChar": 0,
+    "hastaChar": 5,
+    "inicio": 19.97,
+    "fin": 20.295
+  },
+  {
+    "escena": 4,
+    "desdeChar": 6,
+    "hastaChar": 8,
+    "inicio": 20.308,
+    "fin": 20.408
+  },
+  {
+    "escena": 4,
+    "desdeChar": 9,
+    "hastaChar": 17,
+    "inicio": 20.42,
+    "fin": 20.895
+  },
+  {
+    "escena": 4,
+    "desdeChar": 19,
+    "hastaChar": 24,
+    "inicio": 21.22,
+    "fin": 21.533
+  },
+  {
+    "escena": 4,
+    "desdeChar": 25,
+    "hastaChar": 30,
+    "inicio": 21.545,
+    "fin": 21.795
+  },
+  {
+    "escena": 4,
+    "desdeChar": 31,
+    "hastaChar": 38,
+    "inicio": 21.808,
+    "fin": 22.27
+  },
+  {
+    "escena": 4,
+    "desdeChar": 39,
+    "hastaChar": 41,
+    "inicio": 22.283,
+    "fin": 22.358
+  },
+  {
+    "escena": 4,
+    "desdeChar": 42,
+    "hastaChar": 52,
+    "inicio": 22.37,
+    "fin": 23.195
+  },
+  {
+    "escena": 5,
+    "desdeChar": 0,
+    "hastaChar": 4,
+    "inicio": 24.52,
+    "fin": 24.783
+  },
+  {
+    "escena": 5,
+    "desdeChar": 5,
+    "hastaChar": 8,
+    "inicio": 24.795,
+    "fin": 24.895
+  },
+  {
+    "escena": 5,
+    "desdeChar": 9,
+    "hastaChar": 19,
+    "inicio": 24.908,
+    "fin": 25.433
+  },
+  {
+    "escena": 5,
+    "desdeChar": 20,
+    "hastaChar": 22,
+    "inicio": 25.445,
+    "fin": 25.533
+  },
+  {
+    "escena": 5,
+    "desdeChar": 23,
+    "hastaChar": 25,
+    "inicio": 25.545,
+    "fin": 25.683
+  },
+  {
+    "escena": 5,
+    "desdeChar": 26,
+    "hastaChar": 31,
+    "inicio": 25.695,
+    "fin": 26.058
+  },
+  {
+    "escena": 5,
+    "desdeChar": 32,
+    "hastaChar": 34,
+    "inicio": 26.07,
+    "fin": 26.17
+  },
+  {
+    "escena": 5,
+    "desdeChar": 35,
+    "hastaChar": 37,
+    "inicio": 26.183,
+    "fin": 26.27
+  },
+  {
+    "escena": 5,
+    "desdeChar": 38,
+    "hastaChar": 44,
+    "inicio": 26.283,
+    "fin": 26.758
+  },
+  {
+    "escena": 6,
+    "desdeChar": 0,
+    "hastaChar": 4,
+    "inicio": 28.54,
+    "fin": 28.753
+  },
+  {
+    "escena": 6,
+    "desdeChar": 5,
+    "hastaChar": 7,
+    "inicio": 28.765,
+    "fin": 28.878
+  },
+  {
+    "escena": 6,
+    "desdeChar": 8,
+    "hastaChar": 11,
+    "inicio": 28.89,
+    "fin": 29.003
+  },
+  {
+    "escena": 6,
+    "desdeChar": 12,
+    "hastaChar": 14,
+    "inicio": 29.015,
+    "fin": 29.165
+  },
+  {
+    "escena": 6,
+    "desdeChar": 15,
+    "hastaChar": 21,
+    "inicio": 29.178,
+    "fin": 29.703
+  },
+  {
+    "escena": 6,
+    "desdeChar": 23,
+    "hastaChar": 33,
+    "inicio": 29.965,
+    "fin": 30.578
+  },
+  {
+    "escena": 6,
+    "desdeChar": 34,
+    "hastaChar": 37,
+    "inicio": 30.59,
+    "fin": 30.765
+  },
+  {
+    "escena": 6,
+    "desdeChar": 38,
+    "hastaChar": 40,
+    "inicio": 30.778,
+    "fin": 30.865
+  },
+  {
+    "escena": 6,
+    "desdeChar": 41,
+    "hastaChar": 48,
+    "inicio": 30.878,
+    "fin": 31.303
+  },
+  {
+    "escena": 6,
+    "desdeChar": 49,
+    "hastaChar": 51,
+    "inicio": 31.315,
+    "fin": 31.428
+  },
+  {
+    "escena": 6,
+    "desdeChar": 52,
+    "hastaChar": 59,
+    "inicio": 31.44,
+    "fin": 31.928
+  },
+  {
+    "escena": 6,
+    "desdeChar": 60,
+    "hastaChar": 62,
+    "inicio": 31.94,
+    "fin": 32.04
+  },
+  {
+    "escena": 6,
+    "desdeChar": 63,
+    "hastaChar": 71,
+    "inicio": 32.053,
+    "fin": 32.528
+  },
+  {
+    "escena": 6,
+    "desdeChar": 73,
+    "hastaChar": 78,
+    "inicio": 32.815,
+    "fin": 33.115
+  },
+  {
+    "escena": 6,
+    "desdeChar": 79,
+    "hastaChar": 80,
+    "inicio": 33.128,
+    "fin": 33.14
+  },
+  {
+    "escena": 6,
+    "desdeChar": 81,
+    "hastaChar": 83,
+    "inicio": 33.153,
+    "fin": 33.265
+  },
+  {
+    "escena": 6,
+    "desdeChar": 84,
+    "hastaChar": 95,
+    "inicio": 33.278,
+    "fin": 33.915
+  },
+  {
+    "escena": 6,
+    "desdeChar": 96,
+    "hastaChar": 98,
+    "inicio": 33.928,
+    "fin": 34.028
+  },
+  {
+    "escena": 6,
+    "desdeChar": 99,
+    "hastaChar": 101,
+    "inicio": 34.04,
+    "fin": 34.203
+  },
+  {
+    "escena": 6,
+    "desdeChar": 102,
+    "hastaChar": 107,
+    "inicio": 34.215,
+    "fin": 34.503
+  },
+  {
+    "escena": 6,
+    "desdeChar": 108,
+    "hastaChar": 110,
+    "inicio": 34.515,
+    "fin": 34.603
+  },
+  {
+    "escena": 6,
+    "desdeChar": 111,
+    "hastaChar": 113,
+    "inicio": 34.615,
+    "fin": 34.703
+  },
+  {
+    "escena": 6,
+    "desdeChar": 114,
+    "hastaChar": 120,
+    "inicio": 34.715,
+    "fin": 35.203
+  },
+  {
+    "escena": 7,
+    "desdeChar": 0,
+    "hastaChar": 3,
+    "inicio": 36.97,
+    "fin": 37.195
+  },
+  {
+    "escena": 7,
+    "desdeChar": 4,
+    "hastaChar": 9,
+    "inicio": 37.207,
+    "fin": 37.545
+  },
+  {
+    "escena": 7,
+    "desdeChar": 10,
+    "hastaChar": 16,
+    "inicio": 37.558,
+    "fin": 38.008
+  },
+  {
+    "escena": 7,
+    "desdeChar": 18,
+    "hastaChar": 20,
+    "inicio": 38.332,
+    "fin": 38.457
+  },
+  {
+    "escena": 7,
+    "desdeChar": 21,
+    "hastaChar": 25,
+    "inicio": 38.47,
+    "fin": 38.72
+  },
+  {
+    "escena": 7,
+    "desdeChar": 26,
+    "hastaChar": 30,
+    "inicio": 38.732,
+    "fin": 39.045
+  },
+  {
+    "escena": 7,
+    "desdeChar": 31,
+    "hastaChar": 34,
+    "inicio": 39.058,
+    "fin": 39.17
+  },
+  {
+    "escena": 7,
+    "desdeChar": 35,
+    "hastaChar": 43,
+    "inicio": 39.183,
+    "fin": 39.707
+  },
+  {
+    "escena": 7,
+    "desdeChar": 46,
+    "hastaChar": 52,
+    "inicio": 40.57,
+    "fin": 41.07
+  },
+  {
+    "escena": 7,
+    "desdeChar": 53,
+    "hastaChar": 54,
+    "inicio": 41.082,
+    "fin": 41.145
+  },
+  {
+    "escena": 7,
+    "desdeChar": 55,
+    "hastaChar": 65,
+    "inicio": 41.158,
+    "fin": 41.92
+  },
+  {
+    "escena": 7,
+    "desdeChar": 67,
+    "hastaChar": 69,
+    "inicio": 42.783,
+    "fin": 42.908
+  },
+  {
+    "escena": 7,
+    "desdeChar": 70,
+    "hastaChar": 77,
+    "inicio": 42.92,
+    "fin": 43.582
+  },
+  {
+    "escena": 7,
+    "desdeChar": 79,
+    "hastaChar": 80,
+    "inicio": 44.445,
+    "fin": 44.57
+  },
+  {
+    "escena": 7,
+    "desdeChar": 81,
+    "hastaChar": 88,
+    "inicio": 44.582,
+    "fin": 45.02
+  },
+  {
+    "escena": 7,
+    "desdeChar": 89,
+    "hastaChar": 93,
+    "inicio": 45.033,
+    "fin": 45.245
+  },
+  {
+    "escena": 7,
+    "desdeChar": 94,
+    "hastaChar": 96,
+    "inicio": 45.257,
+    "fin": 45.358
+  },
+  {
+    "escena": 7,
+    "desdeChar": 97,
+    "hastaChar": 102,
+    "inicio": 45.37,
+    "fin": 45.695
+  },
+  {
+    "escena": 7,
+    "desdeChar": 103,
+    "hastaChar": 109,
+    "inicio": 45.707,
+    "fin": 46.158
+  }
+]
