@@ -20,10 +20,12 @@ type Props = {escena: EscenaResuelta};
  */
 export const Subtitulos: React.FC<Props> = ({escena}) => {
   const frame = useCurrentFrame();
-  const {fps} = useVideoConfig();
+  const {fps, width, height} = useVideoConfig();
+  const horizontal = width > height;
   const t = escena.inicio + frame / fps; // segundo absoluto del video
 
-  const grupos = agruparPalabras(escena.palabras);
+  // En horizontal caben más palabras por línea
+  const grupos = horizontal ? agruparPalabras(escena.palabras, 6, 34) : agruparPalabras(escena.palabras);
   if (grupos.length === 0) return null;
 
   // Grupo visible: desde su primera palabra hasta que empieza el siguiente
@@ -79,9 +81,9 @@ export const Subtitulos: React.FC<Props> = ({escena}) => {
 
   const estiloBase: React.CSSProperties = {
     position: 'absolute',
-    left: 70,
-    right: 70,
-    top: '46%',
+    left: horizontal ? 240 : 70,
+    right: horizontal ? 240 : 70,
+    top: horizontal ? '52%' : '46%',
     transform: `translateY(-50%) scale(${entrada})`,
     display: 'flex',
     flexWrap: 'wrap',
@@ -90,7 +92,7 @@ export const Subtitulos: React.FC<Props> = ({escena}) => {
     rowGap: 10,
     fontFamily,
     fontWeight: 900,
-    fontSize: TAMANO,
+    fontSize: horizontal ? 80 : TAMANO,
     lineHeight: 1.12,
     textAlign: 'center',
     letterSpacing: 1,

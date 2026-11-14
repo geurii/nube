@@ -164,5 +164,6 @@
         "pixelveredicto:locura"
       ]
     }
-  ]
+  ],
+  "orientacion": "horizontal"
 }

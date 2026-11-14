@@ -12,6 +12,7 @@ import {esImagen, esVideo} from '../lib/util';
 import {REGISTRO_ESCENAS} from './fondos/Escenas';
 import {REGISTRO_PIXEL} from './fondos/Pixel';
 import {REGISTRO_ARTICO} from './fondos/PixelArtico';
+import {REGISTRO_H} from './fondos/PixelH';
 
 type Props = {
   fondo: string;
@@ -29,9 +30,9 @@ type Props = {
  */
 export const Fondo: React.FC<Props> = ({fondo, indice, duracion}) => {
   const frame = useCurrentFrame();
-  const {fps} = useVideoConfig();
+  const {fps, width, height} = useVideoConfig();
 
-  const aparicion = interpolate(frame, [0, 10], [0, 1], {
+  const aparicion = interpolate(frame, [0, Math.round(fps / 3)], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
@@ -57,7 +58,13 @@ export const Fondo: React.FC<Props> = ({fondo, indice, duracion}) => {
     );
   } else {
     const [nombre, parametro] = fondo.split(':');
-    const Escena = REGISTRO_ESCENAS[nombre] ?? REGISTRO_PIXEL[nombre] ?? REGISTRO_ARTICO[nombre] ?? REGISTRO_PIXEL.pixelmisterio;
+    const horizontal = width > height;
+    const Escena =
+      (horizontal ? REGISTRO_H[nombre] : undefined) ??
+      REGISTRO_ESCENAS[nombre] ??
+      REGISTRO_PIXEL[nombre] ??
+      REGISTRO_ARTICO[nombre] ??
+      (horizontal ? REGISTRO_H.pixelmisterio : REGISTRO_PIXEL.pixelmisterio);
     contenido = <Escena duracion={duracion / fps} parametro={parametro} />;
   }
 

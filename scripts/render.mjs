@@ -139,9 +139,11 @@ const serveUrl = await bundle({
 });
 
 const inputProps = {guion, palabras, musica};
+// Largo = horizontal 16:9 (1920x1080). Shorts = vertical 9:16 (1080x1920).
+const horizontal = guion.orientacion === 'horizontal';
 const composition = await selectComposition({
   serveUrl,
-  id: 'LoQueNoSabias',
+  id: horizontal ? 'LargoHorizontal' : 'LoQueNoSabias',
   inputProps,
   browserExecutable,
   timeoutInMilliseconds: 120000,
@@ -187,7 +189,9 @@ if (avisos.length) {
 // --- Render ----------------------------------------------------------------
 // Con poca RAM (menos de 8 GB) usamos una sola pestaña de Chrome: más lento pero estable.
 // Se puede forzar con: npm run render -- --concurrencia 4
-const ESCALA_PIXEL = 0.25;
+// Calidad: se renderiza a la MITAD de resolución (540x960 o 960x540) y se amplía 2x sin suavizar:
+// pixel real pero con el doble de nitidez que antes (antes era 1/4). Se puede cambiar: --escala 1
+const ESCALA_PIXEL = Number(opcion('escala') ?? 0.5);
 const bajo = path.join(path.dirname(salida), '.bajo-res.mp4');
 const ramGb = os.totalmem() / 1024 ** 3;
 const concurrency = opcion('concurrencia') ? Number(opcion('concurrencia')) : ramGb < 8 ? 1 : null;
@@ -240,7 +244,7 @@ if (!ffmpegSistema) {
 }
 const amp = spawnSync(
   ffmpegExe,
-  ['-y', '-loglevel', 'error', '-i', bajo, '-vf', 'scale=1080:1920:flags=neighbor,format=yuv420p', '-c:v', 'libx264', '-crf', '12', '-preset', 'medium', '-colorspace', 'bt709', '-color_primaries', 'bt709', '-color_trc', 'bt709', '-c:a', 'copy', '-movflags', '+faststart', salida],
+  ['-y', '-loglevel', 'error', '-i', bajo, '-vf', `scale=${horizontal ? '1920:1080' : '1080:1920'}:flags=neighbor,format=yuv420p`, '-c:v', 'libx264', '-crf', '12', '-preset', 'medium', '-colorspace', 'bt709', '-color_primaries', 'bt709', '-color_trc', 'bt709', '-c:a', 'copy', '-movflags', '+faststart', salida],
   {encoding: 'utf8'},
 );
 if (amp.status !== 0) {

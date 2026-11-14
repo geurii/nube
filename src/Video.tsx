@@ -7,7 +7,7 @@ import {Personaje} from './components/Personaje';
 import {Musica} from './components/Musica';
 
 /** Frames de solape entre un fondo y el siguiente (fundido). */
-const SOLAPE = 10;
+/* El solape se calcula dentro del componente según los fps */
 /** Cada fondo de una lista dura como mucho esto (segundos) para que el flujo no se pare. */
 const MAX_SEGUNDOS_POR_FONDO = 3;
 
@@ -16,6 +16,7 @@ export const Video: React.FC<VideoProps> = ({guion, musica, tiempos}) => {
   if (!tiempos) return <AbsoluteFill style={{background: '#000'}} />;
 
   const aFrame = (s: number) => Math.round(s * fps);
+  const SOLAPE = Math.round(fps / 3); // fundido entre fondos (~0,33 s)
   const personajeVisible = guion.personaje?.visible !== false;
 
   // Cada escena se parte en tramos; cada tramo usa un fondo de la lista (en ciclo).

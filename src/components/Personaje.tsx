@@ -17,7 +17,9 @@ type Props = {esquina?: Esquina; ancho?: number; imagen?: string | null};
  */
 export const Personaje: React.FC<Props> = ({esquina = 'arriba-derecha', ancho = 400, imagen}) => {
   const frame = useCurrentFrame();
-  const {fps} = useVideoConfig();
+  const {fps, width: anchoVideo, height: altoVideo} = useVideoConfig();
+  const horizontal = anchoVideo > altoVideo;
+  if (horizontal) ancho = 300; // en 16:9 el personaje es más pequeño
   const t = frame / fps;
 
   const flotar = Math.sin(t * 2.0) * 8;
@@ -31,8 +33,8 @@ export const Personaje: React.FC<Props> = ({esquina = 'arriba-derecha', ancho = 
     position: 'absolute',
     width: ancho,
     height: (ancho * 420) / 360,
-    ...(esquina.startsWith('arriba') ? {top: 120} : {bottom: 380}),
-    ...(izquierda ? {left: 24} : {right: 24}),
+    ...(esquina.startsWith('arriba') ? {top: horizontal ? 30 : 120} : {bottom: horizontal ? 60 : 380}),
+    ...(izquierda ? {left: horizontal ? 50 : 24} : {right: horizontal ? 50 : 24}),
     transform: `translateY(${flotar}px) rotate(${inclinar}deg)`,
     transformOrigin: '50% 100%',
     filter: 'drop-shadow(0 16px 20px rgba(0,0,0,0.6))',
