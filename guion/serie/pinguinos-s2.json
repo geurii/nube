@@ -1,0 +1,66 @@
+{
+  "titulo": "Sabías que mataron 2 millones de pingüinos... y no para comérselos 😳 (Parte 2/3)",
+  "formato": "short",
+  "plataforma": "youtube",
+  "audio": "audio/pinguinos-s2.mp3",
+  "musica": null,
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "publicacion": {
+    "titulo": "Sabías que mataron 2 millones de pingüinos... y no para comérselos 😳 (Parte 2/3)",
+    "descripcion": "Parte 2 de 3: la isla donde mataron a unos dos millones de pingüinos, y para qué.\n\n¿Protección o hipocresía? Cuéntame en los comentarios 👇\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nVideo completo en el canal: https://youtube.com/@lo.que.no.sabias_do\n\nFuentes: Wikipedia (Joseph Hatch; Cape Crozier; The Worst Journey in the World; Protocolo sobre Protección del Medio Ambiente del Tratado Antártico). Las cifras varían según la fuente: aquí usamos la más citada.\n\n#pingüinos #Antártida #curiosidades #historia #LoQueNoSabias "
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que en una sola isla mataron a unos dos millones de pingüinos.",
+      "fondo": [
+        "pixelcaldera",
+        "pixelcolonia"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Se llama Macquarie, y queda entre Australia y la Antártida.",
+      "fondo": [
+        "pixelcolonia",
+        "pixelcaldera"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Entre mil ochocientos noventa y mil novecientos diecinueve, un hombre montó allí un negocio con los pingüinos.",
+      "fondo": [
+        "pixelcolonia",
+        "pixelcaldera"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Algunos exploradores de la época se opusieron, y por fin le quitaron el permiso.",
+      "fondo": [
+        "pixelcaldera",
+        "pixelcolonia"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: no los mataban para comérselos. Los metían en calderas de vapor a presión para sacarles aceite.",
+      "fondo": [
+        "pixelcaldera",
+        "pixelcaldera"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "Un animal protegido hoy fue combustible ayer. ¿Protección o hipocresía? Tú decides. Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelveredicto:proteccion",
+        "pixelcaldera",
+        "pixelveredicto:proteccion"
+      ]
+    }
+  ]
+}

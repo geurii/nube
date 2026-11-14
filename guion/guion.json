@@ -1,169 +1,153 @@
 {
-  "titulo": "Operación Coldfeet: la CIA saltó sobre una base soviética fantasma en el Ártico",
+  "titulo": "¿Por qué no comemos pingüino? La verdad detrás de la prohibición",
   "formato": "largo",
+  "orientacion": "horizontal",
   "plataforma": "youtube",
-  "audio": "audio/serie-largo.mp3",
+  "audio": "audio/pinguinos-largo.mp3",
   "musica": null,
   "personaje": {
     "esquina": "arriba-derecha",
     "visible": true
   },
   "publicacion": {
-    "titulo": "Operación Coldfeet: la CIA saltó sobre una base soviética fantasma en el Ártico",
-    "descripcion": "La historia real de la Operación Coldfeet (1962): dos hombres saltaron en paracaídas sobre una base soviética abandonada en el hielo del Ártico y salieron colgados de un globo. ¿Locura o genialidad? Tú decides en los comentarios 👇\n\nSígueme para la próxima historia.\n\nFuentes: Wikipedia (Project Coldfeet) y Spotter Up (historia del sistema de recogida Fulton). Resumen de una operación real de 1962; las fuentes difieren en algunos detalles menores.\n\n#historia #CIA #GuerraFria #Artico #misterio #curiosidades #LoQueNoSabias "
+    "titulo": "¿Por qué no comemos pingüino? La verdad detrás de la prohibición",
+    "descripcion": "¿Por qué hay pollo, pato y pavo en el supermercado, pero nunca pingüino? La respuesta mezcla una ley internacional, una isla donde mataron a unos dos millones de pingüinos y tres hombres caminando en la noche polar.\n\n¿Protección o hipocresía? Cuéntame en los comentarios 👇\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: Wikipedia (Joseph Hatch; Cape Crozier; The Worst Journey in the World; Protocolo sobre Protección del Medio Ambiente del Tratado Antártico). Las cifras varían según la fuente: aquí usamos la más citada.\n\n#pingüinos #Antártida #curiosidades #historia #LoQueNoSabias "
   },
   "escenas": [
     {
       "tipo": "hook",
-      "texto": "Dos hombres saltaron sobre una base soviética abandonada.",
+      "texto": "Sabías que nunca verás pingüino en un supermercado, aunque sea un ave como el pollo.",
       "fondo": [
-        "pixelavion:paracaidas",
-        "pixelartico:base"
+        "pixelsuper",
+        "pixelcolonia"
       ]
     },
     {
       "tipo": "historia",
-      "texto": "Era mil novecientos sesenta y uno, en plena Guerra Fría. Un avión de la Marina de Estados Unidos sobrevoló el Ártico y descubrió algo que no esperaba: una estación científica soviética, flotando a la deriva sobre el hielo, y abandonada.",
+      "texto": "Mira cualquier estante: pollo, pato, pavo. Carne de ave por todas partes. Pero del pingüino, ni rastro.",
       "fondo": [
-        "pixelartico",
-        "pixelartico:base",
+        "pixelsuper",
+        "pixelsuper"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Quizás pienses que sabe mal. Pero la razón verdadera es una ley.",
+      "fondo": [
+        "pixelcolonia",
+        "pixelsuper"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En la Antártida, tomar, capturar o molestar a un pingüino está prohibido sin un permiso especial.",
+      "fondo": [
+        "pixelcolonia:ley",
+        "pixelcolonia"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Esa regla viene de un tratado internacional, firmado en mil novecientos noventa y uno, que entró en vigor en mil novecientos noventa y ocho.",
+      "fondo": [
+        "pixelcolonia:ley",
+        "pixelcolonia",
+        "pixelcolonia:ley"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Pero, ¿por qué hizo falta una ley tan estricta? Porque antes pasó algo terrible, en una isla llamada Macquarie.",
+      "fondo": [
+        "pixelcolonia",
+        "pixelcaldera",
+        "pixelcolonia"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Entre mil ochocientos noventa y mil novecientos diecinueve, se calcula que mataron allí a unos dos millones de pingüinos.",
+      "fondo": [
+        "pixelcolonia",
+        "pixelcaldera",
+        "pixelcolonia"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Algunos exploradores de la época se opusieron, y por fin le quitaron el permiso al hombre del negocio.",
+      "fondo": [
+        "pixelcolonia",
+        "pixelcaldera"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "¿Y para qué los mataban? Te lo cuento al final.",
+      "fondo": [
+        "pixelcaldera",
         "pixelmisterio"
       ]
     },
     {
       "tipo": "historia",
-      "texto": "Un año antes, la Marina había montado una red de micrófonos submarinos para vigilar el Ártico. Y suponía que los soviéticos tenían algo parecido, para seguir a los submarinos bajo el hielo. Pero no tenía ninguna prueba.",
+      "texto": "Antes, una historia más pequeña. En mil novecientos once, tres hombres salieron a caminar en pleno invierno antártico, en oscuridad casi total.",
       "fondo": [
-        "pixelsonar",
-        "pixelartico",
-        "pixelsonar"
+        "pixeltormenta",
+        "pixelcolonia",
+        "pixeltormenta"
       ]
     },
     {
       "tipo": "historia",
-      "texto": "Aquella estación podía tener las respuestas. El problema era llegar: estaba demasiado adentro del hielo para un rompehielos, y fuera del alcance de los helicópteros.",
+      "texto": "Iban hasta el cabo Crozier, a buscar huevos de pingüino emperador, porque creían que podrían revelar algo sobre el origen de las aves.",
       "fondo": [
-        "pixelartico",
-        "pixelartico:base",
-        "pixelavion"
+        "pixeltormenta",
+        "pixelcolonia",
+        "pixeltormenta"
       ]
     },
     {
       "tipo": "historia",
-      "texto": "Hasta que, en marzo de mil novecientos sesenta y dos, llegó otra noticia: los soviéticos habían abandonado otra estación, más nueva y más fácil de alcanzar desde bases de Canadá. Se llamaba N P ocho.",
+      "texto": "Tardaron semanas, entre tormentas y un frío extremo, y casi no llegaron.",
       "fondo": [
-        "pixelartico:base",
-        "pixelavion",
-        "pixelartico"
+        "pixeltormenta",
+        "pixeltormenta"
       ]
     },
     {
       "tipo": "historia",
-      "texto": "Esta vez no había excusas. La CIA convirtió un bombardero B-diecisiete en un avión especial, y le instaló un sistema casi de ciencia ficción para recoger personas del suelo en pleno vuelo.",
+      "texto": "Los tres volvieron con vida, y con tres huevos. Pero su valor científico fue mínimo.",
       "fondo": [
-        "pixelavion",
-        "pixelmisterio",
-        "pixelavion:rescate"
-      ]
-    },
-    {
-      "tipo": "historia",
-      "texto": "Eligieron a dos hombres. Un mayor de la Fuerza Aérea, paracaidista experimentado, que hablaba ruso y ya había vivido en estaciones flotantes de Estados Unidos en el Ártico.",
-      "fondo": [
-        "pixelavion:paracaidas",
-        "pixelartico:base",
-        "pixelartico"
-      ]
-    },
-    {
-      "tipo": "historia",
-      "texto": "Y un teniente de la Marina, geofísico, que había trabajado en la Antártida y montado sistemas de escucha submarina. Tenía un problema: nunca había saltado en paracaídas. Tuvo que aprender en un curso de la Marina.",
-      "fondo": [
-        "pixelsonar",
-        "pixelavion:paracaidas",
-        "pixelmisterio"
-      ]
-    },
-    {
-      "tipo": "historia",
-      "texto": "El sistema se llamaba Fulton. Un globo inflable levantaba una cuerda en el aire, y la persona se sujetaba a un arnés. Un avión pasaba, enganchaba la cuerda, y se la llevaba al cielo. La CIA lo había desarrollado a principios de los años cincuenta.",
-      "fondo": [
-        "pixelavion:rescate",
-        "pixelavion",
-        "pixelavion:rescate",
-        "pixelexito"
-      ]
-    },
-    {
-      "tipo": "historia",
-      "texto": "El veintiocho de mayo de mil novecientos sesenta y dos, el B-diecisiete se acercó a la estación, y los dos hombres saltaron.",
-      "fondo": [
-        "pixelavion:paracaidas",
-        "pixelartico:base"
-      ]
-    },
-    {
-      "tipo": "historia",
-      "texto": "Registraron la estación abandonada. Reunieron documentos, equipo, núcleos de hielo, datos meteorológicos y muestras biológicas. Y antes de irse, colocaron cargas de demolición para destruir la base.",
-      "fondo": [
-        "pixelartico:base",
-        "pixeldocs",
-        "pixelartico",
-        "pixelexito"
-      ]
-    },
-    {
-      "tipo": "historia",
-      "texto": "Llegó el primero de junio. El avión volvió, preparó el sistema, y empezó la parte más arriesgada.",
-      "fondo": [
-        "pixelavion",
-        "pixelavion:rescate"
+        "pixeltormenta:huevos",
+        "pixeltormenta:huevos"
       ]
     },
     {
       "tipo": "revelacion",
-      "texto": "Y lo que descubrieron cambió la forma de ver la guerra bajo el hielo: la base mostraba investigación soviética avanzada en sistemas acústicos, para detectar submarinos estadounidenses bajo el hielo del Ártico.",
+      "texto": "Y ahora sí, lo que no sabías: a los pingüinos de Macquarie no los mataban para comérselos. Los metían en calderas de vapor a presión, para sacarles aceite.",
       "fondo": [
-        "pixelsonar",
+        "pixelcaldera",
         "pixelmisterio",
-        "pixelsonar"
+        "pixelcaldera"
       ]
     },
     {
       "tipo": "revelacion",
-      "texto": "Los soviéticos también trabajaban para desarrollar técnicas de guerra antisubmarina en el Ártico.",
+      "texto": "Por eso hoy están protegidos: porque ya vimos lo que pasa cuando nadie los cuida.",
       "fondo": [
-        "pixeldocs",
-        "pixelsonar"
-      ]
-    },
-    {
-      "tipo": "historia",
-      "texto": "Hubo tres extracciones seguidas. Primero salió el equipo soviético. Luego, el teniente. Y por último, el mayor. La misión se consideró un éxito.",
-      "fondo": [
-        "pixelavion:rescate",
-        "pixelexito",
-        "pixelavion:rescate"
-      ]
-    },
-    {
-      "tipo": "historia",
-      "texto": "El sistema Fulton siguió usándose hasta los años noventa, por la CIA, la Fuerza Aérea y la Marina. Su único accidente mortal ocurrió en mil novecientos ochenta y dos, cuando falló una pieza del mecanismo.",
-      "fondo": [
-        "pixelavion",
-        "pixelmisterio",
-        "pixelavion"
+        "pixelcolonia",
+        "pixelcolonia:ley"
       ]
     },
     {
       "tipo": "veredicto",
-      "texto": "Dos paracaídas, un globo y un avión, para espiar una base fantasma. ¿Locura o genialidad? Tú decides, en los comentarios. Y sígueme para la próxima historia.",
+      "texto": "Hoy nadie puede tocar a un pingüino, pero ayer los convertían en combustible. Y nosotros comemos pollo sin pensarlo. ¿Protección o hipocresía? Tú decides, en los comentarios. Comparte este video con un amigo que haría lo mismo, sígueme.",
       "fondo": [
-        "pixelveredicto:locura",
-        "pixelexito",
-        "pixelveredicto:locura"
+        "pixelveredicto:proteccion",
+        "pixelcolonia",
+        "pixelveredicto:proteccion"
       ]
     }
-  ],
-  "orientacion": "horizontal"
+  ]
 }

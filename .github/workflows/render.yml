@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        id: [serie-largo, serie-s1, serie-s2, serie-s3, serie-s4, serie-s5]
+        id: [pinguinos-largo, pinguinos-s1, pinguinos-s2, pinguinos-s3]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

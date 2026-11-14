@@ -1,0 +1,153 @@
+{
+  "titulo": "¿Por qué no comemos pingüino? La verdad detrás de la prohibición",
+  "formato": "largo",
+  "orientacion": "horizontal",
+  "plataforma": "youtube",
+  "audio": "audio/pinguinos-largo.mp3",
+  "musica": null,
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "publicacion": {
+    "titulo": "¿Por qué no comemos pingüino? La verdad detrás de la prohibición",
+    "descripcion": "¿Por qué hay pollo, pato y pavo en el supermercado, pero nunca pingüino? La respuesta mezcla una ley internacional, una isla donde mataron a unos dos millones de pingüinos y tres hombres caminando en la noche polar.\n\n¿Protección o hipocresía? Cuéntame en los comentarios 👇\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: Wikipedia (Joseph Hatch; Cape Crozier; The Worst Journey in the World; Protocolo sobre Protección del Medio Ambiente del Tratado Antártico). Las cifras varían según la fuente: aquí usamos la más citada.\n\n#pingüinos #Antártida #curiosidades #historia #LoQueNoSabias "
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que nunca verás pingüino en un supermercado, aunque sea un ave como el pollo.",
+      "fondo": [
+        "pixelsuper",
+        "pixelcolonia"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Mira cualquier estante: pollo, pato, pavo. Carne de ave por todas partes. Pero del pingüino, ni rastro.",
+      "fondo": [
+        "pixelsuper",
+        "pixelsuper"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Quizás pienses que sabe mal. Pero la razón verdadera es una ley.",
+      "fondo": [
+        "pixelcolonia",
+        "pixelsuper"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En la Antártida, tomar, capturar o molestar a un pingüino está prohibido sin un permiso especial.",
+      "fondo": [
+        "pixelcolonia:ley",
+        "pixelcolonia"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Esa regla viene de un tratado internacional, firmado en mil novecientos noventa y uno, que entró en vigor en mil novecientos noventa y ocho.",
+      "fondo": [
+        "pixelcolonia:ley",
+        "pixelcolonia",
+        "pixelcolonia:ley"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Pero, ¿por qué hizo falta una ley tan estricta? Porque antes pasó algo terrible, en una isla llamada Macquarie.",
+      "fondo": [
+        "pixelcolonia",
+        "pixelcaldera",
+        "pixelcolonia"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Entre mil ochocientos noventa y mil novecientos diecinueve, se calcula que mataron allí a unos dos millones de pingüinos.",
+      "fondo": [
+        "pixelcolonia",
+        "pixelcaldera",
+        "pixelcolonia"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Algunos exploradores de la época se opusieron, y por fin le quitaron el permiso al hombre del negocio.",
+      "fondo": [
+        "pixelcolonia",
+        "pixelcaldera"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "¿Y para qué los mataban? Te lo cuento al final.",
+      "fondo": [
+        "pixelcaldera",
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Antes, una historia más pequeña. En mil novecientos once, tres hombres salieron a caminar en pleno invierno antártico, en oscuridad casi total.",
+      "fondo": [
+        "pixeltormenta",
+        "pixelcolonia",
+        "pixeltormenta"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Iban hasta el cabo Crozier, a buscar huevos de pingüino emperador, porque creían que podrían revelar algo sobre el origen de las aves.",
+      "fondo": [
+        "pixeltormenta",
+        "pixelcolonia",
+        "pixeltormenta"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Tardaron semanas, entre tormentas y un frío extremo, y casi no llegaron.",
+      "fondo": [
+        "pixeltormenta",
+        "pixeltormenta"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Los tres volvieron con vida, y con tres huevos. Pero su valor científico fue mínimo.",
+      "fondo": [
+        "pixeltormenta:huevos",
+        "pixeltormenta:huevos"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Y ahora sí, lo que no sabías: a los pingüinos de Macquarie no los mataban para comérselos. Los metían en calderas de vapor a presión, para sacarles aceite.",
+      "fondo": [
+        "pixelcaldera",
+        "pixelmisterio",
+        "pixelcaldera"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Por eso hoy están protegidos: porque ya vimos lo que pasa cuando nadie los cuida.",
+      "fondo": [
+        "pixelcolonia",
+        "pixelcolonia:ley"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "Hoy nadie puede tocar a un pingüino, pero ayer los convertían en combustible. Y nosotros comemos pollo sin pensarlo. ¿Protección o hipocresía? Tú decides, en los comentarios. Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelveredicto:proteccion",
+        "pixelcolonia",
+        "pixelveredicto:proteccion"
+      ]
+    }
+  ]
+}

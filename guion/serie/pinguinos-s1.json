@@ -1,0 +1,74 @@
+{
+  "titulo": "Sabías que nunca verás pingüino en un supermercado 🐧 (Parte 1/3)",
+  "formato": "short",
+  "plataforma": "youtube",
+  "audio": "audio/pinguinos-s1.mp3",
+  "musica": null,
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "publicacion": {
+    "titulo": "Sabías que nunca verás pingüino en un supermercado 🐧 (Parte 1/3)",
+    "descripcion": "Hay pollo, pato y pavo... pero pingüino no. Parte 1 de 3: la ley que lo impide.\n\n¿Protección o hipocresía? Cuéntame en los comentarios 👇\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nVideo completo en el canal: https://youtube.com/@lo.que.no.sabias_do\n\nFuentes: Wikipedia (Joseph Hatch; Cape Crozier; The Worst Journey in the World; Protocolo sobre Protección del Medio Ambiente del Tratado Antártico). Las cifras varían según la fuente: aquí usamos la más citada.\n\n#pingüinos #Antártida #curiosidades #historia #LoQueNoSabias "
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que nunca verás pingüino en un supermercado.",
+      "fondo": [
+        "pixelsuper",
+        "pixelcolonia"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Hay pollo, pato y pavo, y todos son aves, igual que él.",
+      "fondo": [
+        "pixelsuper",
+        "pixelcolonia"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Pero en la Antártida existe una ley: tomar, capturar o molestar a un pingüino está prohibido sin un permiso.",
+      "fondo": [
+        "pixelcolonia:ley",
+        "pixelcolonia"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Viene de un tratado internacional, firmado en mil novecientos noventa y uno.",
+      "fondo": [
+        "pixelcolonia",
+        "pixelcolonia:ley"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Y entró en vigor en mil novecientos noventa y ocho.",
+      "fondo": [
+        "pixelcolonia:ley",
+        "pixelsuper"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: antes de esa ley, en una sola isla mataron a unos dos millones de pingüinos.",
+      "fondo": [
+        "pixelcaldera",
+        "pixelcolonia"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "Hoy nadie puede tocarlos, pero ayer los mataban por millones. ¿Protección o hipocresía? Tú decides. Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelveredicto:proteccion",
+        "pixelcolonia",
+        "pixelveredicto:proteccion"
+      ]
+    }
+  ]
+}

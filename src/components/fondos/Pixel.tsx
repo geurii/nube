@@ -341,6 +341,7 @@ export const PixelExito: React.FC<PropsEscena> = () => {
 /* ---------------- Veredicto: pantalla partida roja / dorada ---------------- */
 export const PixelVeredicto: React.FC<PropsEscena> = ({parametro}) => {
   const locura = parametro === 'locura';
+  const proteccion = parametro === 'proteccion';
   const {t, tp} = useTp();
   const entrada = snap(interpolate(t, [0, 0.5], [600, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}), 12);
   const pulso = Math.round(Math.sin(tp * 4) * 2) * 6;
@@ -358,11 +359,11 @@ export const PixelVeredicto: React.FC<PropsEscena> = ({parametro}) => {
         {Array.from({length: 12}).map((_, i) => (
           <rect key={i} x={528} y={i * 160 + ((tp * 80) % 160)} width={24} height={80} fill="#fff" />
         ))}
-        <text x={270} y={640 + pulso} textAnchor="middle" fontFamily={FUENTE_PIXEL} fontSize={54} fill="#fff" stroke="#000" strokeWidth={12} paintOrder="stroke">
-          {locura ? '¿LOCURA' : '¿ESTAFADOR'}
+        <text x={270} y={640 + pulso} textAnchor="middle" fontFamily={FUENTE_PIXEL} fontSize={proteccion ? 40 : 54} fill="#fff" stroke="#000" strokeWidth={proteccion ? 6 : 12} paintOrder="stroke">
+          {proteccion ? '¿PROTECCION' : locura ? '¿LOCURA' : '¿ESTAFADOR'}
         </text>
-        <text x={810} y={1300 - pulso} textAnchor="middle" fontFamily={FUENTE_PIXEL} fontSize={locura ? 38 : 54} fill="#fff" stroke="#000" strokeWidth={12} paintOrder="stroke">
-          {locura ? 'O GENIALIDAD?' : 'O GENIO?'}
+        <text x={810} y={1300 - pulso} textAnchor="middle" fontFamily={FUENTE_PIXEL} fontSize={proteccion ? 32 : locura ? 38 : 54} fill="#fff" stroke="#000" strokeWidth={proteccion ? 6 : 12} paintOrder="stroke">
+          {proteccion ? 'O HIPOCRESIA?' : locura ? 'O GENIALIDAD?' : 'O GENIO?'}
         </text>
         <rect x={420} y={800 + pulso} width={240} height={240} fill="#fff" />
         <rect x={432} y={812 + pulso} width={216} height={216} fill="#111" />

@@ -13,6 +13,7 @@ import {REGISTRO_ESCENAS} from './fondos/Escenas';
 import {REGISTRO_PIXEL} from './fondos/Pixel';
 import {REGISTRO_ARTICO} from './fondos/PixelArtico';
 import {REGISTRO_H} from './fondos/PixelH';
+import {REGISTRO_PINGUINOS} from './fondos/PixelPinguinos';
 
 type Props = {
   fondo: string;
@@ -64,6 +65,7 @@ export const Fondo: React.FC<Props> = ({fondo, indice, duracion}) => {
       REGISTRO_ESCENAS[nombre] ??
       REGISTRO_PIXEL[nombre] ??
       REGISTRO_ARTICO[nombre] ??
+      REGISTRO_PINGUINOS[nombre] ??
       (horizontal ? REGISTRO_H.pixelmisterio : REGISTRO_PIXEL.pixelmisterio);
     contenido = <Escena duracion={duracion / fps} parametro={parametro} />;
   }
