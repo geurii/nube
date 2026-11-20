@@ -8,8 +8,8 @@ const {fontFamily} = loadFont('normal', {weights: ['900'], subsets: ['latin']});
 
 const AMARILLO = '#FFD60A';
 const BLANCO = '#FFFFFF';
-const TAMANO = 92;
-const BORDE = 14;
+const TAMANO = 62;
+const BORDE = 9;
 
 type Props = {escena: EscenaResuelta};
 
@@ -66,7 +66,7 @@ export const Subtitulos: React.FC<Props> = ({escena}) => {
           key={i}
           style={{
             display: 'inline-block',
-            margin: '0 26px',
+            margin: '0 16px',
             transform: `scale(${escala})`,
             color,
             WebkitTextStroke: capa === 'borde' ? `${BORDE}px #000` : undefined,
@@ -81,9 +81,9 @@ export const Subtitulos: React.FC<Props> = ({escena}) => {
 
   const estiloBase: React.CSSProperties = {
     position: 'absolute',
-    left: horizontal ? 240 : 70,
-    right: horizontal ? 240 : 70,
-    top: horizontal ? '52%' : '46%',
+    left: horizontal ? 200 : 60,
+    right: horizontal ? 200 : 60,
+    top: horizontal ? '84%' : '73%',
     transform: `translateY(-50%) scale(${entrada})`,
     display: 'flex',
     flexWrap: 'wrap',
@@ -92,7 +92,7 @@ export const Subtitulos: React.FC<Props> = ({escena}) => {
     rowGap: 10,
     fontFamily,
     fontWeight: 900,
-    fontSize: horizontal ? 80 : TAMANO,
+    fontSize: horizontal ? 54 : TAMANO,
     lineHeight: 1.12,
     textAlign: 'center',
     letterSpacing: 1,

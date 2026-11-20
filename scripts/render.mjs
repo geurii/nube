@@ -143,7 +143,7 @@ const inputProps = {guion, palabras, musica};
 const horizontal = guion.orientacion === 'horizontal';
 const composition = await selectComposition({
   serveUrl,
-  id: horizontal ? 'LargoHorizontal' : 'LoQueNoSabias',
+  id: guion.composicion === 'ninos' ? 'ColoresNinos' : horizontal ? 'LargoHorizontal' : 'LoQueNoSabias',
   inputProps,
   browserExecutable,
   timeoutInMilliseconds: 120000,
@@ -162,6 +162,12 @@ for (const e of tiempos.escenas) {
 }
 
 const primera = tiempos.escenas[0];
+if (guion.composicion === 'ninos') {
+  // Shorts infantiles: otra estructura (gancho visual < 3 s, el color se revela, cierre corto)
+  const h = primera.palabras;
+  if (h.length && h[h.length - 1].fin > 3.5) avisos.push(`El gancho termina en ${h[h.length - 1].fin.toFixed(1)} s; en niños debe caber en ~3 s.`);
+  if (total < 15 || total > 40) avisos.push(`Duración ${total.toFixed(1)} s: los Shorts de colores que funcionan duran 17-37 s.`);
+} else {
 if (primera.tipo !== 'hook') avisos.push('La primera escena debería ser tipo "hook".');
 const hook = tiempos.escenas.find((e) => e.tipo === 'hook');
 if (hook && hook.palabras.length && hook.palabras[hook.palabras.length - 1].fin > 4.5) {
@@ -178,6 +184,7 @@ if (!veredicto) avisos.push('No hay ninguna escena tipo "veredicto" (¿Estafador
 else {
   const restante = total - veredicto.inicio;
   if (restante < 10 || restante > 15) avisos.push(`El veredicto dura ${restante.toFixed(1)} s (ideal 10-15 s finales).`);
+}
 }
 if (guion.formato === 'short' && total > 61) avisos.push(`Un Short debe durar máximo 60 s y este dura ${total.toFixed(1)} s.`);
 

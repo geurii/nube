@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        id: [pinguinos-largo, pinguinos-s1, pinguinos-s2, pinguinos-s3]
+        id: [colores-rojo, colores-azul, colores-amarillo, colores-verde, colores-naranja, colores-morado, colores-rosa]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

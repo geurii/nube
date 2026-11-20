@@ -41,6 +41,12 @@ export type Guion = {
   audio: string;
   /** Opcional: forzar un archivo de música concreto dentro de /public */
   musica?: string | null;
+  /** "ninos" = Shorts infantiles de colores (src/ninos). Sin esto se usa la composición normal. */
+  composicion?: 'ninos';
+  /** Solo voz.mjs: voz neural, tono (Hz) y velocidad (%) propios de este guion. */
+  voz?: string;
+  tono?: number;
+  velocidad?: number;
   /** Opcional: esquina del personaje. Por defecto arriba-derecha. */
   personaje?: {esquina?: Esquina; visible?: boolean; imagen?: string | null};
   escenas: Escena[];

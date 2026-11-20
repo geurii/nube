@@ -1,0 +1,75 @@
+{
+  "titulo": "¡Aprende el color AZUL! 🐳 Colores para niños",
+  "formato": "short",
+  "plataforma": "youtube",
+  "composicion": "ninos",
+  "voz": "es-MX-DaliaNeural",
+  "tono": 6,
+  "velocidad": 4,
+  "audio": "audio/colores-azul.mp3",
+  "musica": null,
+  "personaje": {
+    "visible": false
+  },
+  "publicacion": {
+    "titulo": "¡Aprende el color AZUL! 🐳 Colores para niños",
+    "paraNinos": true,
+    "descripcion": "¡Vamos a aprender el color azul! Hoy vemos una ballena, una gota y un globo.\n\nIlustraciones animadas por computadora y narración con voz sintética.\nContenido creado para niños.\n\n#coloresparaniños #aprendelloscolores #videosinfantiles #shortsinfantiles #MiniAventuras "
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¡Hola, amiguitos! ¡Vamos a buscar el color azul!",
+      "fondo": [
+        "azul:globo",
+        "azul:color"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "¡Una ballena azul!",
+      "fondo": [
+        "azul:ballena"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "¡Una gota de agua azul!",
+      "fondo": [
+        "azul:gota"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "¡Y un globo azul!",
+      "fondo": [
+        "azul:globo"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "¿Qué color tienen todos? ¡Azul! ¡Es el color azul!",
+      "fondo": [
+        "azul:color",
+        "azul:ballena"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Dilo bien fuerte: ¡azul, azul, azul!",
+      "fondo": [
+        "azul:gota",
+        "azul:globo",
+        "azul:ballena"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "El azul es como el mar y como el cielo. ¡Suscríbete y sigue aprendiendo!",
+      "fondo": [
+        "azul:color",
+        "azul:gota"
+      ]
+    }
+  ]
+}

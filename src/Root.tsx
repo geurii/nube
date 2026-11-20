@@ -2,6 +2,7 @@ import React from 'react';
 import {CalculateMetadataFunction, Composition, staticFile} from 'remotion';
 import {getAudioDurationInSeconds} from '@remotion/media-utils';
 import {Video} from './Video';
+import {VideoNinos} from './ninos/VideoNinos';
 import type {Guion, PalabraAlineada, VideoProps} from './lib/tipos';
 import {COLA_FINAL, resolverTiempos} from './lib/tiempos';
 import guionJson from '../guion/guion.json';
@@ -40,6 +41,17 @@ export const Root: React.FC = () => {
         height={ALTO}
         fps={FPS_SHORT}
         durationInFrames={FPS_SHORT * 60}
+        defaultProps={propsPorDefecto}
+        calculateMetadata={metadatosCon(FPS_SHORT)}
+      />
+      {/* Shorts infantiles de colores: vertical 9:16, 60 fps, imágenes que cambian constantemente */}
+      <Composition
+        id="ColoresNinos"
+        component={VideoNinos}
+        width={ANCHO}
+        height={ALTO}
+        fps={FPS_SHORT}
+        durationInFrames={FPS_SHORT * 30}
         defaultProps={propsPorDefecto}
         calculateMetadata={metadatosCon(FPS_SHORT)}
       />

@@ -53,7 +53,7 @@ for (const id of ids) {
   if (sinVoz) {
     if (!fs.existsSync(audio)) throw new Error(`Falta la voz ${datos.audio}: genérala en tu laptop con npm run voz`);
   } else if (forzar || !fs.existsSync(audio)) correr('voz.mjs', ['--guion', guion]);
-  if (forzar || !fs.existsSync(mp4)) correr('render.mjs', ['--guion', guion, '--salida', mp4]);
+  if (forzar || !fs.existsSync(mp4)) correr('render.mjs', ['--guion', guion, '--salida', mp4, '--escala', '1']);
   if (forzar || !fs.existsSync(ligero)) {
     const mb = comprimir(mp4, ligero, 9.4, datos.formato === 'largo', datos.orientacion === 'horizontal');
     console.log(`  ✔ ${path.relative(raiz, ligero)} (${mb.toFixed(2)} MB)`);

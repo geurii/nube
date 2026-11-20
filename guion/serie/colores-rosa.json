@@ -1,0 +1,75 @@
+{
+  "titulo": "¡Aprende el color ROSA! 🐷 Colores para niños",
+  "formato": "short",
+  "plataforma": "youtube",
+  "composicion": "ninos",
+  "voz": "es-MX-DaliaNeural",
+  "tono": 6,
+  "velocidad": 4,
+  "audio": "audio/colores-rosa.mp3",
+  "musica": null,
+  "personaje": {
+    "visible": false
+  },
+  "publicacion": {
+    "titulo": "¡Aprende el color ROSA! 🐷 Colores para niños",
+    "paraNinos": true,
+    "descripcion": "¡Vamos a aprender el color rosa! Hoy vemos un cerdito, un helado y un corazón.\n\nIlustraciones animadas por computadora y narración con voz sintética.\nContenido creado para niños.\n\n#coloresparaniños #aprendelloscolores #videosinfantiles #shortsinfantiles #MiniAventuras "
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¡Oink, oink! ¿De qué color es el cerdito?",
+      "fondo": [
+        "rosa:cerdito",
+        "rosa:color"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Un cerdito rosa.",
+      "fondo": [
+        "rosa:cerdito"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Un helado rosa, ¡mmm, qué rico!",
+      "fondo": [
+        "rosa:helado"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Y un corazón rosa.",
+      "fondo": [
+        "rosa:corazon"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "¡Es el color rosa!",
+      "fondo": [
+        "rosa:color",
+        "rosa:corazon"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Cántalo: ¡rosa, rosa, rosa!",
+      "fondo": [
+        "rosa:helado",
+        "rosa:cerdito",
+        "rosa:corazon"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Qué cosas rosas ves tú? ¡Suscríbete y aprende más colores!",
+      "fondo": [
+        "rosa:color",
+        "rosa:cerdito"
+      ]
+    }
+  ]
+}

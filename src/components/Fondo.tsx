@@ -14,6 +14,7 @@ import {REGISTRO_PIXEL} from './fondos/Pixel';
 import {REGISTRO_ARTICO} from './fondos/PixelArtico';
 import {REGISTRO_H} from './fondos/PixelH';
 import {REGISTRO_PINGUINOS} from './fondos/PixelPinguinos';
+import {REGISTRO_SECRETOS} from './fondos/PixelSecretos';
 
 type Props = {
   fondo: string;
@@ -58,7 +59,9 @@ export const Fondo: React.FC<Props> = ({fondo, indice, duracion}) => {
       <Img src={staticFile(fondo)} style={estilo} />
     );
   } else {
-    const [nombre, parametro] = fondo.split(':');
+    const corte = fondo.indexOf(':');
+    const nombre = corte < 0 ? fondo : fondo.slice(0, corte);
+    const parametro = corte < 0 ? undefined : fondo.slice(corte + 1);
     const horizontal = width > height;
     const Escena =
       (horizontal ? REGISTRO_H[nombre] : undefined) ??
@@ -66,6 +69,7 @@ export const Fondo: React.FC<Props> = ({fondo, indice, duracion}) => {
       REGISTRO_PIXEL[nombre] ??
       REGISTRO_ARTICO[nombre] ??
       REGISTRO_PINGUINOS[nombre] ??
+      REGISTRO_SECRETOS[nombre] ??
       (horizontal ? REGISTRO_H.pixelmisterio : REGISTRO_PIXEL.pixelmisterio);
     contenido = <Escena duracion={duracion / fps} parametro={parametro} />;
   }

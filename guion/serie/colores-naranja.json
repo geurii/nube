@@ -1,0 +1,75 @@
+{
+  "titulo": "¡Aprende el color NARANJA! 🥕 Colores para niños",
+  "formato": "short",
+  "plataforma": "youtube",
+  "composicion": "ninos",
+  "voz": "es-MX-DaliaNeural",
+  "tono": 6,
+  "velocidad": 4,
+  "audio": "audio/colores-naranja.mp3",
+  "musica": null,
+  "personaje": {
+    "visible": false
+  },
+  "publicacion": {
+    "titulo": "¡Aprende el color NARANJA! 🥕 Colores para niños",
+    "paraNinos": true,
+    "descripcion": "¡Vamos a aprender el color naranja! Hoy vemos una zanahoria, una naranja y una calabaza.\n\nIlustraciones animadas por computadora y narración con voz sintética.\nContenido creado para niños.\n\n#coloresparaniños #aprendelloscolores #videosinfantiles #shortsinfantiles #MiniAventuras "
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Qué es crujiente y de color naranja? ¡Mira!",
+      "fondo": [
+        "naranja:zanahoria",
+        "naranja:color"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Una zanahoria naranja.",
+      "fondo": [
+        "naranja:zanahoria"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Una naranja naranja, ¡qué jugosa!",
+      "fondo": [
+        "naranja:naranja"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Y una calabaza naranja y redonda.",
+      "fondo": [
+        "naranja:calabaza"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "¡Es el color naranja! ¡Naranja!",
+      "fondo": [
+        "naranja:color",
+        "naranja:naranja"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Dilo conmigo: ¡naranja, naranja, naranja!",
+      "fondo": [
+        "naranja:calabaza",
+        "naranja:zanahoria",
+        "naranja:naranja"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Qué cosas naranjas ves tú? ¡Suscríbete y aprende más colores!",
+      "fondo": [
+        "naranja:color",
+        "naranja:calabaza"
+      ]
+    }
+  ]
+}
