@@ -143,7 +143,7 @@ const inputProps = {guion, palabras, musica};
 const horizontal = guion.orientacion === 'horizontal';
 const composition = await selectComposition({
   serveUrl,
-  id: guion.composicion === 'ninos' ? 'ColoresNinos' : horizontal ? 'LargoHorizontal' : 'LoQueNoSabias',
+  id: guion.composicion === 'ninos' ? (horizontal ? 'ColoresNinosLargo' : 'ColoresNinos') : horizontal ? 'LargoHorizontal' : 'LoQueNoSabias',
   inputProps,
   browserExecutable,
   timeoutInMilliseconds: 120000,

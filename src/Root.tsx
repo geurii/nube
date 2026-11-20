@@ -55,6 +55,17 @@ export const Root: React.FC = () => {
         defaultProps={propsPorDefecto}
         calculateMetadata={metadatosCon(FPS_SHORT)}
       />
+      {/* Video largo infantil: horizontal 16:9, 30 fps */}
+      <Composition
+        id="ColoresNinosLargo"
+        component={VideoNinos}
+        width={ALTO}
+        height={ANCHO}
+        fps={FPS_LARGO}
+        durationInFrames={FPS_LARGO * 60}
+        defaultProps={propsPorDefecto}
+        calculateMetadata={metadatosCon(FPS_LARGO)}
+      />
       {/* Video largo: horizontal 16:9 */}
       <Composition
         id="LargoHorizontal"

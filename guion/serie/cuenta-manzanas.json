@@ -1,0 +1,79 @@
+{
+  "formato": "short",
+  "plataforma": "youtube",
+  "composicion": "ninos",
+  "voz": "es-MX-DaliaNeural",
+  "tono": 6,
+  "velocidad": 4,
+  "musica": null,
+  "personaje": {
+    "visible": false
+  },
+  "titulo": "Contamos manzanas del 1 al 5 🍎 Aprende a contar",
+  "publicacion": {
+    "titulo": "Contamos manzanas del 1 al 5 🍎 Aprende a contar",
+    "paraNinos": true,
+    "descripcion": "¡Vamos a contar manzanas del uno al cinco!\n\nIlustraciones animadas por computadora y narración con voz sintética.\nContenido creado para niños.\n\n#aprenderacontar #numerosparaniños #videosinfantiles #contarparaniños #MiniAventuras "
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¡Vamos a contar! ¿Cuántos manzanas ves?",
+      "fondo": [
+        "rojo:manzana*3",
+        "rojo:manzana*5"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Una manzana.",
+      "fondo": [
+        "rojo:manzana*1"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Dos manzanas.",
+      "fondo": [
+        "rojo:manzana*2"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Tres manzanas.",
+      "fondo": [
+        "rojo:manzana*3"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Cuatro manzanas.",
+      "fondo": [
+        "rojo:manzana*4"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Cinco manzanas. ¡Cinco!",
+      "fondo": [
+        "rojo:manzana*5"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Uno, dos, tres, cuatro, cinco. ¡Cuenta conmigo!",
+      "fondo": [
+        "rojo:manzana*5"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¡Muy bien! Ya sabes contar hasta cinco. ¡Suscríbete para contar más!",
+      "fondo": [
+        "rojo:color",
+        "rojo:manzana*5"
+      ]
+    }
+  ],
+  "audio": "audio/cuenta-manzanas.mp3"
+}

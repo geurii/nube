@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        id: [colores-rojo, colores-azul, colores-amarillo, colores-verde, colores-naranja, colores-morado, colores-rosa]
+        id: [colores-rojo, colores-azul, colores-amarillo, colores-verde, colores-naranja, colores-morado, colores-rosa, sonidos-pollito, sonidos-rana, sonidos-cerdito, sonidos-ballena, cuenta-manzanas, cuenta-pollitos, cuenta-globos, largo-colores]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

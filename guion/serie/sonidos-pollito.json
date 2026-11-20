@@ -1,0 +1,61 @@
+{
+  "formato": "short",
+  "plataforma": "youtube",
+  "composicion": "ninos",
+  "voz": "es-MX-DaliaNeural",
+  "tono": 6,
+  "velocidad": 4,
+  "musica": null,
+  "personaje": {
+    "visible": false
+  },
+  "titulo": "¿Qué sonido hace el pollito? 🐥 Sonidos de animales para niños",
+  "publicacion": {
+    "titulo": "¿Qué sonido hace el pollito? 🐥 Sonidos de animales para niños",
+    "paraNinos": true,
+    "descripcion": "¡Escucha qué sonido hace el pollito!\n\nIlustraciones animadas por computadora y narración con voz sintética.\nContenido creado para niños.\n\n#sonidosdeanimales #pollito #videosinfantiles #aprendeconmigo #MiniAventuras "
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Qué sonido hace el pollito? ¡Escucha!",
+      "fondo": [
+        "amarillo:pollito",
+        "amarillo:pollito"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El pollito dice: ¡piu, piu, piu!",
+      "fondo": [
+        "amarillo:pollito"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "¡Piu, piu! ¡Qué pollito tan chiquito!",
+      "fondo": [
+        "amarillo:pollito",
+        "amarillo:color"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Ahora tú. ¡Repite conmigo: piu, piu, piu!",
+      "fondo": [
+        "amarillo:pollito",
+        "amarillo:color",
+        "amarillo:pollito"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Qué animal quieres escuchar ahora? ¡Suscríbete para más sonidos!",
+      "fondo": [
+        "amarillo:color",
+        "amarillo:pollito"
+      ]
+    }
+  ],
+  "audio": "audio/sonidos-pollito.mp3"
+}

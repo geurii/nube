@@ -1,0 +1,61 @@
+{
+  "formato": "short",
+  "plataforma": "youtube",
+  "composicion": "ninos",
+  "voz": "es-MX-DaliaNeural",
+  "tono": 6,
+  "velocidad": 4,
+  "musica": null,
+  "personaje": {
+    "visible": false
+  },
+  "titulo": "¿Qué sonido hace el cerdito? 🐷 Sonidos de animales para niños",
+  "publicacion": {
+    "titulo": "¿Qué sonido hace el cerdito? 🐷 Sonidos de animales para niños",
+    "paraNinos": true,
+    "descripcion": "¡Escucha qué sonido hace el cerdito!\n\nIlustraciones animadas por computadora y narración con voz sintética.\nContenido creado para niños.\n\n#sonidosdeanimales #cerdito #videosinfantiles #aprendeconmigo #MiniAventuras "
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Qué sonido hace el cerdito? ¡Escucha!",
+      "fondo": [
+        "rosa:cerdito",
+        "rosa:cerdito"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El cerdito dice: ¡oink, oink, oink!",
+      "fondo": [
+        "rosa:cerdito"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "¡Oink, oink! ¡Qué cerdito tan simpático!",
+      "fondo": [
+        "rosa:cerdito",
+        "rosa:color"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Ahora tú. ¡Repite conmigo: oink, oink, oink!",
+      "fondo": [
+        "rosa:cerdito",
+        "rosa:color",
+        "rosa:cerdito"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Qué animal quieres escuchar ahora? ¡Suscríbete para más sonidos!",
+      "fondo": [
+        "rosa:color",
+        "rosa:cerdito"
+      ]
+    }
+  ],
+  "audio": "audio/sonidos-cerdito.mp3"
+}

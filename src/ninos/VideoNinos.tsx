@@ -11,13 +11,21 @@ const {fontFamily: FUENTE_TITULO} = loadFont();
 /** Cada imagen dura como mucho esto (segundos): el ojo del niño siempre tiene algo nuevo. */
 const MAX_SEGUNDOS_POR_IMAGEN = 1.7;
 
-type Spec = {color: ColorId; item: string};
+type Spec = {color: ColorId; item: string; n: number};
 
-/** "rojo:manzana" -> {color:'rojo', item:'manzana'}; "rojo:color" = estallido del color */
+/**
+ * "rojo:manzana"   -> una manzana roja
+ * "rojo:manzana*3" -> tres manzanas (para contar)
+ * "rojo:color"     -> estallido del color
+ */
 const leerSpec = (s: string): Spec => {
-  const [c, i] = s.split(':');
-  return {color: (PALETAS[c as ColorId] ? c : 'rojo') as ColorId, item: i ?? 'color'};
+  const [c, resto] = s.split(':');
+  const [i, cuantos] = (resto ?? 'color').split('*');
+  return {color: (PALETAS[c as ColorId] ? c : 'rojo') as ColorId, item: i, n: Math.max(1, Number(cuantos ?? 1) || 1)};
 };
+
+/** Plural sencillo para los rótulos al contar ("3 MANZANAS") */
+const plural = (nombre: string) => (/[AEIOUÁÉÍÓÚ]$/.test(nombre) ? `${nombre}S` : `${nombre}ES`);
 
 const ITEMS_POR_COLOR: Record<ColorId, string[]> = {
   rojo: ['manzana', 'fresa', 'mariquita'],
@@ -125,7 +133,8 @@ const Rotulo: React.FC<{texto: string; p: Paleta; tam: number}> = ({texto, p, ta
 // ------------------------------------------------------------------ una imagen (un tramo)
 const Imagen: React.FC<{spec: Spec; variante: number; primera: boolean}> = ({spec, variante, primera}) => {
   const frame = useCurrentFrame();
-  const {fps, width} = useVideoConfig();
+  const {fps, width, height} = useVideoConfig();
+  const horizontal = width > height; // video largo 16:9
   const p = PALETAS[spec.color];
   const t = frame / fps;
 
@@ -138,7 +147,15 @@ const Imagen: React.FC<{spec: Spec; variante: number; primera: boolean}> = ({spe
   const giro = Math.sin(t * 4.1) * 5;
   const aplasta = 1 + Math.sin(t * 5.2 + Math.PI / 2) * 0.025;
 
-  const tam = 760;
+  const tam = horizontal ? height * 0.55 : 760;
+  const topObjeto = horizontal ? height * 0.2 : 360;
+
+  // Varias copias (para contar): se reparten en una fila o en dos filas
+  const copias = spec.n;
+  const filas = copias > 3 ? 2 : 1;
+  const porFila = Math.ceil(copias / filas);
+  const tamCopia = copias === 1 ? tam : Math.min(tam, (horizontal ? width * 0.8 : width * 0.92) / porFila) * (filas === 2 ? 0.95 : 1);
+  const nombre = NOMBRES[spec.item] ?? spec.item.toUpperCase();
 
   return (
     <AbsoluteFill style={{clipPath: clip}}>
@@ -149,45 +166,62 @@ const Imagen: React.FC<{spec: Spec; variante: number; primera: boolean}> = ({spe
           {/* estallido: la palabra del color grande + objetos girando alrededor */}
           {ITEMS_POR_COLOR[spec.color].map((id, k) => {
             const ang = (t * 55 + k * 120) * (Math.PI / 180);
-            const rx = 330;
-            const ry = 250;
+            const rx = horizontal ? 560 : 330;
+            const ry = horizontal ? 200 : 250;
+            const tc = horizontal ? 250 : 300;
             return (
               <div
                 key={id}
                 style={{
                   position: 'absolute',
-                  left: width / 2 + Math.cos(ang) * rx - 150,
-                  top: 780 + Math.sin(ang) * ry - 150,
+                  left: width / 2 + Math.cos(ang) * rx - tc / 2,
+                  top: (horizontal ? height * 0.5 : 780) + Math.sin(ang) * ry - tc / 2,
                   transform: `scale(${interpolate(pop, [0, 1], [0, 1])}) rotate(${Math.sin(t * 3 + k) * 8}deg)`,
                   zIndex: 1,
                 }}
               >
-                <Objeto id={id} uid={`o${variante}${k}`} size={300} />
+                <Objeto id={id} uid={`o${variante}${k}`} size={tc} />
               </div>
             );
           })}
-          <div style={{position: 'absolute', left: 0, right: 0, top: 640, display: 'flex', justifyContent: 'center', zIndex: 5}}>
-            <Rotulo texto={p.nombre} p={p} tam={p.nombre.length > 6 ? 190 : 250} />
+          <div style={{position: 'absolute', left: 0, right: 0, top: horizontal ? height * 0.27 : 640, display: 'flex', justifyContent: 'center', zIndex: 5}}>
+            <Rotulo texto={p.nombre} p={p} tam={horizontal ? 230 : p.nombre.length > 6 ? 190 : 250} />
           </div>
         </>
       ) : (
         <>
-          <div
-            style={{
-              position: 'absolute',
-              left: (width - tam) / 2,
-              top: 360 - bote,
-              width: tam,
-              height: tam,
-              transform: `scale(${interpolate(pop, [0, 1], [0.1, 1]) * aplasta}) rotate(${giro}deg)`,
-              transformOrigin: '50% 90%',
-              filter: 'drop-shadow(0 26px 22px rgba(0,0,0,0.28))',
-            }}
-          >
-            <Objeto id={spec.item} uid={`i${variante}`} size={tam} />
-          </div>
-          <div style={{position: 'absolute', left: 0, right: 0, top: 150, display: 'flex', justifyContent: 'center'}}>
-            <Rotulo texto={NOMBRES[spec.item] ?? spec.item.toUpperCase()} p={p} tam={118} />
+          {Array.from({length: copias}).map((_, k) => {
+            const fila = Math.floor(k / porFila);
+            const col = k % porFila;
+            const enFila = fila === filas - 1 ? copias - fila * porFila : porFila;
+            const x = copias === 1 ? (width - tamCopia) / 2 : (width - enFila * tamCopia) / 2 + col * tamCopia;
+            // varias copias: el bloque se centra en vertical (por debajo del rótulo y por encima del subtítulo)
+            const paso = tamCopia * (filas === 2 ? 0.88 : 1);
+            const centroY = horizontal ? height * 0.5 : 740;
+            const y = copias === 1 ? topObjeto : centroY - (filas * paso) / 2 + fila * paso + (horizontal ? 20 : 40);
+            // cada copia entra un poquito después de la anterior: se "cuenta" visualmente
+            const popK = spring({frame: frame - 2 - k * 7, fps, config: {damping: 7, stiffness: 150, mass: 0.7}});
+            const boteK = Math.abs(Math.sin(t * 5.2 + k * 0.7)) * (copias === 1 ? 26 : 14);
+            return (
+              <div
+                key={k}
+                style={{
+                  position: 'absolute',
+                  left: x,
+                  top: y - boteK,
+                  width: tamCopia,
+                  height: tamCopia,
+                  transform: `scale(${interpolate(popK, [0, 1], [0.1, 1]) * aplasta}) rotate(${giro * (k % 2 ? -1 : 1)}deg)`,
+                  transformOrigin: '50% 90%',
+                  filter: 'drop-shadow(0 22px 18px rgba(0,0,0,0.26))',
+                }}
+              >
+                <Objeto id={spec.item} uid={`i${variante}${k}`} size={tamCopia} />
+              </div>
+            );
+          })}
+          <div style={{position: 'absolute', left: 0, right: 0, top: horizontal ? 36 : 150, display: 'flex', justifyContent: 'center'}}>
+            <Rotulo texto={copias > 1 ? `${copias} ${plural(nombre)}` : nombre} p={p} tam={horizontal ? 104 : copias > 1 ? 100 : 118} />
           </div>
         </>
       )}

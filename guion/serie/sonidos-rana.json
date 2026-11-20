@@ -1,0 +1,61 @@
+{
+  "formato": "short",
+  "plataforma": "youtube",
+  "composicion": "ninos",
+  "voz": "es-MX-DaliaNeural",
+  "tono": 6,
+  "velocidad": 4,
+  "musica": null,
+  "personaje": {
+    "visible": false
+  },
+  "titulo": "¿Qué sonido hace la rana? 🐸 Sonidos de animales para niños",
+  "publicacion": {
+    "titulo": "¿Qué sonido hace la rana? 🐸 Sonidos de animales para niños",
+    "paraNinos": true,
+    "descripcion": "¡Escucha qué sonido hace la rana!\n\nIlustraciones animadas por computadora y narración con voz sintética.\nContenido creado para niños.\n\n#sonidosdeanimales #rana #videosinfantiles #aprendeconmigo #MiniAventuras "
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Qué sonido hace la rana? ¡Escucha!",
+      "fondo": [
+        "verde:rana",
+        "verde:rana"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "La rana dice: ¡croac, croac, croac!",
+      "fondo": [
+        "verde:rana"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "¡Croac, croac! ¡Qué rana tan saltarina!",
+      "fondo": [
+        "verde:rana",
+        "verde:color"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Ahora tú. ¡Repite conmigo: croac, croac, croac!",
+      "fondo": [
+        "verde:rana",
+        "verde:color",
+        "verde:rana"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Qué animal quieres escuchar ahora? ¡Suscríbete para más sonidos!",
+      "fondo": [
+        "verde:color",
+        "verde:rana"
+      ]
+    }
+  ],
+  "audio": "audio/sonidos-rana.mp3"
+}
