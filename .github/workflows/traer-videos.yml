@@ -1,0 +1,44 @@
+name: Traer videos
+
+# Junta los videos ya renderizados (de una ejecucion de "Render videos") en la rama "videos"
+# para poder bajarlos con git, sin ventanas de descarga. No vuelve a renderizar nada.
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: 'Numero largo de la ejecucion de Render videos (el de la URL .../runs/NUMERO)'
+        required: true
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  traer:
+    runs-on: ubuntu-24.04
+    env:
+      RUN_ID: ${{ inputs.run_id }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: video-*
+          merge-multiple: true
+          path: bajados
+          run-id: ${{ inputs.run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publicar en la rama videos
+        run: |
+          set -e
+          ls -la bajados
+          mkdir -p /tmp/salida
+          cp bajados/*-subida.mp4 /tmp/salida/
+          cp bajados/largo-colores.mp4 /tmp/salida/ 2>/dev/null || true
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout --orphan videos
+          git rm -rf . > /dev/null
+          cp /tmp/salida/* .
+          git add -A
+          git commit -m "Videos renderizados (ejecucion $RUN_ID)"
+          git push --force origin videos
