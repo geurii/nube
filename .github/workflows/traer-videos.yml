@@ -33,7 +33,13 @@ jobs:
           ls -la bajados
           mkdir -p /tmp/salida
           cp bajados/*-subida.mp4 /tmp/salida/
-          cp bajados/largo-colores.mp4 /tmp/salida/ 2>/dev/null || true
+          # GitHub no deja subir archivos de mas de 100 MB: el largo (241 MB) se reduce a ~90 MB
+          # (1080p, 3 Mbps) para poder bajarlo con git. El original sigue en el artefacto de Render videos.
+          if [ -f bajados/largo-colores.mp4 ]; then
+            ffmpeg -y -loglevel error -i bajados/largo-colores.mp4 -c:v libx264 -preset medium -b:v 3000k -maxrate 3400k -bufsize 6000k -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart /tmp/salida/largo-colores-1080p.mp4
+          fi
+          ls -la /tmp/salida
+          find /tmp/salida -size +95M -print -delete
           git config user.name "github-actions"
           git config user.email "actions@users.noreply.github.com"
           git checkout --orphan videos
