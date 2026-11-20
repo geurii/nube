@@ -44,6 +44,8 @@ jobs:
           fi
           ls -la /tmp/salida
           find /tmp/salida -size +95M -print -delete
+          # Los videos completos bajados NO deben entrar al commit (superan el limite de 100 MB)
+          rm -rf bajados
           git config user.name "github-actions"
           git config user.email "actions@users.noreply.github.com"
           git checkout --orphan videos
