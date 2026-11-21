@@ -1,0 +1,60 @@
+{
+  "titulo": "🔺 El misterio del Triángulo de las Bermudas",
+  "formato": "short",
+  "plataforma": "youtube",
+  "audio": "audio/oficina-bermuda-triangle.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "publicacion": {
+    "titulo": "🔺 El misterio del Triángulo de las Bermudas",
+    "descripcion": "Descubre el origen del mito y la verdad detrás de los supuestos desaparecidos. Un dato curioso que pocos conocen.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://es.wikipedia.org/wiki/Bermuda_Triangle · https://en.wikipedia.org/wiki/Bermuda_Triangle\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do"
+  },
+  "estado": "rechazado-necesita-revision",
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que una zona del Atlántico entre Florida, Bermudas y Puerto Rico ha despertado más de mil historias de desapariciones?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El mito nació en 1950 con un artículo del Miami Herald y se alimentó con casos como el del escuadrón Flight 19 en mil novecientos cuarenta y cinco.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Desde entonces, autores como Gaddis, Berlitz y Winer añadieron relatos de fenómenos sobrenaturales, ampliando el triángulo a veces hasta Irlanda.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Investigaciones oficiales y científicas han concluido que no hay evidencia de actividad anómala; la mayoría de los incidentes se explican por errores humanos o fenómenos naturales.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Según la fuente, el álbum octavo de Buckethead, titulado \"Bermuda Triangle\", es una colaboración electrónica con Extrakd y no está vinculado al misterio marítimo.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Crees que el Triángulo de las Bermudas sigue guardando secretos? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}
