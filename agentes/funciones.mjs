@@ -16,6 +16,8 @@ const config = (leer(path.join('agentes', 'canales-propios.json'), {canales: []}
 const estado = leer(path.join(carpeta, 'estado.json'), null);
 if (!estado) { console.log('Funciones: sin estado.'); process.exit(0); }
 fs.mkdirSync(dirF, {recursive: true});
+const TODOS_LOS_PUESTOS = ["Directora de contenido","Enlace de datos","Coordinador de producción","Jefa de calidad","Investigador de temas","Cazador de fórmulas","Vigía de tendencias","Guionista","Editor de guion","Titulista","Redactor de descripción","Especialista en hashtags","Verificador de datos","Auditor de fuentes","Auditor de normas","Revisor de nombres","Revisor de ganchos","Escenógrafo","Pintor de imágenes","Locutor","Técnico de render","Publicador","Crítico: adolescente","Crítica: universitaria","Crítico: padre trabajador","Crítico: escéptico","Crítica: fan del misterio","Crítica: ama de casa","Crítico: joven dominicano","Crítico: abuelo"];
+for (const r of TODOS_LOS_PUESTOS) estado.agentes[r] = estado.agentes[r] ?? {estado: 'trabajando', actividad: 'pensando', tarea: 'En su puesto, preparando el próximo ciclo.'};
 const reloj = leer(path.join(dirF, 'reloj.json'), {});
 const vistas = leer(path.join(carpeta, 'vistas.json'), null);
 const analitica = leer(path.join(carpeta, 'analitica.json'), null);
