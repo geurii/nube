@@ -8,6 +8,7 @@ import path from 'node:path';
 import {puestosDeLaOficina, mesaDePublicacion} from './puestos.mjs';
 import {avisarTelefono} from './aviso.mjs';
 import {pintarEscenas} from './pintor.mjs';
+import {enGarantia} from './garantia.mjs';
 import {chatAlternativo, proveedoresConLlave, modelosDisponibles} from './llm.mjs';
 
 const KEY = process.env.GROQ_API_KEY;
@@ -425,7 +426,8 @@ try {
     const nombres = (revision.nombres_de_personas ?? []).filter((n) => typeof n === 'string' && n.trim() && textoGuion.includes(n.trim().toLowerCase()));
     problemas = [...propios, ...(revision.problemas ?? []), ...(nombres.length ? [{frase: nombres.join(', '), motivo: 'El guion nombra a personas reales. Usa su papel ("el líder", "un científico", "el capitán"), aunque el material traiga el nombre.'}] : [])];
     // PUERTA DE CALIDAD: el Editor manda. Mínimo 7/10 (6/10 solo en el último intento); si no, se reescribe con su crítica.
-    const umbral = intento >= 4 ? 6 : 7;
+    const GARANTIA = enGarantia(CANAL_ID);
+    const umbral = GARANTIA ? (intento >= 3 ? 5 : 6) : intento >= 4 ? 6 : 7; // con garantía de publicación el estilo se relaja; la verdad nunca
     if (puntaje !== null && puntaje < umbral) problemas.push({frase: '(calidad)', motivo: `El Editor puso ${puntaje}/10 (mínimo ${umbral}). Reescribe arreglando esto: ${critica}`});
     aprobado = problemas.length === 0 && revision.aprobado !== false;
     informe.push(`## Intento ${intento}: ${aprobado ? 'APROBADO' : 'RECHAZADO'}`, critica ? `Editor (${puntaje ?? '?'}/10): ${critica}` : '', ...problemas.map((p) => `- "${p.frase}" → ${p.motivo}`), '');

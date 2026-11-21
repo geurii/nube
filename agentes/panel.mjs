@@ -6,6 +6,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {revisarVideo} from './video-gemini.mjs';
+import {enGarantia} from './garantia.mjs';
 import {avisarTelefono} from './aviso.mjs';
 
 const KEY = process.env.GROQ_API_KEY;
@@ -111,8 +112,10 @@ try {
   const gustos = votos.filter((v) => v.leGusto).length;
   const pasan = votos.filter((v) => v.pasa3).length;
   const gemMalo = gem && (gem.recomendacion === 'no subir' || Number(gem.nota_general) < 6 || gem.subtitulos?.tapados_o_cortados === true || (Array.isArray(gem.defectos_graves) && gem.defectos_graves.length > 0));
-  const aprobado = gustos >= Math.ceil(votos.length * 0.6) && pasan >= Math.ceil(votos.length * 0.5) && !gemMalo;
-  const resumen = `${gem ? `Gemini (${gem.modelo}) lo vio: ${gem.nota_general}/10, ${gem.recomendacion}. ` : ''}${gustos} de ${votos.length} aprobaron, ${pasan} pasaron los primeros 3 segundos, ${votos.filter((v) => v.compartiria).length} lo compartirían.`;
+  const GARANTIA = enGarantia(CANAL);
+  // Con garantía de publicación (más de 7 h sin publicar) el voto del público ya no bloquea; solo un defecto grave que vea Gemini.
+  const aprobado = GARANTIA ? !gemMalo : gustos >= Math.ceil(votos.length * 0.6) && pasan >= Math.ceil(votos.length * 0.5) && !gemMalo;
+  const resumen = `${GARANTIA ? '[Garantía de publicación activa] ' : ''}${gem ? `Gemini (${gem.modelo}) lo vio: ${gem.nota_general}/10, ${gem.recomendacion}. ` : ''}${gustos} de ${votos.length} aprobaron, ${pasan} pasaron los primeros 3 segundos, ${votos.filter((v) => v.compartiria).length} lo compartirían.`;
   const mejora = String(r.mejora_principal ?? '').slice(0, 240);
   fs.writeFileSync(path.join(carpeta, `panel-${ID}.json`), JSON.stringify({fecha: new Date().toISOString(), id: ID, aprobado, resumen, mejora, gemini: gem, votos}, null, 2));
 
