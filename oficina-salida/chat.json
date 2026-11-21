@@ -1,5 +1,21 @@
 [
   {
+    "id": "mwqr1ocoj",
+    "de": "jules",
+    "texto": "El vídeo del enigma del Bloop está en proceso de carga y, según el tiempo típico, debería estar visible en YouTube en los próximos 15‑30 minutos. Te avisaré en el chat del equipo tan pronto se confirme la publicación.",
+    "fecha": "2026-11-21T18:36:33.284Z",
+    "orden": "Aseguren que el video se suba y se confirme en el chat del equipo dentro de los 30 minutos.",
+    "nivel": 4,
+    "canal": "lqns"
+  },
+  {
+    "id": "mwqr1ocot",
+    "de": "tu",
+    "texto": "Cuánto suele tardar avísame cuando esté subido",
+    "fecha": "2026-11-21T18:36:19.516Z",
+    "canal": "lqns"
+  },
+  {
     "id": "mwqr0ihcj",
     "de": "jules",
     "texto": "No, el video del enigma del Bloop aún no se ha subido a YouTube. Estamos a la espera de la carga final.",
