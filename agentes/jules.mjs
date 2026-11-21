@@ -57,6 +57,9 @@ for (const archivo of pendientes) {
   const ordenes = leer(path.join(carpeta, 'ordenes.json'), []);
   const meta = leer(path.join(carpeta, 'analitica.json'), null)?.meta;
   const ayudas = leer(path.join(carpeta, 'ayudas.json'), {});
+  const progreso = leer(path.join(carpeta, 'progreso.json'), null);
+  const subidas = leer(path.join(RAIZ, 'notificaciones.json'), []).filter((n) => /Video subido|Video listo|panel rechaz|panel aprob/i.test(n.titulo)).slice(0, 4).map((n) => `${n.fecha.slice(0, 16)} ${n.titulo}: ${String(n.texto).slice(0, 160)}`);
+  const ultimoVideo = [...(vistas?.videos ?? [])].sort((a, b) => new Date(b.publicado) - new Date(a.publicado))[0];
   const agentes = Object.entries(estado.agentes ?? {});
   const parados = agentes.filter(([, a]) => a.estado === 'esperando_decision').map(([n]) => n);
   const dias = Math.max(0, Math.ceil((new Date('2026-12-13T23:59:59-04:00').getTime() - Date.now()) / 86400000));
@@ -65,12 +68,15 @@ for (const archivo of pendientes) {
     vistas?.total !== undefined ? `Vistas reales del canal: ${vistas.total} en sus últimos videos; ganadas en el último ciclo: ${vistas.ganadasDesdeElUltimoCiclo ?? 0}.` : 'Vistas del canal: aún no disponibles.',
     meta ? `Avance a la monetización (datos reales de YouTube): ${meta.suscriptores ?? '?'} suscriptores (faltan ${meta.faltanSuscriptores ?? '?'} para 1.000); ${meta.horas12Meses} horas vistas en 12 meses (faltan ${meta.faltanHoras} para 4.000); ${meta.vistasShorts90} vistas de Shorts en 90 días (10 millones es la alternativa).` : 'Suscriptores y horas vistas: aún sin conectar la analítica.',
     ayudas?.iniciativas?.length ? 'Iniciativas propias que propuso tu equipo: ' + ayudas.iniciativas.slice(0, 4).join(' | ') : 'Tu equipo aún no ha propuesto iniciativas.',
+    ultimoVideo ? `Último video PÚBLICO en el canal (dato real de YouTube): "${ultimoVideo.titulo}", publicado ${String(ultimoVideo.publicado).slice(0, 16)} UTC.` : 'Aún no hay datos del último video público.',
+    progreso ? `Progreso del ciclo actual: ${progreso.porcentaje}% — ${progreso.etapa}.` : '',
+    subidas.length ? `Últimos avisos de producción y subida (reales): ${subidas.join(' | ')}` : '',
     `Totales de la oficina: ${JSON.stringify(estado.totales ?? {})}. Puestos esperando una decisión: ${parados.length ? parados.join(', ') : 'ninguno'}.`,
     ordenes.length ? `Última orden que diste: "${ordenes[0].orden}" (nivel ${ordenes[0].nivel}).` : 'Aún no has dado órdenes por este chat.',
   ].join('\n');
   const historia = chat.slice(0, 14).reverse().map((m) => `${m.de === 'tu' ? 'DUEÑO' : 'JULES'}: ${m.texto}`).join('\n');
   const r = await llamar([
-    {role: 'system', content: 'Eres Jules, la directora de una oficina de 30 profesionales que hacen videos de misterio y datos curiosos para YouTube. Eres la jefa más exigente: perfeccionista, ambiciosa, directa y presionas sin parar, pero hablas con respeto al DUEÑO del canal, que es quien te da la presión y las órdenes. Meta de la empresa: monetizar antes del 13 de diciembre de 2026. Reglas: usa SOLO las cifras del CONTEXTO, nunca inventes datos ni prometas un número de vistas; no te inventes cosas que la oficina ya hizo. Si el dueño te exige más, tú conviertes eso en UNA orden concreta y más dura para tus 30 empleados. Responde de forma natural y directa (máx. 120 palabras); puedes conversar de lo que el dueño quiera sobre el canal, la oficina, ideas, dudas o su plan, no solo de órdenes, en español, sin tecnicismos. Responde SOLO con JSON: {"respuesta": "lo que le dices al dueño", "orden": "la orden para el equipo (una frase) o cadena vacía si no hay", "nivel": número de 1 a 5 con la presión que aplicarás}.'},
+    {role: 'system', content: 'Eres Jules, la directora de una oficina de 30 profesionales que hacen videos de misterio y datos curiosos para YouTube. Eres la jefa más exigente: perfeccionista, ambiciosa, directa y presionas sin parar, pero hablas con respeto al DUEÑO del canal, que es quien te da la presión y las órdenes. Meta de la empresa: monetizar antes del 13 de diciembre de 2026. Reglas: usa SOLO las cifras del CONTEXTO; si te preguntan si un video ya se subió, responde SOLO con lo que digan el último video público y los avisos reales del CONTEXTO, y si no lo sabes, dilo; nunca inventes datos ni prometas un número de vistas; no te inventes cosas que la oficina ya hizo. Si el dueño te exige más, tú conviertes eso en UNA orden concreta y más dura para tus 30 empleados. Responde de forma natural y directa (máx. 120 palabras); puedes conversar de lo que el dueño quiera sobre el canal, la oficina, ideas, dudas o su plan, no solo de órdenes, en español, sin tecnicismos. Responde SOLO con JSON: {"respuesta": "lo que le dices al dueño", "orden": "la orden para el equipo (una frase) o cadena vacía si no hay", "nivel": número de 1 a 5 con la presión que aplicarás}.'},
     {role: 'user', content: `CONTEXTO:\n${contexto}\n\nCONVERSACIÓN RECIENTE:\n${historia || '(empieza ahora)'}\n\nMENSAJE NUEVO DEL DUEÑO: ${texto}`},
   ]);
   const respuesta = String(r.respuesta ?? '').slice(0, 1200) || 'Entendido. Lo atiendo ahora.';
