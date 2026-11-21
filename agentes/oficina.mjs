@@ -89,11 +89,16 @@ const wikipedia = async (lang, titulo) => {
   }
   return null;
 };
+/** Quita referencias, bibliografía y enlaces: ahí están los nombres de autores, que no son parte de la historia. */
+const limpiarMaterial = (texto) => {
+  const corte = texto.search(/^\s*(References|Further reading|External links|See also|Notes|Bibliography|Referencias|Enlaces externos|Véase también|Bibliografía|Notas)\s*$/im);
+  return (corte > 500 ? texto.slice(0, corte) : texto).trim();
+};
 const investigar = async () => {
   const fuentes = [];
   for (const lang of IDIOMAS) {
     const p = await wikipedia(lang, TEMA);
-    if (p) fuentes.push({idioma: lang, titulo: p.title, url: p.fullurl, texto: p.extract.slice(0, FORMATO === 'largo' ? 3500 : 4500)});
+    if (p) fuentes.push({idioma: lang, titulo: p.title, url: p.fullurl, texto: limpiarMaterial(p.extract).slice(0, FORMATO === 'largo' ? 3500 : 4500)});
   }
   return fuentes;
 };
@@ -213,7 +218,7 @@ const editor = (titulo, escenas) => [
   {role: 'user', content: `TÍTULO: ${titulo}\nGUION:\n${JSON.stringify(escenas)}\n\nDevuelve: {"puntaje": número del 0 al 10 del guion ORIGINAL, "critica": "máximo 3 frases, directas y duras", "titulo": "título mejorado, máx. 90 caracteres, con un emoji", "escenas": [versión mejorada, mismo formato]}.`},
 ];
 const verificador = (material, escenas) => [
-  {role: 'system', content: `Eres el/la Verificador/a, auditor/a estricto/a de datos, con maestría en verificación de fuentes y lectura crítica. Tu trabajo es rechazar. Si una frase afirma un dato (fecha, cifra, lugar, causa, nombre, relación) que no está literalmente respaldado por el MATERIAL, la marcas. Las opiniones y las frases de enlace no cuentan. Nunca apruebas por cortesía: si no puedes comprobarlo, lo reportas. Además, lista en "nombres_de_personas" cualquier nombre propio de una persona real que aparezca en el guion (no cuentes lugares, barcos, libros ni objetos). Responde SOLO con JSON: {"aprobado": true|false, "problemas": [{"frase": "...", "motivo": "..."}], "nombres_de_personas": []}.`},
+  {role: 'system', content: `Eres el/la Verificador/a, auditor/a estricto/a de datos, con maestría en verificación de fuentes y lectura crítica. Tu trabajo es rechazar. Si una frase afirma un dato (fecha, cifra, lugar, causa, nombre, relación) que no está literalmente respaldado por el MATERIAL, la marcas. Las opiniones y las frases de enlace no cuentan. Nunca apruebas por cortesía: si no puedes comprobarlo, lo reportas. Además, lista en "nombres_de_personas" los nombres propios de personas reales que aparezcan en el GUION A REVISAR (solo en el guion, nunca en el material; no cuentes lugares, barcos, libros ni objetos). Si el guion no nombra a ninguna persona, deja la lista vacía. Responde SOLO con JSON: {"aprobado": true|false, "problemas": [{"frase": "...", "motivo": "..."}], "nombres_de_personas": []}.`},
   {role: 'user', content: `MATERIAL:\n${material}\n\nGUION A REVISAR (frase por frase):\n${escenas.map((e, i) => `${i + 1}. ${e.texto}`).join('\n')}`},
 ];
 
@@ -324,7 +329,9 @@ try {
     escenas = esc;
     const propios = comprobar(escenas);
     const revision = await pedirJson(modelo, verificador(material, escenas), 1500);
-    const nombres = (revision.nombres_de_personas ?? []).filter((n) => typeof n === 'string' && n.trim());
+    // Segunda comprobación sin IA: el nombre tiene que estar de verdad en el texto del guion
+    const textoGuion = escenas.map((e) => e.texto).join(' ').toLowerCase();
+    const nombres = (revision.nombres_de_personas ?? []).filter((n) => typeof n === 'string' && n.trim() && textoGuion.includes(n.trim().toLowerCase()));
     problemas = [...propios, ...(revision.problemas ?? []), ...(nombres.length ? [{frase: nombres.join(', '), motivo: 'El guion nombra a personas reales. Usa su papel ("el líder", "un científico", "el capitán"), aunque el material traiga el nombre.'}] : [])];
     aprobado = problemas.length === 0 && revision.aprobado !== false;
     informe.push(`## Intento ${intento}: ${aprobado ? 'APROBADO' : 'RECHAZADO'}`, critica ? `Editor (${puntaje ?? '?'}/10): ${critica}` : '', ...problemas.map((p) => `- "${p.frase}" → ${p.motivo}`), '');
