@@ -1,5 +1,14 @@
 [
   {
+    "id": "mwqsd59k8p7r",
+    "fecha": "2026-11-21T19:13:28.040Z",
+    "canal": "lqns",
+    "canalNombre": "Vigilante",
+    "tipo": "alerta",
+    "titulo": "Falló \".github/workflows/produccion.yml\" en GitHub",
+    "texto": "2 corrida(s) fallida(s) en 24 h; la última: https://github.com/geurii/nube/actions/runs/44926537079"
+  },
+  {
     "id": "mwqq36i4p605",
     "fecha": "2026-11-21T18:09:43.852Z",
     "canal": "lqns",
