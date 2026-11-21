@@ -192,6 +192,7 @@ Devuelve {"entregas": {"<puesto exacto>": "su entrega"}} para todos.`);
       if (!e) continue;
       salida[rol] = e;
       const a = estado.agentes[rol];
+      a.estado = 'trabajando'; a.actividad = 'escribiendo';
       a.tarea = a.tarea.replace(/ SEGUNDA:.*?(?= PAGA:| ORDEN DE JULES| JULES:| FUNCIÓN| SOY |$)/s, '') + ` SEGUNDA: ${e}`;
     }
     guardar('segunda', {entregas: salida});
