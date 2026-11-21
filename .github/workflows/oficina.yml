@@ -1,0 +1,45 @@
+name: Oficina
+
+# Departamentos de guion: investiga en Wikipedia, escribe con Groq y verifica cada dato antes de aprobar.
+# Resultado en la carpeta oficina-salida/ (guion + informe).
+on:
+  workflow_dispatch:
+    inputs:
+      tema:
+        description: 'Titulo exacto del articulo de Wikipedia (ej: Mary Celeste)'
+        required: true
+      formato:
+        description: 'short o largo'
+        required: true
+        default: 'short'
+      palabras:
+        description: 'Solo para largo: palabras aproximadas (ej: 900)'
+        required: false
+        default: '900'
+
+permissions:
+  contents: write
+
+jobs:
+  oficina:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Correr la oficina
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          TEMA: ${{ inputs.tema }}
+          FORMATO: ${{ inputs.formato }}
+          PALABRAS: ${{ inputs.palabras }}
+        run: node agentes/oficina.mjs
+      - name: Guardar el resultado en el repositorio
+        if: always()
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add oficina-salida || true
+          git diff --cached --quiet || git commit -m "Oficina: resultado de ${{ inputs.tema }}"
+          git push || true
