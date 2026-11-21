@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-21T11:03:44.083Z",
+  "fecha": "2026-11-21T11:04:58.030Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 3726,
+  "total": 3724,
   "ganadasDesdeElUltimoCiclo": 0,
   "videos": [
     {
@@ -14,7 +14,7 @@
       "id": "YXozgtk50pI",
       "titulo": "Los \"jóvenes genios\" que terminaron acusados de fraude: ¿estafadores o genios?",
       "publicado": "2026-11-21T02:03:25+00:00",
-      "vistas": 2
+      "vistas": 1
     },
     {
       "id": "Md9Rrt9EiTM",
@@ -26,7 +26,7 @@
       "id": "ujvVWAyrSUg",
       "titulo": "Sabías que tres hombres caminaron en plena noche polar por 3 huevos de pingüino 🥚 (Parte 3/3)",
       "publicado": "2026-11-20T17:30:34+00:00",
-      "vistas": 105
+      "vistas": 104
     },
     {
       "id": "KURWolBJszo",
@@ -99,6 +99,10 @@
     {
       "fecha": "2026-11-21T11:03:44.082Z",
       "total": 3726
+    },
+    {
+      "fecha": "2026-11-21T11:04:58.030Z",
+      "total": 3724
     }
   ]
 }

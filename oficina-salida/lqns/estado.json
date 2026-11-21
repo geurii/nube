@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-21T11:04:07.113Z",
+  "actualizado": "2026-11-21T11:04:58.143Z",
   "totales": {
     "aprobados": 2,
     "rechazados": 2,
@@ -99,42 +99,112 @@
     "Crítico: padre trabajador": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": " FUNCIÓN (contador): Faltan 23 días para el 13 de diciembre. Suscriptores: la analítica aún no los trae. Horas vistas: sin datos."
+      "tarea": " FUNCIÓN (contador): Faltan 23 días para el 13 de diciembre. Suscriptores: la analítica aún no los trae. Horas vistas: sin datos. FUNCIÓN (contador): ya entregó hoy; la próxima ronda es dentro de 20 h."
     },
     "Crítica: fan del misterio": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": " FUNCIÓN (oportunidades): 3 formatos con potencial y 2 vías de ingreso: [object Object]"
+      "tarea": " FUNCIÓN (oportunidades): 3 formatos con potencial y 2 vías de ingreso: [object Object] FUNCIÓN (oportunidades): ya entregó hoy; la próxima ronda es dentro de 24 h."
     },
     "Crítico: adolescente": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": " FUNCIÓN (otros-formatos): Dejó listos TikTok, Instagram, Facebook y versión en inglés de \"🔺 El misterio del Triángulo de las Bermudas\"."
+      "tarea": " FUNCIÓN (otros-formatos): Dejó listos TikTok, Instagram, Facebook y versión en inglés de \"🔺 El misterio del Triángulo de las Bermudas\". FUNCIÓN (otros-formatos): ya entregó hoy; la próxima ronda es dentro de 12 h."
     },
     "Crítica: universitaria": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": " FUNCIÓN (mentor): Lección del día: Enfócate en los videos que ya generan más vistas y replica su estilo en nuevos contenidos; mejora los títulos y miniatur"
+      "tarea": " FUNCIÓN (mentor): Lección del día: Enfócate en los videos que ya generan más vistas y replica su estilo en nuevos contenidos; mejora los títulos y miniatur FUNCIÓN (mentor): ya entregó hoy; la próxima ronda es dentro de 24 h."
     },
     "Crítico: joven dominicano": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": " FUNCIÓN (agenda): Agenda del día enviada (3 puntos)."
+      "tarea": " FUNCIÓN (agenda): Agenda del día enviada (3 puntos). FUNCIÓN (agenda): ya entregó hoy; la próxima ronda es dentro de 24 h."
     },
     "Crítica: ama de casa": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": " FUNCIÓN (infantil): 3 ideas nuevas para Mini Aventuras: \"El arcoíris de los animales\"…"
+      "tarea": " FUNCIÓN (infantil): 3 ideas nuevas para Mini Aventuras: \"El arcoíris de los animales\"… FUNCIÓN (infantil): ya entregó hoy; la próxima ronda es dentro de 24 h."
     },
     "Crítico: escéptico": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": " FUNCIÓN (guardian): Último chequeo del Vigilante: 2026-11-21T09:54:36.376Z. Bien: YouTube conectado, analítica autorizada, Groq responde, Gemini responde. Problemas: ninguno."
+      "tarea": " FUNCIÓN (guardian): Último chequeo del Vigilante: 2026-11-21T09:54:36.376Z. Bien: YouTube conectado, analítica autorizada, Groq responde, Gemini responde. Problemas: ninguno. FUNCIÓN (guardian): ya entregó hoy; la próxima ronda es dentro de 20 h."
     },
     "Crítico: abuelo": {
       "estado": "trabajando",
       "actividad": "escribiendo",
       "tarea": " FUNCIÓN (comunidad): Espera que la analítica esté autorizada para leer los comentarios."
+    },
+    "Enlace de datos": {
+      "estado": "trabajando",
+      "actividad": "pensando",
+      "tarea": "En su puesto, preparando el próximo ciclo."
+    },
+    "Coordinador de producción": {
+      "estado": "trabajando",
+      "actividad": "pensando",
+      "tarea": "En su puesto, preparando el próximo ciclo."
+    },
+    "Jefa de calidad": {
+      "estado": "trabajando",
+      "actividad": "pensando",
+      "tarea": "En su puesto, preparando el próximo ciclo."
+    },
+    "Cazador de fórmulas": {
+      "estado": "trabajando",
+      "actividad": "pensando",
+      "tarea": "En su puesto, preparando el próximo ciclo."
+    },
+    "Vigía de tendencias": {
+      "estado": "trabajando",
+      "actividad": "pensando",
+      "tarea": "En su puesto, preparando el próximo ciclo."
+    },
+    "Titulista": {
+      "estado": "trabajando",
+      "actividad": "pensando",
+      "tarea": "En su puesto, preparando el próximo ciclo."
+    },
+    "Redactor de descripción": {
+      "estado": "trabajando",
+      "actividad": "pensando",
+      "tarea": "En su puesto, preparando el próximo ciclo."
+    },
+    "Especialista en hashtags": {
+      "estado": "trabajando",
+      "actividad": "pensando",
+      "tarea": "En su puesto, preparando el próximo ciclo."
+    },
+    "Auditor de fuentes": {
+      "estado": "trabajando",
+      "actividad": "pensando",
+      "tarea": "En su puesto, preparando el próximo ciclo."
+    },
+    "Auditor de normas": {
+      "estado": "trabajando",
+      "actividad": "pensando",
+      "tarea": "En su puesto, preparando el próximo ciclo."
+    },
+    "Revisor de nombres": {
+      "estado": "trabajando",
+      "actividad": "pensando",
+      "tarea": "En su puesto, preparando el próximo ciclo."
+    },
+    "Revisor de ganchos": {
+      "estado": "trabajando",
+      "actividad": "pensando",
+      "tarea": "En su puesto, preparando el próximo ciclo."
+    },
+    "Escenógrafo": {
+      "estado": "trabajando",
+      "actividad": "pensando",
+      "tarea": "En su puesto, preparando el próximo ciclo."
+    },
+    "Pintor de imágenes": {
+      "estado": "trabajando",
+      "actividad": "pensando",
+      "tarea": "En su puesto, preparando el próximo ciclo."
     }
   },
   "jefa": {
