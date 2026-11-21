@@ -9,6 +9,8 @@ const PROVEEDORES = [
   {nombre: 'Mistral', base: 'https://api.mistral.ai/v1', clave: 'MISTRAL_API_KEY', prefiere: [/mistral-large/i, /mistral-medium/i, /mistral-small/i], descarta: /embed|ocr|moderation|codestral-embed/i},
   {nombre: 'Cloudflare', base: null, clave: 'CLOUDFLARE_API_TOKEN', cuenta: 'CLOUDFLARE_ACCOUNT_ID', prefiere: [/llama-3\.3-70b/i, /gpt-oss/i, /llama/i]},
 ];
+export const diagnosticoRespaldo = [];
+const nota = (t) => { console.log(t); diagnosticoRespaldo.push(t); };
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
 const modelos = new Map();
 
@@ -33,18 +35,18 @@ export const chatAlternativo = async (mensajes, {maxTokens = 2500, temperatura =
     const key = (process.env[p.clave] || '').trim();
     if (!key || p.nombre === 'Cloudflare') continue; // Cloudflare usa otra ruta: se añade si hace falta
     const modelo = await elegirModelo(p, key);
-    if (!modelo) { console.log(`Respaldo ${p.nombre}: no pude elegir un modelo`); continue; }
+    if (!modelo) { nota(`${p.nombre}: sin modelo`); continue; }
     for (let i = 1; i <= 2; i++) {
       try {
         const r = await fetch(`${p.base}/chat/completions`, {
           method: 'POST', headers: {Authorization: `Bearer ${key}`, 'Content-Type': 'application/json', ...(p.cabeceras ?? {})}, signal: AbortSignal.timeout(120000),
           body: JSON.stringify({model: modelo, messages: mensajes, temperature: temperatura, max_tokens: maxTokens}),
         });
-        if (r.status === 429 || r.status >= 500) { console.log(`Respaldo ${p.nombre}: ${r.status}, reintento ${i}/2`); await dormir(4000 * i); continue; }
-        if (!r.ok) { console.log(`Respaldo ${p.nombre}: error ${r.status} con ${modelo}`); break; }
+        if (r.status === 429 || r.status >= 500) { nota(`${p.nombre}: ${r.status}`); await dormir(4000 * i); continue; }
+        if (!r.ok) { nota(`${p.nombre}: error ${r.status} (${modelo})`); break; }
         const texto = (await r.json()).choices?.[0]?.message?.content ?? '';
         if (texto.trim()) return {texto, proveedor: p.nombre, modelo};
-      } catch { await dormir(3000 * i); }
+      } catch (e) { nota(`${p.nombre}: ${String(e.message ?? e).slice(0, 60)}`); await dormir(3000 * i); }
     }
   }
   return null;

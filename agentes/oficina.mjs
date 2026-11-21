@@ -9,7 +9,7 @@ import {puestosDeLaOficina, mesaDePublicacion} from './puestos.mjs';
 import {avisarTelefono} from './aviso.mjs';
 import {pintarEscenas} from './pintor.mjs';
 import {enGarantia} from './garantia.mjs';
-import {chatAlternativo, proveedoresConLlave, modelosDisponibles} from './llm.mjs';
+import {chatAlternativo, proveedoresConLlave, modelosDisponibles, diagnosticoRespaldo} from './llm.mjs';
 
 const KEY = process.env.GROQ_API_KEY;
 const CANAL_ID = (process.env.CANAL || 'lqns').trim();
@@ -190,7 +190,7 @@ const groq = async (modelo, mensajes, maxTokens) => {
   catch (e) {
     if (e.fatal) throw e;
     const alt = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + ' ' + m.content} : m)), {maxTokens: maxTokens ?? 2500});
-    if (!alt) throw e;
+    if (!alt) { e.message += ` Respaldos: ${[...new Set(diagnosticoRespaldo)].join('; ').slice(0, 200) || 'ninguno con llave'}.`; throw e; }
     console.log(`Groq no respondió: se usó ${alt.proveedor} (${alt.modelo}).`);
     return alt.texto;
   }
