@@ -55,7 +55,7 @@ if (GITHUB_TOKEN && GITHUB_REPOSITORY) {
   const r = await pedir(`https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/runs?per_page=40`, {headers: {Authorization: `Bearer ${GITHUB_TOKEN}`, Accept: 'application/vnd.github+json'}});
   if (r.ok) {
     const corridas = ((await r.json()).workflow_runs ?? []).filter((x) => Date.now() - new Date(x.created_at).getTime() < 24 * 3600 * 1000 && x.name !== 'Vigilante');
-    const fallidas = corridas.filter((x) => x.conclusion === 'failure');
+    const fallidas = corridas.filter((x) => x.conclusion === 'failure' && !(/^\.github\//.test(x.name) && Date.now() - new Date(x.created_at).getTime() > 3 * 3600 * 1000));
     const por = {};
     for (const x of fallidas) (por[x.name] = por[x.name] ?? []).push(x);
     for (const [nombre, lista] of Object.entries(por)) {
