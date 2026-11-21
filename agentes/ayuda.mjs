@@ -16,8 +16,10 @@ if (!KEY) { console.log('Ayuda: falta GROQ_API_KEY.'); process.exit(0); }
 
 const estado = leer(path.join(carpeta, 'estado.json'), null);
 if (!estado) { console.log('Ayuda: sin estado.'); process.exit(0); }
-const libres = Object.entries(estado.agentes ?? {}).filter(([, a]) => a?.estado === 'libre').map(([n]) => n);
-if (!libres.length) { console.log('Ayuda: todos están ocupados.'); process.exit(0); }
+// Nadie queda "libre" en pantalla, así que se elige a quien NO hizo ayuda en su última entrega (los demás van después).
+const todos = Object.entries(estado.agentes ?? {}).filter(([n, a]) => a && n !== 'Enlace de datos').map(([n, a]) => ({n, reciente: /^(AYUDA|PLAN DEL CICLO):/.test(a.tarea ?? '')}));
+const libres = [...todos.filter((x) => !x.reciente), ...todos.filter((x) => x.reciente)].map((x) => x.n);
+if (!libres.length) { console.log('Ayuda: no hay puestos.'); process.exit(0); }
 
 const vistas = leer(path.join(carpeta, 'vistas.json'), null);
 const autopsia = leer(path.join(carpeta, 'autopsia.json'), null);
