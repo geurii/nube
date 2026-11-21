@@ -4,8 +4,8 @@ name: Oficina
 # y el Escenógrafo elige los fondos. Resultado en oficina-salida/ (guion + informe + estado para la oficina 3D).
 on:
   schedule:
-    - cron: '0 2,8,14,20 * * *'   # un Short nuevo cada 6 horas
-    - cron: '0 12 */2 * *'   # un video largo un dia si y otro no
+    - cron: '23 2,8,14,20 * * *'   # un Short nuevo cada 6 horas
+    - cron: '23 12 */2 * *'   # un video largo un dia si y otro no
   push:
     paths:
       - 'agentes/oficina.disparo'
@@ -71,7 +71,7 @@ jobs:
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           TEMA: ${{ inputs.tema }}
           CANAL_PEDIDO: ${{ inputs.canal }}
-          FORMATO: ${{ inputs.formato || (github.event.schedule == '0 12 */2 * *' && 'largo' || 'short') }}
+          FORMATO: ${{ inputs.formato || (github.event.schedule == '23 12 */2 * *' && 'largo' || 'short') }}
           PALABRAS: ${{ inputs.palabras }}
         run: |
           canales=$(node agentes/canales-activos.mjs)
