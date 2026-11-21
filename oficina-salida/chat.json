@@ -1,5 +1,21 @@
 [
   {
+    "id": "mwqql98sj",
+    "de": "jules",
+    "texto": "El vídeo del enigma del Bloop debe estar subido a YouTube antes de las 4 pm. Si no lo vemos, los elimino a los 30. No hay margen de error.",
+    "fecha": "2026-11-21T18:23:47.208Z",
+    "orden": "Suban el vídeo del enigma del Bloop a YouTube inmediatamente y confirmen la subida en el chat del equipo.",
+    "nivel": 5,
+    "canal": "lqns"
+  },
+  {
+    "id": "mwqql98st",
+    "de": "tu",
+    "texto": "“Jules, exígele a los 30 ahora mismo: si a las 4 de la tarde no veo el video del enigma del Bloop publicado en YouTube, los elimino a todos. Ya hay un sistema de subida, úsenlo, no hay excusa. Quiero el video subido, no en 100%, subido.",
+    "fecha": "2026-11-21T18:23:32.079Z",
+    "canal": "lqns"
+  },
+  {
     "id": "mwqqcyw0j",
     "de": "jules",
     "texto": "El vídeo del enigma está aprobado al 100 % y listo para subir. La única razón por la que no aparece en la barra de progreso es que todavía no se ha enviado a YouTube; el proceso de carga tarda entre 15 y 30 min y el panel solo actualiza cada 5 min. Si no lo subimos en las próximas 5 min, la barra seguirá sin avanzar. No hay retraso técnico, solo falta la acción final.",

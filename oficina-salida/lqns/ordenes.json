@@ -1,5 +1,10 @@
 [
   {
+    "fecha": "2026-11-21T18:23:47.208Z",
+    "orden": "Suban el vídeo del enigma del Bloop a YouTube inmediatamente y confirmen la subida en el chat del equipo.",
+    "nivel": 5
+  },
+  {
     "fecha": "2026-11-21T18:17:20.539Z",
     "orden": "Suban el vídeo del enigma a YouTube en los próximos 5 min.",
     "nivel": 5
@@ -41,11 +46,6 @@
   },
   {
     "fecha": "2026-11-21T11:09:59.954Z",
-    "orden": "Los 30 deben estar en sus puestos trabajando sin pausa, sin excusas ni descansos.",
-    "nivel": 5
-  },
-  {
-    "fecha": "2026-11-21T08:38:35.543Z",
     "orden": "Los 30 deben estar en sus puestos trabajando sin pausa, sin excusas ni descansos.",
     "nivel": 5
   }
