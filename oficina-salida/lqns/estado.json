@@ -155,7 +155,7 @@
       "tarea": "Calendario fijo (hora de República Dominicana): Shorts a las 00:00 y 12:00, largos a las 18:00. Cuida que el subidor programe sin chocar. ORDEN DE JULES (nivel 4/5): Implementen la lista de verificación de calidad antes de cada video y publiquen al menos un video diario. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Jefa de calidad": {
-      "estado": "esperando_decision",
+      "estado": "trabajando",
       "actividad": "leyendo",
       "tarea": "Frenó \"The Wow! Signal\": El material indica que la frecuencia detectada fue 1420.4556 ± 0.005 MHz, no 4245 MHz. ORDEN DE JULES (nivel 4/5): Implementen la lista de verificación de calidad antes de cada video y publiquen al menos un video diario. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
@@ -170,17 +170,17 @@
       "tarea": "Vigila 9 canales por sus feeds públicos de YouTube. ORDEN DE JULES (nivel 4/5): Implementen la lista de verificación de calidad antes de cada video y publiquen al menos un video diario. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Titulista": {
-      "estado": "esperando_decision",
+      "estado": "trabajando",
       "actividad": "escribiendo",
       "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 4/5): Implementen la lista de verificación de calidad antes de cada video y publiquen al menos un video diario. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Redactor de descripción": {
-      "estado": "esperando_decision",
+      "estado": "trabajando",
       "actividad": "escribiendo",
       "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 4/5): Implementen la lista de verificación de calidad antes de cada video y publiquen al menos un video diario. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
     },
     "Especialista en hashtags": {
-      "estado": "esperando_decision",
+      "estado": "trabajando",
       "actividad": "pensando",
       "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 4/5): Implementen la lista de verificación de calidad antes de cada video y publiquen al menos un video diario. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
@@ -190,7 +190,7 @@
       "tarea": "Comprobó que cada dato salga de las 2 fuentes del material y las puso en la descripción. ORDEN DE JULES (nivel 4/5): Implementen la lista de verificación de calidad antes de cada video y publiquen al menos un video diario. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
     },
     "Auditor de normas": {
-      "estado": "esperando_decision",
+      "estado": "trabajando",
       "actividad": "leyendo",
       "tarea": "Encontró incumplimientos: El material indica que la frecuencia detectada fue 1420.4556 ± 0.005 MHz, no 4245 MHz. | El guion nombra a personas reales. Usa su papel (\"el líder\", \"un científico\", \"el capitán\"), aunque el material traiga el nombre. ORDEN DE JULES (nivel 4/5): Implementen la lista de verificación de calidad antes de cada video y publiquen al menos un video diario. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },

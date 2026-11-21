@@ -119,7 +119,7 @@ try {
   const cambios = {};
   votos.forEach((v, i) => {
     const nombre = CRITICOS[i]?.[0];
-    if (nombre) cambios[nombre] = {estado: v.leGusto ? 'libre' : 'esperando_decision', actividad: 'leyendo', tarea: `${v.leGusto ? 'Le gustó' : 'NO le gustó'} "${guion.titulo}": ${v.comentario} (siguió hasta el segundo ${v.sigueHasta}${v.compartiria ? ', lo compartiría' : ''}).`};
+    if (nombre) cambios[nombre] = {estado: v.leGusto ? 'libre' : 'trabajando', actividad: 'leyendo', tarea: `${v.leGusto ? 'Le gustó' : 'NO le gustó'} "${guion.titulo}": ${v.comentario} (siguió hasta el segundo ${v.sigueHasta}${v.compartiria ? ', lo compartiría' : ''}).`};
   });
   marcarCriticos(cambios);
 

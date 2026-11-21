@@ -40,7 +40,7 @@ env:
 jobs:
   oficina:
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    timeout-minutes: 50
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -68,7 +68,11 @@ jobs:
             CANAL=$c node agentes/analytics.mjs || true
             CANAL=$c node agentes/autopsia.mjs || true
             CANAL=$c node agentes/cazador.mjs || true
-            CANAL=$c node agentes/oficina.mjs || fallo=1
+            for intento in 1 2 3; do
+              CANAL=$c node agentes/oficina.mjs || fallo=1
+              CANAL=$c node agentes/ultimo-aprobado.mjs && break
+              echo "No salió un guion aprobado (intento $intento de 3): pruebo con otro tema."
+            done
             CANAL=$c node agentes/ayuda.mjs || true
             CANAL=$c node agentes/funciones.mjs || true
             CANAL=$c node agentes/conciencia.mjs || true
