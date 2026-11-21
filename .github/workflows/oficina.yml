@@ -31,6 +31,9 @@ concurrency:
   group: oficina
   cancel-in-progress: false
 
+env:
+  NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+
 jobs:
   oficina:
     runs-on: ubuntu-24.04
@@ -45,6 +48,9 @@ jobs:
       - name: Ciclo de todos los canales activos (el Cazador primero; si uno falla, los demás siguen)
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           TEMA: ${{ inputs.tema }}
           CANAL_PEDIDO: ${{ inputs.canal }}
           FORMATO: ${{ inputs.formato || (github.event.schedule == '0 12 */2 * *' && 'largo' || 'short') }}
@@ -56,6 +62,7 @@ jobs:
           for c in $canales; do
             echo "=== $c ==="
             CANAL=$c node agentes/vistas.mjs || true
+            CANAL=$c node agentes/analytics.mjs || true
             CANAL=$c node agentes/autopsia.mjs || true
             CANAL=$c node agentes/cazador.mjs || true
             CANAL=$c node agentes/oficina.mjs || fallo=1

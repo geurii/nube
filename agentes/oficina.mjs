@@ -6,6 +6,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {puestosDeLaOficina, mesaDePublicacion} from './puestos.mjs';
+import {avisarTelefono} from './aviso.mjs';
 
 const KEY = process.env.GROQ_API_KEY;
 const CANAL_ID = (process.env.CANAL || 'lqns').trim();
@@ -38,6 +39,7 @@ const horasParaProximoCiclo = () => {
 };
 /** Reporte para la campana de la oficina 3D. tipo: reporte | alerta | listo. */
 const notificar = (tipo, titulo, texto) => {
+  avisarTelefono(tipo, titulo, texto);
   const lista = leerJson(NOTIFICACIONES, []);
   lista.unshift({id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), fecha: new Date().toISOString(), canal: CANAL_ID, canalNombre: CONFIG.nombre, tipo, titulo, texto});
   fs.mkdirSync(path.dirname(NOTIFICACIONES), {recursive: true});

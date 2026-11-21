@@ -6,6 +6,7 @@
 // Variables: GROQ_API_KEY. Lo ejecuta fundador.yml cuando llega un pedido.
 import fs from 'node:fs';
 import path from 'node:path';
+import {avisarTelefono} from './aviso.mjs';
 
 const KEY = process.env.GROQ_API_KEY;
 const CONFIG_RUTA = path.join('agentes', 'canales-propios.json');
@@ -18,6 +19,7 @@ const slug = (t) => String(t).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,
 const VOCES_ES = ['es-MX-JorgeNeural', 'es-DO-EmilioNeural', 'es-ES-AlvaroNeural', 'es-US-AlonsoNeural', 'es-CO-GonzaloNeural', 'es-AR-TomasNeural'];
 
 const notificar = (canal, nombre, tipo, titulo, texto) => {
+  avisarTelefono(tipo, titulo, texto);
   const ruta = path.join('oficina-salida', 'notificaciones.json');
   const lista = leer(ruta, []);
   lista.unshift({id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), fecha: new Date().toISOString(), canal, canalNombre: nombre, tipo, titulo, texto});

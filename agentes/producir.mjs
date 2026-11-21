@@ -4,6 +4,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
+import {avisarTelefono} from './aviso.mjs';
 
 const RAIZ = 'oficina-salida';
 const leer = (ruta, porDefecto) => { try { return JSON.parse(fs.readFileSync(ruta, 'utf8')); } catch { return porDefecto; } };
@@ -19,6 +20,7 @@ const marcar = (canal, cambios) => {
   fs.writeFileSync(ruta, JSON.stringify(e, null, 2));
 };
 const notificar = (canal, tipo, titulo, texto) => {
+  avisarTelefono(tipo, titulo, texto);
   const ruta = path.join(RAIZ, 'notificaciones.json');
   const lista = leer(ruta, []);
   lista.unshift({id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), fecha: new Date().toISOString(), canal, canalNombre: nombreDe(canal), tipo, titulo, texto});

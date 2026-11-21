@@ -6,6 +6,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {revisarVideo} from './video-gemini.mjs';
+import {avisarTelefono} from './aviso.mjs';
 
 const KEY = process.env.GROQ_API_KEY;
 const ID = process.env.ID;
@@ -37,6 +38,7 @@ const marcarCriticos = (cambios) => {
   } catch { /* sin estado */ }
 };
 const notificar = (tipo, titulo, texto) => {
+  avisarTelefono(tipo, titulo, texto);
   try {
     const ruta = path.join(RAIZ, 'notificaciones.json');
     const lista = leer(ruta, []);

@@ -17,6 +17,8 @@ if (!KEY || !vistas?.videos?.length) { console.log('Autopsia: sin datos de vista
 const previa = leer(path.join(carpeta, 'autopsia.json'), null);
 if (previa && previa.total === vistas.total && Date.now() - new Date(previa.fecha).getTime() < 6 * 3600 * 1000) { console.log('Autopsia: ya está al día.'); process.exit(0); }
 
+const analitica = leer(path.join(carpeta, 'analitica.json'), null);
+const retencion = (analitica?.porVideo ?? []).map((v) => { const t = vistas.videos.find((x) => x.id === v.id)?.titulo; return t ? `- "${t}": retención media ${v.retencionPct} % (${v.duracionMediaSeg} s de media), +${v.suscriptoresGanados} suscriptores` : null; }).filter(Boolean).join('\n');
 const lista = [...vistas.videos].sort((a, b) => b.vistas - a.vistas);
 const tabla = lista.map((v) => `- "${v.titulo}" · ${v.vistas} vistas · ${String(v.publicado ?? '').slice(0, 10)}`).join('\n');
 const media = Math.round(lista.reduce((s, v) => s + v.vistas, 0) / lista.length);
@@ -29,7 +31,7 @@ try {
         method: 'POST', headers: {Authorization: `Bearer ${KEY}`, 'Content-Type': 'application/json'}, signal: AbortSignal.timeout(90000),
         body: JSON.stringify({model: 'openai/gpt-oss-120b', reasoning_effort: 'low', temperature: 0.4, max_tokens: 1800, messages: [
           {role: 'system', content: 'Eres analista de canales de YouTube, con cinco licenciaturas y mucha ambición: tu paga son las vistas del canal. Analizas con rigor y SIN inventar: usa solo los datos dados. Donde no se pueda saber algo (retención, miniatura, a quién se mostró), dilo. Responde SOLO con JSON.'},
-          {role: 'user', content: `VIDEOS DEL CANAL (de más a menos vistas; promedio ${media}):\n${tabla}\n\nDevuelve: {"que_funciono": "lo que tienen en común los de más vistas, según los títulos y fechas", "por_que_fallaron": ["causas probables de las pocas vistas, cada una con la evidencia de los datos"], "no_se_puede_saber": ["lo que falta saber"], "reglas": ["3 reglas concretas y accionables para el próximo video"]}`},
+          {role: 'user', content: `VIDEOS DEL CANAL (de más a menos vistas; promedio ${media}):\n${tabla}\n\n${retencion ? `RETENCIÓN REAL (YouTube Analytics):\n${retencion}\n\n` : ''}Devuelve: {"que_funciono": "lo que tienen en común los de más vistas, según los títulos y fechas", "por_que_fallaron": ["causas probables de las pocas vistas, cada una con la evidencia de los datos"], "no_se_puede_saber": ["lo que falta saber"], "reglas": ["3 reglas concretas y accionables para el próximo video"]}`},
         ]}),
       });
       if (resp.status === 429) { const t = await resp.text(); await dormir((Number(/try again in ([\d.]+)s/i.exec(t)?.[1] ?? 15) + 1) * 1000); continue; }

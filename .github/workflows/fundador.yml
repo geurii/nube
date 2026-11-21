@@ -15,6 +15,9 @@ concurrency:
   group: fundador
   cancel-in-progress: false
 
+env:
+  NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+
 jobs:
   fundar:
     runs-on: ubuntu-24.04

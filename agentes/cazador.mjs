@@ -4,6 +4,7 @@
 // Variables: GROQ_API_KEY, CANAL (por defecto lqns). Si algo falla, no detiene a la Oficina.
 import fs from 'node:fs';
 import path from 'node:path';
+import {avisarTelefono} from './aviso.mjs';
 
 const CANAL_ID = (process.env.CANAL || 'lqns').trim();
 const KEY = process.env.GROQ_API_KEY;
@@ -23,6 +24,7 @@ const marcar = (tarea, estado = 'libre') => {
   fs.writeFileSync(ruta, JSON.stringify(e, null, 2));
 };
 const notificar = (tipo, titulo, texto) => {
+  avisarTelefono(tipo, titulo, texto);
   const ruta = path.join('oficina-salida', 'notificaciones.json');
   const lista = leer(ruta, []);
   lista.unshift({id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), fecha: new Date().toISOString(), canal: CANAL_ID, canalNombre: CONFIG.nombre, tipo, titulo, texto});

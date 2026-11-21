@@ -4,6 +4,7 @@
 // Variable: GROQ_API_KEY.
 import fs from 'node:fs';
 import path from 'node:path';
+import {avisarTelefono} from './aviso.mjs';
 
 const KEY = process.env.GROQ_API_KEY;
 const RAIZ = path.resolve('oficina-salida');
@@ -48,12 +49,14 @@ for (const archivo of pendientes) {
   const estado = leer(path.join(carpeta, 'estado.json'), {agentes: {}});
   const vistas = leer(path.join(carpeta, 'vistas.json'), null);
   const ordenes = leer(path.join(carpeta, 'ordenes.json'), []);
+  const meta = leer(path.join(carpeta, 'analitica.json'), null)?.meta;
   const agentes = Object.entries(estado.agentes ?? {});
   const parados = agentes.filter(([, a]) => a.estado === 'esperando_decision').map(([n]) => n);
   const dias = Math.max(0, Math.ceil((new Date('2026-12-13T23:59:59-04:00').getTime() - Date.now()) / 86400000));
   const contexto = [
     `Días que faltan para la meta (monetizar antes del 13 de diciembre de 2026): ${dias}.`,
     vistas?.total !== undefined ? `Vistas reales del canal: ${vistas.total} en sus últimos videos; ganadas en el último ciclo: ${vistas.ganadasDesdeElUltimoCiclo ?? 0}.` : 'Vistas del canal: aún no disponibles.',
+    meta ? `Avance a la monetización (datos reales de YouTube): ${meta.suscriptores ?? '?'} suscriptores (faltan ${meta.faltanSuscriptores ?? '?'} para 1.000); ${meta.horas12Meses} horas vistas en 12 meses (faltan ${meta.faltanHoras} para 4.000); ${meta.vistasShorts90} vistas de Shorts en 90 días (10 millones es la alternativa).` : 'Suscriptores y horas vistas: aún sin conectar la analítica.',
     `Totales de la oficina: ${JSON.stringify(estado.totales ?? {})}. Puestos esperando una decisión: ${parados.length ? parados.join(', ') : 'ninguno'}.`,
     ordenes.length ? `Última orden que diste: "${ordenes[0].orden}" (nivel ${ordenes[0].nivel}).` : 'Aún no has dado órdenes por este chat.',
   ].join('\n');
@@ -75,5 +78,6 @@ for (const archivo of pendientes) {
   fs.writeFileSync(path.join(carpeta, 'jefa.json'), JSON.stringify({nivel, orden: orden || ordenes[0]?.orden || '', fecha: ahora}, null, 2));
   fs.writeFileSync(CHAT, JSON.stringify(chat, null, 2));
   fs.renameSync(ruta, ruta.replace(/\.json$/, '.hecho.json'));
+  avisarTelefono('jules', 'Respuesta', respuesta + (orden ? ' · ORDEN: ' + orden : ''));
   console.log(`Jules respondió (nivel ${nivel})${orden ? ' y dio una orden' : ''}.`);
 }

@@ -1,0 +1,63 @@
+name: Jules por celular
+
+# Órdenes desde el celular: abre la app de GitHub, entra a este repositorio > Issues y escribe un issue nuevo o un comentario.
+# Solo el dueño del repositorio puede dar órdenes. Jules responde en el mismo hilo y el equipo recibe la orden en el próximo ciclo.
+on:
+  issues:
+    types: [opened]
+  issue_comment:
+    types: [created]
+  workflow_dispatch:
+    inputs:
+      texto:
+        description: 'Mensaje para Jules'
+        required: true
+
+permissions:
+  contents: write
+  issues: write
+
+env:
+  NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+
+concurrency:
+  group: jules
+  cancel-in-progress: false
+
+jobs:
+  responder:
+    if: ${{ github.event_name == 'workflow_dispatch' || (github.event.sender.login == github.repository_owner && github.event.sender.type != 'Bot') }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Guardar el mensaje
+        env:
+          MENSAJE: ${{ github.event.comment.body || github.event.issue.body || inputs.texto }}
+        run: node agentes/movil.mjs mensaje
+      - name: Jules responde
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: node agentes/jules.mjs
+      - name: Contestar en el mismo hilo
+        if: ${{ github.event.issue.number }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUMERO: ${{ github.event.issue.number }}
+        run: |
+          node agentes/movil.mjs respuesta "$RUNNER_TEMP/respuesta.md"
+          gh issue comment "$NUMERO" --body-file "$RUNNER_TEMP/respuesta.md"
+      - name: Guardar la conversación
+        if: always()
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add oficina-salida || true
+          git diff --cached --quiet || git commit -m "Jules: respuesta (celular)"
+          for i in 1 2 3 4; do
+            git pull --rebase origin main && git push && break
+            sleep 5
+          done

@@ -4,6 +4,7 @@
 // Secretos: YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN. Variable: ID (por ejemplo oficina-bloop).
 import fs from 'node:fs';
 import path from 'node:path';
+import {avisarTelefono} from './aviso.mjs';
 
 const {YT_CLIENT_ID, YT_CLIENT_SECRET, ID} = process.env;
 const CANAL = process.env.CANAL || 'lqns';
@@ -25,6 +26,7 @@ const proximoHorario = (formato) => {
 const MODO = (() => { try { return JSON.parse(fs.readFileSync(path.join('agentes', 'publicacion.json'), 'utf8')).modo; } catch { return 'programado'; } })();
 const ESTADO = path.join('oficina-salida', CANAL, 'estado.json');
 const avisar = (tipo, titulo, texto) => {
+  avisarTelefono(tipo === 'reporte' ? 'subido' : tipo, titulo, texto);
   try {
     const ruta = path.join('oficina-salida', 'notificaciones.json');
     const lista = fs.existsSync(ruta) ? JSON.parse(fs.readFileSync(ruta, 'utf8')) : [];
