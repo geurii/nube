@@ -1,6 +1,6 @@
 // Los 30 puestos de la oficina: qué hace cada uno en cada ciclo, con datos reales del ciclo (CTX).
 // Se importa desde oficina.mjs. Nadie queda sin trabajo: lo que aún no está conectado dice exactamente qué le falta.
-export const puestosDeLaOficina = (ag, {resultado, tema, ctx, historial, formulas, vigilados}) => {
+export const puestosDeLaOficina = (ag, {resultado, tema, ctx, historial, formulas, vigilados, vistas}) => {
   const ok = resultado === 'aprobado';
   const p = (rol, estado, actividad, tarea) => { ag[rol] = {estado, actividad, tarea}; };
   const m = ctx.mesa;
@@ -17,14 +17,20 @@ export const puestosDeLaOficina = (ag, {resultado, tema, ctx, historial, formula
   p('Auditor de fuentes', 'libre', 'leyendo', `Comprobó que cada dato salga de las ${ctx.fuentes} fuentes del material y las puso en la descripción.`);
   p('Auditor de normas', ok ? 'libre' : 'esperando_decision', 'leyendo', ok ? 'Comprobó: empieza con "Sabías que", llamada a compartir exacta y revelación entre 60 % y 78 %.' : `Encontró incumplimientos: ${ctx.problemas.slice(0, 2).map((x) => x.motivo).join(' | ')}`);
   p('Revisor de nombres', 'libre', 'leyendo', 'Busca nombres reales de personas en el guion y en lo que escribe la Mesa. Si aparece uno, rechaza.');
-  p('Revisor de ganchos', ok ? 'libre' : 'trabajando', 'pensando', ok ? `Revisó el gancho de los primeros 3 segundos y el ritmo de ${ctx.escenas} escenas.` : 'Espera un guion aprobado para medir el gancho.');
+  const g = ctx.gancho;
+  p('Revisor de ganchos', ok ? 'libre' : 'trabajando', 'pensando', ok && g ? `Gancho auditivo: la primera frase tiene ${g.palabrasPrimera} palabras${g.palabrasPrimera > 28 ? ' (demasiado larga: debe caber en 3 segundos)' : ' (cabe en 3 segundos)'}. Gancho visual: ${g.escenasConUnFondo === 0 ? 'todas las escenas cambian de fondo' : g.escenasConUnFondo + ' escenas se quedan con un solo fondo'}.` : 'Espera un guion aprobado para medir el gancho.');
   p('Escenógrafo', 'libre', 'pensando', `Eligió los fondos de ${ctx.escenas} escenas del catálogo; ${ctx.sinImagen} no tenían imagen propia.`);
   p('Pintor de imágenes', ctx.sinImagen ? 'trabajando' : 'libre', 'pensando', ctx.sinImagen ? `Hay ${ctx.sinImagen} escenas sin imagen propia. Aún no dibuja solo (está pendiente de construir), por eso se usa el fondo neutro.` : 'Todas las escenas encontraron imagen en el catálogo.');
   p('Revisor visual', 'trabajando', 'leyendo', 'Pendiente: mirará los fotogramas con Gemini antes de publicar (aún por construir).');
   p('Miniaturista', m ? 'libre' : 'trabajando', 'escribiendo', m ? `Diseñó la idea de miniatura: "${m.miniatura.texto}" — ${m.miniatura.idea}` : sinMesa);
   p('Analista de retención', 'trabajando', 'leyendo', `Mide por ahora lo que sí tiene: ${ctx.escenas} escenas y su ritmo. Los datos reales de YouTube aún no están conectados.`);
   p('Community manager', m ? 'libre' : 'trabajando', 'escribiendo', m ? `Dejó listo el comentario fijado: "${m.comentarioFijado.slice(0, 90)}"` : sinMesa);
+  // Paga: las vistas reales del canal. Cada puesto cobra su parte (1 punto por vista ganada); si no hay vistas nuevas, no cobra.
+  const total = vistas?.total, ganadas = vistas?.ganadasDesdeElUltimoCiclo ?? 0;
+  const parte = (n) => Math.floor(n / 30);
+  const bono = typeof total === 'number' ? ` BONO: el canal suma ${total.toLocaleString('es')} vistas; en este ciclo ganó ${ganadas.toLocaleString('es')} y a cada puesto le tocan ${parte(ganadas)} puntos. ${ganadas === 0 ? 'Sin vistas nuevas no cobra nadie.' : 'Más vistas, más paga.'}` : ' BONO: aún no puedo leer las vistas del canal.';
   p('Redactor de reportes', 'libre', 'escribiendo', 'Escribe el reporte de cada ciclo y lo manda a la campana.');
+  for (const rol of Object.keys(ag)) if (ag[rol]?.tarea) ag[rol].tarea = ag[rol].tarea.replace(/ BONO:.*$/, '') + bono;
 };
 
 /**

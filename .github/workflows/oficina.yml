@@ -55,6 +55,7 @@ jobs:
           fallo=0
           for c in $canales; do
             echo "=== $c ==="
+            CANAL=$c node agentes/vistas.mjs || true
             CANAL=$c node agentes/cazador.mjs || true
             CANAL=$c node agentes/oficina.mjs || fallo=1
           done

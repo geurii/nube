@@ -44,7 +44,7 @@ const notificar = (tipo, titulo, texto) => {
   fs.writeFileSync(NOTIFICACIONES, JSON.stringify(lista.slice(0, 80), null, 2));
 };
 /** Lo que la Mesa de publicación y los auditores dejaron en este ciclo (para el estado de los 30 puestos). */
-const CTX = {mesa: null, fuentes: 0, escenas: 0, sinImagen: 0, problemas: [], puntaje: null};
+const CTX = {gancho: null, mesa: null, fuentes: 0, escenas: 0, sinImagen: 0, problemas: [], puntaje: null};
 const registrar = (resultado, detalle, intentos, extra = {}) => {
   const e = leerJson(ESTADO, {agentes: {}, historial: [], totales: {aprobados: 0, rechazados: 0, errores: 0}});
   e.totales = {aprobados: 0, rechazados: 0, errores: 0, ...(e.totales ?? {})};
@@ -67,7 +67,7 @@ const registrar = (resultado, detalle, intentos, extra = {}) => {
   } else {
     ag['Directora de contenido'] = {estado: 'esperando_decision', actividad: 'pensando', tarea: `La oficina falló en su último ciclo: ${detalle}`};
   }
-  puestosDeLaOficina(ag, {resultado, tema: TEMA, ctx: CTX, historial: leerJson(HISTORIAL, []), formulas: leerJson(path.join(SALIDA, 'formulas.json'), null), vigilados: (CONFIG.vigilar ?? []).length});
+  puestosDeLaOficina(ag, {resultado, tema: TEMA, ctx: CTX, historial: leerJson(HISTORIAL, []), formulas: leerJson(path.join(SALIDA, 'formulas.json'), null), vistas: leerJson(path.join(SALIDA, 'vistas.json'), null), vigilados: (CONFIG.vigilar ?? []).length});
   // Jules, la jefa: exigente, directa y con números reales. Nunca esconde un resultado malo.
   const h = horasParaProximoCiclo();
   const jefa = (rol, frase) => { if (ag[rol]) ag[rol].tarea = `${ag[rol].tarea} JEFA: ${frase}`; };
@@ -222,6 +222,9 @@ const NORMAS = `NORMAS DE LA JEFA (no se negocian):
 7. La revelación ("Pero lo que no sabías:") cae entre el 65 % y el 75 % del guion.
 8. Cierra con una pregunta al espectador y con esta frase EXACTA: "${CTA}"
 9. Los números y fechas se escriben con palabras, como se dicen en voz alta.
+11. GANCHO AUDITIVO (primeros 3 segundos, lo que se OYE): una pregunta imposible o una cifra dicha en voz alta, con frase corta y una pausa dramática justo antes de la respuesta. Nada de saludos ni introducciones.
+12. GANCHO VISUAL (lo que se VE): cada escena describe algo que se pueda mostrar y la cifra o la idea clave aparece escrita en pantalla; el fondo cambia cada 3 segundos.
+13. AMBICIÓN: tu paga depende de las vistas; cada vista es dinero para ti. Escribe para que el dedo se detenga y el video se vea hasta el final.
 10. Cada dato (fecha, cifra, lugar, causa, relación) debe poder encontrarse casi literal en el MATERIAL. Si dudas de una frase, quítala. Prefiere pocas frases verdaderas a muchas dudosas. No uses cifras que el material no traiga.`;
 
 const REPARTO = FORMATO === 'largo'
@@ -371,6 +374,7 @@ try {
     try { fondos = validarFondos((await pedirJson(modelo, escenografo(escenas), FORMATO === 'largo' ? 3000 : 1500)).fondos, escenas.length, escenas); }
     catch (e) { informe.push(`(El Escenógrafo no pudo elegir fondos: ${e.message}. Se usa el fondo general.)`); }
   }
+  CTX.gancho = {palabrasPrimera: String(escenas[0]?.texto ?? '').split(/\s+/).filter(Boolean).length, escenasConUnFondo: fondos.filter((f) => f.length < 2).length};
   CTX.escenas = escenas.length; CTX.fuentes = fuentes.length; CTX.problemas = problemas; CTX.puntaje = puntaje;
   if (aprobado) {
     try {
