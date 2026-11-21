@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-21T06:37:27.871Z",
+  "actualizado": "2026-11-21T08:23:52.494Z",
   "totales": {
     "aprobados": 2,
     "rechazados": 2,
@@ -92,9 +92,9 @@
       "tarea": "Renderizó \"🔊 El enigma del Bloop: el rugido del hielo\" (31 MB). Está en Actions, artefacto \"video-oficina-bloop\"."
     },
     "Publicador": {
-      "estado": "esperando_decision",
+      "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "Video \"oficina-bloop\" listo, pero falta conectar YouTube: crea YT_CLIENT_ID, YT_CLIENT_SECRET y YT_REFRESH_TOKEN como secretos del repositorio. JEFA: un video que no se sube no existe."
+      "tarea": "YouTube ya está conectado (21 nov). Espera el próximo video aprobado para subirlo público. El mensaje anterior de \"falta conectar\" ya no aplica."
     }
   },
   "jefa": {
