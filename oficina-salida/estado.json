@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-21T06:28:00.375Z",
+  "actualizado": "2026-11-21T06:37:22.657Z",
   "totales": {
     "aprobados": 2,
     "rechazados": 2,
@@ -80,6 +80,21 @@
       "estado": "libre",
       "actividad": "pensando",
       "tarea": "Pulió el guion y eligió los fondos de cada escena. Puntaje: 5/10. El gancho es confuso, el ritmo se arrastra y el cierre no impacta. JEFA: Un 5/10 no alcanza. Quiero ganchos que frenen el dedo."
+    },
+    "Locutor": {
+      "estado": "libre",
+      "actividad": "hablando",
+      "tarea": "Grabó la voz de \"🔊 El enigma del Bloop: el rugido del hielo\"."
+    },
+    "Técnico de render": {
+      "estado": "libre",
+      "actividad": "escribiendo",
+      "tarea": "Renderizó \"🔊 El enigma del Bloop: el rugido del hielo\" (31 MB). Está en Actions, artefacto \"video-oficina-bloop\"."
+    },
+    "Publicador": {
+      "estado": "esperando_decision",
+      "actividad": "pensando",
+      "tarea": "Tiene un video listo: \"🔊 El enigma del Bloop: el rugido del hielo\". Falta subirlo a YouTube (necesita tu conexión; ver subir.mjs)."
     }
   },
   "jefa": {

@@ -1,0 +1,59 @@
+{
+  "titulo": "🔊 El enigma del Bloop: el rugido del hielo",
+  "formato": "short",
+  "plataforma": "youtube",
+  "voz": "es-DO-EmilioNeural",
+  "audio": "audio/oficina-bloop.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "publicacion": {
+    "titulo": "🔊 El enigma del Bloop: el rugido del hielo",
+    "descripcion": "Un sonido inexplicable sacudió el Pacífico en mil novecientos noventa y siete y despertó teorías de criaturas gigantes. Descubre por qué la ciencia lo vinculó al hielo.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://es.wikipedia.org/wiki/Bloop · https://en.wikipedia.org/wiki/Bloop\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#Bloop #MisteriosMarinos #IceQuake #NOAA"
+  },
+  "estado": "aprobado",
+  "editor": {
+    "puntaje": 5,
+    "critica": "El gancho es confuso, el ritmo se arrastra y el cierre no impacta."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que en mil novecientos noventa y siete se escuchó en el Pacífico sur un rugido bajo que nadie pudo identificar?",
+      "fondo": [
+        "pixelmisterio",
+        "pixelcifra:1997|RUGIDO|ROJO"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Los micrófonos, instalados para vigilar sismos y submarinos soviéticos, captaron el sonido durante siete minutos, tan fuerte que tres sensores separados por más de cinco mil kilómetros lo registraron.",
+      "fondo": [
+        "pixelsonar"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Aunque se rumoró que podría ser un animal gigantesco, la NOAA concluyó que el patrón coincidía con los críosismos de enormes icebergs al romperse bajo el agua.",
+      "fondo": [
+        "pixelcifra:5000|DISTANCIA|AZUL"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: el Bloop fue atribuido a un críoismo de hielo, no a una criatura.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "Así, el rugido era solo hielo, no monstruo, y el océano sigue guardando misterios. Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}
