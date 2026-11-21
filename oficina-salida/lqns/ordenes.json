@@ -1,5 +1,10 @@
 [
   {
+    "fecha": "2026-11-21T22:30:36.024Z",
+    "orden": "Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00.",
+    "nivel": 4
+  },
+  {
     "fecha": "2026-11-21T18:36:33.284Z",
     "orden": "Aseguren que el video se suba y se confirme en el chat del equipo dentro de los 30 minutos.",
     "nivel": 4
@@ -43,10 +48,5 @@
     "fecha": "2026-11-21T11:13:43.278Z",
     "orden": "Implementen la lista de verificación de calidad antes de cada video y publiquen al menos un video diario.",
     "nivel": 4
-  },
-  {
-    "fecha": "2026-11-21T11:12:02.130Z",
-    "orden": "Todos los 30 deben estar en sus puestos trabajando sin pausa, sin excusas ni descansos, inmediatamente.",
-    "nivel": 5
   }
 ]
