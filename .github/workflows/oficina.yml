@@ -56,8 +56,10 @@ jobs:
           for c in $canales; do
             echo "=== $c ==="
             CANAL=$c node agentes/vistas.mjs || true
+            CANAL=$c node agentes/autopsia.mjs || true
             CANAL=$c node agentes/cazador.mjs || true
             CANAL=$c node agentes/oficina.mjs || fallo=1
+            CANAL=$c node agentes/ayuda.mjs || true
           done
           exit $fallo
       - name: Guardar el resultado en el repositorio

@@ -38,7 +38,14 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: node agentes/producir.mjs
-      - name: Panel de críticos (decide si el video se sube)
+      - name: Autopsia (por qué los videos anteriores no cogieron vistas)
+        if: ${{ steps.producir.outputs.id != '' }}
+        continue-on-error: true
+        env:
+          CANAL: ${{ steps.producir.outputs.canal }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: node agentes/vistas.mjs && node agentes/autopsia.mjs
+      - name: Panel de críticos (Gemini mira el video y 8 espectadores deciden si se sube)
         id: panel
         if: ${{ steps.producir.outputs.id != '' }}
         continue-on-error: true
@@ -46,7 +53,15 @@ jobs:
           ID: ${{ steps.producir.outputs.id }}
           CANAL: ${{ steps.producir.outputs.canal }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: node agentes/panel.mjs
+      - name: Ayuda mutua (los puestos libres hacen otras tareas)
+        if: ${{ steps.producir.outputs.id != '' }}
+        continue-on-error: true
+        env:
+          CANAL: ${{ steps.producir.outputs.canal }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: node agentes/ayuda.mjs
       - name: Guardar el avance en el repositorio
         if: always()
         run: |

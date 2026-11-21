@@ -208,7 +208,8 @@ const elegirTema = async (modelo) => {
     {role: 'system', content: `Eres el/la Director/a de contenido del canal de YouTube "${CONFIG.nombre}" (${CONFIG.nicho}). Respondes SOLO con JSON.`},
     {role: 'user', content: `Dame 20 títulos EXACTOS de artículos de Wikipedia en inglés sobre ${CONFIG.nicho}, con mucha documentación. Reglas: nada sobre personas (ni biografías), nada de política ni de violencia gráfica, nada ya hecho. Ya hechos: ${hechos.join(', ') || 'ninguno'}. Formato: {"temas": ["Titulo 1", "Titulo 2"]}`},
   ], 1500);
-  for (const t of r.temas ?? []) {
+  const ideasEquipo = leerJson(path.join(SALIDA, 'ayudas.json'), {}).temas ?? [];
+  for (const t of [...ideasEquipo, ...(r.temas ?? [])]) {
     if (typeof t !== 'string' || hechos.includes(t)) continue;
     if (await existeEnWikipedia(t)) return t;
   }
@@ -237,6 +238,16 @@ const REPARTO = FORMATO === 'largo'
 const FORMATO_ESCENAS = 'Formato JSON de escenas: [{"tipo": "hook|historia|revelacion|veredicto", "texto": "una o dos frases"}]. La primera escena es "hook", la última "veredicto".';
 
 /** Fórmula del momento (la deja el Cazador de fórmulas): solo estructura, nunca temas ni contenido de otros canales. */
+const ayudasDelEquipo = () => {
+  const y = leerJson(path.join(SALIDA, 'ayudas.json'), {});
+  const au = leerJson(path.join(SALIDA, 'autopsia.json'), null);
+  const partes = [];
+  if (au?.reglas?.length) partes.push(`AUTOPSIA de por qué los videos anteriores no cogieron vistas (reglas): ${au.reglas.join(' | ')}`);
+  if (y.ganchos?.length) partes.push(`Plantillas de gancho del equipo: ${y.ganchos.slice(0, 3).join(' // ')}`);
+  if (y.mejorasGuion?.length) partes.push(`Mejoras que el equipo vio en el guion anterior: ${y.mejorasGuion.join(' | ')}`);
+  if (y.titulos?.length) partes.push(`Patrones de título que funcionan: ${y.titulos.join(' | ')}`);
+  return partes.length ? `\n\nAYUDA DEL EQUIPO (úsala si encaja; los datos del MATERIAL mandan): ${partes.join('. ')}` : '';
+};
 const aprendizajesDelPanel = () => {
   const a = leerJson(path.join(SALIDA, 'aprendizajes.json'), []).slice(0, 3);
   return a.length ? `\n\nCRÍTICAS REALES DEL PANEL DE ESPECTADORES a videos anteriores (corrige estos defectos): ${a.map((x) => `"${x.video}": ${x.mejora} ${(x.quejas ?? []).slice(0, 2).join(' | ')}`).join(' // ')}` : '';
@@ -248,7 +259,7 @@ const formulaActual = () => {
 };
 const guionista = (material, problemas) => [
   {role: 'system', content: `Eres el/la Guionista del canal de YouTube "${CONFIG.nombre}" (${CONFIG.nicho}). Tienes maestría en narración de documental, retención de audiencia y rigor periodístico. ${NORMAS}\nResponde SOLO con JSON.`},
-  {role: 'user', content: `Escribe un guion de ${FORMATO === 'largo' ? 'video largo' : 'Short vertical de unos 55 segundos'} de unas ${PALABRAS} palabras sobre "${TEMA}". ${REPARTO}${formulaActual()}${aprendizajesDelPanel()}\n\nMATERIAL (única fuente permitida):\n${material}\n\n${problemas?.length ? `El Verificador o el Editor rechazaron la versión anterior. Corrige exactamente esto:\n${problemas.map((p) => `- "${p.frase}": ${p.motivo}`).join('\n')}\n\n` : ''}Formato JSON: {"titulo": "...(máx. 90 caracteres, con un emoji)", "descripcion": "...(2 frases)", "hashtags": ["#cinco", "#especificos", "#del", "#tema", "#sinviral"], "escenas": [...]}. Los hashtags son 5, específicos del tema; nunca #viral ni #fyp. ${FORMATO_ESCENAS}`},
+  {role: 'user', content: `Escribe un guion de ${FORMATO === 'largo' ? 'video largo' : 'Short vertical de unos 55 segundos'} de unas ${PALABRAS} palabras sobre "${TEMA}". ${REPARTO}${formulaActual()}${aprendizajesDelPanel()}${ayudasDelEquipo()}\n\nMATERIAL (única fuente permitida):\n${material}\n\n${problemas?.length ? `El Verificador o el Editor rechazaron la versión anterior. Corrige exactamente esto:\n${problemas.map((p) => `- "${p.frase}": ${p.motivo}`).join('\n')}\n\n` : ''}Formato JSON: {"titulo": "...(máx. 90 caracteres, con un emoji)", "descripcion": "...(2 frases)", "hashtags": ["#cinco", "#especificos", "#del", "#tema", "#sinviral"], "escenas": [...]}. Los hashtags son 5, específicos del tema; nunca #viral ni #fyp. ${FORMATO_ESCENAS}`},
 ];
 const editor = (titulo, escenas) => [
   {role: 'system', content: `Eres el/la Editor/a crítico/a de guiones de un canal de YouTube. Eres implacable: tu trabajo es encontrar lo que haría que alguien deslice el video y arreglarlo. Evalúas gancho (¿se entiende en un segundo?), ritmo (frases cortas, nada de relleno), claridad para gente normal y fuerza del cierre. Reglas duras: NO agregues datos nuevos ni cifras; solo recorta, reordena y mejora la redacción de lo que ya está. Mantén "Sabías que" al inicio, la frase final exacta "${CTA}" y la revelación entre el 65 % y el 75 %. Cada escena debe poder mostrarse con un cambio de imagen cada 3 segundos: frases de máximo 18 palabras. Responde SOLO con JSON.`},
