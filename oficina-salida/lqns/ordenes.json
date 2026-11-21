@@ -1,5 +1,10 @@
 [
   {
+    "fecha": "2026-11-21T14:52:56.020Z",
+    "orden": "Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa.",
+    "nivel": 5
+  },
+  {
     "fecha": "2026-11-21T11:13:43.278Z",
     "orden": "Implementen la lista de verificación de calidad antes de cada video y publiquen al menos un video diario.",
     "nivel": 4
