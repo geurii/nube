@@ -35,6 +35,15 @@ jobs:
       - run: npm install --no-audit --no-fund
       - name: Voz (msedge-tts solo para este flujo)
         run: npm install --no-save --no-audit --no-fund msedge-tts@2.1.1
+      - name: Marcar inicio de producción
+        if: always()
+        run: |
+          node agentes/progreso.mjs 40 "Grabando la voz y renderizando el video" || true
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add oficina-salida || true
+          git diff --cached --quiet || git commit -m "Progreso: Grabando la voz y renderizando el video"
+          for i in 1 2 3; do git pull --rebase origin main && git push && break; sleep 4; done
       - name: Producir el video
         id: producir
         env:
@@ -65,6 +74,9 @@ jobs:
           CANAL: ${{ steps.producir.outputs.canal }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: timeout 240 node agentes/ayuda.mjs; timeout 240 node agentes/funciones.mjs; timeout 240 node agentes/conciencia.mjs
+      - name: Marcar progreso tras el panel
+        if: always()
+        run: node agentes/progreso.mjs 90 'Los críticos ya votaron: listo para subir' || true
       - name: Guardar el avance en el repositorio
         if: always()
         run: |
@@ -98,3 +110,12 @@ jobs:
           git add oficina-salida || true
           git diff --cached --quiet || git commit -m "Publicador: resultado de la subida"
           git pull --rebase origin main && git push || true
+      - name: Marcar progreso final
+        if: always()
+        run: |
+          node agentes/progreso.mjs 100 "Ciclo terminado" || true
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add oficina-salida || true
+          git diff --cached --quiet || git commit -m "Progreso: terminado"
+          for i in 1 2 3; do git pull --rebase origin main && git push && break; sleep 4; done

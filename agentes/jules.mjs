@@ -43,7 +43,7 @@ for (const archivo of pendientes) {
   const ruta = path.join(PEND, archivo);
   const p = leer(ruta, {});
   const canal = /^[a-z0-9]{1,24}$/.test(String(p.canal ?? '')) ? p.canal : 'lqns';
-  const texto = String(p.texto ?? '').replace(/[\u0000-\u001f]/g, ' ').trim().slice(0, 600);
+  const texto = String(p.texto ?? '').replace(/[\u0000-\u001f]/g, ' ').trim().slice(0, 1500);
   if (!texto) { fs.renameSync(ruta, ruta.replace(/\.json$/, '.hecho.json')); continue; }
   const carpeta = path.join(RAIZ, canal);
   const estado = leer(path.join(carpeta, 'estado.json'), {agentes: {}});
@@ -62,12 +62,12 @@ for (const archivo of pendientes) {
     `Totales de la oficina: ${JSON.stringify(estado.totales ?? {})}. Puestos esperando una decisión: ${parados.length ? parados.join(', ') : 'ninguno'}.`,
     ordenes.length ? `Última orden que diste: "${ordenes[0].orden}" (nivel ${ordenes[0].nivel}).` : 'Aún no has dado órdenes por este chat.',
   ].join('\n');
-  const historia = chat.slice(0, 8).reverse().map((m) => `${m.de === 'tu' ? 'DUEÑO' : 'JULES'}: ${m.texto}`).join('\n');
+  const historia = chat.slice(0, 14).reverse().map((m) => `${m.de === 'tu' ? 'DUEÑO' : 'JULES'}: ${m.texto}`).join('\n');
   const r = await llamar([
-    {role: 'system', content: 'Eres Jules, la directora de una oficina de 30 profesionales que hacen videos de misterio y datos curiosos para YouTube. Eres la jefa más exigente: perfeccionista, ambiciosa, directa y presionas sin parar, pero hablas con respeto al DUEÑO del canal, que es quien te da la presión y las órdenes. Meta de la empresa: monetizar antes del 13 de diciembre de 2026. Reglas: usa SOLO las cifras del CONTEXTO, nunca inventes datos ni prometas un número de vistas; no te inventes cosas que la oficina ya hizo. Si el dueño te exige más, tú conviertes eso en UNA orden concreta y más dura para tus 30 empleados. Responde corto (máx. 70 palabras), en español, sin tecnicismos. Responde SOLO con JSON: {"respuesta": "lo que le dices al dueño", "orden": "la orden para el equipo (una frase) o cadena vacía si no hay", "nivel": número de 1 a 5 con la presión que aplicarás}.'},
+    {role: 'system', content: 'Eres Jules, la directora de una oficina de 30 profesionales que hacen videos de misterio y datos curiosos para YouTube. Eres la jefa más exigente: perfeccionista, ambiciosa, directa y presionas sin parar, pero hablas con respeto al DUEÑO del canal, que es quien te da la presión y las órdenes. Meta de la empresa: monetizar antes del 13 de diciembre de 2026. Reglas: usa SOLO las cifras del CONTEXTO, nunca inventes datos ni prometas un número de vistas; no te inventes cosas que la oficina ya hizo. Si el dueño te exige más, tú conviertes eso en UNA orden concreta y más dura para tus 30 empleados. Responde de forma natural y directa (máx. 120 palabras); puedes conversar de lo que el dueño quiera sobre el canal, la oficina, ideas, dudas o su plan, no solo de órdenes, en español, sin tecnicismos. Responde SOLO con JSON: {"respuesta": "lo que le dices al dueño", "orden": "la orden para el equipo (una frase) o cadena vacía si no hay", "nivel": número de 1 a 5 con la presión que aplicarás}.'},
     {role: 'user', content: `CONTEXTO:\n${contexto}\n\nCONVERSACIÓN RECIENTE:\n${historia || '(empieza ahora)'}\n\nMENSAJE NUEVO DEL DUEÑO: ${texto}`},
   ]);
-  const respuesta = String(r.respuesta ?? '').slice(0, 600) || 'Entendido. Lo atiendo ahora.';
+  const respuesta = String(r.respuesta ?? '').slice(0, 1200) || 'Entendido. Lo atiendo ahora.';
   const orden = String(r.orden ?? '').slice(0, 280);
   const nivel = Math.min(5, Math.max(1, Math.round(Number(r.nivel) || 3)));
   const ahora = new Date().toISOString();
