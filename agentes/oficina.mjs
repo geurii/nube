@@ -82,7 +82,7 @@ const elegirModelo = async () => {
 const HISTORIAL = path.join(SALIDA, 'historial.json');
 const leerHistorial = () => { try { return JSON.parse(fs.readFileSync(HISTORIAL, 'utf8')); } catch { return []; } };
 const existeEnWikipedia = async (titulo) => {
-  const url = `https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&exintro=0&redirects=1&format=json&titles=${encodeURIComponent(titulo)}`;
+  const url = `https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&titles=${encodeURIComponent(titulo)}`;
   const r = await fetch(url, {headers: {'User-Agent': UA}});
   if (!r.ok) return false;
   const pagina = Object.values((await r.json()).query?.pages ?? {})[0];
