@@ -1,0 +1,56 @@
+{
+  "actualizado": "2026-11-21T06:02:24.916Z",
+  "totales": {
+    "aprobados": 0,
+    "rechazados": 1,
+    "errores": 2
+  },
+  "historial": [
+    {
+      "fecha": "2026-11-21T06:02:24.916Z",
+      "tema": "Bermuda Triangle",
+      "formato": "short",
+      "resultado": "rechazado",
+      "intentos": 3,
+      "detalle": "El material no respalda \"más de mil historias de desapariciones\"."
+    },
+    {
+      "fecha": "2026-11-21T06:02:24.916Z",
+      "tema": "(sin tema)",
+      "formato": "short",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "Fallo al elegir tema (ya corregido)."
+    },
+    {
+      "fecha": "2026-11-21T06:02:24.916Z",
+      "tema": "Mary Celeste",
+      "formato": "short",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "Límite por minuto de Groq (ya corregido)."
+    }
+  ],
+  "agentes": {
+    "Directora de contenido": {
+      "estado": "esperando_decision",
+      "actividad": "pensando",
+      "tarea": "Necesita revisión: el guion de \"Bermuda Triangle\" no pasó la verificación. Aprobados: 0. Rechazados: 1. Con error: 2."
+    },
+    "Investigador de temas": {
+      "estado": "libre",
+      "actividad": "leyendo",
+      "tarea": "Dejó el material de \"Bermuda Triangle\" con su fuente en Wikipedia."
+    },
+    "Guionista": {
+      "estado": "trabajando",
+      "actividad": "escribiendo",
+      "tarea": "Intentó 3 veces escribir \"Bermuda Triangle\" sin que el Verificador lo aprobara."
+    },
+    "Verificador de datos": {
+      "estado": "esperando_decision",
+      "actividad": "leyendo",
+      "tarea": "Rechazó \"Bermuda Triangle\": el material no respalda \"más de mil historias de desapariciones\"."
+    }
+  }
+}

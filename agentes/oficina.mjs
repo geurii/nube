@@ -112,11 +112,15 @@ const NORMAS = `NORMAS DE LA JEFA (no se negocian):
 6. Las dudas se dicen como dudas ("según la fuente", "no se sabe"). Si dos fuentes difieren, di las dos.
 7. La revelación ("Pero lo que no sabías:") cae entre el 65 % y el 75 % del guion.
 8. Cierra con una pregunta al espectador y con esta frase EXACTA: "${CTA}"
-9. Los números y fechas se escriben con palabras, como se dicen en voz alta.`;
+9. Los números y fechas se escriben con palabras, como se dicen en voz alta.
+10. Cada dato (fecha, cifra, lugar, causa, relación) debe poder encontrarse casi literal en el MATERIAL. Si dudas de una frase, quítala. Prefiere pocas frases verdaderas a muchas dudosas. No uses cifras que el material no traiga.`;
 
+const REPARTO = FORMATO === 'largo'
+  ? 'La revelación ("Pero lo que no sabías:") debe empezar cuando lleves entre el 65 % y el 75 % de las palabras del guion.'
+  : 'Reparto de palabras obligatorio: antes de la revelación, entre 70 y 80 palabras (el hook más 3 o 4 escenas de historia); la revelación, entre 12 y 18 palabras; el veredicto, entre 22 y 28 palabras e incluye la frase final exacta.';
 const guionista = (material, problemas) => [
   {role: 'system', content: `Eres el/la Guionista de un canal de YouTube de misterio y datos curiosos. Tienes triple maestría: narración de documental, retención de audiencia en Shorts/YouTube y rigor periodístico. ${NORMAS}\nResponde SOLO con JSON.`},
-  {role: 'user', content: `Escribe un guion de ${FORMATO === 'largo' ? 'video largo' : 'Short vertical de unos 55 segundos'} de unas ${PALABRAS} palabras sobre "${TEMA}".\n\nMATERIAL (única fuente permitida):\n${material}\n\n${problemas?.length ? `El Verificador rechazó la versión anterior. Corrige exactamente esto:\n${problemas.map((p) => `- "${p.frase}": ${p.motivo}`).join('\n')}\n\n` : ''}Formato JSON: {"titulo": "...(máx. 90 caracteres, con un emoji)", "descripcion": "...(2 frases)", "escenas": [{"tipo": "hook|historia|revelacion|veredicto", "texto": "una o dos frases"}]}. La primera escena es "hook", la última "veredicto".`},
+  {role: 'user', content: `Escribe un guion de ${FORMATO === 'largo' ? 'video largo' : 'Short vertical de unos 55 segundos'} de unas ${PALABRAS} palabras sobre "${TEMA}". ${REPARTO}\n\nMATERIAL (única fuente permitida):\n${material}\n\n${problemas?.length ? `El Verificador rechazó la versión anterior. Corrige exactamente esto:\n${problemas.map((p) => `- "${p.frase}": ${p.motivo}`).join('\n')}\n\n` : ''}Formato JSON: {"titulo": "...(máx. 90 caracteres, con un emoji)", "descripcion": "...(2 frases)", "escenas": [{"tipo": "hook|historia|revelacion|veredicto", "texto": "una o dos frases"}]}. La primera escena es "hook", la última "veredicto".`},
 ];
 const verificador = (material, escenas) => [
   {role: 'system', content: `Eres el/la Verificador/a, auditor/a estricto/a de datos. Tienes triple maestría: verificación de fuentes, lectura crítica y edición. Tu trabajo es rechazar. Si una frase afirma un dato (fecha, cifra, lugar, causa, nombre, relación) que no está literalmente respaldado por el MATERIAL, la marcas. Las opiniones y frases de enlace no cuentan. Nunca apruebas por cortesía: si no puedes comprobarlo, lo reportas. Responde SOLO con JSON: {"aprobado": true|false, "problemas": [{"frase": "...", "motivo": "..."}]}.`},
@@ -136,9 +140,41 @@ const comprobar = (escenas) => {
   else {
     const antes = escenas.slice(0, i).reduce((s, e) => s + n(e), 0);
     const pct = Math.round((antes / total) * 100);
-    if (pct < 55 || pct > 80) p.push({frase: escenas[i].texto, motivo: `La revelación cae al ${pct} % y debe caer entre 65 % y 75 %.`});
+    if (pct < 60 || pct > 78) p.push({frase: escenas[i].texto, motivo: `La revelación cae al ${pct} % (${antes} de ${total} palabras antes de ella) y debe caer entre 65 % y 75 %: añade historia antes de la revelación o acórtala.`});
   }
   return p;
+};
+
+/* ---------- Estado real para la oficina 3D (estado.json) ---------- */
+const ESTADO = path.join(SALIDA, 'estado.json');
+const leerEstado = () => {
+  try { return JSON.parse(fs.readFileSync(ESTADO, 'utf8')); } catch { return {agentes: {}, historial: [], totales: {aprobados: 0, rechazados: 0, errores: 0}}; }
+};
+const registrar = (resultado, detalle, intentos) => {
+  const e = leerEstado();
+  e.totales = e.totales ?? {aprobados: 0, rechazados: 0, errores: 0};
+  const clave = resultado === 'aprobado' ? 'aprobados' : resultado === 'rechazado' ? 'rechazados' : 'errores';
+  e.totales[clave] = (e.totales[clave] ?? 0) + 1;
+  e.historial = [{fecha: new Date().toISOString(), tema: TEMA || '(sin tema)', formato: FORMATO, resultado, intentos, detalle}, ...(e.historial ?? [])].slice(0, 20);
+  const t = e.totales;
+  const resumen = `Aprobados: ${t.aprobados}. Rechazados: ${t.rechazados}. Con error: ${t.errores}.`;
+  const ag = e.agentes ?? {};
+  if (resultado === 'aprobado') {
+    ag['Directora de contenido'] = {estado: 'libre', actividad: 'hablando', tarea: `Último guion aprobado: "${TEMA}" (${FORMATO}). ${resumen}`};
+    ag['Investigador de temas'] = {estado: 'libre', actividad: 'leyendo', tarea: `Dejó el material de "${TEMA}" con su fuente en Wikipedia.`};
+    ag['Guionista'] = {estado: 'libre', actividad: 'escribiendo', tarea: `Entregó el guion de "${TEMA}". ${detalle}`};
+    ag['Verificador de datos'] = {estado: 'libre', actividad: 'leyendo', tarea: `Aprobó "${TEMA}" en el intento ${intentos}.`};
+  } else if (resultado === 'rechazado') {
+    ag['Directora de contenido'] = {estado: 'esperando_decision', actividad: 'pensando', tarea: `Necesita revisión: el guion de "${TEMA}" no pasó la verificación. ${resumen}`};
+    ag['Investigador de temas'] = {estado: 'libre', actividad: 'leyendo', tarea: `Dejó el material de "${TEMA}" con su fuente en Wikipedia.`};
+    ag['Guionista'] = {estado: 'trabajando', actividad: 'escribiendo', tarea: `Intentó 3 veces escribir "${TEMA}" sin que el Verificador lo aprobara.`};
+    ag['Verificador de datos'] = {estado: 'esperando_decision', actividad: 'leyendo', tarea: `Rechazó "${TEMA}": ${detalle}`};
+  } else {
+    ag['Directora de contenido'] = {estado: 'esperando_decision', actividad: 'pensando', tarea: `La oficina falló en su último ciclo: ${detalle}`};
+  }
+  e.agentes = ag;
+  e.actualizado = new Date().toISOString();
+  fs.writeFileSync(ESTADO, JSON.stringify(e, null, 2));
 };
 
 /* ---------- Flujo ---------- */
@@ -155,8 +191,9 @@ try {
   const modelo = await elegirModelo();
   informe.push(`Modelo usado en Groq: ${modelo}`, '');
 
-  let escenas = null, titulo = '', descripcion = '', problemas = [], aprobado = false;
+  let escenas = null, titulo = '', descripcion = '', problemas = [], aprobado = false, intentosUsados = 0;
   for (let intento = 1; intento <= 3 && !aprobado; intento++) {
+    intentosUsados = intento;
     const borrador = json(await groq(modelo, guionista(material, problemas)));
     escenas = (borrador.escenas ?? []).map((e) => ({tipo: e.tipo, texto: String(e.texto ?? '').trim()})).filter((e) => e.texto);
     titulo = borrador.titulo ?? TEMA;
@@ -184,10 +221,14 @@ try {
   };
   fs.writeFileSync(path.join(SALIDA, `guion-${slug}.json`), JSON.stringify(guion, null, 2));
   fs.writeFileSync(path.join(SALIDA, `informe-${slug}.md`), informe.join('\n'));
+  // se anota el tema (aprobado o no) para que la oficina no lo repita
+  fs.writeFileSync(HISTORIAL, JSON.stringify([...new Set([...leerHistorial(), TEMA])], null, 2));
+  registrar(aprobado ? 'aprobado' : 'rechazado', aprobado ? `${palabras} palabras, ${escenas.length} escenas.` : (problemas[0]?.motivo ?? 'sin detalle').slice(0, 160), intentosUsados);
   console.log(informe.join('\n'));
   if (!aprobado) { console.error('El Verificador no aprobó el guion tras 3 intentos. Queda marcado para revisión.'); process.exit(2); }
 } catch (e) {
   informe.push('## ERROR', String(e.message ?? e));
+  try { registrar('error', String(e.message ?? e).slice(0, 160), 0); } catch { /* sin estado */ }
   fs.writeFileSync(path.join(SALIDA, `informe-${slug}.md`), informe.join('\n'));
   fallar(e.message ?? e);
 }
