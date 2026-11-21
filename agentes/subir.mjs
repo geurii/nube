@@ -6,10 +6,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {avisarTelefono} from './aviso.mjs';
 
-const {YT_CLIENT_ID, YT_CLIENT_SECRET, ID} = process.env;
+const {ID} = process.env;
+const YT_CLIENT_ID = (process.env.YT_CLIENT_ID || '').trim();
+const YT_CLIENT_SECRET = (process.env.YT_CLIENT_SECRET || '').trim();
 const CANAL = process.env.CANAL || 'lqns';
 // Cada canal puede tener su propio YouTube: YT_REFRESH_TOKEN_<CANAL> (el de un canal nuevo) o, si no, YT_REFRESH_TOKEN.
-const YT_REFRESH_TOKEN = process.env.YT_REFRESH_TOKEN_CANAL || process.env.YT_REFRESH_TOKEN;
+const YT_REFRESH_TOKEN = (process.env.YT_REFRESH_TOKEN_CANAL || process.env.YT_REFRESH_TOKEN || '').trim();
 // Próxima hora libre: al menos 40 min en el futuro. Las horas locales (UTC-4) pasadas a UTC.
 const proximoHorario = (formato) => {
   const horasUtc = formato === 'largo' ? [22] : [4, 16];

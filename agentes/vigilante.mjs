@@ -16,7 +16,10 @@ const lim = (t) => String(t).slice(0, 180);
 const pedir = async (url, init = {}) => { try { return await fetch(url, {signal: AbortSignal.timeout(30000), ...init}); } catch (e) { return {ok: false, status: 0, text: async () => String(e.message), json: async () => ({})}; } };
 
 // 1) YouTube: ¿el token sigue vivo? ¿tiene permiso de analítica?
-const {YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN, GROQ_API_KEY, GEMINI_API_KEY, GITHUB_TOKEN, GITHUB_REPOSITORY} = process.env;
+const {GROQ_API_KEY, GEMINI_API_KEY, GITHUB_TOKEN, GITHUB_REPOSITORY} = process.env;
+const YT_CLIENT_ID = (process.env.YT_CLIENT_ID || '').trim();
+const YT_CLIENT_SECRET = (process.env.YT_CLIENT_SECRET || '').trim();
+const YT_REFRESH_TOKEN = (process.env.YT_REFRESH_TOKEN || '').trim();
 let tokenAcceso = null;
 if (YT_CLIENT_ID && YT_CLIENT_SECRET && YT_REFRESH_TOKEN) {
   const r = await pedir('https://oauth2.googleapis.com/token', {method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: new URLSearchParams({client_id: YT_CLIENT_ID, client_secret: YT_CLIENT_SECRET, refresh_token: YT_REFRESH_TOKEN, grant_type: 'refresh_token'})});

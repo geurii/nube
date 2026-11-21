@@ -6,8 +6,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const CANAL = (process.env.CANAL || 'lqns').trim();
-const {YT_CLIENT_ID, YT_CLIENT_SECRET} = process.env;
-const REFRESH = process.env.YT_REFRESH_TOKEN_CANAL || process.env.YT_REFRESH_TOKEN;
+const YT_CLIENT_ID = (process.env.YT_CLIENT_ID || '').trim();
+const YT_CLIENT_SECRET = (process.env.YT_CLIENT_SECRET || '').trim();
+const REFRESH = (process.env.YT_REFRESH_TOKEN_CANAL || process.env.YT_REFRESH_TOKEN || '').trim();
 const carpeta = path.resolve('oficina-salida', CANAL);
 const RUTA = path.join(carpeta, 'analitica.json');
 const leer = (r, d) => { try { return JSON.parse(fs.readFileSync(r, 'utf8')); } catch { return d; } };
