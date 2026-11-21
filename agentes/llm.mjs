@@ -49,3 +49,17 @@ export const chatAlternativo = async (mensajes, {maxTokens = 2500, temperatura =
 };
 
 export const proveedoresConLlave = () => PROVEEDORES.filter((p) => (process.env[p.clave] || '').trim() && p.nombre !== 'Cloudflare').map((p) => p.nombre);
+
+/** Modelos de Groq que esta cuenta SÍ tiene, en orden de preferencia. Nunca devuelve una lista vacía. */
+export const modelosDisponibles = async (key, base = 'https://api.groq.com/openai/v1') => {
+  const preferidos = ['openai/gpt-oss-20b', 'llama-3.3-70b-versatile', 'qwen/qwen3-32b', 'meta-llama/llama-4-scout-17b-16e-instruct', 'openai/gpt-oss-120b'];
+  try {
+    const r = await fetch(`${base}/models`, {headers: {Authorization: `Bearer ${key}`}, signal: AbortSignal.timeout(20000)});
+    if (r.ok) {
+      const ids = ((await r.json()).data ?? []).map((x) => x.id);
+      const buenos = preferidos.filter((m) => ids.includes(m));
+      if (buenos.length) return buenos;
+    }
+  } catch { /* sin lista */ }
+  return ['openai/gpt-oss-120b'];
+};

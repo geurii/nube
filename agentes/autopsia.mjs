@@ -4,7 +4,8 @@
 // Variables: CANAL, GROQ_API_KEY.
 import fs from 'node:fs';
 import path from 'node:path';
-const MODELOS = ['llama-3.3-70b-versatile', 'openai/gpt-oss-20b', 'openai/gpt-oss-120b']; // cuotas separadas: si uno se agota, pasa al siguiente
+import {modelosDisponibles} from './llm.mjs';
+const MODELOS = await modelosDisponibles(process.env.GROQ_API_KEY); // solo modelos que la cuenta tiene (cuotas separadas)
 
 const CANAL = (process.env.CANAL || 'lqns').trim();
 const KEY = process.env.GROQ_API_KEY;
