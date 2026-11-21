@@ -43,13 +43,14 @@ const llamar = async (sistema, usuario, max = 3500) => {
 
 // 1) Perfiles: se crean UNA vez y no cambian (esa es su "identidad")
 let perfiles = leer(path.join(dir, 'perfiles.json'), {});
-const sinPerfil = roles.filter((r) => !perfiles[r]);
+const sinPerfil = roles.filter((r) => !perfiles[r] || !perfiles[r].apodo);
 if (sinPerfil.length) {
   const r = await llamar('Creas personajes ficticios para un equipo de oficina de un canal de YouTube. Son personas inventadas: sin nombres de personas reales ni famosos. Responde SOLO con JSON.',
-    `Crea un perfil breve para cada uno de estos puestos: ${sinPerfil.join(' | ')}.\nDevuelve {"perfiles": {"<puesto exacto>": {"carácter": "2 rasgos de personalidad", "historia": "una frase de su vida (familia, de dónde viene)", "miedo": "lo que más teme perder", "sueño": "lo que quiere lograr con este canal"}}}`);
+    `Crea un perfil breve para cada uno de estos puestos: ${sinPerfil.join(' | ')}.\nCada uno tiene también un APODO épico y divertido que resume su superpoder en el equipo (ej.: «El Cazador de Ganchos», «La Cirujana de Datos», «El Alquimista del Misterio»). Devuelve {"perfiles": {"<puesto exacto>": {"apodo": "apodo de 2 a 4 palabras", "carácter": "2 rasgos de personalidad", "historia": "una frase de su vida (familia, de dónde viene)", "miedo": "lo que más teme perder", "sueño": "lo que quiere lograr con este canal"}}}`);
   sinPerfil.forEach((rol, i) => {
     const p = r?.perfiles?.[rol] ?? {};
-    perfiles[rol] = {nombre: NOMBRES[(Object.keys(perfiles).length + i) % NOMBRES.length], caracter: String(p['carácter'] ?? p.caracter ?? 'Trabajador y perfeccionista').slice(0, 120), historia: String(p.historia ?? 'Tiene una familia que alimentar.').slice(0, 160), miedo: String(p.miedo ?? 'Quedarse sin paga.').slice(0, 100), sueno: String(p.sueño ?? p.sueno ?? 'Que el canal se haga viral.').slice(0, 100)};
+    const previo = perfiles[rol] ?? {};
+    perfiles[rol] = {...previo, apodo: String(p.apodo ?? previo.apodo ?? rol).replace(/[«»"]/g, '').slice(0, 40), nombre: previo.nombre ?? NOMBRES[(Object.keys(perfiles).length + i) % NOMBRES.length], caracter: previo.caracter ?? String(p['carácter'] ?? p.caracter ?? 'Trabajador y perfeccionista').slice(0, 120), historia: previo.historia ?? String(p.historia ?? 'Tiene una familia que alimentar.').slice(0, 160), miedo: previo.miedo ?? String(p.miedo ?? 'Quedarse sin paga.').slice(0, 100), sueno: previo.sueno ?? String(p.sueño ?? p.sueno ?? 'Que el canal se haga viral.').slice(0, 100)};
   });
   fs.writeFileSync(path.join(dir, 'perfiles.json'), JSON.stringify(perfiles, null, 2));
 }
@@ -83,7 +84,7 @@ for (const rol of roles) {
   memoria[rol] = [...(memoria[rol] ?? []), {fecha: ahora, pensamiento: pen, iniciativa: ini}].slice(-8);
   if (ini) iniciativas.push(`${perfiles[rol]?.nombre} (${rol}): ${ini}`);
   const a = estado.agentes[rol];
-  if (a?.tarea) a.tarea = a.tarea.replace(/ SOY:.*?(?= PIENSA:)/s, '').replace(/ PIENSA:.*$/s, '') + ` SOY ${perfiles[rol]?.nombre}: ${perfiles[rol]?.caracter}. PIENSA: ${pen}${ini ? ' INICIATIVA: ' + ini : ''}`;
+  if (a?.tarea) a.tarea = a.tarea.replace(/ SOY .*?(?= PIENSA:)/s, '').replace(/ PIENSA:.*$/s, '') + ` SOY ${perfiles[rol]?.nombre} «${perfiles[rol]?.apodo ?? rol}»: ${perfiles[rol]?.caracter}. PIENSA: ${pen}${ini ? ' INICIATIVA: ' + ini : ''}`;
 }
 fs.writeFileSync(path.join(dir, 'memoria.json'), JSON.stringify(memoria, null, 2));
 if (iniciativas.length) { ayudas.iniciativas = iniciativas.slice(0, 8); fs.writeFileSync(path.join(carpeta, 'ayudas.json'), JSON.stringify(ayudas, null, 2)); }
