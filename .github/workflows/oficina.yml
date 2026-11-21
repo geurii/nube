@@ -1,7 +1,7 @@
 name: Oficina
 
-# Departamentos de guion: investiga en Wikipedia, escribe con Groq y verifica cada dato antes de aprobar.
-# Resultado en la carpeta oficina-salida/ (guion + informe).
+# Departamentos de guion: investiga en Wikipedia, escribe con Groq, el Editor lo critica, el Verificador comprueba cada dato
+# y el Escenógrafo elige los fondos. Resultado en oficina-salida/ (guion + informe + estado para la oficina 3D).
 on:
   schedule:
     - cron: '0 2,14 * * *'   # un Short nuevo cada 12 horas
@@ -23,14 +23,22 @@ on:
 permissions:
   contents: write
 
+# Un solo turno a la vez: si una corrida sigue en marcha, la siguiente espera (no se pisan).
+concurrency:
+  group: oficina
+  cancel-in-progress: false
+
 jobs:
   oficina:
     runs-on: ubuntu-24.04
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Prueba de humo (simulada, no gasta Groq)
+        run: node agentes/probar-oficina.mjs
       - name: Correr la oficina
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
@@ -45,4 +53,8 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add oficina-salida || true
           git diff --cached --quiet || git commit -m "Oficina: resultado automatico"
-          git push || true
+          for i in 1 2 3 4; do
+            git pull --rebase origin main && git push && break
+            echo "No pude guardar (intento $i); reintento en 5 s"
+            sleep 5
+          done
