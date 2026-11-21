@@ -133,6 +133,7 @@ const investigar = async () => {
 const CULTURA = 'EMPRESA: ' + (CONFIG.nombre ?? 'el canal') + '. META: monetizar el canal antes del 13 de diciembre de 2026 (YouTube pide 1.000 suscriptores y 4.000 horas de reproducción, o 10 millones de vistas en Shorts en 90 días) y llevarlo arriba. Eres un/a profesional con cinco maestrías en tu área, perfeccionista y obsesionado/a con hacer videos virales. Tu paga individual son 10.000 vistas ganadas para el canal (Jules, la jefa, cobra 20.000): si el canal no las consigue no cobras, y tienes una familia que alimentar, así que trabajas duro y sin descanso. Jules te presiona a diario. Ambición NO es inventar: jamás sacrificas la verdad ni las normas por vistas.';
 const ORDEN_JULES = leerJson(path.join(SALIDA, 'ordenes.json'), [])[0];
 const ALTERNOS = process.env.GROQ_API_KEY ? (await modelosDisponibles(process.env.GROQ_API_KEY)).filter((m) => m !== 'openai/gpt-oss-120b') : []; // modelos de Groq con cuota separada que SÍ existen en la cuenta
+let groqBloqueadoHasta = 0; // mientras Groq esté en 429, se usan primero los demás proveedores
 const groqDirecto = async (modelo, mensajes, maxTokens = FORMATO === 'largo' ? 4500 : 2500) => {
   mensajes = mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (ORDEN_JULES ? ` ORDEN VIGENTE DE JULES (nivel ${ORDEN_JULES.nivel}/5, la dio el dueño): ${ORDEN_JULES.orden}` : '') + '\n\n' + m.content} : m));
   let ultimo = 'sin respuesta';
@@ -159,6 +160,7 @@ const groqDirecto = async (modelo, mensajes, maxTokens = FORMATO === 'largo' ? 4
         const espera = Number(/try again in ([\d.]+)s/i.exec(cuerpo)?.[1] ?? 20);
         console.log(`Groq pide esperar ${espera} s (límite por minuto del nivel gratis). Intento ${intento}/8.`);
         ultimo = 'límite de Groq (429)';
+        groqBloqueadoHasta = Date.now() + 90_000;
         await dormir((Math.min(espera, 60) + 2) * 1000);
         continue;
       }
@@ -180,6 +182,10 @@ const groqDirecto = async (modelo, mensajes, maxTokens = FORMATO === 'largo' ? 4
 };
 /** Groq primero; si se agota, pasa a Gemini, Cerebras, OpenRouter o Mistral (los que tengan llave). */
 const groq = async (modelo, mensajes, maxTokens) => {
+  if (Date.now() < groqBloqueadoHasta && proveedoresConLlave().length) {
+    const rapido = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + ' ' + m.content} : m)), {maxTokens: maxTokens ?? 2500});
+    if (rapido) { console.log(`Groq en límite: se usó ${rapido.proveedor} (${rapido.modelo}).`); return rapido.texto; }
+  }
   try { return await groqDirecto(modelo, mensajes, maxTokens); }
   catch (e) {
     if (e.fatal) throw e;
