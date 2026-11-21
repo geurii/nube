@@ -6,12 +6,9 @@ export const puestosDeLaOficina = (ag, {resultado, tema, ctx, historial, formula
   const m = ctx.mesa;
   const sinMesa = 'La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista.';
   p('Coordinador de producción', 'trabajando', 'pensando', 'Calendario fijo (hora de República Dominicana): Shorts a las 00:00 y 12:00, largos a las 18:00. Cuida que el subidor programe sin chocar.');
-  p('Programador de publicación', 'trabajando', 'escribiendo', 'Reserva el próximo horario libre (mínimo 40 min adelante) al subir cada video y lo deja programado en YouTube.');
   p('Jefa de calidad', ok ? 'libre' : 'esperando_decision', 'leyendo', ok ? `Aprobó "${tema}": ${ctx.escenas} escenas, ${ctx.fuentes} fuentes, sin problemas abiertos.` : `Frenó "${tema}": ${ctx.problemas[0]?.motivo ?? 'no pasó la verificación'}`);
   p('Vigía de tendencias', vigilados ? 'trabajando' : 'esperando_decision', 'leyendo', vigilados ? `Vigila ${vigilados} canales por sus feeds públicos de YouTube.` : 'No hay canales que vigilar: faltan los channel_id en la configuración del canal.');
-  p('Analista de competencia', formulas ? 'libre' : 'trabajando', 'pensando', formulas ? `Última fórmula sacada de los videos que más rinden (${formulas.fecha ?? 'sin fecha'}); se copia la estructura, nunca el contenido.` : 'Espera datos del Cazador para comparar títulos y ganchos.');
-  p('Archivista de ideas', 'libre', 'leyendo', `Lleva ${historial.length} temas ya usados para que ninguno se repita.`);
-  p('Titulista', m ? 'libre' : 'esperando_decision', 'escribiendo', m ? `Propuso ${m.titulos.length} títulos y eligió: "${m.titulo}".` : sinMesa);
+  p('Titulista', m ? 'libre' : 'esperando_decision', 'escribiendo', m ? `Propuso ${m.titulos.length} títulos y eligió: "${m.titulo}". También dejó la idea de miniatura ("${m.miniatura.texto}") y el comentario fijado.` : sinMesa);
   p('Redactor de descripción', m ? 'libre' : 'esperando_decision', 'escribiendo', m ? 'Escribió la descripción con las palabras clave al inicio, la llamada a compartir y las fuentes.' : sinMesa);
   p('Especialista en hashtags', m ? 'libre' : 'esperando_decision', 'pensando', m ? `Eligió 5 hashtags específicos: ${m.hashtags.join(' ')}` : sinMesa);
   p('Auditor de fuentes', 'libre', 'leyendo', `Comprobó que cada dato salga de las ${ctx.fuentes} fuentes del material y las puso en la descripción.`);
@@ -21,15 +18,10 @@ export const puestosDeLaOficina = (ag, {resultado, tema, ctx, historial, formula
   p('Revisor de ganchos', ok ? 'libre' : 'trabajando', 'pensando', ok && g ? `Gancho auditivo: la primera frase tiene ${g.palabrasPrimera} palabras${g.palabrasPrimera > 28 ? ' (demasiado larga: debe caber en 3 segundos)' : ' (cabe en 3 segundos)'}. Gancho visual: ${g.escenasConUnFondo === 0 ? 'todas las escenas cambian de fondo' : g.escenasConUnFondo + ' escenas se quedan con un solo fondo'}.` : 'Espera un guion aprobado para medir el gancho.');
   p('Escenógrafo', 'libre', 'pensando', `Eligió los fondos de ${ctx.escenas} escenas del catálogo; ${ctx.sinImagen} no tenían imagen propia.`);
   p('Pintor de imágenes', ctx.sinImagen ? 'trabajando' : 'libre', 'pensando', ctx.sinImagen ? `Hay ${ctx.sinImagen} escenas sin imagen propia. Aún no dibuja solo (está pendiente de construir), por eso se usa el fondo neutro.` : 'Todas las escenas encontraron imagen en el catálogo.');
-  p('Revisor visual', 'trabajando', 'leyendo', 'Pendiente: mirará los fotogramas con Gemini antes de publicar (aún por construir).');
-  p('Miniaturista', m ? 'libre' : 'trabajando', 'escribiendo', m ? `Diseñó la idea de miniatura: "${m.miniatura.texto}" — ${m.miniatura.idea}` : sinMesa);
-  p('Analista de retención', 'trabajando', 'leyendo', `Mide por ahora lo que sí tiene: ${ctx.escenas} escenas y su ritmo. Los datos reales de YouTube aún no están conectados.`);
-  p('Community manager', m ? 'libre' : 'trabajando', 'escribiendo', m ? `Dejó listo el comentario fijado: "${m.comentarioFijado.slice(0, 90)}"` : sinMesa);
   // Paga: las vistas reales del canal. Cada puesto cobra su parte (1 punto por vista ganada); si no hay vistas nuevas, no cobra.
   const total = vistas?.total, ganadas = vistas?.ganadasDesdeElUltimoCiclo ?? 0;
   const parte = (n) => Math.floor(n / 30);
   const bono = typeof total === 'number' ? ` BONO: el canal suma ${total.toLocaleString('es')} vistas; en este ciclo ganó ${ganadas.toLocaleString('es')} y a cada puesto le tocan ${parte(ganadas)} puntos. ${ganadas === 0 ? 'Sin vistas nuevas no cobra nadie.' : 'Más vistas, más paga.'}` : ' BONO: aún no puedo leer las vistas del canal.';
-  p('Redactor de reportes', 'libre', 'escribiendo', 'Escribe el reporte de cada ciclo y lo manda a la campana.');
   for (const rol of Object.keys(ag)) if (ag[rol]?.tarea) ag[rol].tarea = ag[rol].tarea.replace(/ ORDEN DE JULES:.*?(?= BONO:|$)/, '').replace(/ BONO:.*$/, '') + (orden ? ` ORDEN DE JULES (nivel ${orden.nivel}/5): ${orden.orden}` : '') + bono;
 };
 

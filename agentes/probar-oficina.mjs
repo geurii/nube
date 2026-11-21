@@ -72,7 +72,7 @@ for (const canal of ['lqns', 'demo']) {
   if (!guion.escenas[0].fondo[1]?.startsWith('pixelcifra:1997|')) fallos.push(`${canal}: el parámetro del fondo salió mal`);
   if (!guion.publicacion.comentarioFijado) fallos.push(canal + ': la Mesa de publicación no dejó comentario fijado');
   if (guion.publicacion.titulosAlternativos?.some((t) => t.includes('99999'))) fallos.push(canal + ': dejó pasar una cifra inventada en un título');
-  if (Object.keys(JSON.parse(fs.readFileSync(path.join('oficina-salida', canal, 'estado.json'), 'utf8')).agentes).length < 25) fallos.push(canal + ': faltan puestos en el estado');
+  if (Object.keys(JSON.parse(fs.readFileSync(path.join('oficina-salida', canal, 'estado.json'), 'utf8')).agentes).length < 15) fallos.push(canal + ': faltan puestos en el estado');
   if (guion.publicacion.descripcion.includes('#viral')) fallos.push(`${canal}: dejó pasar #viral`);
   if (estado.totales.aprobados !== 1) fallos.push(`${canal}: el estado no contó el guion aprobado`);
   if (!estado.agentes['Editor de guion']) fallos.push(`${canal}: el Editor no aparece en el estado`);

@@ -38,6 +38,15 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: node agentes/producir.mjs
+      - name: Panel de críticos (decide si el video se sube)
+        id: panel
+        if: ${{ steps.producir.outputs.id != '' }}
+        continue-on-error: true
+        env:
+          ID: ${{ steps.producir.outputs.id }}
+          CANAL: ${{ steps.producir.outputs.canal }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: node agentes/panel.mjs
       - name: Guardar el avance en el repositorio
         if: always()
         run: |
@@ -57,7 +66,7 @@ jobs:
           path: out/serie/*.mp4
           retention-days: 14
       - name: Subir a YouTube como privado (solo si hay claves; sin probar)
-        if: ${{ steps.producir.outputs.id != '' }}
+        if: ${{ steps.producir.outputs.id != '' && steps.panel.outputs.aprobado != 'false' }}
         continue-on-error: true
         env:
           ID: ${{ steps.producir.outputs.id }}
