@@ -20,7 +20,7 @@ if (!pendientes.length) { console.log('Sin mensajes.'); process.exit(0); }
 
 const llamar = async (mensajes) => {
   for (let i = 1; i <= 6; i++) {
-    for (const modelo of ['openai/gpt-oss-120b', 'llama-3.3-70b-versatile']) {
+    for (const modelo of ['llama-3.3-70b-versatile', 'openai/gpt-oss-120b']) {
       try {
         const r = await fetch('https://api.groq.com/openai/v1/chat/completions', {
           method: 'POST', headers: {Authorization: `Bearer ${KEY}`, 'Content-Type': 'application/json'}, signal: AbortSignal.timeout(90000),

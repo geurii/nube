@@ -5,6 +5,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {avisarTelefono} from './aviso.mjs';
+const MODELOS = ['llama-3.3-70b-versatile', 'openai/gpt-oss-20b', 'openai/gpt-oss-120b']; // cuotas separadas: si uno se agota, pasa al siguiente
 
 const CANAL = (process.env.CANAL || 'lqns').trim();
 const KEY = process.env.GROQ_API_KEY;
@@ -32,7 +33,7 @@ const llamar = async (sistema, usuario) => {
     try {
       const r = await fetch('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST', headers: {Authorization: `Bearer ${KEY}`, 'Content-Type': 'application/json'}, signal: AbortSignal.timeout(90000),
-        body: JSON.stringify({model: 'openai/gpt-oss-120b', reasoning_effort: 'low', temperature: 0.6, max_tokens: 1600, messages: [
+        body: JSON.stringify({model: MODELOS[(i - 1) % MODELOS.length], ...(MODELOS[(i - 1) % MODELOS.length].includes('gpt-oss') ? {reasoning_effort: 'low'} : {}), temperature: 0.6, max_tokens: 1600, messages: [
           {role: 'system', content: `${sistema} Tienes cinco maestrías en tu área y mucha ambición: tu paga depende de las vistas del canal. No inventes datos ni cifras: usa solo lo que se te da; si algo no se sabe, dilo. Sin nombres reales de personas. Responde SOLO con JSON.`},
           {role: 'user', content: usuario},
         ]}),

@@ -4,6 +4,7 @@
 // Variables: CANAL, GROQ_API_KEY.
 import fs from 'node:fs';
 import path from 'node:path';
+const MODELOS = ['llama-3.3-70b-versatile', 'openai/gpt-oss-20b', 'openai/gpt-oss-120b']; // cuotas separadas: si uno se agota, pasa al siguiente
 
 const CANAL = (process.env.CANAL || 'lqns').trim();
 const KEY = process.env.GROQ_API_KEY;
@@ -29,7 +30,7 @@ try {
     try {
       const resp = await fetch('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST', headers: {Authorization: `Bearer ${KEY}`, 'Content-Type': 'application/json'}, signal: AbortSignal.timeout(90000),
-        body: JSON.stringify({model: 'openai/gpt-oss-120b', reasoning_effort: 'low', temperature: 0.4, max_tokens: 1800, messages: [
+        body: JSON.stringify({model: MODELOS[(i - 1) % MODELOS.length], ...(MODELOS[(i - 1) % MODELOS.length].includes('gpt-oss') ? {reasoning_effort: 'low'} : {}), temperature: 0.4, max_tokens: 1800, messages: [
           {role: 'system', content: 'Eres analista de canales de YouTube, con cinco licenciaturas y mucha ambición: tu paga son las vistas del canal. Analizas con rigor y SIN inventar: usa solo los datos dados. Donde no se pueda saber algo (retención, miniatura, a quién se mostró), dilo. Responde SOLO con JSON.'},
           {role: 'user', content: `VIDEOS DEL CANAL (de más a menos vistas; promedio ${media}):\n${tabla}\n\n${retencion ? `RETENCIÓN REAL (YouTube Analytics):\n${retencion}\n\n` : ''}Devuelve: {"que_funciono": "lo que tienen en común los de más vistas, según los títulos y fechas", "por_que_fallaron": ["causas probables de las pocas vistas, cada una con la evidencia de los datos"], "no_se_puede_saber": ["lo que falta saber"], "reglas": ["3 reglas concretas y accionables para el próximo video"]}`},
         ]}),

@@ -135,17 +135,19 @@ const groq = async (modelo, mensajes, maxTokens = FORMATO === 'largo' ? 4500 : 2
   let ultimo = 'sin respuesta';
   for (let intento = 1; intento <= 8; intento++) {
     try {
+      // si el modelo principal agotó su cuota (429), se pasa a otros modelos de Groq, que tienen cuotas separadas
+      const mod = ultimo.includes('429') ? (intento >= 5 ? 'openai/gpt-oss-20b' : intento >= 3 ? 'llama-3.3-70b-versatile' : modelo) : modelo;
       const r = await fetch('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST',
         headers: {Authorization: `Bearer ${KEY}`, 'Content-Type': 'application/json'},
         signal: AbortSignal.timeout(120000),
         body: JSON.stringify({
-          model: modelo,
+          model: mod,
           messages: mensajes,
           temperature: 0.4,
           max_tokens: maxTokens,
           // los modelos "gpt-oss" razonan antes de responder: poco razonamiento = más espacio para el texto
-          ...(modelo.includes('gpt-oss') ? {reasoning_effort: 'low'} : {}),
+          ...(mod.includes('gpt-oss') ? {reasoning_effort: 'low'} : {}),
         }),
       });
       if (r.status === 429) {

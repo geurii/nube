@@ -6,5 +6,6 @@ try {
   const e = JSON.parse(fs.readFileSync(path.join('oficina-salida', canal, 'estado.json'), 'utf8'));
   const r = e.historial?.[0]?.resultado;
   console.log('Último resultado de la oficina:', r);
-  process.exit(r === 'aprobado' ? 0 : 1);
+  // aprobado o error de cuota: no seguir gastando intentos en este ciclo
+  process.exit(r === 'aprobado' || r === 'error' ? 0 : 1);
 } catch { process.exit(1); }

@@ -4,6 +4,7 @@
 // Variables: CANAL, GROQ_API_KEY. No detiene el flujo.
 import fs from 'node:fs';
 import path from 'node:path';
+const MODELOS = ['llama-3.3-70b-versatile', 'openai/gpt-oss-20b', 'openai/gpt-oss-120b']; // cuotas separadas: si uno se agota, pasa al siguiente
 
 const CANAL = (process.env.CANAL || 'lqns').trim();
 const KEY = process.env.GROQ_API_KEY;
@@ -39,7 +40,7 @@ const llamar = async (instruccion) => {
     try {
       const r = await fetch('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST', headers: {Authorization: `Bearer ${KEY}`, 'Content-Type': 'application/json'}, signal: AbortSignal.timeout(90000),
-        body: JSON.stringify({model: 'openai/gpt-oss-120b', reasoning_effort: 'low', temperature: 0.6, max_tokens: 1200, messages: [
+        body: JSON.stringify({model: MODELOS[(i - 1) % MODELOS.length], ...(MODELOS[(i - 1) % MODELOS.length].includes('gpt-oss') ? {reasoning_effort: 'low'} : {}), temperature: 0.6, max_tokens: 1200, messages: [
           {role: 'system', content: 'Eres un/a profesional con cinco licenciaturas, perfeccionista y ambicioso/a: tu paga son las vistas del canal. Ayudas a un compañero con una tarea concreta. No inventes datos. Responde SOLO con JSON.'},
           {role: 'user', content: `${base}\n\nTAREA: ${instruccion}`},
         ]}),

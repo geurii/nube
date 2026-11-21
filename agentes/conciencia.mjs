@@ -4,6 +4,7 @@
 // Variables: CANAL, GROQ_API_KEY. Nunca inventa cifras: usa solo los datos del ciclo. No detiene el flujo.
 import fs from 'node:fs';
 import path from 'node:path';
+const MODELOS = ['llama-3.3-70b-versatile', 'openai/gpt-oss-20b', 'openai/gpt-oss-120b']; // cuotas separadas: si uno se agota, pasa al siguiente
 
 const CANAL = (process.env.CANAL || 'lqns').trim();
 const KEY = process.env.GROQ_API_KEY;
@@ -30,7 +31,7 @@ const llamar = async (sistema, usuario, max = 3500) => {
     try {
       const r = await fetch('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST', headers: {Authorization: `Bearer ${KEY}`, 'Content-Type': 'application/json'}, signal: AbortSignal.timeout(120000),
-        body: JSON.stringify({model: 'openai/gpt-oss-120b', reasoning_effort: 'low', temperature: 0.8, max_tokens: max, messages: [{role: 'system', content: sistema}, {role: 'user', content: usuario}]}),
+        body: JSON.stringify({model: MODELOS[(i - 1) % MODELOS.length], ...(MODELOS[(i - 1) % MODELOS.length].includes('gpt-oss') ? {reasoning_effort: 'low'} : {}), temperature: 0.8, max_tokens: max, messages: [{role: 'system', content: sistema}, {role: 'user', content: usuario}]}),
       });
       if (r.status === 429) { const t = await r.text(); await dormir((Number(/try again in ([\d.]+)s/i.exec(t)?.[1] ?? 15) + 1) * 1000); continue; }
       if (!r.ok) { await dormir(3000 * i); continue; }
