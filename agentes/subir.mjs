@@ -1,6 +1,6 @@
-// Subida a YouTube (SIN PROBAR: necesita claves que solo tú puedes crear). Sube el video como PRIVADO.
-// Google deja privados los videos subidos por una app sin auditoría (videos.insert, proyectos creados después del 28 de julio de 2020):
-// publicarlos (o programarlos) lo haces tú en Studio, o consigues la auditoría de Google.
+// Subida a YouTube: sube el video y lo deja PROGRAMADO (privado con fecha; YouTube lo publica solo a esa hora).
+// Horarios (hora de República Dominicana, UTC-4): Shorts a las 00:00 y 12:00; videos largos a las 18:00.
+// Desde el 2 nov 2026 Google ya no exige auditoría para publicar (developers.google.com/youtube/data/revision_history).
 // Secretos: YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN. Variable: ID (por ejemplo oficina-bloop).
 import fs from 'node:fs';
 import path from 'node:path';
@@ -9,6 +9,18 @@ const {YT_CLIENT_ID, YT_CLIENT_SECRET, ID} = process.env;
 const CANAL = process.env.CANAL || 'lqns';
 // Cada canal puede tener su propio YouTube: YT_REFRESH_TOKEN_<CANAL> (el de un canal nuevo) o, si no, YT_REFRESH_TOKEN.
 const YT_REFRESH_TOKEN = process.env.YT_REFRESH_TOKEN_CANAL || process.env.YT_REFRESH_TOKEN;
+// Próxima hora libre: al menos 40 min en el futuro. Las horas locales (UTC-4) pasadas a UTC.
+const proximoHorario = (formato) => {
+  const horasUtc = formato === 'largo' ? [22] : [4, 16];
+  const ahora = Date.now() + 40 * 60000;
+  for (let d = 0; d < 3; d++) {
+    for (const h of horasUtc) {
+      const t = new Date(ahora); t.setUTCDate(t.getUTCDate() + d); t.setUTCHours(h, 0, 0, 0);
+      if (t.getTime() >= ahora) return t;
+    }
+  }
+  return new Date(ahora + 3600000);
+};
 const ESTADO = path.join('oficina-salida', CANAL, 'estado.json');
 const marcar = (texto, estado = 'esperando_decision') => {
   try {
@@ -30,6 +42,7 @@ try {
   const guion = JSON.parse(fs.readFileSync(path.join('guion', 'serie', `${ID}.json`), 'utf8'));
   const archivo = path.join('out', 'serie', `${ID}.mp4`);
   const bytes = fs.readFileSync(archivo);
+  const programado = proximoHorario(guion.formato);
 
   const tokenRespuesta = await fetch('https://oauth2.googleapis.com/token', {
     method: 'POST',
@@ -49,7 +62,7 @@ try {
     },
     body: JSON.stringify({
       snippet: {title: guion.publicacion.titulo.slice(0, 100), description: guion.publicacion.descripcion.slice(0, 4900), categoryId: '27', defaultLanguage: 'es'},
-      status: {privacyStatus: 'private', selfDeclaredMadeForKids: false},
+      status: {privacyStatus: 'private', publishAt: programado.toISOString(), selfDeclaredMadeForKids: false},
     }),
   });
   if (!inicio.ok) throw new Error(`YouTube no aceptó empezar la subida (${inicio.status}): ${(await inicio.text()).slice(0, 300)}`);
@@ -59,8 +72,8 @@ try {
   const subida = await fetch(destino, {method: 'PUT', headers: {'Content-Type': 'video/mp4', 'Content-Length': String(bytes.length)}, body: bytes});
   if (!subida.ok) throw new Error(`La subida falló (${subida.status}): ${(await subida.text()).slice(0, 300)}`);
   const video = await subida.json();
-  marcar(`Subió "${guion.titulo}" como PRIVADO: https://youtu.be/${video.id}. Google exige auditoría para publicarlo solo; publícalo tú en Studio.`, 'libre');
-  console.log(`Subido como privado: https://youtu.be/${video.id}`);
+  marcar(`Subió "${guion.titulo}" y lo dejó PROGRAMADO para ${programado.toLocaleString('es-DO', {timeZone: 'America/Santo_Domingo'})} (hora RD): https://youtu.be/${video.id}`, 'libre');
+  console.log(`Subido y programado para ${programado.toISOString()}: https://youtu.be/${video.id}`);
 } catch (e) {
   marcar(`No pude subir "${ID}": ${String(e.message ?? e).slice(0, 220)}`);
   console.error('ERROR al subir:', e.message ?? e);
