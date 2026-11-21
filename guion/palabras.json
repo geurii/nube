@@ -4,762 +4,783 @@
     "desdeChar": 0,
     "hastaChar": 6,
     "inicio": 0.104,
-    "fin": 0.675
+    "fin": 0.661
   },
   {
     "escena": 0,
     "desdeChar": 7,
     "hastaChar": 10,
-    "inicio": 0.689,
-    "fin": 0.811
+    "inicio": 0.675,
+    "fin": 0.797
   },
   {
     "escena": 0,
     "desdeChar": 11,
-    "hastaChar": 14,
-    "inicio": 0.824,
-    "fin": 1.028
+    "hastaChar": 13,
+    "inicio": 0.811,
+    "fin": 0.96
   },
   {
     "escena": 0,
-    "desdeChar": 15,
-    "hastaChar": 20,
-    "inicio": 1.042,
-    "fin": 1.395
+    "desdeChar": 14,
+    "hastaChar": 19,
+    "inicio": 0.974,
+    "fin": 1.327
   },
   {
     "escena": 0,
-    "desdeChar": 21,
-    "hastaChar": 30,
-    "inicio": 1.409,
-    "fin": 1.979
+    "desdeChar": 20,
+    "hastaChar": 24,
+    "inicio": 1.341,
+    "fin": 1.626
   },
   {
     "escena": 0,
-    "desdeChar": 31,
-    "hastaChar": 33,
-    "inicio": 1.993,
-    "fin": 2.102
+    "desdeChar": 25,
+    "hastaChar": 31,
+    "inicio": 1.64,
+    "fin": 2.02
   },
   {
     "escena": 0,
-    "desdeChar": 34,
-    "hastaChar": 38,
-    "inicio": 2.115,
-    "fin": 2.428
+    "desdeChar": 32,
+    "hastaChar": 39,
+    "inicio": 2.034,
+    "fin": 2.482
   },
   {
     "escena": 0,
-    "desdeChar": 39,
-    "hastaChar": 40,
-    "inicio": 2.441,
-    "fin": 2.468
+    "desdeChar": 40,
+    "hastaChar": 41,
+    "inicio": 2.496,
+    "fin": 2.55
   },
   {
     "escena": 0,
-    "desdeChar": 41,
-    "hastaChar": 43,
-    "inicio": 2.482,
-    "fin": 2.632
+    "desdeChar": 42,
+    "hastaChar": 47,
+    "inicio": 2.564,
+    "fin": 2.93
   },
   {
     "escena": 0,
-    "desdeChar": 44,
-    "hastaChar": 49,
-    "inicio": 2.645,
-    "fin": 3.026
+    "desdeChar": 48,
+    "hastaChar": 56,
+    "inicio": 2.944,
+    "fin": 3.42
   },
   {
     "escena": 0,
-    "desdeChar": 50,
-    "hastaChar": 53,
-    "inicio": 3.039,
-    "fin": 3.189
-  },
-  {
-    "escena": 0,
-    "desdeChar": 54,
+    "desdeChar": 57,
     "hastaChar": 59,
-    "inicio": 3.202,
-    "fin": 3.61
+    "inicio": 3.433,
+    "fin": 3.501
   },
   {
     "escena": 0,
     "desdeChar": 60,
-    "hastaChar": 66,
-    "inicio": 3.623,
-    "fin": 3.99
+    "hastaChar": 67,
+    "inicio": 3.515,
+    "fin": 4.017
   },
   {
     "escena": 0,
-    "desdeChar": 67,
-    "hastaChar": 75,
-    "inicio": 4.004,
-    "fin": 4.506
+    "desdeChar": 68,
+    "hastaChar": 71,
+    "inicio": 4.031,
+    "fin": 4.235
   },
   {
     "escena": 0,
-    "desdeChar": 76,
-    "hastaChar": 78,
-    "inicio": 4.52,
-    "fin": 4.615
+    "desdeChar": 72,
+    "hastaChar": 76,
+    "inicio": 4.248,
+    "fin": 4.588
   },
   {
     "escena": 0,
-    "desdeChar": 79,
-    "hastaChar": 87,
-    "inicio": 4.629,
-    "fin": 5.349
+    "desdeChar": 77,
+    "hastaChar": 83,
+    "inicio": 4.602,
+    "fin": 4.955
+  },
+  {
+    "escena": 0,
+    "desdeChar": 84,
+    "hastaChar": 92,
+    "inicio": 4.968,
+    "fin": 5.444
+  },
+  {
+    "escena": 0,
+    "desdeChar": 93,
+    "hastaChar": 95,
+    "inicio": 5.458,
+    "fin": 5.553
+  },
+  {
+    "escena": 0,
+    "desdeChar": 96,
+    "hastaChar": 104,
+    "inicio": 5.566,
+    "fin": 6.137
+  },
+  {
+    "escena": 0,
+    "desdeChar": 105,
+    "hastaChar": 108,
+    "inicio": 6.151,
+    "fin": 6.286
+  },
+  {
+    "escena": 0,
+    "desdeChar": 109,
+    "hastaChar": 111,
+    "inicio": 6.3,
+    "fin": 6.49
+  },
+  {
+    "escena": 0,
+    "desdeChar": 112,
+    "hastaChar": 120,
+    "inicio": 6.504,
+    "fin": 7.224
   },
   {
     "escena": 1,
     "desdeChar": 0,
     "hastaChar": 2,
-    "inicio": 6.744,
-    "fin": 6.948
+    "inicio": 8.614,
+    "fin": 8.818
   },
   {
     "escena": 1,
     "desdeChar": 3,
     "hastaChar": 10,
-    "inicio": 6.962,
-    "fin": 7.383
+    "inicio": 8.832,
+    "fin": 9.253
   },
   {
     "escena": 1,
     "desdeChar": 11,
     "hastaChar": 18,
-    "inicio": 7.397,
-    "fin": 7.886
+    "inicio": 9.267,
+    "fin": 9.756
   },
   {
     "escena": 1,
     "desdeChar": 19,
     "hastaChar": 20,
-    "inicio": 7.899,
-    "fin": 7.926
+    "inicio": 9.769,
+    "fin": 9.796
   },
   {
     "escena": 1,
     "desdeChar": 21,
     "hastaChar": 24,
-    "inicio": 7.94,
-    "fin": 8.13
+    "inicio": 9.81,
+    "fin": 10
   },
   {
     "escena": 1,
     "desdeChar": 25,
     "hastaChar": 36,
-    "inicio": 8.144,
-    "fin": 8.864
+    "inicio": 10.014,
+    "fin": 10.734
   },
   {
     "escena": 1,
     "desdeChar": 37,
     "hastaChar": 38,
-    "inicio": 8.878,
-    "fin": 8.945
+    "inicio": 10.747,
+    "fin": 10.815
   },
   {
     "escena": 1,
     "desdeChar": 39,
     "hastaChar": 44,
-    "inicio": 8.959,
-    "fin": 9.312
+    "inicio": 10.829,
+    "fin": 11.182
   },
   {
     "escena": 1,
     "desdeChar": 45,
     "hastaChar": 51,
-    "inicio": 9.326,
-    "fin": 9.774
+    "inicio": 11.196,
+    "fin": 11.644
   },
   {
     "escena": 1,
     "desdeChar": 52,
     "hastaChar": 56,
-    "inicio": 9.788,
-    "fin": 10.032
+    "inicio": 11.658,
+    "fin": 11.902
   },
   {
     "escena": 1,
     "desdeChar": 57,
     "hastaChar": 59,
-    "inicio": 10.046,
-    "fin": 10.168
+    "inicio": 11.916,
+    "fin": 12.038
   },
   {
     "escena": 1,
     "desdeChar": 60,
     "hastaChar": 71,
-    "inicio": 10.182,
-    "fin": 11.051
+    "inicio": 12.052,
+    "fin": 12.921
   },
   {
     "escena": 2,
     "desdeChar": 0,
-    "hastaChar": 5,
-    "inicio": 12.444,
-    "fin": 12.798
+    "hastaChar": 4,
+    "inicio": 14.314,
+    "fin": 14.681
   },
   {
     "escena": 2,
-    "desdeChar": 6,
+    "desdeChar": 5,
     "hastaChar": 8,
-    "inicio": 12.811,
-    "fin": 12.879
+    "inicio": 14.695,
+    "fin": 14.885
   },
   {
     "escena": 2,
     "desdeChar": 9,
+    "hastaChar": 12,
+    "inicio": 14.899,
+    "fin": 15.102
+  },
+  {
+    "escena": 2,
+    "desdeChar": 13,
     "hastaChar": 18,
-    "inicio": 12.893,
-    "fin": 13.518
+    "inicio": 15.116,
+    "fin": 15.483
   },
   {
     "escena": 2,
-    "desdeChar": 20,
-    "hastaChar": 22,
-    "inicio": 13.885,
-    "fin": 13.993
-  },
-  {
-    "escena": 2,
-    "desdeChar": 23,
-    "hastaChar": 29,
-    "inicio": 14.007,
-    "fin": 14.346
+    "desdeChar": 19,
+    "hastaChar": 28,
+    "inicio": 15.496,
+    "fin": 16.094
   },
   {
     "escena": 2,
     "desdeChar": 30,
-    "hastaChar": 37,
-    "inicio": 14.36,
-    "fin": 14.836
+    "hastaChar": 39,
+    "inicio": 16.38,
+    "fin": 17.045
   },
   {
     "escena": 2,
-    "desdeChar": 38,
-    "hastaChar": 40,
-    "inicio": 14.849,
-    "fin": 14.944
+    "desdeChar": 40,
+    "hastaChar": 41,
+    "inicio": 17.059,
+    "fin": 17.195
   },
   {
     "escena": 2,
-    "desdeChar": 41,
-    "hastaChar": 44,
-    "inicio": 14.958,
-    "fin": 15.148
+    "desdeChar": 42,
+    "hastaChar": 49,
+    "inicio": 17.208,
+    "fin": 17.711
   },
   {
     "escena": 2,
-    "desdeChar": 45,
-    "hastaChar": 50,
-    "inicio": 15.162,
-    "fin": 15.542
+    "desdeChar": 50,
+    "hastaChar": 52,
+    "inicio": 17.725,
+    "fin": 17.833
   },
   {
     "escena": 2,
-    "desdeChar": 51,
-    "hastaChar": 53,
-    "inicio": 15.556,
-    "fin": 15.678
+    "desdeChar": 53,
+    "hastaChar": 56,
+    "inicio": 17.847,
+    "fin": 18.024
   },
   {
     "escena": 2,
-    "desdeChar": 54,
-    "hastaChar": 61,
-    "inicio": 15.692,
-    "fin": 16.221
+    "desdeChar": 57,
+    "hastaChar": 62,
+    "inicio": 18.037,
+    "fin": 18.418
   },
   {
     "escena": 2,
-    "desdeChar": 62,
-    "hastaChar": 70,
-    "inicio": 16.235,
-    "fin": 16.955
+    "desdeChar": 63,
+    "hastaChar": 65,
+    "inicio": 18.431,
+    "fin": 18.553
+  },
+  {
+    "escena": 2,
+    "desdeChar": 66,
+    "hastaChar": 73,
+    "inicio": 18.567,
+    "fin": 19.097
+  },
+  {
+    "escena": 2,
+    "desdeChar": 74,
+    "hastaChar": 82,
+    "inicio": 19.111,
+    "fin": 19.831
   },
   {
     "escena": 3,
     "desdeChar": 0,
+    "hastaChar": 2,
+    "inicio": 21.244,
+    "fin": 21.475
+  },
+  {
+    "escena": 3,
+    "desdeChar": 3,
     "hastaChar": 8,
-    "inicio": 18.364,
-    "fin": 18.894
+    "inicio": 21.489,
+    "fin": 21.815
   },
   {
     "escena": 3,
     "desdeChar": 9,
-    "hastaChar": 12,
-    "inicio": 18.908,
-    "fin": 19.057
+    "hastaChar": 11,
+    "inicio": 21.829,
+    "fin": 21.937
   },
   {
     "escena": 3,
-    "desdeChar": 13,
-    "hastaChar": 19,
-    "inicio": 19.071,
-    "fin": 19.451
+    "desdeChar": 12,
+    "hastaChar": 20,
+    "inicio": 21.951,
+    "fin": 22.467
   },
   {
     "escena": 3,
-    "desdeChar": 20,
-    "hastaChar": 26,
-    "inicio": 19.465,
-    "fin": 19.927
+    "desdeChar": 21,
+    "hastaChar": 27,
+    "inicio": 22.481,
+    "fin": 22.834
   },
   {
     "escena": 3,
-    "desdeChar": 27,
-    "hastaChar": 31,
-    "inicio": 19.94,
-    "fin": 20.226
+    "desdeChar": 28,
+    "hastaChar": 36,
+    "inicio": 22.848,
+    "fin": 23.323
   },
   {
     "escena": 3,
-    "desdeChar": 32,
-    "hastaChar": 40,
-    "inicio": 20.239,
-    "fin": 20.932
+    "desdeChar": 37,
+    "hastaChar": 39,
+    "inicio": 23.337,
+    "fin": 23.432
+  },
+  {
+    "escena": 3,
+    "desdeChar": 40,
+    "hastaChar": 48,
+    "inicio": 23.445,
+    "fin": 24.057
+  },
+  {
+    "escena": 3,
+    "desdeChar": 50,
+    "hastaChar": 51,
+    "inicio": 24.301,
+    "fin": 24.383
+  },
+  {
+    "escena": 3,
+    "desdeChar": 52,
+    "hastaChar": 58,
+    "inicio": 24.397,
+    "fin": 24.831
+  },
+  {
+    "escena": 3,
+    "desdeChar": 59,
+    "hastaChar": 63,
+    "inicio": 24.845,
+    "fin": 25.13
+  },
+  {
+    "escena": 3,
+    "desdeChar": 64,
+    "hastaChar": 72,
+    "inicio": 25.144,
+    "fin": 25.837
   },
   {
     "escena": 4,
     "desdeChar": 0,
     "hastaChar": 2,
-    "inicio": 22.334,
-    "fin": 22.497
+    "inicio": 27.234,
+    "fin": 27.452
   },
   {
     "escena": 4,
     "desdeChar": 3,
-    "hastaChar": 7,
-    "inicio": 22.511,
-    "fin": 22.769
+    "hastaChar": 8,
+    "inicio": 27.465,
+    "fin": 27.805
   },
   {
     "escena": 4,
-    "desdeChar": 8,
+    "desdeChar": 9,
     "hastaChar": 13,
-    "inicio": 22.783,
-    "fin": 23.163
+    "inicio": 27.819,
+    "fin": 28.131
   },
   {
     "escena": 4,
     "desdeChar": 14,
-    "hastaChar": 20,
-    "inicio": 23.177,
-    "fin": 23.53
+    "hastaChar": 17,
+    "inicio": 28.145,
+    "fin": 28.362
   },
   {
     "escena": 4,
-    "desdeChar": 21,
+    "desdeChar": 18,
     "hastaChar": 23,
-    "inicio": 23.544,
-    "fin": 23.666
+    "inicio": 28.376,
+    "fin": 28.838
   },
   {
     "escena": 4,
-    "desdeChar": 24,
-    "hastaChar": 31,
-    "inicio": 23.679,
-    "fin": 24.128
+    "desdeChar": 25,
+    "hastaChar": 32,
+    "inicio": 29.779,
+    "fin": 30.296
   },
   {
     "escena": 4,
-    "desdeChar": 32,
+    "desdeChar": 33,
     "hastaChar": 35,
-    "inicio": 24.141,
-    "fin": 24.345
+    "inicio": 30.309,
+    "fin": 30.404
   },
   {
     "escena": 4,
-    "desdeChar": 36,
-    "hastaChar": 42,
-    "inicio": 24.359,
-    "fin": 24.712
-  },
-  {
-    "escena": 4,
-    "desdeChar": 43,
-    "hastaChar": 50,
-    "inicio": 24.726,
-    "fin": 25.188
-  },
-  {
-    "escena": 4,
-    "desdeChar": 51,
-    "hastaChar": 52,
-    "inicio": 25.201,
-    "fin": 25.256
-  },
-  {
-    "escena": 4,
-    "desdeChar": 53,
-    "hastaChar": 58,
-    "inicio": 25.269,
-    "fin": 25.663
-  },
-  {
-    "escena": 4,
-    "desdeChar": 59,
-    "hastaChar": 67,
-    "inicio": 25.677,
-    "fin": 26.193
-  },
-  {
-    "escena": 4,
-    "desdeChar": 68,
-    "hastaChar": 70,
-    "inicio": 26.207,
-    "fin": 26.288
-  },
-  {
-    "escena": 4,
-    "desdeChar": 71,
-    "hastaChar": 78,
-    "inicio": 26.302,
-    "fin": 26.995
-  },
-  {
-    "escena": 5,
-    "desdeChar": 0,
-    "hastaChar": 4,
-    "inicio": 28.394,
-    "fin": 28.734
-  },
-  {
-    "escena": 5,
-    "desdeChar": 5,
-    "hastaChar": 8,
-    "inicio": 28.748,
-    "fin": 28.938
-  },
-  {
-    "escena": 5,
-    "desdeChar": 9,
-    "hastaChar": 14,
-    "inicio": 28.951,
-    "fin": 29.413
-  },
-  {
-    "escena": 5,
-    "desdeChar": 16,
-    "hastaChar": 23,
-    "inicio": 30.355,
-    "fin": 30.871
-  },
-  {
-    "escena": 5,
-    "desdeChar": 24,
-    "hastaChar": 26,
-    "inicio": 30.885,
-    "fin": 30.98
-  },
-  {
-    "escena": 5,
-    "desdeChar": 27,
-    "hastaChar": 35,
-    "inicio": 30.994,
-    "fin": 31.496
-  },
-  {
-    "escena": 5,
     "desdeChar": 36,
     "hastaChar": 44,
-    "inicio": 31.51,
-    "fin": 32.149
+    "inicio": 30.418,
+    "fin": 30.88
   },
   {
-    "escena": 6,
+    "escena": 4,
+    "desdeChar": 45,
+    "hastaChar": 47,
+    "inicio": 30.894,
+    "fin": 31.07
+  },
+  {
+    "escena": 4,
+    "desdeChar": 48,
+    "hastaChar": 53,
+    "inicio": 31.084,
+    "fin": 31.519
+  },
+  {
+    "escena": 4,
+    "desdeChar": 54,
+    "hastaChar": 62,
+    "inicio": 31.532,
+    "fin": 32.157
+  },
+  {
+    "escena": 5,
     "desdeChar": 0,
     "hastaChar": 4,
-    "inicio": 33.994,
-    "fin": 34.212
+    "inicio": 34.014,
+    "fin": 34.232
   },
   {
-    "escena": 6,
+    "escena": 5,
     "desdeChar": 5,
     "hastaChar": 7,
-    "inicio": 34.225,
-    "fin": 34.348
+    "inicio": 34.245,
+    "fin": 34.368
   },
   {
-    "escena": 6,
+    "escena": 5,
     "desdeChar": 8,
     "hastaChar": 11,
-    "inicio": 34.361,
-    "fin": 34.483
+    "inicio": 34.381,
+    "fin": 34.503
   },
   {
-    "escena": 6,
+    "escena": 5,
     "desdeChar": 12,
     "hastaChar": 14,
-    "inicio": 34.497,
-    "fin": 34.647
+    "inicio": 34.517,
+    "fin": 34.667
   },
   {
-    "escena": 6,
+    "escena": 5,
     "desdeChar": 15,
     "hastaChar": 21,
-    "inicio": 34.66,
-    "fin": 35.244
+    "inicio": 34.68,
+    "fin": 35.264
   },
   {
-    "escena": 6,
+    "escena": 5,
     "desdeChar": 23,
     "hastaChar": 28,
-    "inicio": 35.53,
-    "fin": 35.896
+    "inicio": 35.55,
+    "fin": 35.916
   },
   {
-    "escena": 6,
+    "escena": 5,
     "desdeChar": 29,
     "hastaChar": 33,
-    "inicio": 35.91,
-    "fin": 36.223
+    "inicio": 35.93,
+    "fin": 36.243
   },
   {
-    "escena": 6,
+    "escena": 5,
     "desdeChar": 34,
     "hastaChar": 45,
-    "inicio": 36.236,
-    "fin": 36.861
+    "inicio": 36.256,
+    "fin": 36.881
   },
   {
-    "escena": 6,
+    "escena": 5,
     "desdeChar": 46,
     "hastaChar": 49,
-    "inicio": 36.875,
-    "fin": 37.051
+    "inicio": 36.895,
+    "fin": 37.071
   },
   {
-    "escena": 6,
+    "escena": 5,
     "desdeChar": 50,
     "hastaChar": 58,
-    "inicio": 37.065,
-    "fin": 37.676
+    "inicio": 37.085,
+    "fin": 37.696
   },
   {
-    "escena": 6,
+    "escena": 5,
     "desdeChar": 60,
     "hastaChar": 61,
-    "inicio": 37.935,
-    "fin": 38.016
+    "inicio": 37.955,
+    "fin": 38.036
   },
   {
-    "escena": 6,
+    "escena": 5,
     "desdeChar": 62,
     "hastaChar": 64,
-    "inicio": 38.03,
-    "fin": 38.166
+    "inicio": 38.05,
+    "fin": 38.186
   },
   {
-    "escena": 6,
+    "escena": 5,
     "desdeChar": 65,
     "hastaChar": 75,
-    "inicio": 38.179,
-    "fin": 38.818
+    "inicio": 38.199,
+    "fin": 38.838
   },
   {
-    "escena": 6,
+    "escena": 5,
     "desdeChar": 76,
     "hastaChar": 77,
-    "inicio": 38.831,
-    "fin": 38.886
+    "inicio": 38.851,
+    "fin": 38.906
   },
   {
-    "escena": 6,
+    "escena": 5,
     "desdeChar": 78,
     "hastaChar": 85,
-    "inicio": 38.899,
-    "fin": 39.293
+    "inicio": 38.919,
+    "fin": 39.313
   },
   {
-    "escena": 6,
+    "escena": 5,
     "desdeChar": 86,
     "hastaChar": 87,
-    "inicio": 39.307,
-    "fin": 39.361
+    "inicio": 39.327,
+    "fin": 39.381
   },
   {
-    "escena": 6,
+    "escena": 5,
     "desdeChar": 88,
     "hastaChar": 93,
-    "inicio": 39.375,
-    "fin": 39.782
+    "inicio": 39.395,
+    "fin": 39.802
   },
   {
-    "escena": 6,
+    "escena": 5,
     "desdeChar": 94,
     "hastaChar": 99,
-    "inicio": 39.796,
-    "fin": 40.204
+    "inicio": 39.816,
+    "fin": 40.224
   },
   {
-    "escena": 6,
+    "escena": 5,
     "desdeChar": 100,
     "hastaChar": 102,
-    "inicio": 40.217,
-    "fin": 40.312
+    "inicio": 40.237,
+    "fin": 40.332
+  },
+  {
+    "escena": 5,
+    "desdeChar": 103,
+    "hastaChar": 109,
+    "inicio": 40.346,
+    "fin": 40.903
   },
   {
     "escena": 6,
-    "desdeChar": 103,
-    "hastaChar": 109,
-    "inicio": 40.326,
-    "fin": 40.883
-  },
-  {
-    "escena": 7,
     "desdeChar": 0,
     "hastaChar": 2,
-    "inicio": 42.734,
-    "fin": 42.897
+    "inicio": 42.754,
+    "fin": 42.917
   },
   {
-    "escena": 7,
+    "escena": 6,
     "desdeChar": 3,
     "hastaChar": 9,
-    "inicio": 42.911,
-    "fin": 43.264
+    "inicio": 42.931,
+    "fin": 43.284
   },
   {
-    "escena": 7,
+    "escena": 6,
     "desdeChar": 10,
     "hastaChar": 15,
-    "inicio": 43.278,
-    "fin": 43.699
+    "inicio": 43.298,
+    "fin": 43.719
   },
   {
-    "escena": 7,
+    "escena": 6,
     "desdeChar": 16,
     "hastaChar": 19,
-    "inicio": 43.713,
-    "fin": 43.889
+    "inicio": 43.733,
+    "fin": 43.909
   },
   {
-    "escena": 7,
+    "escena": 6,
     "desdeChar": 20,
     "hastaChar": 22,
-    "inicio": 43.903,
-    "fin": 44.079
+    "inicio": 43.923,
+    "fin": 44.099
   },
   {
-    "escena": 7,
+    "escena": 6,
     "desdeChar": 23,
     "hastaChar": 28,
-    "inicio": 44.093,
-    "fin": 44.541
+    "inicio": 44.113,
+    "fin": 44.561
   },
   {
-    "escena": 7,
+    "escena": 6,
     "desdeChar": 31,
     "hastaChar": 41,
-    "inicio": 45.483,
-    "fin": 46.271
+    "inicio": 45.503,
+    "fin": 46.291
   },
   {
-    "escena": 7,
+    "escena": 6,
     "desdeChar": 42,
     "hastaChar": 43,
-    "inicio": 46.285,
-    "fin": 46.353
+    "inicio": 46.305,
+    "fin": 46.373
   },
   {
-    "escena": 7,
+    "escena": 6,
     "desdeChar": 44,
     "hastaChar": 49,
-    "inicio": 46.366,
-    "fin": 46.883
+    "inicio": 46.386,
+    "fin": 46.903
   },
   {
-    "escena": 7,
+    "escena": 6,
     "desdeChar": 51,
     "hastaChar": 53,
-    "inicio": 47.834,
-    "fin": 47.97
+    "inicio": 47.854,
+    "fin": 47.99
   },
   {
-    "escena": 7,
+    "escena": 6,
     "desdeChar": 54,
     "hastaChar": 61,
-    "inicio": 47.983,
-    "fin": 48.703
+    "inicio": 48.003,
+    "fin": 48.723
   },
   {
-    "escena": 7,
+    "escena": 6,
     "desdeChar": 63,
     "hastaChar": 71,
-    "inicio": 49.641,
-    "fin": 50.225
+    "inicio": 49.661,
+    "fin": 50.245
   },
   {
-    "escena": 7,
+    "escena": 6,
     "desdeChar": 72,
     "hastaChar": 76,
-    "inicio": 50.239,
-    "fin": 50.47
+    "inicio": 50.259,
+    "fin": 50.49
   },
   {
-    "escena": 7,
+    "escena": 6,
     "desdeChar": 77,
     "hastaChar": 82,
-    "inicio": 50.483,
-    "fin": 50.891
+    "inicio": 50.503,
+    "fin": 50.911
   },
   {
-    "escena": 7,
+    "escena": 6,
     "desdeChar": 83,
     "hastaChar": 86,
-    "inicio": 50.904,
-    "fin": 51.095
+    "inicio": 50.924,
+    "fin": 51.115
   },
   {
-    "escena": 7,
+    "escena": 6,
     "desdeChar": 87,
     "hastaChar": 89,
-    "inicio": 51.108,
-    "fin": 51.231
+    "inicio": 51.128,
+    "fin": 51.251
   },
   {
-    "escena": 7,
+    "escena": 6,
     "desdeChar": 90,
     "hastaChar": 95,
-    "inicio": 51.244,
-    "fin": 51.638
+    "inicio": 51.264,
+    "fin": 51.658
   },
   {
-    "escena": 7,
+    "escena": 6,
     "desdeChar": 96,
     "hastaChar": 99,
-    "inicio": 51.652,
-    "fin": 51.788
+    "inicio": 51.672,
+    "fin": 51.808
   },
   {
-    "escena": 7,
+    "escena": 6,
     "desdeChar": 100,
     "hastaChar": 105,
-    "inicio": 51.801,
-    "fin": 52.087
+    "inicio": 51.821,
+    "fin": 52.107
   },
   {
-    "escena": 7,
+    "escena": 6,
     "desdeChar": 106,
     "hastaChar": 108,
-    "inicio": 52.1,
-    "fin": 52.209
+    "inicio": 52.12,
+    "fin": 52.229
   },
   {
-    "escena": 7,
+    "escena": 6,
     "desdeChar": 109,
     "hastaChar": 114,
-    "inicio": 52.222,
-    "fin": 52.657
+    "inicio": 52.242,
+    "fin": 52.677
   },
   {
-    "escena": 7,
+    "escena": 6,
     "desdeChar": 116,
     "hastaChar": 123,
-    "inicio": 52.942,
-    "fin": 53.486
+    "inicio": 52.962,
+    "fin": 53.506
   }
 ]

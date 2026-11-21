@@ -307,6 +307,39 @@ export const veredictoGenio: Dib = (g, t, k, horiz, param) => {
   g.txt(param || '¿ESTAFADOR O GENIO?', W * (bxx + bw / 2), by0 + 17 * k * s, Math.round(Math.min(14 * k, (bw * 0.98 * W) / Math.max(1, (param || '¿ESTAFADOR O GENIO?').length)) * s), '#ffd870', '#000');
 };
 
+
+/* ---------------- 7. FANTASMAS (clientes que no existian; param: TITULO|fade) ---------------- */
+export const fantasmas: Dib = (g, t, k, horiz, param) => {
+  const W = g.w, H = g.h;
+  const [titulo = '', modo = ''] = param.split('|');
+  g.grad(0, H, rampa('#050a1c', '#0c1a40', '#14285c', '#0a1430'));
+  for (let i = 0; i < 50; i++) g.set(rnd(i, 1) * W, rnd(i, 2) * H * 0.5, [255, 255, 240], 0.2 + 0.5 * Math.sin(t * 2 + i));
+  const cols = horiz ? 22 : 12, filas = horiz ? 9 : 14;
+  const x0 = W * 0.07, x1 = W * (horiz ? 0.8 : 0.93), y0 = H * (horiz ? 0.2 : 0.33), y1 = H * (horiz ? 0.86 : 0.78);
+  const dx = (x1 - x0) / cols, dy = (y1 - y0) / filas;
+  const fade = modo === 'fade' ? ease((t - 0.9) / 1.4) : 0;
+  for (let r = 0; r < filas; r++) for (let c = 0; c < cols; c++) {
+    const id = r * 31 + c;
+    const real = hs(id, 3) < 0.075;
+    const cx = x0 + dx * (c + 0.5), cy = y0 + dy * (r + 0.5) + Math.sin(t * 2 + id) * (real ? 0.5 : 1.8);
+    const s = Math.min(dx * 0.5, dy * 0.3);
+    if (real) {
+      g.ell(cx, cy - s * 0.9, s * 0.55, s * 0.55, ORO);
+      g.ell(cx, cy + s * 0.2, s * 0.8, s * 0.95, ORO);
+      g.ellA(cx, cy - s * 0.3, s * 1.6, s * 1.9, [255, 226, 140], 0.14 + 0.08 * Math.sin(t * 4 + id));
+    } else {
+      const a = 0.5 * (1 - fade) * (0.7 + 0.3 * Math.sin(t * 3 + id));
+      if (a > 0.02) {
+        g.ellA(cx, cy - s * 0.9, s * 0.55, s * 0.55, [170, 200, 255], a);
+        g.ellA(cx, cy + s * 0.2, s * 0.8, s * 0.95, [170, 200, 255], a);
+        g.set(cx - s * 0.2, cy - s * 0.95, [10, 20, 50], a * 1.4); g.set(cx + s * 0.2, cy - s * 0.95, [10, 20, 50], a * 1.4);
+      }
+    }
+  }
+  chispas(g, t, k, W, H, 20, [150, 190, 255]);
+  texto(g, t, k, W, H * (horiz ? 0.12 : 0.88), titulo, fade > 0.5 ? '#ffd870' : '#bcd4ff');
+};
+
 export const DIBUJOS_FORBES: Record<string, Dib> = {
   pixelrascacielos: rascacielos,
   pixelpremio: escenario,
@@ -314,4 +347,5 @@ export const DIBUJOS_FORBES: Record<string, Dib> = {
   pixelgrafica: grafica,
   pixeljuicio: juicio,
   pixelgenio: veredictoGenio,
+  pixelfantasmas: fantasmas,
 };
