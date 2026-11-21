@@ -24,6 +24,20 @@ try {
     if (runs.length < 100) break;
   }
 } catch (e) { console.log(`No pude calcular los minutos (${e.message}): no se encadena.`); process.exit(1); }
+// Meta: 2 videos al día (día de República Dominicana, UTC-4). Con 2 guiones aprobados hoy, se descansa para ahorrar minutos.
+const META_DIA = 2;
+try {
+  const fs = await import('node:fs');
+  const dia = (d) => new Date(new Date(d).getTime() - 4 * 3600_000).toISOString().slice(0, 10);
+  const hoyRD = dia(ahora);
+  let aprobadosHoy = 0; // videos realmente subidos hoy a YouTube
+  try {
+    const n = JSON.parse(fs.readFileSync('oficina-salida/notificaciones.json', 'utf8'));
+    aprobadosHoy = n.filter((x) => /^Video subido/i.test(x.titulo ?? '') && dia(x.fecha) === hoyRD).length;
+  } catch { /* sin notificaciones */ }
+  console.log(`Videos subidos hoy: ${aprobadosHoy} de ${META_DIA}.`);
+  if (aprobadosHoy >= META_DIA) { console.log('Meta del día cumplida: se descansa hasta mañana.'); process.exit(1); }
+} catch (e) { console.log(`No pude contar los videos de hoy (${e.message}); se sigue con el presupuesto.`); }
 const antesDeHoy = usadoMes - usadoHoy;
 const presupuestoHoy = Math.max(0, (PRESUPUESTO - antesDeHoy) / diasQuedan);
 console.log(`Minutos usados este mes: ${usadoMes}. Hoy: ${usadoHoy} de ${Math.round(presupuestoHoy)} permitidos.`);

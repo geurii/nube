@@ -31,8 +31,21 @@ const elegirModelos = async (p, key) => {
 };
 
 /** Pide una respuesta a los proveedores de respaldo, en orden. Devuelve {texto, proveedor, modelo} o null. */
+// Balance entre proveedores: el que acaba de funcionar va primero; el que da límite (429) descansa un rato y se vuelve a usar solo.
+const bloqueadoHasta = new Map();
+let ultimoBueno = null;
+const ordenados = () => {
+  const ahora = Date.now();
+  const libres = PROVEEDORES.filter((p) => (bloqueadoHasta.get(p.nombre) ?? 0) <= ahora);
+  const orden = [...libres.filter((p) => p.nombre === ultimoBueno), ...libres.filter((p) => p.nombre !== ultimoBueno)];
+  return orden.length ? orden : PROVEEDORES; // si todos descansan, se prueban igual
+};
+const descansar = (nombre, r) => {
+  const espera = Number(r.headers?.get?.('retry-after')) || 60;
+  bloqueadoHasta.set(nombre, Date.now() + Math.min(Math.max(espera, 45), 1800) * 1000);
+};
 export const chatAlternativo = async (mensajes, {maxTokens = 2500, temperatura = 0.4, json = false} = {}) => {
-  for (const p of PROVEEDORES) {
+  for (const p of ordenados()) {
     const key = (process.env[p.clave] || '').trim();
     if (!key || p.nombre === 'Cloudflare') continue;
     const lista = await elegirModelos(p, key);
@@ -43,10 +56,10 @@ export const chatAlternativo = async (mensajes, {maxTokens = 2500, temperatura =
           method: 'POST', headers: {Authorization: `Bearer ${key}`, 'Content-Type': 'application/json', ...(p.cabeceras ?? {})}, signal: AbortSignal.timeout(90000),
           body: JSON.stringify({model: modelo, messages: mensajes, temperature: temperatura, max_tokens: json ? Math.round(maxTokens * 1.8) : maxTokens, ...(json ? {response_format: {type: 'json_object'}} : {})}),
         });
-        if (!r.ok) { nota(`${p.nombre}/${modelo}: ${r.status}`); if (r.status === 429 && lista.length > 1) continue; continue; }
+        if (!r.ok) { nota(`${p.nombre}/${modelo}: ${r.status}`); if (r.status === 429) { descansar(p.nombre, r); break; } continue; }
         let texto = ((await r.json()).choices?.[0]?.message?.content ?? '').replace(/<think>[\s\S]*?<\/think>/gi, '');
         if (json) { const a = texto.indexOf('{'), b = texto.lastIndexOf('}'); try { JSON.parse(texto.slice(a, b + 1)); } catch { nota(`${p.nombre}/${modelo}: JSON roto`); continue; } }
-        if (texto.trim()) return {texto, proveedor: p.nombre, modelo};
+        if (texto.trim()) { ultimoBueno = p.nombre; return {texto, proveedor: p.nombre, modelo}; }
         nota(`${p.nombre}/${modelo}: vacío`);
       } catch (e) { nota(`${p.nombre}/${modelo}: ${String(e.message ?? e).slice(0, 50)}`); }
     }
