@@ -50,6 +50,6 @@ jobs:
           git add oficina-salida || true
           git diff --cached --quiet || git commit -m "Ronda de trabajo"
           for i in 1 2 3 4; do
-            git pull --rebase origin main && git push && break
+            git pull --rebase -X theirs origin main && git push && break
             sleep 5
           done

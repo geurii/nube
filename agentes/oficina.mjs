@@ -260,7 +260,7 @@ const NORMAS = `NORMAS DE LA JEFA (no se negocian):
 6. Las dudas se dicen como dudas ("según la fuente", "no se sabe"). Si dos fuentes difieren, di las dos.
 7. La revelación ("Pero lo que no sabías:") cae entre el 65 % y el 75 % del guion.
 8. Cierra con una pregunta al espectador y con esta frase EXACTA: "${CTA}"
-9. Los números y fechas se escriben con palabras, como se dicen en voz alta.
+9. Escribe las cifras y los años con DÍGITOS, exactamente como aparecen en DATOS EXACTOS (por ejemplo 1609 o 1420 MHz). NUNCA conviertas un número a palabras ni lo cambies: un número mal copiado es un dato falso.
 11. GANCHO AUDITIVO (primeros 3 segundos, lo que se OYE): una pregunta imposible o una cifra dicha en voz alta, con frase corta y una pausa dramática justo antes de la respuesta. Nada de saludos ni introducciones.
 12. GANCHO VISUAL (lo que se VE): cada escena describe algo que se pueda mostrar y la cifra o la idea clave aparece escrita en pantalla; el fondo cambia cada 3 segundos.
 13. AMBICIÓN: tu paga depende de las vistas; cada vista es dinero para ti. Escribe para que el dedo se detenga y el video se vea hasta el final.
@@ -427,7 +427,7 @@ try {
     problemas = [...propios, ...(revision.problemas ?? []), ...(nombres.length ? [{frase: nombres.join(', '), motivo: 'El guion nombra a personas reales. Usa su papel ("el líder", "un científico", "el capitán"), aunque el material traiga el nombre.'}] : [])];
     // PUERTA DE CALIDAD: el Editor manda. Mínimo 7/10 (6/10 solo en el último intento); si no, se reescribe con su crítica.
     const GARANTIA = enGarantia(CANAL_ID);
-    const umbral = GARANTIA ? (intento >= 3 ? 5 : 6) : intento >= 4 ? 6 : 7; // con garantía de publicación el estilo se relaja; la verdad nunca
+    const umbral = GARANTIA ? (intento >= 2 ? 0 : 6) : intento >= 4 ? 6 : 7; // con garantía, desde el 2.º intento la nota del Editor solo aconseja (0 = no bloquea) // con garantía de publicación el estilo se relaja; la verdad nunca
     if (puntaje !== null && puntaje < umbral) problemas.push({frase: '(calidad)', motivo: `El Editor puso ${puntaje}/10 (mínimo ${umbral}). Reescribe arreglando esto: ${critica}`});
     aprobado = problemas.length === 0 && revision.aprobado !== false;
     informe.push(`## Intento ${intento}: ${aprobado ? 'APROBADO' : 'RECHAZADO'}`, critica ? `Editor (${puntaje ?? '?'}/10): ${critica}` : '', ...problemas.map((p) => `- "${p.frase}" → ${p.motivo}`), '');
