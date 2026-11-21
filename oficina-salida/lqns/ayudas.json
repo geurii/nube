@@ -1,35 +1,35 @@
 {
   "plan": [
-    "Crear 3 Shorts de formato ultra‑corto (≤60 s) sobre fenómenos inexplicables con títulos llamativos y emojis, siguiendo la estructura \"Sabías que…\" y con revelación entre 65 %‑75 %.: Oficina de Contenido Viral: Alcanzar al menos 1 200 vistas",
-    "Lanzar una serie única de 1 video de 8‑10 min que consolide la parte 2/5 y 3/5 del avión que recogía personas del suelo y del salto sobre el Ártico, con título autónomo y miniatura impactante.: Equipo de Producción y Diseño: Obtener 5 000 v",
-    "Optimizar la publicación de Shorts de alta sorpresa (animales raros, tecnología oculta) usando A/B testing de thumbnails y preguntas intrigantes en la descripción.: Analítica y SEO: Incrementar el CTR en un 15 % y lograr $300 adicionales en"
+    "Crear 3 Shorts de formato ultra‑corto (≤60 s) sobre fenómenos misteriosos con títulos llamativos y emojis, siguiendo la fórmula que generó 1 036 vistas.: Equipo de Contenido Shorts: Monetizar cada Short alcanzando al menos 1 200 vistas ante",
+    "Reestructurar series en videos únicos de 8‑10 min con título autónomo que explique el tema completo, evitando dependencias de partes.: Departamento de Producción y Guion: Publicar 2 videos únicos y lograr 5 000 vistas combinadas, generando ",
+    "Lanzar una campaña de miniaturas y thumbnails con diseño de alto contraste y emojis, basada en hipótesis de factor sorpresa.: Equipo de Diseño y Marketing: Incrementar CTR en un 15 % y alcanzar 2 000 vistas adicionales monetizadas por video"
   ],
   "ganchos": [
-    "Sabías que [CIFRA] personas desaparecieron sin dejar rastro en [TEMA]? | Imagen: silueta de una multitud difuminada bajo una niebla densa",
-    "Sabías que un solo [TEMA] guardó [CIFRA] secretos jamás revelados? | Imagen: objeto antiguo brillante con luces parpadeantes alrededor",
-    "Sabías que [CIFRA] años atrás se encontró un [TEMA] que desafía la física? | Imagen: ruina misteriosa con un haz de luz emergiendo del centro",
-    "Sabías que en [TEMA] se registró un fenómeno que solo ocurre [CIFRA] veces al universo? | Imagen: cielo estrellado con una explosión de colores inusuales",
-    "Sabías que [CIFRA] veces un [TEMA] ha sido visto flotando sin explicación? | Imagen: sombra flotante sobre un paisaje desolado al atardecer"
+    "Sabías que [CIFRA] % de los [TEMA] desaparecen sin dejar rastro? | Imagen de una silueta difuminada de un objeto misterioso sobre un fondo oscuro con un contador digital parpadeando.",
+    "Sabías que en los últimos [CIFRA] años se han registrado [TEMA] que desafían la lógica? | Imagen de un archivo de documentos clasificados con luces intermitentes y un símbolo de interrogación brillante.",
+    "Sabías que solo [CIFRA] personas han visto el verdadero [TEMA] y nunca lo han descrito? | Imagen de una cámara lenta enfocando una sombra imposible que se desvanece en la niebla.",
+    "Sabías que el [TEMA] más raro apareció [CIFRA] veces en la historia sin explicación? | Imagen de un mapa antiguo con marcas rojas pulsantes y un objeto brillante resaltado.",
+    "Sabías que [CIFRA] % de los científicos aún no pueden explicar el [TEMA] que se encontró en... | Imagen de un laboratorio con tubos de ensayo, luces verdes y un artefacto flotante que emite destellos."
   ],
   "mejorasGuion": [
-    "Añadir un gancho visual y textual al inicio: incluir una pregunta intrigante con emojis, por ejemplo \"¿Qué secreto oculta un libro de 240 páginas que nadie ha logrado descifrar? 📜🔍\" para captar la atención en los prime",
-    "Reestructurar el ritmo con cortes más rápidos: dividir la información en fragmentos de 5‑7 segundos, usando texto superpuesto y efectos sonoros para cada dato clave (origen, compra, ubicación en Yale, fecha de digitaliza",
-    "Crear un cierre con llamado a la acción reforzado y repetición del misterio: terminar con \"¿Te atreves a descubrir el mensaje oculto? 🤔 Deja tu teoría en los comentarios y comparte con quien ama los enigmas\" para impuls"
+    "Incluir un gancho visual y textual en los primeros 3 segundos con una pregunta impactante y un emoji, por ejemplo: \"¿Sabías que el Triángulo de la Muerte del Atlántico ha engullido más de mil barcos? 🌊\" para captar la a",
+    "Acelerar el ritmo dividiendo la información en bloques de 5‑7 segundos y usar cortes rápidos con texto en pantalla que resuma cada dato (año, caso, conclusión), evitando párrafos largos; esto mantiene la atención y favor",
+    "Agregar un cierre con llamada a la acción clara y repetitiva: repetir la pregunta final y usar un llamado a compartir y seguir, pero con un estímulo extra, como \"¿Tienes un amigo que ama los misterios? Etiquétalo y descu"
   ],
   "temas": [
-    "The Oak Island mystery",
-    "The Taos Hum",
     "The Antikythera mechanism",
-    "The Green Children of Woolpit",
-    "The Nazca Lines"
+    "The Oak Island mystery",
+    "The Taos hum",
+    "The Nazca Lines",
+    "The Green Children of Woolpit"
   ],
   "titulos": [
-    "Sabías que <evento sorprendente> 🧐 (Parte X/Y)",
-    "El <objeto/ fenómeno> que <acción inesperada> 😱 #Shorts #virales",
-    "¿<Pregunta intrigante> que te dejará sin palabras? 🤯",
-    "Descubre cómo <cambio o hecho increíble> en <tiempo corto> ⏱️"
+    "Sabías que {evento sorprendente} 🧐 (Parte {n}/{total})",
+    "Sabías que {objeto o fenómeno} {acción inesperada} 😱 #Shorts #virales",
+    "Sabías que {situación imposible} 🤯 (Parte {n}/{total})",
+    "Sabías que {hecho histórico} {detalle impactante} 📚"
   ],
-  "fecha": "2026-11-21T14:50:17.199Z",
+  "fecha": "2026-11-21T15:08:21.464Z",
   "iniciativas": [
     "Valentina (Directora de contenido): Definir una línea editorial clara que guíe a todo el equipo desde el primer video.",
     "Carolina (Coordinador de producción): Crear un calendario de tareas con hitos diarios para asegurar que todos estén en sus puestos sin pausas.",

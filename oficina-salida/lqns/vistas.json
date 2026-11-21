@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-21T14:48:40.605Z",
+  "fecha": "2026-11-21T15:02:58.656Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
   "total": 3726,
   "ganadasDesdeElUltimoCiclo": 0,
@@ -122,6 +122,10 @@
     },
     {
       "fecha": "2026-11-21T14:48:40.605Z",
+      "total": 3726
+    },
+    {
+      "fecha": "2026-11-21T15:02:58.656Z",
       "total": 3726
     }
   ]

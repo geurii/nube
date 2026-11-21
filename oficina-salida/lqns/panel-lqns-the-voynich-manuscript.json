@@ -1,0 +1,74 @@
+{
+  "fecha": "2026-11-21T15:08:21.418Z",
+  "id": "lqns-the-voynich-manuscript",
+  "aprobado": false,
+  "resumen": "4 de 8 aprobaron, 6 pasaron los primeros 3 segundos, 2 lo compartirían.",
+  "mejora": "Empieza con un gancho visual o sonoro ultra impactante (ej. “Este libro del siglo XV sigue sin ser leído por nadie”) y corta la intro a menos de 2 segundos para retener a los espectadores que deciden en los primeros momentos.",
+  "gemini": null,
+  "votos": [
+    {
+      "quien": "Crítico: adolescente",
+      "pasa3": false,
+      "sigueHasta": 3,
+      "leGusto": false,
+      "compartiria": false,
+      "comentario": "El gancho es demasiado plano, me suelta en los primeros segundos y ya paso de largo."
+    },
+    {
+      "quien": "Crítica: universitaria",
+      "pasa3": true,
+      "sigueHasta": 45,
+      "leGusto": true,
+      "compartiria": true,
+      "comentario": "Me atrapó el misterio del manuscrito y los datos raros, lo compartiría con mis amigas curiosas."
+    },
+    {
+      "quien": "Crítico: padre trabajador",
+      "pasa3": true,
+      "sigueHasta": 30,
+      "leGusto": false,
+      "compartiria": false,
+      "comentario": "Al principio me pareció interesante, pero la historia se alarga sin un punto práctico que me sirva en el bus."
+    },
+    {
+      "quien": "Crítico: escéptico",
+      "pasa3": true,
+      "sigueHasta": 20,
+      "leGusto": false,
+      "compartiria": false,
+      "comentario": "Demasiado clickbait, promete “descubrir secretos” y solo suelta datos ya conocidos."
+    },
+    {
+      "quien": "Crítica: fan del misterio",
+      "pasa3": true,
+      "sigueHasta": 52,
+      "leGusto": true,
+      "compartiria": true,
+      "comentario": "Buen repaso del Voynich, aunque falta profundizar en teorías nuevas; lo recomendaría a otros amantes del enigma."
+    },
+    {
+      "quien": "Crítica: ama de casa",
+      "pasa3": true,
+      "sigueHasta": 40,
+      "leGusto": true,
+      "compartiria": false,
+      "comentario": "La voz es clara y el ritmo cómodo, pero el llamado a compartir suena forzado."
+    },
+    {
+      "quien": "Crítico: joven dominicano",
+      "pasa3": false,
+      "sigueHasta": 5,
+      "leGusto": false,
+      "compartiria": false,
+      "comentario": "Se siente como un doc de colegio, falta chispa y lenguaje callejero."
+    },
+    {
+      "quien": "Crítico: abuelo",
+      "pasa3": true,
+      "sigueHasta": 52,
+      "leGusto": true,
+      "compartiria": false,
+      "comentario": "Me gustó la historia bien contada y los subtítulos claros, aunque el “compártelo” me pareció innecesario."
+    }
+  ]
+}
