@@ -370,6 +370,7 @@ try {
   let escenas = [], titulo = TEMA, descripcion = '', hashtags = [], problemas = [], aprobado = false, intentos = 0, puntaje = null, critica = '';
   for (let intento = 1; intento <= 4 && !aprobado; intento++) {
     intentos = intento;
+    puntaje = null; critica = '';
     const borrador = await pedirJson(modelo, guionista(material, problemas));
     let esc = normalizar(borrador.escenas);
     titulo = borrador.titulo ?? titulo;
@@ -392,6 +393,9 @@ try {
     PROHIBIDOS.push(...(revision.nombres_de_personas ?? []).filter((n) => typeof n === 'string' && n.trim()));
     const nombres = (revision.nombres_de_personas ?? []).filter((n) => typeof n === 'string' && n.trim() && textoGuion.includes(n.trim().toLowerCase()));
     problemas = [...propios, ...(revision.problemas ?? []), ...(nombres.length ? [{frase: nombres.join(', '), motivo: 'El guion nombra a personas reales. Usa su papel ("el líder", "un científico", "el capitán"), aunque el material traiga el nombre.'}] : [])];
+    // PUERTA DE CALIDAD: el Editor manda. Mínimo 7/10 (6/10 solo en el último intento); si no, se reescribe con su crítica.
+    const umbral = intento >= 4 ? 6 : 7;
+    if (puntaje !== null && puntaje < umbral) problemas.push({frase: '(calidad)', motivo: `El Editor puso ${puntaje}/10 (mínimo ${umbral}). Reescribe arreglando esto: ${critica}`});
     aprobado = problemas.length === 0 && revision.aprobado !== false;
     informe.push(`## Intento ${intento}: ${aprobado ? 'APROBADO' : 'RECHAZADO'}`, critica ? `Editor (${puntaje ?? '?'}/10): ${critica}` : '', ...problemas.map((p) => `- "${p.frase}" → ${p.motivo}`), '');
   }
