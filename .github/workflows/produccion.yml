@@ -76,7 +76,8 @@ jobs:
         run: timeout 240 node agentes/ayuda.mjs; timeout 240 node agentes/funciones.mjs; timeout 240 node agentes/conciencia.mjs
       - name: Marcar progreso tras el panel
         if: always()
-        run: node agentes/progreso.mjs 90 'Los críticos ya votaron: listo para subir' || true
+        run: |
+          node agentes/progreso.mjs 90 'Los críticos ya votaron - listo para subir' || true
       - name: Guardar el avance en el repositorio
         if: always()
         run: |
