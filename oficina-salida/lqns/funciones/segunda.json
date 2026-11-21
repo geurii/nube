@@ -1,13 +1,27 @@
 {
-  "fecha": "2026-11-21T11:03:52.865Z",
+  "fecha": "2026-11-21T11:05:59.175Z",
   "entregas": {
-    "Directora de contenido": "Amenaza: la caída de la tasa de retención tras los 30 segundos, que está limitando la conversión de vistas en suscriptores y, por tanto, la monetización antes del 13‑dic‑2026. Contramedida: lanzar una serie de videos de 5 min con “gancho‑cierre” estructurado (",
-    "Investigador de temas": "1. El misterio de la desaparición del USS Cyclops (1918) – abundante documentación naval y testimonios oficiales. 2. El caso de la “Luz de Hessdalen” en Noruega – numerosos estudios científicos y videos de alta calidad que generaron gran interés en videos de f",
-    "Guionista": "① “¿Qué oculta realmente el Triángulo de las Bermudas? La respuesta te dejará sin aliento en los próximos 3 segundos.”\n② “Imagina que un avión desaparece sin rastro… Hoy revelamos la verdad que nadie se atrevió a contar.”",
-    "Editor de guion": "Frase aburrida: “Según la fuente, el álbum octavo de Buckethead, titulado ‘Bermuda Triangle’, es una colaboración electrónica con Extrakd y no está vinculado al misterio marítimo.”\nReescritura: “Curiosamente, el álbum ‘Bermuda Triangle’ de Buckethead es solo m",
-    "Verificador de datos": "Dato más fácil de cuestionar: la afirmación de que el mito nació en 1950 con un artículo del Miami Herald. Para reforzarlo, citar el artículo original de 1950 de Vincent Gaddis en el Miami Herald y proporcionar el enlace al archivo digital del periódico.",
-    "Locutor": "En el gancho, usar un ritmo rápido y enérgico con pausas de 0,2 s entre palabras clave (“Triángulo… Bermudas… desaparece”). En la revelación, ralentizar a 0,9 × la velocidad normal, con una pausa de 0,8 s antes de la frase clave “no hay evidencia de actividad ",
-    "Técnico de render": "Implementar render en resolución 1080p a 30 fps usando el códec H.265 (HEVC) con preset “fast‑1440p” y activar la opción de “variable bitrate” para mantener calidad en escenas complejas y reducir el tiempo de exportación en un 30 %.",
-    "Publicador": "Comentario fijado: “🧩 ¿Te atreves a descubrir si el Triángulo de las Bermudas aún guarda secretos? Deja tu teoría abajo y suscríbete para más misterios documentados. ¡Comparte con quien ama lo inexplicable! 👇”\nResponder a los primeros comentarios dentro de l"
+    "Directora de contenido": "La mayor amenaza es la baja tasa de crecimiento (solo 3 % mensual) que impide alcanzar 100 000 vistas antes del 13‑dic‑2026; contramedida: lanzar una campaña de Shorts con títulos estilo \"¿Qué pasaría si…?\" y promocionar en TikTok para acelerar la exposición.",
+    "Enlace de datos": "Las vistas totales subieron 1 200 en la última semana, impulsadas por el Shorts del vestido; la retención media cayó un 5 % en videos largos, indicando cansancio del formato actual.",
+    "Coordinador de producción": "Publicar hoy a las 19:00 h (horario pico de audiencia en España y Latinoamérica) y encolar el Shorts del vestido seguido del próximo misterio del Área 51 para mantener la cadena de alta retención.",
+    "Jefa de calidad": "Defecto recurrente: exceso de texto en pantalla que distrae; regla nueva: máximo 2 líneas de texto simultáneas y duración mínima de 3 s por línea.",
+    "Investigador de temas": "1) El misterio del Área 51 (muchísima documentación desclasificada). 2) Los crímenes sin resolver de Jack el Destripador (abundante archivo histórico).",
+    "Cazador de fórmulas": "Estructura viral: [Emoción/Emoji] + Pregunta intrigante + “Lo que nadie te contó” + número o tiempo (ej. \"3 minutos que cambian todo\").",
+    "Vigía de tendencias": "Crecen los videos de \"Desmentidos de mitos\" porque los datos del último ciclo muestran que los Shorts con enfoque científico obtuvieron +18 % de interacciones frente a los relatos fantásticos.",
+    "Guionista": "«¿Sabías que el Triángulo de las Bermudas tiene más teorías que pruebas? En los próximos 3 segundos descubrirás la explicación más lógica.» «Prepárate: lo que la Marina oculta sobre el triángulo podría cambiar tu visión del océano.»",
+    "Editor de guion": "Frase aburrida: \"Según la fuente, el álbum octavo de Buckethead…\". Reescrita: \"Curiosamente, el álbum octavo de Buckethead se llama ‘Bermuda Triangle’, pero no tiene nada que ver con el misterio marítimo.\"",
+    "Titulista": "1) \"Triángulo de las Bermudas: 7 teorías científicas que desmontan el mito\" 2) \"Bermudas: 5 fallos humanos que explican 1 000 desapariciones\"",
+    "Redactor de descripción": "Triángulo de las Bermudas, misterios y ciencia: descubre por qué la mayoría de los casos son errores humanos y fenómenos naturales. ¡Comparte y suscríbete!",
+    "Especialista en hashtags": "#TriánguloDeLasBermudas,#MitosDesmentidos,#CienciaVsMito,#HistoriasReales,#CuriosidadesMarinas",
+    "Verificador de datos": "El dato más fácil de cuestionar es la fecha de origen del mito (1950, Miami Herald); reforzarlo citando el archivo digital del Miami Herald del 14‑jul‑1950.",
+    "Auditor de fuentes": "Añadir la publicación oficial de la Guardia Costera de EE. UU. sobre el Flight 19 (disponible en su sitio web) para validar los números de desapariciones.",
+    "Auditor de normas": "La norma del canal exige evitar referencias a personas reales sin autorización; el guion cumple al no mencionar nombres propios, por lo que está dentro de la norma.",
+    "Revisor de nombres": "‘Flight 19’, ‘Bermuda’, ‘Miami Herald’ podrían confundirse con nombres de personas; usar siempre mayúsculas y contexto para aclarar que son entidades.",
+    "Revisor de ganchos": "Puntuación 6/10; para subir a 9, añadir una pregunta directa al inicio y un dato impactante (ej. \"¿Sabías que 1 de cada 3 desapariciones en el triángulo tiene explicación meteorológica?\").",
+    "Escenógrafo": "1) Fondo de un mapa náutico antiguo con luces parpadeantes. 2) Simulación de una tormenta en 3D sobre el océano con ondas realistas.",
+    "Pintor de imágenes": "Pixel art de un barco fantasma emergiendo de una niebla azul, con coordenadas latitud‑longitud visibles en la proa, rodeado de iconos de brújula y radar.",
+    "Locutor": "Iniciar con ritmo rápido y pausas de 0,5 s entre palabras clave en el gancho; reducir velocidad a 80 % en la explicación científica y usar pausas de 1 s antes de cada dato sorprendente.",
+    "Técnico de render": "Utilizar pre‑renderizado de efectos de agua y reutilizar capas de nubes en caché; aplicar compresión de video H.265 para disminuir tiempo de exportación sin perder calidad.",
+    "Publicador": "Comentario fijado: \"¿Cuál es tu teoría favorita del Triángulo? Déjala abajo y la discutiremos en el próximo video. 👇\". Responder a los primeros 20 comentarios dentro de la primera hora para fomentar interacción."
   }
 }

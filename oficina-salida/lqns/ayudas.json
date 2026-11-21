@@ -29,5 +29,15 @@
     "Sabías que <descripción asombrosa> 🤯 (Parte <n>/<total>)",
     "Sabías que <hecho histórico o tecnológico> <emoji opcional>"
   ],
-  "fecha": "2026-11-21T11:03:44.120Z"
+  "fecha": "2026-11-21T11:03:44.120Z",
+  "iniciativas": [
+    "Valentina (Directora de contenido): Definir una línea editorial clara que guíe a todo el equipo desde el primer video.",
+    "Carolina (Coordinador de producción): Crear un calendario de tareas con hitos diarios para asegurar que todos estén en sus puestos sin pausas.",
+    "Fernanda (Jefa de calidad): Implementar una lista de verificación de calidad que se revise antes de cualquier publicación.",
+    "Camila (Investigador de temas): Compilar una base de datos de fuentes potenciales que podamos usar cuando iniciemos la producción.",
+    "Daniela (Cazador de fórmulas): Proponer tres estructuras de video diferentes y someterlas a votación interna.",
+    "Julieta (Vigía de tendencias): Establecer un reporte semanal de tendencias emergentes para alimentar nuestras ideas.",
+    "Lucía (Guionista): Escribir un guion piloto que incluya un gancho fuerte en los primeros 10 segundos.",
+    "Mariana (Editor de guion): Crear un proceso de revisión cruzada entre editores antes de aprobar cualquier guion."
+  ]
 }

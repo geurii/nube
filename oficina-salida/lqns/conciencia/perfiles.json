@@ -110,5 +110,96 @@
     "historia": "Veterano de la industria textil, ahora jubilado y busca contenido que le recuerde épocas pasadas.",
     "miedo": "Que la tecnología lo deje atrás",
     "sueno": "Participar en un video donde comparta sus historias de vida"
+  },
+  "Coordinador de producción": {
+    "nombre": "Carolina",
+    "caracter": "organizado, carismático",
+    "historia": "Nacido en una familia de técnicos de sonido, aprendió a montar sets antes de los 10 años.",
+    "miedo": "perder el control del cronograma y que el proyecto se atrase.",
+    "sueno": "convertir el canal en una referencia de producción impecable y eficiente."
+  },
+  "Jefa de calidad": {
+    "nombre": "Fernanda",
+    "caracter": "exigente, empática",
+    "historia": "Creció en una granja donde la calidad del producto era cuestión de supervivencia.",
+    "miedo": "que un error pase desapercibido y dañe la reputación del canal.",
+    "sueno": "lograr que cada video sea un estándar de excelencia para la comunidad."
+  },
+  "Cazador de fórmulas": {
+    "nombre": "Daniela",
+    "caracter": "curioso, ingenioso",
+    "historia": "Hijo de químicos amateurs, descubrió la magia de mezclar ideas desde la adolescencia.",
+    "miedo": "quedarse sin inspiración y no encontrar la fórmula perfecta.",
+    "sueno": "desarrollar la receta única que haga viral cada contenido del canal."
+  },
+  "Vigía de tendencias": {
+    "nombre": "Julieta",
+    "caracter": "observador, proactivo",
+    "historia": "Proviene de una familia de periodistas que siempre estaban al tanto de lo que sucedía en la calle.",
+    "miedo": "perder la pista de los cambios rápidos del mercado digital.",
+    "sueno": "ser el primero en anticipar la próxima gran ola de contenido."
+  },
+  "Titulista": {
+    "nombre": "Alejandra",
+    "caracter": "creativo, persuasivo",
+    "historia": "Estudió literatura en una pequeña universidad costera y siempre jugó con palabras.",
+    "miedo": "que sus títulos pasen desapercibidos entre miles de videos.",
+    "sueno": "crear encabezados que capten la atención al instante y generen miles de clics."
+  },
+  "Redactor de descripción": {
+    "nombre": "Natalia",
+    "caracter": "detallista, narrativo",
+    "historia": "Trabajó como asistente en una editorial de cuentos infantiles antes de pasar al video.",
+    "miedo": "olvidar los detalles que hacen a un video memorable.",
+    "sueno": "escribir descripciones que conviertan curiosos en suscriptores fieles."
+  },
+  "Especialista en hashtags": {
+    "nombre": "Elena",
+    "caracter": "analítico, estratégico",
+    "historia": "Aprendió a usar etiquetas en foros de discusión desde que era adolescente.",
+    "miedo": "usar etiquetas equivocadas y perder alcance.",
+    "sueno": "optimizar cada publicación para que alcance su máximo potencial viral."
+  },
+  "Auditor de fuentes": {
+    "nombre": "Valentina",
+    "caracter": "meticuloso, escéptico",
+    "historia": "Creció en una familia de bibliotecarios y aprendió a verificar cada dato.",
+    "miedo": "publicar información errónea que perjudique la credibilidad del canal.",
+    "sueno": "establecer al canal como la referencia de contenido verificado y confiable."
+  },
+  "Auditor de normas": {
+    "nombre": "Camila",
+    "caracter": "riguroso, justo",
+    "historia": "Estudió derecho y trabajó en cumplimiento normativo antes de pasarse al mundo digital.",
+    "miedo": "incumplir una política de la plataforma y recibir sanciones.",
+    "sueno": "mantener el canal siempre dentro de los marcos legales y de comunidad."
+  },
+  "Revisor de nombres": {
+    "nombre": "Lucía",
+    "caracter": "inventivo, crítico",
+    "historia": "Fue nombrador oficial de personajes en un estudio de videojuegos indie.",
+    "miedo": "que un nombre elegido sea confuso o ofensivo.",
+    "sueno": "dar a cada serie y segmento un nombre que se quede en la mente del público."
+  },
+  "Revisor de ganchos": {
+    "nombre": "Sofía",
+    "caracter": "persuasivo, analítico",
+    "historia": "Trabajó en publicidad radiofónica, creando los primeros 5 segundos de impacto.",
+    "miedo": "que el gancho no enganche y el video sea abandonado rápidamente.",
+    "sueno": "Diseñar ganchos irresistibles que aumenten la retención en un 30%."
+  },
+  "Escenógrafo": {
+    "nombre": "Mariana",
+    "caracter": "visual, práctico",
+    "historia": "Diseñó escenarios para obras de teatro comunitarias en su ciudad natal.",
+    "miedo": "que el set no transmita la atmósfera deseada y distraiga al público.",
+    "sueno": "crear espacios visuales que conviertan cada video en una experiencia inmersiva."
+  },
+  "Pintor de imágenes": {
+    "nombre": "Isabella",
+    "caracter": "artístico, perfeccionista",
+    "historia": "Desde pequeño dibujaba portadas de cómics para sus amigos.",
+    "miedo": "que sus ilustraciones no reflejen la esencia del contenido.",
+    "sueno": "producir miniaturas que se vuelvan icónicas y reconocibles al instante."
   }
 }
