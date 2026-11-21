@@ -1,0 +1,42 @@
+name: Fundador
+
+# Cuando llega un pedido de canal nuevo (lo escribe el botón "Nuevo canal" de la oficina 3D), el Fundador diseña el canal
+# y lo deja trabajando dentro de la oficina. Abrir la cuenta de YouTube sigue siendo cosa de una persona.
+on:
+  push:
+    paths:
+      - 'oficina-salida/pedidos/*.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fundador
+  cancel-in-progress: false
+
+jobs:
+  fundar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Crear el canal
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: node agentes/fundador.mjs
+      - name: Guardar el canal nuevo en el repositorio
+        if: always()
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add oficina-salida agentes/canales-propios.json || true
+          git diff --cached --quiet || git commit -m "Fundador: canal nuevo"
+          for i in 1 2 3 4; do
+            git pull --rebase origin main && git push && break
+            echo "No pude guardar (intento $i); reintento en 5 s"
+            sleep 5
+          done

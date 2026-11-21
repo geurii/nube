@@ -1,16 +1,19 @@
-// Cazador de fórmulas: lee los feeds públicos de YouTube (sin clave) de los canales de agentes/canales.json,
-// encuentra los videos que más rinden (vistas por hora) y le pide a Groq la FÓRMULA (estructura del título y del gancho),
-// nunca el contenido. El resultado queda en oficina-salida/formulas.json y lo lee el Guionista.
-// Variables: GROQ_API_KEY. Se ejecuta antes de la Oficina (ver oficina.yml). Si algo falla, no detiene a la Oficina.
+// Cazador de fórmulas: lee los feeds públicos de YouTube (sin clave) de los canales que cada canal propio vigila (campo "vigilar"
+// en agentes/canales-propios.json), encuentra los videos que más rinden (vistas por hora) y le pide a Groq la FÓRMULA
+// (estructura del título y del gancho), nunca el contenido. Deja oficina-salida/<canal>/formulas.json, que lee el Guionista.
+// Variables: GROQ_API_KEY, CANAL (por defecto lqns). Si algo falla, no detiene a la Oficina.
 import fs from 'node:fs';
 import path from 'node:path';
 
-const SAL = 'oficina-salida';
+const CANAL_ID = (process.env.CANAL || 'lqns').trim();
 const KEY = process.env.GROQ_API_KEY;
 const UA = 'OficinaVideos/1.0 (proyecto educativo)';
-fs.mkdirSync(SAL, {recursive: true});
 const leer = (ruta, d) => { try { return JSON.parse(fs.readFileSync(ruta, 'utf8')); } catch { return d; } };
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
+const CONFIG = (leer(path.join('agentes', 'canales-propios.json'), {canales: []}).canales ?? []).find((c) => c.id === CANAL_ID);
+if (!CONFIG) { console.error(`El canal "${CANAL_ID}" no existe.`); process.exit(0); }
+const SAL = path.join('oficina-salida', CANAL_ID);
+fs.mkdirSync(SAL, {recursive: true});
 
 const marcar = (tarea, estado = 'libre') => {
   const ruta = path.join(SAL, 'estado.json');
@@ -18,6 +21,12 @@ const marcar = (tarea, estado = 'libre') => {
   e.agentes = {...(e.agentes ?? {}), 'Cazador de fórmulas': {estado, actividad: 'leyendo', tarea}};
   e.actualizado = new Date().toISOString();
   fs.writeFileSync(ruta, JSON.stringify(e, null, 2));
+};
+const notificar = (tipo, titulo, texto) => {
+  const ruta = path.join('oficina-salida', 'notificaciones.json');
+  const lista = leer(ruta, []);
+  lista.unshift({id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), fecha: new Date().toISOString(), canal: CANAL_ID, canalNombre: CONFIG.nombre, tipo, titulo, texto});
+  fs.writeFileSync(ruta, JSON.stringify(lista.slice(0, 80), null, 2));
 };
 
 const etiqueta = (xml, tag) => new RegExp(`<${tag}[^>]*>([\\s\\S]*?)</${tag}>`).exec(xml)?.[1]?.trim();
@@ -43,8 +52,8 @@ const videosDe = async (canal) => {
 };
 
 try {
-  const lista = leer(path.join('agentes', 'canales.json'), {canales: []}).canales ?? [];
-  if (!lista.length) throw new Error('agentes/canales.json no tiene canales.');
+  const lista = CONFIG.vigilar ?? [];
+  if (!lista.length) { marcar('Sin canales que vigilar todavía: agrega sus channel_id en "vigilar" de este canal.', 'esperando_decision'); console.log('Este canal no vigila ninguno todavía.'); process.exit(0); }
   const todos = (await Promise.all(lista.map(videosDe))).flat();
   const hace30 = Date.now() - 30 * 86400000;
   const mejores = todos.filter((v) => v.vistas > 0 && new Date(v.publicado).getTime() > hace30).sort((a, b) => b.vistasPorHora - a.vistasPorHora).slice(0, 12);
@@ -52,31 +61,33 @@ try {
 
   let formula = null;
   if (KEY) {
-    const r = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-      method: 'POST',
-      headers: {Authorization: `Bearer ${KEY}`, 'Content-Type': 'application/json'},
-      signal: AbortSignal.timeout(120000),
-      body: JSON.stringify({
-        model: 'openai/gpt-oss-120b',
-        temperature: 0.3,
-        max_tokens: 1500,
-        reasoning_effort: 'low',
-        messages: [
-          {role: 'system', content: 'Eres analista de formatos virales de YouTube. Analizas SOLO la estructura (cómo está hecho el título y el gancho), jamás el contenido ni los temas. Respondes SOLO con JSON.'},
-          {role: 'user', content: `Estos son los videos de misterio y datos que más están rindiendo ahora (vistas por hora), en inglés:\n${mejores.map((v, i) => `${i + 1}. "${v.titulo}" · ${v.canal} · ${v.vistasPorHora} vistas/hora`).join('\n')}\n\nDevuelve: {"formula": "una frase con la estructura que se repite en los títulos y ganchos", "ganchos": ["3 plantillas de gancho en español, con huecos entre [corchetes], sin copiar temas"], "evitar": ["2 errores que se ven en los de menor rendimiento"]}.`},
-        ],
-      }),
-    });
-    if (r.ok) {
-      const texto = (await r.json()).choices?.[0]?.message?.content ?? '';
-      const a = texto.indexOf('{'), b = texto.lastIndexOf('}');
-      if (a >= 0 && b > a) formula = JSON.parse(texto.slice(a, b + 1));
-    }
+    try {
+      const r = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+        method: 'POST',
+        headers: {Authorization: `Bearer ${KEY}`, 'Content-Type': 'application/json'},
+        signal: AbortSignal.timeout(120000),
+        body: JSON.stringify({
+          model: 'openai/gpt-oss-120b',
+          temperature: 0.3,
+          max_tokens: 1500,
+          reasoning_effort: 'low',
+          messages: [
+            {role: 'system', content: 'Eres analista de formatos virales de YouTube. Analizas SOLO la estructura (cómo está hecho el título y el gancho), jamás el contenido ni los temas. Respondes SOLO con JSON.'},
+            {role: 'user', content: `Estos son los videos que más están rindiendo ahora (vistas por hora) en canales parecidos a "${CONFIG.nombre}" (${CONFIG.nicho}):\n${mejores.map((v, i) => `${i + 1}. "${v.titulo}" · ${v.canal} · ${v.vistasPorHora} vistas/hora`).join('\n')}\n\nDevuelve: {"formula": "una frase con la estructura que se repite en los títulos y ganchos", "ganchos": ["3 plantillas de gancho en español, con huecos entre [corchetes], sin copiar temas"], "evitar": ["2 errores que se ven en los de menor rendimiento"]}.`},
+          ],
+        }),
+      });
+      if (r.ok) {
+        const texto = (await r.json()).choices?.[0]?.message?.content ?? '';
+        const a = texto.indexOf('{'), b = texto.lastIndexOf('}');
+        if (a >= 0 && b > a) formula = JSON.parse(texto.slice(a, b + 1));
+      }
+    } catch { /* sin análisis de IA esta vez */ }
   }
-  const salida = {actualizado: new Date().toISOString(), canalesLeidos: lista.length, videosRevisados: todos.length, mejores: mejores.slice(0, 5), formula};
-  fs.writeFileSync(path.join(SAL, 'formulas.json'), JSON.stringify(salida, null, 2));
+  fs.writeFileSync(path.join(SAL, 'formulas.json'), JSON.stringify({actualizado: new Date().toISOString(), canalesLeidos: lista.length, videosRevisados: todos.length, mejores: mejores.slice(0, 5), formula}, null, 2));
   marcar(`Revisó ${todos.length} videos de ${lista.length} canales. Mejor ahora: "${mejores[0].titulo.slice(0, 70)}" (${mejores[0].vistasPorHora} vistas/hora). ${formula?.formula ? `Fórmula: ${String(formula.formula).slice(0, 110)}` : 'Sin análisis de IA esta vez.'}`);
-  console.log(`Cazador: ${todos.length} videos leídos; fórmula: ${formula?.formula ?? 'sin IA'}`);
+  if (formula?.formula) notificar('reporte', 'Fórmula del momento', `Lo que hoy funciona para ${CONFIG.nombre}: ${String(formula.formula).slice(0, 260)} El mejor video ahora: "${mejores[0].titulo.slice(0, 90)}" (${mejores[0].vistasPorHora} vistas/hora).`);
+  console.log(`Cazador (${CANAL_ID}): ${todos.length} videos leídos; fórmula: ${formula?.formula ?? 'sin IA'}`);
 } catch (e) {
   marcar(`No pude cazar fórmulas: ${String(e.message ?? e).slice(0, 160)}`, 'esperando_decision');
   console.error('Cazador:', e.message ?? e);

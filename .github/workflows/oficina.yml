@@ -15,6 +15,9 @@ on:
         description: 'short o largo'
         required: false
         default: 'short'
+      canal:
+        description: 'Opcional: solo este canal (ej: lqns). Vacio = todos los activos'
+        required: false
       palabras:
         description: 'Solo para largo: palabras aproximadas (ej: 900)'
         required: false
@@ -39,18 +42,23 @@ jobs:
           node-version: 22
       - name: Prueba de humo (simulada, no gasta Groq)
         run: node agentes/probar-oficina.mjs
-      - name: Cazador de fórmulas (lee canales exitosos; si falla, la Oficina sigue)
-        continue-on-error: true
-        env:
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-        run: node agentes/cazador.mjs
-      - name: Correr la oficina
+      - name: Ciclo de todos los canales activos (el Cazador primero; si uno falla, los demás siguen)
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           TEMA: ${{ inputs.tema }}
+          CANAL_PEDIDO: ${{ inputs.canal }}
           FORMATO: ${{ inputs.formato || (github.event.schedule == '0 12 */2 * *' && 'largo' || 'short') }}
           PALABRAS: ${{ inputs.palabras }}
-        run: node agentes/oficina.mjs
+        run: |
+          canales=$(node agentes/canales-activos.mjs)
+          echo "Canales de este ciclo: $canales"
+          fallo=0
+          for c in $canales; do
+            echo "=== $c ==="
+            CANAL=$c node agentes/cazador.mjs || true
+            CANAL=$c node agentes/oficina.mjs || fallo=1
+          done
+          exit $fallo
       - name: Guardar el resultado en el repositorio
         if: always()
         run: |

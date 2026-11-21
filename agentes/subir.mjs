@@ -5,8 +5,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const {YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN, ID} = process.env;
-const ESTADO = path.join('oficina-salida', 'estado.json');
+const {YT_CLIENT_ID, YT_CLIENT_SECRET, ID} = process.env;
+const CANAL = process.env.CANAL || 'lqns';
+// Cada canal puede tener su propio YouTube: YT_REFRESH_TOKEN_<CANAL> (el de un canal nuevo) o, si no, YT_REFRESH_TOKEN.
+const YT_REFRESH_TOKEN = process.env.YT_REFRESH_TOKEN_CANAL || process.env.YT_REFRESH_TOKEN;
+const ESTADO = path.join('oficina-salida', CANAL, 'estado.json');
 const marcar = (texto, estado = 'esperando_decision') => {
   try {
     const e = JSON.parse(fs.readFileSync(ESTADO, 'utf8'));
@@ -18,7 +21,7 @@ const marcar = (texto, estado = 'esperando_decision') => {
 
 if (!ID) { console.log('Sin video que subir.'); process.exit(0); }
 if (!YT_CLIENT_ID || !YT_CLIENT_SECRET || !YT_REFRESH_TOKEN) {
-  marcar(`Video "${ID}" listo, pero falta conectar YouTube: crea YT_CLIENT_ID, YT_CLIENT_SECRET y YT_REFRESH_TOKEN como secretos del repositorio. JEFA: un video que no se sube no existe.`);
+  marcar(`Video "${ID}" listo, pero falta conectar YouTube para este canal: crea YT_CLIENT_ID, YT_CLIENT_SECRET y YT_REFRESH_TOKEN (o YT_REFRESH_TOKEN_<CANAL>) como secretos del repositorio. JEFA: un video que no se sube no existe.`);
   console.log('Faltan los secretos de YouTube. Se omite la subida.');
   process.exit(0);
 }

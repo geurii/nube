@@ -1,0 +1,30 @@
+{
+  "nota": "Los canales que la oficina trabaja. 'lqns' es Lo Que No Sabías. Un canal nuevo lo agrega el Fundador (pedido desde la oficina 3D) o se copia este bloque a mano. 'vigilar' son canales ajenos cuyas fórmulas estudia el Cazador (channel_id que empieza con UC).",
+  "canales": [
+    {
+      "id": "lqns",
+      "nombre": "Lo Que No Sabías",
+      "nicho": "misterios sin resolver, fenómenos raros, objetos históricos enigmáticos y casos curiosos con mucha documentación",
+      "tono": "Tono de misterio, no de miedo.",
+      "idioma": "es",
+      "idiomasFuente": ["es", "en"],
+      "voz": "es-DO-EmilioNeural",
+      "cta": "Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "ctaEscrito": "Mándaselo a un amigo que haría lo mismo, sígueme.",
+      "musica": "musica/firma-canal.mp3",
+      "enlaceCanal": "https://youtube.com/@lo.que.no.sabias_do",
+      "activo": true,
+      "vigilar": [
+        {"id": "UCGAmpBtWveYp0-3v9npnhvQ", "nombre": "Chilling Scares", "idioma": "en"},
+        {"id": "UC2jAc3ifBNVT03iLjXSRPwQ", "nombre": "Quanta", "idioma": "en"},
+        {"id": "UCtPrkXdtCM5DACLufB9jbsA", "nombre": "MrBallen", "idioma": "en"},
+        {"id": "UCeIKdSZRSAUm88iS4G9_ohA", "nombre": "Psychopoly", "idioma": "en"},
+        {"id": "UC4GYgpgZzfMhYr9y6rs5O6Q", "nombre": "Trust Me Bro", "idioma": "en"},
+        {"id": "UCIFk2uvCNcEmZ77g0ESKLcQ", "nombre": "The Why Files", "idioma": "en"},
+        {"id": "UCYoulQOH1t8fRNyCoxPC_Tw", "nombre": "Mysterious Middle East", "idioma": "en"},
+        {"id": "UCS2eSlge5Xj-iRw343XG4RQ", "nombre": "Beyond The Record", "idioma": "en"},
+        {"id": "UCQ64xirJBYagygUDNGz1-5A", "nombre": "HiddenGuy Explainer", "idioma": "en"}
+      ]
+    }
+  ]
+}

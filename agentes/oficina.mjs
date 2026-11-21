@@ -7,13 +7,18 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const KEY = process.env.GROQ_API_KEY;
+const CANAL_ID = (process.env.CANAL || 'lqns').trim();
+const leerJsonSync = (ruta, porDefecto) => { try { return JSON.parse(fs.readFileSync(ruta, 'utf8')); } catch { return porDefecto; } };
+const CONFIG = (leerJsonSync(path.resolve('agentes', 'canales-propios.json'), {canales: []}).canales ?? []).find((c) => c.id === CANAL_ID);
+if (!CONFIG) { console.error(`ERROR: el canal "${CANAL_ID}" no existe en agentes/canales-propios.json`); process.exit(1); }
 let TEMA = (process.env.TEMA ?? '').trim();
 const FORMATO = process.env.FORMATO === 'largo' ? 'largo' : 'short';
-const IDIOMAS = (process.env.IDIOMAS ?? 'es,en').split(',').map((s) => s.trim()).filter(Boolean);
+const IDIOMAS = (process.env.IDIOMAS ? process.env.IDIOMAS.split(',') : CONFIG.idiomasFuente ?? ['es', 'en']).map((x) => x.trim()).filter(Boolean);
 const PALABRAS = FORMATO === 'largo' ? Number(process.env.PALABRAS) || 900 : 110;
-const CTA = 'Comparte este video con un amigo que haría lo mismo, sígueme.';
+const CTA = CONFIG.cta ?? 'Comparte este video con un amigo que haría lo mismo, sígueme.';
 const UA = 'OficinaVideos/1.0 (proyecto educativo)';
-const SALIDA = path.resolve('oficina-salida');
+const SALIDA = path.resolve('oficina-salida', CANAL_ID);
+const NOTIFICACIONES = path.resolve('oficina-salida', 'notificaciones.json');
 fs.mkdirSync(SALIDA, {recursive: true});
 
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -29,6 +34,13 @@ const horasParaProximoCiclo = () => {
   const ahora = new Date();
   const candidatos = [2, 14].flatMap((h) => [0, 1].map((d) => { const t = new Date(Date.UTC(ahora.getUTCFullYear(), ahora.getUTCMonth(), ahora.getUTCDate() + d, h)); return t; })).filter((t) => t > ahora).sort((a, b) => a - b);
   return Math.max(1, Math.round((candidatos[0] - ahora) / 3600000));
+};
+/** Reporte para la campana de la oficina 3D. tipo: reporte | alerta | listo. */
+const notificar = (tipo, titulo, texto) => {
+  const lista = leerJson(NOTIFICACIONES, []);
+  lista.unshift({id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), fecha: new Date().toISOString(), canal: CANAL_ID, canalNombre: CONFIG.nombre, tipo, titulo, texto});
+  fs.mkdirSync(path.dirname(NOTIFICACIONES), {recursive: true});
+  fs.writeFileSync(NOTIFICACIONES, JSON.stringify(lista.slice(0, 80), null, 2));
 };
 const registrar = (resultado, detalle, intentos, extra = {}) => {
   const e = leerJson(ESTADO, {agentes: {}, historial: [], totales: {aprobados: 0, rechazados: 0, errores: 0}});
@@ -67,6 +79,10 @@ const registrar = (resultado, detalle, intentos, extra = {}) => {
     jefa('Directora de contenido', `Falló el ciclo. Quiero la causa y el arreglo antes de las próximas ${h} h.`);
   }
   e.jefa = {mensaje: ag['Directora de contenido']?.tarea ?? '', horasParaProximoCiclo: h};
+  const edit = extra.editor ? ` Editor: ${extra.editor}` : '';
+  if (resultado === 'aprobado') notificar('reporte', `Guion aprobado: ${TEMA}`, `${FORMATO === 'largo' ? 'Video largo' : 'Short'} de "${TEMA}" aprobado en el intento ${intentos}. ${detalle}${edit} ${resumen} Próximo ciclo en ${h} h.`);
+  else if (resultado === 'rechazado') notificar('alerta', `Guion rechazado: ${TEMA}`, `El Verificador no aprobó "${TEMA}" tras ${intentos} intentos: ${detalle} ${resumen} No se publica. Próximo ciclo en ${h} h.`);
+  else notificar('alerta', 'La oficina falló', `${detalle} ${resumen} Próximo ciclo en ${h} h.`);
   e.agentes = ag;
   e.actualizado = new Date().toISOString();
   fs.writeFileSync(ESTADO, JSON.stringify(e, null, 2));
@@ -181,8 +197,8 @@ const existeEnWikipedia = async (titulo) => {
 const elegirTema = async (modelo) => {
   const hechos = leerJson(HISTORIAL, []);
   const r = await pedirJson(modelo, [
-    {role: 'system', content: 'Eres el/la Director/a de contenido de un canal de misterio y datos curiosos en YouTube. Respondes SOLO con JSON.'},
-    {role: 'user', content: `Dame 20 títulos EXACTOS de artículos de Wikipedia en inglés sobre misterios sin resolver, fenómenos raros, objetos históricos enigmáticos o casos curiosos con mucha documentación. Reglas: nada sobre personas (ni biografías), nada de política ni de violencia gráfica, nada ya hecho. Ya hechos: ${hechos.join(', ') || 'ninguno'}. Formato: {"temas": ["Titulo 1", "Titulo 2"]}`},
+    {role: 'system', content: `Eres el/la Director/a de contenido del canal de YouTube "${CONFIG.nombre}" (${CONFIG.nicho}). Respondes SOLO con JSON.`},
+    {role: 'user', content: `Dame 20 títulos EXACTOS de artículos de Wikipedia en inglés sobre ${CONFIG.nicho}, con mucha documentación. Reglas: nada sobre personas (ni biografías), nada de política ni de violencia gráfica, nada ya hecho. Ya hechos: ${hechos.join(', ') || 'ninguno'}. Formato: {"temas": ["Titulo 1", "Titulo 2"]}`},
   ], 1500);
   for (const t of r.temas ?? []) {
     if (typeof t !== 'string' || hechos.includes(t)) continue;
@@ -196,7 +212,7 @@ const NORMAS = `NORMAS DE LA JEFA (no se negocian):
 1. Solo puedes usar datos que estén en el MATERIAL. Si un dato no está en el material, no existe. Prohibido inventar.
 2. Si el material no alcanza para lo que se pide, dilo y escribe menos. Un guion corto y verdadero vale más que uno largo con relleno.
 3. La primera frase empieza exactamente con "Sabías que" y trae una imagen concreta que se entienda en un segundo.
-4. Tono de misterio, no de miedo. Español neutro, claro, para gente normal. Sin tecnicismos.
+4. ${CONFIG.tono ?? 'Tono de misterio, no de miedo.'} Lenguaje claro para gente normal. Sin tecnicismos.
 5. Sin nombres de personas reales: di "el capitán", "un científico", "los investigadores". Sí puedes nombrar lugares, barcos, libros u objetos.
 6. Las dudas se dicen como dudas ("según la fuente", "no se sabe"). Si dos fuentes difieren, di las dos.
 7. La revelación ("Pero lo que no sabías:") cae entre el 65 % y el 75 % del guion.
@@ -216,7 +232,7 @@ const formulaActual = () => {
   return `\nFÓRMULA DEL MOMENTO (lo que hoy funciona en canales exitosos; imita la ESTRUCTURA, no los temas): ${f.formula}. Plantillas de gancho: ${(f.ganchos ?? []).join(' | ')}. Evita: ${(f.evitar ?? []).join(' | ')}.\n`;
 };
 const guionista = (material, problemas) => [
-  {role: 'system', content: `Eres el/la Guionista de un canal de YouTube de misterio y datos curiosos. Tienes maestría en narración de documental, retención de audiencia y rigor periodístico. ${NORMAS}\nResponde SOLO con JSON.`},
+  {role: 'system', content: `Eres el/la Guionista del canal de YouTube "${CONFIG.nombre}" (${CONFIG.nicho}). Tienes maestría en narración de documental, retención de audiencia y rigor periodístico. ${NORMAS}\nResponde SOLO con JSON.`},
   {role: 'user', content: `Escribe un guion de ${FORMATO === 'largo' ? 'video largo' : 'Short vertical de unos 55 segundos'} de unas ${PALABRAS} palabras sobre "${TEMA}". ${REPARTO}${formulaActual()}\n\nMATERIAL (única fuente permitida):\n${material}\n\n${problemas?.length ? `El Verificador o el Editor rechazaron la versión anterior. Corrige exactamente esto:\n${problemas.map((p) => `- "${p.frase}": ${p.motivo}`).join('\n')}\n\n` : ''}Formato JSON: {"titulo": "...(máx. 90 caracteres, con un emoji)", "descripcion": "...(2 frases)", "hashtags": ["#cinco", "#especificos", "#del", "#tema", "#sinviral"], "escenas": [...]}. Los hashtags son 5, específicos del tema; nunca #viral ni #fyp. ${FORMATO_ESCENAS}`},
 ];
 const editor = (titulo, escenas) => [
@@ -304,7 +320,7 @@ const comprobar = (escenas) => {
 const normalizar = (lista) => (lista ?? []).map((e) => ({tipo: ['hook', 'historia', 'revelacion', 'veredicto'].includes(e?.tipo) ? e.tipo : 'historia', texto: String(e?.texto ?? '').trim()})).filter((e) => e.texto);
 
 /* ====================== Flujo ====================== */
-const informe = [`# Informe de la oficina · ${TEMA || 'tema por elegir'} (${FORMATO})`, ''];
+const informe = [`# Informe de la oficina · ${CONFIG.nombre} · ${TEMA || 'tema por elegir'} (${FORMATO})`, ''];
 try {
   const modelo = await elegirModelo();
   informe.push(`Modelo usado en Groq: ${modelo}`, '');
@@ -358,11 +374,12 @@ try {
     formato: FORMATO,
     ...(FORMATO === 'largo' ? {orientacion: 'horizontal'} : {}),
     plataforma: 'youtube',
-    voz: 'es-DO-EmilioNeural',
-    audio: `audio/oficina-${slug}.wav`,
-    musica: 'musica/firma-canal.mp3',
+    canal: CANAL_ID,
+    voz: CONFIG.voz ?? 'es-DO-EmilioNeural',
+    audio: `audio/${CANAL_ID}-${slug}.wav`,
+    musica: CONFIG.musica ?? null,
     personaje: {esquina: 'arriba-derecha', visible: true},
-    publicacion: {titulo, descripcion: `${descripcion}\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: ${fuentes.map((f) => f.url).join(' · ')}\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do${hashtags.length ? `\n\n${hashtags.join(' ')}` : ''}`},
+    publicacion: {titulo, descripcion: `${descripcion}\n\n${CONFIG.ctaEscrito ?? ''}\n\nFuentes: ${fuentes.map((f) => f.url).join(' · ')}${CONFIG.enlaceCanal ? `\n\nMás historias en el canal: ${CONFIG.enlaceCanal}` : ''}${hashtags.length ? `\n\n${hashtags.join(' ')}` : ''}`},
     estado: aprobado ? 'aprobado' : 'rechazado-necesita-revision',
     editor: {puntaje, critica},
     escenas: escenas.map((e, i) => ({...e, fondo: fondos[i]})),

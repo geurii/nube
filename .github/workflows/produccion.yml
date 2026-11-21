@@ -58,9 +58,11 @@ jobs:
         continue-on-error: true
         env:
           ID: ${{ steps.producir.outputs.id }}
+          CANAL: ${{ steps.producir.outputs.canal }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          YT_REFRESH_TOKEN_CANAL: ${{ secrets[format('YT_REFRESH_TOKEN_{0}', steps.producir.outputs.canal)] }}
         run: |
           node agentes/subir.mjs
           git add oficina-salida || true
