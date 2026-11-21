@@ -181,15 +181,15 @@ const groqDirecto = async (modelo, mensajes, maxTokens = FORMATO === 'largo' ? 4
   throw new Error(`Groq no respondió tras ${maxIntentos} intentos (${ultimo}).`);
 };
 /** Groq primero; si se agota, pasa a Gemini, Cerebras, OpenRouter o Mistral (los que tengan llave). */
-const groq = async (modelo, mensajes, maxTokens) => {
+const groq = async (modelo, mensajes, maxTokens, json = false) => {
   if (Date.now() < groqBloqueadoHasta && proveedoresConLlave().length) {
-    const rapido = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + ' ' + m.content} : m)), {maxTokens: maxTokens ?? 2500});
+    const rapido = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + ' ' + m.content} : m)), {maxTokens: maxTokens ?? 2500, json});
     if (rapido) { console.log(`Groq en límite: se usó ${rapido.proveedor} (${rapido.modelo}).`); return rapido.texto; }
   }
   try { return await groqDirecto(modelo, mensajes, maxTokens); }
   catch (e) {
     if (e.fatal) throw e;
-    const alt = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + ' ' + m.content} : m)), {maxTokens: maxTokens ?? 2500});
+    const alt = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + ' ' + m.content} : m)), {maxTokens: maxTokens ?? 2500, json});
     if (!alt) { e.message += ` Respaldos: ${[...new Set(diagnosticoRespaldo)].join('; ').slice(0, 200) || 'ninguno con llave'}.`; throw e; }
     console.log(`Groq no respondió: se usó ${alt.proveedor} (${alt.modelo}).`);
     return alt.texto;
@@ -212,12 +212,12 @@ const repararJson = (texto) => {
   throw new Error('JSON no válido');
 };
 const pedirJson = async (modelo, mensajes, maxTokens) => {
-  let texto = await groq(modelo, mensajes, maxTokens);
+  let texto = await groq(modelo, mensajes, maxTokens, true);
   for (let k = 1; k <= 3; k++) {
     try { return extraerJson(texto); } catch { /* se intenta reparar */ }
     try { return repararJson(texto); } catch { /* se pide de nuevo */ }
     if (k === 3) break;
-    texto = await groq(modelo, [...mensajes, {role: 'assistant', content: texto.slice(0, 1200)}, {role: 'user', content: 'Tu respuesta no era JSON válido (revisa comas y corchetes). Devuelve SOLO el JSON completo y bien formado, sin texto antes ni después.'}], maxTokens);
+    texto = await groq(modelo, [...mensajes, {role: 'assistant', content: texto.slice(0, 1200)}, {role: 'user', content: 'Tu respuesta no era JSON válido (revisa comas y corchetes). Devuelve SOLO el JSON completo y bien formado, sin texto antes ni después.'}], maxTokens, true);
   }
   throw new Error('El modelo no devolvió un JSON válido tras 3 intentos.');
 };
