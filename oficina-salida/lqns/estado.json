@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-21T08:23:52.494Z",
+  "actualizado": "2026-11-21T11:04:07.113Z",
   "totales": {
     "aprobados": 2,
     "rechazados": 2,
@@ -57,44 +57,84 @@
   ],
   "agentes": {
     "Directora de contenido": {
-      "estado": "libre",
-      "actividad": "hablando",
-      "tarea": "Último guion aprobado: \"Bloop\" (short). Aprobados: 2. Rechazados: 2. Con error: 2. JEFA: Faltan 8 h para el próximo ciclo. Sin excusas."
+      "estado": "trabajando",
+      "actividad": "escribiendo",
+      "tarea": "AYUDA: dejó libre su puesto y le echó una mano a (Jules (su plan del ciclo)). Entregó: [object Object] · [object Object] · [object Object] SEGUNDA: Amenaza: la caída de la tasa de retención tras los 30 segundos, que está limitando la conversión de vistas en suscriptores y, por tanto, la monetización antes del 13‑dic‑2026. Contramedida: lanzar una serie de videos de 5 min con “gancho‑cierre” estructurado ("
     },
     "Investigador de temas": {
-      "estado": "libre",
-      "actividad": "leyendo",
-      "tarea": "Dejó el material de \"Bloop\" con su fuente en Wikipedia."
+      "estado": "trabajando",
+      "actividad": "escribiendo",
+      "tarea": "AYUDA: dejó libre su puesto y le echó una mano a (Guionista). Entregó: 5 ganchos nuevos SEGUNDA: 1. El misterio de la desaparición del USS Cyclops (1918) – abundante documentación naval y testimonios oficiales. 2. El caso de la “Luz de Hessdalen” en Noruega – numerosos estudios científicos y videos de alta calidad que generaron gran interés en videos de f"
     },
     "Guionista": {
-      "estado": "libre",
+      "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Entregó el guion de \"Bloop\". 120 palabras, 5 escenas. JEFA: A la primera. Mantenlo."
+      "tarea": "AYUDA: dejó libre su puesto y le echó una mano a (Editor de guion). Entregó: 3 mejoras al último guion SEGUNDA: ① “¿Qué oculta realmente el Triángulo de las Bermudas? La respuesta te dejará sin aliento en los próximos 3 segundos.”\n② “Imagina que un avión desaparece sin rastro… Hoy revelamos la verdad que nadie se atrevió a contar.”"
     },
     "Verificador de datos": {
-      "estado": "libre",
-      "actividad": "leyendo",
-      "tarea": "Aprobó \"Bloop\" en el intento 1. JEFA: Que no se te cuele ni un dato sin fuente."
+      "estado": "trabajando",
+      "actividad": "escribiendo",
+      "tarea": "AYUDA: dejó libre su puesto y le echó una mano a (Investigador de temas). Entregó: 5 temas candidatos SEGUNDA: Dato más fácil de cuestionar: la afirmación de que el mito nació en 1950 con un artículo del Miami Herald. Para reforzarlo, citar el artículo original de 1950 de Vincent Gaddis en el Miami Herald y proporcionar el enlace al archivo digital del periódico."
     },
     "Editor de guion": {
-      "estado": "libre",
-      "actividad": "pensando",
-      "tarea": "Pulió el guion y eligió los fondos de cada escena. Puntaje: 5/10. El gancho es confuso, el ritmo se arrastra y el cierre no impacta. JEFA: Un 5/10 no alcanza. Quiero ganchos que frenen el dedo."
+      "estado": "trabajando",
+      "actividad": "escribiendo",
+      "tarea": "AYUDA: dejó libre su puesto y le echó una mano a (Titulista). Entregó: 4 plantillas de título SEGUNDA: Frase aburrida: “Según la fuente, el álbum octavo de Buckethead, titulado ‘Bermuda Triangle’, es una colaboración electrónica con Extrakd y no está vinculado al misterio marítimo.”\nReescritura: “Curiosamente, el álbum ‘Bermuda Triangle’ de Buckethead es solo m"
     },
     "Locutor": {
-      "estado": "libre",
-      "actividad": "hablando",
-      "tarea": "Grabó la voz de \"🔊 El enigma del Bloop: el rugido del hielo\"."
+      "estado": "trabajando",
+      "actividad": "escribiendo",
+      "tarea": "Grabó la voz de \"🔊 El enigma del Bloop: el rugido del hielo\". SEGUNDA: En el gancho, usar un ritmo rápido y enérgico con pausas de 0,2 s entre palabras clave (“Triángulo… Bermudas… desaparece”). En la revelación, ralentizar a 0,9 × la velocidad normal, con una pausa de 0,8 s antes de la frase clave “no hay evidencia de actividad "
     },
     "Técnico de render": {
-      "estado": "libre",
+      "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Renderizó \"🔊 El enigma del Bloop: el rugido del hielo\" (31 MB). Está en Actions, artefacto \"video-oficina-bloop\"."
+      "tarea": "Renderizó \"🔊 El enigma del Bloop: el rugido del hielo\" (31 MB). Está en Actions, artefacto \"video-oficina-bloop\". SEGUNDA: Implementar render en resolución 1080p a 30 fps usando el códec H.265 (HEVC) con preset “fast‑1440p” y activar la opción de “variable bitrate” para mantener calidad en escenas complejas y reducir el tiempo de exportación en un 30 %."
     },
     "Publicador": {
       "estado": "trabajando",
-      "actividad": "pensando",
-      "tarea": "YouTube ya está conectado (21 nov). Espera el próximo video aprobado para subirlo público. El mensaje anterior de \"falta conectar\" ya no aplica."
+      "actividad": "escribiendo",
+      "tarea": "YouTube ya está conectado (21 nov). Espera el próximo video aprobado para subirlo público. El mensaje anterior de \"falta conectar\" ya no aplica. SEGUNDA: Comentario fijado: “🧩 ¿Te atreves a descubrir si el Triángulo de las Bermudas aún guarda secretos? Deja tu teoría abajo y suscríbete para más misterios documentados. ¡Comparte con quien ama lo inexplicable! 👇”\nResponder a los primeros comentarios dentro de l"
+    },
+    "Crítico: padre trabajador": {
+      "estado": "trabajando",
+      "actividad": "escribiendo",
+      "tarea": " FUNCIÓN (contador): Faltan 23 días para el 13 de diciembre. Suscriptores: la analítica aún no los trae. Horas vistas: sin datos."
+    },
+    "Crítica: fan del misterio": {
+      "estado": "trabajando",
+      "actividad": "escribiendo",
+      "tarea": " FUNCIÓN (oportunidades): 3 formatos con potencial y 2 vías de ingreso: [object Object]"
+    },
+    "Crítico: adolescente": {
+      "estado": "trabajando",
+      "actividad": "escribiendo",
+      "tarea": " FUNCIÓN (otros-formatos): Dejó listos TikTok, Instagram, Facebook y versión en inglés de \"🔺 El misterio del Triángulo de las Bermudas\"."
+    },
+    "Crítica: universitaria": {
+      "estado": "trabajando",
+      "actividad": "escribiendo",
+      "tarea": " FUNCIÓN (mentor): Lección del día: Enfócate en los videos que ya generan más vistas y replica su estilo en nuevos contenidos; mejora los títulos y miniatur"
+    },
+    "Crítico: joven dominicano": {
+      "estado": "trabajando",
+      "actividad": "escribiendo",
+      "tarea": " FUNCIÓN (agenda): Agenda del día enviada (3 puntos)."
+    },
+    "Crítica: ama de casa": {
+      "estado": "trabajando",
+      "actividad": "escribiendo",
+      "tarea": " FUNCIÓN (infantil): 3 ideas nuevas para Mini Aventuras: \"El arcoíris de los animales\"…"
+    },
+    "Crítico: escéptico": {
+      "estado": "trabajando",
+      "actividad": "escribiendo",
+      "tarea": " FUNCIÓN (guardian): Último chequeo del Vigilante: 2026-11-21T09:54:36.376Z. Bien: YouTube conectado, analítica autorizada, Groq responde, Gemini responde. Problemas: ninguno."
+    },
+    "Crítico: abuelo": {
+      "estado": "trabajando",
+      "actividad": "escribiendo",
+      "tarea": " FUNCIÓN (comunidad): Espera que la analítica esté autorizada para leer los comentarios."
     }
   },
   "jefa": {

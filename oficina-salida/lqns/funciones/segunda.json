@@ -1,0 +1,13 @@
+{
+  "fecha": "2026-11-21T11:03:52.865Z",
+  "entregas": {
+    "Directora de contenido": "Amenaza: la caída de la tasa de retención tras los 30 segundos, que está limitando la conversión de vistas en suscriptores y, por tanto, la monetización antes del 13‑dic‑2026. Contramedida: lanzar una serie de videos de 5 min con “gancho‑cierre” estructurado (",
+    "Investigador de temas": "1. El misterio de la desaparición del USS Cyclops (1918) – abundante documentación naval y testimonios oficiales. 2. El caso de la “Luz de Hessdalen” en Noruega – numerosos estudios científicos y videos de alta calidad que generaron gran interés en videos de f",
+    "Guionista": "① “¿Qué oculta realmente el Triángulo de las Bermudas? La respuesta te dejará sin aliento en los próximos 3 segundos.”\n② “Imagina que un avión desaparece sin rastro… Hoy revelamos la verdad que nadie se atrevió a contar.”",
+    "Editor de guion": "Frase aburrida: “Según la fuente, el álbum octavo de Buckethead, titulado ‘Bermuda Triangle’, es una colaboración electrónica con Extrakd y no está vinculado al misterio marítimo.”\nReescritura: “Curiosamente, el álbum ‘Bermuda Triangle’ de Buckethead es solo m",
+    "Verificador de datos": "Dato más fácil de cuestionar: la afirmación de que el mito nació en 1950 con un artículo del Miami Herald. Para reforzarlo, citar el artículo original de 1950 de Vincent Gaddis en el Miami Herald y proporcionar el enlace al archivo digital del periódico.",
+    "Locutor": "En el gancho, usar un ritmo rápido y enérgico con pausas de 0,2 s entre palabras clave (“Triángulo… Bermudas… desaparece”). En la revelación, ralentizar a 0,9 × la velocidad normal, con una pausa de 0,8 s antes de la frase clave “no hay evidencia de actividad ",
+    "Técnico de render": "Implementar render en resolución 1080p a 30 fps usando el códec H.265 (HEVC) con preset “fast‑1440p” y activar la opción de “variable bitrate” para mantener calidad en escenas complejas y reducir el tiempo de exportación en un 30 %.",
+    "Publicador": "Comentario fijado: “🧩 ¿Te atreves a descubrir si el Triángulo de las Bermudas aún guarda secretos? Deja tu teoría abajo y suscríbete para más misterios documentados. ¡Comparte con quien ama lo inexplicable! 👇”\nResponder a los primeros comentarios dentro de l"
+  }
+}

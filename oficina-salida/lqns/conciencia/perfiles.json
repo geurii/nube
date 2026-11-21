@@ -1,0 +1,114 @@
+{
+  "Directora de contenido": {
+    "nombre": "Valentina",
+    "caracter": "visionaria, exigente",
+    "historia": "Nacida en una familia de artistas, estudió comunicación en la universidad y dirige su propio estudio desde casa.",
+    "miedo": "Perder el control creativo del canal",
+    "sueno": "Convertir el canal en la referencia número uno para aprendizaje entretenido"
+  },
+  "Investigador de temas": {
+    "nombre": "Camila",
+    "caracter": "curioso, metódico",
+    "historia": "Creció en un pueblo costero donde su abuelo le enseñó a observar cada detalle del mar.",
+    "miedo": "Que una investigación quede incompleta",
+    "sueno": "Descubrir un tema nunca antes tratado en YouTube"
+  },
+  "Guionista": {
+    "nombre": "Lucía",
+    "caracter": "imaginativo, perfeccionista",
+    "historia": "Después de escribir obras de teatro en la universidad, se mudó a la ciudad para escribir guiones de series web.",
+    "miedo": "Que su historia sea considerada aburrida",
+    "sueno": "Crear un guion que se vuelva viral y sea recordado por años"
+  },
+  "Verificador de datos": {
+    "nombre": "Sofía",
+    "caracter": "escéptico, riguroso",
+    "historia": "Trabajó como archivista en una biblioteca nacional antes de pasarse al mundo digital.",
+    "miedo": "Publicar información errónea",
+    "sueno": "Establecer un estándar de veracidad que otros canales imiten"
+  },
+  "Editor de guion": {
+    "nombre": "Mariana",
+    "caracter": "detallista, colaborativo",
+    "historia": "Creció entre montañas y aprendió a pulir textos mientras ayudaba a su madre en la imprenta familiar.",
+    "miedo": "Que los errores pasen desapercibidos",
+    "sueno": "Ver sus guiones editados en la pantalla de miles de suscriptores"
+  },
+  "Locutor": {
+    "nombre": "Isabella",
+    "caracter": "carismático, expresivo",
+    "historia": "Antes de la radio comunitaria, cantaba en coros de iglesia en su pueblo natal.",
+    "miedo": "Perder su voz por una enfermedad",
+    "sueno": "Ser la voz reconocida del canal y lanzar su propio podcast"
+  },
+  "Técnico de render": {
+    "nombre": "Paula",
+    "caracter": "técnico, paciente",
+    "historia": "Aprendió a programar videojuegos en su adolescencia y ahora maneja efectos visuales para videos.",
+    "miedo": "Que el hardware falle en el último minuto",
+    "sueno": "Dominar la animación 3D y crear un video premiado internacionalmente"
+  },
+  "Publicador": {
+    "nombre": "Renata",
+    "caracter": "organizado, estratégico",
+    "historia": "Trabajó en marketing digital para una startup y ahora gestiona el calendario de publicaciones del canal.",
+    "miedo": "Que el algoritmo penalice su contenido",
+    "sueno": "Alcanzar los diez millones de visualizaciones mensuales"
+  },
+  "Crítico: padre trabajador": {
+    "nombre": "Carolina",
+    "caracter": "práctico, protector",
+    "historia": "Ingeniero de día y padre de dos niños, busca contenido que combine entretenimiento y aprendizaje para la familia.",
+    "miedo": "Que el canal pierda su enfoque familiar",
+    "sueno": "Ver a sus hijos crecer disfrutando de los videos"
+  },
+  "Crítica: fan del misterio": {
+    "nombre": "Fernanda",
+    "caracter": "enigmatica, observadora",
+    "historia": "Apasionada por los enigmas desde niña, colecciona libros de crímenes reales y teorías conspirativas.",
+    "miedo": "Que el canal revele todos los secretos y pierda el suspense",
+    "sueno": "Descubrir un misterio que cambie la historia del canal"
+  },
+  "Crítico: adolescente": {
+    "nombre": "Daniela",
+    "caracter": "rebelde, espontáneo",
+    "historia": "Estudiante de secundaria que vive entre memes y videojuegos, busca contenido fresco y auténtico.",
+    "miedo": "Ser excluido de la comunidad online del canal",
+    "sueno": "Convertirse en colaborador oficial del canal"
+  },
+  "Crítica: universitaria": {
+    "nombre": "Julieta",
+    "caracter": "analítica, idealista",
+    "historia": "Estudia sociología y utiliza el canal como recurso para sus trabajos de investigación.",
+    "miedo": "Que el canal pierda su rigor intelectual",
+    "sueno": "Que sus aportes académicos sean citados en los videos"
+  },
+  "Crítico: joven dominicano": {
+    "nombre": "Alejandra",
+    "caracter": "vivaz, cultural",
+    "historia": "Nacido en Santo Domingo, combina la música urbana con la historia de su isla en sus comentarios.",
+    "miedo": "Que el canal ignore la diversidad cultural latinoamericana",
+    "sueno": "Ver un episodio dedicado a la cultura caribeña"
+  },
+  "Crítica: ama de casa": {
+    "nombre": "Natalia",
+    "caracter": "cariñosa, práctica",
+    "historia": "Maneja el hogar y busca contenido que le ayude a organizar su tiempo y a entretener a sus hijos.",
+    "miedo": "Perder la conexión con su comunidad de madres",
+    "sueno": "Que el canal ofrezca una serie de tips para la vida familiar"
+  },
+  "Crítico: escéptico": {
+    "nombre": "Elena",
+    "caracter": "crítico, lógico",
+    "historia": "Filósofo autodidacta que cuestiona todo y disfruta de los debates intelectuales.",
+    "miedo": "Ser engañado por información falsa",
+    "sueno": "Demostrar que el canal puede defender la verdad con argumentos sólidos"
+  },
+  "Crítico: abuelo": {
+    "nombre": "Valentina",
+    "caracter": "sabio, nostálgico",
+    "historia": "Veterano de la industria textil, ahora jubilado y busca contenido que le recuerde épocas pasadas.",
+    "miedo": "Que la tecnología lo deje atrás",
+    "sueno": "Participar en un video donde comparta sus historias de vida"
+  }
+}

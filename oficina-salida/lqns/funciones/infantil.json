@@ -1,0 +1,35 @@
+{
+  "fecha": "2026-11-21T11:03:51.132Z",
+  "ideas": [
+    {
+      "titulo": "El arcoíris de los animales",
+      "gancho": "¡Descubre qué animal lleva cada color del arcoíris!",
+      "escenas": [
+        "Un pajarito azul llega cantando al bosque.",
+        "Una rana verde salta entre las hojas brillantes.",
+        "Un gato naranja se acurruca bajo el sol dorado.",
+        "Un conejito rojo encuentra una zanahoria mágica."
+      ]
+    },
+    {
+      "titulo": "Cuenta con los amigos del zoológico",
+      "gancho": "¡Vamos a contar hasta diez con los animales del zoológico!",
+      "escenas": [
+        "Un elefante dice \"uno\" mientras levanta su trompa.",
+        "Dos jirafas estiran su cuello y dicen \"dos\".",
+        "Tres monos se balancean y gritan \"tres\".",
+        "Cuatro pingüinos desfilan y cantan \"cuatro\"."
+      ]
+    },
+    {
+      "titulo": "Los colores perdidos del jardín",
+      "gancho": "¡Ayuda a encontrar los colores que se escaparon del jardín!",
+      "escenas": [
+        "Una mariposa amarilla vuela y muestra la pista del color.",
+        "Un caracol violeta deja un rastro brillante en el suelo.",
+        "Una mariquita rosa se esconde entre las flores.",
+        "Un gusano naranja emerge y revela el último color."
+      ]
+    }
+  ]
+}

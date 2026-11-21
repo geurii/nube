@@ -1,0 +1,9 @@
+{
+  "fecha": "2026-11-21T11:03:51.132Z",
+  "resumen": [
+    "Último chequeo del Vigilante: 2026-11-21T09:54:36.376Z.",
+    "Bien: YouTube conectado, analítica autorizada, Groq responde, Gemini responde.",
+    "Problemas: ninguno.",
+    "Recordatorio: los archivos de claves del Escritorio deben borrarse y el permiso de Google debe seguir \"En producción\"."
+  ]
+}

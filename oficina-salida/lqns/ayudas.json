@@ -1,0 +1,33 @@
+{
+  "plan": [
+    "[object Object]",
+    "[object Object]",
+    "[object Object]"
+  ],
+  "ganchos": [
+    "Sabías que [TEMA] desapareció en menos de [CIFRA] segundos? | Imagen de un reloj de arena vaciándose rápidamente sobre un objeto misterioso",
+    "Sabías que solo [CIFRA] personas han visto el verdadero [TEMA]? | Imagen de una silueta tenue de una figura en la niebla con ojos brillantes",
+    "Sabías que el [TEMA] se mueve 10 veces más rápido de lo que la ciencia permite, ¡en solo [CIFRA] metros! | Imagen de una sombra fugaz cruzando un corredor oscuro",
+    "Sabías que [CIFRA] años después, el [TEMA] sigue sin explicación? | Imagen de un antiguo manuscrito abierto con símbolos luminosos",
+    "Sabías que el sonido del [TEMA] se escuchó a [CIFRA] kilómetros de distancia? | Imagen de ondas sonoras visibles emanando de un punto en un paisaje desolado"
+  ],
+  "mejorasGuion": [
+    "Agregar un gancho visual y emocional al inicio: incluir una pregunta intrigante o dato impactante con emoji, por ejemplo \"Sabías que más de 1 000 desapariciones misteriosas ocurrieron en una zona del Atlántico entre Flor",
+    "Ajustar el ritmo con cortes cortos y repetición de palabras clave: dividir la información en bloques de 15‑20 segundos, repetir frases como \"triángulo\" y \"desapariciones\" y usar efectos de sonido para marcar cada nuevo c",
+    "Crear un cierre con llamado a la acción más fuerte y teaser de próximo video: terminar con \"¿Qué otro misterio oculto crees que guarda el océano? Déjalo en los comentarios y suscríbete para descubrir el próximo en 'Lo Qu"
+  ],
+  "temas": [
+    "Wow! signal",
+    "Voynich manuscript",
+    "Phaistos Disc",
+    "Taos Hum",
+    "The Antikythera mechanism"
+  ],
+  "titulos": [
+    "Sabías que <tema intrigante> 🐧 (Parte <n>/<total>)",
+    "Sabías que <evento sorprendente> 😱 #Shorts #virales",
+    "Sabías que <descripción asombrosa> 🤯 (Parte <n>/<total>)",
+    "Sabías que <hecho histórico o tecnológico> <emoji opcional>"
+  ],
+  "fecha": "2026-11-21T11:03:44.120Z"
+}
