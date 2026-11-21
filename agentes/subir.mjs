@@ -21,6 +21,8 @@ const proximoHorario = (formato) => {
   }
   return new Date(ahora + 3600000);
 };
+// Modo de publicación (agentes/publicacion.json): "ahora" = público de inmediato; "programado" = privado con fecha y YouTube lo publica a su hora.
+const MODO = (() => { try { return JSON.parse(fs.readFileSync(path.join('agentes', 'publicacion.json'), 'utf8')).modo; } catch { return 'programado'; } })();
 const ESTADO = path.join('oficina-salida', CANAL, 'estado.json');
 const avisar = (tipo, titulo, texto) => {
   try {
@@ -71,7 +73,7 @@ try {
     },
     body: JSON.stringify({
       snippet: {title: guion.publicacion.titulo.slice(0, 100), description: guion.publicacion.descripcion.slice(0, 4900), categoryId: '27', defaultLanguage: 'es'},
-      status: {privacyStatus: 'private', publishAt: programado.toISOString(), selfDeclaredMadeForKids: false},
+      status: MODO === 'ahora' ? {privacyStatus: 'public', selfDeclaredMadeForKids: false} : {privacyStatus: 'private', publishAt: programado.toISOString(), selfDeclaredMadeForKids: false},
     }),
   });
   if (!inicio.ok) throw new Error(`YouTube no aceptó empezar la subida (${inicio.status}): ${(await inicio.text()).slice(0, 300)}`);
@@ -81,8 +83,10 @@ try {
   const subida = await fetch(destino, {method: 'PUT', headers: {'Content-Type': 'video/mp4', 'Content-Length': String(bytes.length)}, body: bytes});
   if (!subida.ok) throw new Error(`La subida falló (${subida.status}): ${(await subida.text()).slice(0, 300)}`);
   const video = await subida.json();
-  marcar(`Subió "${guion.titulo}" y lo dejó PROGRAMADO para ${programado.toLocaleString('es-DO', {timeZone: 'America/Santo_Domingo'})} (hora RD): https://youtu.be/${video.id}`, 'libre');
-  console.log(`Subido y programado para ${programado.toISOString()}: https://youtu.be/${video.id}`);
+  const cuando = MODO === 'ahora' ? 'PÚBLICO ahora mismo' : 'PROGRAMADO para ' + programado.toLocaleString('es-DO', {timeZone: 'America/Santo_Domingo'}) + ' (hora RD)';
+  marcar('Subió "' + guion.titulo + '" y quedó ' + cuando + ': https://youtu.be/' + video.id, 'libre');
+  avisar('reporte', 'Video subido a YouTube', '"' + guion.titulo + '" quedó ' + cuando + ': https://youtu.be/' + video.id);
+  console.log('Subido (' + MODO + '): https://youtu.be/' + video.id);
 } catch (e) {
   marcar(`No pude subir "${ID}": ${String(e.message ?? e).slice(0, 220)}`);
   if (/invalid_grant|401|403/.test(String(e.message))) avisar('permiso', 'Necesito tu permiso: reconectar YouTube', `YouTube rechazó la autorización (${String(e.message).slice(0, 120)}). Hay que volver a sacar el token con scripts/token-youtube.mjs y pegarlo en YT_REFRESH_TOKEN.`);
