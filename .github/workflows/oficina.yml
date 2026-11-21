@@ -4,7 +4,7 @@ name: Oficina
 # y el Escenógrafo elige los fondos. Resultado en oficina-salida/ (guion + informe + estado para la oficina 3D).
 on:
   schedule:
-    - cron: '0 2,14 * * *'   # un Short nuevo cada 12 horas
+    - cron: '0 2,8,14,20 * * *'   # un Short nuevo cada 6 horas
     - cron: '0 12 */2 * *'   # un video largo un dia si y otro no
   push:
     paths:
