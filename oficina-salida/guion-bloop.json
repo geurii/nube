@@ -1,5 +1,5 @@
 {
-  "titulo": "🔊 El misterio del Bloop: el rugido del hielo profundo",
+  "titulo": "🔊 El enigma del Bloop: el rugido del hielo",
   "formato": "short",
   "plataforma": "youtube",
   "voz": "es-DO-EmilioNeural",
@@ -10,53 +10,47 @@
     "visible": true
   },
   "publicacion": {
-    "titulo": "🔊 El misterio del Bloop: el rugido del hielo profundo",
-    "descripcion": "Un sonido inexplicable cruzó miles de kilómetros bajo el Pacífico y desconcertó a los científicos. Descubre su origen y por qué aún fascina.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://es.wikipedia.org/wiki/Bloop · https://en.wikipedia.org/wiki/Bloop\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#Bloop #MisterioMarino #SonidosOcultos #IceQuake #NOAA"
+    "titulo": "🔊 El enigma del Bloop: el rugido del hielo",
+    "descripcion": "Un sonido inexplicable sacudió el Pacífico en mil novecientos noventa y siete y despertó teorías de criaturas gigantes. Descubre por qué la ciencia lo vinculó al hielo.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://es.wikipedia.org/wiki/Bloop · https://en.wikipedia.org/wiki/Bloop\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#Bloop #MisteriosMarinos #IceQuake #NOAA"
   },
-  "estado": "rechazado-necesita-revision",
+  "estado": "aprobado",
   "editor": {
-    "puntaje": 6,
-    "critica": "El gancho es débil, el ritmo se arrastra y el cierre es demasiado largo."
+    "puntaje": 5,
+    "critica": "El gancho es confuso, el ritmo se arrastra y el cierre no impacta."
   },
   "escenas": [
     {
       "tipo": "hook",
-      "texto": "Sabías que un misterioso rugido bajo el océano se escuchó a miles de kilómetros?",
+      "texto": "Sabías que en mil novecientos noventa y siete se escuchó en el Pacífico sur un rugido bajo que nadie pudo identificar?",
       "fondo": [
-        "pixelmisterio"
+        "pixelmisterio",
+        "pixelcifra:1997|RUGIDO|ROJO"
       ]
     },
     {
       "tipo": "historia",
-      "texto": "En 1997 la NOAA instaló micrófonos en el Pacífico sur y captó un sonido de siete minutos.",
+      "texto": "Los micrófonos, instalados para vigilar sismos y submarinos soviéticos, captaron el sonido durante siete minutos, tan fuerte que tres sensores separados por más de cinco mil kilómetros lo registraron.",
       "fondo": [
-        "pixelmisterio"
+        "pixelsonar"
       ]
     },
     {
       "tipo": "historia",
-      "texto": "El eco bajó a cuarenta hertzios y se detectó en tres sensores a más de cinco mil kilómetros.",
+      "texto": "Aunque se rumoró que podría ser un animal gigantesco, la NOAA concluyó que el patrón coincidía con los críosismos de enormes icebergs al romperse bajo el agua.",
       "fondo": [
-        "pixelmisterio"
-      ]
-    },
-    {
-      "tipo": "historia",
-      "texto": "Se sugirió un calamar o una ballena gigante, pero ninguno puede producir ese tono.",
-      "fondo": [
-        "pixelmisterio"
+        "pixelcifra:5000|DISTANCIA|AZUL"
       ]
     },
     {
       "tipo": "revelacion",
-      "texto": "Lo que no sabías: la NOAA determinó que el Bloop proviene de criosismos de enormes icebergs.",
+      "texto": "Pero lo que no sabías: el Bloop fue atribuido a un críoismo de hielo, no a una criatura.",
       "fondo": [
         "pixelmisterio"
       ]
     },
     {
       "tipo": "veredicto",
-      "texto": "El rugido es hielo bajo el agua. Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "texto": "Así, el rugido era solo hielo, no monstruo, y el océano sigue guardando misterios. Comparte este video con un amigo que haría lo mismo, sígueme.",
       "fondo": [
         "pixelmisterio"
       ]

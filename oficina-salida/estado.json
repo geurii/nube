@@ -1,11 +1,19 @@
 {
-  "actualizado": "2026-11-21T06:25:08.240Z",
+  "actualizado": "2026-11-21T06:28:00.375Z",
   "totales": {
-    "aprobados": 1,
+    "aprobados": 2,
     "rechazados": 2,
     "errores": 2
   },
   "historial": [
+    {
+      "fecha": "2026-11-21T06:28:00.375Z",
+      "tema": "Bloop",
+      "formato": "short",
+      "resultado": "aprobado",
+      "intentos": 1,
+      "detalle": "120 palabras, 5 escenas."
+    },
     {
       "fecha": "2026-11-21T06:25:08.240Z",
       "tema": "Bloop",
@@ -49,9 +57,9 @@
   ],
   "agentes": {
     "Directora de contenido": {
-      "estado": "esperando_decision",
-      "actividad": "pensando",
-      "tarea": "Necesita revisión: el guion de \"Bloop\" no pasó la verificación. Aprobados: 1. Rechazados: 2. Con error: 2. JEFA: Un guion rechazado no se publica. Tienen 8 h para entregar algo que pase."
+      "estado": "libre",
+      "actividad": "hablando",
+      "tarea": "Último guion aprobado: \"Bloop\" (short). Aprobados: 2. Rechazados: 2. Con error: 2. JEFA: Faltan 8 h para el próximo ciclo. Sin excusas."
     },
     "Investigador de temas": {
       "estado": "libre",
@@ -59,23 +67,23 @@
       "tarea": "Dejó el material de \"Bloop\" con su fuente en Wikipedia."
     },
     "Guionista": {
-      "estado": "trabajando",
+      "estado": "libre",
       "actividad": "escribiendo",
-      "tarea": "Intentó 3 veces escribir \"Bloop\" sin que el Verificador lo aprobara. JEFA: 3 intentos y nada aprobado. Esto es inaceptable. Estudien la fuente antes de escribir."
+      "tarea": "Entregó el guion de \"Bloop\". 120 palabras, 5 escenas. JEFA: A la primera. Mantenlo."
     },
     "Verificador de datos": {
-      "estado": "esperando_decision",
+      "estado": "libre",
       "actividad": "leyendo",
-      "tarea": "Rechazó \"Bloop\": El material indica que los micrófonos fueron colocados durante la Guerra Fría, no que NOAA los instalara en 1997."
+      "tarea": "Aprobó \"Bloop\" en el intento 1. JEFA: Que no se te cuele ni un dato sin fuente."
     },
     "Editor de guion": {
       "estado": "libre",
       "actividad": "pensando",
-      "tarea": "Pulió el guion y eligió los fondos de cada escena. Puntaje: 5/10. El gancho es débil, el ritmo se arrastra y el cierre es demasiado largo."
+      "tarea": "Pulió el guion y eligió los fondos de cada escena. Puntaje: 5/10. El gancho es confuso, el ritmo se arrastra y el cierre no impacta. JEFA: Un 5/10 no alcanza. Quiero ganchos que frenen el dedo."
     }
   },
   "jefa": {
-    "mensaje": "Necesita revisión: el guion de \"Bloop\" no pasó la verificación. Aprobados: 1. Rechazados: 2. Con error: 2. JEFA: Un guion rechazado no se publica. Tienen 8 h para entregar algo que pase.",
+    "mensaje": "Último guion aprobado: \"Bloop\" (short). Aprobados: 2. Rechazados: 2. Con error: 2. JEFA: Faltan 8 h para el próximo ciclo. Sin excusas.",
     "horasParaProximoCiclo": 8
   }
 }
