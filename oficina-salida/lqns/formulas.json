@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-21T14:07:21.233Z",
+  "actualizado": "2026-11-21T14:48:43.081Z",
   "canalesLeidos": 9,
   "videosRevisados": 132,
   "mejores": [
@@ -8,51 +8,51 @@
       "idioma": "en",
       "titulo": "Why Is Antarctica Closed? The Operation Highjump Mystery",
       "publicado": "2026-11-20T01:00:08.000Z",
-      "vistas": 1795639,
-      "vistasPorHora": 48374
+      "vistas": 1809622,
+      "vistasPorHora": 47862
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "TOP 5 Bingeable SCARY STORIES • No Escape Edition",
       "publicado": "2026-11-20T19:00:34.000Z",
-      "vistas": 408509,
-      "vistasPorHora": 21373
+      "vistas": 413527,
+      "vistasPorHora": 20883
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "How Skydiving Changed Will Smith's Life!",
       "publicado": "2026-11-17T17:00:07.000Z",
-      "vistas": 1594330,
-      "vistasPorHora": 17121
+      "vistas": 1597383,
+      "vistasPorHora": 17028
     },
     {
       "canal": "The Why Files",
       "idioma": "en",
       "titulo": "America Is Hiding Something Underground",
       "publicado": "2026-11-18T18:00:14.000Z",
-      "vistas": 1117869,
-      "vistasPorHora": 16411
+      "vistas": 1121203,
+      "vistasPorHora": 16295
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "They saw a tall dark figure, and someone died",
       "publicado": "2026-11-18T19:00:23.000Z",
-      "vistas": 956412,
-      "vistasPorHora": 14250
+      "vistas": 958020,
+      "vistasPorHora": 14129
     }
   ],
   "formula": {
-    "formula": "Palabra/Frase Impactante + Pregunta o Declaración Intrigante + (Opcional: Número/Lista) + (Opcional: Referencia a lo desconocido o prohibido)",
+    "formula": "Palabra clave impactante + pregunta intrigante o afirmación sorprendente + elemento de misterio/lo prohibido + (opcional) número o lista",
     "ganchos": [
-      "¿Qué [evento misterioso] oculta realmente [lugar/entidad]?",
-      "Los [número] secretos más [adjetivo] de [tema amplio] que nadie quiere que sepas",
-      "Descubre la verdad detrás de [situación] y cómo cambió [persona/grupo] para siempre"
+      "¿Qué [evento/objeto] oculta realmente [lugar/persona]?",
+      "Los [número] secretos más [adjetivo] de [tema] que nadie quiere que sepas",
+      "Descubre la verdad detrás de [situación] y cómo cambió [consecuencia] para siempre"
     ],
     "evitar": [
-      "Títulos demasiado genéricos sin un elemento de misterio o promesa de revelación",
+      "Títulos demasiado genéricos sin una promesa clara de misterio o exclusividad",
       "Uso excesivo de palabras de relleno que diluyen el gancho principal"
     ]
   }

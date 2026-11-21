@@ -1,0 +1,61 @@
+{
+  "titulo": "📜 El manuscrito que nadie ha descifrado",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-DO-EmilioNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-the-voynich-manuscript.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "publicacion": {
+    "titulo": "📜 El manuscrito que nadie ha descifrado",
+    "descripcion": "Un libro del siglo XV que sigue sin traducirse. Descubre sus secretos y por qué sigue intrigando a los investigadores.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Voynich_manuscript\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#VoynichManuscript #MisterioAntiguo #HistoriaSecreta #YaleLibrary #Codex"
+  },
+  "estado": "aprobado",
+  "editor": {
+    "puntaje": 5,
+    "critica": "El gancho es débil, el ritmo se arrastra y la revelación llega demasiado pronto."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que un manuscrito del siglo XV sigue sin ser descifrado?",
+      "fondo": [
+        "pixelmisterio",
+        "pixelcifra:4 MILLONES|DE CLIENTES|ORO"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El manuscrito, con alrededor de doscientos cuarenta páginas de piel de becerro, apareció en el siglo XVII en manos de un alquimista de Praga.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Un comerciante polaco lo compró en mil novecientos doce; desde mil novecientos sesenta y nueve está en Yale, que lo subió en línea en dos mil veinte, y los científicos datan su pergamino entre mil cuatrocientos cuatro y mil cuatrocientos treinta y ocho.",
+      "fondo": [
+        "pixelcifra:2 CIENTO CUARENTA|PAGINAS|AZUL"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: su estructura sugiere que originalmente no estaba encuadernado en quires.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "Quizás nunca descubriremos su mensaje, pero su misterio sigue inspirando a investigadores y curiosos por igual. Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}
