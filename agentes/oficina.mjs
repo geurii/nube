@@ -416,7 +416,7 @@ try {
   const sinImagen = aprobado ? fondos.filter((f) => f.every((x) => x === 'pixelmisterio')).length : 0;
   CTX.sinImagen = sinImagen;
   if (sinImagen >= Math.ceil(escenas.length / 2)) {
-    notificar('permiso', `Necesito tu OK: faltan imágenes para "${TEMA}"`, `${sinImagen} de ${escenas.length} escenas no tienen una imagen que encaje y usarían un fondo neutro. Sigo adelante con el fondo neutro salvo que me digas que lo dibuje Claude antes de publicar.`);
+    notificar('reporte', `Aviso (no necesita tu OK): faltan imágenes para "${TEMA}"`, `${sinImagen} de ${escenas.length} escenas no tienen una imagen que encaje y usarían un fondo neutro. Sigo adelante solo con el fondo neutro; la mejora (pintor de imágenes) está pendiente.`);
     informe.push(`PERMISO PEDIDO: ${sinImagen}/${escenas.length} escenas sin imagen propia.`);
   }
   const palabras = escenas.reduce((s, e) => s + palabrasDe(e), 0);
