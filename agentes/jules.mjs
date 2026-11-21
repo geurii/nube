@@ -5,6 +5,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {avisarTelefono} from './aviso.mjs';
+import {chatAlternativo, modelosDisponibles} from './llm.mjs';
 
 const KEY = process.env.GROQ_API_KEY;
 const RAIZ = path.resolve('oficina-salida');
@@ -18,9 +19,10 @@ if (!KEY) { console.error('Falta GROQ_API_KEY.'); process.exit(1); }
 const pendientes = fs.readdirSync(PEND).filter((f) => f.endsWith('.json') && !f.endsWith('.hecho.json')).sort();
 if (!pendientes.length) { console.log('Sin mensajes.'); process.exit(0); }
 
+const MODELOS = await modelosDisponibles(KEY); // solo modelos que la cuenta tiene
 const llamar = async (mensajes) => {
-  for (let i = 1; i <= 6; i++) {
-    for (const modelo of ['llama-3.3-70b-versatile', 'openai/gpt-oss-120b']) {
+  for (let i = 1; i <= 3; i++) {
+    for (const modelo of MODELOS) {
       try {
         const r = await fetch('https://api.groq.com/openai/v1/chat/completions', {
           method: 'POST', headers: {Authorization: `Bearer ${KEY}`, 'Content-Type': 'application/json'}, signal: AbortSignal.timeout(90000),
@@ -35,7 +37,11 @@ const llamar = async (mensajes) => {
     }
     await dormir(3000 * i);
   }
-  throw new Error('Groq no respondió.');
+  // Groq agotado: se prueba con Gemini, Cerebras, OpenRouter o GitHub Models
+  const alt = await chatAlternativo(mensajes, {maxTokens: 900, temperatura: 0.6});
+  const j = alt && /\{[\s\S]*\}/.exec(alt.texto.replace(/```json|```/g, ''));
+  if (j) { try { return JSON.parse(j[0]); } catch { /* sin JSON */ } }
+  throw new Error('Ningún modelo respondió.');
 };
 
 let chat = leer(CHAT, []);

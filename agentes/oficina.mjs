@@ -492,6 +492,15 @@ try {
   if (!aprobado) console.log('El Verificador no aprobó el guion tras 3 intentos. Queda marcado para revisión.');
 } catch (e) {
   informe.push('## ERROR', String(e.message ?? e));
+  const temaMalo = /No encontré el tema|material suficiente|sin material/i.test(String(e.message ?? e));
+  if (temaMalo) {
+    // Un tema que no carga NO es un error de la oficina: se descarta y el ciclo prueba con otro.
+    try { fs.writeFileSync(HISTORIAL, JSON.stringify([...new Set([...leerJson(HISTORIAL, []), TEMA])], null, 2)); } catch { /* sin historial */ }
+    try { registrar('rechazado', `Tema descartado (no se pudo cargar): ${TEMA}`, 0); } catch { /* sin estado */ }
+    try { fs.writeFileSync(path.join(SALIDA, `informe-${slug}.md`), informe.join('\n')); } catch { /* sin informe */ }
+    console.log(`Tema descartado: ${TEMA}. Se prueba con otro.`);
+    process.exit(0);
+  }
   try { registrar('error', String(e.message ?? e).slice(0, 160), 0); } catch { /* sin estado */ }
   try { fs.writeFileSync(path.join(SALIDA, `informe-${slug}.md`), informe.join('\n')); } catch { /* sin informe */ }
   fallar(e.message ?? e);
