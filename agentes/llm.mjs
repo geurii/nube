@@ -14,56 +14,41 @@ const nota = (t) => { console.log(t); diagnosticoRespaldo.push(t); };
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
 const modelos = new Map();
 
-const elegirModelo = async (p, key) => {
+const elegirModelos = async (p, key) => {
   if (modelos.has(p.nombre)) return modelos.get(p.nombre);
-  let m = null;
+  const lista = [];
   try {
     const r = await fetch(p.catalogo ?? `${p.base}/models`, {headers: {Authorization: `Bearer ${key}`, ...(p.cabeceras ?? {})}, signal: AbortSignal.timeout(20000)});
     if (r.ok) {
       const j = await r.json();
       const ids = (Array.isArray(j) ? j : (j.data ?? [])).map((x) => String(x.id ?? x.name ?? '').replace(/^models\//, '')).filter((x) => x && !(p.descarta?.test(x)));
-      for (const re of p.prefiere) { m = ids.find((x) => re.test(x)); if (m) break; }
+      for (const re of p.prefiere) for (const x of ids) if (re.test(x) && !lista.includes(x)) lista.push(x);
     }
   } catch { /* sin lista */ }
-  modelos.set(p.nombre, m);
-  return m;
+  const r = lista.slice(0, 4);
+  modelos.set(p.nombre, r);
+  return r;
 };
 
 /** Pide una respuesta a los proveedores de respaldo, en orden. Devuelve {texto, proveedor, modelo} o null. */
 export const chatAlternativo = async (mensajes, {maxTokens = 2500, temperatura = 0.4} = {}) => {
   for (const p of PROVEEDORES) {
     const key = (process.env[p.clave] || '').trim();
-    if (!key || p.nombre === 'Cloudflare') continue; // Cloudflare usa otra ruta: se añade si hace falta
-    const modelo = await elegirModelo(p, key);
-    if (!modelo) { nota(`${p.nombre}: sin modelo`); continue; }
-    for (let i = 1; i <= 2; i++) {
+    if (!key || p.nombre === 'Cloudflare') continue;
+    const lista = await elegirModelos(p, key);
+    if (!lista.length) { nota(`${p.nombre}: sin modelo`); continue; }
+    for (const modelo of lista) {
       try {
         const r = await fetch(`${p.base}/chat/completions`, {
-          method: 'POST', headers: {Authorization: `Bearer ${key}`, 'Content-Type': 'application/json', ...(p.cabeceras ?? {})}, signal: AbortSignal.timeout(120000),
+          method: 'POST', headers: {Authorization: `Bearer ${key}`, 'Content-Type': 'application/json', ...(p.cabeceras ?? {})}, signal: AbortSignal.timeout(90000),
           body: JSON.stringify({model: modelo, messages: mensajes, temperature: temperatura, max_tokens: maxTokens}),
         });
-        if (r.status === 429 || r.status >= 500) { nota(`${p.nombre}: ${r.status}`); await dormir(4000 * i); continue; }
-        if (!r.ok) { nota(`${p.nombre}: error ${r.status} (${modelo})`); break; }
+        if (!r.ok) { nota(`${p.nombre}/${modelo}: ${r.status}`); if (r.status === 429 && lista.length > 1) continue; continue; }
         const texto = (await r.json()).choices?.[0]?.message?.content ?? '';
         if (texto.trim()) return {texto, proveedor: p.nombre, modelo};
-      } catch (e) { nota(`${p.nombre}: ${String(e.message ?? e).slice(0, 60)}`); await dormir(3000 * i); }
+        nota(`${p.nombre}/${modelo}: vacío`);
+      } catch (e) { nota(`${p.nombre}/${modelo}: ${String(e.message ?? e).slice(0, 50)}`); }
     }
   }
   return null;
-};
-
-export const proveedoresConLlave = () => PROVEEDORES.filter((p) => (process.env[p.clave] || '').trim() && p.nombre !== 'Cloudflare').map((p) => p.nombre);
-
-/** Modelos de Groq que esta cuenta SÍ tiene, en orden de preferencia. Nunca devuelve una lista vacía. */
-export const modelosDisponibles = async (key, base = 'https://api.groq.com/openai/v1') => {
-  const preferidos = ['openai/gpt-oss-20b', 'llama-3.3-70b-versatile', 'qwen/qwen3-32b', 'meta-llama/llama-4-scout-17b-16e-instruct', 'openai/gpt-oss-120b'];
-  try {
-    const r = await fetch(`${base}/models`, {headers: {Authorization: `Bearer ${key}`}, signal: AbortSignal.timeout(20000)});
-    if (r.ok) {
-      const ids = ((await r.json()).data ?? []).map((x) => x.id);
-      const buenos = preferidos.filter((m) => ids.includes(m));
-      if (buenos.length) return buenos;
-    }
-  } catch { /* sin lista */ }
-  return ['openai/gpt-oss-120b'];
 };
