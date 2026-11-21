@@ -40,11 +40,21 @@ const groq = async (modelo, mensajes) => {
   const r = await fetch('https://api.groq.com/openai/v1/chat/completions', {
     method: 'POST',
     headers: {Authorization: `Bearer ${KEY}`, 'Content-Type': 'application/json'},
-    body: JSON.stringify({model: modelo, messages: mensajes, temperature: 0.4}),
+    body: JSON.stringify({
+      model: modelo,
+      messages: mensajes,
+      temperature: 0.4,
+      max_tokens: 6000,
+      // los modelos "gpt-oss" razonan antes de responder: poco razonamiento = más espacio para el guion
+      ...(modelo.includes('gpt-oss') ? {reasoning_effort: 'low'} : {}),
+    }),
   });
   if (!r.ok) throw new Error(`Groq ${r.status}: ${(await r.text()).slice(0, 300)}`);
   const j = await r.json();
-  return j.choices?.[0]?.message?.content ?? '';
+  const eleccion = j.choices?.[0];
+  const contenido = eleccion?.message?.content ?? '';
+  if (!contenido.trim()) throw new Error(`Groq devolvió una respuesta vacía (motivo: ${eleccion?.finish_reason ?? 'desconocido'}).`);
+  return contenido;
 };
 const json = (texto) => {
   const a = texto.indexOf('{'), b = texto.lastIndexOf('}');
