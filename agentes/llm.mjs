@@ -33,15 +33,15 @@ export const chatAlternativo = async (mensajes, {maxTokens = 2500, temperatura =
     const key = (process.env[p.clave] || '').trim();
     if (!key || p.nombre === 'Cloudflare') continue; // Cloudflare usa otra ruta: se añade si hace falta
     const modelo = await elegirModelo(p, key);
-    if (!modelo) continue;
+    if (!modelo) { console.log(`Respaldo ${p.nombre}: no pude elegir un modelo`); continue; }
     for (let i = 1; i <= 2; i++) {
       try {
         const r = await fetch(`${p.base}/chat/completions`, {
           method: 'POST', headers: {Authorization: `Bearer ${key}`, 'Content-Type': 'application/json', ...(p.cabeceras ?? {})}, signal: AbortSignal.timeout(120000),
           body: JSON.stringify({model: modelo, messages: mensajes, temperature: temperatura, max_tokens: maxTokens}),
         });
-        if (r.status === 429 || r.status >= 500) { await dormir(4000 * i); continue; }
-        if (!r.ok) break;
+        if (r.status === 429 || r.status >= 500) { console.log(`Respaldo ${p.nombre}: ${r.status}, reintento ${i}/2`); await dormir(4000 * i); continue; }
+        if (!r.ok) { console.log(`Respaldo ${p.nombre}: error ${r.status} con ${modelo}`); break; }
         const texto = (await r.json()).choices?.[0]?.message?.content ?? '';
         if (texto.trim()) return {texto, proveedor: p.nombre, modelo};
       } catch { await dormir(3000 * i); }

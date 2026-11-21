@@ -240,7 +240,7 @@ const elegirTema = async (modelo) => {
   const hechos = leerJson(HISTORIAL, []);
   const r = await pedirJson(modelo, [
     {role: 'system', content: `Eres el/la Director/a de contenido del canal de YouTube "${CONFIG.nombre}" (${CONFIG.nicho}). Respondes SOLO con JSON.`},
-    {role: 'user', content: `Dame 20 títulos EXACTOS de artículos de Wikipedia en inglés sobre ${CONFIG.nicho}, con mucha documentación. Reglas: nada sobre personas (ni biografías), nada de política ni de violencia gráfica, nada ya hecho. Ya hechos: ${hechos.join(', ') || 'ninguno'}. Formato: {"temas": ["Titulo 1", "Titulo 2"]}`},
+    {role: 'user', content: `Dame 20 títulos EXACTOS de artículos de Wikipedia en inglés sobre ${CONFIG.nicho}, con mucha documentación. Prefiere casos con HECHOS CONCRETOS y bien documentados (un objeto, un lugar, un evento con fecha y cifras), no fenómenos que solo tienen teorías ni conspiraciones. Reglas: nada sobre personas (ni biografías), nada de política ni de violencia gráfica, nada ya hecho. Ya hechos: ${hechos.join(', ') || 'ninguno'}. Formato: {"temas": ["Titulo 1", "Titulo 2"]}`},
   ], 1500);
   const ideasEquipo = leerJson(path.join(SALIDA, 'ayudas.json'), {}).temas ?? [];
   for (const t of [...ideasEquipo, ...(r.temas ?? [])]) {
@@ -264,6 +264,7 @@ const NORMAS = `NORMAS DE LA JEFA (no se negocian):
 11. GANCHO AUDITIVO (primeros 3 segundos, lo que se OYE): una pregunta imposible o una cifra dicha en voz alta, con frase corta y una pausa dramática justo antes de la respuesta. Nada de saludos ni introducciones.
 12. GANCHO VISUAL (lo que se VE): cada escena describe algo que se pueda mostrar y la cifra o la idea clave aparece escrita en pantalla; el fondo cambia cada 3 segundos.
 13. AMBICIÓN: tu paga depende de las vistas; cada vista es dinero para ti. Escribe para que el dedo se detenga y el video se vea hasta el final.
+11. SOLO HECHOS PUNTUALES: no afirmes causas, coincidencias, tendencias ni expresiones como "la mayoría", "siempre" o "coincide con" si el material no las dice con esas mismas palabras. La revelación ("Pero lo que no sabías:") debe ser UN hecho concreto copiado casi literal del material, con su cifra o fecha. Si el material solo ofrece teorías, cuenta que son teorías.
 10. Cada dato (fecha, cifra, lugar, causa, relación) debe poder encontrarse casi literal en el MATERIAL. Si dudas de una frase, quítala. Prefiere pocas frases verdaderas a muchas dudosas. No uses cifras que el material no traiga.`;
 
 const REPARTO = FORMATO === 'largo'
