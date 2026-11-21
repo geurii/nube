@@ -1,0 +1,8 @@
+Charon: OK con interactions (947 KB)
+Algenib: OK con interactions (932 KB)
+Orus: OK con interactions (894 KB)
+Iapetus: OK con interactions (928 KB)
+Alnilam: falló interactions: Interactions 429: {"error":{"message":"Rate limit exceeded for model gemini-3.8-flash-tts (limit: 3 requests per minute on Free Tier). Please retry in 18s or upgrade your tier at https://ai.dev/rate-limit.","code":"too_many_requests"}}
+Alnilam: OK con generateContent (1086 KB)
+Sadaltager: OK con interactions (947 KB)
+Muestras listas: 6 de 6.
