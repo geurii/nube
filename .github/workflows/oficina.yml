@@ -6,6 +6,9 @@ on:
   schedule:
     - cron: '0 2,14 * * *'   # un Short nuevo cada 12 horas
     - cron: '0 12 */2 * *'   # un video largo un dia si y otro no
+  push:
+    paths:
+      - 'agentes/oficina.disparo'
   workflow_dispatch:
     inputs:
       tema:
