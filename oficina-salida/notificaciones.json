@@ -1,3 +1,20 @@
 [
- {"id":"seed-bloop","fecha":"2026-11-21T00:00:00.000Z","canal":"lqns","canalNombre":"Lo Que No Sabías","tipo":"listo","titulo":"Video del Bloop listo","texto":"La oficina escribió, verificó, grabó la voz y renderizó 'El enigma del Bloop' (31 MB). Falta conectar YouTube para subirlo."}
+  {
+    "id": "mwq84t4mrfcv",
+    "fecha": "2026-11-21T09:47:06.742Z",
+    "canal": "lqns",
+    "canalNombre": "Vigilante",
+    "tipo": "permiso",
+    "titulo": "Reconectar YouTube",
+    "texto": "YouTube no dio acceso (401): {\n  \"error\": \"invalid_client\",\n  \"error_description\": \"The OAuth client was not found.\"\n}"
+  },
+  {
+    "id": "seed-bloop",
+    "fecha": "2026-11-21T00:00:00.000Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "listo",
+    "titulo": "Video del Bloop listo",
+    "texto": "La oficina escribió, verificó, grabó la voz y renderizó 'El enigma del Bloop' (31 MB). Falta conectar YouTube para subirlo."
+  }
 ]
