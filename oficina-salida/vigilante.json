@@ -2,12 +2,13 @@
   "alertas": {
     "youtube-token": "2026-11-21T09:47:06.742Z"
   },
-  "fecha": "2026-11-21T09:50:39.840Z",
+  "fecha": "2026-11-21T09:53:30.473Z",
   "ok": [
     "Groq responde",
     "Gemini responde"
   ],
   "problemas": [
     "Reconectar YouTube"
-  ]
+  ],
+  "diagnostico": "Diagnóstico (longitudes, sin valores): id=73 (esperado 72), secreto=35 (35), token=127 (127). Espacios o saltos: id=true secreto=false token=false. id termina en: content.com\n"
 }
