@@ -64,7 +64,7 @@ jobs:
         env:
           CANAL: ${{ steps.producir.outputs.canal }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-        run: node agentes/ayuda.mjs && node agentes/funciones.mjs && node agentes/conciencia.mjs
+        run: timeout 240 node agentes/ayuda.mjs; timeout 240 node agentes/funciones.mjs; timeout 240 node agentes/conciencia.mjs
       - name: Guardar el avance en el repositorio
         if: always()
         run: |
