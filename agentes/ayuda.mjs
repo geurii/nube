@@ -50,7 +50,8 @@ const llamar = async (instruccion) => {
   }
   return null;
 };
-const lista = (a, n, max = 220) => (Array.isArray(a) ? a : []).map((x) => String(x).slice(0, max)).filter(Boolean).slice(0, n);
+const texto = (x) => (x && typeof x === 'object' ? Object.values(x).map(texto).join(': ') : String(x));
+const lista = (a, n, max = 220) => (Array.isArray(a) ? a : []).map((x) => texto(x).slice(0, max)).filter(Boolean).slice(0, n);
 
 const TAREAS = [
   {id: 'plan', para: 'Jules (su plan del ciclo)', rol: 'Directora de contenido', solo: 'Directora de contenido',
@@ -78,7 +79,7 @@ for (const t of TAREAS) {
   if (!r) { console.log(`Ayuda ${t.id}: sin respuesta.`); continue; }
   const resumen = t.guardar(r);
   usados.add(quien);
-  estado.agentes[quien] = {estado: 'trabajando', actividad: 'escribiendo', tarea: `AYUDA: dejó libre su puesto y le echó una mano a (${t.para}). Entregó: ${String(resumen).slice(0, 220)}`};
+  estado.agentes[quien] = {estado: 'trabajando', actividad: 'escribiendo', tarea: quien === t.rol ? `PLAN DEL CICLO: ${String(resumen).slice(0, 300)}` : `AYUDA: le echó una mano a (${t.para}). Entregó: ${String(resumen).slice(0, 220)}`};
   hechas++;
   console.log(`${quien} ayudó a ${t.para}: ${String(resumen).slice(0, 100)}`);
 }

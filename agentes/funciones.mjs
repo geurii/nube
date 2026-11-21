@@ -190,8 +190,11 @@ Devuelve {"entregas": {"<puesto exacto>": "su entrega"}} para todos.`);
   if (r?.entregas) {
     const salida = {};
     for (const rol of roles) {
-      const e = String(r.entregas[rol] ?? '').slice(0, 260);
+      let e = String(r.entregas[rol] ?? '').slice(0, 260);
       if (!e) continue;
+      // cifras inventadas: toda cifra debe estar en los datos dados
+      const conocido = (contexto + ' ' + (ultimoGuion ? ultimoGuion.escenas.map((x) => x.texto).join(' ') : '')).replace(/[.,\s]/g, '');
+      e = e.replace(/\d[\d.,]*/g, (m) => (m.length > 1 && !conocido.includes(m.replace(/[.,\s]/g, '')) ? '(cifra sin respaldo)' : m));
       salida[rol] = e;
       const a = estado.agentes[rol];
       a.estado = 'trabajando'; a.actividad = 'escribiendo';
