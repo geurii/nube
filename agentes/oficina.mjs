@@ -209,9 +209,15 @@ const REPARTO = FORMATO === 'largo'
   : 'Reparto de palabras obligatorio: antes de la revelación, entre 70 y 80 palabras (el hook más 3 o 4 escenas de historia); la revelación, entre 12 y 18 palabras; el veredicto, entre 22 y 28 palabras e incluye la frase final exacta.';
 const FORMATO_ESCENAS = 'Formato JSON de escenas: [{"tipo": "hook|historia|revelacion|veredicto", "texto": "una o dos frases"}]. La primera escena es "hook", la última "veredicto".';
 
+/** Fórmula del momento (la deja el Cazador de fórmulas): solo estructura, nunca temas ni contenido de otros canales. */
+const formulaActual = () => {
+  const f = leerJson(path.join(SALIDA, 'formulas.json'), null)?.formula;
+  if (!f?.formula) return '';
+  return `\nFÓRMULA DEL MOMENTO (lo que hoy funciona en canales exitosos; imita la ESTRUCTURA, no los temas): ${f.formula}. Plantillas de gancho: ${(f.ganchos ?? []).join(' | ')}. Evita: ${(f.evitar ?? []).join(' | ')}.\n`;
+};
 const guionista = (material, problemas) => [
   {role: 'system', content: `Eres el/la Guionista de un canal de YouTube de misterio y datos curiosos. Tienes maestría en narración de documental, retención de audiencia y rigor periodístico. ${NORMAS}\nResponde SOLO con JSON.`},
-  {role: 'user', content: `Escribe un guion de ${FORMATO === 'largo' ? 'video largo' : 'Short vertical de unos 55 segundos'} de unas ${PALABRAS} palabras sobre "${TEMA}". ${REPARTO}\n\nMATERIAL (única fuente permitida):\n${material}\n\n${problemas?.length ? `El Verificador o el Editor rechazaron la versión anterior. Corrige exactamente esto:\n${problemas.map((p) => `- "${p.frase}": ${p.motivo}`).join('\n')}\n\n` : ''}Formato JSON: {"titulo": "...(máx. 90 caracteres, con un emoji)", "descripcion": "...(2 frases)", "hashtags": ["#cinco", "#especificos", "#del", "#tema", "#sinviral"], "escenas": [...]}. Los hashtags son 5, específicos del tema; nunca #viral ni #fyp. ${FORMATO_ESCENAS}`},
+  {role: 'user', content: `Escribe un guion de ${FORMATO === 'largo' ? 'video largo' : 'Short vertical de unos 55 segundos'} de unas ${PALABRAS} palabras sobre "${TEMA}". ${REPARTO}${formulaActual()}\n\nMATERIAL (única fuente permitida):\n${material}\n\n${problemas?.length ? `El Verificador o el Editor rechazaron la versión anterior. Corrige exactamente esto:\n${problemas.map((p) => `- "${p.frase}": ${p.motivo}`).join('\n')}\n\n` : ''}Formato JSON: {"titulo": "...(máx. 90 caracteres, con un emoji)", "descripcion": "...(2 frases)", "hashtags": ["#cinco", "#especificos", "#del", "#tema", "#sinviral"], "escenas": [...]}. Los hashtags son 5, específicos del tema; nunca #viral ni #fyp. ${FORMATO_ESCENAS}`},
 ];
 const editor = (titulo, escenas) => [
   {role: 'system', content: `Eres el/la Editor/a crítico/a de guiones de un canal de YouTube. Eres implacable: tu trabajo es encontrar lo que haría que alguien deslice el video y arreglarlo. Evalúas gancho (¿se entiende en un segundo?), ritmo (frases cortas, nada de relleno), claridad para gente normal y fuerza del cierre. Reglas duras: NO agregues datos nuevos ni cifras; solo recorta, reordena y mejora la redacción de lo que ya está. Mantén "Sabías que" al inicio, la frase final exacta "${CTA}" y la revelación entre el 65 % y el 75 %. Cada escena debe poder mostrarse con un cambio de imagen cada 3 segundos: frases de máximo 18 palabras. Responde SOLO con JSON.`},

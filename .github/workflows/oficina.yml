@@ -39,6 +39,11 @@ jobs:
           node-version: 22
       - name: Prueba de humo (simulada, no gasta Groq)
         run: node agentes/probar-oficina.mjs
+      - name: Cazador de fórmulas (lee canales exitosos; si falla, la Oficina sigue)
+        continue-on-error: true
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: node agentes/cazador.mjs
       - name: Correr la oficina
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
