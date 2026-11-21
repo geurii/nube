@@ -1,11 +1,19 @@
 {
-  "actualizado": "2026-11-21T06:17:07.866Z",
+  "actualizado": "2026-11-21T06:25:08.240Z",
   "totales": {
     "aprobados": 1,
-    "rechazados": 1,
+    "rechazados": 2,
     "errores": 2
   },
   "historial": [
+    {
+      "fecha": "2026-11-21T06:25:08.240Z",
+      "tema": "Bloop",
+      "formato": "short",
+      "resultado": "rechazado",
+      "intentos": 3,
+      "detalle": "El material indica que los micrófonos fueron colocados durante la Guerra Fría, no que NOAA los instalara en 1997."
+    },
     {
       "fecha": "2026-11-21T06:17:07.865Z",
       "tema": "Dyatlov Pass incident",
@@ -41,29 +49,33 @@
   ],
   "agentes": {
     "Directora de contenido": {
-      "estado": "libre",
-      "actividad": "hablando",
-      "tarea": "Último guion aprobado: \"Dyatlov Pass incident\" (short). Aprobados: 1. Rechazados: 1. Con error: 2."
+      "estado": "esperando_decision",
+      "actividad": "pensando",
+      "tarea": "Necesita revisión: el guion de \"Bloop\" no pasó la verificación. Aprobados: 1. Rechazados: 2. Con error: 2. JEFA: Un guion rechazado no se publica. Tienen 8 h para entregar algo que pase."
     },
     "Investigador de temas": {
       "estado": "libre",
       "actividad": "leyendo",
-      "tarea": "Dejó el material de \"Dyatlov Pass incident\" con su fuente en Wikipedia."
+      "tarea": "Dejó el material de \"Bloop\" con su fuente en Wikipedia."
     },
     "Guionista": {
-      "estado": "libre",
+      "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Entregó el guion de \"Dyatlov Pass incident\". 108 palabras, 7 escenas."
+      "tarea": "Intentó 3 veces escribir \"Bloop\" sin que el Verificador lo aprobara. JEFA: 3 intentos y nada aprobado. Esto es inaceptable. Estudien la fuente antes de escribir."
     },
     "Verificador de datos": {
-      "estado": "libre",
+      "estado": "esperando_decision",
       "actividad": "leyendo",
-      "tarea": "Aprobó \"Dyatlov Pass incident\" en el intento 2."
+      "tarea": "Rechazó \"Bloop\": El material indica que los micrófonos fueron colocados durante la Guerra Fría, no que NOAA los instalara en 1997."
     },
     "Editor de guion": {
       "estado": "libre",
       "actividad": "pensando",
       "tarea": "Pulió el guion y eligió los fondos de cada escena. Puntaje: 5/10. El gancho es débil, el ritmo se arrastra y el cierre es demasiado largo."
     }
+  },
+  "jefa": {
+    "mensaje": "Necesita revisión: el guion de \"Bloop\" no pasó la verificación. Aprobados: 1. Rechazados: 2. Con error: 2. JEFA: Un guion rechazado no se publica. Tienen 8 h para entregar algo que pase.",
+    "horasParaProximoCiclo": 8
   }
 }
