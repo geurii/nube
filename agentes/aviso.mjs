@@ -6,6 +6,7 @@ const CONFIG = {
   permiso: {prioridad: 5, tags: ['closed_lock_with_key'], prefijo: 'NECESITO TU PERMISO'},
   alerta: {prioridad: 4, tags: ['warning'], prefijo: 'ALERTA'},
   subido: {prioridad: 3, tags: ['tada'], prefijo: 'VIDEO SUBIDO'},
+  info: {prioridad: 3, tags: ['bulb'], prefijo: 'INFO'},
   jules: {prioridad: 3, tags: ['speech_balloon'], prefijo: 'JULES'},
 };
 

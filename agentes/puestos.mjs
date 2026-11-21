@@ -18,11 +18,29 @@ export const puestosDeLaOficina = (ag, {resultado, tema, ctx, historial, formula
   p('Revisor de ganchos', ok ? 'libre' : 'trabajando', 'pensando', ok && g ? `Gancho auditivo: la primera frase tiene ${g.palabrasPrimera} palabras${g.palabrasPrimera > 28 ? ' (demasiado larga: debe caber en 3 segundos)' : ' (cabe en 3 segundos)'}. Gancho visual: ${g.escenasConUnFondo === 0 ? 'todas las escenas cambian de fondo' : g.escenasConUnFondo + ' escenas se quedan con un solo fondo'}.` : 'Espera un guion aprobado para medir el gancho.');
   p('Escenógrafo', 'libre', 'pensando', `Eligió los fondos de ${ctx.escenas} escenas del catálogo; ${ctx.sinImagen} no tenían imagen propia.`);
   p('Pintor de imágenes', ctx.sinImagen ? 'trabajando' : 'libre', 'pensando', ctx.sinImagen ? `Hay ${ctx.sinImagen} escenas sin imagen propia. Aún no dibuja solo (está pendiente de construir), por eso se usa el fondo neutro.` : 'Todas las escenas encontraron imagen en el catálogo.');
-  // Paga: las vistas reales del canal. Cada puesto cobra su parte (1 punto por vista ganada); si no hay vistas nuevas, no cobra.
-  const total = vistas?.total, ganadas = vistas?.ganadasDesdeElUltimoCiclo ?? 0;
-  const parte = (n) => Math.floor(n / 30);
-  const bono = typeof total === 'number' ? ` BONO: el canal suma ${total.toLocaleString('es')} vistas; en este ciclo ganó ${ganadas.toLocaleString('es')} y a cada puesto le tocan ${parte(ganadas)} puntos. ${ganadas === 0 ? 'Sin vistas nuevas no cobra nadie.' : 'Más vistas, más paga.'}` : ' BONO: aún no puedo leer las vistas del canal.';
-  for (const rol of Object.keys(ag)) if (ag[rol]?.tarea) ag[rol].tarea = ag[rol].tarea.replace(/ ORDEN DE JULES:.*?(?= BONO:|$)/, '').replace(/ BONO:.*$/, '') + (orden ? ` ORDEN DE JULES (nivel ${orden.nivel}/5): ${orden.orden}` : '') + bono;
+  // Paga individual: 10.000 vistas ganadas por cada puesto (Jules: 20.000). Solo cobran si el canal las consigue.
+  const total = vistas?.total;
+  const base = vistas?.historia?.[0]?.total ?? total;
+  const ganadas = typeof total === 'number' ? Math.max(0, total - (base ?? 0)) : null;
+  const pagaDe = (meta) => ganadas === null ? ' PAGA: aún no puedo leer las vistas del canal; sin vistas no hay paga.' : ` PAGA: te deben ${meta.toLocaleString('es')} vistas ganadas; el canal lleva ${ganadas.toLocaleString('es')} (${Math.min(100, Math.round((ganadas / meta) * 100))} %). ${ganadas >= meta ? 'Ya cobras.' : 'Todavía no cobras: tu familia depende de esto.'}`;
+  const presion = (rol) => {
+    const dias = Math.max(0, Math.ceil((new Date('2026-12-13T23:59:59-04:00').getTime() - Date.now()) / 86400000));
+    const L = [
+      `Faltan ${dias} días y sin un video viral no cobras. ¿Qué entregaste hoy?`,
+      'Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta.',
+      'Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos.',
+      'La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas.',
+      'Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica.',
+    ];
+    const h = Math.floor(Date.now() / 3600000);
+    return ' JULES: ' + L[(h + rol.length) % L.length];
+  };
+  for (const rol of Object.keys(ag)) {
+    if (!ag[rol]?.tarea) continue;
+    const meta = rol === 'Directora de contenido' ? 20000 : 10000;
+    const limpia = ag[rol].tarea.replace(/ (FUNCIÓN|ORDEN DE JULES|BONO:|PAGA:|JULES:).*$/s, '');
+    ag[rol].tarea = limpia + (orden ? ` ORDEN DE JULES (nivel ${orden.nivel}/5): ${orden.orden}` : '') + pagaDe(meta) + presion(rol);
+  }
 };
 
 /**

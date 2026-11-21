@@ -67,6 +67,7 @@ jobs:
             CANAL=$c node agentes/cazador.mjs || true
             CANAL=$c node agentes/oficina.mjs || fallo=1
             CANAL=$c node agentes/ayuda.mjs || true
+            CANAL=$c node agentes/funciones.mjs || true
           done
           exit $fallo
       - name: Guardar el resultado en el repositorio
