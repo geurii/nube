@@ -152,6 +152,52 @@ for (const [id, rol, cadaHoras, trabajo] of FUNCIONES) {
   estado.agentes[rol] = {estado: 'trabajando', actividad: 'escribiendo', tarea: `${prev.replace(/ FUNCIÓN.*$/, '')} FUNCIÓN (${id}): ${String(resumen).slice(0, 260)}`};
   console.log(`${rol} -> ${id}: ${String(resumen).slice(0, 100)}`);
 }
+// ---- Segunda función de los otros 22: una misión extra por puesto, todas en UNA llamada (cada 6 h) ----
+const SEGUNDA = {
+  'Directora de contenido': 'detectar la mayor amenaza para la meta del 13 de diciembre y proponer la contramedida',
+  'Enlace de datos': 'resumir en 2 frases lo más importante que cambió en los datos desde el último ciclo',
+  'Coordinador de producción': 'proponer el mejor horario de publicación de hoy según lo que se sabe y qué videos conviene encolar',
+  'Jefa de calidad': 'elegir el defecto más repetido en los videos y proponer una regla nueva para evitarlo',
+  'Investigador de temas': 'proponer 2 temas con mucha documentación que encajen con lo que más vistas tuvo',
+  'Cazador de fórmulas': 'describir un patrón de título o gancho de canales virales que se pueda copiar como estructura',
+  'Vigía de tendencias': 'nombrar un tipo de contenido de misterio que parezca crecer y por qué (solo con datos dados)',
+  'Guionista': 'escribir 2 primeras frases alternativas, con gancho de 3 segundos, para el próximo video',
+  'Editor de guion': 'señalar la frase que más aburre en el último guion y reescribirla',
+  'Titulista': 'proponer 2 títulos alternativos para el último video con una cifra del guion',
+  'Redactor de descripción': 'escribir una descripción corta alternativa para el último video con palabras clave al inicio',
+  'Especialista en hashtags': 'proponer 5 hashtags específicos alternativos para el último video',
+  'Verificador de datos': 'listar qué dato del último guion sería el más fácil de cuestionar y cómo reforzarlo con la fuente',
+  'Auditor de fuentes': 'decir qué fuente adicional pública convendría citar para el último tema',
+  'Auditor de normas': 'comprobar de memoria una norma del canal y decir si el último guion la cumple',
+  'Revisor de nombres': 'listar términos del último guion que podrían confundirse con nombres de personas reales',
+  'Revisor de ganchos': 'puntuar de 0 a 10 el gancho del último video y decir cómo subirlo a 9',
+  'Escenógrafo': 'proponer 2 fondos nuevos que faltan en el catálogo para los temas próximos',
+  'Pintor de imágenes': 'describir una escena en pixel art que se podría dibujar para el próximo tema',
+  'Locutor': 'proponer cómo ajustar el ritmo y las pausas de la voz en el gancho y la revelación',
+  'Técnico de render': 'proponer una forma de reducir el tiempo de render sin perder calidad',
+  'Publicador': 'proponer el texto del comentario fijado y cuándo responder a los primeros comentarios',
+};
+if (hace('segunda') >= 6 && KEY) {
+  const roles = Object.keys(SEGUNDA).filter((r) => estado.agentes?.[r]);
+  const r = await llamar('Das trabajo extra concreto a un equipo de oficina de un canal de YouTube.', `${contexto}
+Último guion: "${ultimoGuion?.titulo ?? 'ninguno'}". ${ultimoGuion ? ultimoGuion.escenas.map((e) => e.texto).join(' ').slice(0, 1200) : ''}
+
+Cada puesto hace su MISIÓN EXTRA con una entrega de 1 o 2 frases:
+${roles.map((x) => `- ${x}: ${SEGUNDA[x]}`).join(' ; ')}
+Devuelve {"entregas": {"<puesto exacto>": "su entrega"}} para todos.`);
+  if (r?.entregas) {
+    const salida = {};
+    for (const rol of roles) {
+      const e = String(r.entregas[rol] ?? '').slice(0, 260);
+      if (!e) continue;
+      salida[rol] = e;
+      const a = estado.agentes[rol];
+      a.tarea = a.tarea.replace(/ SEGUNDA:.*?(?= PAGA:| ORDEN DE JULES| JULES:| FUNCIÓN| SOY |$)/s, '') + ` SEGUNDA: ${e}`;
+    }
+    guardar('segunda', {entregas: salida});
+    console.log(`Segunda función: ${Object.keys(salida).length} entregas.`);
+  }
+}
 fs.writeFileSync(path.join(dirF, 'reloj.json'), JSON.stringify(reloj, null, 2));
 estado.actualizado = new Date().toISOString();
 fs.writeFileSync(path.join(carpeta, 'estado.json'), JSON.stringify(estado, null, 2));
