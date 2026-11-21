@@ -22,6 +22,14 @@ const proximoHorario = (formato) => {
   return new Date(ahora + 3600000);
 };
 const ESTADO = path.join('oficina-salida', CANAL, 'estado.json');
+const avisar = (tipo, titulo, texto) => {
+  try {
+    const ruta = path.join('oficina-salida', 'notificaciones.json');
+    const lista = fs.existsSync(ruta) ? JSON.parse(fs.readFileSync(ruta, 'utf8')) : [];
+    lista.unshift({id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), fecha: new Date().toISOString(), canal: CANAL, tipo, titulo, texto});
+    fs.writeFileSync(ruta, JSON.stringify(lista.slice(0, 80), null, 2));
+  } catch { /* sin notificaciones */ }
+};
 const marcar = (texto, estado = 'esperando_decision') => {
   try {
     const e = JSON.parse(fs.readFileSync(ESTADO, 'utf8'));
@@ -33,6 +41,7 @@ const marcar = (texto, estado = 'esperando_decision') => {
 
 if (!ID) { console.log('Sin video que subir.'); process.exit(0); }
 if (!YT_CLIENT_ID || !YT_CLIENT_SECRET || !YT_REFRESH_TOKEN) {
+  avisar('permiso', 'Necesito tu permiso: conectar YouTube', `El video "${ID}" está listo pero faltan los secretos de YouTube de este canal.`);
   marcar(`Video "${ID}" listo, pero falta conectar YouTube para este canal: crea YT_CLIENT_ID, YT_CLIENT_SECRET y YT_REFRESH_TOKEN (o YT_REFRESH_TOKEN_<CANAL>) como secretos del repositorio. JEFA: un video que no se sube no existe.`);
   console.log('Faltan los secretos de YouTube. Se omite la subida.');
   process.exit(0);
@@ -76,6 +85,8 @@ try {
   console.log(`Subido y programado para ${programado.toISOString()}: https://youtu.be/${video.id}`);
 } catch (e) {
   marcar(`No pude subir "${ID}": ${String(e.message ?? e).slice(0, 220)}`);
+  if (/invalid_grant|401|403/.test(String(e.message))) avisar('permiso', 'Necesito tu permiso: reconectar YouTube', `YouTube rechazó la autorización (${String(e.message).slice(0, 120)}). Hay que volver a sacar el token con scripts/token-youtube.mjs y pegarlo en YT_REFRESH_TOKEN.`);
+  else avisar('alerta', 'No pude subir un video', `No pude subir "${ID}": ${String(e.message ?? e).slice(0, 160)}`);
   console.error('ERROR al subir:', e.message ?? e);
   process.exit(1);
 }

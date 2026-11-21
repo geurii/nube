@@ -367,6 +367,11 @@ try {
     try { fondos = validarFondos((await pedirJson(modelo, escenografo(escenas), FORMATO === 'largo' ? 3000 : 1500)).fondos, escenas.length, escenas); }
     catch (e) { informe.push(`(El Escenógrafo no pudo elegir fondos: ${e.message}. Se usa el fondo general.)`); }
   }
+  const sinImagen = aprobado ? fondos.filter((f) => f.every((x) => x === 'pixelmisterio')).length : 0;
+  if (sinImagen >= Math.ceil(escenas.length / 2)) {
+    notificar('permiso', `Necesito tu OK: faltan imágenes para "${TEMA}"`, `${sinImagen} de ${escenas.length} escenas no tienen una imagen que encaje y usarían un fondo neutro. Sigo adelante con el fondo neutro salvo que me digas que lo dibuje Claude antes de publicar.`);
+    informe.push(`PERMISO PEDIDO: ${sinImagen}/${escenas.length} escenas sin imagen propia.`);
+  }
   const palabras = escenas.reduce((s, e) => s + palabrasDe(e), 0);
   informe.push(`Palabras: ${palabras} · Escenas: ${escenas.length}`);
   const guion = {
