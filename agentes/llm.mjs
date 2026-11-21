@@ -5,6 +5,7 @@ const PROVEEDORES = [
   {nombre: 'Gemini', base: 'https://generativelanguage.googleapis.com/v1beta/openai', clave: 'GEMINI_API_KEY', prefiere: [/gemini-.*flash(?!.*(lite|tts|image|live|preview-tts))/i, /gemini-.*flash/i], descarta: /tts|image|embed|live|audio/i},
   {nombre: 'Cerebras', base: 'https://api.cerebras.ai/v1', clave: 'CEREBRAS_API_KEY', prefiere: [/gpt-oss/i, /llama.*70b/i, /qwen.*(235|32)b/i, /llama/i]},
   {nombre: 'OpenRouter', base: 'https://openrouter.ai/api/v1', clave: 'OPENROUTER_API_KEY', prefiere: [/(llama-3\.3-70b|gpt-oss-120b|qwen3.*235b|deepseek).*:free$/i, /:free$/i], soloGratis: true},
+  {nombre: 'GitHub Models', base: 'https://models.github.ai/inference', catalogo: 'https://models.github.ai/catalog/models', clave: 'GITHUB_TOKEN', cabeceras: {'X-GitHub-Api-Version': '2022-11-28', Accept: 'application/vnd.github+json'}, prefiere: [/gpt-4\.1$/i, /gpt-4o$/i, /llama.*70b/i, /gpt-4\.1-mini/i, /mini/i], descarta: /embed|nano|vision|o1|o3|o4/i},
   {nombre: 'Mistral', base: 'https://api.mistral.ai/v1', clave: 'MISTRAL_API_KEY', prefiere: [/mistral-large/i, /mistral-medium/i, /mistral-small/i], descarta: /embed|ocr|moderation|codestral-embed/i},
   {nombre: 'Cloudflare', base: null, clave: 'CLOUDFLARE_API_TOKEN', cuenta: 'CLOUDFLARE_ACCOUNT_ID', prefiere: [/llama-3\.3-70b/i, /gpt-oss/i, /llama/i]},
 ];
@@ -15,9 +16,10 @@ const elegirModelo = async (p, key) => {
   if (modelos.has(p.nombre)) return modelos.get(p.nombre);
   let m = null;
   try {
-    const r = await fetch(`${p.base}/models`, {headers: {Authorization: `Bearer ${key}`}, signal: AbortSignal.timeout(20000)});
+    const r = await fetch(p.catalogo ?? `${p.base}/models`, {headers: {Authorization: `Bearer ${key}`, ...(p.cabeceras ?? {})}, signal: AbortSignal.timeout(20000)});
     if (r.ok) {
-      const ids = ((await r.json()).data ?? []).map((x) => String(x.id ?? x.name ?? '').replace(/^models\//, '')).filter((x) => x && !(p.descarta?.test(x)));
+      const j = await r.json();
+      const ids = (Array.isArray(j) ? j : (j.data ?? [])).map((x) => String(x.id ?? x.name ?? '').replace(/^models\//, '')).filter((x) => x && !(p.descarta?.test(x)));
       for (const re of p.prefiere) { m = ids.find((x) => re.test(x)); if (m) break; }
     }
   } catch { /* sin lista */ }
@@ -35,7 +37,7 @@ export const chatAlternativo = async (mensajes, {maxTokens = 2500, temperatura =
     for (let i = 1; i <= 2; i++) {
       try {
         const r = await fetch(`${p.base}/chat/completions`, {
-          method: 'POST', headers: {Authorization: `Bearer ${key}`, 'Content-Type': 'application/json'}, signal: AbortSignal.timeout(120000),
+          method: 'POST', headers: {Authorization: `Bearer ${key}`, 'Content-Type': 'application/json', ...(p.cabeceras ?? {})}, signal: AbortSignal.timeout(120000),
           body: JSON.stringify({model: modelo, messages: mensajes, temperature: temperatura, max_tokens: maxTokens}),
         });
         if (r.status === 429 || r.status >= 500) { await dormir(4000 * i); continue; }
