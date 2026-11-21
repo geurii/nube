@@ -7,7 +7,7 @@ import path from 'node:path';
 
 const CANAL = (process.env.CANAL || 'lqns').trim();
 const KEY = process.env.GROQ_API_KEY;
-const MAX_TAREAS = 4;
+const MAX_TAREAS = 5;
 const carpeta = path.resolve('oficina-salida', CANAL);
 const leer = (r, d) => { try { return JSON.parse(fs.readFileSync(r, 'utf8')); } catch { return d; } };
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));

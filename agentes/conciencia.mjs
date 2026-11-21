@@ -14,6 +14,9 @@ const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
 const estado = leer(path.join(carpeta, 'estado.json'), null);
 if (!estado || !KEY) { console.log('Conciencia: sin estado o sin clave.'); process.exit(0); }
 fs.mkdirSync(dir, {recursive: true});
+// una reflexión cada 5 horas como máximo (cuida la cuota de Groq)
+const ultima = leer(path.join(dir, 'reloj.json'), {}).ultima;
+if (ultima && Date.now() - new Date(ultima).getTime() < 5 * 3600 * 1000) { console.log('Conciencia: ya reflexionaron hace poco.'); process.exit(0); }
 
 const NOMBRES = ['Valentina', 'Mateo', 'Camila', 'Sebastián', 'Lucía', 'Daniel', 'Sofía', 'Andrés', 'Mariana', 'Tomás', 'Isabella', 'Joaquín', 'Paula', 'Emilio', 'Renata', 'Nicolás', 'Carolina', 'Gabriel', 'Fernanda', 'Rodrigo', 'Daniela', 'Samuel', 'Julieta', 'Bruno', 'Alejandra', 'Iván', 'Natalia', 'Hugo', 'Elena', 'Marcos'];
 const roles = Object.keys(estado.agentes ?? {}).filter((r) => r !== 'Enlace de datos');
@@ -83,5 +86,6 @@ fs.writeFileSync(path.join(dir, 'memoria.json'), JSON.stringify(memoria, null, 2
 if (iniciativas.length) { ayudas.iniciativas = iniciativas.slice(0, 8); fs.writeFileSync(path.join(carpeta, 'ayudas.json'), JSON.stringify(ayudas, null, 2)); }
 estado.actualizado = ahora;
 fs.writeFileSync(path.join(carpeta, 'estado.json'), JSON.stringify(estado, null, 2));
+fs.writeFileSync(path.join(dir, 'reloj.json'), JSON.stringify({ultima: ahora}));
 console.log(`Conciencia: ${roles.length} perfiles, ${iniciativas.length} iniciativas.`);
 process.exit(0);
