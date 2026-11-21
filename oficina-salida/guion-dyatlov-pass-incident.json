@@ -1,0 +1,78 @@
+{
+  "titulo": "❄️ El enigma del Paso Dyatlov que nadie explicó",
+  "formato": "short",
+  "plataforma": "youtube",
+  "audio": "audio/oficina-dyatlov-pass-incident.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "publicacion": {
+    "titulo": "❄️ El enigma del Paso Dyatlov que nadie explicó",
+    "descripcion": "Un enigma que sigue desconcertando a los investigadores. Descubre la teoría más reciente.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Dyatlov_Pass_incident\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do"
+  },
+  "estado": "aprobado",
+  "editor": {
+    "puntaje": 5,
+    "critica": "El gancho es débil, el ritmo se arrastra y el cierre es demasiado largo."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que en febrero de 1959, nueve excursionistas soviéticos abandonaron su tienda en Kholat Syakhl?",
+      "fondo": [
+        "pixelmisterio",
+        "pixelcifra:1959|EXCURSIONISTAS|ROJO"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El grupo, liderado por Igor Dyatlov, era experimentado y cruzaba los Urales en pleno invierno.",
+      "fondo": [
+        "pixelartico",
+        "pixelciudad"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En la madrugada cortaron la tienda con cuchillos y huyeron sin ropa suficiente para el frío de‑40°C.",
+      "fondo": [
+        "pixelbodega",
+        "pixelcifra:-40|GRADOS|AZUL"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Los cuerpos aparecieron meses después; seis murieron de hipotermia y tres tenían graves lesiones en cabeza y pecho.",
+      "fondo": [
+        "pixeldocs",
+        "pixelgrafica:LESIONES|DUDA"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: una avalancha de tipo losa pudo haber forzado su fuga repentina.",
+      "fondo": [
+        "pixelrascacielos:AVALANCHA",
+        "pixelbarcoderiva"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "Los investigadores concluyeron que la avalancha los obligó a salir sin abrigo; el frío les mató.",
+      "fondo": [
+        "pixeljuicio:VEREDICTO",
+        "pixelgrafica:AVALANCHA|CAE"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelpremio",
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

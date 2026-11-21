@@ -1,11 +1,19 @@
 {
-  "actualizado": "2026-11-21T06:02:24.916Z",
+  "actualizado": "2026-11-21T06:17:07.866Z",
   "totales": {
-    "aprobados": 0,
+    "aprobados": 1,
     "rechazados": 1,
     "errores": 2
   },
   "historial": [
+    {
+      "fecha": "2026-11-21T06:17:07.865Z",
+      "tema": "Dyatlov Pass incident",
+      "formato": "short",
+      "resultado": "aprobado",
+      "intentos": 2,
+      "detalle": "108 palabras, 7 escenas."
+    },
     {
       "fecha": "2026-11-21T06:02:24.916Z",
       "tema": "Bermuda Triangle",
@@ -33,24 +41,29 @@
   ],
   "agentes": {
     "Directora de contenido": {
-      "estado": "esperando_decision",
-      "actividad": "pensando",
-      "tarea": "Necesita revisión: el guion de \"Bermuda Triangle\" no pasó la verificación. Aprobados: 0. Rechazados: 1. Con error: 2."
+      "estado": "libre",
+      "actividad": "hablando",
+      "tarea": "Último guion aprobado: \"Dyatlov Pass incident\" (short). Aprobados: 1. Rechazados: 1. Con error: 2."
     },
     "Investigador de temas": {
       "estado": "libre",
       "actividad": "leyendo",
-      "tarea": "Dejó el material de \"Bermuda Triangle\" con su fuente en Wikipedia."
+      "tarea": "Dejó el material de \"Dyatlov Pass incident\" con su fuente en Wikipedia."
     },
     "Guionista": {
-      "estado": "trabajando",
+      "estado": "libre",
       "actividad": "escribiendo",
-      "tarea": "Intentó 3 veces escribir \"Bermuda Triangle\" sin que el Verificador lo aprobara."
+      "tarea": "Entregó el guion de \"Dyatlov Pass incident\". 108 palabras, 7 escenas."
     },
     "Verificador de datos": {
-      "estado": "esperando_decision",
+      "estado": "libre",
       "actividad": "leyendo",
-      "tarea": "Rechazó \"Bermuda Triangle\": el material no respalda \"más de mil historias de desapariciones\"."
+      "tarea": "Aprobó \"Dyatlov Pass incident\" en el intento 2."
+    },
+    "Editor de guion": {
+      "estado": "libre",
+      "actividad": "pensando",
+      "tarea": "Pulió el guion y eligió los fondos de cada escena. Puntaje: 5/10. El gancho es débil, el ritmo se arrastra y el cierre es demasiado largo."
     }
   }
 }
