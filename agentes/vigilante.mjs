@@ -23,6 +23,7 @@ if (YT_CLIENT_ID && YT_CLIENT_SECRET && YT_REFRESH_TOKEN) {
   if (r.ok) { tokenAcceso = (await r.json()).access_token; ok.push('YouTube conectado'); }
   else {
     const t = await r.text();
+    console.log('Diagnóstico (longitudes, sin valores): id=' + YT_CLIENT_ID.length + ' (esperado 72), secreto=' + YT_CLIENT_SECRET.length + ' (35), token=' + YT_REFRESH_TOKEN.length + ' (127). Espacios o saltos: id=' + /s/.test(YT_CLIENT_ID) + ' secreto=' + /s/.test(YT_CLIENT_SECRET) + ' token=' + /s/.test(YT_REFRESH_TOKEN) + '. id termina en: ' + YT_CLIENT_ID.slice(-12));
     hallazgos.push({clave: 'youtube-token', tipo: 'permiso', titulo: 'Reconectar YouTube', texto: /invalid_grant/.test(t)
       ? 'El permiso de YouTube venció o fue revocado. Si la app de Google sigue en "Prueba", se vence cada 7 días: ponla en "Producción" y vuelve a sacar el token con scripts/token-youtube.mjs.'
       : `YouTube no dio acceso (${r.status}): ${lim(t)}`});
@@ -86,6 +87,6 @@ if (nuevas.length) {
   fs.mkdirSync(RAIZ, {recursive: true});
   fs.writeFileSync(RUTA_NOTIS, JSON.stringify(lista.slice(0, 80), null, 2));
 }
-fs.writeFileSync(RUTA_ESTADO, JSON.stringify({...estado, fecha: new Date().toISOString(), ok, problemas: hallazgos.map((h) => h.titulo)}, null, 2));
+fs.writeFileSync(RUTA_ESTADO, JSON.stringify({...estado, diagnostico: globalThis.__diag, fecha: new Date().toISOString(), ok, problemas: hallazgos.map((h) => h.titulo)}, null, 2));
 console.log('Vigilante. Bien:', ok.join(', ') || 'nada'); console.log('Problemas:', hallazgos.length ? hallazgos.map((h) => h.titulo).join(' | ') : 'ninguno');
 process.exit(0);
