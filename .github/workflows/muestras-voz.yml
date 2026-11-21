@@ -1,0 +1,33 @@
+name: Muestras de voz
+
+# Genera muestras de voz con Gemini (necesita el secreto GEMINI_API_KEY) y las guarda en la carpeta muestras-voz.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  muestras:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Generar muestras
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node agentes/muestras-voz.mjs
+      - name: Guardar muestras en el repositorio
+        if: always()
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add muestras-voz || true
+          git diff --cached --quiet || git commit -m "Muestras de voz"
+          for i in 1 2 3 4; do
+            git pull --rebase origin main && git push && break
+            sleep 5
+          done
