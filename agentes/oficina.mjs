@@ -67,7 +67,7 @@ const registrar = (resultado, detalle, intentos, extra = {}) => {
   } else {
     ag['Directora de contenido'] = {estado: 'esperando_decision', actividad: 'pensando', tarea: `La oficina falló en su último ciclo: ${detalle}`};
   }
-  puestosDeLaOficina(ag, {resultado, tema: TEMA, ctx: CTX, historial: leerJson(HISTORIAL, []), formulas: leerJson(path.join(SALIDA, 'formulas.json'), null), vistas: leerJson(path.join(SALIDA, 'vistas.json'), null), vigilados: (CONFIG.vigilar ?? []).length});
+  puestosDeLaOficina(ag, {resultado, tema: TEMA, ctx: CTX, historial: leerJson(HISTORIAL, []), orden: ORDEN_JULES, formulas: leerJson(path.join(SALIDA, 'formulas.json'), null), vistas: leerJson(path.join(SALIDA, 'vistas.json'), null), vigilados: (CONFIG.vigilar ?? []).length});
   // Jules, la jefa: exigente, directa y con números reales. Nunca esconde un resultado malo.
   const h = horasParaProximoCiclo();
   const jefa = (rol, frase) => { if (ag[rol]) ag[rol].tarea = `${ag[rol].tarea} JEFA: ${frase}`; };
@@ -126,8 +126,9 @@ const investigar = async () => {
 /* ====================== Groq con reintentos ====================== */
 /** Cultura de la empresa: va delante de las instrucciones de todos los agentes. Ambición sin bajar el rigor: perfeccionistas. */
 const CULTURA = 'EMPRESA: ' + (CONFIG.nombre ?? 'el canal') + '. META: monetizar el canal antes del 13 de diciembre de 2026 (YouTube pide 1.000 suscriptores y 4.000 horas de reproducción, o 10 millones de vistas en Shorts en 90 días) y llevarlo arriba. Eres un/a profesional con cinco licenciaturas en tu área, perfeccionista y muy ambicioso/a: quieres que todo funcione a la primera, tu paga son las vistas y la jefa Jules presiona cada día. Ambición NO es inventar: jamás sacrificas la verdad ni las normas por vistas.';
+const ORDEN_JULES = leerJson(path.join(SALIDA, 'ordenes.json'), [])[0];
 const groq = async (modelo, mensajes, maxTokens = FORMATO === 'largo' ? 4500 : 2500) => {
-  mensajes = mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + '\n\n' + m.content} : m));
+  mensajes = mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (ORDEN_JULES ? ` ORDEN VIGENTE DE JULES (nivel ${ORDEN_JULES.nivel}/5, la dio el dueño): ${ORDEN_JULES.orden}` : '') + '\n\n' + m.content} : m));
   let ultimo = 'sin respuesta';
   for (let intento = 1; intento <= 8; intento++) {
     try {

@@ -1,6 +1,6 @@
 // Los 30 puestos de la oficina: qué hace cada uno en cada ciclo, con datos reales del ciclo (CTX).
 // Se importa desde oficina.mjs. Nadie queda sin trabajo: lo que aún no está conectado dice exactamente qué le falta.
-export const puestosDeLaOficina = (ag, {resultado, tema, ctx, historial, formulas, vigilados, vistas}) => {
+export const puestosDeLaOficina = (ag, {resultado, tema, ctx, historial, formulas, vigilados, vistas, orden}) => {
   const ok = resultado === 'aprobado';
   const p = (rol, estado, actividad, tarea) => { ag[rol] = {estado, actividad, tarea}; };
   const m = ctx.mesa;
@@ -30,7 +30,7 @@ export const puestosDeLaOficina = (ag, {resultado, tema, ctx, historial, formula
   const parte = (n) => Math.floor(n / 30);
   const bono = typeof total === 'number' ? ` BONO: el canal suma ${total.toLocaleString('es')} vistas; en este ciclo ganó ${ganadas.toLocaleString('es')} y a cada puesto le tocan ${parte(ganadas)} puntos. ${ganadas === 0 ? 'Sin vistas nuevas no cobra nadie.' : 'Más vistas, más paga.'}` : ' BONO: aún no puedo leer las vistas del canal.';
   p('Redactor de reportes', 'libre', 'escribiendo', 'Escribe el reporte de cada ciclo y lo manda a la campana.');
-  for (const rol of Object.keys(ag)) if (ag[rol]?.tarea) ag[rol].tarea = ag[rol].tarea.replace(/ BONO:.*$/, '') + bono;
+  for (const rol of Object.keys(ag)) if (ag[rol]?.tarea) ag[rol].tarea = ag[rol].tarea.replace(/ ORDEN DE JULES:.*?(?= BONO:|$)/, '').replace(/ BONO:.*$/, '') + (orden ? ` ORDEN DE JULES (nivel ${orden.nivel}/5): ${orden.orden}` : '') + bono;
 };
 
 /**
