@@ -1,0 +1,68 @@
+name: Produccion
+
+# Después de cada corrida de la Oficina: toma el guion aprobado, graba la voz, renderiza el video y (si hay claves) lo sube como privado a YouTube.
+on:
+  workflow_run:
+    workflows: ["Oficina"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: produccion
+  cancel-in-progress: false
+
+jobs:
+  producir:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Dependencias del sistema (Chrome de Remotion y ffmpeg)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg libnss3 libdbus-1-3 libatk1.0-0 libasound2t64 libxrandr2 libxkbcommon-dev libxfixes3 libxcomposite1 libxdamage1 libgbm-dev libcups2 libcairo2 libpango-1.0-0 libatk-bridge2.0-0
+      - run: npm install --no-audit --no-fund
+      - name: Voz (msedge-tts solo para este flujo)
+        run: npm install --no-save --no-audit --no-fund msedge-tts@2.1.1
+      - name: Producir el video
+        id: producir
+        run: node agentes/producir.mjs
+      - name: Guardar el avance en el repositorio
+        if: always()
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add oficina-salida guion/serie || true
+          git diff --cached --quiet || git commit -m "Produccion: avance automatico"
+          for i in 1 2 3 4; do
+            git pull --rebase origin main && git push && break
+            echo "No pude guardar (intento $i); reintento en 5 s"
+            sleep 5
+          done
+      - uses: actions/upload-artifact@v4
+        if: ${{ steps.producir.outputs.id != '' }}
+        with:
+          name: video-${{ steps.producir.outputs.id }}
+          path: out/serie/*.mp4
+          retention-days: 14
+      - name: Subir a YouTube como privado (solo si hay claves; sin probar)
+        if: ${{ steps.producir.outputs.id != '' }}
+        continue-on-error: true
+        env:
+          ID: ${{ steps.producir.outputs.id }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: |
+          node agentes/subir.mjs
+          git add oficina-salida || true
+          git diff --cached --quiet || git commit -m "Publicador: resultado de la subida"
+          git pull --rebase origin main && git push || true

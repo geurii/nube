@@ -24,6 +24,12 @@ let slug = 'sin-tema';
 const ESTADO = path.join(SALIDA, 'estado.json');
 const HISTORIAL = path.join(SALIDA, 'historial.json');
 const leerJson = (ruta, porDefecto) => { try { return JSON.parse(fs.readFileSync(ruta, 'utf8')); } catch { return porDefecto; } };
+/** Próximo ciclo automático (02:00 y 14:00 UTC): cuánto falta, para que la jefa meta presión con plazos reales. */
+const horasParaProximoCiclo = () => {
+  const ahora = new Date();
+  const candidatos = [2, 14].flatMap((h) => [0, 1].map((d) => { const t = new Date(Date.UTC(ahora.getUTCFullYear(), ahora.getUTCMonth(), ahora.getUTCDate() + d, h)); return t; })).filter((t) => t > ahora).sort((a, b) => a - b);
+  return Math.max(1, Math.round((candidatos[0] - ahora) / 3600000));
+};
 const registrar = (resultado, detalle, intentos, extra = {}) => {
   const e = leerJson(ESTADO, {agentes: {}, historial: [], totales: {aprobados: 0, rechazados: 0, errores: 0}});
   e.totales = {aprobados: 0, rechazados: 0, errores: 0, ...(e.totales ?? {})};
@@ -46,6 +52,21 @@ const registrar = (resultado, detalle, intentos, extra = {}) => {
   } else {
     ag['Directora de contenido'] = {estado: 'esperando_decision', actividad: 'pensando', tarea: `La oficina falló en su último ciclo: ${detalle}`};
   }
+  // Jules, la jefa: exigente, directa y con números reales. Nunca esconde un resultado malo.
+  const h = horasParaProximoCiclo();
+  const jefa = (rol, frase) => { if (ag[rol]) ag[rol].tarea = `${ag[rol].tarea} JEFA: ${frase}`; };
+  if (resultado === 'aprobado') {
+    jefa('Guionista', intentos > 1 ? `Necesitaste ${intentos} intentos. Mañana, a la primera.` : 'A la primera. Mantenlo.');
+    jefa('Editor de guion', extra.puntaje !== undefined && extra.puntaje < 7 ? `Un ${extra.puntaje}/10 no alcanza. Quiero ganchos que frenen el dedo.` : 'Sigue siendo implacable.');
+    jefa('Verificador de datos', 'Que no se te cuele ni un dato sin fuente.');
+    jefa('Directora de contenido', `Faltan ${h} h para el próximo ciclo. Sin excusas.`);
+  } else if (resultado === 'rechazado') {
+    jefa('Guionista', `${intentos} intentos y nada aprobado. Esto es inaceptable. Estudien la fuente antes de escribir.`);
+    jefa('Directora de contenido', `Un guion rechazado no se publica. Tienen ${h} h para entregar algo que pase.`);
+  } else {
+    jefa('Directora de contenido', `Falló el ciclo. Quiero la causa y el arreglo antes de las próximas ${h} h.`);
+  }
+  e.jefa = {mensaje: ag['Directora de contenido']?.tarea ?? '', horasParaProximoCiclo: h};
   e.agentes = ag;
   e.actualizado = new Date().toISOString();
   fs.writeFileSync(ESTADO, JSON.stringify(e, null, 2));
@@ -185,14 +206,14 @@ const FORMATO_ESCENAS = 'Formato JSON de escenas: [{"tipo": "hook|historia|revel
 
 const guionista = (material, problemas) => [
   {role: 'system', content: `Eres el/la Guionista de un canal de YouTube de misterio y datos curiosos. Tienes maestría en narración de documental, retención de audiencia y rigor periodístico. ${NORMAS}\nResponde SOLO con JSON.`},
-  {role: 'user', content: `Escribe un guion de ${FORMATO === 'largo' ? 'video largo' : 'Short vertical de unos 55 segundos'} de unas ${PALABRAS} palabras sobre "${TEMA}". ${REPARTO}\n\nMATERIAL (única fuente permitida):\n${material}\n\n${problemas?.length ? `El Verificador o el Editor rechazaron la versión anterior. Corrige exactamente esto:\n${problemas.map((p) => `- "${p.frase}": ${p.motivo}`).join('\n')}\n\n` : ''}Formato JSON: {"titulo": "...(máx. 90 caracteres, con un emoji)", "descripcion": "...(2 frases)", "escenas": [...]}. ${FORMATO_ESCENAS}`},
+  {role: 'user', content: `Escribe un guion de ${FORMATO === 'largo' ? 'video largo' : 'Short vertical de unos 55 segundos'} de unas ${PALABRAS} palabras sobre "${TEMA}". ${REPARTO}\n\nMATERIAL (única fuente permitida):\n${material}\n\n${problemas?.length ? `El Verificador o el Editor rechazaron la versión anterior. Corrige exactamente esto:\n${problemas.map((p) => `- "${p.frase}": ${p.motivo}`).join('\n')}\n\n` : ''}Formato JSON: {"titulo": "...(máx. 90 caracteres, con un emoji)", "descripcion": "...(2 frases)", "hashtags": ["#cinco", "#especificos", "#del", "#tema", "#sinviral"], "escenas": [...]}. Los hashtags son 5, específicos del tema; nunca #viral ni #fyp. ${FORMATO_ESCENAS}`},
 ];
 const editor = (titulo, escenas) => [
   {role: 'system', content: `Eres el/la Editor/a crítico/a de guiones de un canal de YouTube. Eres implacable: tu trabajo es encontrar lo que haría que alguien deslice el video y arreglarlo. Evalúas gancho (¿se entiende en un segundo?), ritmo (frases cortas, nada de relleno), claridad para gente normal y fuerza del cierre. Reglas duras: NO agregues datos nuevos ni cifras; solo recorta, reordena y mejora la redacción de lo que ya está. Mantén "Sabías que" al inicio, la frase final exacta "${CTA}" y la revelación entre el 65 % y el 75 %. Cada escena debe poder mostrarse con un cambio de imagen cada 3 segundos: frases de máximo 18 palabras. Responde SOLO con JSON.`},
   {role: 'user', content: `TÍTULO: ${titulo}\nGUION:\n${JSON.stringify(escenas)}\n\nDevuelve: {"puntaje": número del 0 al 10 del guion ORIGINAL, "critica": "máximo 3 frases, directas y duras", "titulo": "título mejorado, máx. 90 caracteres, con un emoji", "escenas": [versión mejorada, mismo formato]}.`},
 ];
 const verificador = (material, escenas) => [
-  {role: 'system', content: `Eres el/la Verificador/a, auditor/a estricto/a de datos, con maestría en verificación de fuentes y lectura crítica. Tu trabajo es rechazar. Si una frase afirma un dato (fecha, cifra, lugar, causa, nombre, relación) que no está literalmente respaldado por el MATERIAL, la marcas. Las opiniones y las frases de enlace no cuentan. Nunca apruebas por cortesía: si no puedes comprobarlo, lo reportas. Responde SOLO con JSON: {"aprobado": true|false, "problemas": [{"frase": "...", "motivo": "..."}]}.`},
+  {role: 'system', content: `Eres el/la Verificador/a, auditor/a estricto/a de datos, con maestría en verificación de fuentes y lectura crítica. Tu trabajo es rechazar. Si una frase afirma un dato (fecha, cifra, lugar, causa, nombre, relación) que no está literalmente respaldado por el MATERIAL, la marcas. Las opiniones y las frases de enlace no cuentan. Nunca apruebas por cortesía: si no puedes comprobarlo, lo reportas. Además, lista en "nombres_de_personas" cualquier nombre propio de una persona real que aparezca en el guion (no cuentes lugares, barcos, libros ni objetos). Responde SOLO con JSON: {"aprobado": true|false, "problemas": [{"frase": "...", "motivo": "..."}], "nombres_de_personas": []}.`},
   {role: 'user', content: `MATERIAL:\n${material}\n\nGUION A REVISAR (frase por frase):\n${escenas.map((e, i) => `${i + 1}. ${e.texto}`).join('\n')}`},
 ];
 
@@ -217,10 +238,26 @@ const CATALOGO = {
 };
 const limpiarParametro = (s) => String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ñ/gi, 'n').toUpperCase().replace(/[^A-Z0-9 .,+%|:'-]/g, '').slice(0, 40).trim();
 const escenografo = (escenas) => [
-  {role: 'system', content: `Eres el/la Escenógrafo/a de un canal de misterio. Para cada escena eliges de 2 a ${FORMATO === 'largo' ? 4 : 3} fondos del CATÁLOGO que muestren visualmente lo que se dice (el espectador debe ver algo distinto cada 3 segundos). Usa solo nombres del catálogo, sin inventar. Si el catálogo no tiene nada que encaje, usa "pixelmisterio". Responde SOLO con JSON.`},
+  {role: 'system', content: `Eres el/la Escenógrafo/a de un canal de misterio. Para cada escena eliges de 2 a ${FORMATO === 'largo' ? 4 : 3} fondos del CATÁLOGO que muestren visualmente lo que se dice (el espectador debe ver algo distinto cada 3 segundos). Usa solo nombres del catálogo, sin inventar. Si el catálogo no tiene nada que encaje EXACTAMENTE con lo que dice la escena, usa "pixelmisterio": un fondo que no encaja es peor que uno neutro. Nunca uses un barco para hablar de nieve ni un banco para hablar de sonidos. Responde SOLO con JSON.`},
   {role: 'user', content: `CATÁLOGO:\n${Object.entries(CATALOGO).map(([k, v]) => `- ${k}: ${v}`).join('\n')}\n\nESCENAS:\n${escenas.map((e, i) => `${i}. [${e.tipo}] ${e.texto}`).join('\n')}\n\nDevuelve: {"fondos": [["pixelmisterio", "pixelcifra:4 MILLONES|DE CLIENTES|oro"], ...]} con una lista por escena, en el mismo orden (${escenas.length} listas). Los textos de los parámetros en MAYÚSCULAS, sin tildes ni ñ.`},
 ];
-const validarFondos = (propuesta, total) => {
+/** Fondos que solo tienen sentido si la escena habla de eso. */
+const SOLO_SI = {
+  pixelbanco: /banco|bóveda|boveda|dinero|dólares|dolares/i,
+  pixeljuicio: /juez|tribunal|condena|juicio|cárcel|carcel|acusa|culpable/i,
+  pixelrascacielos: /empresa|fundador|fundadora|startup|negocio|ciudad/i,
+  pixelfantasmas: /clientes|usuarios|seguidores|personas que no existían/i,
+  pixelbarcoderiva: /barco|buque|velero|navío|navio|bergantín|bergantin|océano|oceano|mar\b/i,
+  pixelcubierta: /barco|buque|velero|navío|navio|bergantín|bergantin|cubierta/i,
+  pixelbodega: /barril|bodega|carga|cargamento/i,
+  pixelpremio: /premio|lista|elegid|trofeo/i,
+  pixelgrafica: /sube|baja|cae|cifra|porcentaje|crec|decre|número|numero/i,
+  pixelavion: /avión|avion|vuelo|aeronave/i,
+  pixelartico: /ártico|artico|hielo|polo|nieve|helad|glaciar|montaña|montana/i,
+  pixelsonar: /sonido|ruido|señal|senal|ondas|submarin|micrófono|microfono|zumbido/i,
+  pixelciudad: /ciudad|calle|edificio/i,
+};
+const validarFondos = (propuesta, total, escenas) => {
   const salida = [];
   for (let i = 0; i < total; i++) {
     const lista = Array.isArray(propuesta?.[i]) ? propuesta[i] : [];
@@ -228,6 +265,7 @@ const validarFondos = (propuesta, total) => {
       .map((f) => String(f))
       .map((f) => { const [id, ...resto] = f.split(':'); return {id: id.trim(), param: limpiarParametro(resto.join(':'))}; })
       .filter((f) => CATALOGO[f.id])
+      .filter((f) => !SOLO_SI[f.id] || SOLO_SI[f.id].test(escenas?.[i]?.texto ?? ''))
       .slice(0, FORMATO === 'largo' ? 4 : 3)
       .map((f) => (f.param ? `${f.id}:${f.param}` : f.id));
     salida.push(buenos.length ? buenos : ['pixelmisterio']);
@@ -266,13 +304,14 @@ try {
   informe.push('## Investigación', ...fuentes.map((f) => `- ${f.idioma}: [${f.titulo}](${f.url})`), '');
   const material = fuentes.map((f) => `### FUENTE (${f.idioma}) ${f.url}\n${f.texto}`).join('\n\n');
 
-  let escenas = [], titulo = TEMA, descripcion = '', problemas = [], aprobado = false, intentos = 0, puntaje = null, critica = '';
+  let escenas = [], titulo = TEMA, descripcion = '', hashtags = [], problemas = [], aprobado = false, intentos = 0, puntaje = null, critica = '';
   for (let intento = 1; intento <= 3 && !aprobado; intento++) {
     intentos = intento;
     const borrador = await pedirJson(modelo, guionista(material, problemas));
     let esc = normalizar(borrador.escenas);
     titulo = borrador.titulo ?? titulo;
     descripcion = borrador.descripcion ?? descripcion;
+    hashtags = (Array.isArray(borrador.hashtags) ? borrador.hashtags : []).map((h) => String(h).replace(/\s+/g, '')).filter((h) => /^#\w+$/u.test(h) && !/^#(viral|fyp)$/i.test(h)).slice(0, 5);
     if (esc.length < 3) { problemas = [{frase: '', motivo: 'El guion salió demasiado corto: escribe al menos 5 escenas.'}]; informe.push(`## Intento ${intento}: RECHAZADO`, '- Guion demasiado corto.', ''); continue; }
     // Editor crítico: si su versión rompe las reglas, se queda la del Guionista
     try {
@@ -285,7 +324,8 @@ try {
     escenas = esc;
     const propios = comprobar(escenas);
     const revision = await pedirJson(modelo, verificador(material, escenas), 1500);
-    problemas = [...propios, ...(revision.problemas ?? [])];
+    const nombres = (revision.nombres_de_personas ?? []).filter((n) => typeof n === 'string' && n.trim());
+    problemas = [...propios, ...(revision.problemas ?? []), ...(nombres.length ? [{frase: nombres.join(', '), motivo: 'El guion nombra a personas reales. Usa su papel ("el líder", "un científico", "el capitán"), aunque el material traiga el nombre.'}] : [])];
     aprobado = problemas.length === 0 && revision.aprobado !== false;
     informe.push(`## Intento ${intento}: ${aprobado ? 'APROBADO' : 'RECHAZADO'}`, critica ? `Editor (${puntaje ?? '?'}/10): ${critica}` : '', ...problemas.map((p) => `- "${p.frase}" → ${p.motivo}`), '');
   }
@@ -295,7 +335,7 @@ try {
 
   let fondos = escenas.map(() => ['pixelmisterio']);
   if (aprobado) {
-    try { fondos = validarFondos((await pedirJson(modelo, escenografo(escenas), FORMATO === 'largo' ? 3000 : 1500)).fondos, escenas.length); }
+    try { fondos = validarFondos((await pedirJson(modelo, escenografo(escenas), FORMATO === 'largo' ? 3000 : 1500)).fondos, escenas.length, escenas); }
     catch (e) { informe.push(`(El Escenógrafo no pudo elegir fondos: ${e.message}. Se usa el fondo general.)`); }
   }
   const palabras = escenas.reduce((s, e) => s + palabrasDe(e), 0);
@@ -305,16 +345,17 @@ try {
     formato: FORMATO,
     ...(FORMATO === 'largo' ? {orientacion: 'horizontal'} : {}),
     plataforma: 'youtube',
+    voz: 'es-DO-EmilioNeural',
     audio: `audio/oficina-${slug}.wav`,
     musica: 'musica/firma-canal.mp3',
     personaje: {esquina: 'arriba-derecha', visible: true},
-    publicacion: {titulo, descripcion: `${descripcion}\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: ${fuentes.map((f) => f.url).join(' · ')}\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do`},
+    publicacion: {titulo, descripcion: `${descripcion}\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: ${fuentes.map((f) => f.url).join(' · ')}\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do${hashtags.length ? `\n\n${hashtags.join(' ')}` : ''}`},
     estado: aprobado ? 'aprobado' : 'rechazado-necesita-revision',
     editor: {puntaje, critica},
     escenas: escenas.map((e, i) => ({...e, fondo: fondos[i]})),
   };
   fs.writeFileSync(path.join(SALIDA, `guion-${slug}.json`), JSON.stringify(guion, null, 2));
-  registrar(aprobado ? 'aprobado' : 'rechazado', aprobado ? `${palabras} palabras, ${escenas.length} escenas.` : (problemas[0]?.motivo ?? 'sin detalle').slice(0, 160), intentos, {editor: puntaje !== null ? `Puntaje: ${puntaje}/10. ${critica}`.slice(0, 200) : ''});
+  registrar(aprobado ? 'aprobado' : 'rechazado', aprobado ? `${palabras} palabras, ${escenas.length} escenas.` : (problemas[0]?.motivo ?? 'sin detalle').slice(0, 160), intentos, {editor: puntaje !== null ? `Puntaje: ${puntaje}/10. ${critica}`.slice(0, 200) : '', puntaje: puntaje ?? undefined});
   fs.writeFileSync(path.join(SALIDA, `informe-${slug}.md`), informe.join('\n'));
   console.log(informe.join('\n'));
   // Rechazar un guion es un resultado normal (queda anotado en estado.json); solo un error real hace fallar el flujo.

@@ -12,7 +12,7 @@
     "titulo": "❄️ El enigma del Paso Dyatlov que nadie explicó",
     "descripcion": "Un enigma que sigue desconcertando a los investigadores. Descubre la teoría más reciente.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Dyatlov_Pass_incident\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do"
   },
-  "estado": "aprobado",
+  "estado": "rechazado-necesita-revision",
   "editor": {
     "puntaje": 5,
     "critica": "El gancho es débil, el ritmo se arrastra y el cierre es demasiado largo."
@@ -74,5 +74,6 @@
         "pixelmisterio"
       ]
     }
-  ]
+  ],
+  "nota": "Nombra a una persona real. Regla del canal: sin nombres reales."
 }
