@@ -1,20 +1,26 @@
 {
-  "fecha": "2026-11-21T18:04:00.283Z",
+  "fecha": "2026-11-21T23:33:47.274Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 3276,
+  "total": 2508,
   "ganadasDesdeElUltimoCiclo": 0,
   "videos": [
+    {
+      "id": "5BIAOJmE-dk",
+      "titulo": "🔊 El enigma del Bloop: el rugido del hielo",
+      "publicado": "2026-11-21T18:10:09+00:00",
+      "vistas": 14
+    },
     {
       "id": "Nd2x5UMBiLM",
       "titulo": "Sabías que la acusaron de fraude un año después de elegirla 🚨",
       "publicado": "2026-11-21T16:00:33+00:00",
-      "vistas": 0
+      "vistas": 9
     },
     {
       "id": "yp4bUZPqnS4",
       "titulo": "Sabías que dos jóvenes genios de una lista famosa suman 40 años de cárcel ⚖️",
       "publicado": "2026-11-21T04:00:38+00:00",
-      "vistas": 14
+      "vistas": 20
     },
     {
       "id": "YXozgtk50pI",
@@ -26,19 +32,19 @@
       "id": "Md9Rrt9EiTM",
       "titulo": "Sabías que un banco pagó 175 millones por clientes que no existían 👻🏦",
       "publicado": "2026-11-21T01:48:24+00:00",
-      "vistas": 26
+      "vistas": 51
     },
     {
       "id": "ujvVWAyrSUg",
       "titulo": "Sabías que tres hombres caminaron en plena noche polar por 3 huevos de pingüino 🥚 (Parte 3/3)",
       "publicado": "2026-11-20T17:30:34+00:00",
-      "vistas": 108
+      "vistas": 308
     },
     {
       "id": "KURWolBJszo",
       "titulo": "Sabías que mataron 2 millones de pingüinos... y no para comérselos 😳 (Parte 2/3)",
       "publicado": "2026-11-20T16:30:10+00:00",
-      "vistas": 63
+      "vistas": 77
     },
     {
       "id": "Wj-zpd2iorA",
@@ -87,12 +93,6 @@
       "titulo": "La CIA saltó sobre una base soviética abandonada 😱 (Parte 1/5)",
       "publicado": "2026-11-14T21:03:15+00:00",
       "vistas": 39
-    },
-    {
-      "id": "AbkKfz6Rucc",
-      "titulo": "El vestido que cambió 3 veces en 17 segundos y nadie supo cómo 😱 #Shorts #virales",
-      "publicado": "2026-11-14T11:55:03+00:00",
-      "vistas": 1036
     }
   ],
   "historia": [
@@ -135,6 +135,10 @@
     {
       "fecha": "2026-11-21T18:04:00.283Z",
       "total": 3276
+    },
+    {
+      "fecha": "2026-11-21T23:33:47.274Z",
+      "total": 2508
     }
   ]
 }
