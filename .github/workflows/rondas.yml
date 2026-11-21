@@ -37,10 +37,10 @@ jobs:
         run: |
           canales=$(node agentes/canales-activos.mjs)
           for c in $canales; do
-            CANAL=$c node agentes/vistas.mjs || true
-            CANAL=$c node agentes/ayuda.mjs || true
-            CANAL=$c node agentes/funciones.mjs || true
-            CANAL=$c node agentes/conciencia.mjs || true
+            CANAL=$c timeout 240 node agentes/vistas.mjs || true
+            CANAL=$c timeout 240 node agentes/ayuda.mjs || true
+            CANAL=$c timeout 240 node agentes/funciones.mjs || true
+            CANAL=$c timeout 240 node agentes/conciencia.mjs || true
           done
       - name: Guardar el resultado
         if: always()
