@@ -3,14 +3,17 @@ name: Oficina
 # Departamentos de guion: investiga en Wikipedia, escribe con Groq y verifica cada dato antes de aprobar.
 # Resultado en la carpeta oficina-salida/ (guion + informe).
 on:
+  schedule:
+    - cron: '0 2,14 * * *'   # un Short nuevo cada 12 horas
+    - cron: '0 12 */2 * *'   # un video largo un dia si y otro no
   workflow_dispatch:
     inputs:
       tema:
-        description: 'Titulo exacto del articulo de Wikipedia (ej: Mary Celeste)'
-        required: true
+        description: 'Opcional: titulo exacto de Wikipedia. Vacio = la oficina elige sola'
+        required: false
       formato:
         description: 'short o largo'
-        required: true
+        required: false
         default: 'short'
       palabras:
         description: 'Solo para largo: palabras aproximadas (ej: 900)'
@@ -32,7 +35,7 @@ jobs:
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           TEMA: ${{ inputs.tema }}
-          FORMATO: ${{ inputs.formato }}
+          FORMATO: ${{ inputs.formato || (github.event.schedule == '0 12 */2 * *' && 'largo' || 'short') }}
           PALABRAS: ${{ inputs.palabras }}
         run: node agentes/oficina.mjs
       - name: Guardar el resultado en el repositorio
@@ -41,5 +44,5 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@users.noreply.github.com"
           git add oficina-salida || true
-          git diff --cached --quiet || git commit -m "Oficina: resultado de ${{ inputs.tema }}"
+          git diff --cached --quiet || git commit -m "Oficina: resultado automatico"
           git push || true

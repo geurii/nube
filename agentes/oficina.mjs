@@ -6,10 +6,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const KEY = process.env.GROQ_API_KEY;
-const TEMA = (process.env.TEMA ?? '').trim();
+let TEMA = (process.env.TEMA ?? '').trim();
 const FORMATO = process.env.FORMATO === 'largo' ? 'largo' : 'short';
 const IDIOMAS = (process.env.IDIOMAS ?? 'es,en').split(',').map((s) => s.trim()).filter(Boolean);
-const PALABRAS = FORMATO === 'largo' ? Number(process.env.PALABRAS ?? 900) : 110;
+const PALABRAS = FORMATO === 'largo' ? Number(process.env.PALABRAS) || 900 : 110;
 const CTA = 'Comparte este video con un amigo que haría lo mismo, sígueme.';
 const UA = 'OficinaVideos/1.0 (proyecto educativo)';
 const SALIDA = path.resolve('oficina-salida');
@@ -17,8 +17,6 @@ fs.mkdirSync(SALIDA, {recursive: true});
 
 const fallar = (m) => { console.error('ERROR:', m); process.exit(1); };
 if (!KEY) fallar('Falta el secreto GROQ_API_KEY.');
-if (!TEMA) fallar('Falta TEMA.');
-const slug = TEMA.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 /* ---------- Investigación: Wikipedia (gratis, con fuente) ---------- */
 const investigar = async () => {
@@ -30,13 +28,14 @@ const investigar = async () => {
     const j = await r.json();
     const pagina = Object.values(j.query?.pages ?? {})[0];
     if (!pagina || pagina.missing !== undefined || !pagina.extract) continue;
-    fuentes.push({idioma: lang, titulo: pagina.title, url: pagina.fullurl, texto: pagina.extract.slice(0, 9000)});
+    fuentes.push({idioma: lang, titulo: pagina.title, url: pagina.fullurl, texto: pagina.extract.slice(0, FORMATO === 'largo' ? 3500 : 4500)});
   }
   return fuentes;
 };
 
 /* ---------- Groq ---------- */
-const groq = async (modelo, mensajes) => {
+const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
+const groq = async (modelo, mensajes, maxTokens = FORMATO === 'largo' ? 4500 : 2500, intento = 1) => {
   const r = await fetch('https://api.groq.com/openai/v1/chat/completions', {
     method: 'POST',
     headers: {Authorization: `Bearer ${KEY}`, 'Content-Type': 'application/json'},
@@ -44,11 +43,18 @@ const groq = async (modelo, mensajes) => {
       model: modelo,
       messages: mensajes,
       temperature: 0.4,
-      max_tokens: 6000,
+      max_tokens: maxTokens,
       // los modelos "gpt-oss" razonan antes de responder: poco razonamiento = más espacio para el guion
       ...(modelo.includes('gpt-oss') ? {reasoning_effort: 'low'} : {}),
     }),
   });
+  if (r.status === 429 && intento <= 5) {
+    const cuerpo = await r.text();
+    const espera = Number(/try again in ([d.]+)s/i.exec(cuerpo)?.[1] ?? 20);
+    console.log(`Groq pide esperar ${espera} s (límite por minuto del nivel gratis). Reintento ${intento}/5.`);
+    await dormir((espera + 2) * 1000);
+    return groq(modelo, mensajes, maxTokens, intento + 1);
+  }
   if (!r.ok) throw new Error(`Groq ${r.status}: ${(await r.text()).slice(0, 300)}`);
   const j = await r.json();
   const eleccion = j.choices?.[0];
@@ -69,6 +75,31 @@ const elegirModelo = async () => {
   const modelo = preferidos.find((p) => ids.includes(p)) ?? ids.find((i) => !/whisper|guard|tts|orpheus|playai/i.test(i));
   if (!modelo) throw new Error('No encontré un modelo de texto disponible en Groq. Modelos: ' + ids.join(', '));
   return modelo;
+};
+
+
+/* ---------- Dirección: elige el tema sola (sin personas, sin repetir) ---------- */
+const HISTORIAL = path.join(SALIDA, 'historial.json');
+const leerHistorial = () => { try { return JSON.parse(fs.readFileSync(HISTORIAL, 'utf8')); } catch { return []; } };
+const existeEnWikipedia = async (titulo) => {
+  const url = `https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&exintro=0&redirects=1&format=json&titles=${encodeURIComponent(titulo)}`;
+  const r = await fetch(url, {headers: {'User-Agent': UA}});
+  if (!r.ok) return false;
+  const pagina = Object.values((await r.json()).query?.pages ?? {})[0];
+  return !!pagina && pagina.missing === undefined && (pagina.extract ?? '').length > 3000;
+};
+const elegirTema = async (modelo) => {
+  const hechos = leerHistorial();
+  const respuesta = await groq(modelo, [
+    {role: 'system', content: 'Eres el/la Director/a de contenido de un canal de misterio y datos curiosos en YouTube. Respondes SOLO con JSON.'},
+    {role: 'user', content: `Dame 20 títulos EXACTOS de artículos de Wikipedia en inglés sobre misterios sin resolver, fenómenos raros, objetos históricos enigmáticos o casos curiosos con mucha documentación. Reglas: nada sobre personas (ni biografías), nada de política ni de violencia gráfica, nada ya hecho. Ya hechos: ${hechos.join(', ') || 'ninguno'}. Formato: {"temas": ["Titulo 1", "Titulo 2"]}`},
+  ]);
+  const lista = json(respuesta).temas ?? [];
+  for (const t of lista) {
+    if (hechos.includes(t)) continue;
+    if (await existeEnWikipedia(t)) return t;
+  }
+  throw new Error('No encontré un tema nuevo con material suficiente en Wikipedia.');
 };
 
 /* ---------- Normas de la jefa (las cumplen todos) ---------- */
@@ -111,8 +142,12 @@ const comprobar = (escenas) => {
 };
 
 /* ---------- Flujo ---------- */
+let slug = 'sin-tema';
 const informe = [`# Informe de la oficina · ${TEMA} (${FORMATO})`, ''];
 try {
+  const modeloTema = await elegirModelo();
+  if (!TEMA) { TEMA = await elegirTema(modeloTema); informe[0] = `# Informe de la oficina · ${TEMA} (${FORMATO})`; informe.push('Tema elegido por la oficina.', ''); }
+  slug = TEMA.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   const fuentes = await investigar();
   if (!fuentes.length) throw new Error(`No encontré el tema "${TEMA}" en Wikipedia (${IDIOMAS.join(', ')}). Pruébalo con el título exacto del artículo.`);
   informe.push('## Investigación', ...fuentes.map((f) => `- ${f.idioma}: [${f.titulo}](${f.url})`), '');
@@ -128,7 +163,7 @@ try {
     descripcion = borrador.descripcion ?? '';
     if (escenas.length < 3) throw new Error('El guion salió demasiado corto.');
     const propios = comprobar(escenas);
-    const revision = json(await groq(modelo, verificador(material, escenas)));
+    const revision = json(await groq(modelo, verificador(material, escenas), 1500));
     problemas = [...propios, ...(revision.problemas ?? [])];
     aprobado = problemas.length === 0 && revision.aprobado !== false;
     informe.push(`## Intento ${intento}: ${aprobado ? 'APROBADO' : 'RECHAZADO'}`, ...problemas.map((p) => `- "${p.frase}" → ${p.motivo}`), '');
