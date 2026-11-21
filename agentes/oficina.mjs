@@ -394,6 +394,7 @@ try {
     plataforma: 'youtube',
     canal: CANAL_ID,
     voz: CONFIG.voz ?? 'es-DO-EmilioNeural',
+    vozGemini: CONFIG.vozGemini ?? 'Sadaltager',
     audio: `audio/${CANAL_ID}-${slug}.wav`,
     musica: CONFIG.musica ?? null,
     personaje: {esquina: 'arriba-derecha', visible: true},

@@ -135,15 +135,109 @@ const sintetizar = async (texto, destino, intento = 1) => {
   }
 };
 
-console.log(`Voz: ${VOZ} · velocidad ${VELOCIDAD}% · tono ${TONO} Hz`);
-const escenas = [];
-for (let i = 0; i < guion.escenas.length; i++) {
-  const e = guion.escenas[i];
-  process.stdout.write(`  escena ${i + 1}/${guion.escenas.length}... `);
-  const r = await sintetizar(e.texto, path.join(tmp, `e${i}.mp3`));
-  const dur = duracionDe(r.mp3);
-  escenas.push({...r, dur, escena: i, tipo: e.tipo, texto: e.texto});
-  console.log(`${dur.toFixed(1)} s, ${r.palabras.length} palabras`);
+// --- Gemini TTS (voz más humana; capa gratis: 3 peticiones por minuto) -----------------------------
+// Se usa si hay GEMINI_API_KEY. Si algo falla, TODO el video se vuelve a hacer con la voz de Edge (no se mezclan voces).
+// Los tiempos de cada palabra salen de Whisper (Groq, gratis) o, si no se puede, se reparten por tamaño de palabra.
+const GEMINI_KEY = process.env.GEMINI_API_KEY;
+const GROQ_KEY = process.env.GROQ_API_KEY;
+const GEMINI_VOZ = guion.vozGemini || 'Sadaltager';
+const ESTILO_VOZ = guion.estiloVoz || 'narrador de documental en español, voz masculina grave, cálida y misteriosa, ritmo lento con pausas';
+const USAR_GEMINI = Boolean(GEMINI_KEY) && !ES_NINOS && process.env.VOZ_MOTOR !== 'edge' && guion.motorVoz !== 'edge';
+const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
+let ultimaGemini = 0;
+const sintetizarGemini = async (texto, destino) => {
+  for (let intento = 1; intento <= 5; intento++) {
+    const espera = ultimaGemini + 21000 - Date.now();
+    if (espera > 0) await dormir(espera);
+    ultimaGemini = Date.now();
+    const resp = await fetch('https://generativelanguage.googleapis.com/v1beta/interactions', {
+      method: 'POST',
+      headers: {'x-goog-api-key': GEMINI_KEY, 'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        model: 'gemini-3.8-flash-tts',
+        input: [{type: 'user_input', content: [{type: 'text', text: texto, annotations: [{type: 'speech_metadata', style: ESTILO_VOZ}]}]}],
+        response_format: {type: 'audio'},
+        generation_config: {speech_config: [{voice: GEMINI_VOZ}]},
+      }),
+      signal: AbortSignal.timeout(120000),
+    });
+    const cuerpo = await resp.text();
+    if (resp.status === 429) {
+      const m = /retry in (\d+)/i.exec(cuerpo);
+      await dormir(((m ? Number(m[1]) : 20) + 2) * 1000);
+      continue;
+    }
+    if (!resp.ok) throw new Error('Gemini ' + resp.status + ': ' + cuerpo.replaceAll(GEMINI_KEY, '***').slice(0, 200));
+    const audios = (JSON.parse(cuerpo).steps ?? []).filter((x) => x.type === 'model_output').flatMap((x) => x.content ?? []).filter((x) => x.type === 'audio');
+    const dato = audios.at(-1)?.data;
+    if (!dato) throw new Error('Gemini no devolvió audio.');
+    const buf = Buffer.from(dato, 'base64');
+    if (buf.length < 2000 || buf.subarray(0, 4).toString() !== 'RIFF') throw new Error('Gemini devolvió un audio inválido.');
+    fs.writeFileSync(destino, buf);
+    return destino;
+  }
+  throw new Error('Gemini sigue limitando las peticiones.');
+};
+/** Tiempo de cada palabra del guion: Whisper si se puede; si no, reparto por tamaño. Siempre {texto, inicio, fin} en segundos. */
+const alinearPalabras = async (texto, wav, dur) => {
+  const guionPal = texto.split(/\s+/).filter(Boolean);
+  let marcas = null;
+  if (GROQ_KEY) {
+    try {
+      const form = new FormData();
+      form.append('file', new Blob([fs.readFileSync(wav)], {type: 'audio/wav'}), 'escena.wav');
+      form.append('model', 'whisper-large-v3-turbo');
+      form.append('response_format', 'verbose_json');
+      form.append('timestamp_granularities[]', 'word');
+      form.append('language', 'es');
+      const r = await fetch('https://api.groq.com/openai/v1/audio/transcriptions', {method: 'POST', headers: {Authorization: 'Bearer ' + GROQ_KEY}, body: form, signal: AbortSignal.timeout(90000)});
+      if (r.ok) {
+        const w = (await r.json()).words ?? [];
+        if (w.length >= Math.max(2, Math.floor(guionPal.length / 2))) marcas = w;
+      }
+    } catch { /* se reparte por tamaño */ }
+  }
+  const salida = [];
+  if (marcas) {
+    const inicios = guionPal.map((_, i) => marcas[Math.min(marcas.length - 1, Math.floor((i * marcas.length) / guionPal.length))].start);
+    const finTotal = Math.min(dur, marcas[marcas.length - 1].end);
+    guionPal.forEach((p, i) => salida.push({texto: p, inicio: inicios[i], fin: i + 1 < guionPal.length ? Math.max(inicios[i] + 0.05, inicios[i + 1]) : Math.max(inicios[i] + 0.1, finTotal)}));
+    return salida;
+  }
+  const pesos = guionPal.map((p) => p.length + (/[.,;:!?…]$/.test(p) ? 3 : 0) + 1);
+  const total = pesos.reduce((a, b) => a + b, 0);
+  let t = 0;
+  guionPal.forEach((p, i) => { const d = (pesos[i] / total) * dur; salida.push({texto: p, inicio: t, fin: t + d}); t += d; });
+  return salida;
+};
+
+const hacerEscenas = async (motor) => {
+  const lista = [];
+  for (let i = 0; i < guion.escenas.length; i++) {
+    const e = guion.escenas[i];
+    process.stdout.write(`  escena ${i + 1}/${guion.escenas.length} (${motor})... `);
+    let r;
+    if (motor === 'gemini') {
+      const wav = await sintetizarGemini(e.texto, path.join(tmp, `e${i}.wav`));
+      const d = duracionDe(wav);
+      r = {mp3: wav, palabras: await alinearPalabras(e.texto, wav, d)};
+    } else {
+      r = await sintetizar(e.texto, path.join(tmp, `e${i}.mp3`));
+    }
+    const dur = duracionDe(r.mp3);
+    lista.push({...r, dur, escena: i, tipo: e.tipo, texto: e.texto});
+    console.log(`${dur.toFixed(1)} s, ${r.palabras.length} palabras`);
+  }
+  return lista;
+};
+
+console.log(USAR_GEMINI ? `Voz: Gemini ${GEMINI_VOZ} (respaldo: ${VOZ})` : `Voz: ${VOZ} · velocidad ${VELOCIDAD}% · tono ${TONO} Hz`);
+let escenas;
+if (USAR_GEMINI) {
+  try { escenas = await hacerEscenas('gemini'); }
+  catch (e) { console.warn('\nGemini falló (' + e.message + '). Se hace TODO el video con la voz de Edge.'); escenas = await hacerEscenas('edge'); }
+} else {
+  escenas = await hacerEscenas('edge');
 }
 
 // --- unir con pausas ---------------------------------------------------------------
