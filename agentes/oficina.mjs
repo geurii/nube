@@ -194,12 +194,25 @@ const extraerJson = (texto) => {
   return JSON.parse(texto.slice(a, b + 1));
 };
 /** Pide JSON; si viene roto, lo vuelve a pedir una vez. */
+/** Arregla los fallos típicos de JSON de los modelos: comas de más o de menos, comillas curvas, texto antes o después. */
+const repararJson = (texto) => {
+  let t = String(texto).replace(/```json|```/g, '').replace(/[\u201C\u201D]/g, '"').replace(/[\u2018\u2019]/g, "'");
+  const a = t.indexOf('{'), b = t.lastIndexOf('}');
+  if (a < 0 || b <= a) throw new Error('sin JSON');
+  t = t.slice(a, b + 1);
+  const intentos = [t, t.replace(/,\s*([}\]])/g, '$1'), t.replace(/,\s*([}\]])/g, '$1').replace(/"\s*\n\s*"/g, '",\n"').replace(/}\s*\n\s*{/g, '},\n{').replace(/]\s*\n\s*"/g, '],\n"')];
+  for (const x of intentos) { try { return JSON.parse(x); } catch { /* siguiente */ } }
+  throw new Error('JSON no válido');
+};
 const pedirJson = async (modelo, mensajes, maxTokens) => {
-  const texto = await groq(modelo, mensajes, maxTokens);
-  try { return extraerJson(texto); } catch {
-    const otra = await groq(modelo, [...mensajes, {role: 'assistant', content: texto.slice(0, 1500)}, {role: 'user', content: 'Tu respuesta no era JSON válido. Devuelve SOLO el JSON, sin texto antes ni después.'}], maxTokens);
-    return extraerJson(otra);
+  let texto = await groq(modelo, mensajes, maxTokens);
+  for (let k = 1; k <= 3; k++) {
+    try { return extraerJson(texto); } catch { /* se intenta reparar */ }
+    try { return repararJson(texto); } catch { /* se pide de nuevo */ }
+    if (k === 3) break;
+    texto = await groq(modelo, [...mensajes, {role: 'assistant', content: texto.slice(0, 1200)}, {role: 'user', content: 'Tu respuesta no era JSON válido (revisa comas y corchetes). Devuelve SOLO el JSON completo y bien formado, sin texto antes ni después.'}], maxTokens);
   }
+  throw new Error('El modelo no devolvió un JSON válido tras 3 intentos.');
 };
 const elegirModelo = async () => {
   for (let i = 1; i <= 4; i++) {
