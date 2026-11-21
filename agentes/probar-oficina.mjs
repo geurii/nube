@@ -40,6 +40,7 @@ globalThis.fetch = async (url, opciones) => {
     const escenas = hacer(cta);
     let respuesta;
     if (sistema.includes('Director/a de contenido')) respuesta = {temas: ['Bloop']};
+    else if (sistema.includes('Mesa de publicación')) respuesta = {titulos: ['El sonido que asustó al océano 🌊', 'Un sonido de 99999 kilómetros 😱'], elegido: 'El sonido que asustó al océano 🌊', descripcion: 'Bloop: el sonido submarino más fuerte jamás registrado y su explicación.', hashtags: ['#viral', '#bloop', '#oceano', '#noaa', '#misterio', '#sonar'], comentario_fijado: '¿Qué crees que lo causó?', miniatura: {texto: 'EL BLOOP', idea: 'Una onda azul en el océano'}};
     else if (sistema.includes('Guionista')) respuesta = {titulo: 'El sonido del océano que parecía un monstruo 🌊', descripcion: 'Un sonido enorme y su explicación.', hashtags: ['#bloop', '#misterio', '#oceano', '#noaa', '#viral'], escenas};
     else if (sistema.includes('Editor/a crítico')) respuesta = {puntaje: 7, critica: 'Gancho claro; recorta la segunda frase.', titulo: 'El sonido del océano que parecía un monstruo 🌊', escenas};
     else if (sistema.includes('Verificador/a')) respuesta = {aprobado: true, problemas: [], nombres_de_personas: ['Nadie Inventado']};
@@ -69,6 +70,9 @@ for (const canal of ['lqns', 'demo']) {
   if (!guion.audio.startsWith(`audio/${canal}-`)) fallos.push(`${canal}: el audio no lleva el nombre del canal (${guion.audio})`);
   if (guion.escenas.some((e) => e.fondo.includes('pixelinventado'))) fallos.push(`${canal}: dejó pasar un fondo inventado`);
   if (!guion.escenas[0].fondo[1]?.startsWith('pixelcifra:1997|')) fallos.push(`${canal}: el parámetro del fondo salió mal`);
+  if (!guion.publicacion.comentarioFijado) fallos.push(canal + ': la Mesa de publicación no dejó comentario fijado');
+  if (guion.publicacion.titulosAlternativos?.some((t) => t.includes('99999'))) fallos.push(canal + ': dejó pasar una cifra inventada en un título');
+  if (Object.keys(JSON.parse(fs.readFileSync(path.join('oficina-salida', canal, 'estado.json'), 'utf8')).agentes).length < 25) fallos.push(canal + ': faltan puestos en el estado');
   if (guion.publicacion.descripcion.includes('#viral')) fallos.push(`${canal}: dejó pasar #viral`);
   if (estado.totales.aprobados !== 1) fallos.push(`${canal}: el estado no contó el guion aprobado`);
   if (!estado.agentes['Editor de guion']) fallos.push(`${canal}: el Editor no aparece en el estado`);

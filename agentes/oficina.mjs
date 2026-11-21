@@ -5,6 +5,7 @@
 // Variables: GROQ_API_KEY (secreto), TEMA (opcional: título en Wikipedia), FORMATO (short|largo), IDIOMAS (por defecto "es,en"), PALABRAS (largo).
 import fs from 'node:fs';
 import path from 'node:path';
+import {puestosDeLaOficina, mesaDePublicacion} from './puestos.mjs';
 
 const KEY = process.env.GROQ_API_KEY;
 const CANAL_ID = (process.env.CANAL || 'lqns').trim();
@@ -42,6 +43,8 @@ const notificar = (tipo, titulo, texto) => {
   fs.mkdirSync(path.dirname(NOTIFICACIONES), {recursive: true});
   fs.writeFileSync(NOTIFICACIONES, JSON.stringify(lista.slice(0, 80), null, 2));
 };
+/** Lo que la Mesa de publicación y los auditores dejaron en este ciclo (para el estado de los 30 puestos). */
+const CTX = {mesa: null, fuentes: 0, escenas: 0, sinImagen: 0, problemas: [], puntaje: null};
 const registrar = (resultado, detalle, intentos, extra = {}) => {
   const e = leerJson(ESTADO, {agentes: {}, historial: [], totales: {aprobados: 0, rechazados: 0, errores: 0}});
   e.totales = {aprobados: 0, rechazados: 0, errores: 0, ...(e.totales ?? {})};
@@ -64,6 +67,7 @@ const registrar = (resultado, detalle, intentos, extra = {}) => {
   } else {
     ag['Directora de contenido'] = {estado: 'esperando_decision', actividad: 'pensando', tarea: `La oficina falló en su último ciclo: ${detalle}`};
   }
+  puestosDeLaOficina(ag, {resultado, tema: TEMA, ctx: CTX, historial: leerJson(HISTORIAL, []), formulas: leerJson(path.join(SALIDA, 'formulas.json'), null), vigilados: (CONFIG.vigilar ?? []).length});
   // Jules, la jefa: exigente, directa y con números reales. Nunca esconde un resultado malo.
   const h = horasParaProximoCiclo();
   const jefa = (rol, frase) => { if (ag[rol]) ag[rol].tarea = `${ag[rol].tarea} JEFA: ${frase}`; };
@@ -367,7 +371,16 @@ try {
     try { fondos = validarFondos((await pedirJson(modelo, escenografo(escenas), FORMATO === 'largo' ? 3000 : 1500)).fondos, escenas.length, escenas); }
     catch (e) { informe.push(`(El Escenógrafo no pudo elegir fondos: ${e.message}. Se usa el fondo general.)`); }
   }
+  CTX.escenas = escenas.length; CTX.fuentes = fuentes.length; CTX.problemas = problemas; CTX.puntaje = puntaje;
+  if (aprobado) {
+    try {
+      const mesa = await mesaDePublicacion({pedirJson, modelo, textoFinal: escenas.map((e) => e.texto).join(' '), titulo});
+      if (mesa) { CTX.mesa = mesa; titulo = mesa.titulo; descripcion = mesa.descripcion; hashtags = mesa.hashtags; }
+      else informe.push('(La Mesa de publicación no entregó algo válido: se usa lo del Guionista.)');
+    } catch (e) { informe.push('(La Mesa de publicación falló: ' + e.message + '. Se usa lo del Guionista.)'); }
+  }
   const sinImagen = aprobado ? fondos.filter((f) => f.every((x) => x === 'pixelmisterio')).length : 0;
+  CTX.sinImagen = sinImagen;
   if (sinImagen >= Math.ceil(escenas.length / 2)) {
     notificar('permiso', `Necesito tu OK: faltan imágenes para "${TEMA}"`, `${sinImagen} de ${escenas.length} escenas no tienen una imagen que encaje y usarían un fondo neutro. Sigo adelante con el fondo neutro salvo que me digas que lo dibuje Claude antes de publicar.`);
     informe.push(`PERMISO PEDIDO: ${sinImagen}/${escenas.length} escenas sin imagen propia.`);
@@ -389,6 +402,7 @@ try {
     editor: {puntaje, critica},
     escenas: escenas.map((e, i) => ({...e, fondo: fondos[i]})),
   };
+  if (CTX.mesa) guion.publicacion = {...guion.publicacion, titulosAlternativos: CTX.mesa.titulos, comentarioFijado: CTX.mesa.comentarioFijado, miniatura: CTX.mesa.miniatura};
   fs.writeFileSync(path.join(SALIDA, `guion-${slug}.json`), JSON.stringify(guion, null, 2));
   registrar(aprobado ? 'aprobado' : 'rechazado', aprobado ? `${palabras} palabras, ${escenas.length} escenas.` : (problemas[0]?.motivo ?? 'sin detalle').slice(0, 160), intentos, {editor: puntaje !== null ? `Puntaje: ${puntaje}/10. ${critica}`.slice(0, 200) : '', puntaje: puntaje ?? undefined});
   fs.writeFileSync(path.join(SALIDA, `informe-${slug}.md`), informe.join('\n'));
