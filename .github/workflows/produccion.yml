@@ -114,7 +114,9 @@ jobs:
       - name: Marcar progreso final
         if: always()
         run: |
-          node agentes/progreso.mjs 100 "Ciclo terminado" || true
+          if [ -z "${{ steps.producir.outputs.id }}" ]; then node agentes/progreso.mjs 0 'Ciclo sin video: no habia guion aprobado' || true
+          elif [ "${{ steps.panel.outputs.aprobado }}" = "false" ]; then node agentes/progreso.mjs 0 'El panel rechazo el video: no se subio' || true
+          else node agentes/progreso.mjs 100 'Video enviado a YouTube' || true; fi
           git config user.name "github-actions"
           git config user.email "actions@users.noreply.github.com"
           git add oficina-salida || true
