@@ -1,11 +1,35 @@
 {
-  "actualizado": "2026-11-21T15:08:24.911Z",
+  "actualizado": "2026-11-21T15:29:44.454Z",
   "totales": {
     "aprobados": 3,
-    "rechazados": 3,
-    "errores": 2
+    "rechazados": 5,
+    "errores": 3
   },
   "historial": [
+    {
+      "fecha": "2026-11-21T15:24:37.724Z",
+      "tema": "Taos hum",
+      "formato": "short",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "Groq no respondió tras 8 intentos (límite de Groq (429))."
+    },
+    {
+      "fecha": "2026-11-21T15:18:39.675Z",
+      "tema": "The Marfa Lights",
+      "formato": "short",
+      "resultado": "rechazado",
+      "intentos": 4,
+      "detalle": "El material indica que científicos han concluido que las luces son reflejos de faros de automóviles, por lo que no es correcto afirmar que nadie ha logrado expl"
+    },
+    {
+      "fecha": "2026-11-21T15:13:40.868Z",
+      "tema": "Oak Island",
+      "formato": "short",
+      "resultado": "rechazado",
+      "intentos": 4,
+      "detalle": "Las coordenadas citadas corresponden a Oak Island en Texas según la fuente en español, pero el material en inglés sobre Oak Island en Nova Scotia no proporciona"
+    },
     {
       "fecha": "2026-11-21T14:50:16.853Z",
       "tema": "The Voynich manuscript",
@@ -74,8 +98,8 @@
   "agentes": {
     "Directora de contenido": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "PLAN DEL CICLO: Crear 3 Shorts de formato ultra‑corto (≤60 s) sobre fenómenos misteriosos con títulos llamativos y emojis, siguiendo la fórmula que generó 1 036 vistas.: Equipo de Contenido Shorts: Monetizar cada Short alcanzando al menos 1 200 vistas ante · Reestructurar series en videos únicos de 8‑10 min con tít"
+      "actividad": "pensando",
+      "tarea": "La oficina falló en su último ciclo: Groq no respondió tras 8 intentos (límite de Groq (429)). ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. JEFA: Falló el ciclo. Quiero la causa y el arreglo antes de las próximas 11 h."
     },
     "Investigador de temas": {
       "estado": "trabajando",
@@ -85,146 +109,146 @@
     "Guionista": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Editor de guion). Entregó: 3 mejoras al último guion"
+      "tarea": "Intentó 4 veces escribir \"The Marfa Lights\" sin que el Verificador lo aprobara. ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Verificador de datos": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Investigador de temas). Entregó: 5 temas candidatos"
+      "actividad": "leyendo",
+      "tarea": "Rechazó \"The Marfa Lights\": El material indica que científicos han concluido que las luces son reflejos de faros de automóviles, por lo que no es correcto afirmar que nadie ha logrado expl ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Editor de guion": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título"
+      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Locutor": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Guionista). Entregó: 5 ganchos nuevos"
+      "tarea": "AYUDA: le echó una mano a (Guionista). Entregó: 5 ganchos nuevos ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
     },
     "Técnico de render": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Editor de guion). Entregó: 3 mejoras al último guion"
+      "tarea": "AYUDA: le echó una mano a (Editor de guion). Entregó: 3 mejoras al último guion ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
     },
     "Publicador": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Investigador de temas). Entregó: 5 temas candidatos"
+      "tarea": "AYUDA: le echó una mano a (Investigador de temas). Entregó: 5 temas candidatos ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Crítico: padre trabajador": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título FUNCIÓN (contador): ya entregó hoy; la próxima ronda es dentro de 16 h."
+      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (contador): ya entregó hoy; la próxima ronda es dentro de 16 h."
     },
     "Crítica: fan del misterio": {
-      "estado": "libre",
+      "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Le gustó \"📜 El manuscrito que nadie ha descifrado\": Buen repaso del Voynich, aunque falta profundizar en teorías nuevas; lo recomendaría a otros amantes del enigma. (siguió hasta el segundo 52, lo compartiría). FUNCIÓN (oportunidades): ya entregó hoy; la próxima ronda es dentro de 20 h."
+      "tarea": "Le gustó \"📜 El manuscrito que nadie ha descifrado\": Buen repaso del Voynich, aunque falta profundizar en teorías nuevas; lo recomendaría a otros amantes del enigma. (siguió hasta el segundo 52, lo compartiría). ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (oportunidades): ya entregó hoy; la próxima ronda es dentro de 20 h."
     },
     "Crítico: adolescente": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "NO le gustó \"📜 El manuscrito que nadie ha descifrado\": El gancho es demasiado plano, me suelta en los primeros segundos y ya paso de largo. (siguió hasta el segundo 3). FUNCIÓN (otros-formatos): ya entregó hoy; la próxima ronda es dentro de 8 h."
+      "tarea": "NO le gustó \"📜 El manuscrito que nadie ha descifrado\": El gancho es demasiado plano, me suelta en los primeros segundos y ya paso de largo. (siguió hasta el segundo 3). ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (otros-formatos): ya entregó hoy; la próxima ronda es dentro de 8 h."
     },
     "Crítica: universitaria": {
-      "estado": "libre",
+      "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Le gustó \"📜 El manuscrito que nadie ha descifrado\": Me atrapó el misterio del manuscrito y los datos raros, lo compartiría con mis amigas curiosas. (siguió hasta el segundo 45, lo compartiría). FUNCIÓN (mentor): ya entregó hoy; la próxima ronda es dentro de 20 h."
+      "tarea": "Le gustó \"📜 El manuscrito que nadie ha descifrado\": Me atrapó el misterio del manuscrito y los datos raros, lo compartiría con mis amigas curiosas. (siguió hasta el segundo 45, lo compartiría). ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. FUNCIÓN (mentor): ya entregó hoy; la próxima ronda es dentro de 20 h."
     },
     "Crítico: joven dominicano": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "NO le gustó \"📜 El manuscrito que nadie ha descifrado\": Se siente como un doc de colegio, falta chispa y lenguaje callejero. (siguió hasta el segundo 5). FUNCIÓN (agenda): ya entregó hoy; la próxima ronda es dentro de 20 h."
+      "tarea": "NO le gustó \"📜 El manuscrito que nadie ha descifrado\": Se siente como un doc de colegio, falta chispa y lenguaje callejero. (siguió hasta el segundo 5). ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (agenda): ya entregó hoy; la próxima ronda es dentro de 20 h."
     },
     "Crítica: ama de casa": {
-      "estado": "libre",
+      "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Le gustó \"📜 El manuscrito que nadie ha descifrado\": La voz es clara y el ritmo cómodo, pero el llamado a compartir suena forzado. (siguió hasta el segundo 40). FUNCIÓN (infantil): ya entregó hoy; la próxima ronda es dentro de 20 h."
+      "tarea": "Le gustó \"📜 El manuscrito que nadie ha descifrado\": La voz es clara y el ritmo cómodo, pero el llamado a compartir suena forzado. (siguió hasta el segundo 40). ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (infantil): ya entregó hoy; la próxima ronda es dentro de 20 h."
     },
     "Crítico: escéptico": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "NO le gustó \"📜 El manuscrito que nadie ha descifrado\": Demasiado clickbait, promete “descubrir secretos” y solo suelta datos ya conocidos. (siguió hasta el segundo 20). FUNCIÓN (guardian): ya entregó hoy; la próxima ronda es dentro de 16 h."
+      "tarea": "NO le gustó \"📜 El manuscrito que nadie ha descifrado\": Demasiado clickbait, promete “descubrir secretos” y solo suelta datos ya conocidos. (siguió hasta el segundo 20). ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy? FUNCIÓN (guardian): ya entregó hoy; la próxima ronda es dentro de 16 h."
     },
     "Crítico: abuelo": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Le gustó \"📜 El manuscrito que nadie ha descifrado\": Me gustó la historia bien contada y los subtítulos claros, aunque el “compártelo” me pareció innecesario. (siguió hasta el segundo 52). FUNCIÓN (comunidad): Espera que la analítica esté autorizada para leer los comentarios."
+      "tarea": "Le gustó \"📜 El manuscrito que nadie ha descifrado\": Me gustó la historia bien contada y los subtítulos claros, aunque el “compártelo” me pareció innecesario. (siguió hasta el segundo 52). ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (comunidad): No pude leer los comentarios (YouTube no me dio acceso)."
     },
     "Enlace de datos": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "En su puesto, preparando el próximo ciclo. SEGUNDA: Las vistas totales subieron a 3 724, pero el promedio por video cayó a (cifra sin respaldo) indicando que la audiencia se concentra en pocos videos; hay que diversificar el contenido para equilibrar la distribución. ORDEN DE JULES (nivel 4/5): Implementen la lista de verificación de calidad antes de cada video y publiquen al menos un video diario. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "En su puesto, preparando el próximo ciclo. SEGUNDA: Las vistas totales subieron a 3 724, pero el promedio por video cayó a (cifra sin respaldo) indicando que la audiencia se concentra en pocos videos; hay que diversificar el contenido para equilibrar la distribución. ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Coordinador de producción": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "Calendario fijo (hora de República Dominicana): Shorts a las 00:00 y 12:00, largos a las 18:00. Cuida que el subidor programe sin chocar. ORDEN DE JULES (nivel 4/5): Implementen la lista de verificación de calidad antes de cada video y publiquen al menos un video diario. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "Calendario fijo (hora de República Dominicana): Shorts a las 00:00 y 12:00, largos a las 18:00. Cuida que el subidor programe sin chocar. ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Jefa de calidad": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Aprobó \"The Voynich manuscript\": 5 escenas, 1 fuentes, sin problemas abiertos. ORDEN DE JULES (nivel 4/5): Implementen la lista de verificación de calidad antes de cada video y publiquen al menos un video diario. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "Frenó \"Taos hum\": no pasó la verificación ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Cazador de fórmulas": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Revisó 132 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (47862 vistas/hora). Fórmula: Palabra clave impactante + pregunta intrigante o afirmación sorprendente + elemento de misterio/lo prohibido + ORDEN DE JULES (nivel 4/5): Implementen la lista de verificación de calidad antes de cada video y publiquen al menos un video diario. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "Revisó 132 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (47351 vistas/hora). Fórmula: Palabra clave impactante + pregunta intrigante o afirmación misteriosa + elemento de sorpresa/escala ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Vigía de tendencias": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Vigila 9 canales por sus feeds públicos de YouTube. ORDEN DE JULES (nivel 4/5): Implementen la lista de verificación de calidad antes de cada video y publiquen al menos un video diario. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "Vigila 9 canales por sus feeds públicos de YouTube. ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Titulista": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 4/5): Implementen la lista de verificación de calidad antes de cada video y publiquen al menos un video diario. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Redactor de descripción": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 4/5): Implementen la lista de verificación de calidad antes de cada video y publiquen al menos un video diario. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
+      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Especialista en hashtags": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 4/5): Implementen la lista de verificación de calidad antes de cada video y publiquen al menos un video diario. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Auditor de fuentes": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Comprobó que cada dato salga de las 1 fuentes del material y las puso en la descripción. ORDEN DE JULES (nivel 4/5): Implementen la lista de verificación de calidad antes de cada video y publiquen al menos un video diario. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
+      "tarea": "Comprobó que cada dato salga de las 0 fuentes del material y las puso en la descripción. ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Auditor de normas": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Comprobó: empieza con \"Sabías que\", llamada a compartir exacta y revelación entre 60 % y 78 %. ORDEN DE JULES (nivel 4/5): Implementen la lista de verificación de calidad antes de cada video y publiquen al menos un video diario. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "tarea": "Encontró incumplimientos:  ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
     },
     "Revisor de nombres": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Busca nombres reales de personas en el guion y en lo que escribe la Mesa. Si aparece uno, rechaza. ORDEN DE JULES (nivel 4/5): Implementen la lista de verificación de calidad antes de cada video y publiquen al menos un video diario. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
+      "tarea": "Busca nombres reales de personas en el guion y en lo que escribe la Mesa. Si aparece uno, rechaza. ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Revisor de ganchos": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "Gancho auditivo: la primera frase tiene 11 palabras (cabe en 3 segundos). Gancho visual: 4 escenas se quedan con un solo fondo. ORDEN DE JULES (nivel 4/5): Implementen la lista de verificación de calidad antes de cada video y publiquen al menos un video diario. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
+      "tarea": "Espera un guion aprobado para medir el gancho. ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Escenógrafo": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "Eligió los fondos de 5 escenas del catálogo; 3 no tenían imagen propia. ORDEN DE JULES (nivel 4/5): Implementen la lista de verificación de calidad antes de cada video y publiquen al menos un video diario. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "tarea": "Eligió los fondos de 0 escenas del catálogo; 0 no tenían imagen propia. ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Pintor de imágenes": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "Hay 3 escenas sin imagen propia. Aún no dibuja solo (está pendiente de construir), por eso se usa el fondo neutro. ORDEN DE JULES (nivel 4/5): Implementen la lista de verificación de calidad antes de cada video y publiquen al menos un video diario. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
+      "tarea": "Todas las escenas encontraron imagen en el catálogo. ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     }
   },
   "jefa": {
-    "mensaje": "Último guion aprobado: \"The Voynich manuscript\" (short). Aprobados: 3. Rechazados: 3. Con error: 2. ORDEN DE JULES (nivel 4/5): Implementen la lista de verificación de calidad antes de cada video y publiquen al menos un video diario. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. JEFA: Faltan 11 h para el próximo ciclo. Sin excusas.",
+    "mensaje": "La oficina falló en su último ciclo: Groq no respondió tras 8 intentos (límite de Groq (429)). ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. JEFA: Falló el ciclo. Quiero la causa y el arreglo antes de las próximas 11 h.",
     "horasParaProximoCiclo": 11
   }
 }

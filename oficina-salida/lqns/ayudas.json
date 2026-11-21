@@ -5,11 +5,11 @@
     "Lanzar una campaña de miniaturas y thumbnails con diseño de alto contraste y emojis, basada en hipótesis de factor sorpresa.: Equipo de Diseño y Marketing: Incrementar CTR en un 15 % y alcanzar 2 000 vistas adicionales monetizadas por video"
   ],
   "ganchos": [
-    "Sabías que [CIFRA] % de los [TEMA] desaparecen sin dejar rastro? | Imagen de una silueta difuminada de un objeto misterioso sobre un fondo oscuro con un contador digital parpadeando.",
-    "Sabías que en los últimos [CIFRA] años se han registrado [TEMA] que desafían la lógica? | Imagen de un archivo de documentos clasificados con luces intermitentes y un símbolo de interrogación brillante.",
-    "Sabías que solo [CIFRA] personas han visto el verdadero [TEMA] y nunca lo han descrito? | Imagen de una cámara lenta enfocando una sombra imposible que se desvanece en la niebla.",
-    "Sabías que el [TEMA] más raro apareció [CIFRA] veces en la historia sin explicación? | Imagen de un mapa antiguo con marcas rojas pulsantes y un objeto brillante resaltado.",
-    "Sabías que [CIFRA] % de los científicos aún no pueden explicar el [TEMA] que se encontró en... | Imagen de un laboratorio con tubos de ensayo, luces verdes y un artefacto flotante que emite destellos."
+    "Sabías que [CIFRA] personas desaparecieron en [TEMA] sin dejar rastro? | Imagen de una silueta difuminada bajo una niebla densa",
+    "Sabías que [CIFRA] objetos misteriosos fueron hallados en [TEMA] en menos de 24 horas? | Imagen de una caja antigua con luces parpadeantes emergiendo",
+    "Sabías que [CIFRA] animales nunca vistos viven en [TEMA] y solo aparecen de noche? | Imagen de una criatura luminosa entre sombras de un bosque",
+    "Sabías que [CIFRA] tecnologías secretas fueron desarrolladas en [TEMA] y fueron borradas de la historia? | Imagen de un dispositivo futurista cubierto de polvo y cables",
+    "Sabías que [CIFRA] coincidencias imposibles ocurrieron en [TEMA] en un solo día? | Imagen de un calendario con fechas resaltadas y símbolos de asombro"
   ],
   "mejorasGuion": [
     "Incluir un gancho visual y textual en los primeros 3 segundos con una pregunta impactante y un emoji, por ejemplo: \"¿Sabías que el Triángulo de la Muerte del Atlántico ha engullido más de mil barcos? 🌊\" para captar la a",
@@ -29,7 +29,7 @@
     "Sabías que {situación imposible} 🤯 (Parte {n}/{total})",
     "Sabías que {hecho histórico} {detalle impactante} 📚"
   ],
-  "fecha": "2026-11-21T15:08:21.464Z",
+  "fecha": "2026-11-21T15:24:37.785Z",
   "iniciativas": [
     "Valentina (Directora de contenido): Definir una línea editorial clara que guíe a todo el equipo desde el primer video.",
     "Carolina (Coordinador de producción): Crear un calendario de tareas con hitos diarios para asegurar que todos estén en sus puestos sin pausas.",

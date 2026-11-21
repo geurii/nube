@@ -1,0 +1,60 @@
+{
+  "titulo": "Sabías que las luces de Marfa ocultan un secreto brillante? 🌟",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-DO-EmilioNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-the-marfa-lights.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "publicacion": {
+    "titulo": "Sabías que las luces de Marfa ocultan un secreto brillante? 🌟",
+    "descripcion": "Un fenómeno que ha intrigado a viajeros durante más de un siglo. Descubre la explicación que la ciencia ofrece.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Marfa_lights\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#MarfaLights #DesiertoTexas #Misterio #Ciencia"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 5,
+    "critica": "El gancho es vago, la historia se alarga y la revelación llega demasiado pronto."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que en el desierto de Texas aparecen luces que nadie ha logrado explicar? 🌌",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El primer registro data de mil ochocientos ochenta y tres, cuando un joven vaquero vio una llama titilante en el paso de Paisano.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En mil ochocientos ochenta y cinco, otros colonos la describieron, y en mil novecientos cincuenta y siete apareció en la revista Coronet, difundiendo el relato entre viajeros.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: la mayoría de esas luces son simplemente faros de coches reflejados.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "Así que, aunque el misterio parece mágico, la ciencia lo desmitifica. ¿Te sorprende? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

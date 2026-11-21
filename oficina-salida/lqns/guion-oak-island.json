@@ -1,0 +1,67 @@
+{
+  "titulo": "🗺️ Oak Island: El enigma bajo la niebla",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-DO-EmilioNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-oak-island.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "publicacion": {
+    "titulo": "🗺️ Oak Island: El enigma bajo la niebla",
+    "descripcion": "Descubre los datos reales de la isla que ha intrigado a buscadores de tesoros durante siglos. ¿Qué oculta realmente?\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://es.wikipedia.org/wiki/Oak_Island · https://en.wikipedia.org/wiki/Oak_Island\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#OakIsland #TesoroOculto #HistoriaMisteriosa #Fog"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 4,
+    "critica": "El gancho es vago y demasiado largo; la información histórica abunda sin ritmo; la revelación llega tarde y no impacta."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que bajo la niebla de Mahone Bay se esconde una isla que guarda un misterio centenario?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Oak Island, ubicada en las coordenadas veintinueve grados treinta‑y‑nueve minutos norte y noventa‑y‑cuatro grados cuarenta‑y‑uno minutos oeste, tiene una superficie de tres coma once kilómetros cuadrados, todo tierra firme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Según el censo de dos mil diez, la isla albergaba trescientos sesenta y tres habitantes, con una densidad de ciento dieciséis coma siete personas por kilómetro cuadrado.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Desde finales del siglo diecisiete, los pescadores franceses se establecieron allí, y en mil setecientos sesenta‑dos la isla fue dividida en treinta y dos lotes de cuatro acres, según los registros de los colonos británicos.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: la verdadera razón del mito es que nunca se ha encontrado evidencia concluyente de un tesoro enterrado.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "Así, la isla sigue envuelta en teorías y excavaciones sin fin, alimentando la curiosidad de todos. ¿Crees que algún día se revelará la verdad? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

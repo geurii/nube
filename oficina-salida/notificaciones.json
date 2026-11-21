@@ -1,5 +1,41 @@
 [
   {
+    "id": "mwqk6uw6hf2l",
+    "fecha": "2026-11-21T15:24:37.734Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "La oficina falló",
+    "texto": "Groq no respondió tras 8 intentos (límite de Groq (429)). Aprobados: 3. Rechazados: 5. Con error: 3. Próximo ciclo en 11 h."
+  },
+  {
+    "id": "mwqjz6mdt3ju",
+    "fecha": "2026-11-21T15:18:39.685Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: The Marfa Lights",
+    "texto": "El Verificador no aprobó \"The Marfa Lights\" tras 4 intentos: El material indica que científicos han concluido que las luces son reflejos de faros de automóviles, por lo que no es correcto afirmar que nadie ha logrado expl Aprobados: 3. Rechazados: 5. Con error: 2. No se publica. Próximo ciclo en 11 h."
+  },
+  {
+    "id": "mwqjss2k54cf",
+    "fecha": "2026-11-21T15:13:40.892Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Oak Island",
+    "texto": "El Verificador no aprobó \"Oak Island\" tras 4 intentos: Las coordenadas citadas corresponden a Oak Island en Texas según la fuente en español, pero el material en inglés sobre Oak Island en Nova Scotia no proporciona Aprobados: 3. Rechazados: 4. Con error: 2. No se publica. Próximo ciclo en 11 h."
+  },
+  {
+    "id": "mwqjnwxzh9tw",
+    "fecha": "2026-11-21T15:09:53.927Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Palabra clave impactante + pregunta intrigante o afirmación misteriosa + elemento de sorpresa/escala El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (47351 vistas/hora)."
+  },
+  {
     "id": "mwqjlxkbbngs",
     "fecha": "2026-11-21T15:08:21.419Z",
     "canal": "lqns",
