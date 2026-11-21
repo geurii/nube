@@ -1,35 +1,35 @@
 {
   "plan": [
-    "[object Object]",
-    "[object Object]",
-    "[object Object]"
+    "Prioridad 1: Lanzar la serie de videos \"Objetos Históricos Enigmáticos\" con responsable de la Oficina de Contenido (Jules). Meta: alcanzar al menos 2,000 vistas monetizadas por video antes del 13 de diciembre.",
+    "Prioridad 2: Crear y publicar una campaña de Shorts sobre fenómenos raros en la Oficina de Marketing (María). Meta: generar 1,500 vistas monetizadas en total antes del 13 de diciembre.",
+    "Prioridad 3: Desarrollar un podcast complementario de misterios sin resolver en la Oficina de Producción (Carlos). Meta: conseguir 1,000 reproducciones con ads antes del 13 de diciembre."
   ],
   "ganchos": [
-    "Sabías que [TEMA] desapareció en menos de [CIFRA] segundos? | Imagen de un reloj de arena vaciándose rápidamente sobre un objeto misterioso",
-    "Sabías que solo [CIFRA] personas han visto el verdadero [TEMA]? | Imagen de una silueta tenue de una figura en la niebla con ojos brillantes",
-    "Sabías que el [TEMA] se mueve 10 veces más rápido de lo que la ciencia permite, ¡en solo [CIFRA] metros! | Imagen de una sombra fugaz cruzando un corredor oscuro",
-    "Sabías que [CIFRA] años después, el [TEMA] sigue sin explicación? | Imagen de un antiguo manuscrito abierto con símbolos luminosos",
-    "Sabías que el sonido del [TEMA] se escuchó a [CIFRA] kilómetros de distancia? | Imagen de ondas sonoras visibles emanando de un punto en un paisaje desolado"
+    "Sabías que [TEMA] desapareció en menos de [CIFRA] segundos? | Imagen de un reloj de arena derramando arena rápidamente",
+    "Sabías que [TEMA] se encontró en [CIFRA] lugares diferentes al mismo tiempo? | Imagen de un mapa con múltiples marcadores brillantes simultáneos",
+    "Sabías que [TEMA] fue visto por [CIFRA] personas en una sola noche? | Imagen de una multitud mirando al cielo con luces misteriosas",
+    "Sabías que [TEMA] contiene [CIFRA] capas de misterio sin resolver? | Imagen de un objeto antiguo con capas translúcidas que se separan",
+    "Sabías que [TEMA] se activó exactamente a las [CIFRA] horas? | Imagen de un dispositivo antiguo con una pantalla digital marcando la hora exacta"
   ],
   "mejorasGuion": [
-    "Agregar un gancho visual y emocional al inicio: incluir una pregunta intrigante o dato impactante con emoji, por ejemplo \"Sabías que más de 1 000 desapariciones misteriosas ocurrieron en una zona del Atlántico entre Flor",
-    "Ajustar el ritmo con cortes cortos y repetición de palabras clave: dividir la información en bloques de 15‑20 segundos, repetir frases como \"triángulo\" y \"desapariciones\" y usar efectos de sonido para marcar cada nuevo c",
-    "Crear un cierre con llamado a la acción más fuerte y teaser de próximo video: terminar con \"¿Qué otro misterio oculto crees que guarda el océano? Déjalo en los comentarios y suscríbete para descubrir el próximo en 'Lo Qu"
+    "Añadir un gancho visual y curioso al inicio: incluir una pregunta impactante o dato sorprendente en la primera frase, por ejemplo \"Sabías que más de 1 000 desapariciones se han registrado en una zona del Atlántico conoci",
+    "Optimizar el ritmo con cortes breves y repeticiones de palabras clave: dividir el guion en bloques de 15‑20 segundos, repetir términos como \"desapariciones\", \"misterio\" y \"triángulo\" al final de cada bloque, y usar efect",
+    "Crear un cierre con llamado a la acción más persuasivo y una promesa de continuación: en lugar de \"Comparte este video... sígueme\", usar \"¿Te atreves a descubrir el próximo misterio? Dale like, comparte con quien también"
   ],
   "temas": [
-    "Wow! signal",
-    "Voynich manuscript",
-    "Phaistos Disc",
-    "Taos Hum",
-    "The Antikythera mechanism"
+    "The Wow! Signal",
+    "The Antikythera Mechanism",
+    "The Voynich Manuscript",
+    "The Taos Hum",
+    "The Oak Island Money Pit"
   ],
   "titulos": [
-    "Sabías que <tema intrigante> 🐧 (Parte <n>/<total>)",
-    "Sabías que <evento sorprendente> 😱 #Shorts #virales",
-    "Sabías que <descripción asombrosa> 🤯 (Parte <n>/<total>)",
-    "Sabías que <hecho histórico o tecnológico> <emoji opcional>"
+    "Sabías que {hecho sorprendente} {emoji} (Parte {n}/{total})",
+    "El {objeto/personaje} que {acción extraordinaria} {emoji} #Shorts #virales",
+    "El {objeto/evento} que {descripción breve} {emoji} (Parte {n}/{total})",
+    "{Nombre genérico} {verbo} {detalle histórico} y {consecuencia inesperada}"
   ],
-  "fecha": "2026-11-21T11:03:44.120Z",
+  "fecha": "2026-11-21T11:26:48.305Z",
   "iniciativas": [
     "Valentina (Directora de contenido): Definir una línea editorial clara que guíe a todo el equipo desde el primer video.",
     "Carolina (Coordinador de producción): Crear un calendario de tareas con hitos diarios para asegurar que todos estén en sus puestos sin pausas.",

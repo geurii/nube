@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-21T11:24:43.111Z",
+  "actualizado": "2026-11-21T11:26:52.367Z",
   "totales": {
     "aprobados": 2,
     "rechazados": 2,
@@ -59,7 +59,7 @@
     "Directora de contenido": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: dejó libre su puesto y le echó una mano a (Jules (su plan del ciclo)). Entregó: [object Object] · [object Object] · [object Object] SOY Valentina: visionaria, exigente. PIENSA: Siento la presión de mantener el control creativo mientras aún no hemos conseguido ninguna vista. INICIATIVA: Definir una línea editorial clara que guíe a todo el equipo desde el primer video. SEGUNDA: La mayor amenaza es la baja tasa de crecimiento de suscriptores, que limita el algoritmo de recomendación; contramedida: lanzar una campaña de Shorts virales con títulos estilo \"¿Qué pasa si…?\" para atraer nuevos suscriptores rápidamente."
+      "tarea": "PLAN DEL CICLO: Prioridad 1: Lanzar la serie de videos \"Objetos Históricos Enigmáticos\" con responsable de la Oficina de Contenido (Jules). Meta: alcanzar al menos 2,000 vistas monetizadas por video antes del 13 de diciembre. · Prioridad 2: Crear y publicar una campaña de Shorts sobre fenómenos raros en la Oficina "
     },
     "Investigador de temas": {
       "estado": "trabajando",
@@ -84,52 +84,52 @@
     "Locutor": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Grabó la voz de \"🔊 El enigma del Bloop: el rugido del hielo\". SOY Isabella: carismático, expresivo. PIENSA: Siento la presión de mantener mi voz en forma mientras aún no he grabado nada. INICIATIVA: Practicar ejercicios de vocalización diarios y grabar pruebas de audio para calibrar el sonido. SEGUNDA: Acelerar el ritmo en la frase de apertura (3 seg) con pausas breves después de cada dato impactante; disminuir la velocidad en la revelación final para crear suspenso."
+      "tarea": "AYUDA: le echó una mano a (Guionista). Entregó: 5 ganchos nuevos"
     },
     "Técnico de render": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Renderizó \"🔊 El enigma del Bloop: el rugido del hielo\" (31 MB). Está en Actions, artefacto \"video-oficina-bloop\". SOY Paula: técnico, paciente. PIENSA: Me preocupa que el hardware falle en el último minuto sin haberlo probado en producción. INICIATIVA: Realizar pruebas de rendimiento del equipo y documentar configuraciones óptimas. SEGUNDA: Utilizar pre‑renderizado de fondos estáticos y aplicar capas de efectos en tiempo real solo a los elementos en movimiento, reduciendo el tiempo de render en un (cifra sin respaldo) %."
+      "tarea": "AYUDA: le echó una mano a (Editor de guion). Entregó: 3 mejoras al último guion"
     },
     "Publicador": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "YouTube ya está conectado (21 nov). Espera el próximo video aprobado para subirlo público. El mensaje anterior de \"falta conectar\" ya no aplica. SOY Renata: organizado, estratégico. PIENSA: Temo que el algoritmo penalice nuestro contenido antes de tener métricas para ajustarlo. INICIATIVA: Estudiar las mejores prácticas de publicación y crear una guía de timing y tags. SEGUNDA: Comentario fijado: \"🕵️‍♂️ ¿Cuál crees que es la verdadera razón de las desapariciones en el Triángulo? Déjanos tu teoría y suscríbete para más misterios.\" Responder a los primeros comentarios dentro de la primera hora de publicación."
+      "tarea": "AYUDA: le echó una mano a (Investigador de temas). Entregó: 5 temas candidatos"
     },
     "Crítico: padre trabajador": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": " FUNCIÓN (contador): Faltan 23 días para el 13 de diciembre. Suscriptores: la analítica aún no los trae. Horas vistas: sin datos. FUNCIÓN (contador): ya entregó hoy; la próxima ronda es dentro de 20 h. FUNCIÓN (contador): ya entregó hoy; la próxima ronda es dentro de 20 h. SOY Carolina: práctico, protector. PIENSA: Me inquieta que el canal pierda su enfoque familiar sin haber lanzado contenido. INICIATIVA: Diseñar una serie de videos orientados a padres que combine entretenimiento y valor práctico. FUNCIÓN (contador): ya entregó hoy; la próxima ronda es dentro de 20 h."
+      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título FUNCIÓN (contador): ya entregó hoy; la próxima ronda es dentro de 20 h."
     },
     "Crítica: fan del misterio": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": " FUNCIÓN (oportunidades): 3 formatos con potencial y 2 vías de ingreso: [object Object] FUNCIÓN (oportunidades): ya entregó hoy; la próxima ronda es dentro de 24 h. FUNCIÓN (oportunidades): ya entregó hoy; la próxima ronda es dentro de 24 h. SOY Fernanda: enigmatica, observadora. PIENSA: Me preocupa que el canal revele todos los secretos y pierda el suspense antes de crear expectativa. INICIATIVA: Planificar una estrategia de revelación gradual de información en los primeros videos. FUNCIÓN (oportunidades): ya entregó hoy; la próxima ronda es dentro de 24 h."
+      "tarea": " FUNCIÓN (oportunidades): 3 formatos con potencial y 2 vías de ingreso: [object Object] FUNCIÓN (oportunidades): ya entregó hoy; la próxima ronda es dentro de 24 h. FUNCIÓN (oportunidades): ya entregó hoy; la próxima ronda es dentro de 24 h. SOY Fernanda: enigmatica, observadora. PIENSA: Me preocupa que el canal revele todos los secretos y pierda el suspense antes de crear expectativa. INICIATIVA: Planificar una estrategia de revelación gradual de información en los primeros videos. FUNCIÓN (oportunidades): ya entregó hoy; la próxima ronda es dentro de 24 h. FUNCIÓN (oportunidades): ya entregó hoy; la próxima ronda es dentro de 24 h."
     },
     "Crítico: adolescente": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": " FUNCIÓN (otros-formatos): Dejó listos TikTok, Instagram, Facebook y versión en inglés de \"🔺 El misterio del Triángulo de las Bermudas\". FUNCIÓN (otros-formatos): ya entregó hoy; la próxima ronda es dentro de 12 h. FUNCIÓN (otros-formatos): ya entregó hoy; la próxima ronda es dentro de 12 h. SOY Daniela: rebelde, espontáneo. PIENSA: Me preocupa ser excluido de la comunidad online del canal antes de que exista. INICIATIVA: Proponer contenido que conecte con la audiencia juvenil y compartirlo en redes emergentes. FUNCIÓN (otros-formatos): ya entregó hoy; la próxima ronda es dentro de 12 h."
+      "tarea": " FUNCIÓN (otros-formatos): Dejó listos TikTok, Instagram, Facebook y versión en inglés de \"🔺 El misterio del Triángulo de las Bermudas\". FUNCIÓN (otros-formatos): ya entregó hoy; la próxima ronda es dentro de 12 h. FUNCIÓN (otros-formatos): ya entregó hoy; la próxima ronda es dentro de 12 h. SOY Daniela: rebelde, espontáneo. PIENSA: Me preocupa ser excluido de la comunidad online del canal antes de que exista. INICIATIVA: Proponer contenido que conecte con la audiencia juvenil y compartirlo en redes emergentes. FUNCIÓN (otros-formatos): ya entregó hoy; la próxima ronda es dentro de 12 h. FUNCIÓN (otros-formatos): ya entregó hoy; la próxima ronda es dentro de 12 h."
     },
     "Crítica: universitaria": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": " FUNCIÓN (mentor): Lección del día: Enfócate en los videos que ya generan más vistas y replica su estilo en nuevos contenidos; mejora los títulos y miniatur FUNCIÓN (mentor): ya entregó hoy; la próxima ronda es dentro de 24 h. FUNCIÓN (mentor): ya entregó hoy; la próxima ronda es dentro de 24 h. SOY Julieta: analítica, idealista. PIENSA: Temo que el canal pierda su rigor intelectual antes de haber presentado nada. INICIATIVA: Sugerir temas de investigación profunda que puedan ser la base de nuestros primeros videos. FUNCIÓN (mentor): ya entregó hoy; la próxima ronda es dentro de 24 h."
+      "tarea": " FUNCIÓN (mentor): Lección del día: Enfócate en los videos que ya generan más vistas y replica su estilo en nuevos contenidos; mejora los títulos y miniatur FUNCIÓN (mentor): ya entregó hoy; la próxima ronda es dentro de 24 h. FUNCIÓN (mentor): ya entregó hoy; la próxima ronda es dentro de 24 h. SOY Julieta: analítica, idealista. PIENSA: Temo que el canal pierda su rigor intelectual antes de haber presentado nada. INICIATIVA: Sugerir temas de investigación profunda que puedan ser la base de nuestros primeros videos. FUNCIÓN (mentor): ya entregó hoy; la próxima ronda es dentro de 24 h. FUNCIÓN (mentor): ya entregó hoy; la próxima ronda es dentro de 24 h."
     },
     "Crítico: joven dominicano": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": " FUNCIÓN (agenda): Agenda del día enviada (3 puntos). FUNCIÓN (agenda): ya entregó hoy; la próxima ronda es dentro de 24 h. FUNCIÓN (agenda): ya entregó hoy; la próxima ronda es dentro de 24 h. SOY Alejandra: vivaz, cultural. PIENSA: Me preocupa que el canal ignore la diversidad cultural latinoamericana antes de lanzar contenido. INICIATIVA: Incluir en el calendario al menos un video al mes que destaque una cultura o tradición latinoamericana. FUNCIÓN (agenda): ya entregó hoy; la próxima ronda es dentro de 24 h."
+      "tarea": " FUNCIÓN (agenda): Agenda del día enviada (3 puntos). FUNCIÓN (agenda): ya entregó hoy; la próxima ronda es dentro de 24 h. FUNCIÓN (agenda): ya entregó hoy; la próxima ronda es dentro de 24 h. SOY Alejandra: vivaz, cultural. PIENSA: Me preocupa que el canal ignore la diversidad cultural latinoamericana antes de lanzar contenido. INICIATIVA: Incluir en el calendario al menos un video al mes que destaque una cultura o tradición latinoamericana. FUNCIÓN (agenda): ya entregó hoy; la próxima ronda es dentro de 24 h. FUNCIÓN (agenda): ya entregó hoy; la próxima ronda es dentro de 24 h."
     },
     "Crítica: ama de casa": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": " FUNCIÓN (infantil): 3 ideas nuevas para Mini Aventuras: \"El arcoíris de los animales\"… FUNCIÓN (infantil): ya entregó hoy; la próxima ronda es dentro de 24 h. FUNCIÓN (infantil): ya entregó hoy; la próxima ronda es dentro de 24 h. SOY Natalia: cariñosa, práctica. PIENSA: Temo perder la conexión con mi comunidad de madres si el contenido no habla a nuestras experiencias. INICIATIVA: Crear una sección de videos que aborden temas cotidianos de la vida familiar. FUNCIÓN (infantil): ya entregó hoy; la próxima ronda es dentro de 24 h."
+      "tarea": " FUNCIÓN (infantil): 3 ideas nuevas para Mini Aventuras: \"El arcoíris de los animales\"… FUNCIÓN (infantil): ya entregó hoy; la próxima ronda es dentro de 24 h. FUNCIÓN (infantil): ya entregó hoy; la próxima ronda es dentro de 24 h. SOY Natalia: cariñosa, práctica. PIENSA: Temo perder la conexión con mi comunidad de madres si el contenido no habla a nuestras experiencias. INICIATIVA: Crear una sección de videos que aborden temas cotidianos de la vida familiar. FUNCIÓN (infantil): ya entregó hoy; la próxima ronda es dentro de 24 h. FUNCIÓN (infantil): ya entregó hoy; la próxima ronda es dentro de 24 h."
     },
     "Crítico: escéptico": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": " FUNCIÓN (guardian): Último chequeo del Vigilante: 2026-11-21T09:54:36.376Z. Bien: YouTube conectado, analítica autorizada, Groq responde, Gemini responde. Problemas: ninguno. FUNCIÓN (guardian): ya entregó hoy; la próxima ronda es dentro de 20 h. FUNCIÓN (guardian): ya entregó hoy; la próxima ronda es dentro de 20 h. SOY Elena: crítico, lógico. PIENSA: Temo ser engañado por información falsa antes de tener un proceso de verificación sólido. INICIATIVA: Implementar un paso adicional de revisión de datos antes de aprobar cualquier guion. FUNCIÓN (guardian): ya entregó hoy; la próxima ronda es dentro de 20 h."
+      "tarea": " FUNCIÓN (guardian): Último chequeo del Vigilante: 2026-11-21T09:54:36.376Z. Bien: YouTube conectado, analítica autorizada, Groq responde, Gemini responde. Problemas: ninguno. FUNCIÓN (guardian): ya entregó hoy; la próxima ronda es dentro de 20 h. FUNCIÓN (guardian): ya entregó hoy; la próxima ronda es dentro de 20 h. SOY Elena: crítico, lógico. PIENSA: Temo ser engañado por información falsa antes de tener un proceso de verificación sólido. INICIATIVA: Implementar un paso adicional de revisión de datos antes de aprobar cualquier guion. FUNCIÓN (guardian): ya entregó hoy; la próxima ronda es dentro de 20 h. FUNCIÓN (guardian): ya entregó hoy; la próxima ronda es dentro de 20 h."
     },
     "Crítico: abuelo": {
       "estado": "trabajando",
