@@ -39,6 +39,7 @@ export const puestosDeLaOficina = (ag, {resultado, tema, ctx, historial, formula
     if (!ag[rol]?.tarea) continue;
     const meta = rol === 'Directora de contenido' ? 20000 : 10000;
     const limpia = ag[rol].tarea.replace(/ (FUNCIÓN|ORDEN DE JULES|BONO:|PAGA:|JULES:).*$/s, '');
+    if (ag[rol].estado === 'libre') ag[rol].estado = 'trabajando'; // nadie se queda parado: sigue donde estaba
     ag[rol].tarea = limpia + (orden ? ` ORDEN DE JULES (nivel ${orden.nivel}/5): ${orden.orden}` : '') + pagaDe(meta) + presion(rol);
   }
 };
