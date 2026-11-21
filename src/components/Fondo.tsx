@@ -15,6 +15,7 @@ import {REGISTRO_ARTICO} from './fondos/PixelArtico';
 import {REGISTRO_H} from './fondos/PixelH';
 import {REGISTRO_PINGUINOS} from './fondos/PixelPinguinos';
 import {REGISTRO_SECRETOS} from './fondos/PixelSecretos';
+import {REGISTRO_FORBES} from './fondos/PixelForbes';
 
 type Props = {
   fondo: string;
@@ -70,6 +71,7 @@ export const Fondo: React.FC<Props> = ({fondo, indice, duracion}) => {
       REGISTRO_ARTICO[nombre] ??
       REGISTRO_PINGUINOS[nombre] ??
       REGISTRO_SECRETOS[nombre] ??
+      REGISTRO_FORBES[nombre] ??
       (horizontal ? REGISTRO_H.pixelmisterio : REGISTRO_PIXEL.pixelmisterio);
     contenido = <Escena duracion={duracion / fps} parametro={parametro} />;
   }

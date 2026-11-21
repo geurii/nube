@@ -1,74 +1,83 @@
 {
-  "titulo": "¡Aprende el color ROJO! 🍎 Colores para niños",
+  "titulo": "Sabías que le dijo a un banco que tenía 4 millones de clientes 🏦 (Parte 1/3)",
   "formato": "short",
   "plataforma": "youtube",
-  "composicion": "ninos",
-  "voz": "es-MX-DaliaNeural",
-  "tono": 6,
-  "velocidad": 4,
-  "audio": "audio/colores-rojo.mp3",
-  "musica": null,
+  "audio": "audio/forbes-s1.mp3",
+  "musica": "musica/firma-canal.mp3",
   "personaje": {
-    "visible": false
+    "esquina": "arriba-derecha",
+    "visible": true
   },
   "publicacion": {
-    "titulo": "¡Aprende el color ROJO! 🍎 Colores para niños",
-    "paraNinos": true,
-    "descripcion": "¡Vamos a aprender el color rojo! Hoy vemos una manzana, una fresa y una mariquita.\n\nIlustraciones animadas por computadora y narración con voz sintética.\nContenido creado para niños.\n\n#coloresparaniños #aprendelloscolores #videosinfantiles #shortsinfantiles #MiniAventuras "
+    "titulo": "Sabías que le dijo a un banco que tenía 4 millones de clientes 🏦 (Parte 1/3)",
+    "descripcion": "Parte 1 de 3: una joven fundadora, un número que no era cierto y un banco que pagó 175 millones.\n\n¿Estafador o genio? Cuéntame en los comentarios 👇\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\nFuentes: NPR y Fortune (condena por el fraude de 175 millones a un banco), Entrepreneur y American Banker (fundadores de listas de jóvenes talentos con casos judiciales), TechCrunch (acusación de febrero de 2026). Las acusaciones no son condenas. Datos de prensa; no se revisaron expedientes judiciales.\n\n#fraudeempresarial #startups #emprendedores #historiasreales #estafadores "
   },
   "escenas": [
     {
       "tipo": "hook",
-      "texto": "¡Mira, mira! ¿De qué color es esto?",
+      "texto": "Sabías que una joven fundadora le dijo a un banco que tenía cuatro millones de clientes.",
       "fondo": [
-        "rojo:manzana",
-        "rojo:color"
+        "pixelcifra:4 MILLONES|DE CLIENTES|oro",
+        "pixelrascacielos:LA JOVEN GENIA"
       ]
     },
     {
       "tipo": "historia",
-      "texto": "¡Una manzana roja!",
+      "texto": "Su empresa ayudaba a los estudiantes a pedir dinero para la universidad.",
       "fondo": [
-        "rojo:manzana"
+        "pixelrascacielos",
+        "pixelgrafica:ESTUDIANTES|sube"
       ]
     },
     {
       "tipo": "historia",
-      "texto": "¡Una fresa roja!",
+      "texto": "Todos la aplaudían: la habían elegido en una lista de jóvenes talentos.",
       "fondo": [
-        "rojo:fresa"
+        "pixelpremio:JOVEN PROMESA",
+        "pixelrascacielos"
       ]
     },
     {
       "tipo": "historia",
-      "texto": "¡Y una mariquita roja!",
+      "texto": "Prometió que pronto serían diez millones.",
       "fondo": [
-        "rojo:mariquita"
+        "pixelcifra:10 MILLONES|SU PROMESA|azul",
+        "pixelgrafica:CLIENTES|sube"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Un gran banco compró su empresa por ciento setenta y cinco millones de dólares.",
+      "fondo": [
+        "pixelbanco:175 MILLONES",
+        "pixelcifra:175 MILLONES|DE DOLARES|azul"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Pagó sin dudar. Parecía la historia perfecta.",
+      "fondo": [
+        "pixelbanco",
+        "pixelgrafica:DINERO|sube",
+        "pixelrascacielos"
       ]
     },
     {
       "tipo": "revelacion",
-      "texto": "¿De qué color son? ¡Son rojas! ¡Es el color rojo!",
+      "texto": "Pero lo que no sabías: tenía unos trescientos mil clientes, y la condenaron a ochenta y cinco meses de cárcel.",
       "fondo": [
-        "rojo:color",
-        "rojo:fresa"
-      ]
-    },
-    {
-      "tipo": "historia",
-      "texto": "Repite conmigo: ¡rojo, rojo, rojo!",
-      "fondo": [
-        "rojo:manzana",
-        "rojo:mariquita",
-        "rojo:fresa"
+        "pixelcifra:300 MIL|CLIENTES REALES|rojo",
+        "pixelgrafica:CLIENTES|cae",
+        "pixeljuicio:85 MESES"
       ]
     },
     {
       "tipo": "veredicto",
-      "texto": "¿Qué cosas rojas ves tú? ¡Suscríbete y aprende más colores!",
+      "texto": "Un número falso fue su truco. ¿Estafadora o genia? Tú decides. Comparte este video con un amigo que haría lo mismo, sígueme.",
       "fondo": [
-        "rojo:color",
-        "rojo:manzana"
+        "pixelgenio:¿ESTAFADOR O GENIO?",
+        "pixelpremio:",
+        "pixelgenio:¿ESTAFADOR O GENIO?"
       ]
     }
   ]

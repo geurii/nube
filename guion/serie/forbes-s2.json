@@ -1,0 +1,83 @@
+{
+  "titulo": "Sabías que dos jóvenes genios suman 40 años de cárcel ⚖️ (Parte 2/3)",
+  "formato": "short",
+  "plataforma": "youtube",
+  "audio": "audio/forbes-s2.mp3",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "publicacion": {
+    "titulo": "Sabías que dos jóvenes genios suman 40 años de cárcel ⚖️ (Parte 2/3)",
+    "descripcion": "Parte 2 de 3: dos fundadores de criptomonedas, elegidos en listas de jóvenes talentos, y 15 más 25 años de prisión.\n\n¿Estafador o genio? Cuéntame en los comentarios 👇\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\nFuentes: NPR y Fortune (condena por el fraude de 175 millones a un banco), Entrepreneur y American Banker (fundadores de listas de jóvenes talentos con casos judiciales), TechCrunch (acusación de febrero de 2026). Las acusaciones no son condenas. Datos de prensa; no se revisaron expedientes judiciales.\n\n#fraudeempresarial #startups #emprendedores #historiasreales #estafadores "
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que dos jóvenes genios de esas listas suman cuarenta años de cárcel.",
+      "fondo": [
+        "pixelcifra:40 ANOS|DE CARCEL|rojo",
+        "pixeljuicio:40 ANOS"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Los dos fundaron empresas de criptomonedas y fueron elegidos como promesas.",
+      "fondo": [
+        "pixelpremio:PROMESAS",
+        "pixelrascacielos"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "A uno lo eligieron en dos mil diecinueve, y al otro en dos mil veintiuno.",
+      "fondo": [
+        "pixelpremio:LISTA 2019",
+        "pixelpremio:LISTA 2021"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Sus empresas subían y miles de personas ponían su dinero ahí.",
+      "fondo": [
+        "pixelgrafica:CRIPTOMONEDAS|sube",
+        "pixelrascacielos",
+        "pixelgrafica:CRIPTOMONEDAS|sube"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Hasta que las dos se hundieron.",
+      "fondo": [
+        "pixelgrafica:LA CAIDA|cae",
+        "pixelgrafica:LA CAIDA|cae"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En diciembre de dos mil veinticinco sentenciaron a uno a quince años.",
+      "fondo": [
+        "pixeljuicio:15 ANOS",
+        "pixeljuicio:DICIEMBRE 2025"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Y lo que no sabías: el otro ya cumple veinticinco años, así que suman cuarenta.",
+      "fondo": [
+        "pixeljuicio:25 ANOS",
+        "pixelcifra:15 + 25|ANOS|rojo"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "Los aplaudieron antes de que cayeran. ¿Estafadores o genios? Tú decides. Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelgenio:¿ESTAFADOR O GENIO?",
+        "pixeljuicio",
+        "pixelgenio:¿ESTAFADOR O GENIO?"
+      ]
+    }
+  ]
+}
