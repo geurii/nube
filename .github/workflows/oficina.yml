@@ -41,7 +41,7 @@ env:
 jobs:
   oficina:
     runs-on: ubuntu-24.04
-    timeout-minutes: 50
+    timeout-minutes: 70
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -79,18 +79,18 @@ jobs:
           fallo=0
           for c in $canales; do
             echo "=== $c ==="
-            CANAL=$c timeout 240 node agentes/vistas.mjs || true
-            CANAL=$c timeout 240 node agentes/analytics.mjs || true
-            CANAL=$c timeout 240 node agentes/autopsia.mjs || true
-            CANAL=$c timeout 240 node agentes/cazador.mjs || true
+            CANAL=$c timeout 120 node agentes/vistas.mjs || true
+            CANAL=$c timeout 120 node agentes/analytics.mjs || true
+            CANAL=$c timeout 120 node agentes/autopsia.mjs || true
+            CANAL=$c timeout 120 node agentes/cazador.mjs || true
             for intento in 1 2 3; do
-              CANAL=$c node agentes/oficina.mjs || fallo=1
+              CANAL=$c timeout 600 node agentes/oficina.mjs || fallo=1
               CANAL=$c node agentes/ultimo-aprobado.mjs && break
               echo "No salió un guion aprobado (intento $intento de 3): pruebo con otro tema."
             done
-            CANAL=$c timeout 240 node agentes/ayuda.mjs || true
-            CANAL=$c timeout 240 node agentes/funciones.mjs || true
-            CANAL=$c timeout 240 node agentes/conciencia.mjs || true
+            CANAL=$c timeout 120 node agentes/ayuda.mjs || true
+            CANAL=$c timeout 120 node agentes/funciones.mjs || true
+            CANAL=$c timeout 120 node agentes/conciencia.mjs || true
           done
           exit $fallo
       - name: Marcar progreso del guion
