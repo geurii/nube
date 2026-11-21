@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-21T06:37:22.657Z",
+  "actualizado": "2026-11-21T06:37:27.871Z",
   "totales": {
     "aprobados": 2,
     "rechazados": 2,
@@ -94,7 +94,7 @@
     "Publicador": {
       "estado": "esperando_decision",
       "actividad": "pensando",
-      "tarea": "Tiene un video listo: \"🔊 El enigma del Bloop: el rugido del hielo\". Falta subirlo a YouTube (necesita tu conexión; ver subir.mjs)."
+      "tarea": "Video \"oficina-bloop\" listo, pero falta conectar YouTube: crea YT_CLIENT_ID, YT_CLIENT_SECRET y YT_REFRESH_TOKEN como secretos del repositorio. JEFA: un video que no se sube no existe."
     }
   },
   "jefa": {
