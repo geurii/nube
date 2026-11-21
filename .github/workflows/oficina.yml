@@ -28,6 +28,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
   models: read
 
 # Un solo turno a la vez: si una corrida sigue en marcha, la siguiente espera (no se pisan).
@@ -109,3 +110,17 @@ jobs:
             echo "No pude guardar (intento $i); reintento en 5 s"
             sleep 5
           done
+      - name: Encadenar el siguiente ciclo (producir sin parar, con tope diario)
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          desde=$(date -u -d '24 hours ago' +%Y-%m-%dT%H:%M:%SZ)
+          n=$(gh run list --workflow=oficina.yml --limit 40 --json createdAt --jq "[.[] | select(.createdAt > \"$desde\")] | length" || echo 99)
+          echo "Ciclos de las últimas 24 h: $n"
+          if [ "$n" -lt 5 ]; then
+            sleep 90
+            gh workflow run oficina.yml && echo "Siguiente ciclo lanzado."
+          else
+            echo "Tope diario de ciclos alcanzado: los minutos gratis de GitHub no alcanzan para más."
+          fi
