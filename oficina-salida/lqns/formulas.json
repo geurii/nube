@@ -1,0 +1,59 @@
+{
+  "actualizado": "2026-11-21T14:07:21.233Z",
+  "canalesLeidos": 9,
+  "videosRevisados": 132,
+  "mejores": [
+    {
+      "canal": "The Why Files",
+      "idioma": "en",
+      "titulo": "Why Is Antarctica Closed? The Operation Highjump Mystery",
+      "publicado": "2026-11-20T01:00:08.000Z",
+      "vistas": 1795639,
+      "vistasPorHora": 48374
+    },
+    {
+      "canal": "MrBallen",
+      "idioma": "en",
+      "titulo": "TOP 5 Bingeable SCARY STORIES • No Escape Edition",
+      "publicado": "2026-11-20T19:00:34.000Z",
+      "vistas": 408509,
+      "vistasPorHora": 21373
+    },
+    {
+      "canal": "MrBallen",
+      "idioma": "en",
+      "titulo": "How Skydiving Changed Will Smith's Life!",
+      "publicado": "2026-11-17T17:00:07.000Z",
+      "vistas": 1594330,
+      "vistasPorHora": 17121
+    },
+    {
+      "canal": "The Why Files",
+      "idioma": "en",
+      "titulo": "America Is Hiding Something Underground",
+      "publicado": "2026-11-18T18:00:14.000Z",
+      "vistas": 1117869,
+      "vistasPorHora": 16411
+    },
+    {
+      "canal": "MrBallen",
+      "idioma": "en",
+      "titulo": "They saw a tall dark figure, and someone died",
+      "publicado": "2026-11-18T19:00:23.000Z",
+      "vistas": 956412,
+      "vistasPorHora": 14250
+    }
+  ],
+  "formula": {
+    "formula": "Palabra/Frase Impactante + Pregunta o Declaración Intrigante + (Opcional: Número/Lista) + (Opcional: Referencia a lo desconocido o prohibido)",
+    "ganchos": [
+      "¿Qué [evento misterioso] oculta realmente [lugar/entidad]?",
+      "Los [número] secretos más [adjetivo] de [tema amplio] que nadie quiere que sepas",
+      "Descubre la verdad detrás de [situación] y cómo cambió [persona/grupo] para siempre"
+    ],
+    "evitar": [
+      "Títulos demasiado genéricos sin un elemento de misterio o promesa de revelación",
+      "Uso excesivo de palabras de relleno que diluyen el gancho principal"
+    ]
+  }
+}

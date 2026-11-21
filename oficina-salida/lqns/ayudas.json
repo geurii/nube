@@ -1,35 +1,35 @@
 {
   "plan": [
-    "Prioridad 1: Lanzar la serie de videos \"Objetos Históricos Enigmáticos\" con responsable de la Oficina de Contenido (Jules). Meta: alcanzar al menos 2,000 vistas monetizadas por video antes del 13 de diciembre.",
-    "Prioridad 2: Crear y publicar una campaña de Shorts sobre fenómenos raros en la Oficina de Marketing (María). Meta: generar 1,500 vistas monetizadas en total antes del 13 de diciembre.",
-    "Prioridad 3: Desarrollar un podcast complementario de misterios sin resolver en la Oficina de Producción (Carlos). Meta: conseguir 1,000 reproducciones con ads antes del 13 de diciembre."
+    "Prioridad 1: Lanzar una serie de Shorts de 60 segundos sobre fenómenos inexplicables (ej. animales raros, tecnología oculta). Responsable: Oficina de Contenido Shorts. Meta: alcanzar 5,000 vistas combinadas y generar al menos $150 en ingres",
+    "Prioridad 2: Consolidar la serie 'El avión que recogía personas del suelo' en un video único de 8 minutos con título autónomo y miniatura llamativa. Responsable: Oficina de Producción de Largos. Meta: superar 2,000 vistas y obtener $200 en ",
+    "Prioridad 3: Crear un Shorts teaser para 'Kodak y la cámara digital oculta' con pregunta intrigante y emojis, impulsado con micro‑budget de promoción. Responsable: Oficina de Marketing y Promoción. Meta: 1,200 vistas y $120 en ingresos ante"
   ],
   "ganchos": [
-    "Sabías que [TEMA] desapareció en menos de [CIFRA] segundos? | Imagen de un reloj de arena derramando arena rápidamente",
-    "Sabías que [TEMA] se encontró en [CIFRA] lugares diferentes al mismo tiempo? | Imagen de un mapa con múltiples marcadores brillantes simultáneos",
-    "Sabías que [TEMA] fue visto por [CIFRA] personas en una sola noche? | Imagen de una multitud mirando al cielo con luces misteriosas",
-    "Sabías que [TEMA] contiene [CIFRA] capas de misterio sin resolver? | Imagen de un objeto antiguo con capas translúcidas que se separan",
-    "Sabías que [TEMA] se activó exactamente a las [CIFRA] horas? | Imagen de un dispositivo antiguo con una pantalla digital marcando la hora exacta"
+    "Sabías que [CIFRA] % de los [TEMA] desaparecen sin dejar rastro? | Imagen: silueta de un objeto brillante flotando en la niebla",
+    "Sabías que un [TEMA] puede viajar [CIFRA] kilómetros en un segundo? | Imagen: rayo de luz cruzando un desierto estrellado",
+    "Sabías que solo [CIFRA] personas han visto el verdadero [TEMA]? | Imagen: ojo humano ampliado reflejando una escena misteriosa",
+    "Sabías que el [TEMA] se activó en [CIFRA] minutos antes de desaparecer? | Imagen: cronómetro digital contando hacia cero junto a un artefacto antiguo",
+    "Sabías que [CIFRA] años después, el [TEMA] sigue sin explicación? | Imagen: ruina cubierta de musgo con un reloj de arena derramando arena"
   ],
   "mejorasGuion": [
-    "Añadir un gancho visual y curioso al inicio: incluir una pregunta impactante o dato sorprendente en la primera frase, por ejemplo \"Sabías que más de 1 000 desapariciones se han registrado en una zona del Atlántico conoci",
-    "Optimizar el ritmo con cortes breves y repeticiones de palabras clave: dividir el guion en bloques de 15‑20 segundos, repetir términos como \"desapariciones\", \"misterio\" y \"triángulo\" al final de cada bloque, y usar efect",
-    "Crear un cierre con llamado a la acción más persuasivo y una promesa de continuación: en lugar de \"Comparte este video... sígueme\", usar \"¿Te atreves a descubrir el próximo misterio? Dale like, comparte con quien también"
+    "Incluir una pregunta intrigante al inicio que sirva de gancho, por ejemplo: \"¿Qué misteriosa señal escuchó el universo en 1977?\" para captar la curiosidad inmediatamente",
+    "Acelerar el ritmo dividiendo el relato en bloques de 5‑7 segundos con cortes visuales y texto en pantalla que repitan palabras clave como \"Wow!\" y \"¿Dónde está la señal?\" para mantener la atención en formato Shorts",
+    "Terminar con un cierre de llamado a la acción más fuerte y breve, usando un emoji y una pregunta directa: \"¿Crees que volverá? Déjalo en los comentarios y comparte para que más personas lo descubran\""
   ],
   "temas": [
-    "The Wow! Signal",
-    "The Antikythera Mechanism",
-    "The Voynich Manuscript",
+    "The Antikythera mechanism",
+    "The Voynich manuscript",
+    "The Oak Island mystery",
     "The Taos Hum",
-    "The Oak Island Money Pit"
+    "The Tunguska event"
   ],
   "titulos": [
-    "Sabías que {hecho sorprendente} {emoji} (Parte {n}/{total})",
-    "El {objeto/personaje} que {acción extraordinaria} {emoji} #Shorts #virales",
-    "El {objeto/evento} que {descripción breve} {emoji} (Parte {n}/{total})",
-    "{Nombre genérico} {verbo} {detalle histórico} y {consecuencia inesperada}"
+    "Sabías que {evento sorprendente} 🤯 (Parte {X}/{Y})",
+    "Sabías que {objeto o fenómeno} {acción inesperada} 😱 #Shorts #virales",
+    "Sabías que {situación imposible} 🐧",
+    "Sabías que {descubrimiento histórico} {detalle impactante} (Parte {X}/{Y})"
   ],
-  "fecha": "2026-11-21T11:26:48.305Z",
+  "fecha": "2026-11-21T14:10:55.839Z",
   "iniciativas": [
     "Valentina (Directora de contenido): Definir una línea editorial clara que guíe a todo el equipo desde el primer video.",
     "Carolina (Coordinador de producción): Crear un calendario de tareas con hitos diarios para asegurar que todos estén en sus puestos sin pausas.",

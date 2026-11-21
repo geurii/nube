@@ -1,0 +1,126 @@
+{
+  "fecha": "2026-11-21T14:07:18.345Z",
+  "ultimos28Dias": {
+    "views": 3319,
+    "estimatedMinutesWatched": 700,
+    "averageViewDuration": 28,
+    "averageViewPercentage": 49.67,
+    "subscribersGained": 17,
+    "subscribersLost": 4
+  },
+  "meta": {
+    "suscriptores": 43,
+    "faltanSuscriptores": 957,
+    "horas12Meses": 12,
+    "faltanHoras": 3988,
+    "vistasShorts90": 3292,
+    "faltanVistasShorts": 9996708,
+    "requisitos": "1.000 suscriptores y (4.000 horas en 12 meses o 10 millones de vistas de Shorts en 90 días)"
+  },
+  "porVideo": [
+    {
+      "id": "AbkKfz6Rucc",
+      "vistas": 1034,
+      "retencionPct": 29.6,
+      "duracionMediaSeg": 17,
+      "minutos": 119,
+      "suscriptoresGanados": 1
+    },
+    {
+      "id": "0CI-lu8ChQs",
+      "vistas": 512,
+      "retencionPct": 24.8,
+      "duracionMediaSeg": 11,
+      "minutos": 49,
+      "suscriptoresGanados": 0
+    },
+    {
+      "id": "mo-VIsguhWs",
+      "vistas": 476,
+      "retencionPct": 51,
+      "duracionMediaSeg": 23,
+      "minutos": 86,
+      "suscriptoresGanados": 6
+    },
+    {
+      "id": "TB3xH9A5N2Y",
+      "vistas": 436,
+      "retencionPct": 80.9,
+      "duracionMediaSeg": 52,
+      "minutos": 209,
+      "suscriptoresGanados": 4
+    },
+    {
+      "id": "MGLP0D1jggY",
+      "vistas": 383,
+      "retencionPct": 75.3,
+      "duracionMediaSeg": 42,
+      "minutos": 137,
+      "suscriptoresGanados": 3
+    },
+    {
+      "id": "PAv0IIjgsUk",
+      "vistas": 284,
+      "retencionPct": 29.9,
+      "duracionMediaSeg": 14,
+      "minutos": 31,
+      "suscriptoresGanados": 0
+    },
+    {
+      "id": "sRAbgFH9Cuc",
+      "vistas": 66,
+      "retencionPct": 155.8,
+      "duracionMediaSeg": 73,
+      "minutos": 39,
+      "suscriptoresGanados": 0
+    },
+    {
+      "id": "QAz2Tc6UHbw",
+      "vistas": 39,
+      "retencionPct": 38.4,
+      "duracionMediaSeg": 21,
+      "minutos": 4,
+      "suscriptoresGanados": 0
+    },
+    {
+      "id": "plzlom47-f0",
+      "vistas": 36,
+      "retencionPct": 39.5,
+      "duracionMediaSeg": 24,
+      "minutos": 6,
+      "suscriptoresGanados": 0
+    },
+    {
+      "id": "7HSWjnC59-A",
+      "vistas": 26,
+      "retencionPct": 19,
+      "duracionMediaSeg": 40,
+      "minutos": 12,
+      "suscriptoresGanados": 2
+    },
+    {
+      "id": "7u0ukiN1pno",
+      "vistas": 22,
+      "retencionPct": 45.6,
+      "duracionMediaSeg": 18,
+      "minutos": 1,
+      "suscriptoresGanados": 0
+    },
+    {
+      "id": "rx6-DrUm3WI",
+      "vistas": 1,
+      "retencionPct": 0,
+      "duracionMediaSeg": 0,
+      "minutos": 0,
+      "suscriptoresGanados": 0
+    },
+    {
+      "id": "U1gN97z9Fow",
+      "vistas": 1,
+      "retencionPct": 20,
+      "duracionMediaSeg": 3,
+      "minutos": 0,
+      "suscriptoresGanados": 0
+    }
+  ]
+}

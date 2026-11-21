@@ -1,0 +1,53 @@
+{
+  "titulo": "🔭 La señal Wow! que aún intriga al cosmos",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-DO-EmilioNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-the-wow-signal.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "publicacion": {
+    "titulo": "🔭 La señal Wow! que aún intriga al cosmos",
+    "descripcion": "Una breve historia sobre la misteriosa señal detectada en 1977. Descubre el dato que pocos conocen.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://es.wikipedia.org/wiki/The_Wow!_Signal · https://en.wikipedia.org/wiki/Wow!_signal\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#WowSignal #SETI #RadioAstronomy #Mystery #Space"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 5,
+    "critica": "El gancho es vago y tarda demasiado. El ritmo es lento y hay relleno. El cierre no impacta."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que el quince de agosto de mil novecientos setenta y siete una señal sorprendió al mundo?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El radiotelescopio Big Ear, cerca de la Universidad de Ohio, observó durante setenta y dos segundos una emisión estrecha proveniente de Sagitario. Jerry Ehman, analista del proyecto SETI, encontró la cadena 6EQUJ5 y escribió Wow! al margen. Desde entonces, científicos han buscado repetición sin éxito, considerando reflejos de escombros o nubes de hidrógeno, pero nada se confirmó.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: la frecuencia fue cuarenta dos cuatro cinco megahercios, fuera del punto de hidrógeno.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "La señal sigue sin explicación, alimentando misterios en la comunidad científica mundial. Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

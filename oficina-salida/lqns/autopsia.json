@@ -1,0 +1,23 @@
+{
+  "fecha": "2026-11-21T14:07:20.221Z",
+  "total": 3726,
+  "promedio": 248,
+  "queFunciono": "Los videos con más vistas (sobre 500) comparten temáticas de curiosidades impactantes y misteriosas (p.ej., pingüinos en supermercados, aviones que recogen personas, historia de Kodak) y fueron publicados en fechas recientes (14‑20 nov 2026). Además, los títulos usan emojis, preguntas intrigantes y ",
+  "porQueFallaron": [
+    "[object Object]",
+    "[object Object]",
+    "[object Object]",
+    "[object Object]"
+  ],
+  "noSePuedeSaber": [
+    "Retención específica de los videos con más vistas (solo se tiene datos de algunos videos).",
+    "Qué miniaturas se usaron y su tasa de clic (CTR).",
+    "Datos demográficos o fuentes de tráfico (de dónde provienen las vistas).",
+    "Duración total de cada video (solo se conoce la retención media en segundos)."
+  ],
+  "reglas": [
+    "1. Publicar contenido de formato Shorts con títulos breves, emojis y preguntas intrigantes; el Shorts con 1036 vistas muestra que este formato genera mayor alcance.",
+    "2. Consolidar series en videos únicos o asegurarse de que cada parte tenga un título autónomo que explique el tema, evitando que los espectadores sientan que deben ver varias partes para entender.",
+    "3. Priorizar temas de curiosidad universal y alto factor sorpresa (p.ej., animales inusuales, tecnología oculta) y acompañarlos con miniaturas claras y llamativas; sin datos de miniaturas, es una hipótesis basada en el éxito de los videos top."
+  ]
+}
