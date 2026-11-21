@@ -7,6 +7,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {puestosDeLaOficina, mesaDePublicacion} from './puestos.mjs';
 import {avisarTelefono} from './aviso.mjs';
+import {pintarEscenas} from './pintor.mjs';
 
 const KEY = process.env.GROQ_API_KEY;
 const CANAL_ID = (process.env.CANAL || 'lqns').trim();
@@ -46,7 +47,7 @@ const notificar = (tipo, titulo, texto) => {
   fs.writeFileSync(NOTIFICACIONES, JSON.stringify(lista.slice(0, 80), null, 2));
 };
 /** Lo que la Mesa de publicación y los auditores dejaron en este ciclo (para el estado de los 30 puestos). */
-const CTX = {gancho: null, mesa: null, fuentes: 0, escenas: 0, sinImagen: 0, problemas: [], puntaje: null};
+const CTX = {pintadas: 0, gancho: null, mesa: null, fuentes: 0, escenas: 0, sinImagen: 0, problemas: [], puntaje: null};
 const registrar = (resultado, detalle, intentos, extra = {}) => {
   const e = leerJson(ESTADO, {agentes: {}, historial: [], totales: {aprobados: 0, rechazados: 0, errores: 0}});
   e.totales = {aprobados: 0, rechazados: 0, errores: 0, ...(e.totales ?? {})};
@@ -416,6 +417,17 @@ try {
       if (mesa) { CTX.mesa = mesa; titulo = mesa.titulo; descripcion = mesa.descripcion; hashtags = mesa.hashtags; }
       else informe.push('(La Mesa de publicación no entregó algo válido: se usa lo del Guionista.)');
     } catch (e) { informe.push('(La Mesa de publicación falló: ' + e.message + '. Se usa lo del Guionista.)'); }
+  }
+  // PINTOR: las escenas sin imagen en el catálogo se dibujan en pixel art (2 planos por escena)
+  if (aprobado) {
+    const idx = fondos.map((f, i) => (f.every((x) => x === 'pixelmisterio') ? i : -1)).filter((i) => i >= 0);
+    if (idx.length) {
+      try {
+        const p = await pintarEscenas({llamar: (m, max) => pedirJson(modelo, m, max), escenas, indices: idx, slug, tema: TEMA});
+        for (const [i, lista] of Object.entries(p)) { fondos[Number(i)] = lista; CTX.pintadas++; }
+        informe.push(`Pintor: ${CTX.pintadas} de ${idx.length} escenas dibujadas.`);
+      } catch (e) { informe.push('(El Pintor no pudo dibujar: ' + e.message + '. Se usa el fondo general.)'); }
+    }
   }
   const sinImagen = aprobado ? fondos.filter((f) => f.every((x) => x === 'pixelmisterio')).length : 0;
   CTX.sinImagen = sinImagen;

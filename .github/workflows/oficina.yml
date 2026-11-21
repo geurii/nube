@@ -83,7 +83,7 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "actions@users.noreply.github.com"
-          git add oficina-salida || true
+          git add oficina-salida public/pintados || true
           git diff --cached --quiet || git commit -m "Oficina: resultado automatico"
           for i in 1 2 3 4; do
             git pull --rebase origin main && git push && break

@@ -17,7 +17,7 @@ export const puestosDeLaOficina = (ag, {resultado, tema, ctx, historial, formula
   const g = ctx.gancho;
   p('Revisor de ganchos', ok ? 'libre' : 'trabajando', 'pensando', ok && g ? `Gancho auditivo: la primera frase tiene ${g.palabrasPrimera} palabras${g.palabrasPrimera > 28 ? ' (demasiado larga: debe caber en 3 segundos)' : ' (cabe en 3 segundos)'}. Gancho visual: ${g.escenasConUnFondo === 0 ? 'todas las escenas cambian de fondo' : g.escenasConUnFondo + ' escenas se quedan con un solo fondo'}.` : 'Espera un guion aprobado para medir el gancho.');
   p('Escenógrafo', 'libre', 'pensando', `Eligió los fondos de ${ctx.escenas} escenas del catálogo; ${ctx.sinImagen} no tenían imagen propia.`);
-  p('Pintor de imágenes', ctx.sinImagen ? 'trabajando' : 'libre', 'pensando', ctx.sinImagen ? `Hay ${ctx.sinImagen} escenas sin imagen propia. Aún no dibuja solo (está pendiente de construir), por eso se usa el fondo neutro.` : 'Todas las escenas encontraron imagen en el catálogo.');
+  p('Pintor de imágenes', 'trabajando', 'escribiendo', ctx.pintadas ? `Dibujó ${ctx.pintadas} escenas nuevas en pixel art (2 planos cada una) porque el catálogo no tenía imagen para ellas.` : ctx.sinImagen ? `Hay ${ctx.sinImagen} escenas sin imagen y no pude dibujarlas en este ciclo; se usa el fondo neutro.` : 'Todas las escenas encontraron imagen en el catálogo; ensayo composiciones para los próximos temas.');
   // Paga individual: 10.000 vistas ganadas por cada puesto (Jules: 20.000). Solo cobran si el canal las consigue.
   const total = vistas?.total;
   const base = vistas?.historia?.[0]?.total ?? total;
