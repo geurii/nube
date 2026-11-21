@@ -1,23 +1,22 @@
 {
-  "fecha": "2026-11-21T14:07:20.221Z",
-  "total": 3726,
-  "promedio": 248,
-  "queFunciono": "Los videos con más vistas (sobre 500) comparten temáticas de curiosidades impactantes y misteriosas (p.ej., pingüinos en supermercados, aviones que recogen personas, historia de Kodak) y fueron publicados en fechas recientes (14‑20 nov 2026). Además, los títulos usan emojis, preguntas intrigantes y ",
+  "fecha": "2026-11-21T18:04:01.518Z",
+  "total": 3276,
+  "promedio": 218,
+  "queFunciono": "Los videos con mayor audiencia comparten títulos que incluyen palabras clave de curiosidad y misterio (p. ej. \"Sabías que\", \"El vestido que cambió 3 veces\", \"El avión que recogía personas\") y se publicaron en fechas recientes (20 y 14 de noviembre). Además, los títulos más atractivos usan emojis y f",
   "porQueFallaron": [
-    "[object Object]",
-    "[object Object]",
-    "[object Object]",
-    "[object Object]"
+    "Contenido con títulos demasiado genéricos o sin gancho claro: por ejemplo, \"Sabías que un banco pagó 175 millones por clientes que no existían\" y \"Sabías que la acusaron de fraude un año después de elegirla\" tienen títulos que no generan curiosidad inmediata y",
+    "El uso de títulos con temas muy específicos o poco comunes sin contexto atractivo: \"Sabías que tres hombres caminaron en plena noche polar por 3 huevos de pingüino\" y \"Los \"jóvenes genios\" que terminaron acusados de fraude: ¿estafadores o genios?\" presentan co",
+    "Falta de formato de serie o continuidad en los títulos que no indican una narrativa progresiva: los videos con pocas vistas no siguen la estructura Parte X/5, lo que reduce la retención y la expectativa de ver más episodios."
   ],
   "noSePuedeSaber": [
-    "Retención específica de los videos con más vistas (solo se tiene datos de algunos videos).",
-    "Qué miniaturas se usaron y su tasa de clic (CTR).",
-    "Datos demográficos o fuentes de tráfico (de dónde provienen las vistas).",
-    "Duración total de cada video (solo se conoce la retención media en segundos)."
+    "Qué miniaturas se usaron para cada video.",
+    "Cuántos espectadores se mostraron a cada video (audiencia objetivo).",
+    "Qué tipo de audiencia (demografía) respondió a cada título.",
+    "Si los videos se promocionaron en redes sociales o a través de anuncios pagados."
   ],
   "reglas": [
-    "1. Publicar contenido de formato Shorts con títulos breves, emojis y preguntas intrigantes; el Shorts con 1036 vistas muestra que este formato genera mayor alcance.",
-    "2. Consolidar series en videos únicos o asegurarse de que cada parte tenga un título autónomo que explique el tema, evitando que los espectadores sientan que deben ver varias partes para entender.",
-    "3. Priorizar temas de curiosidad universal y alto factor sorpresa (p.ej., animales inusuales, tecnología oculta) y acompañarlos con miniaturas claras y llamativas; sin datos de miniaturas, es una hipótesis basada en el éxito de los videos top."
+    "1. Utiliza títulos que incluyan una pregunta o afirmación de curiosidad con emojis y la estructura \"Parte X/5\" para crear expectativa y continuidad.",
+    "2. Publica los videos en fechas recientes y de forma consistente (por ejemplo, cada 2-3 días) para mantener el interés de la audiencia y aprovechar la retención de series.",
+    "3. Asegúrate de que la miniatura sea visualmente atractiva, con colores contrastantes y una imagen que refleje el misterio o la sorpresa del título, para maximizar el CTR inicial."
   ]
 }

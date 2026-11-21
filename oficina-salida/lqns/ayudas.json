@@ -1,43 +1,43 @@
 {
   "plan": [
-    "Crear 3 Shorts de formato ultra‑corto (≤60 s) sobre fenómenos misteriosos con títulos llamativos y emojis, siguiendo la fórmula que generó 1 036 vistas.: Equipo de Contenido Shorts: Monetizar cada Short alcanzando al menos 1 200 vistas ante",
-    "Reestructurar series en videos únicos de 8‑10 min con título autónomo que explique el tema completo, evitando dependencias de partes.: Departamento de Producción y Guion: Publicar 2 videos únicos y lograr 5 000 vistas combinadas, generando ",
-    "Lanzar una campaña de miniaturas y thumbnails con diseño de alto contraste y emojis, basada en hipótesis de factor sorpresa.: Equipo de Diseño y Marketing: Incrementar CTR en un 15 % y alcanzar 2 000 vistas adicionales monetizadas por video"
+    "1. Lanzar la serie “El misterio de la brújula de piedra” (Parte 1/5) con Jules como responsable de producción, objetivo: alcanzar 2000 vistas y monetizar 30% de ingresos antes del 13 de diciembre.",
+    "2. Crear el video “Sabías que el reloj de sol más antiguo del mundo guarda un mensaje secreto” (Parte 2/5) con Carlos como responsable de investigación y edición, meta: generar 1500 vistas y monetizar 25% de ingresos antes del 13 de diciemb",
+    "3. Desarrollar el contenido “El objeto perdido de la civilización maya” (Parte 3/5) con Ana como responsable de guion y promoción, objetivo: lograr 1800 vistas y monetizar 20% de ingresos antes del 13 de diciembre."
   ],
   "ganchos": [
-    "Sabías que [CIFRA] personas desaparecieron en [TEMA] sin dejar rastro? | Imagen de una silueta difuminada bajo una niebla densa",
-    "Sabías que [CIFRA] objetos misteriosos fueron hallados en [TEMA] en menos de 24 horas? | Imagen de una caja antigua con luces parpadeantes emergiendo",
-    "Sabías que [CIFRA] animales nunca vistos viven en [TEMA] y solo aparecen de noche? | Imagen de una criatura luminosa entre sombras de un bosque",
-    "Sabías que [CIFRA] tecnologías secretas fueron desarrolladas en [TEMA] y fueron borradas de la historia? | Imagen de un dispositivo futurista cubierto de polvo y cables",
-    "Sabías que [CIFRA] coincidencias imposibles ocurrieron en [TEMA] en un solo día? | Imagen de un calendario con fechas resaltadas y símbolos de asombro"
+    "Sabías que [TEMA] [CIFRA] | imagen de un objeto histórico iluminado por luces de neón",
+    "Sabías que [TEMA] [CIFRA] | imagen de una pista de aterrizaje vacía bajo la luna",
+    "Sabías que [TEMA] [CIFRA] | imagen de un mapa antiguo con marcas rojas brillantes",
+    "Sabías que [TEMA] [CIFRA] | imagen de un espejo roto reflejando un paisaje desconocido",
+    "Sabías que [TEMA] [CIFRA] | imagen de una sala de archivos con estanterías llenas de sellos misteriosos"
   ],
   "mejorasGuion": [
-    "Incluir un gancho visual y textual en los primeros 3 segundos con una pregunta impactante y un emoji, por ejemplo: \"¿Sabías que el Triángulo de la Muerte del Atlántico ha engullido más de mil barcos? 🌊\" para captar la a",
-    "Acelerar el ritmo dividiendo la información en bloques de 5‑7 segundos y usar cortes rápidos con texto en pantalla que resuma cada dato (año, caso, conclusión), evitando párrafos largos; esto mantiene la atención y favor",
-    "Agregar un cierre con llamada a la acción clara y repetitiva: repetir la pregunta final y usar un llamado a compartir y seguir, pero con un estímulo extra, como \"¿Tienes un amigo que ama los misterios? Etiquétalo y descu"
+    "1. Inicia con un gancho más impactante y directo: cambia “Sabías que una zona del Atlántico…” por “Sabías que en la zona más misteriosa del mundo, Florida, Bermudas y Puerto Rico, se esconden más de 1,000 desapariciones ",
+    "2. Añade ritmo y repetición visual usando subtítulos o gráficos breves que resuman cada caso clave (Flight 19, el “escáner de radio”, etc.) y repite la pregunta final con un efecto de sonido misterioso: “¿Siguen guardand",
+    "3. Refuerza el CTA con un elemento de urgencia y comunidad: “Comparte este video con 3 amigos que también aman los misterios y suscríbete para descubrir la próxima pieza del rompecabezas” y coloca una miniatura con una i"
   ],
   "temas": [
-    "The Antikythera mechanism",
-    "The Oak Island mystery",
-    "The Taos hum",
+    "The Taos Hum",
+    "The Sargasso Sea",
+    "The Green Children of Woolpit",
     "The Nazca Lines",
-    "The Green Children of Woolpit"
+    "The Voynich Manuscript"
   ],
   "titulos": [
-    "Sabías que {evento sorprendente} 🧐 (Parte {n}/{total})",
-    "Sabías que {objeto o fenómeno} {acción inesperada} 😱 #Shorts #virales",
-    "Sabías que {situación imposible} 🤯 (Parte {n}/{total})",
-    "Sabías que {hecho histórico} {detalle impactante} 📚"
+    "Sabías que nunca verás pingüino en un supermercado 🐧 (Parte 1/3)",
+    "El vestido que cambió 3 veces en 17 segundos y nadie supo cómo 😱 #Shorts #virales",
+    "El avión que recogía personas del suelo 🤯 (Parte 2/5)",
+    "Eligieron a dos hombres para saltar sobre el Ártico 🧊 (Parte 3/5)"
   ],
-  "fecha": "2026-11-21T15:24:37.785Z",
+  "fecha": "2026-11-21T18:09:13.668Z",
   "iniciativas": [
-    "Valentina (Directora de contenido): Definir una línea editorial clara que guíe a todo el equipo desde el primer video.",
-    "Carolina (Coordinador de producción): Crear un calendario de tareas con hitos diarios para asegurar que todos estén en sus puestos sin pausas.",
-    "Fernanda (Jefa de calidad): Implementar una lista de verificación de calidad que se revise antes de cualquier publicación.",
-    "Camila (Investigador de temas): Compilar una base de datos de fuentes potenciales que podamos usar cuando iniciemos la producción.",
-    "Daniela (Cazador de fórmulas): Proponer tres estructuras de video diferentes y someterlas a votación interna.",
-    "Julieta (Vigía de tendencias): Establecer un reporte semanal de tendencias emergentes para alimentar nuestras ideas.",
-    "Lucía (Guionista): Escribir un guion piloto que incluya un gancho fuerte en los primeros 10 segundos.",
-    "Mariana (Editor de guion): Crear un proceso de revisión cruzada entre editores antes de aprobar cualquier guion."
+    "Valentina (Directora de contenido): Definir una guía de estilo clara que el equipo pueda seguir desde el primer video.",
+    "Carolina (Coordinador de producción): Crear un calendario de producción con hitos diarios y asignar responsables para cada tarea.",
+    "Fernanda (Jefa de calidad): Implementar una checklist de calidad que se revise antes de cada envío al panel.",
+    "Camila (Investigador de temas): Compilar una lista de fuentes potenciales y temas de tendencia para tener material listo cuando comencemos.",
+    "Daniela (Cazador de fórmulas): Probar tres estructuras de video diferentes en borradores internos y evaluar cuál genera mejor gancho.",
+    "Julieta (Vigía de tendencias): Suscribirme a newsletters de tendencias y crear un informe semanal de insights para el equipo.",
+    "Lucía (Guionista): Escribir un piloto de guion y someterlo a una breve lectura grupal para obtener feedback inmediato.",
+    "Mariana (Editor de guion): Establecer una ronda de revisión cruzada entre editor y guionista antes de enviar al panel."
   ]
 }

@@ -1,0 +1,74 @@
+{
+  "fecha": "2026-11-21T18:09:13.496Z",
+  "id": "lqns-bloop",
+  "aprobado": true,
+  "resumen": "5 de 8 aprobaron, 6 pasaron los primeros 3 segundos, 3 lo compartirían.",
+  "mejora": "Haz un gancho visual y verbal más impactante en los primeros 2‑3 segundos (ej. \"¡Escucha el rugido que asustó a la ciencia!\"), con texto grande y emojis, para retener a los espectadores que deciden en segundos.",
+  "gemini": null,
+  "votos": [
+    {
+      "quien": "Crítico: adolescente",
+      "pasa3": false,
+      "sigueHasta": 3,
+      "leGusto": false,
+      "compartiria": false,
+      "comentario": "El gancho es medio lento, y en 2‑3 s ya me estaba aburrido, paso."
+    },
+    {
+      "quien": "Crítica: universitaria",
+      "pasa3": true,
+      "sigueHasta": 45,
+      "leGusto": true,
+      "compartiria": true,
+      "comentario": "Me atrapó el misterio del sonido y el dato del iceberg, lo compartiría con mis amigas curiosas."
+    },
+    {
+      "quien": "Crítico: padre trabajador",
+      "pasa3": true,
+      "sigueHasta": 30,
+      "leGusto": true,
+      "compartiria": false,
+      "comentario": "Me quedé porque aprendí algo concreto rápido, pero no lo enviaría a todos."
+    },
+    {
+      "quien": "Crítico: escéptico",
+      "pasa3": true,
+      "sigueHasta": 20,
+      "leGusto": false,
+      "compartiria": false,
+      "comentario": "Demasiado click‑bait con el “rugido de criatura”, pero la ciencia lo desmiente; me dejó con sensación de exageración."
+    },
+    {
+      "quien": "Crítica: fan del misterio",
+      "pasa3": true,
+      "sigueHasta": 50,
+      "leGusto": true,
+      "compartiria": true,
+      "comentario": "El Bloop es un buen caso, aunque el guion es algo predecible; lo recomendaría a otros amantes del misterio."
+    },
+    {
+      "quien": "Crítica: ama de casa",
+      "pasa3": true,
+      "sigueHasta": 40,
+      "leGusto": true,
+      "compartiria": false,
+      "comentario": "Narración clara y ritmo cómodo, la voz no es monótona y entendí todo sin jerga."
+    },
+    {
+      "quien": "Crítico: joven dominicano",
+      "pasa3": false,
+      "sigueHasta": 3,
+      "leGusto": false,
+      "compartiria": false,
+      "comentario": "Suena a docu de escuela, me faltó chispa y lenguaje callejero, paso."
+    },
+    {
+      "quien": "Crítico: abuelo",
+      "pasa3": true,
+      "sigueHasta": 52,
+      "leGusto": true,
+      "compartiria": true,
+      "comentario": "Historia bien contada, subtítulos claros, me gustó el final y lo compartiría con mis nietos."
+    }
+  ]
+}

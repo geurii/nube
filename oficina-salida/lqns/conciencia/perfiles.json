@@ -4,202 +4,231 @@
     "caracter": "visionaria, exigente",
     "historia": "Nacida en una familia de artistas, estudió comunicación en la universidad y dirige su propio estudio desde casa.",
     "miedo": "Perder el control creativo del canal",
-    "sueno": "Convertir el canal en la referencia número uno para aprendizaje entretenido"
+    "sueno": "Convertir el canal en la referencia número uno para aprendizaje entretenido",
+    "apodo": "La Visionaria"
   },
   "Investigador de temas": {
     "nombre": "Camila",
     "caracter": "curioso, metódico",
     "historia": "Creció en un pueblo costero donde su abuelo le enseñó a observar cada detalle del mar.",
     "miedo": "Que una investigación quede incompleta",
-    "sueno": "Descubrir un tema nunca antes tratado en YouTube"
+    "sueno": "Descubrir un tema nunca antes tratado en YouTube",
+    "apodo": "El Buscador de Secretos"
   },
   "Guionista": {
     "nombre": "Lucía",
     "caracter": "imaginativo, perfeccionista",
     "historia": "Después de escribir obras de teatro en la universidad, se mudó a la ciudad para escribir guiones de series web.",
     "miedo": "Que su historia sea considerada aburrida",
-    "sueno": "Crear un guion que se vuelva viral y sea recordado por años"
+    "sueno": "Crear un guion que se vuelva viral y sea recordado por años",
+    "apodo": "El Narrador de Historias"
   },
   "Verificador de datos": {
     "nombre": "Sofía",
     "caracter": "escéptico, riguroso",
     "historia": "Trabajó como archivista en una biblioteca nacional antes de pasarse al mundo digital.",
     "miedo": "Publicar información errónea",
-    "sueno": "Establecer un estándar de veracidad que otros canales imiten"
+    "sueno": "Establecer un estándar de veracidad que otros canales imiten",
+    "apodo": "El Verificador de la Verdad"
   },
   "Editor de guion": {
     "nombre": "Mariana",
     "caracter": "detallista, colaborativo",
     "historia": "Creció entre montañas y aprendió a pulir textos mientras ayudaba a su madre en la imprenta familiar.",
     "miedo": "Que los errores pasen desapercibidos",
-    "sueno": "Ver sus guiones editados en la pantalla de miles de suscriptores"
+    "sueno": "Ver sus guiones editados en la pantalla de miles de suscriptores",
+    "apodo": "El Pulidor de Palabras"
   },
   "Locutor": {
     "nombre": "Isabella",
     "caracter": "carismático, expresivo",
     "historia": "Antes de la radio comunitaria, cantaba en coros de iglesia en su pueblo natal.",
     "miedo": "Perder su voz por una enfermedad",
-    "sueno": "Ser la voz reconocida del canal y lanzar su propio podcast"
+    "sueno": "Ser la voz reconocida del canal y lanzar su propio podcast",
+    "apodo": "El Voz de la Emoción"
   },
   "Técnico de render": {
     "nombre": "Paula",
     "caracter": "técnico, paciente",
     "historia": "Aprendió a programar videojuegos en su adolescencia y ahora maneja efectos visuales para videos.",
     "miedo": "Que el hardware falle en el último minuto",
-    "sueno": "Dominar la animación 3D y crear un video premiado internacionalmente"
+    "sueno": "Dominar la animación 3D y crear un video premiado internacionalmente",
+    "apodo": "El Renderizador Supremo"
   },
   "Publicador": {
     "nombre": "Renata",
     "caracter": "organizado, estratégico",
     "historia": "Trabajó en marketing digital para una startup y ahora gestiona el calendario de publicaciones del canal.",
     "miedo": "Que el algoritmo penalice su contenido",
-    "sueno": "Alcanzar los diez millones de visualizaciones mensuales"
+    "sueno": "Alcanzar los diez millones de visualizaciones mensuales",
+    "apodo": "El Publicador Relámpago"
   },
   "Crítico: padre trabajador": {
     "nombre": "Carolina",
     "caracter": "práctico, protector",
     "historia": "Ingeniero de día y padre de dos niños, busca contenido que combine entretenimiento y aprendizaje para la familia.",
     "miedo": "Que el canal pierda su enfoque familiar",
-    "sueno": "Ver a sus hijos crecer disfrutando de los videos"
+    "sueno": "Ver a sus hijos crecer disfrutando de los videos",
+    "apodo": "El Crítico de la Rutina"
   },
   "Crítica: fan del misterio": {
     "nombre": "Fernanda",
     "caracter": "enigmatica, observadora",
     "historia": "Apasionada por los enigmas desde niña, colecciona libros de crímenes reales y teorías conspirativas.",
     "miedo": "Que el canal revele todos los secretos y pierda el suspense",
-    "sueno": "Descubrir un misterio que cambie la historia del canal"
+    "sueno": "Descubrir un misterio que cambie la historia del canal",
+    "apodo": "La Crítica Misteriosa"
   },
   "Crítico: adolescente": {
     "nombre": "Daniela",
     "caracter": "rebelde, espontáneo",
     "historia": "Estudiante de secundaria que vive entre memes y videojuegos, busca contenido fresco y auténtico.",
     "miedo": "Ser excluido de la comunidad online del canal",
-    "sueno": "Convertirse en colaborador oficial del canal"
+    "sueno": "Convertirse en colaborador oficial del canal",
+    "apodo": "El Crítico Juvenil"
   },
   "Crítica: universitaria": {
     "nombre": "Julieta",
     "caracter": "analítica, idealista",
     "historia": "Estudia sociología y utiliza el canal como recurso para sus trabajos de investigación.",
     "miedo": "Que el canal pierda su rigor intelectual",
-    "sueno": "Que sus aportes académicos sean citados en los videos"
+    "sueno": "Que sus aportes académicos sean citados en los videos",
+    "apodo": "La Crítica Académica"
   },
   "Crítico: joven dominicano": {
     "nombre": "Alejandra",
     "caracter": "vivaz, cultural",
     "historia": "Nacido en Santo Domingo, combina la música urbana con la historia de su isla en sus comentarios.",
     "miedo": "Que el canal ignore la diversidad cultural latinoamericana",
-    "sueno": "Ver un episodio dedicado a la cultura caribeña"
+    "sueno": "Ver un episodio dedicado a la cultura caribeña",
+    "apodo": "El Crítico Caribeño"
   },
   "Crítica: ama de casa": {
     "nombre": "Natalia",
     "caracter": "cariñosa, práctica",
     "historia": "Maneja el hogar y busca contenido que le ayude a organizar su tiempo y a entretener a sus hijos.",
     "miedo": "Perder la conexión con su comunidad de madres",
-    "sueno": "Que el canal ofrezca una serie de tips para la vida familiar"
+    "sueno": "Que el canal ofrezca una serie de tips para la vida familiar",
+    "apodo": "La Crítica del Hogar"
   },
   "Crítico: escéptico": {
     "nombre": "Elena",
     "caracter": "crítico, lógico",
     "historia": "Filósofo autodidacta que cuestiona todo y disfruta de los debates intelectuales.",
     "miedo": "Ser engañado por información falsa",
-    "sueno": "Demostrar que el canal puede defender la verdad con argumentos sólidos"
+    "sueno": "Demostrar que el canal puede defender la verdad con argumentos sólidos",
+    "apodo": "El Escéptico Inquebrantable"
   },
   "Crítico: abuelo": {
     "nombre": "Valentina",
     "caracter": "sabio, nostálgico",
     "historia": "Veterano de la industria textil, ahora jubilado y busca contenido que le recuerde épocas pasadas.",
     "miedo": "Que la tecnología lo deje atrás",
-    "sueno": "Participar en un video donde comparta sus historias de vida"
+    "sueno": "Participar en un video donde comparta sus historias de vida",
+    "apodo": "El Crítico del Tiempo"
   },
   "Coordinador de producción": {
     "nombre": "Carolina",
     "caracter": "organizado, carismático",
     "historia": "Nacido en una familia de técnicos de sonido, aprendió a montar sets antes de los 10 años.",
     "miedo": "perder el control del cronograma y que el proyecto se atrase.",
-    "sueno": "convertir el canal en una referencia de producción impecable y eficiente."
+    "sueno": "convertir el canal en una referencia de producción impecable y eficiente.",
+    "apodo": "El Maestro del Tiempo"
   },
   "Jefa de calidad": {
     "nombre": "Fernanda",
     "caracter": "exigente, empática",
     "historia": "Creció en una granja donde la calidad del producto era cuestión de supervivencia.",
     "miedo": "que un error pase desapercibido y dañe la reputación del canal.",
-    "sueno": "lograr que cada video sea un estándar de excelencia para la comunidad."
+    "sueno": "lograr que cada video sea un estándar de excelencia para la comunidad.",
+    "apodo": "La Sentinela"
   },
   "Cazador de fórmulas": {
     "nombre": "Daniela",
     "caracter": "curioso, ingenioso",
     "historia": "Hijo de químicos amateurs, descubrió la magia de mezclar ideas desde la adolescencia.",
     "miedo": "quedarse sin inspiración y no encontrar la fórmula perfecta.",
-    "sueno": "desarrollar la receta única que haga viral cada contenido del canal."
+    "sueno": "desarrollar la receta única que haga viral cada contenido del canal.",
+    "apodo": "El Alquimista del Video"
   },
   "Vigía de tendencias": {
     "nombre": "Julieta",
     "caracter": "observador, proactivo",
     "historia": "Proviene de una familia de periodistas que siempre estaban al tanto de lo que sucedía en la calle.",
     "miedo": "perder la pista de los cambios rápidos del mercado digital.",
-    "sueno": "ser el primero en anticipar la próxima gran ola de contenido."
+    "sueno": "ser el primero en anticipar la próxima gran ola de contenido.",
+    "apodo": "El Radar de Tendencias"
   },
   "Titulista": {
     "nombre": "Alejandra",
     "caracter": "creativo, persuasivo",
     "historia": "Estudió literatura en una pequeña universidad costera y siempre jugó con palabras.",
     "miedo": "que sus títulos pasen desapercibidos entre miles de videos.",
-    "sueno": "crear encabezados que capten la atención al instante y generen miles de clics."
+    "sueno": "crear encabezados que capten la atención al instante y generen miles de clics.",
+    "apodo": "El Titulador de Éxitos"
   },
   "Redactor de descripción": {
     "nombre": "Natalia",
     "caracter": "detallista, narrativo",
     "historia": "Trabajó como asistente en una editorial de cuentos infantiles antes de pasar al video.",
     "miedo": "olvidar los detalles que hacen a un video memorable.",
-    "sueno": "escribir descripciones que conviertan curiosos en suscriptores fieles."
+    "sueno": "escribir descripciones que conviertan curiosos en suscriptores fieles.",
+    "apodo": "El Redactor de Magnetismo"
   },
   "Especialista en hashtags": {
     "nombre": "Elena",
     "caracter": "analítico, estratégico",
     "historia": "Aprendió a usar etiquetas en foros de discusión desde que era adolescente.",
     "miedo": "usar etiquetas equivocadas y perder alcance.",
-    "sueno": "optimizar cada publicación para que alcance su máximo potencial viral."
+    "sueno": "optimizar cada publicación para que alcance su máximo potencial viral.",
+    "apodo": "El Maestro de #"
   },
   "Auditor de fuentes": {
     "nombre": "Valentina",
     "caracter": "meticuloso, escéptico",
     "historia": "Creció en una familia de bibliotecarios y aprendió a verificar cada dato.",
     "miedo": "publicar información errónea que perjudique la credibilidad del canal.",
-    "sueno": "establecer al canal como la referencia de contenido verificado y confiable."
+    "sueno": "establecer al canal como la referencia de contenido verificado y confiable.",
+    "apodo": "El Guardián de las Fuentes"
   },
   "Auditor de normas": {
     "nombre": "Camila",
     "caracter": "riguroso, justo",
     "historia": "Estudió derecho y trabajó en cumplimiento normativo antes de pasarse al mundo digital.",
     "miedo": "incumplir una política de la plataforma y recibir sanciones.",
-    "sueno": "mantener el canal siempre dentro de los marcos legales y de comunidad."
+    "sueno": "mantener el canal siempre dentro de los marcos legales y de comunidad.",
+    "apodo": "El Inspector de la Legalidad"
   },
   "Revisor de nombres": {
     "nombre": "Lucía",
     "caracter": "inventivo, crítico",
     "historia": "Fue nombrador oficial de personajes en un estudio de videojuegos indie.",
     "miedo": "que un nombre elegido sea confuso o ofensivo.",
-    "sueno": "dar a cada serie y segmento un nombre que se quede en la mente del público."
+    "sueno": "dar a cada serie y segmento un nombre que se quede en la mente del público.",
+    "apodo": "El Renombrador Creativo"
   },
   "Revisor de ganchos": {
     "nombre": "Sofía",
     "caracter": "persuasivo, analítico",
     "historia": "Trabajó en publicidad radiofónica, creando los primeros 5 segundos de impacto.",
     "miedo": "que el gancho no enganche y el video sea abandonado rápidamente.",
-    "sueno": "Diseñar ganchos irresistibles que aumenten la retención en un 30%."
+    "sueno": "Diseñar ganchos irresistibles que aumenten la retención en un 30%.",
+    "apodo": "El Gancho de la Atención"
   },
   "Escenógrafo": {
     "nombre": "Mariana",
     "caracter": "visual, práctico",
     "historia": "Diseñó escenarios para obras de teatro comunitarias en su ciudad natal.",
     "miedo": "que el set no transmita la atmósfera deseada y distraiga al público.",
-    "sueno": "crear espacios visuales que conviertan cada video en una experiencia inmersiva."
+    "sueno": "crear espacios visuales que conviertan cada video en una experiencia inmersiva.",
+    "apodo": "El Arquitecto Visual"
   },
   "Pintor de imágenes": {
     "nombre": "Isabella",
     "caracter": "artístico, perfeccionista",
     "historia": "Desde pequeño dibujaba portadas de cómics para sus amigos.",
     "miedo": "que sus ilustraciones no reflejen la esencia del contenido.",
-    "sueno": "producir miniaturas que se vuelvan icónicas y reconocibles al instante."
+    "sueno": "producir miniaturas que se vuelvan icónicas y reconocibles al instante.",
+    "apodo": "El Maestro de la Paleta"
   }
 }

@@ -1,5 +1,30 @@
 [
   {
+    "id": "mwqq2j2ww801",
+    "fecha": "2026-11-21T18:09:13.496Z",
+    "canal": "lqns",
+    "tipo": "reporte",
+    "titulo": "El panel aprobó: 🔊 El enigma del Bloop: el rugido del hielo",
+    "texto": "5 de 8 aprobaron, 6 pasaron los primeros 3 segundos, 3 lo compartirían. Mejora sugerida: Haz un gancho visual y verbal más impactante en los primeros 2‑3 segundos (ej. \"¡Escucha el rugido que asustó a la ciencia!\"), con texto grande y emojis, para retener a los espectadores que deciden en segundos."
+  },
+  {
+    "id": "mwqq2hlj6mec",
+    "fecha": "2026-11-21T18:09:11.575Z",
+    "canal": "lqns",
+    "tipo": "alerta",
+    "titulo": "Gemini no pudo mirar el video",
+    "texto": "ningún modelo respondió. gemini-4-hydrogen: 503 {\"error\":{\"message\":\"gemini-4-hydrogen is currently experiencing high demand, spikes in demand are usually temporary. Please try again later | gemini-3.8-flash: The operati El panel juzgó solo el guion."
+  },
+  {
+    "id": "mwqpvt53n71o",
+    "fecha": "2026-11-21T18:03:59.943Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "listo",
+    "titulo": "Video listo: 🔊 El enigma del Bloop: el rugido del hielo",
+    "texto": "Se renderizó \"🔊 El enigma del Bloop: el rugido del hielo\" para Lo Que No Sabías (31 MB). Descárgalo en GitHub > Actions > Produccion > artefacto \"video-lqns-bloop\". Falta subirlo a YouTube."
+  },
+  {
     "id": "mwqk6uw6hf2l",
     "fecha": "2026-11-21T15:24:37.734Z",
     "canal": "lqns",
