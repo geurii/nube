@@ -7,6 +7,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {puestosDeLaOficina, mesaDePublicacion} from './puestos.mjs';
 import {avisarTelefono} from './aviso.mjs';
+import {leerManual, pendientesDeVistoBueno, ESTADO_ESPERA} from './manual.mjs';
 import {crearVisuales} from './visuales.mjs';
 import {investigarEnLaWeb} from './investigar-web.mjs';
 import {limpiarParaVoz} from './texto-voz.mjs';
@@ -31,6 +32,7 @@ const PALABRAS = FORMATO === 'largo' ? Number(process.env.PALABRAS) || 900 : 110
 const CTA = CONFIG.cta ?? 'Comparte este video con un amigo que haría lo mismo, sígueme.';
 const UA = 'OficinaVideos/1.0 (proyecto educativo)';
 const SALIDA = path.resolve('oficina-salida', CANAL_ID);
+const MANUAL = leerManual(CANAL_ID); // modo manual del dueño (apagado por defecto)
 const NOTIFICACIONES = path.resolve('oficina-salida', 'notificaciones.json');
 fs.mkdirSync(SALIDA, {recursive: true});
 
@@ -440,6 +442,11 @@ const normalizar = (lista) => (lista ?? []).map((e) => ({tipo: ['hook', 'histori
 /* ====================== Flujo ====================== */
 const informe = [`# Informe de la oficina · ${CONFIG.nombre} · ${TEMA || 'tema por elegir'} (${FORMATO})`, ''];
 try {
+  // MODO MANUAL (opcional): si hay un guion esperando tu visto bueno, la oficina no apila otro hasta que respondas
+  if (MANUAL.activo && pendientesDeVistoBueno(CANAL_ID).length && !process.env.TEMA) {
+    console.log(`Modo manual: "${pendientesDeVistoBueno(CANAL_ID)[0].titulo}" espera tu visto bueno. No se genera otro guion hasta que respondas.`);
+    process.exit(0);
+  }
   const modelo = await elegirModelo();
   informe.push(`Modelo usado en Groq: ${modelo}`, '');
   if (!TEMA) { TEMA = await elegirTema(modelo); informe[0] = `# Informe de la oficina · ${TEMA} (${FORMATO})`; informe.push('Tema elegido por la oficina.', ''); }
@@ -560,7 +567,7 @@ try {
     estilo: 'gancho', // edición de gancho: titular gigante, cortes rápidos con glitch y escaneo (copia el ritmo de los reels que frenan el dedo, sin cambiar el pixel del canal)
     ganchoTexto: ganchoDe(escenas[0]?.texto),
     publicacion: {titulo, descripcion: `${descripcion}\n\n${CONFIG.ctaEscrito ?? ''}\n\nFuentes: ${fuentes.filter((f) => !f.apoyo).map((f) => f.url).join(' · ')}${CONFIG.enlaceCanal ? `\n\nMás historias en el canal: ${CONFIG.enlaceCanal}` : ''}${hashtags.length ? `\n\n${hashtags.join(' ')}` : ''}`},
-    estado: aprobado ? 'aprobado' : 'rechazado-necesita-revision',
+    estado: aprobado ? (MANUAL.activo ? ESTADO_ESPERA : 'aprobado') : 'rechazado-necesita-revision',
     editor: {puntaje, critica},
     // el texto que se LEE en voz alta y se ve en los subtítulos sale limpio: sin rangos con guion, horas con dos puntos, comas de miles ni unidades abreviadas
     escenas: escenas.map((e, i) => ({...e, texto: limpiarParaVoz(e.texto), fondo: fondos[i]})),
@@ -570,6 +577,9 @@ try {
   registrar(aprobado ? 'aprobado' : 'rechazado', aprobado ? `${palabras} palabras, ${escenas.length} escenas.` : (problemas[0]?.motivo ?? 'sin detalle').slice(0, 160), intentos, {editor: puntaje !== null ? `Puntaje: ${puntaje}/10. ${critica}`.slice(0, 200) : '', puntaje: puntaje ?? undefined});
   fs.writeFileSync(path.join(SALIDA, `informe-${slug}.md`), informe.join('\n'));
   console.log(informe.join('\n'));
+  if (aprobado && MANUAL.activo) {
+    notificar('permiso', `Guion listo para tu visto bueno: ${titulo.slice(0, 70)}`, 'Modo manual: la voz y el render esperan tu respuesta en la oficina (Me gusta, seguir / Pedir cambios / Descartar).');
+  }
   // Rechazar un guion es un resultado normal (queda anotado en estado.json); solo un error real hace fallar el flujo.
   if (!aprobado) console.log('El Verificador no aprobó el guion tras 3 intentos. Queda marcado para revisión.');
 } catch (e) {

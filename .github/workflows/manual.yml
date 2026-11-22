@@ -1,0 +1,49 @@
+name: Modo manual
+
+# Aplica tus respuestas del modo manual (Me gusta, seguir / Pedir cambios / Descartar) cuando la oficina 3D cambia oficina-salida/<canal>/manual.json.
+# Si el modo manual esta apagado y no hay respuestas nuevas, no hace nada.
+on:
+  push:
+    paths:
+      - 'oficina-salida/*/manual.json'
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: modo-manual
+  cancel-in-progress: false
+
+jobs:
+  aplicar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Aplicar respuestas
+        id: aplicar
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: node agentes/manual-aplicar.mjs
+      - name: Guardar
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add oficina-salida || true
+          git diff --cached --quiet || git commit -m "Modo manual: respuesta del dueno aplicada"
+          for i in 1 2 3 4; do git pull --rebase --autostash -X theirs origin main && git push && break; sleep 5; done
+      - name: Lanzar lo que sigue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PRODUCCION: ${{ steps.aplicar.outputs.PRODUCCION }}
+          REHACER: ${{ steps.aplicar.outputs.REHACER }}
+        run: |
+          if [ "$PRODUCCION" = "si" ]; then gh workflow run produccion.yml && echo "Produccion lanzada."; fi
+          if [ -n "$REHACER" ]; then
+            tema="${REHACER%|*}"; formato="${REHACER##*|}"
+            gh workflow run oficina.yml -f "tema=$tema" -f "formato=$formato" && echo "Oficina relanzada con tus cambios: $tema ($formato)."
+          fi

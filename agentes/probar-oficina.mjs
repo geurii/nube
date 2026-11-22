@@ -115,6 +115,15 @@ if (leer('oficina-salida/demo/guion-bloop.json').voz !== 'es-MX-JorgeNeural') fa
 const notis = leer('oficina-salida/notificaciones.json');
 if (notis.length !== 2 || !notis.some((x) => x.canal === 'lqns') || !notis.some((x) => x.canal === 'demo')) fallos.push('las notificaciones no tienen un reporte por canal');
 if (notis.some((x) => !x.id || !x.fecha || !x.texto)) fallos.push('una notificación está incompleta');
+{ // MODO MANUAL: encendido, el guion aprobado queda esperando el visto bueno del dueño (no pasa solo a producir)
+  fs.writeFileSync(path.join('oficina-salida', 'lqns', 'manual.json'), JSON.stringify({activo: true}));
+  cta = CTA_LQNS;
+  process.env.CANAL = 'lqns';
+  process.env.TEMA = 'Bloop';
+  await import(pathToFileURL(path.join(aqui, 'oficina.mjs')).href + '?canal=3');
+  const g = leer('oficina-salida/lqns/guion-bloop.json');
+  if (g.estado !== 'esperando-visto-bueno') fallos.push(`modo manual: el guion debía quedar esperando el visto bueno (${g.estado})`);
+}
 console.log(`Prueba: ${llamadas} llamadas simuladas a Groq · canales: lqns y demo · notificaciones: ${notis.length}`);
 if (fallos.length) { console.error('FALLÓ:', fallos.join('; ')); process.exit(1); }
 console.log('PRUEBA OK: dos canales con carpetas, voces y reportes propios.');
