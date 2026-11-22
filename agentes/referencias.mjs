@@ -34,6 +34,19 @@ export const buscarFotoLibre = async (consulta) => {
   return null;
 };
 
+/** Respaldo cuando Commons no tiene nada: Openverse (gratis, sin llave) filtrado a dominio público y CC0. */
+export const buscarEnOpenverse = async (consulta) => {
+  const q = new URLSearchParams({q: consulta, page_size: '12', license: 'cc0,pdm'});
+  const r = await pedir(`https://api.openverse.org/v1/images/?${q}`);
+  if (!r.ok) return null;
+  for (const x of (await r.json()).results ?? []) {
+    if (!x.thumbnail || TITULO_NO.test(x.title ?? '') || /portrait|retrato/i.test(x.tags?.map?.((t) => t.name).join(' ') ?? '')) continue;
+    if ((x.width ?? 0) < 500 || (x.height ?? 0) < 300) continue;
+    return {url: x.thumbnail, titulo: String(x.title ?? 'sin título').slice(0, 100), licencia: String(x.license ?? '').toUpperCase() === 'PDM' ? 'Public domain' : 'CC0', pagina: x.foreign_landing_url};
+  }
+  return null;
+};
+
 const descargar = async (url, destino) => {
   const r = await pedir(url, 30000);
   if (!r.ok) throw new Error('descarga ' + r.status);
@@ -64,7 +77,8 @@ export const reunirReferencias = async ({llamar, escenas, indices, slug, tema, n
       const q = String(c.q ?? '').trim().slice(0, 80);
       if (!indices.includes(i) || q.length < 3) continue;
       try {
-        const f = await buscarFotoLibre(q);
+        let f = await buscarFotoLibre(q);
+        if (!f || usadas.has(f.url)) { try { f = await buscarEnOpenverse(q); } catch { f = null; } }
         if (!f || usadas.has(f.url)) continue;
         const archivo = `${slug}-${i}.jpg`;
         await descargar(f.url, path.join(dir, archivo));

@@ -9,6 +9,7 @@ import {puestosDeLaOficina, mesaDePublicacion} from './puestos.mjs';
 import {avisarTelefono} from './aviso.mjs';
 import {pintarEscenas} from './pintor.mjs';
 import {reunirReferencias} from './referencias.mjs';
+import {investigarEnLaWeb} from './investigar-web.mjs';
 import {enGarantia} from './garantia.mjs';
 import {chatAlternativo, proveedoresConLlave, modelosDisponibles, diagnosticoRespaldo} from './llm.mjs';
 
@@ -126,7 +127,9 @@ const investigar = async () => {
     const p = await wikipedia(lang, TEMA);
     if (p) fuentes.push({idioma: lang, titulo: p.title, url: p.fullurl, texto: limpiarMaterial(p.extract).slice(0, FORMATO === 'largo' ? 3500 : 4500)});
   }
-  return fuentes;
+  // segunda fuente que no es Wikipedia (DuckDuckGo, gratis y sin llave): solo apoyo para contrastar fechas y cifras
+  const web = await investigarEnLaWeb(TEMA);
+  return [...fuentes, ...web];
 };
 
 /* ====================== Groq con reintentos ====================== */
@@ -415,9 +418,9 @@ try {
   if (!TEMA) { TEMA = await elegirTema(modelo); informe[0] = `# Informe de la oficina · ${TEMA} (${FORMATO})`; informe.push('Tema elegido por la oficina.', ''); }
   slug = slugDe(TEMA);
   const fuentes = await investigar();
-  if (!fuentes.length) throw new Error(`No encontré el tema "${TEMA}" en Wikipedia (${IDIOMAS.join(', ')}). Pruébalo con el título exacto del artículo.`);
-  informe.push('## Investigación', ...fuentes.map((f) => `- ${f.idioma}: [${f.titulo}](${f.url})`), '');
-  const material = fuentes.map((f) => `### FUENTE (${f.idioma}) ${f.url}\n${f.texto}`).join('\n\n');
+  if (!fuentes.some((f) => !f.apoyo)) throw new Error(`No encontré el tema "${TEMA}" en Wikipedia (${IDIOMAS.join(', ')}). Pruébalo con el título exacto del artículo.`);
+  informe.push('## Investigación', ...fuentes.map((f) => `- ${f.apoyo ? 'web (apoyo)' : f.idioma}: [${f.titulo}](${f.url})`), '');
+  const material = fuentes.map((f) => `### ${f.apoyo ? 'FUENTE DE APOYO (resumen de un buscador web: úsala solo para contrastar fechas y cifras con Wikipedia; si difiere, di las dos versiones)' : 'FUENTE (' + f.idioma + ')'} ${f.url}\n${f.texto}`).join('\n\n');
 
   let escenas = [], titulo = TEMA, descripcion = '', hashtags = [], problemas = [], aprobado = false, intentos = 0, puntaje = null, critica = '';
   for (let intento = 1; intento <= 4 && !aprobado; intento++) {
@@ -503,7 +506,7 @@ try {
     audio: `audio/${CANAL_ID}-${slug}.wav`,
     musica: CONFIG.musica ?? null,
     personaje: {esquina: 'arriba-derecha', visible: true},
-    publicacion: {titulo, descripcion: `${descripcion}\n\n${CONFIG.ctaEscrito ?? ''}\n\nFuentes: ${fuentes.map((f) => f.url).join(' · ')}${CONFIG.enlaceCanal ? `\n\nMás historias en el canal: ${CONFIG.enlaceCanal}` : ''}${hashtags.length ? `\n\n${hashtags.join(' ')}` : ''}`},
+    publicacion: {titulo, descripcion: `${descripcion}\n\n${CONFIG.ctaEscrito ?? ''}\n\nFuentes: ${fuentes.filter((f) => !f.apoyo).map((f) => f.url).join(' · ')}${CONFIG.enlaceCanal ? `\n\nMás historias en el canal: ${CONFIG.enlaceCanal}` : ''}${hashtags.length ? `\n\n${hashtags.join(' ')}` : ''}`},
     estado: aprobado ? 'aprobado' : 'rechazado-necesita-revision',
     editor: {puntaje, critica},
     escenas: escenas.map((e, i) => ({...e, fondo: fondos[i]})),
