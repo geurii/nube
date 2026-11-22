@@ -1,14 +1,14 @@
 {
-  "fecha": "2026-11-22T00:25:16.489Z",
+  "fecha": "2026-11-22T00:32:04.663Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 2555,
-  "ganadasDesdeElUltimoCiclo": 0,
+  "total": 2602,
+  "ganadasDesdeElUltimoCiclo": 47,
   "videos": [
     {
       "id": "5BIAOJmE-dk",
       "titulo": "🔊 El enigma del Bloop: el rugido del hielo",
       "publicado": "2026-11-21T18:10:09+00:00",
-      "vistas": 17
+      "vistas": 22
     },
     {
       "id": "Nd2x5UMBiLM",
@@ -32,25 +32,25 @@
       "id": "Md9Rrt9EiTM",
       "titulo": "Sabías que un banco pagó 175 millones por clientes que no existían 👻🏦",
       "publicado": "2026-11-21T01:48:24+00:00",
-      "vistas": 50
+      "vistas": 51
     },
     {
       "id": "ujvVWAyrSUg",
       "titulo": "Sabías que tres hombres caminaron en plena noche polar por 3 huevos de pingüino 🥚 (Parte 3/3)",
       "publicado": "2026-11-20T17:30:34+00:00",
-      "vistas": 350
+      "vistas": 353
     },
     {
       "id": "KURWolBJszo",
       "titulo": "Sabías que mataron 2 millones de pingüinos... y no para comérselos 😳 (Parte 2/3)",
       "publicado": "2026-11-20T16:30:10+00:00",
-      "vistas": 79
+      "vistas": 118
     },
     {
       "id": "Wj-zpd2iorA",
       "titulo": "¿Por qué no comemos pingüino? La verdad detrás de la prohibición",
       "publicado": "2026-11-20T15:30:22+00:00",
-      "vistas": 3
+      "vistas": 2
     },
     {
       "id": "VONOZ4NKXNI",
@@ -155,6 +155,10 @@
     {
       "fecha": "2026-11-22T00:25:16.489Z",
       "total": 2555
+    },
+    {
+      "fecha": "2026-11-22T00:32:04.662Z",
+      "total": 2602
     }
   ]
 }
