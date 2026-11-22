@@ -1,6 +1,27 @@
 {
   "decisiones": [
     {
+      "id": "i32gdlv",
+      "texto": "3. Cierre con llamada a la acción más intrigante: reemplaza “Comparte este video con un amigo que haría lo mismo, sígueme” por “¿Te atreverías a buscarlo? Deja tu teoría en los comentarios y suscríbete para que no te pie",
+      "categoria": "Mejora de guion",
+      "decision": "si",
+      "fecha": "2026-11-22T15:09:07.363Z"
+    },
+    {
+      "id": "i1hy8b3x",
+      "texto": "Valentina (Directora de contenido): Definir una guía de estilo clara que el equipo pueda seguir desde el primer video.",
+      "categoria": "Iniciativa",
+      "decision": "si",
+      "fecha": "2026-11-22T15:08:56.821Z"
+    },
+    {
+      "id": "i128zj5m",
+      "texto": "Carolina (Coordinador de producción): Crear un calendario de producción con hitos diarios y asignar responsables para cada tarea.",
+      "categoria": "Iniciativa",
+      "decision": "si",
+      "fecha": "2026-11-22T15:08:47.808Z"
+    },
+    {
       "id": "idxgj1h",
       "texto": "Fernanda (Jefa de calidad): Implementar una checklist de calidad que se revise antes de cada envío al panel.",
       "categoria": "Iniciativa",
