@@ -1,6 +1,20 @@
 {
   "decisiones": [
     {
+      "id": "idxgj1h",
+      "texto": "Fernanda (Jefa de calidad): Implementar una checklist de calidad que se revise antes de cada envío al panel.",
+      "categoria": "Iniciativa",
+      "decision": "si",
+      "fecha": "2026-11-22T15:08:39.934Z"
+    },
+    {
+      "id": "i1ld4mer",
+      "texto": "Camila (Investigador de temas): Compilar una lista de fuentes potenciales y temas de tendencia para tener material listo cuando comencemos.",
+      "categoria": "Iniciativa",
+      "decision": "si",
+      "fecha": "2026-11-22T15:08:30.505Z"
+    },
+    {
       "id": "i1xptf8d",
       "texto": "Daniela (Cazador de fórmulas): Probar tres estructuras de video diferentes en borradores internos y evaluar cuál genera mejor gancho.",
       "categoria": "Iniciativa",
