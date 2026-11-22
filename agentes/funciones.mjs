@@ -56,7 +56,7 @@ const ultimoGuion = (() => {
   } catch { return null; }
 })();
 const topTitulos = [...(vistas?.videos ?? [])].sort((a, b) => b.vistas - a.vistas).slice(0, 5).map((v) => `"${v.titulo}" (${v.vistas} vistas)`).join('; ');
-const contexto = `Canal "${config.nombre ?? CANAL}" (${config.nicho ?? ''}). Días para la meta de monetizar (13 dic 2026): ${dias}. Vistas reales: ${vistas?.total ?? 'sin datos'}. Mejores videos: ${topTitulos || 'sin datos'}.`;
+const contexto = `Canal "${config.nombre ?? CANAL}" (${config.nicho ?? ''}). Días para la meta de monetizar (13 dic 2026): ${dias}. Vistas TOTALES del canal (suma de todos sus videos, no de uno solo): ${vistas?.total ?? 'sin datos'}. Mejores videos: ${topTitulos || 'sin datos'}.`;
 
 const guardar = (id, obj) => { fs.writeFileSync(path.join(dirF, `${id}.json`), JSON.stringify({fecha: new Date().toISOString(), ...obj}, null, 2)); reloj[id] = new Date().toISOString(); };
 
