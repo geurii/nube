@@ -1,0 +1,187 @@
+{
+  "fecha": "2026-11-22T22:03:27.479Z",
+  "resultados": [
+    {
+      "id": "groq",
+      "nombre": "Groq",
+      "secretos": [
+        "GROQ_API_KEY"
+      ],
+      "estado": "ok",
+      "detalle": "responde (openai/gpt-oss-120b, 0.2 s)",
+      "ms": 215
+    },
+    {
+      "id": "gemini",
+      "nombre": "Google Gemini",
+      "secretos": [
+        "GEMINI_API_KEY"
+      ],
+      "estado": "error",
+      "detalle": "Gemini: The operation was aborted due to timeout"
+    },
+    {
+      "id": "openrouter",
+      "nombre": "OpenRouter (modelos gratis)",
+      "secretos": [
+        "OPENROUTER_API_KEY"
+      ],
+      "estado": "ok",
+      "detalle": "responde (baidu/ernie-5.5-flash-preview:free, 0.9 s)",
+      "ms": 937
+    },
+    {
+      "id": "cerebras",
+      "nombre": "Cerebras",
+      "secretos": [
+        "CEREBRAS_API_KEY"
+      ],
+      "estado": "ok",
+      "detalle": "responde (gpt-oss-120b, 0.1 s)",
+      "ms": 149
+    },
+    {
+      "id": "mistral",
+      "nombre": "Mistral",
+      "secretos": [
+        "MISTRAL_API_KEY"
+      ],
+      "estado": "sin-llave",
+      "detalle": "Falta guardar en GitHub: MISTRAL_API_KEY"
+    },
+    {
+      "id": "sambanova",
+      "nombre": "SambaNova",
+      "secretos": [
+        "SAMBANOVA_API_KEY"
+      ],
+      "estado": "sin-llave",
+      "detalle": "Falta guardar en GitHub: SAMBANOVA_API_KEY"
+    },
+    {
+      "id": "nvidia",
+      "nombre": "NVIDIA NIM",
+      "secretos": [
+        "NVIDIA_API_KEY"
+      ],
+      "estado": "sin-llave",
+      "detalle": "Falta guardar en GitHub: NVIDIA_API_KEY"
+    },
+    {
+      "id": "cohere",
+      "nombre": "Cohere",
+      "secretos": [
+        "COHERE_API_KEY"
+      ],
+      "estado": "sin-llave",
+      "detalle": "Falta guardar en GitHub: COHERE_API_KEY"
+    },
+    {
+      "id": "zai",
+      "nombre": "Z.ai (GLM)",
+      "secretos": [
+        "ZAI_API_KEY"
+      ],
+      "estado": "sin-llave",
+      "detalle": "Falta guardar en GitHub: ZAI_API_KEY"
+    },
+    {
+      "id": "ollama",
+      "nombre": "Ollama Cloud",
+      "secretos": [
+        "OLLAMA_API_KEY"
+      ],
+      "estado": "sin-llave",
+      "detalle": "Falta guardar en GitHub: OLLAMA_API_KEY"
+    },
+    {
+      "id": "llm7",
+      "nombre": "LLM7",
+      "secretos": [
+        "LLM7_API_KEY"
+      ],
+      "estado": "sin-llave",
+      "detalle": "Falta guardar en GitHub: LLM7_API_KEY"
+    },
+    {
+      "id": "requesty",
+      "nombre": "Requesty (modelos gratis)",
+      "secretos": [
+        "REQUESTY_API_KEY"
+      ],
+      "estado": "sin-llave",
+      "detalle": "Falta guardar en GitHub: REQUESTY_API_KEY"
+    },
+    {
+      "id": "pollinations",
+      "nombre": "Pollinations (sin cuenta)",
+      "secretos": [
+        "POLLINATIONS_API_KEY"
+      ],
+      "estado": "ok",
+      "detalle": "responde (openai-fast, 0.4 s) · sin cuenta",
+      "ms": 416
+    },
+    {
+      "id": "ovh",
+      "nombre": "OVHcloud (sin cuenta)",
+      "secretos": [
+        "OVH_API_KEY"
+      ],
+      "estado": "ok",
+      "detalle": "responde (Meta-Llama-3_3-70B-Instruct, 0.9 s) · sin cuenta",
+      "ms": 922
+    },
+    {
+      "id": "windsor",
+      "nombre": "Windsor (Facebook e Instagram)",
+      "secretos": [
+        "WINDSOR_API_KEY"
+      ],
+      "estado": "ok",
+      "detalle": "responde (0.7 s)",
+      "ms": 693
+    },
+    {
+      "id": "buffer",
+      "nombre": "Buffer (TikTok)",
+      "secretos": [
+        "BUFFER_API_KEY"
+      ],
+      "estado": "ok",
+      "detalle": "responde (1 organización)",
+      "ms": 319
+    },
+    {
+      "id": "youtube",
+      "nombre": "YouTube",
+      "secretos": [
+        "YT_CLIENT_ID",
+        "YT_CLIENT_SECRET",
+        "YT_REFRESH_TOKEN"
+      ],
+      "estado": "ok",
+      "detalle": "conectado (0.3 s)",
+      "ms": 328
+    },
+    {
+      "id": "videos",
+      "nombre": "GitHub de videos (Facebook/Instagram/TikTok)",
+      "secretos": [
+        "FB_VIDEOS_TOKEN"
+      ],
+      "estado": "ok",
+      "detalle": "puede escribir en geurii/oficina-videos-legal",
+      "ms": 330
+    },
+    {
+      "id": "ntfy",
+      "nombre": "Avisos al teléfono (ntfy)",
+      "secretos": [
+        "NTFY_TOPIC"
+      ],
+      "estado": "ok",
+      "detalle": "el tema tiene formato válido"
+    }
+  ]
+}
