@@ -5,6 +5,7 @@
 // Variables: ID (ej. lqns-mary-celeste), CANAL. Sin secretos o sin cuenta de Facebook configurada, no hace nada y no falla.
 import fs from 'node:fs';
 import path from 'node:path';
+import {execFileSync} from 'node:child_process';
 import {avisarTelefono} from './aviso.mjs';
 import {publicarEnTikTok, textoTikTok} from './tiktok.mjs';
 
@@ -148,7 +149,7 @@ export const principal = async () => {
     const registro = leer(path.join(dir, d.archivoRegistro), {total: 0, posts: [], archivos: []});
     if (d.tipo !== 'buffer' && !apiKey) { console.log(`${d.nombre}: se omite (falta WINDSOR_API_KEY).`); continue; }
     if (d.tipo === 'buffer' && d.cuenta) { // TikTok: cada video llena un día (un video por día en el calendario de Buffer)
-      const porDia = Math.max(1, Number(cfgCanal.tiktok?.porDia ?? 1));
+      const porDia = Math.max(1, Number(process.env.TIKTOK_POR_DIA || cfgCanal.tiktok?.porDia || 1));
       const recientes = registro.posts.filter((p) => Date.now() - Date.parse(p.fecha) < 22 * 3600 * 1000).length;
       if (recientes >= porDia) { console.log(`TikTok: ya hay ${recientes} video(s) en el calendario de las últimas 22 horas (un video por día). Este no se envía a TikTok.`); continue; }
     }
@@ -158,11 +159,40 @@ export const principal = async () => {
   }
   if (!pendientes.length) return {omitido: 'nada pendiente'};
 
-  const archivo = elegirArchivo(ID);
-  if (!archivo) { console.log('Redes: no encuentro el MP4 del video. Se omite.'); return {omitido: 'sin mp4'}; }
+  // cualquier fallo ANTES de publicar (sin MP4, no se pudo comprimir o subir la copia pública) avisa al teléfono: antes se omitía en silencio
+  const alertar = (msg) => {
+    console.log('Redes: ' + msg);
+    try {
+      avisarTelefono('alerta', 'No se pudo publicar en Facebook, Instagram ni TikTok', `"${titulo.slice(0, 80)}": ${msg.slice(0, 220)}`);
+      const rutaN = path.join('oficina-salida', 'notificaciones.json');
+      const lista = leer(rutaN, []);
+      lista.unshift({id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), fecha: new Date().toISOString(), canal: CANAL, tipo: 'alerta', titulo: 'No se pudo publicar en las redes', texto: `"${titulo.slice(0, 80)}": ${msg.slice(0, 220)}`});
+      fs.writeFileSync(rutaN, JSON.stringify(lista.slice(0, 80), null, 2));
+    } catch { /* el aviso no debe fallar */ }
+  };
+  let archivo = elegirArchivo(ID);
+  if (!archivo) { // no hay copia liviana: se crea una con ffmpeg a partir del MP4 completo
+    const completo = path.join('out', 'serie', `${ID}.mp4`);
+    if (fs.existsSync(completo)) {
+      try {
+        const liviano = path.join('out', 'serie', `${ID}-subida.mp4`);
+        execFileSync('ffmpeg', ['-y', '-i', completo, '-vf', 'scale=-2:1280:force_original_aspect_ratio=decrease,scale=trunc(iw/2)*2:trunc(ih/2)*2', '-c:v', 'libx264', '-crf', '27', '-preset', 'veryfast', '-c:a', 'aac', '-b:a', '128k', '-movflags', '+faststart', liviano], {stdio: 'ignore', timeout: 900000});
+        archivo = elegirArchivo(ID);
+      } catch (e) { alertar(`no pude crear la copia liviana del video (${String(e.message ?? e).slice(0, 100)}).`); return {omitido: 'sin copia liviana'}; }
+    }
+  }
+  if (!archivo) { alertar(`no encuentro el MP4 del video (${ID}) en out/serie.`); return {omitido: 'sin mp4'}; }
   // con token de GitHub y repo público: se guarda ahí (permanente, últimos 15); si no, archivo temporal de 72 h sin ninguna clave
-  const usaRepo = Boolean(token && repo);
-  const pub = usaRepo ? await subirAlRepoPublico({token, repo, archivo, nombre: `${ID}.mp4`}) : await subirATemporal({archivo, nombre: `${ID}.mp4`});
+  let usaRepo = Boolean(token && repo);
+  let pub;
+  try {
+    pub = usaRepo ? await subirAlRepoPublico({token, repo, archivo, nombre: `${ID}.mp4`}) : await subirATemporal({archivo, nombre: `${ID}.mp4`});
+  } catch (e) {
+    console.log('Redes: la copia pública falló (' + quitarClaves(String(e.message ?? e), apiKey, token, bufferKey).slice(0, 160) + '); pruebo con el archivo temporal.');
+    usaRepo = false;
+    try { pub = await subirATemporal({archivo, nombre: `${ID}.mp4`}); }
+    catch (e2) { alertar(`no pude alojar el video para que las redes lo descarguen: ${quitarClaves(String(e2.message ?? e2), apiKey, token, bufferKey).slice(0, 160)}`); return {omitido: 'sin alojamiento'}; }
+  }
 
   const resultados = {};
   let archivosRepo = null;

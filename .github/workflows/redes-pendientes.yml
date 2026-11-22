@@ -1,0 +1,66 @@
+name: Redes pendientes
+
+# Sube a Facebook, Instagram y TikTok los videos que ya están en YouTube y todavía no están en esas redes.
+# Baja el MP4 del artefacto de cada Produccion (se guarda 14 días) y corre agentes/facebook.mjs, que no repite lo ya publicado.
+# Se activa al cambiar agentes/redes.disparo o a mano.
+on:
+  push:
+    paths:
+      - 'agentes/redes.disparo'
+  workflow_dispatch:
+    inputs:
+      slugs:
+        description: 'Videos separados por espacio (ej: nikola-tesla mary-celeste). Vacio = los del archivo agentes/redes.disparo'
+        required: false
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: redes-pendientes
+  cancel-in-progress: false
+
+jobs:
+  redes:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Publicar cada video pendiente
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ENTRADA: ${{ inputs.slugs }}
+          WINDSOR_API_KEY: ${{ secrets.WINDSOR_API_KEY }}
+          FB_VIDEOS_TOKEN: ${{ secrets.FB_VIDEOS_TOKEN }}
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          TIKTOK_POR_DIA: '10'
+          CANAL: lqns
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          if [ -z "$ENTRADA" ] && [ -f agentes/redes.disparo ]; then ENTRADA=$(cut -d'|' -f2 agentes/redes.disparo); fi
+          echo "Videos a revisar: $ENTRADA"
+          mkdir -p out/serie
+          for slug in $ENTRADA; do
+            id="lqns-$slug"
+            echo "=== $id ==="
+            if [ ! -f "guion/serie/$id.json" ]; then echo "No existe guion/serie/$id.json: se salta."; continue; fi
+            aid=$(gh api "repos/$GITHUB_REPOSITORY/actions/artifacts?name=video-$id&per_page=1" --jq '.artifacts[0] | select(.expired == false) | .id' || true)
+            if [ -z "$aid" ]; then echo "Sin artefacto vigente para $id (vencio o no existe)."; node -e "
+              const fs=require('fs');const p='oficina-salida/notificaciones.json';let l=[];try{l=JSON.parse(fs.readFileSync(p,'utf8'))}catch{}
+              l.unshift({id:Date.now().toString(36),fecha:new Date().toISOString(),canal:'lqns',tipo:'alerta',titulo:'Redes pendientes: falta el archivo del video',texto:'$id: no hay MP4 guardado (vence a los 14 dias). Hay que producirlo de nuevo o subirlo a mano.'});
+              fs.writeFileSync(p,JSON.stringify(l.slice(0,80),null,2));"; continue; fi
+            gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/$aid/zip" > "/tmp/$id.zip"
+            unzip -o -q "/tmp/$id.zip" -d out/serie
+            ls -la out/serie | grep "$id" || true
+            ID="$id" node agentes/facebook.mjs || true
+            rm -f out/serie/*.mp4 "/tmp/$id.zip"
+            git add oficina-salida || true
+            git diff --cached --quiet || git commit -m "Redes pendientes: $id"
+            for i in 1 2 3; do git pull --rebase --autostash -X theirs origin main && git push && break; sleep 4; done
+          done
