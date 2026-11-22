@@ -28,6 +28,13 @@ const notificar = (canal, tipo, titulo, texto) => {
 };
 
 fs.mkdirSync(RAIZ, {recursive: true});
+// Interruptor de pausa: si existe agentes/PAUSA no se produce ni se sube nada (se quita el archivo para reanudar).
+if (fs.existsSync(path.join('agentes', 'PAUSA'))) {
+  console.log('PRODUCCION EN PAUSA (existe agentes/PAUSA). Nada que hacer.');
+  salida('id', '');
+  salida('canal', '');
+  process.exit(0);
+}
 /** "the-bloop" y "bloop" son el mismo tema: no se produce dos veces. */
 const claveTema = (x) => String(x).toLowerCase().replace(/^the[-_ ]+/, '').replace(/[^a-z0-9]+/g, '');
 const pendientes = fs.readdirSync(RAIZ, {withFileTypes: true})

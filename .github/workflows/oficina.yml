@@ -53,6 +53,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          if [ -f agentes/PAUSA ]; then echo "ok=no" >> "$GITHUB_OUTPUT"; echo "PRODUCCION EN PAUSA (existe agentes/PAUSA): este ciclo se salta."; exit 0; fi
           if [ "${{ github.event_name }}" = "schedule" ] && ! node agentes/encadenar.mjs; then echo "ok=no" >> "$GITHUB_OUTPUT"; echo "Sin presupuesto o meta cumplida: este ciclo se salta."; fi
       - name: Prueba de humo (simulada, no gasta Groq)
         if: steps.pres.outputs.ok != 'no'
