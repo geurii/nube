@@ -4,7 +4,7 @@ import {G, bay, hex, hs, type RGB} from './pixelG';
 import {dibujarPro, type Pro} from './pintadoPro';
 
 export type Elemento = {t: string} & Record<string, unknown>;
-export type EscenaPintada = {cielo: string[]; capas: Elemento[]};
+export type EscenaPintada = {cielo: string[]; capas: Elemento[]; /** fondo de pixel art ya hecho (public/escenarios/<id>.png) */ escenario?: string};
 
 /** Fotos de referencia ya cargadas (las rellena PixelPintado antes de dibujar): nombre de archivo -> píxeles. */
 export const IMAGENES = new Map<string, {w: number; h: number; d: Uint8ClampedArray}>();
@@ -31,6 +31,24 @@ const relieve = (x: number, semilla: number, picos: number) => {
 export function pintar(g: G, esc: EscenaPintada, t: number, lw: number, lh: number, u: number) {
   g.contorno = null;
   g.grad(0, lh, rampa(esc.cielo, ['#0b1030', '#233a7a', '#e07a5f']));
+  if (esc.escenario) {
+    // escenario de pixel art libre (CC0): escala entera (píxeles uniformes), cubre todo el cuadro y se desliza despacio de lado a lado
+    const im = IMAGENES.get(`escenarios/${esc.escenario}`);
+    if (im) {
+      const s = Math.max(1, Math.ceil(Math.max(lw / im.w, lh / im.h)));
+      const holgura = Math.max(0, im.w - lw / s), vertical = Math.max(0, im.h - lh / s);
+      const ox = holgura * (0.5 + 0.5 * Math.sin(t * 0.25)), oy = vertical;
+      for (let y = 0; y < lh; y++) {
+        const sy = Math.min(im.h - 1, Math.floor(oy + y / s));
+        for (let x = 0; x < lw; x++) {
+          const sx = Math.min(im.w - 1, Math.floor(ox + x / s));
+          const i = (sy * im.w + sx) * 4;
+          if (im.d[i + 3] < 128) continue;
+          g.set(x, y, [im.d[i], im.d[i + 1], im.d[i + 2]]);
+        }
+      }
+    }
+  }
   for (const e of esc.capas.slice(0, 22)) {
     switch (e.t) {
       case 'estrellas': {

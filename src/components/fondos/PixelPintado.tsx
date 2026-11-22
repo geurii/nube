@@ -28,19 +28,25 @@ const Lienzo: React.FC<{id: string}> = ({id}) => {
       .then(async (j) => {
         const esc = j && Array.isArray(j.capas) ? (j as EscenaPintada) : VACIA;
         // fotos de referencia: se cargan y se leen como píxeles antes de dibujar (si una falla, la escena se pinta sin ella)
+        const pedidas: {clave: string; ruta: string}[] = [];
         for (const cap of esc.capas) {
           const archivo = cap.t === 'foto' ? String(cap.archivo ?? '').replace(/[^a-z0-9._-]/gi, '') : '';
-          if (!archivo || IMAGENES.has(archivo)) continue;
+          if (archivo) pedidas.push({clave: archivo, ruta: `referencias/${archivo}`});
+        }
+        const escenario = typeof esc.escenario === 'string' ? esc.escenario.replace(/[^a-z0-9-]/gi, '') : '';
+        if (escenario) pedidas.push({clave: `escenarios/${escenario}`, ruta: `escenarios/${escenario}.png`});
+        for (const {clave, ruta} of pedidas) {
+          if (IMAGENES.has(clave)) continue;
           try {
             const img = new Image();
-            img.src = staticFile(`referencias/${archivo}`);
+            img.src = staticFile(ruta);
             await img.decode();
             const c = document.createElement('canvas');
             c.width = img.naturalWidth; c.height = img.naturalHeight;
             const x = c.getContext('2d');
             if (!x) continue;
             x.drawImage(img, 0, 0);
-            IMAGENES.set(archivo, {w: c.width, h: c.height, d: x.getImageData(0, 0, c.width, c.height).data});
+            IMAGENES.set(clave, {w: c.width, h: c.height, d: x.getImageData(0, 0, c.width, c.height).data});
           } catch { /* sin la foto, la escena queda con sus formas */ }
         }
         setSpec(esc);

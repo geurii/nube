@@ -10,6 +10,16 @@ import path from 'node:path';
 const HEX = /^#[0-9a-fA-F]{6}$/;
 const n = (v, d, a, b) => { const x = Number(v); return Number.isFinite(x) ? Math.min(b, Math.max(a, x)) : d; };
 const rampa = (v, min = 2, max = 6) => (Array.isArray(v) ? v.filter((x) => typeof x === 'string' && HEX.test(x)).slice(0, max) : []).length >= min ? v.filter((x) => typeof x === 'string' && HEX.test(x)).slice(0, max) : null;
+/** Escenarios de pixel art libres (CC0, OpenGameArt) guardados en public/escenarios/<id>.png. */
+export const ESCENARIOS = {
+  'bosque': 'bosque de pinos con luces entre los árboles (verdes y azulados)',
+  'industrial': 'ciudad industrial con edificios, chimeneas y tubos (grises y naranjas)',
+  'montanas-atardecer': 'montañas y pinos en un atardecer (violetas y naranjas)',
+  'mar-day': 'mar abierto de día con nubes y torres lejanas',
+  'mar-noon': 'mar abierto al mediodía, cielo claro',
+  'mar-night': 'mar abierto de noche, cielo oscuro con estrellas',
+  'desierto-rocoso': 'desierto rocoso con montañas lejanas, cielo claro',
+};
 export const TIPOS = new Set([
   'estrellas', 'astro', 'resplandor', 'montanas', 'suelo', 'agua', 'niebla', 'arbol', 'edificio', 'circulo', 'rect', 'pergamino',
   'poligono', 'linea', 'nubes', 'olas', 'particulas', 'rayos', 'barco', 'pez', 'roca', 'hielo', 'duna', 'algas', 'sargazo', 'faro', 'silueta', 'ovni', 'explosion', 'ciudad', 'bosque',
@@ -38,7 +48,9 @@ export const validarEscena = (raw) => {
     return o;
   }).filter(Boolean);
   if (!cielo || capas.length < 3) return null;
-  return {cielo, capas};
+  const salida = {cielo, capas};
+  if (typeof raw.escenario === 'string' && Object.hasOwn(ESCENARIOS, raw.escenario)) salida.escenario = raw.escenario;
+  return salida;
 };
 
 /** MANUAL del pixel art: la mecánica que usan los mejores artistas del género. Los dos pintores lo conocen de memoria. */
@@ -71,6 +83,7 @@ FORMAS PROFESIONALES (con sombreado, contorno y movimiento propios; "color" = el
 - {"t":"ciudad","y":0.85,"alto":0.3,"color":"#1f2442"} (horizonte de edificios con ventanas)   {"t":"bosque","y":0.88,"n":14,"color":"#1c4a38"} (pinos)
 - {"t":"silueta","x":0.5,"y":0.8,"h":0.22,"color":"#10121f"} (persona de espaldas, SIN cara). ÚSALA SOLO si la frase habla de una persona; NUNCA para representar una ola, un objeto, un animal o un lugar.
 - {"t":"particulas","tipo":"polvo"|"burbujas"|"nieve"|"brasas","n":50}   {"t":"rayos","x":0.1,"color":"#ffd9a0","alpha":0.1} (rayos de luz)
+ESCENARIOS YA HECHOS (pixel art libre): en el JSON de cada plano puedes añadir "escenario": "<id>" y ese fondo se dibuja a pantalla completa DEBAJO de tus capas (úsalo cuando el tema sea mar, bosque, montañas, ciudad industrial o desierto; si no encaja con la frase, NO lo pongas y dibuja tú el fondo). Disponibles: ${Object.entries(ESCENARIOS).map(([k, v]) => `"${k}" = ${v}`).join('; ')}. Con escenario, tus capas de cielo/montañas/agua se pueden omitir y te concentras en el sujeto, la luz y el primer plano.
 RITMO Y EDICIÓN DE GANCHO (copiado de los reels que frenan el dedo; el estilo pixel del canal NO cambia): cada plano dura ~1,5 a 2 s, así que cada cuadro debe leerse en un segundo: UN solo sujeto grande y claro, nada de escenas cargadas. Mantén UN solo mundo de color por video (por ejemplo rojos y negros para misterio oscuro, azules y ámbar para mar e historia) con alto contraste y un foco de luz (resplandor o rayos) sobre el sujeto. En la escena 0 (el gancho) un titular gigante ocupará el centro (y 0.33 a 0.5) los primeros 3 segundos: pon el sujeto más abajo (y 0.5 a 0.65) y deja el centro limpio.
 REGLA DE ORO: el cuadro debe mostrar EL OBJETO O EL HECHO que dice la frase, nunca un sustituto. NO escribas texto en el cuadro (los subtítulos ya lo hacen). Si lo que se dice no está en la lista de formas, DIBÚJALO con "poligono" y "linea" (varios polígonos juntos): por ejemplo una ola de melaza = una masa marrón oscura (#3b2314 a #7a4a22) de cresta curva y alta, con 8 a 14 puntos, avanzando sobre edificios; un tanque = rectángulo alto gris con remaches (líneas); un mecanismo de bronce = varios círculos dentados verdosos (#6b8f71) superpuestos.
 FORMAS LIBRES para lo que no esté arriba (una botella, una casa, una torre, un cofre, un barco hundido, una ola de líquido espeso):

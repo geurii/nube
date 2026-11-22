@@ -1,0 +1,7 @@
+Escenarios de pixel art con licencia CC0 (dominio público), tomados de OpenGameArt.org:
+- bosque.png: "Forest Background" (parallax forest pack)
+- montanas-atardecer.png: "Mountain at Dusk Background"
+- industrial.png: "Industrial Parallax Background"
+- mar-day.png, mar-noon.png, mar-night.png: "Warped Ocean View"
+- desierto-rocoso.png: "Rocky desert landscape (layered, looping)"
+Las capas de cada paquete se juntaron en una sola imagen. Sin obligación de dar crédito (CC0).
