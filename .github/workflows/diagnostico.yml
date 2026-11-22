@@ -30,6 +30,15 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          SAMBANOVA_API_KEY: ${{ secrets.SAMBANOVA_API_KEY }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          COHERE_API_KEY: ${{ secrets.COHERE_API_KEY }}
+          ZAI_API_KEY: ${{ secrets.ZAI_API_KEY }}
+          OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
+          LLM7_API_KEY: ${{ secrets.LLM7_API_KEY }}
+          REQUESTY_API_KEY: ${{ secrets.REQUESTY_API_KEY }}
+          POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
+          OVH_API_KEY: ${{ secrets.OVH_API_KEY }}
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node agentes/diagnostico.mjs

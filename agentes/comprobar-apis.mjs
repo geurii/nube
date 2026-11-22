@@ -2,6 +2,7 @@
 // y de solo lectura, y guarda el resultado en oficina-salida/llaves.json (la oficina 3D lo muestra). NUNCA imprime ni guarda las llaves.
 import fs from 'node:fs';
 import path from 'node:path';
+import {probarProveedor} from './llm.mjs';
 
 const env = (n) => (process.env[n] ?? '').trim();
 const quitar = (t) => { let s = String(t ?? ''); for (const k of Object.values(process.env)) if (k && k.length >= 8 && s.includes(k)) s = s.split(k).join('***'); return s.replace(/\s+/g, ' ').slice(0, 160); };
@@ -27,15 +28,19 @@ const bearer = (nombre, url, secreto) => async () => {
 
 const repoVideos = (() => { try { return JSON.parse(fs.readFileSync(path.join('agentes', 'canales-propios.json'), 'utf8')).canales.find((c) => c.id === 'lqns')?.facebook?.repo ?? ''; } catch { return ''; } })();
 
+// [id, nombre, proveedor de agentes/llm.mjs, secretos]
+const IA = [
+  ['groq', 'Groq', 'Groq', ['GROQ_API_KEY']], ['gemini', 'Google Gemini', 'Gemini', ['GEMINI_API_KEY']], ['openrouter', 'OpenRouter (modelos gratis)', 'OpenRouter', ['OPENROUTER_API_KEY']],
+  ['cerebras', 'Cerebras', 'Cerebras', ['CEREBRAS_API_KEY']], ['mistral', 'Mistral', 'Mistral', ['MISTRAL_API_KEY']], ['sambanova', 'SambaNova', 'SambaNova', ['SAMBANOVA_API_KEY']],
+  ['nvidia', 'NVIDIA NIM', 'NVIDIA NIM', ['NVIDIA_API_KEY']], ['cohere', 'Cohere', 'Cohere', ['COHERE_API_KEY']], ['zai', 'Z.ai (GLM)', 'Z.ai (GLM)', ['ZAI_API_KEY']],
+  ['ollama', 'Ollama Cloud', 'Ollama Cloud', ['OLLAMA_API_KEY']], ['llm7', 'LLM7', 'LLM7', ['LLM7_API_KEY']], ['requesty', 'Requesty (modelos gratis)', 'Requesty', ['REQUESTY_API_KEY']],
+  ['pollinations', 'Pollinations (sin cuenta)', 'Pollinations', ['POLLINATIONS_API_KEY']], ['ovh', 'OVHcloud (sin cuenta)', 'OVHcloud', ['OVH_API_KEY']],
+];
 const resultados = await Promise.all([
-  probar('groq', 'Groq', ['GROQ_API_KEY'], bearer('Groq', 'https://api.groq.com/openai/v1/models', 'GROQ_API_KEY')),
-  probar('gemini', 'Google Gemini', ['GEMINI_API_KEY'], async () => {
-    const {r, ms} = await pedir('https://generativelanguage.googleapis.com/v1beta/models?pageSize=1', {headers: {'x-goog-api-key': env('GEMINI_API_KEY')}});
-    return http('Gemini')(r, ms);
-  }),
-  probar('openrouter', 'OpenRouter', ['OPENROUTER_API_KEY'], bearer('OpenRouter', 'https://openrouter.ai/api/v1/auth/key', 'OPENROUTER_API_KEY')),
-  probar('cerebras', 'Cerebras', ['CEREBRAS_API_KEY'], bearer('Cerebras', 'https://api.cerebras.ai/v1/models', 'CEREBRAS_API_KEY')),
-  probar('mistral', 'Mistral', ['MISTRAL_API_KEY'], bearer('Mistral', 'https://api.mistral.ai/v1/models', 'MISTRAL_API_KEY')),
+  ...IA.map(([id, nombre, proveedor, secretos]) => (async () => {
+    try { const x = await probarProveedor(proveedor); return {id, nombre, secretos, estado: x.estado, detalle: x.detalle, ms: x.ms}; }
+    catch (e) { return {id, nombre, secretos, estado: 'error', detalle: quitar(e.message ?? e)}; }
+  })()),
   probar('windsor', 'Windsor (Facebook e Instagram)', ['WINDSOR_API_KEY'], async () => {
     const {r, ms} = await pedir(`https://connectors.windsor.ai/facebook_organic/actions?api_key=${encodeURIComponent(env('WINDSOR_API_KEY'))}`);
     return http('Windsor')(r, ms);
