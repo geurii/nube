@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-22T07:40:45.189Z",
+  "actualizado": "2026-11-22T07:40:54.215Z",
   "totales": {
     "aprobados": 9,
     "rechazados": 10,
@@ -204,9 +204,9 @@
       "tarea": "AYUDA: le echó una mano a (Investigador de temas). Entregó: 5 temas candidatos"
     },
     "Publicador": {
-      "estado": "esperando_decision",
+      "estado": "libre",
       "actividad": "pensando",
-      "tarea": "Tiene un video listo: \"🌊 El Bloop: ¡5,000 km de misterio bajo el hielo!\". Falta subirlo a YouTube (necesita tu conexión; ver subir.mjs)."
+      "tarea": "Subió \"🌊 El Bloop: ¡5,000 km de misterio bajo el hielo!\" y quedó PÚBLICO ahora mismo: https://youtu.be/9CKxsZ7hmUg"
     },
     "Crítico: padre trabajador": {
       "estado": "trabajando",
