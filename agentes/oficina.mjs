@@ -10,6 +10,7 @@ import {avisarTelefono} from './aviso.mjs';
 import {pintarEscenas} from './pintor.mjs';
 import {reunirReferencias} from './referencias.mjs';
 import {investigarEnLaWeb} from './investigar-web.mjs';
+import {mirarFoto, textoDeVista} from './ojos.mjs';
 import {enGarantia} from './garantia.mjs';
 import {chatAlternativo, proveedoresConLlave, modelosDisponibles, diagnosticoRespaldo} from './llm.mjs';
 
@@ -481,6 +482,13 @@ try {
         const llamarPintor = (m, max) => pedirJson(modelo, m, max);
         const referencias = await reunirReferencias({llamar: llamarPintor, escenas, indices: idx, slug, tema: TEMA, nota: (t) => informe.push(t)});
         if (Object.keys(referencias).length) informe.push(`Referencias de internet (fotos libres) para ${Object.keys(referencias).length} escenas: ${Object.values(referencias).map((r) => r.titulo + ' (' + r.licencia + ')').join('; ').slice(0, 400)}`);
+        // los pintores no ven imágenes: Gemini MIRA cada foto de referencia y se la describe (composición, colores reales, dónde está cada cosa)
+        let vistas = 0;
+        for (const [i, ref] of Object.entries(referencias)) {
+          const g = await mirarFoto({ruta: path.resolve('public', 'referencias', ref.archivo), key: process.env.GEMINI_API_KEY, frase: escenas[Number(i)]?.texto});
+          if (g.vista) { ref.vista = textoDeVista(g.vista); vistas++; } else informe.push(`(Gemini no pudo mirar la foto de la escena ${i}: ${String(g.error).slice(0, 140)})`);
+        }
+        if (vistas) informe.push(`Gemini miró ${vistas} fotos de referencia y se las describió a los pintores.`);
         const p = await pintarEscenas({llamar: llamarPintor, escenas, indices: idx, slug, tema: TEMA, nota: (t) => informe.push(t), referencias});
         for (const [i, lista] of Object.entries(p)) { fondos[Number(i)] = lista; CTX.pintadas++; }
         informe.push(`Pintores: ${CTX.pintadas} de ${idx.length} escenas dibujadas.`);

@@ -93,7 +93,8 @@ export const presionPintores = () => {
 const SISTEMA_A = `Eres el Pintor de composición y color de una oficina de videos de misterio: un maestro del pixel art, entre los mejores del mundo. Dominas composición, perspectiva, paleta y narración visual. Trabajas codo a codo con tu compañero, el Pintor de luz y detalle, que revisa cada cuadro tuyo; quieres su acuerdo. Sin personas reales ni caras. Responde SOLO con JSON.`;
 const SISTEMA_B = `Eres el Pintor de luz y detalle de una oficina de videos de misterio: un maestro del pixel art, entre los mejores del mundo. Dominas la luz, el volumen, los contornos, el detalle y la animación. Revisas con rigor el trabajo de tu compañero, el Pintor de composición y color: si algo no está a nivel profesional lo corriges y lo dices, y solo das tu acuerdo cuando el cuadro es impecable. Sin personas reales ni caras. Responde SOLO con JSON.`;
 
-const lote = (escenas, ids) => ids.map((i) => `${i}. [${escenas[i].tipo}] ${escenas[i].texto}`).join('\n');
+let VISTAS = {}; // lo que Gemini VIO en la foto de referencia de cada escena (los pintores no ven imágenes)
+const lote = (escenas, ids) => ids.map((i) => `${i}. [${escenas[i].tipo}] ${escenas[i].texto}${VISTAS[i] ? `\n   FOTO DE REFERENCIA (la vio Gemini; el motor ya la pone pixelada en el centro, tú pintas el entorno y la luz EN ARMONÍA con ella y sin tapar esa zona): ${VISTAS[i]}` : ''}`).join('\n');
 const FORMA = '{"escenas": [{"indice": N, "planos": [ESCENA_A, ESCENA_B]}, ...]} con el mismo orden y el mismo número de escenas.';
 
 const FONDO = new Set(['estrellas', 'astro', 'resplandor', 'montanas', 'suelo', 'agua', 'niebla', 'nubes', 'olas', 'duna', 'rayos']);
@@ -124,6 +125,7 @@ const limpiar = (r, ids, slug, ya = {}) => {
 export const pintarEscenas = async ({llamar, escenas, indices, slug, tema, nota = () => {}, referencias = {}}) => {
   const dir = path.resolve('public', 'pintados');
   fs.mkdirSync(dir, {recursive: true});
+  VISTAS = Object.fromEntries(Object.entries(referencias).filter(([, r]) => r?.vista).map(([i, r]) => [i, r.vista]));
   const finales = {};
   const TAM = 3; // escenas por tanda (cada escena lleva 2 planos)
   for (let b = 0; b < indices.length; b += TAM) {
