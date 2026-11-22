@@ -1,5 +1,10 @@
 [
   {
+    "fecha": "2026-11-22T19:46:03.281Z",
+    "orden": "Revisar la compatibilidad de Facebook para el largo y actualizar el cronograma de publicación.",
+    "nivel": 4
+  },
+  {
     "fecha": "2026-11-22T19:41:54.247Z",
     "orden": "Revisa el calendario y confirma que el equipo esté listo para producir 1 largo diario sin alterar el formato ni la calidad.",
     "nivel": 4
@@ -43,10 +48,5 @@
     "fecha": "2026-11-22T16:03:05.120Z",
     "orden": "Reúnete hoy a las 10 a.m. y asigna tareas de inmediato.",
     "nivel": 5
-  },
-  {
-    "fecha": "2026-11-22T16:00:15.014Z",
-    "orden": "Revisa el calendario de producción y confirma que cada tarea se complete antes de las 12 p.m. hora del público objetivo.",
-    "nivel": 4
   }
 ]

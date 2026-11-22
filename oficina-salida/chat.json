@@ -1,5 +1,21 @@
 [
   {
+    "id": "mws8ywm1j",
+    "de": "jules",
+    "texto": "Entendido, el calendario se ajustará a publicar el video largo a las 12:00 UTC en YouTube y Tito, y solo en Facebook si la plataforma lo permite. Mantendremos el resto del flujo sin cambios.",
+    "fecha": "2026-11-22T19:46:03.281Z",
+    "orden": "Revisar la compatibilidad de Facebook para el largo y actualizar el cronograma de publicación.",
+    "nivel": 4,
+    "canal": "lqns"
+  },
+  {
+    "id": "mws8ywm1t",
+    "de": "tu",
+    "texto": "Entonces vamos a cambiar el calendario y será de la siguiente forma vamos a subir el largo a Youtube a las 12 y el largo a Tito a las 12 y a Facebook solo si lo admite el largo",
+    "fecha": "2026-11-22T19:45:44.325Z",
+    "canal": "lqns"
+  },
+  {
     "id": "mws8tkgtj",
     "de": "jules",
     "texto": "Si subimos un video largo diario (10 min promedio) y mantuvemos los 2 shorts de 1 min cada 3 h, en los 22 días restantes consumiríamos 22×10 = 220 min de GitHub Actions para los largos y 22×2 = 44 min para los shorts, sumando 264 min. Esto queda muy por debajo del límite de 2 000 min mensuales (y de los 1 800 min gratuitos), por lo que no habría problema de recursos.",
