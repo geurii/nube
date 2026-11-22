@@ -1,8 +1,6 @@
 {
-  "alertas": {
-    "corrida-.github/workflows/produccion.yml": "2026-11-21T19:13:28.040Z"
-  },
-  "fecha": "2026-11-21T19:13:28.281Z",
+  "alertas": {},
+  "fecha": "2026-11-22T06:45:27.336Z",
   "ok": [
     "YouTube conectado",
     "analítica autorizada",
@@ -10,7 +8,5 @@
     "Gemini responde",
     "hay publicaciones recientes"
   ],
-  "problemas": [
-    "Falló \".github/workflows/produccion.yml\" en GitHub"
-  ]
+  "problemas": []
 }
