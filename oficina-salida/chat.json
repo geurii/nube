@@ -1,15 +1,31 @@
 [
   {
-    "id": "mwraz3dbj",
+    "id": "mwrb49omj",
     "de": "jules",
-    "texto": "He revisado los datos: los Shorts actuales suman 3293 vistas en 90 días, muy por debajo del objetivo de 10 millones. Las causas son: 1) Miniaturas poco llamativas (CTR bajo); 2) Títulos sin gancho ni palabras clave de tendencia; 3) Duración promedio > 30 s, lo que penaliza la retención; 4) Falta de subtítulos y de texto en pantalla que aumentan la interacción; 5) Publicación irregular, sin horario fijo, lo que impide que el algoritmo favorezca el contenido. Proponemos: redefinir la guía de estilo para Shorts (títulos de 3‑5 palabras, emojis, hashtags), crear un calendario de publicación con al menos 2 Shorts diarios a las 10:00 y 18:00, y añadir una checklist de calidad específica para Shorts (miniatura, gancho en los primeros 3 s, subtítulos). Implementaremos estos cambios de inmediato para el próximo ciclo.",
-    "fecha": "2026-11-22T03:54:24.890Z",
-    "orden": "Equipo: a partir de ahora, cada día produzcan y suban 2 Shorts con miniaturas y títulos optimizados según la nueva guía; revisen la checklist de Shorts antes de la aprobación del panel y entreguen los archivos a las 09:45 y 17:45.",
+    "texto": "Informe: Los videos no son virales porque la retención es muy baja (<15 % de visualización completa), los ganchos en los primeros 3 segundos son débiles y las miniaturas no comunican el misterio ni usan palabras clave de tendencia. Gemini rechaza los videos por imágenes abstractas que no representan el tema, lo que reduce CTR y el algoritmo penaliza la falta de claridad. Además, la frecuencia es insuficiente: solo 1 video publicado hoy, cuando necesitamos 2 diarios para alcanzar los 1 000 suscriptores y 4 000 h de visualización en 23 días. Acción inmediata: reforzar guiones con preguntas intrigantes al inicio, crear miniaturas con texto grande y visuales del tema, y asegurar que cada video tenga imágenes claras y relevantes.",
+    "fecha": "2026-11-22T03:58:26.566Z",
+    "orden": "Todos: revisen guiones y miniaturas de los próximos 2 videos, incluyan ganchos claros en los primeros 3 segundos y usen imágenes directamente relacionadas con el tema; entreguen versiones finales a las 12:23 a.m. y suban ambos antes de las 14:00 h de hoy.",
     "nivel": 5,
     "canal": "lqns"
   },
   {
-    "id": "mwraz3dbt",
+    "id": "mwrb49omt",
+    "de": "tu",
+    "texto": "Dame un informe de por qué mis vídeos no son virales ahora",
+    "fecha": "2026-11-22T03:53:34.143Z",
+    "canal": "lqns"
+  },
+  {
+    "id": "mwrb1suxj",
+    "de": "jules",
+    "texto": "Informe breve: Los Shorts no están reteniendo audiencia porque la tasa de visualización completa es baja (<15 %). Gemini rechazó el video del Sargasso Sea por imágenes abstractas que no muestran el tema, lo que reduce el CTR y la retención. Además, el contenido carece de ganchos claros en los primeros 3 segundos y la miniatura no destaca el misterio. Necesitamos datos de retención de los últimos Shorts, optimizar títulos con palabras clave de tendencia, crear miniaturas con texto grande y visuales del tema, y asegurar que las primeras 5 segundos presenten la pregunta central.\nOrden: Todos: revisen los últimos 3 Shorts, extraigan métricas de retención, rediseñen miniaturas y guiones con ganchos claros, y suban versiones mejoradas antes de las 14:00 h de hoy.",
+    "fecha": "2026-11-22T03:56:31.446Z",
+    "orden": "Todos: revisen los últimos 3 Shorts, extraigan métricas de retención, rediseñen miniaturas y guiones con ganchos claros, y suban versiones mejoradas antes de las 14:00 h de hoy.",
+    "nivel": 5,
+    "canal": "lqns"
+  },
+  {
+    "id": "mwrb1suxt",
     "de": "tu",
     "texto": "Dame un informe por qué no está funcionando mis shorts",
     "fecha": "2026-11-22T03:52:06.702Z",

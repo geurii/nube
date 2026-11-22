@@ -1,7 +1,12 @@
 [
   {
-    "fecha": "2026-11-22T03:54:24.890Z",
-    "orden": "Equipo: a partir de ahora, cada día produzcan y suban 2 Shorts con miniaturas y títulos optimizados según la nueva guía; revisen la checklist de Shorts antes de la aprobación del panel y entreguen los archivos a las 09:45 y 17:45.",
+    "fecha": "2026-11-22T03:58:26.566Z",
+    "orden": "Todos: revisen guiones y miniaturas de los próximos 2 videos, incluyan ganchos claros en los primeros 3 segundos y usen imágenes directamente relacionadas con el tema; entreguen versiones finales a las 12:23 a.m. y suban ambos antes de las 14:00 h de hoy.",
+    "nivel": 5
+  },
+  {
+    "fecha": "2026-11-22T03:56:31.446Z",
+    "orden": "Todos: revisen los últimos 3 Shorts, extraigan métricas de retención, rediseñen miniaturas y guiones con ganchos claros, y suban versiones mejoradas antes de las 14:00 h de hoy.",
     "nivel": 5
   },
   {
@@ -43,10 +48,5 @@
     "fecha": "2026-11-22T00:30:15.720Z",
     "orden": "Camila, sube inmediatamente el video del Bloop antes de las 15:55 y confirma publicación; Carolina, verifica el sistema de subida y reporta cualquier fallo en 5 min; Fernanda, revisa la checklist de calidad y aprueba los videos pendientes hoy mismo.",
     "nivel": 5
-  },
-  {
-    "fecha": "2026-11-21T22:30:36.024Z",
-    "orden": "Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00.",
-    "nivel": 4
   }
 ]
