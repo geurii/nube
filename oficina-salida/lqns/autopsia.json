@@ -1,13 +1,21 @@
 {
-  "fecha": "2026-11-22T03:26:55.729Z",
-  "total": 2775,
-  "promedio": 185,
-  "queFunciono": "Los videos con más vistas comparten títulos que incluyen palabras clave llamativas y curiosas (p. ej., \"Sabías que\", \"El avión que\", \"Eligieron a dos hombres\") y se publican en fechas de alta actividad (últimos días de la semana, 20/11). Además, los títulos están estructurados en series (Parte 1/3, ",
+  "fecha": "2026-11-22T03:39:57.251Z",
+  "total": 2657,
+  "promedio": 177,
+  "queFunciono": "Los videos con más vistas comparten títulos que incluyen palabras clave curiosas y de sorpresa (\"Sabías que\", \"El avión que\", \"Eligieron a dos hombres\") y se publicaron en fechas recientes (2026-11-20 y 2026-11-14). Además, la mayoría son parte de series numeradas, lo que incentiva la continuidad y ",
   "porQueFallaron": [
-    "Los videos con pocas vistas presentan títulos muy largos o con menos palabras clave atractivas, como \"🔊 El enigma del Bloop: el rugido del hielo\" y \"Los \"jóvenes genios\" que terminaron acusados de fraude: ¿estafadores o genios?\", lo que reduce la atracción in",
-    "Los videos con menor rendimiento también tienen retención media muy baja (por ejemplo, 19 % en \"Operación Coldfeet\" y 24.8 % en \"El avión que recogía personas del suelo\"), lo que indica que el contenido no retiene al espectador. Evidencia: retención media y du",
-    "Los videos con pocas vistas se publicaron en fechas con menor tráfico potencial (por ejemplo, 14 / 15 / 21 de noviembre) y no forman parte de una serie visible, lo que reduce la expectativa de seguimiento. Evidencia: fechas de publicación y ausencia de numerac"
+    "Contenido demasiado específico o poco atractivo: títulos como \"Sabías que mataron 2 millones de pingüinos...\" y \"Sabías que un banco pagó 175 millones por clientes que no existían\" tienen audiencias muy limitadas, evidenciado por vistas <120.",
+    "Formato de series con demasiada división: títulos con numeración extensa (Parte 3/5, Parte 4/5) pueden confundir a la audiencia, lo que se refleja en bajas vistas y retención media de 19% o 24.8%.",
+    "Falta de datos de retención y suscriptores para la mayoría de los videos, lo que impide medir su rendimiento, indicando que la estrategia de publicación no está optimizada para mantener el interés."
   ],
-  "noSePuedeSaber": [],
-  "reglas": []
+  "noSePuedeSaber": [
+    "Retención y datos de suscriptores para los videos con menos vistas.",
+    "Miniaturas y descripciones utilizadas para cada video.",
+    "A quiénes se les mostró cada video (segmentación de audiencia)."
+  ],
+  "reglas": [
+    "1. Publica videos con títulos claros y atractivos que incluyan una pregunta o afirmación sorprendente, manteniendo la numeración a un máximo de 3 partes para evitar confusión.",
+    "2. Optimiza la retención incluyendo un gancho fuerte en los primeros 15 segundos y manteniendo la duración entre 3 y 5 minutos para maximizar la retención media.",
+    "3. Publica los videos en fechas de mayor actividad de la audiencia (según análisis de tráfico), y acompaña cada publicación con una miniatura llamativa y una descripción que resuma el valor del contenido."
+  ]
 }

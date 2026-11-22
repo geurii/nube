@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-22T03:05:42.500Z",
+  "actualizado": "2026-11-22T03:33:03.988Z",
   "canalesLeidos": 9,
   "videosRevisados": 132,
   "mejores": [
@@ -8,52 +8,52 @@
       "idioma": "en",
       "titulo": "Why Is Antarctica Closed? The Operation Highjump Mystery",
       "publicado": "2026-11-20T01:00:08.000Z",
-      "vistas": 2046813,
-      "vistasPorHora": 40860
+      "vistas": 2061637,
+      "vistasPorHora": 40785
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "Always open your fan mail",
       "publicado": "2026-11-21T19:00:32.000Z",
-      "vistas": 267866,
-      "vistasPorHora": 33127
+      "vistas": 273746,
+      "vistasPorHora": 32047
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "How Skydiving Changed Will Smith's Life!",
       "publicado": "2026-11-17T17:00:07.000Z",
-      "vistas": 1744144,
-      "vistasPorHora": 16440
+      "vistas": 1745607,
+      "vistasPorHora": 16383
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "TOP 5 Bingeable SCARY STORIES • No Escape Edition",
       "publicado": "2026-11-20T19:00:34.000Z",
-      "vistas": 501213,
-      "vistasPorHora": 15621
+      "vistas": 502385,
+      "vistasPorHora": 15438
     },
     {
       "canal": "The Why Files",
       "idioma": "en",
       "titulo": "America Is Hiding Something Underground",
       "publicado": "2026-11-18T18:00:14.000Z",
-      "vistas": 1164649,
-      "vistasPorHora": 14362
+      "vistas": 1167623,
+      "vistasPorHora": 14318
     }
   ],
   "formula": {
-    "formula": "Pregunta intrigante o afirmación impactante + elemento misterioso/inhóspito + pista de revelación o consecuencia inesperada",
+    "formula": "Pregunta intrigante + elemento misterioso o prohibido + pista de revelación",
     "ganchos": [
-      "¿Qué oculta [lugar/objeto] que nadie se atreve a investigar?",
-      "Descubre el [evento] que cambió la vida de [persona famosa] y nunca lo contó",
-      "La verdad detrás de [fenómeno] que [autoridad/entidad] quiere mantener en secreto"
+      "¿Qué [evento/objeto] oculta realmente [lugar/persona]?",
+      "Descubre el [secreto/plan] que [grupo/autoridad] no quiere que veas",
+      "La verdad detrás de [fenómeno] que cambiará tu visión de [tema]"
     ],
     "evitar": [
-      "Títulos demasiado genéricos sin un gancho claro (ej. \"Always open your fan mail\")",
-      "Uso excesivo de listas numéricas sin indicar el tema central (ej. \"TOP 5 Bingeable SCARY STORIES\")"
+      "Títulos demasiado genéricos sin una pregunta o promesa clara",
+      "Uso excesivo de mayúsculas o símbolos que distraen del mensaje central"
     ]
   }
 }
