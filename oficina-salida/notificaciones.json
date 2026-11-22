@@ -1,5 +1,13 @@
 [
   {
+    "id": "mws811wyi6yr",
+    "fecha": "2026-11-22T19:19:43.858Z",
+    "canal": "lqns",
+    "tipo": "alerta",
+    "titulo": "No se pudo publicar en las redes",
+    "texto": "\"¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️\": el repositorio público \"geurii/oficina-videos-legal\" no aceptó el video: no pude subir el video al repositorio público (422): {\"message\":\"Sorry, the file is too large to be processed. Consider creating/updating th; y el "
+  },
+  {
     "id": "mws80sbfneyo",
     "fecha": "2026-11-22T19:19:31.419Z",
     "canal": "lqns",
@@ -673,13 +681,5 @@
     "tipo": "reporte",
     "titulo": "Fórmula del momento",
     "texto": "Lo que hoy funciona para Lo Que No Sabías: Palabra clave impactante + pregunta intrigante o afirmación misteriosa + elemento de sorpresa/escala El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (47351 vistas/hora)."
-  },
-  {
-    "id": "mwqjlxkbbngs",
-    "fecha": "2026-11-21T15:08:21.419Z",
-    "canal": "lqns",
-    "tipo": "alerta",
-    "titulo": "El panel rechazó: 📜 El manuscrito que nadie ha descifrado",
-    "texto": "4 de 8 aprobaron, 6 pasaron los primeros 3 segundos, 2 lo compartirían. No se sube. Mejora principal: Empieza con un gancho visual o sonoro ultra impactante (ej. “Este libro del siglo XV sigue sin ser leído por nadie”) y corta la intro a menos de 2 segundos para retener a los espectadores que deciden en los primeros momentos."
   }
 ]
