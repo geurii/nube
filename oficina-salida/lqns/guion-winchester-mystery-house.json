@@ -1,0 +1,69 @@
+{
+  "titulo": "🏚️ Sabías que la mansión de 160 pies oculta más de 160 habitaciones?",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-DO-EmilioNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-winchester-mystery-house.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "estilo": "gancho",
+  "ganchoTexto": "¿La mansión de 160 pies tiene más de 160?",
+  "publicacion": {
+    "titulo": "🏚️ Sabías que la mansión de 160 pies oculta más de 160 habitaciones?",
+    "descripcion": "Descubre los extraños hechos que rodean la famosa casa de San José. Un misterio que sigue sin resolverse tras su apertura.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Winchester_Mystery_House\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#WinchesterMystery #CasaMisteriosa #HistoriaOscura #ArquitecturaVictoriana #SanJose"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 4,
+    "critica": "El gancho es demasiado largo y poco impactante. La historia carece de ritmo y cortes bruscos. El cierre pierde fuerza."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que la mansión de 160 pies tiene más de 160 habitaciones ocultas?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En 1885, a los 46 años, el capitán se mudó a California por su salud.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Un agente le mostró una finca de 45 acres cerca de San José; compró una granja de dos pisos.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Añadió niveles, torres y escaleras; en 1897, una torre de siete pisos se demolió y reconstruyó 16 veces.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Lo que no sabías: la casa se abrió al público meses después de su muerte en 1922.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "La casa sigue atrayendo a miles, pero su razón sigue sin resolverse. Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

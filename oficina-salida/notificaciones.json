@@ -1,5 +1,41 @@
 [
   {
+    "id": "mwrinnne1y5k",
+    "fecha": "2026-11-22T07:29:28.442Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Winchester Mystery House",
+    "texto": "El Verificador no aprobó \"Winchester Mystery House\" tras 4 intentos: El material no menciona dimensiones de 160 pies ni la existencia de más de 160 habitaciones ocultas. Aprobados: 9. Rechazados: 10. Con error: 8. No se publica. Próximo ciclo en 7 h."
+  },
+  {
+    "id": "mwrikc0b9ils",
+    "fecha": "2026-11-22T07:26:53.387Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: The Dyatlov Pass Incident",
+    "texto": "El Verificador no aprobó \"The Dyatlov Pass Incident\" tras 4 intentos: El Editor puso 4/10 (mínimo 6). Reescribe arreglando esto: El gancho es demasiado largo y genérico. Falta ritmo y claridad; cada frase rebasa el límite de palab Aprobados: 9. Rechazados: 9. Con error: 8. No se publica. Próximo ciclo en 7 h."
+  },
+  {
+    "id": "mwrih15bh1lt",
+    "fecha": "2026-11-22T07:24:19.343Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Nazca Lines",
+    "texto": "El Verificador no aprobó \"Nazca Lines\" tras 4 intentos: El material indica que más de la mitad son \"ligeramente más de 33 cm\" de ancho, no exactamente 33 cm. Aprobados: 9. Rechazados: 8. Con error: 8. No se publica. Próximo ciclo en 7 h."
+  },
+  {
+    "id": "mwridm8wzyng",
+    "fecha": "2026-11-22T07:21:40.064Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante o afirmación impactante + elemento misterioso/extraño + pista de revelación o consecuencia El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (39758 vistas/hora)."
+  },
+  {
     "id": "mwri5babfng0",
     "fecha": "2026-11-22T07:15:12.611Z",
     "canal": "lqns",

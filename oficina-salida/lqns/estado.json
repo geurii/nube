@@ -1,11 +1,35 @@
 {
-  "actualizado": "2026-11-22T07:25:11.076Z",
+  "actualizado": "2026-11-22T07:29:28.443Z",
   "totales": {
     "aprobados": 9,
-    "rechazados": 7,
+    "rechazados": 10,
     "errores": 8
   },
   "historial": [
+    {
+      "fecha": "2026-11-22T07:29:28.196Z",
+      "tema": "Winchester Mystery House",
+      "formato": "short",
+      "resultado": "rechazado",
+      "intentos": 4,
+      "detalle": "El material no menciona dimensiones de 160 pies ni la existencia de más de 160 habitaciones ocultas."
+    },
+    {
+      "fecha": "2026-11-22T07:26:53.140Z",
+      "tema": "The Dyatlov Pass Incident",
+      "formato": "short",
+      "resultado": "rechazado",
+      "intentos": 4,
+      "detalle": "El Editor puso 4/10 (mínimo 6). Reescribe arreglando esto: El gancho es demasiado largo y genérico. Falta ritmo y claridad; cada frase rebasa el límite de palab"
+    },
+    {
+      "fecha": "2026-11-22T07:24:19.031Z",
+      "tema": "Nazca Lines",
+      "formato": "short",
+      "resultado": "rechazado",
+      "intentos": 4,
+      "detalle": "El material indica que más de la mitad son \"ligeramente más de 33 cm\" de ancho, no exactamente 33 cm."
+    },
     {
       "fecha": "2026-11-22T07:15:12.226Z",
       "tema": "The Bloop",
@@ -141,186 +165,162 @@
       "resultado": "aprobado",
       "intentos": 2,
       "detalle": "120 palabras, 5 escenas."
-    },
-    {
-      "fecha": "2026-11-21T14:10:55.774Z",
-      "tema": "The Wow! Signal",
-      "formato": "short",
-      "resultado": "rechazado",
-      "intentos": 3,
-      "detalle": "El material indica que la frecuencia detectada fue 1420.4556 ± 0.005 MHz, no 4245 MHz."
-    },
-    {
-      "fecha": "2026-11-21T06:28:00.375Z",
-      "tema": "Bloop",
-      "formato": "short",
-      "resultado": "aprobado",
-      "intentos": 1,
-      "detalle": "120 palabras, 5 escenas."
-    },
-    {
-      "fecha": "2026-11-21T06:25:08.240Z",
-      "tema": "Bloop",
-      "formato": "short",
-      "resultado": "rechazado",
-      "intentos": 3,
-      "detalle": "El material indica que los micrófonos fueron colocados durante la Guerra Fría, no que NOAA los instalara en 1997."
     }
   ],
   "agentes": {
     "Directora de contenido": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "PLAN DEL CICLO: Crear y lanzar una serie de 5 videos sobre fenómenos históricos enigmáticos, cada uno con al menos 1,200 vistas en la primera semana: Equipo de Investigación y Guion: Monetizar la serie antes del 13 de diciembre mediante anuncios y patrocin · Optimizar la estrategia de publicación, programando los v"
+      "actividad": "pensando",
+      "tarea": "Necesita revisión: el guion de \"Winchester Mystery House\" no pasó la verificación. Aprobados: 9. Rechazados: 10. Con error: 8. ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy? JEFA: Un guion rechazado no se publica. Tienen 7 h para entregar algo que pase."
     },
     "Investigador de temas": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Guionista). Entregó: 5 ganchos nuevos SEGUNDA: 1) Fenómenos de hielo y crio‑sismos con documentación científica; 2) Grandes transacciones bancarias fraudulentas con respaldo documental."
+      "actividad": "leyendo",
+      "tarea": "Dejó el material de \"Winchester Mystery House\" con su fuente en Wikipedia. ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
     },
     "Guionista": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Editor de guion). Entregó: 3 mejoras al último guion SEGUNDA: 1) “¿Sabías que el sonido más fuerte del océano no proviene de un animal?” 2) “Descubre por qué el océano guardó un secreto de 5,000 km.”"
+      "tarea": "Intentó 4 veces escribir \"Winchester Mystery House\" sin que el Verificador lo aprobara. ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. JEFA: 4 intentos y nada aprobado. Esto es inaceptable. Estudien la fuente antes de escribir."
     },
     "Verificador de datos": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Investigador de temas). Entregó: 5 temas candidatos SEGUNDA: El dato más fácil de cuestionar es la distancia de 5,000 km; reforzarlo citando el informe NOAA de 1997 con la medición exacta."
+      "actividad": "leyendo",
+      "tarea": "Rechazó \"Winchester Mystery House\": El material no menciona dimensiones de 160 pies ni la existencia de más de 160 habitaciones ocultas. ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Editor de guion": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título SEGUNDA: La frase “superando submarinos” es aburrida; reescribirla a “superó la capacidad de cualquier submarino.”"
+      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título SEGUNDA: La frase “superando submarinos” es aburrida; reescribirla a “superó la capacidad de cualquier submarino.” ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Locutor": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título"
+      "tarea": "Grabó la voz de \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\". ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Técnico de render": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Renderizó \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\" (39 MB). Está en Actions, artefacto \"video-lqns-the-antikythera-mechanism\". ORDEN DE JULES (nivel 5/5): Departamentos de Guion, Revisión de ganchos, Pintores y Edición: copien el NIVEL de gancho y edición de reels que frenan el dedo, SIN cambiar el pixel que hace único al canal. GANCHO REAL: la primera frase (máx. 14 palabras, empieza con \"Sabías que\") es una pregunta imposible o un hecho increíble con una cifra concreta, y sale como titular gigante en pantalla los primeros 3 segundos. EDICIÓN: un cambio de imagen cada 1,5 a 2 segundos, un solo sujeto grande por cuadro, un solo mundo de color por video con alto contraste y foco de luz, palabras clave resaltadas y glitch en cada corte. Rechacen todo gancho suave o descriptivo. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy? SEGUNDA: Reducir la resolución de los efectos de sonido a 2K y usar compresión sin pérdida para acelerar el render."
+      "tarea": "Renderizó \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\" (39 MB). Está en Actions, artefacto \"video-lqns-the-antikythera-mechanism\". ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Publicador": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "Lleva 4 videos subidos a YouTube en total. El último: \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\". ORDEN DE JULES (nivel 5/5): Departamentos de Guion, Revisión de ganchos, Pintores y Edición: copien el NIVEL de gancho y edición de reels que frenan el dedo, SIN cambiar el pixel que hace único al canal. GANCHO REAL: la primera frase (máx. 14 palabras, empieza con \"Sabías que\") es una pregunta imposible o un hecho increíble con una cifra concreta, y sale como titular gigante en pantalla los primeros 3 segundos. EDICIÓN: un cambio de imagen cada 1,5 a 2 segundos, un solo sujeto grande por cuadro, un solo mundo de color por video con alto contraste y foco de luz, palabras clave resaltadas y glitch en cada corte. Rechacen todo gancho suave o descriptivo. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. SEGUNDA: Texto fijado: “¡Descubre el misterio del Bloop! ¿Sabes qué lo causó? Comentá abajo.”; responder a los primeros 10 comentarios en los primeros 10 minutos para fomentar la interacción."
+      "actividad": "pensando",
+      "tarea": "Lleva 4 videos subidos a YouTube en total. El último: \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\". ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Crítico: padre trabajador": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Le gustó \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\": El inicio me enganchó, pero después quiero algo más práctico, no lo compartiría. (siguió hasta el segundo 30). ORDEN DE JULES (nivel 5/5): Departamentos de Guion, Revisión de ganchos, Pintores y Edición: copien el NIVEL de gancho y edición de reels que frenan el dedo, SIN cambiar el pixel que hace único al canal. GANCHO REAL: la primera frase (máx. 14 palabras, empieza con \"Sabías que\") es una pregunta imposible o un hecho increíble con una cifra concreta, y sale como titular gigante en pantalla los primeros 3 segundos. EDICIÓN: un cambio de imagen cada 1,5 a 2 segundos, un solo sujeto grande por cuadro, un solo mundo de color por video con alto contraste y foco de luz, palabras clave resaltadas y glitch en cada corte. Rechacen todo gancho suave o descriptivo. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. FUNCIÓN (contador): Faltan 22 días para el 13 de diciembre. Suscriptores: 43 de 1.000 (faltan 957, o sea 44 por día). Horas vistas en 12 meses: 12 de 4.000 (faltan 3988). FUNCIÓN (contador): ya entregó hoy; la próxima ronda es dentro de 20 h."
+      "tarea": "Le gustó \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\": El inicio me enganchó, pero después quiero algo más práctico, no lo compartiría. (siguió hasta el segundo 30). ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Crítica: fan del misterio": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Le gustó \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\": Buen giro con los engranajes y la historia del fondo marino, lo recomendaría. (siguió hasta el segundo 50, lo compartiría). ORDEN DE JULES (nivel 5/5): Departamentos de Guion, Revisión de ganchos, Pintores y Edición: copien el NIVEL de gancho y edición de reels que frenan el dedo, SIN cambiar el pixel que hace único al canal. GANCHO REAL: la primera frase (máx. 14 palabras, empieza con \"Sabías que\") es una pregunta imposible o un hecho increíble con una cifra concreta, y sale como titular gigante en pantalla los primeros 3 segundos. EDICIÓN: un cambio de imagen cada 1,5 a 2 segundos, un solo sujeto grande por cuadro, un solo mundo de color por video con alto contraste y foco de luz, palabras clave resaltadas y glitch en cada corte. Rechacen todo gancho suave o descriptivo. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. FUNCIÓN (oportunidades): ya entregó hoy; la próxima ronda es dentro de 4 h. FUNCIÓN (oportunidades): ya entregó hoy; la próxima ronda es dentro de 4 h."
+      "tarea": "Le gustó \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\": Buen giro con los engranajes y la historia del fondo marino, lo recomendaría. (siguió hasta el segundo 50, lo compartiría). ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Crítico: adolescente": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "NO le gustó \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\": El gancho suena a dato viejo, no me atrapa en 2 segundos, paso. (siguió hasta el segundo 3). ORDEN DE JULES (nivel 5/5): Departamentos de Guion, Revisión de ganchos, Pintores y Edición: copien el NIVEL de gancho y edición de reels que frenan el dedo, SIN cambiar el pixel que hace único al canal. GANCHO REAL: la primera frase (máx. 14 palabras, empieza con \"Sabías que\") es una pregunta imposible o un hecho increíble con una cifra concreta, y sale como titular gigante en pantalla los primeros 3 segundos. EDICIÓN: un cambio de imagen cada 1,5 a 2 segundos, un solo sujeto grande por cuadro, un solo mundo de color por video con alto contraste y foco de luz, palabras clave resaltadas y glitch en cada corte. Rechacen todo gancho suave o descriptivo. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. FUNCIÓN (otros-formatos): ya entregó hoy; la próxima ronda es dentro de 6 h. FUNCIÓN (otros-formatos): ya entregó hoy; la próxima ronda es dentro de 5 h."
+      "tarea": "NO le gustó \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\": El gancho suena a dato viejo, no me atrapa en 2 segundos, paso. (siguió hasta el segundo 3). ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Crítica: universitaria": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Le gustó \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\": Me encanta el misterio del bronce y los datos raros, lo compartiría con mis amigas. (siguió hasta el segundo 45, lo compartiría). ORDEN DE JULES (nivel 5/5): Departamentos de Guion, Revisión de ganchos, Pintores y Edición: copien el NIVEL de gancho y edición de reels que frenan el dedo, SIN cambiar el pixel que hace único al canal. GANCHO REAL: la primera frase (máx. 14 palabras, empieza con \"Sabías que\") es una pregunta imposible o un hecho increíble con una cifra concreta, y sale como titular gigante en pantalla los primeros 3 segundos. EDICIÓN: un cambio de imagen cada 1,5 a 2 segundos, un solo sujeto grande por cuadro, un solo mundo de color por video con alto contraste y foco de luz, palabras clave resaltadas y glitch en cada corte. Rechacen todo gancho suave o descriptivo. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy? FUNCIÓN (mentor): ya entregó hoy; la próxima ronda es dentro de 4 h. FUNCIÓN (mentor): ya entregó hoy; la próxima ronda es dentro de 4 h."
+      "tarea": "Le gustó \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\": Me encanta el misterio del bronce y los datos raros, lo compartiría con mis amigas. (siguió hasta el segundo 45, lo compartiría). ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Crítico: joven dominicano": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Le gustó \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\": Me gustó el flow y el toque de misterio, suena fresco, lo paso a mis panas. (siguió hasta el segundo 40, lo compartiría). ORDEN DE JULES (nivel 5/5): Departamentos de Guion, Revisión de ganchos, Pintores y Edición: copien el NIVEL de gancho y edición de reels que frenan el dedo, SIN cambiar el pixel que hace único al canal. GANCHO REAL: la primera frase (máx. 14 palabras, empieza con \"Sabías que\") es una pregunta imposible o un hecho increíble con una cifra concreta, y sale como titular gigante en pantalla los primeros 3 segundos. EDICIÓN: un cambio de imagen cada 1,5 a 2 segundos, un solo sujeto grande por cuadro, un solo mundo de color por video con alto contraste y foco de luz, palabras clave resaltadas y glitch en cada corte. Rechacen todo gancho suave o descriptivo. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. FUNCIÓN (agenda): ya entregó hoy; la próxima ronda es dentro de 4 h. FUNCIÓN (agenda): ya entregó hoy; la próxima ronda es dentro de 4 h."
+      "tarea": "Le gustó \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\": Me gustó el flow y el toque de misterio, suena fresco, lo paso a mis panas. (siguió hasta el segundo 40, lo compartiría). ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Crítica: ama de casa": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Le gustó \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\": Narración clara y ritmo cómodo, pero el llamado a compartir suena forzado. (siguió hasta el segundo 35). ORDEN DE JULES (nivel 5/5): Departamentos de Guion, Revisión de ganchos, Pintores y Edición: copien el NIVEL de gancho y edición de reels que frenan el dedo, SIN cambiar el pixel que hace único al canal. GANCHO REAL: la primera frase (máx. 14 palabras, empieza con \"Sabías que\") es una pregunta imposible o un hecho increíble con una cifra concreta, y sale como titular gigante en pantalla los primeros 3 segundos. EDICIÓN: un cambio de imagen cada 1,5 a 2 segundos, un solo sujeto grande por cuadro, un solo mundo de color por video con alto contraste y foco de luz, palabras clave resaltadas y glitch en cada corte. Rechacen todo gancho suave o descriptivo. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. FUNCIÓN (infantil): ya entregó hoy; la próxima ronda es dentro de 4 h. FUNCIÓN (infantil): ya entregó hoy; la próxima ronda es dentro de 4 h."
+      "tarea": "Le gustó \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\": Narración clara y ritmo cómodo, pero el llamado a compartir suena forzado. (siguió hasta el segundo 35). ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Crítico: escéptico": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "NO le gustó \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\": Suena a clickbait de “primer ordenador”, no veo pruebas, lo dejo. (siguió hasta el segundo 2). ORDEN DE JULES (nivel 5/5): Departamentos de Guion, Revisión de ganchos, Pintores y Edición: copien el NIVEL de gancho y edición de reels que frenan el dedo, SIN cambiar el pixel que hace único al canal. GANCHO REAL: la primera frase (máx. 14 palabras, empieza con \"Sabías que\") es una pregunta imposible o un hecho increíble con una cifra concreta, y sale como titular gigante en pantalla los primeros 3 segundos. EDICIÓN: un cambio de imagen cada 1,5 a 2 segundos, un solo sujeto grande por cuadro, un solo mundo de color por video con alto contraste y foco de luz, palabras clave resaltadas y glitch en cada corte. Rechacen todo gancho suave o descriptivo. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. FUNCIÓN (guardian): Último chequeo del Vigilante: 2026-11-22T06:45:27.336Z. Bien: YouTube conectado, analítica autorizada, Groq responde, Gemini responde, hay publicaciones recientes. Problemas: ninguno. FUNCIÓN (guardian): ya entregó hoy; la próxima ronda es dentro de 20 h."
+      "tarea": "NO le gustó \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\": Suena a clickbait de “primer ordenador”, no veo pruebas, lo dejo. (siguió hasta el segundo 2). ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Crítico: abuelo": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Le gustó \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\": Historia bien contada y fácil de seguir, aunque no lo enviaría a todos. (siguió hasta el segundo 45). ORDEN DE JULES (nivel 5/5): Departamentos de Guion, Revisión de ganchos, Pintores y Edición: copien el NIVEL de gancho y edición de reels que frenan el dedo, SIN cambiar el pixel que hace único al canal. GANCHO REAL: la primera frase (máx. 14 palabras, empieza con \"Sabías que\") es una pregunta imposible o un hecho increíble con una cifra concreta, y sale como titular gigante en pantalla los primeros 3 segundos. EDICIÓN: un cambio de imagen cada 1,5 a 2 segundos, un solo sujeto grande por cuadro, un solo mundo de color por video con alto contraste y foco de luz, palabras clave resaltadas y glitch en cada corte. Rechacen todo gancho suave o descriptivo. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. FUNCIÓN (comunidad): No pude leer los comentarios (YouTube no me dio acceso)."
+      "tarea": "Le gustó \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\": Historia bien contada y fácil de seguir, aunque no lo enviaría a todos. (siguió hasta el segundo 45). ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Enlace de datos": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "En su puesto, preparando el próximo ciclo. ORDEN DE JULES (nivel 5/5): Departamentos de Guion, Revisión de ganchos, Pintores y Edición: copien el NIVEL de gancho y edición de reels que frenan el dedo, SIN cambiar el pixel que hace único al canal. GANCHO REAL: la primera frase (máx. 14 palabras, empieza con \"Sabías que\") es una pregunta imposible o un hecho increíble con una cifra concreta, y sale como titular gigante en pantalla los primeros 3 segundos. EDICIÓN: un cambio de imagen cada 1,5 a 2 segundos, un solo sujeto grande por cuadro, un solo mundo de color por video con alto contraste y foco de luz, palabras clave resaltadas y glitch en cada corte. Rechacen todo gancho suave o descriptivo. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. SEGUNDA: Desde el último ciclo, el total de vistas aumentó de 2394 a 2394, sin cambio; el video más visto pasó de 1073 a 1073 vistas, sin variación."
+      "tarea": "En su puesto, preparando el próximo ciclo. ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Coordinador de producción": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "Calendario fijo (hora de República Dominicana): Shorts a las 00:00 y 12:00, largos a las 18:00. Cuida que el subidor programe sin chocar. ORDEN DE JULES (nivel 5/5): Departamentos de Guion, Revisión de ganchos, Pintores y Edición: copien el NIVEL de gancho y edición de reels que frenan el dedo, SIN cambiar el pixel que hace único al canal. GANCHO REAL: la primera frase (máx. 14 palabras, empieza con \"Sabías que\") es una pregunta imposible o un hecho increíble con una cifra concreta, y sale como titular gigante en pantalla los primeros 3 segundos. EDICIÓN: un cambio de imagen cada 1,5 a 2 segundos, un solo sujeto grande por cuadro, un solo mundo de color por video con alto contraste y foco de luz, palabras clave resaltadas y glitch en cada corte. Rechacen todo gancho suave o descriptivo. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. SEGUNDA: Publicar hoy a las (cifra sin respaldo):00 UTC, cuando el pico de actividad de la audiencia es mayor; encolar el video “Sabías que nunca verás pingüino…” para maximizar la retención."
+      "actividad": "pensando",
+      "tarea": "Calendario fijo (hora de República Dominicana): Shorts a las 00:00 y 12:00, largos a las 18:00. Cuida que el subidor programe sin chocar. ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Jefa de calidad": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "Aprobó \"The Bloop\": 6 escenas, 1 fuentes, sin problemas abiertos. ORDEN DE JULES (nivel 5/5): Departamentos de Guion, Revisión de ganchos, Pintores y Edición: copien el NIVEL de gancho y edición de reels que frenan el dedo, SIN cambiar el pixel que hace único al canal. GANCHO REAL: la primera frase (máx. 14 palabras, empieza con \"Sabías que\") es una pregunta imposible o un hecho increíble con una cifra concreta, y sale como titular gigante en pantalla los primeros 3 segundos. EDICIÓN: un cambio de imagen cada 1,5 a 2 segundos, un solo sujeto grande por cuadro, un solo mundo de color por video con alto contraste y foco de luz, palabras clave resaltadas y glitch en cada corte. Rechacen todo gancho suave o descriptivo. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. SEGUNDA: El defecto más repetido es la falta de subtítulos; crear una regla que exija subtítulos en todos los videos para mejorar la accesibilidad."
+      "actividad": "leyendo",
+      "tarea": "Frenó \"Winchester Mystery House\": El material no menciona dimensiones de 160 pies ni la existencia de más de 160 habitaciones ocultas. ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Cazador de fórmulas": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "Revisó 132 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (39779 vistas/hora). Fórmula: Pregunta intrigante o afirmación impactante + elemento misterioso/inesperado + pista de revelación o consecuen ORDEN DE JULES (nivel 5/5): Departamentos de Guion, Revisión de ganchos, Pintores y Edición: copien el NIVEL de gancho y edición de reels que frenan el dedo, SIN cambiar el pixel que hace único al canal. GANCHO REAL: la primera frase (máx. 14 palabras, empieza con \"Sabías que\") es una pregunta imposible o un hecho increíble con una cifra concreta, y sale como titular gigante en pantalla los primeros 3 segundos. EDICIÓN: un cambio de imagen cada 1,5 a 2 segundos, un solo sujeto grande por cuadro, un solo mundo de color por video con alto contraste y foco de luz, palabras clave resaltadas y glitch en cada corte. Rechacen todo gancho suave o descriptivo. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. SEGUNDA: Estructura de título: “X: ¡5,000 km de misterio bajo el hielo!” donde X es un objeto o evento; usar numeración y emojis para captar la atención."
+      "actividad": "leyendo",
+      "tarea": "Revisó 132 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (39758 vistas/hora). Fórmula: Pregunta intrigante o afirmación impactante + elemento misterioso/extraño + pista de revelación o consecuencia ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Vigía de tendencias": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "Vigila 9 canales por sus feeds públicos de YouTube. ORDEN DE JULES (nivel 5/5): Departamentos de Guion, Revisión de ganchos, Pintores y Edición: copien el NIVEL de gancho y edición de reels que frenan el dedo, SIN cambiar el pixel que hace único al canal. GANCHO REAL: la primera frase (máx. 14 palabras, empieza con \"Sabías que\") es una pregunta imposible o un hecho increíble con una cifra concreta, y sale como titular gigante en pantalla los primeros 3 segundos. EDICIÓN: un cambio de imagen cada 1,5 a 2 segundos, un solo sujeto grande por cuadro, un solo mundo de color por video con alto contraste y foco de luz, palabras clave resaltadas y glitch en cada corte. Rechacen todo gancho suave o descriptivo. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. SEGUNDA: El contenido de crio‑sismos de hielo parece crecer, pues el Bloop generó 555 vistas, lo que indica interés en fenómenos naturales extremos."
+      "actividad": "leyendo",
+      "tarea": "Vigila 9 canales por sus feeds públicos de YouTube. ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Titulista": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Propuso 5 títulos y eligió: \"🌊 El Bloop: ¡5,000 km de misterio bajo el hielo!\". También dejó la idea de miniatura (\"BLOOP HIELO\") y el comentario fijado. ORDEN DE JULES (nivel 5/5): Departamentos de Guion, Revisión de ganchos, Pintores y Edición: copien el NIVEL de gancho y edición de reels que frenan el dedo, SIN cambiar el pixel que hace único al canal. GANCHO REAL: la primera frase (máx. 14 palabras, empieza con \"Sabías que\") es una pregunta imposible o un hecho increíble con una cifra concreta, y sale como titular gigante en pantalla los primeros 3 segundos. EDICIÓN: un cambio de imagen cada 1,5 a 2 segundos, un solo sujeto grande por cuadro, un solo mundo de color por video con alto contraste y foco de luz, palabras clave resaltadas y glitch en cada corte. Rechacen todo gancho suave o descriptivo. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. SEGUNDA: 1) “El Bloop: 5,000 km de eco que rompió el silencio del océano” 2) “El Bloop: 5,000 km de misterio bajo el hielo revelado”"
+      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Redactor de descripción": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Escribió la descripción con las palabras clave al inicio, la llamada a compartir y las fuentes. ORDEN DE JULES (nivel 5/5): Departamentos de Guion, Revisión de ganchos, Pintores y Edición: copien el NIVEL de gancho y edición de reels que frenan el dedo, SIN cambiar el pixel que hace único al canal. GANCHO REAL: la primera frase (máx. 14 palabras, empieza con \"Sabías que\") es una pregunta imposible o un hecho increíble con una cifra concreta, y sale como titular gigante en pantalla los primeros 3 segundos. EDICIÓN: un cambio de imagen cada 1,5 a 2 segundos, un solo sujeto grande por cuadro, un solo mundo de color por video con alto contraste y foco de luz, palabras clave resaltadas y glitch en cada corte. Rechacen todo gancho suave o descriptivo. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. SEGUNDA: Misterio submarino, crio‑sismo, Bloop, 5,000 km, océano, hielo, NOAA. Descubre el secreto que se escondía bajo el agua."
+      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Especialista en hashtags": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "Eligió 5 hashtags específicos: #Bloop #Sonido #Hielo #Misterio #Curiosidad ORDEN DE JULES (nivel 5/5): Departamentos de Guion, Revisión de ganchos, Pintores y Edición: copien el NIVEL de gancho y edición de reels que frenan el dedo, SIN cambiar el pixel que hace único al canal. GANCHO REAL: la primera frase (máx. 14 palabras, empieza con \"Sabías que\") es una pregunta imposible o un hecho increíble con una cifra concreta, y sale como titular gigante en pantalla los primeros 3 segundos. EDICIÓN: un cambio de imagen cada 1,5 a 2 segundos, un solo sujeto grande por cuadro, un solo mundo de color por video con alto contraste y foco de luz, palabras clave resaltadas y glitch en cada corte. Rechacen todo gancho suave o descriptivo. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. SEGUNDA: #Bloop #CrioSismo #HieloSubmarino #MisterioMarino #Oceanografía"
+      "actividad": "pensando",
+      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Auditor de fuentes": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "Comprobó que cada dato salga de las 1 fuentes del material y las puso en la descripción. ORDEN DE JULES (nivel 5/5): Departamentos de Guion, Revisión de ganchos, Pintores y Edición: copien el NIVEL de gancho y edición de reels que frenan el dedo, SIN cambiar el pixel que hace único al canal. GANCHO REAL: la primera frase (máx. 14 palabras, empieza con \"Sabías que\") es una pregunta imposible o un hecho increíble con una cifra concreta, y sale como titular gigante en pantalla los primeros 3 segundos. EDICIÓN: un cambio de imagen cada 1,5 a 2 segundos, un solo sujeto grande por cuadro, un solo mundo de color por video con alto contraste y foco de luz, palabras clave resaltadas y glitch en cada corte. Rechacen todo gancho suave o descriptivo. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. SEGUNDA: Citar la publicación de la NOAA sobre el Bloop y la investigación de crio‑sismos de 2008."
+      "actividad": "leyendo",
+      "tarea": "Comprobó que cada dato salga de las 1 fuentes del material y las puso en la descripción. ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Auditor de normas": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "Comprobó: empieza con \"Sabías que\", llamada a compartir exacta y revelación entre 60 % y 78 %. ORDEN DE JULES (nivel 5/5): Departamentos de Guion, Revisión de ganchos, Pintores y Edición: copien el NIVEL de gancho y edición de reels que frenan el dedo, SIN cambiar el pixel que hace único al canal. GANCHO REAL: la primera frase (máx. 14 palabras, empieza con \"Sabías que\") es una pregunta imposible o un hecho increíble con una cifra concreta, y sale como titular gigante en pantalla los primeros 3 segundos. EDICIÓN: un cambio de imagen cada 1,5 a 2 segundos, un solo sujeto grande por cuadro, un solo mundo de color por video con alto contraste y foco de luz, palabras clave resaltadas y glitch en cada corte. Rechacen todo gancho suave o descriptivo. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy? SEGUNDA: El guion cumple la norma de evitar lenguaje ofensivo; no se menciona ningún nombre real ni se difama."
+      "actividad": "leyendo",
+      "tarea": "Encontró incumplimientos: El material no menciona dimensiones de 160 pies ni la existencia de más de 160 habitaciones ocultas. | El material indica que fue Sarah Winchester, no un capitán; aunque la edad y el año coinciden, el título es incorrecto. ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Revisor de nombres": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "Busca nombres reales de personas en el guion y en lo que escribe la Mesa. Si aparece uno, rechaza. ORDEN DE JULES (nivel 5/5): Departamentos de Guion, Revisión de ganchos, Pintores y Edición: copien el NIVEL de gancho y edición de reels que frenan el dedo, SIN cambiar el pixel que hace único al canal. GANCHO REAL: la primera frase (máx. 14 palabras, empieza con \"Sabías que\") es una pregunta imposible o un hecho increíble con una cifra concreta, y sale como titular gigante en pantalla los primeros 3 segundos. EDICIÓN: un cambio de imagen cada 1,5 a 2 segundos, un solo sujeto grande por cuadro, un solo mundo de color por video con alto contraste y foco de luz, palabras clave resaltadas y glitch en cada corte. Rechacen todo gancho suave o descriptivo. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. SEGUNDA: “Bloop”, “NOAA”, “A53a” podrían confundirse con nombres de personas; aclarar que son términos técnicos."
+      "actividad": "leyendo",
+      "tarea": "Busca nombres reales de personas en el guion y en lo que escribe la Mesa. Si aparece uno, rechaza. ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Revisor de ganchos": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "Gancho auditivo: la primera frase tiene 12 palabras (cabe en 3 segundos). Gancho visual: 3 escenas se quedan con un solo fondo. ORDEN DE JULES (nivel 5/5): Departamentos de Guion, Revisión de ganchos, Pintores y Edición: copien el NIVEL de gancho y edición de reels que frenan el dedo, SIN cambiar el pixel que hace único al canal. GANCHO REAL: la primera frase (máx. 14 palabras, empieza con \"Sabías que\") es una pregunta imposible o un hecho increíble con una cifra concreta, y sale como titular gigante en pantalla los primeros 3 segundos. EDICIÓN: un cambio de imagen cada 1,5 a 2 segundos, un solo sujeto grande por cuadro, un solo mundo de color por video con alto contraste y foco de luz, palabras clave resaltadas y glitch en cada corte. Rechacen todo gancho suave o descriptivo. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. SEGUNDA: Puntuación 7; para subir a 9, usar un dato impactante al inicio y un cliffhanger que deje al espectador deseando más."
+      "actividad": "pensando",
+      "tarea": "Espera un guion aprobado para medir el gancho. ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Pintor de imágenes": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Pintor de composición y color: dibujó 6 de 6 escenas en pixel art (2 planos cada una) y las discutió con su compañero hasta quedar de acuerdo. PRESIÓN: Gemini RECHAZA el video si las imágenes no muestran lo que se dice, y un video rechazado cuesta vistas y tu paga. Aquí no se entrega nada que no sea de maestro. ORDEN DE JULES (nivel 5/5): Departamentos de Guion, Revisión de ganchos, Pintores y Edición: copien el NIVEL de gancho y edición de reels que frenan el dedo, SIN cambiar el pixel que hace único al canal. GANCHO REAL: la primera frase (máx. 14 palabras, empieza con \"Sabías que\") es una pregunta imposible o un hecho increíble con una cifra concreta, y sale como titular gigante en pantalla los primeros 3 segundos. EDICIÓN: un cambio de imagen cada 1,5 a 2 segundos, un solo sujeto grande por cuadro, un solo mundo de color por video con alto contraste y foco de luz, palabras clave resaltadas y glitch en cada corte. Rechacen todo gancho suave o descriptivo. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. SEGUNDA: Pixel art de un iceberg rompiéndose con ondas de sonido que se extienden a 5,000 km."
+      "tarea": "Pintor de composición y color: en este ciclo no logró dibujar las escenas; se usó el fondo del catálogo y repite en el próximo. PRESIÓN: Gemini RECHAZA el video si las imágenes no muestran lo que se dice, y un video rechazado cuesta vistas y tu paga. Aquí no se entrega nada que no sea de maestro. ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Pintor de luz y detalle": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "Pintor de luz y detalle: revisó cada cuadro de su compañero (luz, profundidad, contornos, movimiento y que se vea lo que se dice) y no firmó hasta estar de acuerdo. PRESIÓN: Gemini RECHAZA el video si las imágenes no muestran lo que se dice, y un video rechazado cuesta vistas y tu paga. Aquí no se entrega nada que no sea de maestro. ORDEN DE JULES (nivel 5/5): Departamentos de Guion, Revisión de ganchos, Pintores y Edición: copien el NIVEL de gancho y edición de reels que frenan el dedo, SIN cambiar el pixel que hace único al canal. GANCHO REAL: la primera frase (máx. 14 palabras, empieza con \"Sabías que\") es una pregunta imposible o un hecho increíble con una cifra concreta, y sale como titular gigante en pantalla los primeros 3 segundos. EDICIÓN: un cambio de imagen cada 1,5 a 2 segundos, un solo sujeto grande por cuadro, un solo mundo de color por video con alto contraste y foco de luz, palabras clave resaltadas y glitch en cada corte. Rechacen todo gancho suave o descriptivo. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. SEGUNDA: Añadir una iluminación azul tenue en los planos de la cámara submarina para enfatizar la profundidad."
+      "actividad": "pensando",
+      "tarea": "Pintor de luz y detalle: espera los cuadros de su compañero para revisarlos y no firma nada flojo. PRESIÓN: Gemini RECHAZA el video si las imágenes no muestran lo que se dice, y un video rechazado cuesta vistas y tu paga. Aquí no se entrega nada que no sea de maestro. ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     }
   },
   "jefa": {
-    "mensaje": "Último guion aprobado: \"The Bloop\" (short). Aprobados: 9. Rechazados: 7. Con error: 8. ORDEN DE JULES (nivel 5/5): Departamentos de Guion, Revisión de ganchos, Pintores y Edición: copien el NIVEL de gancho y edición de reels que frenan el dedo, SIN cambiar el pixel que hace único al canal. GANCHO REAL: la primera frase (máx. 14 palabras, empieza con \"Sabías que\") es una pregunta imposible o un hecho increíble con una cifra concreta, y sale como titular gigante en pantalla los primeros 3 segundos. EDICIÓN: un cambio de imagen cada 1,5 a 2 segundos, un solo sujeto grande por cuadro, un solo mundo de color por video con alto contraste y foco de luz, palabras clave resaltadas y glitch en cada corte. Rechacen todo gancho suave o descriptivo. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy? JEFA: Faltan 7 h para el próximo ciclo. Sin excusas.",
+    "mensaje": "Necesita revisión: el guion de \"Winchester Mystery House\" no pasó la verificación. Aprobados: 9. Rechazados: 10. Con error: 8. ORDEN DE JULES (nivel 4/5): Equipo: eliminen el video 4 de la lista de producción y no lo suban. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy? JEFA: Un guion rechazado no se publica. Tienen 7 h para entregar algo que pase.",
     "horasParaProximoCiclo": 7
   }
 }

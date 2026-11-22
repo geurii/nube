@@ -1,0 +1,69 @@
+{
+  "titulo": "🛸 ¿Qué esconden las misteriosas líneas de Nazca?",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-DO-EmilioNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-nazca-lines.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "estilo": "gancho",
+  "ganchoTexto": "¿Las líneas de Nazca cubren más de 1,300 km?",
+  "publicacion": {
+    "titulo": "🛸 ¿Qué esconden las misteriosas líneas de Nazca?",
+    "descripcion": "Descubre los datos reales de los geoglifos más enigmáticos del planeta. Un vistazo rápido a su historia y su secreto oculto.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Nazca_lines\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#NazcaLines #PeruMystery #Geoglyphs #UNESCO"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 5,
+    "critica": "El gancho es demasiado largo y poco impactante. El ritmo es lento y hay frases relleno. El cierre no destaca la revelación."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que las líneas de Nazca cubren más de 1,300 km y siguen ocultando su propósito?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Los antiguos habitantes tallaron la arena entre 500 BC y 500 AD, creando surcos de 10 a 15 cm de profundidad.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Se dividieron en dos fases: Paracas de 400‑200 BC y Nazca de 200 BC‑500 AD, y hoy drones descubren cientos de nuevas figuras.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El conjunto ocupa 50 km² en la árida meseta entre Nazca y Palpa, y algunos diseños solo se aprecian desde el aire a 500 m.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: más de la mitad de las líneas miden apenas 33 cm de ancho.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "Los investigadores aún desconciertan su propósito, mientras el enigma atrae a viajeros y científicos. Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

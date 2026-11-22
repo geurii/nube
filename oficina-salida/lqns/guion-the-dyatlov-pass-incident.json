@@ -1,0 +1,69 @@
+{
+  "titulo": "El misterio del Paso Dyatlov en la película 🎥",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-DO-EmilioNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-the-dyatlov-pass-incident.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "estilo": "gancho",
+  "ganchoTexto": "¿Cinco estudiantes desaparecieron en Rusia mientras investigaban el misterioso?",
+  "publicacion": {
+    "titulo": "El misterio del Paso Dyatlov en la película 🎥",
+    "descripcion": "Una historia real se mezcla con terror y ciencia ficción. Descubre los datos sorprendentes del film.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://es.wikipedia.org/wiki/El_paso_del_diablo · https://en.wikipedia.org/wiki/Devil%27s_Pass\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#DyatlovPass #misterio #Rusia #documental"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 4,
+    "critica": "El gancho es demasiado largo y genérico. Falta ritmo y claridad; cada frase rebasa el límite de palabras. El cierre no engancha y la revelación está fuera del rango de tiempo."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que cinco estudiantes desaparecieron en Rusia mientras investigaban el misterioso paso Dyatlov?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En 2013, Renny Harlin dirigió una película de terror estilo metraje encontrado, escrita por Vikram Weet, sobre esa expedición.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Los cinco universitarios de Oregón viajaron a Rusia, buscaron al superviviente de 1959, pero el hospital decía que estaba muerto.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En el campamento escuchan aullidos, encuentran huellas descalzas y una lengua humana en una torre meteorológica, antes de entrar al búnker.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: la película revela que se hallaron once cuerpos, no los nueve reportados.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Crees que el film es una recreación de un experimento soviético o pura ficción? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

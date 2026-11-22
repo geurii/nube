@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-22T07:10:54.211Z",
+  "actualizado": "2026-11-22T07:21:40.062Z",
   "canalesLeidos": 9,
   "videosRevisados": 132,
   "mejores": [
@@ -8,15 +8,15 @@
       "idioma": "en",
       "titulo": "Why Is Antarctica Closed? The Operation Highjump Mystery",
       "publicado": "2026-11-20T01:00:08.000Z",
-      "vistas": 2155215,
-      "vistasPorHora": 39779
+      "vistas": 2161195,
+      "vistasPorHora": 39758
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "Always open your fan mail",
       "publicado": "2026-11-21T19:00:32.000Z",
-      "vistas": 403248,
+      "vistas": 409196,
       "vistasPorHora": 33128
     },
     {
@@ -24,36 +24,36 @@
       "idioma": "en",
       "titulo": "How Skydiving Changed Will Smith's Life!",
       "publicado": "2026-11-17T17:00:07.000Z",
-      "vistas": 1785085,
-      "vistasPorHora": 16202
+      "vistas": 1786827,
+      "vistasPorHora": 16191
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "TOP 5 Bingeable SCARY STORIES • No Escape Edition",
       "publicado": "2026-11-20T19:00:34.000Z",
-      "vistas": 521144,
-      "vistasPorHora": 14407
+      "vistas": 521865,
+      "vistasPorHora": 14356
     },
     {
       "canal": "The Why Files",
       "idioma": "en",
       "titulo": "America Is Hiding Something Underground",
       "publicado": "2026-11-18T18:00:14.000Z",
-      "vistas": 1189125,
-      "vistasPorHora": 13961
+      "vistas": 1190727,
+      "vistasPorHora": 13950
     }
   ],
   "formula": {
-    "formula": "Pregunta intrigante o afirmación impactante + elemento misterioso/inesperado + pista de revelación o consecuencia",
+    "formula": "Pregunta intrigante o afirmación impactante + elemento misterioso/extraño + pista de revelación o consecuencia",
     "ganchos": [
-      "¿Qué [evento/objeto] está ocultando [entidad/país]? Descubre la verdad.",
-      "La historia prohibida de [tema] que nadie se atreve a contar.",
-      "Cuando [situación] se vuelve [adjetivo], todo cambia: lo que sucedió después te sorprenderá."
+      "¿Qué [evento/objeto] oculta realmente [situación misteriosa]?",
+      "Descubre el [secreto/verdad] detrás de [fenómeno inexplicable] y cómo afecta a [grupo/persona].",
+      "La sorprendente historia de [persona/lugar] que [acción inesperada] y lo que nadie te contó."
     ],
     "evitar": [
-      "Títulos demasiado genéricos sin un gancho claro (ej. “Always open your fan mail”).",
-      "Uso excesivo de listas sin una promesa de misterio o revelación (ej. “TOP 5 Bingeable SCARY STORIES”)."
+      "Títulos demasiado genéricos sin un gancho claro (ej. \"Always open your fan mail\").",
+      "Uso excesivo de listas sin un elemento de misterio o sorpresa que enganche al espectador."
     ]
   }
 }
