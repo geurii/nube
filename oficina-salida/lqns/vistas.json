@@ -1,32 +1,38 @@
 {
-  "fecha": "2026-11-22T04:14:59.368Z",
+  "fecha": "2026-11-22T07:10:52.070Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 2735,
-  "ganadasDesdeElUltimoCiclo": 76,
+  "total": 2394,
+  "ganadasDesdeElUltimoCiclo": 0,
   "videos": [
+    {
+      "id": "HHnlDcvo_vU",
+      "titulo": "🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩",
+      "publicado": "2026-11-22T04:24:01+00:00",
+      "vistas": 4
+    },
     {
       "id": "76aNbQdWBSc",
       "titulo": "Sabías que una ola de melaza arrasó Boston? 🍯",
       "publicado": "2026-11-22T03:59:28+00:00",
-      "vistas": 3
+      "vistas": 4
     },
     {
       "id": "8YRV5me-3uM",
       "titulo": "¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️",
       "publicado": "2026-11-22T03:32:55+00:00",
-      "vistas": 12
+      "vistas": 34
     },
     {
       "id": "5BIAOJmE-dk",
       "titulo": "🔊 El enigma del Bloop: el rugido del hielo",
       "publicado": "2026-11-21T18:10:09+00:00",
-      "vistas": 27
+      "vistas": 30
     },
     {
       "id": "Nd2x5UMBiLM",
       "titulo": "Sabías que la acusaron de fraude un año después de elegirla 🚨",
       "publicado": "2026-11-21T16:00:33+00:00",
-      "vistas": 10
+      "vistas": 12
     },
     {
       "id": "yp4bUZPqnS4",
@@ -44,19 +50,19 @@
       "id": "Md9Rrt9EiTM",
       "titulo": "Sabías que un banco pagó 175 millones por clientes que no existían 👻🏦",
       "publicado": "2026-11-21T01:48:24+00:00",
-      "vistas": 86
+      "vistas": 111
     },
     {
       "id": "ujvVWAyrSUg",
       "titulo": "Sabías que tres hombres caminaron en plena noche polar por 3 huevos de pingüino 🥚 (Parte 3/3)",
       "publicado": "2026-11-20T17:30:34+00:00",
-      "vistas": 458
+      "vistas": 555
     },
     {
       "id": "KURWolBJszo",
       "titulo": "Sabías que mataron 2 millones de pingüinos... y no para comérselos 😳 (Parte 2/3)",
       "publicado": "2026-11-20T16:30:10+00:00",
-      "vistas": 153
+      "vistas": 171
     },
     {
       "id": "Wj-zpd2iorA",
@@ -87,12 +93,6 @@
       "titulo": "Eligieron a dos hombres para saltar sobre el Ártico 🧊 (Parte 3/5)",
       "publicado": "2026-11-15T01:08:23+00:00",
       "vistas": 284
-    },
-    {
-      "id": "0CI-lu8ChQs",
-      "titulo": "El avión que recogía personas del suelo 🤯 (Parte 2/5)",
-      "publicado": "2026-11-14T23:08:11+00:00",
-      "vistas": 513
     }
   ],
   "historia": [
@@ -187,6 +187,10 @@
     {
       "fecha": "2026-11-22T04:14:59.368Z",
       "total": 2735
+    },
+    {
+      "fecha": "2026-11-22T07:10:52.070Z",
+      "total": 2394
     }
   ]
 }

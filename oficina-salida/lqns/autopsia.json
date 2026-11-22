@@ -1,13 +1,18 @@
 {
-  "fecha": "2026-11-22T04:15:00.410Z",
-  "total": 2735,
-  "promedio": 182,
-  "queFunciono": "Los videos con mayor audiencia comparten títulos que presentan una pregunta o afirmación impactante sobre pingüinos y eventos extremos, y se publicaron en fechas recientes (20‑21 noviembre).",
+  "fecha": "2026-11-22T07:15:13.366Z",
+  "total": 2394,
+  "promedio": 160,
+  "queFunciono": "los videos con más vistas comparten títulos que incluyen palabras clave de curiosidad extrema (p. ej., \"Sabías que\", \"¿Qué oculta\", \"El enigma\") y se publicaron en fechas recientes (20/11/2026), lo que sugiere que la combinación de títulos provocativos y una publicación en días con mayor tráfico de ",
   "porQueFallaron": [
-    "Los videos con pocas vistas tienen títulos menos claros o más ambiguos, como “🔊 El enigma del Bloop: el rugido del hielo” o “Sabías que una ola de melaza arrasó Boston?”, lo que sugiere menor curiosidad inmediata. Evidencia: estos títulos aparecen en la lista",
-    "Los videos con menor rendimiento también presentan una menor duración media (por ejemplo, 22 s para “Tres rescates colgados de un globo”) y no se reporta retención media, indicando posible falta de interés sostenido. Evidencia: la ausencia de datos de retenció",
-    "El número de suscriptores ganados es cero en todos los videos con datos de retención, lo que sugiere que la audiencia no se siente motivada a seguir el canal. Evidencia: los valores de +0 suscriptores en la tabla de retención."
+    "Los videos con muy pocas vistas presentan títulos menos atractivos o muy específicos (p. ej., \"🔎 34 cm de Bronce\", \"Sabías que una ola de melaza arrasó Boston\") y se publicaron en fechas con menor actividad (21/11/2026, 22/11/2026), lo que reduce la exposició",
+    "Los títulos de los videos con pocas vistas carecen de palabras clave de alta búsqueda o de un gancho emocional evidente, lo que dificulta captar la curiosidad del espectador"
   ],
-  "noSePuedeSaber": [],
-  "reglas": []
+  "noSePuedeSaber": [
+    "Datos de retención, miniatura, y a quién se mostró los videos con pocas vistas"
+  ],
+  "reglas": [
+    "1. Utilizar títulos que incluyan frases de curiosidad como \"Sabías que\" o \"¿Qué oculta\", combinadas con emojis para aumentar la visibilidad",
+    "2. Publicar los videos en fechas con mayor tráfico (por ejemplo, fines de semana o días con eventos relevantes) para maximizar la exposición inicial",
+    "3. Mantener una miniatura atractiva y coherente con el título, usando colores vivos y texto legible para captar la atención en la primera vista"
+  ]
 }

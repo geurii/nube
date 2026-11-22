@@ -1,0 +1,1 @@
+{"cielo":["#a0c8ff","#7fb3ff","#5a9cff"],"capas":[{"t":"hielo","x":0.5,"y":0.78,"w":0.35,"h":0.25,"color":"#b9e3ff"},{"t":"explosion","x":0.5,"y":0.46,"r":0.22},{"t":"particulas","n":40,"tipo":"polvo"},{"t":"rayos","x":0.08,"alpha":0.12,"color":"#ffd9a0","luz":"izq"}]}

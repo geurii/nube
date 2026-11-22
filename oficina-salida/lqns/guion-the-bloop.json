@@ -1,0 +1,87 @@
+{
+  "titulo": "🌊 El Bloop: ¡5,000 km de misterio bajo el hielo!",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-DO-EmilioNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-the-bloop.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "estilo": "gancho",
+  "ganchoTexto": "¿El sonido Bloop se escuchó a 5,000 km en?",
+  "publicacion": {
+    "titulo": "🌊 El Bloop: ¡5,000 km de misterio bajo el hielo!",
+    "descripcion": "Bloop, el ultra‑bajo sonido captado por NOAA en 1997, se escuchó a más de 5,000 km en el Pacífico Sur. Los científicos lo vincularon a crio‑sismos de hielo, como el iceberg A53a en 2008. Comparte este video con un amigo que lo encuentre sorprendente.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Bloop\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#Bloop #Sonido #Hielo #Misterio #Curiosidad",
+    "titulosAlternativos": [
+      "🌊 El Bloop: ¡5,000 km de misterio bajo el hielo!",
+      "🔊 Sonido Bloop: 5,000 km de eco ultra‑bajo en 1997",
+      "❄️ Bloop: Crio‑sismo de hielo que viajó 5,000 km",
+      "📡 NOAA captó el Bloop a 5,000 km: ¿Qué lo causó?",
+      "🧊 Bloop 1997: El rugido del hielo que superó submarinos"
+    ],
+    "comentarioFijado": "¿Qué crees que causó el Bloop?",
+    "miniatura": {
+      "texto": "BLOOP HIELO",
+      "idea": "Imagen del océano con ondas sonoras y un iceberg rompiéndose, resaltando la distancia de 5,000 km."
+    }
+  },
+  "estado": "aprobado",
+  "editor": {
+    "puntaje": 7,
+    "critica": "El gancho está bien, pero el resto es demasiado extenso y poco rítmico; corta y enfoca cada línea."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que el sonido Bloop se escuchó a 5,000 km en 1997?",
+      "fondo": [
+        "pintado:the-bloop-0a",
+        "pintado:the-bloop-0b"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En 1997 la NOAA captó un ultra‑bajo sonido en el Pacífico Sur, a 50°S 100°W.",
+      "fondo": [
+        "pintado:the-bloop-1a",
+        "pintado:the-bloop-1b"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El eco subió de frecuencia un minuto y se registró a más de 5,000 km, superando submarinos.",
+      "fondo": [
+        "pintado:the-bloop-2a",
+        "pintado:the-bloop-2b"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Años después los científicos lo vincularon a crio‑sismos de hielo, como el iceberg A53a en 2008.",
+      "fondo": [
+        "pintado:the-bloop-3a",
+        "pintado:the-bloop-3b"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Lo increíble: el Bloop no fue un animal, sino un crio‑sismo de hielo.",
+      "fondo": [
+        "pintado:the-bloop-4a",
+        "pintado:the-bloop-4b"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "Así fue: hielo rompiéndose bajo el agua. Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pintado:the-bloop-5a",
+        "pintado:the-bloop-5b"
+      ]
+    }
+  ]
+}

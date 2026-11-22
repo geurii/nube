@@ -1,8 +1,8 @@
 {
-  "fecha": "2026-11-21T11:03:51.132Z",
+  "fecha": "2026-11-22T07:15:19.439Z",
   "resumen": [
-    "Último chequeo del Vigilante: 2026-11-21T09:54:36.376Z.",
-    "Bien: YouTube conectado, analítica autorizada, Groq responde, Gemini responde.",
+    "Último chequeo del Vigilante: 2026-11-22T06:45:27.336Z.",
+    "Bien: YouTube conectado, analítica autorizada, Groq responde, Gemini responde, hay publicaciones recientes.",
     "Problemas: ninguno.",
     "Recordatorio: los archivos de claves del Escritorio deben borrarse y el permiso de Google debe seguir \"En producción\"."
   ]
