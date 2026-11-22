@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-22T16:24:23.409Z",
+  "actualizado": "2026-11-22T16:44:14.884Z",
   "totales": {
     "aprobados": 11,
     "rechazados": 17,
@@ -171,7 +171,7 @@
     "Directora de contenido": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "PLAN DEL CICLO: Lanzar la serie de 5 partes sobre los misterios de los pingüinos en el Ártico: Oficina de Contenidos – Jules: Monetizar la serie alcanzando al menos 2 000 USD en ingresos publicitarios antes del 13 de diciembre · Crear y optimizar miniaturas A/B para cada video de la serie: Oficina de Diseño – Carla"
+      "tarea": "PLAN DEL CICLO: Crear 3 videos de 10‑12 minutos sobre misterios históricos poco conocidos (ej.: objeto alienígena, mapa perdido, experimento militar), con títulos que comiencen por “Sabías que” y que generen al menos 2000 vistas cada uno.: Departamento de  · Optimizar la serie de 3 partes sobre pingüinos y la base "
     },
     "Investigador de temas": {
       "estado": "trabajando",
@@ -196,57 +196,57 @@
     "Locutor": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Guionista). Entregó: 5 ganchos nuevos ORDEN DE JULES (nivel 5/5): Revisa el plan de promoción y ajusta títulos/miniaturas para el próximo video. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
+      "tarea": "AYUDA: le echó una mano a (Guionista). Entregó: 5 ganchos nuevos"
     },
     "Técnico de render": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Editor de guion). Entregó: 3 mejoras al último guion ORDEN DE JULES (nivel 5/5): Revisa el plan de promoción y ajusta títulos/miniaturas para el próximo video. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
+      "tarea": "AYUDA: le echó una mano a (Editor de guion). Entregó: 3 mejoras al último guion"
     },
     "Publicador": {
-      "estado": "libre",
-      "actividad": "pensando",
-      "tarea": "Subió \"Sabías que la explosión de Chernóbil cambió todo 🌍\" y quedó PÚBLICO ahora mismo: https://youtu.be/FEwqFlpnAe4"
+      "estado": "trabajando",
+      "actividad": "escribiendo",
+      "tarea": "AYUDA: le echó una mano a (Investigador de temas). Entregó: 5 temas candidatos"
     },
     "Crítico: padre trabajador": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título FUNCIÓN (contador): ya entregó hoy; la próxima ronda es dentro de 12 h. FUNCIÓN (contador): ya entregó hoy; la próxima ronda es dentro de 11 h."
+      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título FUNCIÓN (contador): ya entregó hoy; la próxima ronda es dentro de 12 h. FUNCIÓN (contador): ya entregó hoy; la próxima ronda es dentro de 11 h. FUNCIÓN (contador): ya entregó hoy; la próxima ronda es dentro de 11 h."
     },
     "Crítica: fan del misterio": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título FUNCIÓN (oportunidades): ya entregó hoy; la próxima ronda es dentro de 22 h."
+      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título FUNCIÓN (oportunidades): ya entregó hoy; la próxima ronda es dentro de 22 h. FUNCIÓN (oportunidades): ya entregó hoy; la próxima ronda es dentro de 22 h."
     },
     "Crítico: adolescente": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": El gancho suena a texto aburrido y la voz de robot me hace deslizar al instante. (siguió hasta el segundo 3). ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy? FUNCIÓN (otros-formatos): Dejó listos TikTok, Instagram, Facebook y versión en inglés de \"Sabías que la explosión de Chernóbil cambió todo 🌍\". FUNCIÓN (otros-formatos): ya entregó hoy; la próxima ronda es dentro de 12 h. FUNCIÓN (otros-formatos): ya entregó hoy; la próxima ronda es dentro de 10 h."
+      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título FUNCIÓN (otros-formatos): ya entregó hoy; la próxima ronda es dentro de 10 h."
     },
     "Crítica: universitaria": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": Hay datos curiosos, pero los errores de pronunciación y los fondos sin relación arruinan la credibilidad. (siguió hasta el segundo 22). ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (mentor): Lección del día: Mantén la curiosidad como eje central: utiliza títulos con preguntas o frases provocativas y añade emojis para captar la FUNCIÓN (mentor): ya entregó hoy; la próxima ronda es dentro de 24 h. FUNCIÓN (mentor): ya entregó hoy; la próxima ronda es dentro de 22 h."
+      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": Hay datos curiosos, pero los errores de pronunciación y los fondos sin relación arruinan la credibilidad. (siguió hasta el segundo 22). ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (mentor): Lección del día: Mantén la curiosidad como eje central: utiliza títulos con preguntas o frases provocativas y añade emojis para captar la FUNCIÓN (mentor): ya entregó hoy; la próxima ronda es dentro de 24 h. FUNCIÓN (mentor): ya entregó hoy; la próxima ronda es dentro de 22 h. FUNCIÓN (mentor): ya entregó hoy; la próxima ronda es dentro de 22 h."
     },
     "Crítico: joven dominicano": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": Suena a clase de historia de colegio, sin chispa ni flow; paso de largo. (siguió hasta el segundo 5). ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy? FUNCIÓN (agenda): Agenda del día enviada (4 puntos). FUNCIÓN (agenda): ya entregó hoy; la próxima ronda es dentro de 24 h. FUNCIÓN (agenda): ya entregó hoy; la próxima ronda es dentro de 22 h."
+      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": Suena a clase de historia de colegio, sin chispa ni flow; paso de largo. (siguió hasta el segundo 5). ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy? FUNCIÓN (agenda): Agenda del día enviada (4 puntos). FUNCIÓN (agenda): ya entregó hoy; la próxima ronda es dentro de 24 h. FUNCIÓN (agenda): ya entregó hoy; la próxima ronda es dentro de 22 h. FUNCIÓN (agenda): ya entregó hoy; la próxima ronda es dentro de 22 h."
     },
     "Crítica: ama de casa": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": La voz sintética y el ritmo forzado me aburren; prefiero algo más natural y con imágenes reales. (siguió hasta el segundo 6). ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy? FUNCIÓN (infantil): 3 ideas nuevas para Mini Aventuras: \"La Gran Carrera de los Animales\"… FUNCIÓN (infantil): ya entregó hoy; la próxima ronda es dentro de 24 h. FUNCIÓN (infantil): ya entregó hoy; la próxima ronda es dentro de 22 h."
+      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": La voz sintética y el ritmo forzado me aburren; prefiero algo más natural y con imágenes reales. (siguió hasta el segundo 6). ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy? FUNCIÓN (infantil): 3 ideas nuevas para Mini Aventuras: \"La Gran Carrera de los Animales\"… FUNCIÓN (infantil): ya entregó hoy; la próxima ronda es dentro de 24 h. FUNCIÓN (infantil): ya entregó hoy; la próxima ronda es dentro de 22 h. FUNCIÓN (infantil): ya entregó hoy; la próxima ronda es dentro de 22 h."
     },
     "Crítico: escéptico": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": Clickbait evidente, errores de lectura y gráficos genéricos hacen que no confíe nada. (siguió hasta el segundo 4). ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. FUNCIÓN (guardian): ya entregó hoy; la próxima ronda es dentro de 13 h. FUNCIÓN (guardian): ya entregó hoy; la próxima ronda es dentro de 12 h. FUNCIÓN (guardian): ya entregó hoy; la próxima ronda es dentro de 11 h."
+      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": Clickbait evidente, errores de lectura y gráficos genéricos hacen que no confíe nada. (siguió hasta el segundo 4). ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. FUNCIÓN (guardian): ya entregó hoy; la próxima ronda es dentro de 13 h. FUNCIÓN (guardian): ya entregó hoy; la próxima ronda es dentro de 12 h. FUNCIÓN (guardian): ya entregó hoy; la próxima ronda es dentro de 11 h. FUNCIÓN (guardian): ya entregó hoy; la próxima ronda es dentro de 11 h."
     },
     "Crítico: abuelo": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": No entiendo bien por los errores de lectura y los fondos sin sentido; necesita una narración más clara. (siguió hasta el segundo 7). ORDEN DE JULES (nivel 5/5): Revisa el plan de promoción y ajusta títulos/miniaturas para el próximo video. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (comunidad): No pude leer los comentarios (YouTube no me dio acceso)."
+      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": No entiendo bien por los errores de lectura y los fondos sin sentido; necesita una narración más clara. (siguió hasta el segundo 7). ORDEN DE JULES (nivel 5/5): Revisa el plan de promoción y ajusta títulos/miniaturas para el próximo video. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (comunidad): Espera que la analítica esté autorizada para leer los comentarios."
     },
     "Enlace de datos": {
       "estado": "trabajando",

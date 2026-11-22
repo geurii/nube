@@ -1,0 +1,92 @@
+{
+  "titulo": "⚡ 1884: El inventor que encendió Niágara con su motor AC",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-DO-EmilioNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-nikola-tesla.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "creado": "2026-11-22T16:12:32.297Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿Un inventor creó el motor que iluminó las Cataratas…?",
+  "publicacion": {
+    "titulo": "⚡ 1884: El inventor que encendió Niágara con su motor AC",
+    "descripcion": "Descubre cómo en 1884 un inventor creó el motor que iluminó las Cataratas del Niágara y cambió la historia de la energía. Su legado incluye la unidad magnética Tesla (1960) y los experimentos de alta tensión que sentaron las bases de la comunicación inalámbrica. Comparte este video con un amigo que lo apreciará.\n\nFotos: Antti Leppänen (CC BY 4.0, Wikimedia Commons) · Photo (c)2007 Helen Filatova (CC BY 2.0, Wikimedia Commons) · Thank You (21 Millions+) views from Los Angeles, USA (CC BY 2.0, Wikimedia Commons)\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://es.wikipedia.org/wiki/Nikola_Tesla · https://en.wikipedia.org/wiki/Nikola_Tesla\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#inventor #energia #niagara #tesla #historia",
+    "titulosAlternativos": [
+      "⚡ 1884: El inventor que encendió Niágara con su motor AC",
+      "🔋 1960: Así nació la unidad Tesla por un genio de la energía",
+      "🚀 1888: Westinghouse licenció el motor que iluminó las Cataratas",
+      "💡 1890s: Experimentos de alta tensión que cambiaron la historia",
+      "🌊 1884‑1888: De NY a Niágara, el motor que revolucionó la luz"
+    ],
+    "comentarioFijado": "¿Sabías que este motor cambió el mundo?",
+    "miniatura": {
+      "texto": "MOTOR QUE ENCENDIÓ NIÁGARA",
+      "idea": "Imagen del motor antiguo con relámpagos y la silueta de las Cataratas del Niágara al fondo, resaltando el año 1884 en neón"
+    }
+  },
+  "estado": "aprobado",
+  "editor": {
+    "puntaje": 5,
+    "critica": "El gancho es demasiado largo y poco impactante; la historia carece de ritmo y contiene datos innecesarios; el cierre no destaca la revelación a tiempo. Panel: [Garantía de publicación activa] 5 de 8 aprobaron el guion, 7 pasaron los primeros 3 segundos, 2 lo compartirían."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que un inventor creó el motor que iluminó las Cataratas del Niágara?",
+      "fondo": [
+        "pintado:nikola-tesla-0a",
+        "pintado:nikola-tesla-0b",
+        "pintado:nikola-tesla-0c",
+        "pintado:nikola-tesla-0d"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En 1884 emigró a Estados Unidos y pronto fundó su propio laboratorio en Nueva York.",
+      "fondo": [
+        "pintado:nikola-tesla-1a",
+        "pintado:nikola-tesla-1b",
+        "pintado:nikola-tesla-1c",
+        "pintado:nikola-tesla-1d"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Su motor de corriente alterna y las patentes polifásicas fueron licenciadas por Westinghouse en 1888, generando grandes sumas de dinero.",
+      "fondo": [
+        "pintado:nikola-tesla-2a",
+        "pintado:nikola-tesla-2b"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Durante la década de 1890 realizó experimentos de alta tensión en Nueva York y Colorado Springs, buscando la iluminación inalámbrica.",
+      "fondo": [
+        "pintado:nikola-tesla-3a",
+        "pintado:nikola-tesla-3b"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: en 1960 la unidad de medida magnética fue nombrada tesla en su honor.",
+      "fondo": [
+        "pixelcifra:1 TESLA|UNIDAD MAGNETICA|AZUL",
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "Su legado impulsó la era de la energía y la comunicación inalámbrica, aunque pocos conocen su impacto. Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pintado:nikola-tesla-5a",
+        "pintado:nikola-tesla-5b"
+      ]
+    }
+  ]
+}

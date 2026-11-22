@@ -1,9 +1,15 @@
 {
-  "fecha": "2026-11-22T16:20:49.283Z",
+  "fecha": "2026-11-22T16:43:51.039Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 2429,
-  "ganadasDesdeElUltimoCiclo": 4,
+  "total": 2145,
+  "ganadasDesdeElUltimoCiclo": 0,
   "videos": [
+    {
+      "id": "FEwqFlpnAe4",
+      "titulo": "Sabías que la explosión de Chernóbil cambió todo 🌍",
+      "publicado": "2026-11-22T16:25:30+00:00",
+      "vistas": 0
+    },
     {
       "id": "9CKxsZ7hmUg",
       "titulo": "🌊 El Bloop: ¡5,000 km de misterio bajo el hielo!",
@@ -87,12 +93,6 @@
       "titulo": "Lo que dos hombres se llevaron de una base soviética fantasma 🕵️ (Parte 4/5)",
       "publicado": "2026-11-15T03:08:21+00:00",
       "vistas": 67
-    },
-    {
-      "id": "PAv0IIjgsUk",
-      "titulo": "Eligieron a dos hombres para saltar sobre el Ártico 🧊 (Parte 3/5)",
-      "publicado": "2026-11-15T01:08:23+00:00",
-      "vistas": 284
     }
   ],
   "historia": [
@@ -219,6 +219,10 @@
     {
       "fecha": "2026-11-22T16:20:49.282Z",
       "total": 2429
+    },
+    {
+      "fecha": "2026-11-22T16:43:51.039Z",
+      "total": 2145
     }
   ]
 }

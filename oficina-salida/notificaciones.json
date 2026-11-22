@@ -1,5 +1,22 @@
 [
   {
+    "id": "mws2h1a6xhy4",
+    "fecha": "2026-11-22T16:44:11.838Z",
+    "canal": "lqns",
+    "tipo": "reporte",
+    "titulo": "Revisión técnica aprobada: ⚡ 1884: El inventor que encendió Niágara con su motor AC",
+    "texto": "Gemini (gemini-4-hydrogen) lo vio y lo oyó: imagen 4/10, audio 8/10, sin fallas graves de imagen ni sonido."
+  },
+  {
+    "id": "mws2gkzcc9lh",
+    "fecha": "2026-11-22T16:43:50.712Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "listo",
+    "titulo": "Video listo: ⚡ 1884: El inventor que encendió Niágara con su motor AC",
+    "texto": "Se renderizó \"⚡ 1884: El inventor que encendió Niágara con su motor AC\" para Lo Que No Sabías (124 MB). Descárgalo en GitHub > Actions > Produccion > artefacto \"video-lqns-nikola-tesla\". Falta subirlo a YouTube."
+  },
+  {
     "id": "mws1rkgquulh",
     "fecha": "2026-11-22T16:24:23.642Z",
     "canal": "lqns",

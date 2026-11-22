@@ -1,0 +1,41 @@
+{
+  "fecha": "2026-11-22T16:44:11.837Z",
+  "id": "lqns-nikola-tesla",
+  "modo": "tecnico",
+  "aprobado": true,
+  "resumen": "Gemini (gemini-4-hydrogen) lo vio y lo oyó: imagen 4/10, audio 8/10, sin fallas graves de imagen ni sonido.",
+  "motivos": [],
+  "gemini": {
+    "modelo": "gemini-4-hydrogen",
+    "gancho_3s": {
+      "nota": 6,
+      "comentario": "Se ve un fondo pixelado de maquinaria industrial que pasa a las cataratas del Niágara, un avatar arriba a la derecha, texto grande en rojo ('¿UN INVENTOR CREO EL MOTOR QUE ILUMINO LAS CATARATAS...?') sin tildes y subtítulos en amarillo y blanco; se oye una voz grave en español preguntando si sabías que un inventor creó el motor que iluminó las cataratas del Niágara sobre música ambiental suave."
+    },
+    "audio": {
+      "nota": 8,
+      "comentario": "Voz clara, bien modulada y perfectamente inteligible durante todo el video, con música de fondo a buen volumen que no tapa la narración y efectos de transición sutiles."
+    },
+    "subtitulos": {
+      "legibles": true,
+      "tapados_o_cortados": false,
+      "comentario": "Subtítulos grandes en amarillo y blanco bien contrastados, centrados en el tercio inferior, totalmente legibles y sin cortes ni obstrucciones."
+    },
+    "imagen": {
+      "nota": 4,
+      "defectos": [
+        "baja resolución / muy pixelado",
+        "repetitivo (el mismo fondo de central eléctrica pixelada ocupa más de la mitad del video)",
+        "imágenes genéricas o imprecisas (una mujer en microscopio y un documento japonés para hablar de Tesla)",
+        "falta de tildes en el título inicial en rojo"
+      ]
+    },
+    "ritmo": {
+      "nota": 4,
+      "comentario": "Los primeros 17 segundos cambian de plano cada pocos segundos, pero del 0:18 al 0:44 y del 0:57 al 1:12 se queda estancado en el mismo fondo de chimeneas pixeladas con cambios mínimos."
+    },
+    "defectos_graves": [],
+    "nota_general": 6,
+    "recomendacion": "subir",
+    "por_que": "No presenta fallos técnicos graves de audio, subtítulos o imagen rota que impidan su publicación, aunque el apartado visual es muy repetitivo y pixelado."
+  }
+}
