@@ -6,6 +6,9 @@ import {dibujarPro, type Pro} from './pintadoPro';
 export type Elemento = {t: string} & Record<string, unknown>;
 export type EscenaPintada = {cielo: string[]; capas: Elemento[]};
 
+/** Fotos de referencia ya cargadas (las rellena PixelPintado antes de dibujar): nombre de archivo -> píxeles. */
+export const IMAGENES = new Map<string, {w: number; h: number; d: Uint8ClampedArray}>();
+
 const num = (v: unknown, d: number, a = 0, b = 1) => {
   const n = Number(v);
   return Number.isFinite(n) ? Math.min(b, Math.max(a, n)) : d;
@@ -156,6 +159,41 @@ export function pintar(g: G, esc: EscenaPintada, t: number, lw: number, lh: numb
           while (xx < x + w * 0.92) { const ww = 3 + hs(i * 31 + Math.floor(xx), 4) * 12; g.rect(xx, yy, ww, 2, [78, 52, 30], 0.85); xx += ww + 3; }
         }
         if (e.simbolos !== false) for (let i = 0; i < 6; i++) g.ring(x + w * (0.2 + hs(i, 51) * 0.6), y + h * (0.2 + hs(i, 52) * 0.6), 4 + hs(i, 53) * 6, 1, [120, 40, 40]);
+        break;
+      }
+      case 'foto': {
+        // Foto de referencia de internet adaptada al pixelado: recorte tipo "cover", bloques de 2 px, paleta reducida con tramado y marco oscuro.
+        const im = IMAGENES.get(String(e.archivo ?? ''));
+        if (!im) break;
+        const ancho = lw > lh; // horizontal (video largo) o vertical (Short)
+        const x0 = Math.round(num(e.x0, ancho ? 0.2 : 0.06) * lw), y0 = Math.round(num(e.y0, ancho ? 0.14 : 0.3) * lh);
+        const x1 = Math.round(num(e.x1, ancho ? 0.8 : 0.94) * lw), y1 = Math.round(num(e.y1, ancho ? 0.84 : 0.64) * lh);
+        const bw = x1 - x0, bh = y1 - y0;
+        if (bw < 8 || bh < 8) break;
+        const zoom = num(e.zoom, 1, 1, 3);
+        const s = Math.max(bw / im.w, bh / im.h) * zoom;
+        const holguraX = Math.max(0, im.w - bw / s) / 2, holguraY = Math.max(0, im.h - bh / s) / 2;
+        const mov = e.pan ? Math.sin(t * 0.35) : 0;
+        const cx = im.w / 2 + mov * holguraX * 0.8, cy = im.h / 2 - mov * holguraY * 0.4;
+        const NIV = 7, B = 2;
+        g.rect(x0 - 2, y0 - 2, bw + 4, bh + 4, [8, 10, 20]);
+        const muestra = (fx: number, fy: number): [number, number, number] => {
+          const sx = Math.min(im.w - 1, Math.max(0, Math.floor(fx))), sy = Math.min(im.h - 1, Math.max(0, Math.floor(fy)));
+          const i = (sy * im.w + sx) * 4;
+          return [im.d[i], im.d[i + 1], im.d[i + 2]];
+        };
+        for (let py = 0; py < bh; py += B) {
+          for (let px = 0; px < bw; px += B) {
+            const fx = cx + (px + B / 2 - bw / 2) / s, fy = cy + (py + B / 2 - bh / 2) / s, k = 0.5 / s;
+            const m = [muestra(fx - k, fy - k), muestra(fx + k, fy - k), muestra(fx - k, fy + k), muestra(fx + k, fy + k)]; // promedio de 4 puntos: menos ruido
+            let r = (m[0][0] + m[1][0] + m[2][0] + m[3][0]) / 4, gg = (m[0][1] + m[1][1] + m[2][1] + m[3][1]) / 4, bb = (m[0][2] + m[1][2] + m[2][2] + m[3][2]) / 4;
+            const lum = 0.3 * r + 0.59 * gg + 0.11 * bb;
+            if (Math.max(r, gg, bb) - Math.min(r, gg, bb) < 18) { r = lum * 1.06; gg = lum * 0.97; bb = lum * 0.82; } // foto en blanco y negro: tono sepia de archivo
+            const d = bay(px / B, py / B) - 0.5;
+            const q = (v: number) => Math.max(0, Math.min(255, Math.round(((v / 255) * (NIV - 1)) + d * 0.55) / (NIV - 1) * 255));
+            g.rect(x0 + px, y0 + py, B, B, [q(r), q(gg), q(bb)]);
+          }
+        }
         break;
       }
       case 'texto': {

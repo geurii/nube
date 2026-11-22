@@ -8,6 +8,7 @@ import path from 'node:path';
 import {puestosDeLaOficina, mesaDePublicacion} from './puestos.mjs';
 import {avisarTelefono} from './aviso.mjs';
 import {pintarEscenas} from './pintor.mjs';
+import {reunirReferencias} from './referencias.mjs';
 import {enGarantia} from './garantia.mjs';
 import {chatAlternativo, proveedoresConLlave, modelosDisponibles, diagnosticoRespaldo} from './llm.mjs';
 
@@ -474,7 +475,10 @@ try {
     const idx = escenas.map((_, i) => i);
     if (idx.length) {
       try {
-        const p = await pintarEscenas({llamar: (m, max) => pedirJson(modelo, m, max), escenas, indices: idx, slug, tema: TEMA, nota: (t) => informe.push(t)});
+        const llamarPintor = (m, max) => pedirJson(modelo, m, max);
+        const referencias = await reunirReferencias({llamar: llamarPintor, escenas, indices: idx, slug, tema: TEMA, nota: (t) => informe.push(t)});
+        if (Object.keys(referencias).length) informe.push(`Referencias de internet (fotos libres) para ${Object.keys(referencias).length} escenas: ${Object.values(referencias).map((r) => r.titulo + ' (' + r.licencia + ')').join('; ').slice(0, 400)}`);
+        const p = await pintarEscenas({llamar: llamarPintor, escenas, indices: idx, slug, tema: TEMA, nota: (t) => informe.push(t), referencias});
         for (const [i, lista] of Object.entries(p)) { fondos[Number(i)] = lista; CTX.pintadas++; }
         informe.push(`Pintores: ${CTX.pintadas} de ${idx.length} escenas dibujadas.`);
       } catch (e) { informe.push('(Los Pintores no pudieron dibujar: ' + e.message + '. Se usa el fondo del catálogo.)'); }

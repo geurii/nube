@@ -3,7 +3,7 @@ import React, {useEffect, useLayoutEffect, useRef, useState} from 'react';
 import {AbsoluteFill, continueRender, delayRender, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {loadFont} from '@remotion/google-fonts/PressStart2P';
 import {G} from './pixelG';
-import {pintar, type EscenaPintada} from './pintado';
+import {pintar, IMAGENES, type EscenaPintada} from './pintado';
 import type {PropsEscena} from './Escenas';
 
 const {fontFamily: FUENTE_PIXEL} = loadFont();
@@ -25,7 +25,26 @@ const Lienzo: React.FC<{id: string}> = ({id}) => {
     fetch(staticFile(`pintados/${id.replace(/[^a-z0-9-]/gi, '')}.json`))
       .then((r) => (r.ok ? r.json() : VACIA))
       .catch(() => VACIA)
-      .then((j) => setSpec(j && Array.isArray(j.capas) ? (j as EscenaPintada) : VACIA));
+      .then(async (j) => {
+        const esc = j && Array.isArray(j.capas) ? (j as EscenaPintada) : VACIA;
+        // fotos de referencia: se cargan y se leen como píxeles antes de dibujar (si una falla, la escena se pinta sin ella)
+        for (const cap of esc.capas) {
+          const archivo = cap.t === 'foto' ? String(cap.archivo ?? '').replace(/[^a-z0-9._-]/gi, '') : '';
+          if (!archivo || IMAGENES.has(archivo)) continue;
+          try {
+            const img = new Image();
+            img.src = staticFile(`referencias/${archivo}`);
+            await img.decode();
+            const c = document.createElement('canvas');
+            c.width = img.naturalWidth; c.height = img.naturalHeight;
+            const x = c.getContext('2d');
+            if (!x) continue;
+            x.drawImage(img, 0, 0);
+            IMAGENES.set(archivo, {w: c.width, h: c.height, d: x.getImageData(0, 0, c.width, c.height).data});
+          } catch { /* sin la foto, la escena queda con sus formas */ }
+        }
+        setSpec(esc);
+      });
   }, [id]);
   useLayoutEffect(() => {
     const c = ref.current;

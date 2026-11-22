@@ -96,6 +96,15 @@ const SISTEMA_B = `Eres el Pintor de luz y detalle de una oficina de videos de m
 const lote = (escenas, ids) => ids.map((i) => `${i}. [${escenas[i].tipo}] ${escenas[i].texto}`).join('\n');
 const FORMA = '{"escenas": [{"indice": N, "planos": [ESCENA_A, ESCENA_B]}, ...]} con el mismo orden y el mismo número de escenas.';
 
+const FONDO = new Set(['estrellas', 'astro', 'resplandor', 'montanas', 'suelo', 'agua', 'niebla', 'nubes', 'olas', 'duna', 'rayos']);
+/** Pone la foto de referencia (ya pixelada por el motor) sobre el fondo y bajo el resto; el plano B la acerca para variar. Quita la silueta, que taparía la foto. */
+const conFoto = (plano, archivo, k) => {
+  let pos = 0;
+  while (pos < plano.capas.length && pos < 4 && FONDO.has(plano.capas[pos].t)) pos++;
+  plano.capas = plano.capas.filter((c) => c.t !== 'silueta');
+  plano.capas.splice(Math.min(pos, plano.capas.length), 0, {t: 'foto', archivo, zoom: k === 0 ? 1 : 1.7, pan: true});
+};
+
 const limpiar = (r, ids, slug, ya = {}) => {
   const salida = {};
   for (const e of Array.isArray(r?.escenas) ? r.escenas : []) {
@@ -112,7 +121,7 @@ const limpiar = (r, ids, slug, ya = {}) => {
  * Los dos pintores dibujan TODAS las escenas indicadas. Devuelve {indice: ["pintado:id", ...]}.
  * `nota(texto)` recibe el diálogo entre los dos pintores para el informe del ciclo.
  */
-export const pintarEscenas = async ({llamar, escenas, indices, slug, tema, nota = () => {}}) => {
+export const pintarEscenas = async ({llamar, escenas, indices, slug, tema, nota = () => {}, referencias = {}}) => {
   const dir = path.resolve('public', 'pintados');
   fs.mkdirSync(dir, {recursive: true});
   const finales = {};
@@ -152,6 +161,7 @@ export const pintarEscenas = async ({llamar, escenas, indices, slug, tema, nota 
     const ids = [];
     planos.slice(0, 2).forEach((p, k) => {
       const id = `${slug}-${i}${'ab'[k]}`;
+      if (referencias[i]?.archivo) conFoto(p, referencias[i].archivo, k);
       fs.writeFileSync(path.join(dir, `${id}.json`), JSON.stringify(p));
       ids.push(`pintado:${id}`);
     });
