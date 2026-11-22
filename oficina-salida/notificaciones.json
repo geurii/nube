@@ -1,5 +1,13 @@
 [
   {
+    "id": "mws73p3bqo0p",
+    "fecha": "2026-11-22T18:53:47.592Z",
+    "canal": "lqns",
+    "tipo": "alerta",
+    "titulo": "No se pudo publicar en las redes",
+    "texto": "\"Sabías que la explosión de Chernóbil cambió todo 🌍\": sin repositorio público; y el servicio temporal bloqueó a GitHub (el servicio de archivos temporales no devolvió un enlace válido (500): 500)."
+  },
+  {
     "id": "mws73i05s7gp",
     "fecha": "2026-11-22T18:53:38.405Z",
     "canal": "lqns",
@@ -680,14 +688,5 @@
     "tipo": "permiso",
     "titulo": "Reconectar YouTube",
     "texto": "YouTube no dio acceso (401): {\n  \"error\": \"invalid_client\",\n  \"error_description\": \"The OAuth client was not found.\"\n}"
-  },
-  {
-    "id": "seed-bloop",
-    "fecha": "2026-11-21T00:00:00.000Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "listo",
-    "titulo": "Video del Bloop listo",
-    "texto": "La oficina escribió, verificó, grabó la voz y renderizó 'El enigma del Bloop' (31 MB). Falta conectar YouTube para subirlo."
   }
 ]
