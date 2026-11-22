@@ -14,6 +14,11 @@ fs.writeFileSync(path.join('agentes', 'canales-propios.json'), JSON.stringify({c
   base,
   {id: 'demo', nombre: 'Canal Demo', nicho: 'ciencia curiosa', tono: 'Tono alegre.', idioma: 'es', idiomasFuente: ['en'], voz: 'es-MX-JorgeNeural', cta: 'Suscríbete y cuéntale a un amigo.', ctaEscrito: 'Cuéntale a un amigo.', musica: null, activo: true, vigilar: []},
 ]}));
+// un video publicado hace poco en cada canal: así la garantía de publicación NO está activa y el voto del panel sí bloquea (caso normal)
+for (const c of ['lqns', 'demo']) {
+  fs.mkdirSync(path.join('oficina-salida', c), {recursive: true});
+  fs.writeFileSync(path.join('oficina-salida', c, 'vistas.json'), JSON.stringify({videos: [{id: 'x', publicado: new Date().toISOString(), vistas: 10}]}));
+}
 process.env.GROQ_API_KEY = 'prueba';
 process.env.FORMATO = 'short';
 
@@ -27,6 +32,14 @@ const hacer = (cta) => [
   {tipo: 'revelacion', texto: 'Pero lo que no sabías: la agencia explicó que fue el crujido de hielo que se rompe en la Antártida.'},
   {tipo: 'veredicto', texto: `¿Tú qué piensas, un animal enorme o un bloque de hielo? Cuéntamelo en los comentarios. ${cta}`},
 ];
+
+// ---- El panel de 8 espectadores (simulado): la primera vez rechaza el guion (2 de 8) y la segunda lo aprueba (7 de 8) ----
+let llamadasPanel = 0;
+const respuestaPanel = () => {
+  llamadasPanel++;
+  const aprueba = llamadasPanel > 1;
+  return {votos: Array.from({length: 8}, (_, i) => ({quien: 'x', pasa_los_3_segundos: aprueba || i < 2, sigue_hasta_segundo: 20, le_gusto: aprueba ? i < 7 : i < 2, lo_compartiria: i < 3, comentario: aprueba ? 'Me atrapó.' : 'El gancho es flojo.'})), mejora_principal: 'Empieza con la cifra más impactante.'};
+};
 
 // ---- Los dos pintores (simulados): A propone, B objeta la primera vez, A acepta ----
 let rondaB = 0;
@@ -51,6 +64,7 @@ globalThis.fetch = async (url, opciones) => {
     const escenas = hacer(cta);
     let respuesta;
     if (sistema.includes('Eres el Pintor')) respuesta = respuestaPintor(sistema, cuerpo.messages.at(-1)?.content ?? '');
+    else if (sistema.includes('panel de 8 espectadores')) respuesta = respuestaPanel();
     else if (sistema.includes('Director/a de contenido')) respuesta = {temas: ['Bloop']};
     else if (sistema.includes('Mesa de publicación')) respuesta = {titulos: ['El sonido que asustó al océano 🌊', 'Un sonido de 99999 kilómetros 😱'], elegido: 'El sonido que asustó al océano 🌊', descripcion: 'Bloop: el sonido submarino más fuerte jamás registrado y su explicación.', hashtags: ['#viral', '#bloop', '#oceano', '#noaa', '#misterio', '#sonar'], comentario_fijado: '¿Qué crees que lo causó?', miniatura: {texto: 'EL BLOOP', idea: 'Una onda azul en el océano'}};
     else if (sistema.includes('Guionista')) respuesta = {titulo: 'El sonido del océano que parecía un monstruo 🌊', descripcion: 'Un sonido enorme y su explicación.', hashtags: ['#bloop', '#misterio', '#oceano', '#noaa', '#viral'], escenas};
@@ -93,6 +107,11 @@ for (const canal of ['lqns', 'demo']) {
 }
 if (leer('oficina-salida/lqns/guion-bloop.json').voz !== 'es-DO-EmilioNeural') fallos.push('lqns: voz equivocada');
 if (leer('oficina-salida/demo/guion-bloop.json').voz !== 'es-MX-JorgeNeural') fallos.push('demo: cada canal debe usar su propia voz');
+{ // el panel es el PASO 2: juzga el guion antes de producir; si lo rechaza, se reescribe y el segundo intento se aprueba
+  const informes = ['lqns', 'demo'].map((c) => fs.readFileSync(path.join('oficina-salida', c, 'informe-bloop.md'), 'utf8'));
+  if (!informes.every((inf) => /Panel de 8 espectadores \(guion/.test(inf))) fallos.push('el panel de 8 espectadores no juzgó el guion en el ciclo de la oficina');
+  if (!informes.some((inf) => /NO le gustó/.test(inf) && /Intento 2: APROBADO/.test(inf))) fallos.push('un rechazo del panel no provocó que el guion se reescribiera y se aprobara en el intento 2');
+}
 const notis = leer('oficina-salida/notificaciones.json');
 if (notis.length !== 2 || !notis.some((x) => x.canal === 'lqns') || !notis.some((x) => x.canal === 'demo')) fallos.push('las notificaciones no tienen un reporte por canal');
 if (notis.some((x) => !x.id || !x.fecha || !x.texto)) fallos.push('una notificación está incompleta');

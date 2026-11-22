@@ -14,6 +14,7 @@ import {mirarFoto, textoDeVista} from './ojos.mjs';
 import {limpiarParaVoz} from './texto-voz.mjs';
 import {textoDeRadar} from './radar.mjs';
 import {completarHashtags} from './hashtags.mjs';
+import {evaluarGuionConPanel} from './panel-guion.mjs';
 import {reunirInspiracion} from './inspiracion.mjs';
 import {enGarantia} from './garantia.mjs';
 import {chatAlternativo, proveedoresConLlave, modelosDisponibles, diagnosticoRespaldo} from './llm.mjs';
@@ -484,6 +485,23 @@ try {
     const umbral = GARANTIA ? (intento >= 2 ? 0 : 6) : intento >= 4 ? 6 : 7; // con garantía, desde el 2.º intento la nota del Editor solo aconseja (0 = no bloquea) // con garantía de publicación el estilo se relaja; la verdad nunca
     if (puntaje !== null && puntaje < umbral) problemas.push({frase: '(calidad)', motivo: `El Editor puso ${puntaje}/10 (mínimo ${umbral}). Reescribe arreglando esto: ${critica}`});
     aprobado = problemas.length === 0 && revision.aprobado !== false;
+    // PASO 2: el PANEL de 8 espectadores juzga el guion ANTES de hacer la voz y el video, así un rechazo no gasta render. Si lo rechazan, se reescribe con sus críticas.
+    CTX.panelGuion = null;
+    if (aprobado) {
+      try {
+        const pv = await evaluarGuionConPanel({llamar: (m) => pedirJson(modelo, m, 2500), guion: {titulo, escenas, publicacion: {titulo, descripcion}}, garantia: GARANTIA, autopsia: leerJson(path.join(SALIDA, 'autopsia.json'), null)});
+        CTX.panelGuion = pv;
+        informe.push(`Panel de 8 espectadores (guion, intento ${intento}): ${pv.resumen}${pv.mejora ? ' Mejora: ' + pv.mejora : ''}`, ...pv.votos.map((v) => `- ${v.quien}: ${v.leGusto ? 'le gustó' : 'NO le gustó'} · ${v.comentario}`));
+        if (!pv.aprobado) {
+          problemas.push({frase: '(panel)', motivo: `El panel de 8 espectadores lo rechazó (${pv.resumen}). Lo único que más subiría las vistas: ${pv.mejora}. Reescribe el gancho y el ritmo arreglando esto.`});
+          aprobado = false;
+          try { // el Guionista aprende de estas críticas en los ciclos siguientes
+            const rutaApr = path.join(SALIDA, 'aprendizajes.json');
+            fs.writeFileSync(rutaApr, JSON.stringify([{fecha: new Date().toISOString(), video: titulo, mejora: pv.mejora, quejas: pv.votos.filter((v) => !v.leGusto).map((v) => v.comentario).slice(0, 3)}, ...leerJson(rutaApr, [])].slice(0, 12), null, 2));
+          } catch { /* sin aprendizajes */ }
+        } else { critica = `${critica} Panel: ${pv.resumen}`.trim(); }
+      } catch (e) { informe.push(`(El panel no pudo evaluar el guion: ${String(e.message ?? e).slice(0, 120)}. Pasa sin su voto.)`); }
+    }
     informe.push(`## Intento ${intento}: ${aprobado ? 'APROBADO' : 'RECHAZADO'}`, critica ? `Editor (${puntaje ?? '?'}/10): ${critica}` : '', ...problemas.map((p) => `- "${p.frase}" → ${p.motivo}`), '');
   }
 
