@@ -1,0 +1,55 @@
+[
+  {
+    "id": "mwsdvux1",
+    "tipo": "critica",
+    "texto": "",
+    "fecha": "2026-11-22T22:03:39.205Z",
+    "hecho": true,
+    "resultado": {
+      "titulo": "Crítica de tus videos",
+      "secciones": [
+        {
+          "titulo": "Lo que funciona",
+          "items": [
+            "Video \"TB3xH9A5N2Y\" tiene 436 vistas y retención 80.9% (vista media 52 s), muestra que contenidos más largos retienen mejor.",
+            "Video \"MGLP0D1jggY\" con 383 vistas y retención 75.3% (vista media 42 s) confirma que el estilo narrativo mantiene a la audiencia.",
+            "El canal acumula 3320 vistas en 28 días, lo que indica que hay interés constante pese al bajo número de suscriptores.",
+            "Retención media del canal es 49.64%, cercana al 50% que suele considerarse aceptable para videos de misterio."
+          ]
+        },
+        {
+          "titulo": "Lo que falla",
+          "items": [
+            "La mayoría de los videos tienen retención bajo 30%: \"AbkKfz6Rucc\" (29.6%), \"0CI-lu8ChQs\" (24.8%) y \"PAv0IIjgsUk\" (29.9%).",
+            "Vista media muy corta: varios videos rondan 11‑17 s, lo que indica que el gancho inicial no captura la atención.",
+            "Videos con menos de 100 vistas (ej. \"rx6-DrUm3WI\" y \"U1gN97z9Fow\") prácticamente no generan interacción.",
+            "El canal tiene solo 6 videos publicados, limitando el algoritmo para recomendar contenido nuevo.",
+            "Objetivo de suscriptores está muy lejos (faltan 957) y la tasa de suscriptores es casi nula (+17 / -4)."
+          ]
+        },
+        {
+          "titulo": "Consejos concretos",
+          "items": [
+            "Gancho: abre cada video con una pregunta impactante o dato sorprendente en los primeros 5 s para subir la retención.",
+            "Ritmo: alterna clips de 8‑12 s con narración en off y música tensionada; evita monólogos largos que bajen la retención.",
+            "Visuales sin cara: usa imágenes de archivo, animaciones ligeras y texto en pantalla que resuma los puntos clave.",
+            "Título: emplea palabras clave del nicho + número (ej. \"5 misterios que la NASA oculta\") y mantén menos de 60 caracteres.",
+            "Miniatura: combina un rostro misterioso (silhouette) con texto grande y contraste de colores rojo‑negro para captar clics.",
+            "Publicación: sube al menos 2 videos por semana y promociona en Shorts con clips de 15 s que muestren el mejor momento del video."
+          ]
+        },
+        {
+          "titulo": "Video por video",
+          "items": [
+            "\"AbkKfz6Rucc\": mejora la intro, corta a 10 s de contenido visual antes de la narración para subir retención del 29.6%.",
+            "\"0CI-lu8ChQs\": inserta un dato chocante a los 3 s y usa subtítulos dinámicos para elevar la retención del 24.8%.",
+            "\"mo-VIsguhWs\": mantén el buen ritmo (retención 51%) y añade una pausa dramática al final para aumentar vistas.",
+            "\"TB3xH9A5N2Y\": replica la estructura que logró 80.9% de retención, pero agrega un cliffhanger antes del final.",
+            "\"MGLP0D1jggY\": conserva la duración media de 42 s y usa más efectos de sonido para reforzar la atmósfera.",
+            "\"PAv0IIjgsUk\": reduce la intro a 4 s y usa una pregunta intrigante para mejorar la retención del 29.9%."
+          ]
+        }
+      ]
+    }
+  }
+]
