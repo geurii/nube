@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-22T22:03:27.479Z",
+  "fecha": "2026-11-22T22:50:53.913Z",
   "resultados": [
     {
       "id": "groq",
@@ -8,8 +8,8 @@
         "GROQ_API_KEY"
       ],
       "estado": "ok",
-      "detalle": "responde (openai/gpt-oss-120b, 0.2 s)",
-      "ms": 215
+      "detalle": "responde (openai/gpt-oss-120b, 0.3 s)",
+      "ms": 311
     },
     {
       "id": "gemini",
@@ -18,7 +18,7 @@
         "GEMINI_API_KEY"
       ],
       "estado": "error",
-      "detalle": "Gemini: The operation was aborted due to timeout"
+      "detalle": "Gemini: error 503"
     },
     {
       "id": "openrouter",
@@ -27,8 +27,8 @@
         "OPENROUTER_API_KEY"
       ],
       "estado": "ok",
-      "detalle": "responde (baidu/ernie-5.5-flash-preview:free, 0.9 s)",
-      "ms": 937
+      "detalle": "responde (baidu/ernie-5.5-flash-preview:free, 1.1 s)",
+      "ms": 1086
     },
     {
       "id": "cerebras",
@@ -38,7 +38,7 @@
       ],
       "estado": "ok",
       "detalle": "responde (gpt-oss-120b, 0.1 s)",
-      "ms": 149
+      "ms": 92
     },
     {
       "id": "mistral",
@@ -55,8 +55,8 @@
       "secretos": [
         "SAMBANOVA_API_KEY"
       ],
-      "estado": "sin-llave",
-      "detalle": "Falta guardar en GitHub: SAMBANOVA_API_KEY"
+      "estado": "error",
+      "detalle": "SambaNova: The operation was aborted due to timeout"
     },
     {
       "id": "nvidia",
@@ -64,8 +64,9 @@
       "secretos": [
         "NVIDIA_API_KEY"
       ],
-      "estado": "sin-llave",
-      "detalle": "Falta guardar en GitHub: NVIDIA_API_KEY"
+      "estado": "ok",
+      "detalle": "responde (mistralai/mistral-large-4-1t-a52b, 21.6 s)",
+      "ms": 21648
     },
     {
       "id": "cohere",
@@ -73,8 +74,9 @@
       "secretos": [
         "COHERE_API_KEY"
       ],
-      "estado": "sin-llave",
-      "detalle": "Falta guardar en GitHub: COHERE_API_KEY"
+      "estado": "ok",
+      "detalle": "responde (command-a-03-2025, 0.2 s)",
+      "ms": 157
     },
     {
       "id": "zai",
@@ -119,8 +121,8 @@
         "POLLINATIONS_API_KEY"
       ],
       "estado": "ok",
-      "detalle": "responde (openai-fast, 0.4 s) · sin cuenta",
-      "ms": 416
+      "detalle": "responde (openai-fast, 0.2 s) · sin cuenta",
+      "ms": 177
     },
     {
       "id": "ovh",
@@ -129,8 +131,8 @@
         "OVH_API_KEY"
       ],
       "estado": "ok",
-      "detalle": "responde (Meta-Llama-3_3-70B-Instruct, 0.9 s) · sin cuenta",
-      "ms": 922
+      "detalle": "responde (Meta-Llama-3_3-70B-Instruct, 0.6 s) · sin cuenta",
+      "ms": 645
     },
     {
       "id": "windsor",
@@ -139,8 +141,8 @@
         "WINDSOR_API_KEY"
       ],
       "estado": "ok",
-      "detalle": "responde (0.7 s)",
-      "ms": 693
+      "detalle": "responde (0.6 s)",
+      "ms": 641
     },
     {
       "id": "buffer",
@@ -150,7 +152,7 @@
       ],
       "estado": "ok",
       "detalle": "responde (1 organización)",
-      "ms": 319
+      "ms": 345
     },
     {
       "id": "youtube",
@@ -162,7 +164,7 @@
       ],
       "estado": "ok",
       "detalle": "conectado (0.3 s)",
-      "ms": 328
+      "ms": 335
     },
     {
       "id": "videos",
@@ -172,7 +174,7 @@
       ],
       "estado": "ok",
       "detalle": "puede escribir en geurii/oficina-videos-legal",
-      "ms": 330
+      "ms": 415
     },
     {
       "id": "ntfy",
