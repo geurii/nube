@@ -1,5 +1,10 @@
 [
   {
+    "fecha": "2026-11-22T19:39:31.659Z",
+    "orden": "Revisar el calendario de producción y confirmar que los largos no excedan 12 min para mantener el consumo bajo 300 min mensuales.",
+    "nivel": 4
+  },
+  {
     "fecha": "2026-11-22T19:36:46.498Z",
     "orden": "Revisa el calendario de producción y confirma que los largos no excedan 12 min para mantener el consumo bajo 300 min mensuales.",
     "nivel": 4
@@ -42,11 +47,6 @@
   {
     "fecha": "2026-11-22T08:38:10.839Z",
     "orden": "Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h.",
-    "nivel": 4
-  },
-  {
-    "fecha": "2026-11-22T07:20:45.525Z",
-    "orden": "Equipo: eliminen el video 4 de la lista de producción y no lo suban.",
     "nivel": 4
   }
 ]
