@@ -55,6 +55,8 @@ jobs:
         run: |
           if [ -f agentes/PAUSA ]; then echo "ok=no" >> "$GITHUB_OUTPUT"; echo "PRODUCCION EN PAUSA (existe agentes/PAUSA): este ciclo se salta."; exit 0; fi
           if [ "${{ github.event_name }}" = "schedule" ] && ! node agentes/encadenar.mjs; then echo "ok=no" >> "$GITHUB_OUTPUT"; echo "Sin presupuesto o meta cumplida: este ciclo se salta."; fi
+          # formato elegido con el botón "Producir ahora" (el archivo trae "fecha|short" o "fecha|largo"); sin elección, Short
+          if [ "${{ github.event_name }}" = "push" ] && [ -f agentes/oficina.disparo ] && [ "$(cut -d'|' -f2 agentes/oficina.disparo | tr -d '[:space:]')" = "largo" ]; then echo "formato=largo" >> "$GITHUB_OUTPUT"; echo "Formato elegido en el boton: LARGO"; else echo "Formato: segun el horario o Short"; fi
       - name: Prueba de humo (simulada, no gasta Groq)
         if: steps.pres.outputs.ok != 'no'
         run: node agentes/probar-oficina.mjs
@@ -81,7 +83,7 @@ jobs:
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           TEMA: ${{ inputs.tema }}
           CANAL_PEDIDO: ${{ inputs.canal }}
-          FORMATO: ${{ inputs.formato || (github.event.schedule == '23 12 */2 * *' && 'largo' || 'short') }}
+          FORMATO: ${{ inputs.formato || steps.pres.outputs.formato || (github.event.schedule == '23 12 */2 * *' && 'largo' || 'short') }}
           PALABRAS: ${{ inputs.palabras }}
         run: |
           canales=$(node agentes/canales-activos.mjs)
