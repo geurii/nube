@@ -53,6 +53,7 @@ const respuestaPintor = (sistema, usuario) => {
 };
 let cta = CTA_LQNS;
 let llamadas = 0;
+let vioLecciones = false; // ¿llegaron las lecciones aprendidas al contexto de los agentes?
 const original = globalThis.fetch;
 globalThis.fetch = async (url, opciones) => {
   const u = String(url);
@@ -60,6 +61,7 @@ globalThis.fetch = async (url, opciones) => {
   if (u.includes('api.groq.com/openai/v1/chat/completions')) {
     llamadas++;
     const cuerpo = JSON.parse(opciones.body);
+    if (cuerpo.messages.some((m) => String(m.content).includes('LECCIONES QUE EL EQUIPO YA APRENDIÓ') && String(m.content).includes('LECCION-DE-PRUEBA'))) vioLecciones = true;
     const sistema = cuerpo.messages[0].content;
     const escenas = hacer(cta);
     let respuesta;
@@ -76,6 +78,9 @@ globalThis.fetch = async (url, opciones) => {
   }
   return original(url, opciones);
 };
+
+// una lección guardada (crítica / resultado / pedido del dueño) debe llegar a los agentes
+fs.writeFileSync(path.join('oficina-salida', 'lqns', 'lecciones.json'), JSON.stringify([{id: 'x', fecha: new Date().toISOString(), fuente: 'critica', texto: 'LECCION-DE-PRUEBA: empieza con una cifra concreta en los primeros tres segundos'}]));
 
 // Dos canales, uno detrás de otro (como hace el flujo de GitHub)
 for (const [canal, ctaCanal, n] of [['lqns', CTA_LQNS, 1], ['demo', CTA_DEMO, 2]]) {
@@ -112,6 +117,7 @@ if (leer('oficina-salida/demo/guion-bloop.json').voz !== 'es-MX-JorgeNeural') fa
   if (!informes.every((inf) => /Panel de 8 espectadores \(guion/.test(inf))) fallos.push('el panel de 8 espectadores no juzgó el guion en el ciclo de la oficina');
   if (!informes.some((inf) => /NO le gustó/.test(inf) && /Intento 2: APROBADO/.test(inf))) fallos.push('un rechazo del panel no provocó que el guion se reescribiera y se aprobara en el intento 2');
 }
+if (!vioLecciones) fallos.push('las lecciones aprendidas NO llegaron al contexto de los agentes');
 const notis = leer('oficina-salida/notificaciones.json');
 if (notis.length !== 2 || !notis.some((x) => x.canal === 'lqns') || !notis.some((x) => x.canal === 'demo')) fallos.push('las notificaciones no tienen un reporte por canal');
 if (notis.some((x) => !x.id || !x.fecha || !x.texto)) fallos.push('una notificación está incompleta');

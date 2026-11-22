@@ -4,6 +4,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {chatAlternativo} from './llm.mjs';
+import {agregarLecciones} from './lecciones.mjs';
 
 const CANAL = process.env.CANAL || 'lqns';
 const dir = path.join('oficina-salida', CANAL);
@@ -82,6 +83,7 @@ if (path.basename(String(process.argv[1] ?? '')) === 'analizar-videos.mjs') {
         const a = await analizar(leidos, pedido.nota);
         registro.analisis = Array.isArray(a.analisis) ? a.analisis : [];
         registro.formulaComun = String(a.formulaComun ?? '');
+        agregarLecciones(CANAL, [{texto: `Fórmula de videos que le gustan al dueño: ${registro.formulaComun}`, fuente: 'analisis'}, ...(registro.analisis ?? []).slice(0, 3).map((x) => ({texto: `Fórmula repetible: ${x.formula}`, fuente: 'analisis'}))].filter((x) => x.texto.length > 25));
         // la fórmula común queda como lección para el Guionista (obligatoria en los próximos ciclos)
         if (registro.formulaComun) {
           const rutaApr = path.join(dir, 'aprendizajes.json');

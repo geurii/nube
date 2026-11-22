@@ -8,6 +8,7 @@ import path from 'node:path';
 import {puestosDeLaOficina, mesaDePublicacion} from './puestos.mjs';
 import {avisarTelefono} from './aviso.mjs';
 import {leerManual, pendientesDeVistoBueno, ESTADO_ESPERA} from './manual.mjs';
+import {textoDeLecciones} from './lecciones.mjs';
 import {crearVisuales} from './visuales.mjs';
 import {investigarEnLaWeb} from './investigar-web.mjs';
 import {limpiarParaVoz} from './texto-voz.mjs';
@@ -146,7 +147,7 @@ const CULTURA = 'EMPRESA: ' + (CONFIG.nombre ?? 'el canal') + '. FORMATO FACELES
 const ORDEN_JULES = leerJson(path.join(SALIDA, 'ordenes.json'), [])[0];
 const ALTERNOS = process.env.GROQ_API_KEY ? (await modelosDisponibles(process.env.GROQ_API_KEY)).filter((m) => m !== 'openai/gpt-oss-120b') : []; // modelos de Groq con cuota separada que SÍ existen en la cuenta
 let groqBloqueadoHasta = 0; // mientras Groq esté en 429, se usan primero los demás proveedores
-let WEB_BLOQUE = leerPreferencias(CANAL_ID); // arranca con lo que el dueño aprobó y rechazó; después se le suma lo que dice internet // lo que dice internet HOY sobre el tema: se les da a TODOS los agentes (se llena después de investigar)
+let WEB_BLOQUE = [leerPreferencias(CANAL_ID), textoDeLecciones(CANAL_ID)].filter(Boolean).join(' '); // arranca con lo que el dueño aprobó y rechazó; después se le suma lo que dice internet // lo que dice internet HOY sobre el tema: se les da a TODOS los agentes (se llena después de investigar)
 const groqDirecto = async (modelo, mensajes, maxTokens = FORMATO === 'largo' ? 4500 : 2500) => {
   mensajes = mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + (ORDEN_JULES ? ` ORDEN VIGENTE DE JULES (nivel ${ORDEN_JULES.nivel}/5, la dio el dueño): ${ORDEN_JULES.orden}` : '') + '\n\n' + m.content} : m));
   let ultimo = 'sin respuesta';
@@ -459,7 +460,7 @@ try {
     const resumenes = fuentes.filter((x) => x.apoyo).map((x) => ({host: String(x.titulo).split(':')[0], texto: x.texto}));
     const bloqueWeb = armarBloqueWeb({tema: TEMA, resumenes, titulos: tit, radarTexto: textoDeRadar(leerJson(path.join(SALIDA, 'radar.json'), null), 2)});
     guardarWeb(CANAL_ID, {tema: TEMA, bloque: bloqueWeb, resumenes: resumenes.length, titulos: tit});
-    WEB_BLOQUE = [bloqueWeb, leerPreferencias(CANAL_ID)].filter(Boolean).join(' ');
+    WEB_BLOQUE = [bloqueWeb, leerPreferencias(CANAL_ID), textoDeLecciones(CANAL_ID)].filter(Boolean).join(' ');
     if (bloqueWeb) informe.push(`Internet para todos los agentes: ${resumenes.length} resúmenes web y ${tit.length} videos virales de YouTube sobre el tema.`);
   } catch { /* sin internet extra */ }
   informe.push('## Investigación', ...fuentes.map((f) => `- ${f.apoyo ? 'web (apoyo)' : f.idioma}: [${f.titulo}](${f.url})`), '');

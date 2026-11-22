@@ -6,6 +6,7 @@ import {execFileSync} from 'node:child_process';
 import {chatAlternativo} from './llm.mjs';
 import {datosDelCanal} from './estrategia.mjs';
 import {titulosVirales} from './web.mjs';
+import {agregarLecciones} from './lecciones.mjs';
 
 const CANAL = process.env.CANAL || 'lqns';
 const dir = path.join('oficina-salida', CANAL);
@@ -47,7 +48,9 @@ export const criticar = async () => {
   const datos = datosDelCanal(dir);
   const j = await pedirJson('Eres Camila (imagen), Renata y Emilio (guion y ritmo), críticos de un canal faceless de misterio en YouTube. Das consejos concretos y accionables.',
     `DATOS REALES DEL CANAL:\n${datos}\n\nCrítica por favor. Devuelve {"queFunciona": ["máx. 4, apoyado en cifras"], "queFalla": ["máx. 5, apoyado en cifras (retención, vista media, vistas)"], "consejos": ["máx. 6 consejos concretos y distintos para los próximos videos: gancho, ritmo, visuales sin cara, título, miniatura"], "videoPorVideo": ["un consejo breve para cada video con cifras en los datos (máx. 6)"]}`, 3000);
-  return {titulo: 'Crítica de tus videos', secciones: [{titulo: 'Lo que funciona', items: lista(j.queFunciona)}, {titulo: 'Lo que falla', items: lista(j.queFalla)}, {titulo: 'Consejos concretos', items: lista(j.consejos)}, {titulo: 'Video por video', items: lista(j.videoPorVideo)}].filter((s) => s.items.length)};
+  // el equipo APRENDE de la crítica: lo que falla y los consejos quedan como lecciones obligatorias para los próximos guiones
+  const aprendidas = agregarLecciones(CANAL, [...lista(j.queFalla, 5).map((t) => ({texto: 'Corrige: ' + t, fuente: 'critica'})), ...lista(j.consejos, 6).map((t) => ({texto: t, fuente: 'critica'}))]);
+  return {titulo: 'Crítica de tus videos', secciones: [{titulo: 'Lo que funciona', items: lista(j.queFunciona)}, {titulo: 'Lo que falla', items: lista(j.queFalla)}, {titulo: 'Consejos concretos', items: lista(j.consejos)}, {titulo: 'Video por video', items: lista(j.videoPorVideo)}, {titulo: 'Lo que el equipo aprendió', items: [aprendidas ? `${aprendidas} lecciones nuevas guardadas: todo el equipo las aplicará en los próximos guiones.` : 'Estas lecciones ya estaban guardadas.']}].filter((s) => s.items.length)};
 };
 
 export const encargoLibre = async (texto) => {

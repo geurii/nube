@@ -4,6 +4,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {leerManual, rutaManual, ESTADO_ESPERA} from './manual.mjs';
+import {agregarLecciones} from './lecciones.mjs';
 
 const RAIZ = 'oficina-salida';
 const leer = (r, d) => { try { return JSON.parse(fs.readFileSync(r, 'utf8')); } catch { return d; } };
@@ -37,6 +38,7 @@ for (const canal of canales) {
       g.estado = 'descartado-por-dueno'; g.cambiosPedidos = nota; fs.writeFileSync(ruta, JSON.stringify(g, null, 2));
       const rutaApr = path.join(RAIZ, canal, 'aprendizajes.json');
       fs.writeFileSync(rutaApr, JSON.stringify([{fecha: new Date().toISOString(), video: g.titulo, mejora: `EL DUEÑO PIDIÓ ESTOS CAMBIOS (obligatorio): ${nota}`, quejas: [nota]}, ...leer(rutaApr, [])].slice(0, 12), null, 2));
+      agregarLecciones(canal, [{texto: `El dueño pidió cambiar "${g.titulo}": ${nota}`, fuente: 'dueno', video: g.titulo}]);
       const tema = (leer(path.join(RAIZ, canal, 'estado.json'), {}).historial ?? []).find((h) => slugDe(h.tema) === slug)?.tema;
       if (tema) lineas.push(`REHACER=${tema}|${g.formato === 'largo' ? 'largo' : 'short'}`);
       console.log(`${canal}/${slug}: cambios pedidos ("${nota}")${tema ? `; se rehace el tema "${tema}"` : '; no encontré el tema original, solo queda la lección'}.`);
