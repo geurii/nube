@@ -36,34 +36,41 @@ export const textoDeVista = (v) => !v ? '' : [
 ].filter(Boolean).join(' ');
 
 /** Gemini mira UNA foto (ruta local jpg/png) pensando en la frase de la escena. Devuelve {modelo, vista} o {error}. */
-export const mirarFoto = async ({ruta, key, frase = ''}) => {
+export const mirarFoto = async ({ruta, key, frase = '', modo = 'foto', maxIntentos = 2, hasta = 0}) => {
   if (!key) return {error: 'falta GEMINI_API_KEY'};
   if (!ruta || !fs.existsSync(ruta)) return {error: 'no encuentro la foto'};
   const bytes = fs.readFileSync(ruta);
   if (bytes.length > 4 * 1024 * 1024) return {error: 'la foto pesa demasiado'};
   const mime = bytes.subarray(0, 4).toString('hex') === '89504e47' ? 'image/png' : 'image/jpeg';
-  const prompt = `Eres los ojos de dos pintores de pixel art que NO pueden ver imágenes. Mira esta foto de referencia, que acompaña la frase: "${String(frase).slice(0, 220)}". Descríbesela con precisión para que la dibujen en pixel art. Responde SOLO con JSON: {"sujeto": "qué se ve, en una frase", "composicion": "dónde está lo principal, planos, dirección de la luz", "paleta": ["#rrggbb", ... de 4 a 6 colores dominantes reales de la foto, de oscuro a claro], "elementos": [{"que": "elemento clave", "x": 0-1, "y": 0-1, "w": 0-1, "h": 0-1}, ... máximo 6, con su caja aproximada: x,y es la esquina superior izquierda], "consejo_pixel": "cómo simplificarlo a pixel art con 3 planos de profundidad"}. No nombres personas reales ni describas caras.`;
-  const intentos = [];
+  const PROMPT_ESTILO = `Eres los ojos de dos pintores de pixel art que NO pueden ver imágenes. Mira este EJEMPLO de pixel art (de otro artista, solo para inspirarse: no se copia). Cuéntales qué hace bien para que apliquen esas IDEAS a su propio cuadro sobre "${String(frase).slice(0, 120)}". Responde SOLO con JSON: {"sujeto": "qué muestra el ejemplo, en una frase", "composicion": "cómo reparte fondo, plano medio y primer plano y hacia dónde va la luz", "paleta": ["#rrggbb", ... 4 a 6 colores dominantes, de oscuro a claro], "elementos": [{"que": "recurso visual que usa (tramado, contorno, brillo, capas con parallax, niebla, reflejo, etc.)", "x": 0.5, "y": 0.5, "w": 0.2, "h": 0.2}, ... máximo 4], "consejo_pixel": "la idea más aprovechable para un cuadro nuevo, en una frase"}. No nombres personas reales ni describas caras.`;
+  const prompt = modo === 'estilo' ? PROMPT_ESTILO : `Eres los ojos de dos pintores de pixel art que NO pueden ver imágenes. Mira esta foto de referencia, que acompaña la frase: "${String(frase).slice(0, 220)}". Descríbesela con precisión para que la dibujen en pixel art. Responde SOLO con JSON: {"sujeto": "qué se ve, en una frase", "composicion": "dónde está lo principal, planos, dirección de la luz", "paleta": ["#rrggbb", ... de 4 a 6 colores dominantes reales de la foto, de oscuro a claro], "elementos": [{"que": "elemento clave", "x": 0-1, "y": 0-1, "w": 0-1, "h": 0-1}, ... máximo 6, con su caja aproximada: x,y es la esquina superior izquierda], "consejo_pixel": "cómo simplificarlo a pixel art con 3 planos de profundidad"}. No nombres personas reales ni describas caras.`;
+  const fallos = [];
+  const queda = () => (hasta ? hasta - Date.now() : Infinity); // tiempo que queda del presupuesto (ms)
   for (const modelo of MODELOS) {
-    for (let i = 1; i <= 3; i++) {
+    for (let i = 1; i <= maxIntentos; i++) {
+      if (queda() < 5000) return {error: `Gemini no pudo mirar la foto: se acabó el tiempo asignado. ${fallos.join(' | ')}`};
       try {
         const r = await fetch(`${BASE}/v1beta/interactions`, {
-          method: 'POST', headers: {'x-goog-api-key': key, 'Content-Type': 'application/json'}, signal: AbortSignal.timeout(90000),
+          method: 'POST', headers: {'x-goog-api-key': key, 'Content-Type': 'application/json'}, signal: AbortSignal.timeout(Math.max(5000, Math.min(60000, queda()))),
           body: JSON.stringify({model: modelo, input: [{type: 'image', data: bytes.toString('base64'), mime_type: mime}, {type: 'text', text: prompt}]}),
         });
         const cuerpo = await r.text();
-        if (r.status === 429) { await dormir(((Number(/retry in (\d+)/i.exec(cuerpo)?.[1] ?? 15)) + 2) * 1000); continue; }
+        if (r.status === 429) {
+          if (i < maxIntentos) await dormir(Math.max(0, Math.min(queda() - 5000, ((Number(/retry in (\d+)/i.exec(cuerpo)?.[1] ?? 15)) + 2) * 1000)));
+          else fallos.push(`${modelo}: 429 sin cuota`);
+          continue;
+        }
         if (!r.ok) {
-          if ([500, 502, 503, 504].includes(r.status) && i < 3) { await dormir(i * 20000); continue; }
-          intentos.push(`${modelo}: ${r.status} ${cuerpo.replaceAll(key, '***').slice(0, 120)}`); break;
+          if ([500, 502, 503, 504].includes(r.status) && i < maxIntentos) { await dormir(Math.min(queda() - 5000, i * 20000)); continue; }
+          fallos.push(`${modelo}: ${r.status} ${cuerpo.replaceAll(key, '***').slice(0, 120)}`); break;
         }
         const m = /\{[\s\S]*\}/.exec(textoDe(JSON.parse(cuerpo)).replace(/```json|```/g, ''));
-        if (!m) { intentos.push(`${modelo}: respuesta sin JSON`); break; }
+        if (!m) { fallos.push(`${modelo}: respuesta sin JSON`); break; }
         const vista = limpiarVista(JSON.parse(m[0]));
-        if (!vista) { intentos.push(`${modelo}: descripción vacía`); break; }
+        if (!vista) { fallos.push(`${modelo}: descripción vacía`); break; }
         return {modelo, vista};
-      } catch (e) { intentos.push(`${modelo}: ${String(e.message).slice(0, 120)}`); break; }
+      } catch (e) { fallos.push(`${modelo}: ${String(e.message).slice(0, 120)}`); break; }
     }
   }
-  return {error: `Gemini no pudo mirar la foto. ${intentos.join(' | ')}`};
+  return {error: `Gemini no pudo mirar la foto. ${fallos.join(' | ')}`};
 };

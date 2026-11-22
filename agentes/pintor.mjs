@@ -107,6 +107,7 @@ export const presionPintores = () => {
 const SISTEMA_A = `Eres el Pintor de composición y color de una oficina de videos de misterio: un maestro del pixel art, entre los mejores del mundo. Dominas composición, perspectiva, paleta y narración visual. Trabajas codo a codo con tu compañero, el Pintor de luz y detalle, que revisa cada cuadro tuyo; quieres su acuerdo. Sin personas reales ni caras. Responde SOLO con JSON.`;
 const SISTEMA_B = `Eres el Pintor de luz y detalle de una oficina de videos de misterio: un maestro del pixel art, entre los mejores del mundo. Dominas la luz, el volumen, los contornos, el detalle y la animación. Revisas con rigor el trabajo de tu compañero, el Pintor de composición y color: si algo no está a nivel profesional lo corriges y lo dices, y solo das tu acuerdo cuando el cuadro es impecable. Sin personas reales ni caras. Responde SOLO con JSON.`;
 
+let IDEAS = ''; // ideas de estilo de ejemplos CC0 (opcional)
 let VISTAS = {}; // lo que Gemini VIO en la foto de referencia de cada escena (los pintores no ven imágenes)
 const lote = (escenas, ids) => ids.map((i) => `${i}. [${escenas[i].tipo}] ${escenas[i].texto}${VISTAS[i] ? `\n   FOTO DE REFERENCIA (la vio Gemini; el motor ya la pone pixelada en el centro, tú pintas el entorno y la luz EN ARMONÍA con ella y sin tapar esa zona): ${VISTAS[i]}` : ''}`).join('\n');
 const FORMA = '{"escenas": [{"indice": N, "planos": [ESCENA_A, ESCENA_B]}, ...]} con el mismo orden y el mismo número de escenas.';
@@ -136,15 +137,18 @@ const limpiar = (r, ids, slug, ya = {}) => {
  * Los dos pintores dibujan TODAS las escenas indicadas. Devuelve {indice: ["pintado:id", ...]}.
  * `nota(texto)` recibe el diálogo entre los dos pintores para el informe del ciclo.
  */
-export const pintarEscenas = async ({llamar, escenas, indices, slug, tema, nota = () => {}, referencias = {}}) => {
+export const pintarEscenas = async ({llamar, escenas, indices, slug, tema, nota = () => {}, referencias = {}, ideas = []}) => {
   const dir = path.resolve('public', 'pintados');
   fs.mkdirSync(dir, {recursive: true});
+  IDEAS = ideas.length ? `
+
+IDEAS DE ESTILO (ejemplos reales de pixel art con licencia CC0 que Gemini vio; NO se copian, aprovecha lo que hacen bien): ${ideas.map((x, k) => `(${k + 1}) ${x.texto}`).join(' ')}` : '';
   VISTAS = Object.fromEntries(Object.entries(referencias).filter(([, r]) => r?.vista).map(([i, r]) => [i, r.vista]));
   const finales = {};
   const TAM = 3; // escenas por tanda (cada escena lleva 2 planos)
   for (let b = 0; b < indices.length; b += TAM) {
     const ids = indices.slice(b, b + TAM);
-    const encargo = `Tema del video: "${tema}". Para CADA escena dibuja DOS planos distintos (otra composición o ángulo, mismo mundo de color) que MUESTREN lo que se dice.\n\n${MANUAL}\n\n${GUIA}\n\nESCENAS:\n${lote(escenas, ids)}\n\nDevuelve ${FORMA}`;
+    const encargo = `Tema del video: "${tema}". Para CADA escena dibuja DOS planos distintos (otra composición o ángulo, mismo mundo de color) que MUESTREN lo que se dice.\n\n${MANUAL}\n\n${GUIA}${IDEAS}\n\nESCENAS:\n${lote(escenas, ids)}\n\nDevuelve ${FORMA}`;
     let a;
     try { a = limpiar(await llamar([{role: 'system', content: `${SISTEMA_A} ${presionPintores()}`}, {role: 'user', content: encargo}], 6500), ids, slug); }
     catch (e) { nota(`El Pintor de composición y color no pudo dibujar las escenas ${ids.join(', ')}: ${String(e.message ?? e).slice(0, 120)}`); continue; }
@@ -152,7 +156,7 @@ export const pintarEscenas = async ({llamar, escenas, indices, slug, tema, nota 
     let final = a;
     let acuerdo = 'sin revisión (el Pintor de luz y detalle no respondió)';
     try {
-      const revision = `Tema: "${tema}". Tu compañero propuso estos cuadros para las escenas:\n${lote(escenas, ids)}\n\nSUS CUADROS:\n${JSON.stringify({escenas: ids.filter((i) => a[i]).map((i) => ({indice: i, planos: a[i]}))})}\n\n${MANUAL}\n\n${GUIA}\n\nRevisa cada cuadro como un profesional: ¿muestra lo que dice la frase?, ¿luz coherente?, ¿profundidad en 3 planos?, ¿sujeto legible y fuera de las zonas reservadas?, ¿hay movimiento?, ¿los dos planos de cada escena son distintos? CORRIGE lo que no esté a nivel profesional (añade detalle, luz, primer plano, movimiento).\nDevuelve {"acuerdo": true|false (¿el cuadro ORIGINAL de tu compañero ya era impecable?), "objeciones": ["máx. 4 frases cortas"], "escenas": ${FORMA.replace('{"escenas": ', '').replace(/ con el mismo.*$/, '')} con TUS cuadros corregidos}`;
+      const revision = `Tema: "${tema}". Tu compañero propuso estos cuadros para las escenas:\n${lote(escenas, ids)}\n\nSUS CUADROS:\n${JSON.stringify({escenas: ids.filter((i) => a[i]).map((i) => ({indice: i, planos: a[i]}))})}\n\n${MANUAL}\n\n${GUIA}${IDEAS}\n\nRevisa cada cuadro como un profesional: ¿muestra lo que dice la frase?, ¿luz coherente?, ¿profundidad en 3 planos?, ¿sujeto legible y fuera de las zonas reservadas?, ¿hay movimiento?, ¿los dos planos de cada escena son distintos? CORRIGE lo que no esté a nivel profesional (añade detalle, luz, primer plano, movimiento).\nDevuelve {"acuerdo": true|false (¿el cuadro ORIGINAL de tu compañero ya era impecable?), "objeciones": ["máx. 4 frases cortas"], "escenas": ${FORMA.replace('{"escenas": ', '').replace(/ con el mismo.*$/, '')} con TUS cuadros corregidos}`;
       const rb = await llamar([{role: 'system', content: `${SISTEMA_B} ${presionPintores()}`}, {role: 'user', content: revision}], 6500);
       const mejorB = limpiar(rb, ids, slug, a);
       const objeciones = (Array.isArray(rb?.objeciones) ? rb.objeciones : []).map(String).slice(0, 4);
