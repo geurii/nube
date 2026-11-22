@@ -105,7 +105,7 @@ for (const canal of ['lqns', 'demo']) {
   if (estado.totales.aprobados !== 1) fallos.push(`${canal}: el estado no contó el guion aprobado`);
   if (!estado.agentes['Editor de guion']) fallos.push(`${canal}: el Editor no aparece en el estado`);
 }
-if (leer('oficina-salida/lqns/guion-bloop.json').voz !== 'es-DO-EmilioNeural') fallos.push('lqns: voz equivocada');
+if (leer('oficina-salida/lqns/guion-bloop.json').voz !== 'es-MX-JorgeNeural') fallos.push('lqns: voz equivocada');
 if (leer('oficina-salida/demo/guion-bloop.json').voz !== 'es-MX-JorgeNeural') fallos.push('demo: cada canal debe usar su propia voz');
 { // el panel es el PASO 2: juzga el guion antes de producir; si lo rechaza, se reescribe y el segundo intento se aprueba
   const informes = ['lqns', 'demo'].map((c) => fs.readFileSync(path.join('oficina-salida', c, 'informe-bloop.md'), 'utf8'));
