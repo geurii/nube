@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-22T00:39:43.823Z",
+  "actualizado": "2026-11-22T00:55:41.106Z",
   "canalesLeidos": 9,
   "videosRevisados": 132,
   "mejores": [
@@ -8,52 +8,41 @@
       "idioma": "en",
       "titulo": "Why Is Antarctica Closed? The Operation Highjump Mystery",
       "publicado": "2026-11-20T01:00:08.000Z",
-      "vistas": 1989754,
-      "vistasPorHora": 41749
+      "vistas": 1998288,
+      "vistasPorHora": 41696
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "Always open your fan mail",
       "publicado": "2026-11-21T19:00:32.000Z",
-      "vistas": 172497,
-      "vistasPorHora": 30514
+      "vistas": 186821,
+      "vistasPorHora": 31563
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "How Skydiving Changed Will Smith's Life!",
       "publicado": "2026-11-17T17:00:07.000Z",
-      "vistas": 1721071,
-      "vistasPorHora": 16603
+      "vistas": 1725005,
+      "vistasPorHora": 16598
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "TOP 5 Bingeable SCARY STORIES • No Escape Edition",
       "publicado": "2026-11-20T19:00:34.000Z",
-      "vistas": 489908,
-      "vistasPorHora": 16522
+      "vistas": 491283,
+      "vistasPorHora": 16421
     },
     {
       "canal": "The Why Files",
       "idioma": "en",
       "titulo": "America Is Hiding Something Underground",
       "publicado": "2026-11-18T18:00:14.000Z",
-      "vistas": 1154532,
-      "vistasPorHora": 14678
+      "vistas": 1155951,
+      "vistasPorHora": 14646
     }
   ],
-  "formula": {
-    "formula": "Pregunta intrigante o afirmación impactante + elemento misterioso/inhóspito + pista de revelación o consecuencia inesperada",
-    "ganchos": [
-      "¿Qué [evento/objeto] oculta realmente [lugar/persona]?",
-      "Descubre el [secreto/verdad] detrás de [situación] que nadie se atreve a contar",
-      "Cuando [acción] se encuentra con [fenómeno], lo que ocurre después te dejará sin palabras"
-    ],
-    "evitar": [
-      "Títulos demasiado genéricos sin un gancho claro (p. ej., solo una frase descriptiva sin pregunta o sorpresa).",
-      "Uso excesivo de mayúsculas o símbolos que distraen y reducen la legibilidad del título."
-    ]
-  }
+  "formula": null
 }

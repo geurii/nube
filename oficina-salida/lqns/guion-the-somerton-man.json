@@ -1,0 +1,67 @@
+{
+  "titulo": "🕵️‍♂️ El misterio de Somerton Park",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-DO-EmilioNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-the-somerton-man.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "publicacion": {
+    "titulo": "🕵️‍♂️ El misterio de Somerton Park",
+    "descripcion": "Un hombre sin identidad apareció en una playa australiana en 1948. Descubre los datos que aún desconciertan a los investigadores.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Somerton_Man\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#SomertonMan #Misterio #Australia #CasoSinResolver #Historia"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 5,
+    "critica": "El guion es confuso, carece de ritmo y la revelación es poco creíble."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que el 1 de diciembre de 1948 se encontró un cuerpo sin identificación en la playa de Somerton Park, Adelaide?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "A las 6:30 am una pareja avistó al hombre recostado, con una media cigarrillo en el cuello y una bolsa de chicle Juicy Fruit.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Testigos dijeron haberlo visto la noche anterior, inmóvil, con el brazo extendido, mientras la luz de la calle parpadeaba.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El patólogo describió a un hombre de 180 cm, ojos grises y cabello rojizo, en excelente condición física, de apariencia británica.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: en 2022, un científico dijo que era un ingeniero eléctrico nacido en 1905.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Podrá la nueva prueba genética cerrar el caso o seguirá siendo un enigma de la historia? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

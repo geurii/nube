@@ -1,12 +1,12 @@
 {
-  "fecha": "2026-11-22T00:25:53.695Z",
-  "total": 2555,
-  "promedio": 170,
-  "queFunciono": "Los videos con más vistas comparten títulos que incluyen palabras clave de curiosidad y sorpresa (e.g., \"Sabías que\", \"El avión que\", \"Eligieron a dos hombres\") y se publicaron en fechas recientes (2026-11-20 y 2026-11-14). Además, la mayoría son partes de series numeradas, lo que incentiva el segui",
+  "fecha": "2026-11-22T01:04:22.574Z",
+  "total": 2612,
+  "promedio": 174,
+  "queFunciono": "Los videos con más vistas comparten títulos que incluyen palabras clave de curiosidad y misterio (p. ej., \"Sabías que\", \"El avión que recogía personas\", \"Eligieron a dos hombres\") y se publicaron en fechas cercanas a fines de noviembre, lo que sugiere que la audiencia responde bien a contenido de ti",
   "porQueFallaron": [
-    "Pocas vistas correlacionan con títulos que no usan la fórmula de curiosidad o sorpresa (e.g., \"Lo que dos hombres se llevaron de una base soviética fantasma\", \"Operación Coldfeet: la CIA saltó sobre una base soviética fantasma\"), con evidencia de retención med",
-    "Los videos con títulos más largos y menos palabras clave de curiosidad (e.g., \"Sabías que dos jóvenes genios de una lista famosa suman 40 años de cárcel ⚖️\") muestran una retención media no reportada pero vistas extremadamente bajas, lo que sugiere falta de in",
-    "Los videos con títulos que incluyen emojis y temas muy específicos (e.g., \"🔊 El enigma del Bloop: el rugido del hielo\") tienen retención media no reportada y vistas muy bajas, indicando que el tema no resonó con la audiencia."
+    "Los videos con muy pocas vistas (menos de 50) presentan títulos menos claros o con menos palabras de curiosidad; por ejemplo, \"Los \"jóvenes genios\" que terminaron acusados de fraude\" y \"¿Por qué no comemos pingüino? La verdad detrás de la prohibición\" tienen t",
+    "Los videos con pocas vistas también tienen fechas de publicación muy próximas entre sí (por ejemplo, varios el 21 de noviembre), lo que puede generar competencia interna por la misma audiencia. Evidencia: 5 videos publicados el 21 de noviembre con vistas total",
+    "Los videos con pocas vistas presentan una retención media no disponible o muy baja (por ejemplo, 19% para \"Operación Coldfeet\"), lo que indica que la audiencia no se mantiene; sin embargo, la retención no se reporta para la mayoría de los videos con pocas vist"
   ],
   "noSePuedeSaber": [],
   "reglas": []
