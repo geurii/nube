@@ -1,0 +1,63 @@
+{
+  "titulo": "🔍 El enigma del Disco de Phaistos",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-DO-EmilioNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-phaistos-disc.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "creado": "2026-11-22T08:37:52.651Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿Un disco de arcilla guarda 242 símbolos misteriosos?",
+  "publicacion": {
+    "titulo": "🔍 El enigma del Disco de Phaistos",
+    "descripcion": "Un objeto milenario que sigue sin ser descifrado. Descubre los datos que rodean su misteriosa aparición.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Phaistos_Disc\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#PhaistosDisc #Minoan #HistoriaAntigua #Misterio"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 5,
+    "critica": "El gancho es débil, la historia se alarga y el ritmo es lento. Falta urgencia y frases más cortas. El cierre repite texto y rompe la regla de 18 palabras."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que un disco de arcilla guarda 242 símbolos misteriosos?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El arqueólogo recuperó el disco intacto el 3 de julio de 1908, dentro de la celda principal del palacio de Phaistos, junto a la tableta lineal PH‑1 del nivel inferior cerca.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El disco mide aproximadamente 16 centímetros de diámetro, 2 centímetros de grosor, y cada uno de sus 242 signos fue estampado con sellos antes de la cocción, una forma primitiva de tipografía.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: los expertos sitúan su origen entre 1850 BC y 1600 BC.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "Así que el misterioso disco sigue sin ser descifrado, dejando abiertas teorías. ¿Qué crees que relata? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

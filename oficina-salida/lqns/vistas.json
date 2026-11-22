@@ -1,14 +1,14 @@
 {
-  "fecha": "2026-11-22T07:58:38.588Z",
+  "fecha": "2026-11-22T08:31:29.375Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 2289,
-  "ganadasDesdeElUltimoCiclo": 0,
+  "total": 2336,
+  "ganadasDesdeElUltimoCiclo": 47,
   "videos": [
     {
       "id": "9CKxsZ7hmUg",
       "titulo": "🌊 El Bloop: ¡5,000 km de misterio bajo el hielo!",
       "publicado": "2026-11-22T07:41:49+00:00",
-      "vistas": 5
+      "vistas": 8
     },
     {
       "id": "HHnlDcvo_vU",
@@ -26,7 +26,7 @@
       "id": "8YRV5me-3uM",
       "titulo": "¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️",
       "publicado": "2026-11-22T03:32:55+00:00",
-      "vistas": 31
+      "vistas": 34
     },
     {
       "id": "Nd2x5UMBiLM",
@@ -56,13 +56,13 @@
       "id": "ujvVWAyrSUg",
       "titulo": "Sabías que tres hombres caminaron en plena noche polar por 3 huevos de pingüino 🥚 (Parte 3/3)",
       "publicado": "2026-11-20T17:30:34+00:00",
-      "vistas": 490
+      "vistas": 530
     },
     {
       "id": "KURWolBJszo",
       "titulo": "Sabías que mataron 2 millones de pingüinos... y no para comérselos 😳 (Parte 2/3)",
       "publicado": "2026-11-20T16:30:10+00:00",
-      "vistas": 159
+      "vistas": 160
     },
     {
       "id": "Wj-zpd2iorA",
@@ -199,6 +199,10 @@
     {
       "fecha": "2026-11-22T07:58:38.587Z",
       "total": 2289
+    },
+    {
+      "fecha": "2026-11-22T08:31:29.374Z",
+      "total": 2336
     }
   ]
 }

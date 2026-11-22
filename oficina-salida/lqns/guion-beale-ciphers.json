@@ -1,0 +1,70 @@
+{
+  "titulo": "🔐 El enigma de los Beale Ciphers: ¿Tesoro perdido?",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-DO-EmilioNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-beale-ciphers.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "creado": "2026-11-22T08:34:26.126Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿Un tesoro de más de 40 millones de dólares?",
+  "publicacion": {
+    "titulo": "🔐 El enigma de los Beale Ciphers: ¿Tesoro perdido?",
+    "descripcion": "Descubre la historia del tesoro enterrado y los misteriosos códigos que nadie ha logrado romper. ¿Podrá algún día revelarse la verdad?\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://es.wikipedia.org/wiki/Beale_ciphers · https://en.wikipedia.org/wiki/Beale_ciphers\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#BealeCiphers #TesoroOculto #HistoriaMisteriosa #Virginia #Cifras"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 5,
+    "critica": "Hook débil, falta de urgencia; la historia se alarga con relleno; el cierre no impacta."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que un tesoro de más de 40 millones de dólares está oculto en Virginia?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En 1820, el aventurero dejó una caja con tres mensajes cifrados en Bedford County.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El innkeeper la entregó en 1822 a un posadero de Lynchburg, quien debía abrirla solo si ninguno regresaba en diez años.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Veintitrés años después, en 1845, el posadero abrió la caja y encontró dos cartas y los tres cifrados; solo el segundo fue descifrado usando la Declaración de Independencia.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: el amigo pasó veinte años intentando descifrar los demás textos sin éxito.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "El misterio sigue vivo; nadie ha encontrado la caja ni el oro oculto. Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

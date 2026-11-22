@@ -1,5 +1,41 @@
 [
   {
+    "id": "mwrl930ct8iw",
+    "fecha": "2026-11-22T08:42:07.356Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Stonehenge",
+    "texto": "El Verificador no aprobó \"Stonehenge\" tras 4 intentos: El Editor puso 5/10 (mínimo 6). Reescribe arreglando esto: El hook es débil y demasiado genérico. El ritmo es lento y hay frases largas. Falta un cierre contund Aprobados: 9. Rechazados: 13. Con error: 8. No se publica. Próximo ciclo en 5 h."
+  },
+  {
+    "id": "mwrl3mmu7gxm",
+    "fecha": "2026-11-22T08:37:52.854Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Phaistos Disc",
+    "texto": "El Verificador no aprobó \"Phaistos Disc\" tras 4 intentos: El Editor puso 5/10 (mínimo 6). Reescribe arreglando esto: El gancho es débil, la historia se alarga y el ritmo es lento. Falta urgencia y frases más cortas. El Aprobados: 9. Rechazados: 12. Con error: 8. No se publica. Próximo ciclo en 5 h."
+  },
+  {
+    "id": "mwrkz7c9agy8",
+    "fecha": "2026-11-22T08:34:26.409Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Beale ciphers",
+    "texto": "El Verificador no aprobó \"Beale ciphers\" tras 4 intentos: El material no indica que la caja se dejó en 1820; solo menciona que el tesoro se enterró en 1820 y que la caja se entregó al posadero en 1822. Aprobados: 9. Rechazados: 11. Con error: 8. No se publica. Próximo ciclo en 5 h."
+  },
+  {
+    "id": "mwrkvgncqajc",
+    "fecha": "2026-11-22T08:31:31.848Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante o afirmación impactante + elemento misterioso/extraño + pista de revelación o consecuencia El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (39451 vistas/hora)."
+  },
+  {
     "id": "mwrjqdztt9v2",
     "fecha": "2026-11-22T07:59:35.513Z",
     "canal": "lqns",

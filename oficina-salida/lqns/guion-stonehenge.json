@@ -1,0 +1,70 @@
+{
+  "titulo": "🪨 Stonehenge: El misterio de 1500 años de construcción",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-DO-EmilioNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-stonehenge.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "creado": "2026-11-22T08:42:07.150Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿Stonehenge fue construido durante más de 1500 años?",
+  "publicacion": {
+    "titulo": "🪨 Stonehenge: El misterio de 1500 años de construcción",
+    "descripcion": "Descubre los siglos que abarcan sus piedras y los enigmas que aún persisten. Un viaje al corazón del paisaje megalítico.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://es.wikipedia.org/wiki/Stonehenge · https://en.wikipedia.org/wiki/Stonehenge\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#Stonehenge #Misterio #Patrimonio #HistoriaAntigua"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 5,
+    "critica": "El hook es débil y demasiado genérico. El ritmo es lento y hay frases largas. Falta un cierre contundente."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que Stonehenge fue construido durante más de 1500 años?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Los primeros trabajos, el foso y los montículos circulares, datan de unos 5100 años atrás, alrededor de 3100 a.C.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Las primeras piedras azules se colocaron entre 2400 y 2200 a.C., aunque algunos podrían haber estado allí desde 3000 a.C.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El famoso círculo de sarsen se erigió entre 2600 y 2400 a.C., y el monumento quedó protegido por ley desde 1882.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: Stonehenge y sus alrededores forman un paisaje que se extiende hasta 6500 años.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "Este calendario de piedra sigue intrigando a arqueólogos y visitantes; ¿qué misterios aún guarda bajo su sombra? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}
