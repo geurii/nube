@@ -1,5 +1,10 @@
 [
   {
+    "fecha": "2026-11-22T03:54:24.890Z",
+    "orden": "Equipo: a partir de ahora, cada día produzcan y suban 2 Shorts con miniaturas y títulos optimizados según la nueva guía; revisen la checklist de Shorts antes de la aprobación del panel y entreguen los archivos a las 09:45 y 17:45.",
+    "nivel": 5
+  },
+  {
     "fecha": "2026-11-22T03:41:22.804Z",
     "orden": "Todos: revisen hoy los datos de retención del último video público, ajusten títulos y miniaturas según los hallazgos y apliquen la nueva estructura de gancho en los próximos dos videos; entreguen informe de mejora antes de las 10:00 a.m.",
     "nivel": 5
@@ -42,11 +47,6 @@
   {
     "fecha": "2026-11-21T22:30:36.024Z",
     "orden": "Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00.",
-    "nivel": 4
-  },
-  {
-    "fecha": "2026-11-21T18:36:33.284Z",
-    "orden": "Aseguren que el video se suba y se confirme en el chat del equipo dentro de los 30 minutos.",
     "nivel": 4
   }
 ]
