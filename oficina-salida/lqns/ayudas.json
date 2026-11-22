@@ -1,8 +1,8 @@
 {
   "plan": [
-    "1. Lanzar una serie de 5 episodios sobre fenómenos históricos enigmáticos, con el responsable de contenido siendo Marta, y monetizar al menos 10,000€ antes del 13 de diciembre.",
-    "2. Optimizar la miniatura y la descripción de los videos existentes, con el responsable de diseño gráfico siendo Luis, y aumentar el CTR en un 15% para generar 5,000€ adicionales antes del 13 de diciembre.",
-    "3. Programar publicaciones en fechas de alta audiencia (fines de semana y eventos relevantes), con el responsable de calendario editorial siendo Sofía, y lograr que al menos 3 nuevos videos alcancen 2,000 vistas cada uno, generando 8,000€ e"
+    "Crear y lanzar una serie de 5 videos sobre fenómenos históricos enigmáticos, cada uno con al menos 1,200 vistas en la primera semana: Equipo de Investigación y Guion: Monetizar la serie antes del 13 de diciembre mediante anuncios y patrocin",
+    "Optimizar la estrategia de publicación, programando los videos en fines de semana y días con eventos relevantes para maximizar la exposición inicial: Equipo de Programación y Métricas: Alcanzar un incremento del 30 % en vistas promedio por ",
+    "Diseñar una línea de miniaturas coherentes y atractivas, con colores vivos y texto legible, que aumenten la tasa de clics en un 20 %: Equipo de Diseño Gráfico: Incrementar la CTR de los videos antes del 13 de diciembre y mejorar la monetiza"
   ],
   "ganchos": [
     "Sabías que [TEMA] desapareció en menos de [CIFRA] segundos? | Imagen de un reloj de arena derramando arena rápidamente",
@@ -24,12 +24,12 @@
     "The Wow! Signal"
   ],
   "titulos": [
-    "Sabías que nunca verás <objeto> <emoji>",
-    "Sabías que <número> <personas> <acción> <detalles> <emoji>",
-    "Eligieron a <número> <personas> para <acción> <emoji>",
-    "Sabías que un <institución> pagó <cantidad> por <objeto> <emoji>"
+    "Sabías que [acción sorprendente] [emoji] (Parte X/Y)",
+    "Sabías que [número] [objeto/tema] ... [emoji] (Parte X/Y)",
+    "[Verbo] a [número] [personas] para [acción] [emoji] (Parte X/Y)",
+    "Sabías que [acción] ... [emoji]"
   ],
-  "fecha": "2026-11-22T07:15:13.508Z",
+  "fecha": "2026-11-22T07:21:33.202Z",
   "iniciativas": [
     "Valentina (Directora de contenido): Definir una guía de estilo clara que el equipo pueda seguir desde el primer video.",
     "Carolina (Coordinador de producción): Crear un calendario de producción con hitos diarios y asignar responsables para cada tarea.",
