@@ -1,5 +1,10 @@
 [
   {
+    "fecha": "2026-11-22T08:41:56.828Z",
+    "orden": "Revisa el guion de los próximos 3 videos, añade un gancho de 15 palabras y aumenta la duración a 8 min. Entrega el storyboard antes de la edición.",
+    "nivel": 5
+  },
+  {
     "fecha": "2026-11-22T08:38:10.839Z",
     "orden": "Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h.",
     "nivel": 4
@@ -42,11 +47,6 @@
   {
     "fecha": "2026-11-22T03:12:14.026Z",
     "orden": "Todo el equipo: produzcan y entreguen HOY dos videos completos con imágenes claramente relacionadas; revisen la checklist de calidad antes de enviarlos al panel; publiquen inmediatamente tras aprobación. No habrá tolerancia a rechazos.",
-    "nivel": 5
-  },
-  {
-    "fecha": "2026-11-22T02:57:05.760Z",
-    "orden": "Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones.",
     "nivel": 5
   }
 ]
