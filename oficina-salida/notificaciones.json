@@ -1,21 +1,20 @@
 [
   {
-    "id": "mwr56kx10e6d",
-    "fecha": "2026-11-22T01:12:16.741Z",
+    "id": "mwr5vytub5j1",
+    "fecha": "2026-11-22T01:32:01.170Z",
     "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Guion aprobado: Mary Celeste",
-    "texto": "Short de \"Mary Celeste\" aprobado en el intento 2. 130 palabras, 6 escenas. Editor: Puntaje: 5/10. El gancho es demasiado largo y confuso. La historia se extiende sin ritmo y el cierre suena forzado. Falta una revelación impactante en el momento adecuado. Aprobados: 6. Rechazados: 7. Con error: 8. Próximo ciclo en 1 h."
+    "tipo": "alerta",
+    "titulo": "El panel rechazó: Sabías que el Mar de Sargazo oculta un misterio milenario 🌊",
+    "texto": "[Garantía de publicación activa] Gemini (gemini-3.8-flash) lo vio: 5.5/10, no subir. 4 de 8 aprobaron, 7 pasaron los primeros 3 segundos, 2 lo compartirían. No se sube. Mejora principal: Incluir imágenes o video real del Mar de los Sargazos y de anguilas para acompañar la narración; el visual impactante retendrá a todos."
   },
   {
-    "id": "mwr54b5apyqo",
-    "fecha": "2026-11-22T01:10:30.766Z",
+    "id": "mwr5tsjxvyca",
+    "fecha": "2026-11-22T01:30:19.725Z",
     "canal": "lqns",
     "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título con pregunta intrigante o afirmación impactante + elemento misterioso o prohibido + pista de revelación El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (41563 vistas/hora)."
+    "tipo": "listo",
+    "titulo": "Video listo: Sabías que el Mar de Sargazo oculta un misterio milenario 🌊",
+    "texto": "Se renderizó \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\" para Lo Que No Sabías (50 MB). Descárgalo en GitHub > Actions > Produccion > artefacto \"video-lqns-the-sargasso-sea\". Falta subirlo a YouTube."
   },
   {
     "id": "mwr4webf11el",

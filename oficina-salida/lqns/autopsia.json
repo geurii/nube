@@ -1,11 +1,13 @@
 {
-  "fecha": "2026-11-22T01:13:52.461Z",
-  "total": 2614,
-  "promedio": 174,
-  "queFunciono": "Los videos con más vistas comparten títulos que incluyen palabras clave curiosas y emoticonos, además de una estructura de serie (Parte X/Y) y fechas recientes (2026‑11‑20).",
+  "fecha": "2026-11-22T01:30:21.910Z",
+  "total": 2630,
+  "promedio": 175,
+  "queFunciono": "Los videos con mayor audiencia comparten títulos que combinan curiosidades sobre pingüinos y eventos extremos, utilizan numeración de series (Parte 1/3, Parte 3/3) y fechas de publicación muy cercanas (todos el 20/11/2026).",
   "porQueFallaron": [
-    "El contenido con menor rendimiento carece de emoticonos y palabras clave llamativas; evidencia: títulos sin emojis y menos de 10 vistas.",
-    "Los videos con retención media baja (24.8 % y 29.9 %) no ganaron suscriptores; evidencia: +0 suscriptores y retención media <30 %."
+    "Poca retención media (24.8 % y 29.9 %) y duración media de 11 s y 14 s, lo que indica que el contenido no mantiene el interés; evidencia: datos de retención proporcionados.",
+    "El contenido no parece estar optimizado para la audiencia objetivo, ya que los títulos son confusos y mezclan temas (pingüinos, aviones, CIA) sin una narrativa clara; evidencia: títulos variados y no coherentes entre sí.",
+    "Los videos con muy pocas vistas (menos de 100) tienen títulos demasiado largos o poco atractivos y no usan numeración de series; evidencia: títulos como \"Sabías que un banco pagó 175 millones por clientes que no existían\" y \"Los \"jóvenes genios\" que terminaron",
+    "La falta de datos sobre miniaturas, palabras clave y audiencia objetivo impide identificar si el problema es de descubrimiento; evidencia: no se proporcionan datos de miniaturas ni de palabras clave."
   ],
   "noSePuedeSaber": [
     "Datos de miniaturas, audiencia objetivo y métricas de interacción (likes, comentarios)."

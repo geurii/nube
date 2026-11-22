@@ -1,8 +1,8 @@
 {
-  "fecha": "2026-11-22T01:10:28.958Z",
+  "fecha": "2026-11-22T01:30:20.883Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 2614,
-  "ganadasDesdeElUltimoCiclo": 2,
+  "total": 2630,
+  "ganadasDesdeElUltimoCiclo": 18,
   "videos": [
     {
       "id": "5BIAOJmE-dk",
@@ -32,25 +32,25 @@
       "id": "Md9Rrt9EiTM",
       "titulo": "Sabías que un banco pagó 175 millones por clientes que no existían 👻🏦",
       "publicado": "2026-11-21T01:48:24+00:00",
-      "vistas": 51
+      "vistas": 78
     },
     {
       "id": "ujvVWAyrSUg",
       "titulo": "Sabías que tres hombres caminaron en plena noche polar por 3 huevos de pingüino 🥚 (Parte 3/3)",
       "publicado": "2026-11-20T17:30:34+00:00",
-      "vistas": 365
+      "vistas": 358
     },
     {
       "id": "KURWolBJszo",
       "titulo": "Sabías que mataron 2 millones de pingüinos... y no para comérselos 😳 (Parte 2/3)",
       "publicado": "2026-11-20T16:30:10+00:00",
-      "vistas": 118
+      "vistas": 113
     },
     {
       "id": "Wj-zpd2iorA",
       "titulo": "¿Por qué no comemos pingüino? La verdad detrás de la prohibición",
       "publicado": "2026-11-20T15:30:22+00:00",
-      "vistas": 2
+      "vistas": 3
     },
     {
       "id": "VONOZ4NKXNI",
@@ -169,8 +169,8 @@
       "total": 2612
     },
     {
-      "fecha": "2026-11-22T01:10:28.958Z",
-      "total": 2614
+      "fecha": "2026-11-22T01:30:20.883Z",
+      "total": 2630
     }
   ]
 }

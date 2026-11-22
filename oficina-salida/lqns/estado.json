@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-22T01:16:57.016Z",
+  "actualizado": "2026-11-22T01:36:37.850Z",
   "totales": {
     "aprobados": 6,
     "rechazados": 7,
@@ -170,18 +170,18 @@
   "agentes": {
     "Directora de contenido": {
       "estado": "trabajando",
-      "actividad": "hablando",
-      "tarea": "Último guion aprobado: \"Mary Celeste\" (short). Aprobados: 6. Rechazados: 7. Con error: 8. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. JEFA: Faltan 1 h para el próximo ciclo. Sin excusas."
+      "actividad": "escribiendo",
+      "tarea": "PLAN DEL CICLO: 1. Lanzar la serie 'Sabías que nunca verás pingüino en un supermercado 🐧 (Parte 4/3)' con un enfoque de marketing cruzado en plataformas de streaming y patrocinadores de marcas de alimentos. Responsable: Oficina de Producción y Comercializ · 2. Crear un episodio interactivo 'El avión que recogía pe"
     },
     "Investigador de temas": {
       "estado": "trabajando",
-      "actividad": "leyendo",
-      "tarea": "Dejó el material de \"Mary Celeste\" con su fuente en Wikipedia. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "actividad": "escribiendo",
+      "tarea": "AYUDA: le echó una mano a (Guionista). Entregó: 5 ganchos nuevos"
     },
     "Guionista": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Entregó el guion de \"Mary Celeste\". 130 palabras, 6 escenas. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. JEFA: Necesitaste 2 intentos. Mañana, a la primera."
+      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título"
     },
     "Verificador de datos": {
       "estado": "trabajando",
@@ -194,59 +194,59 @@
       "tarea": "Pulió el guion y eligió los fondos de cada escena. Puntaje: 5/10. El gancho es demasiado largo y confuso. La historia se extiende sin ritmo y el cierre suena forzado. Falta una revelación impactante en el momento adecuado. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. JEFA: Un 5/10 no alcanza. Quiero ganchos que frenen el dedo."
     },
     "Locutor": {
-      "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Investigador de temas). Entregó: 5 temas candidatos SEGUNDA: Ajustar ritmo: velocidad media en el gancho, pausa de (cifra sin respaldo) s después de la pregunta inicial, y ritmo más lento en la revelación para enfatizar la información clave. SOY Isabella «El Voz de la Emoción»: carismático, expresivo. PIENSA: Siento la presión de mantener mi voz en forma mientras aún no he grabado nada. INICIATIVA: Comenzar ejercicios vocales diarios y grabar pruebas de voz para recibir feedback temprano. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
+      "estado": "libre",
+      "actividad": "hablando",
+      "tarea": "Grabó la voz de \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\"."
     },
     "Técnico de render": {
-      "estado": "trabajando",
+      "estado": "libre",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título SEGUNDA: Usar codificación H.(cifra sin respaldo) con bitrate de 4 Mbps y resolución (cifra sin respaldo)p; aplicar compresión sin pérdida de calidad en los primeros (cifra sin respaldo) s para acelerar el render. SOY Paula «El Renderizador Supremo»: técnico, paciente. PIENSA: Me preocupa que el hardware falle en el último minuto sin haberlo probado en producción. INICIATIVA: Realizar pruebas de render en hardware de respaldo y documentar tiempos de procesamiento. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
+      "tarea": "Renderizó \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\" (50 MB). Está en Actions, artefacto \"video-lqns-the-sargasso-sea\"."
     },
     "Publicador": {
-      "estado": "trabajando",
+      "estado": "esperando_decision",
       "actividad": "pensando",
-      "tarea": "Subió \"🔊 El enigma del Bloop: el rugido del hielo\" y quedó PÚBLICO ahora mismo: https://youtu.be/5BIAOJmE-dk ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "tarea": "Tiene un video listo: \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\". Falta subirlo a YouTube (necesita tu conexión; ver subir.mjs)."
     },
     "Crítico: padre trabajador": {
-      "estado": "trabajando",
+      "estado": "libre",
       "actividad": "leyendo",
-      "tarea": "Le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Me quedé porque aprendí algo concreto rápido, pero no lo enviaría a todos. (siguió hasta el segundo 30). ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (contador): ya entregó hoy; la próxima ronda es dentro de 6 h."
+      "tarea": "Le gustó \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\": Aprendí algo concreto sobre el Sargazo, pero el ritmo lento me hizo mirar el móvil. (siguió hasta el segundo 22). FUNCIÓN (contador): ya entregó hoy; la próxima ronda es dentro de 5 h."
     },
     "Crítica: fan del misterio": {
-      "estado": "trabajando",
+      "estado": "libre",
       "actividad": "leyendo",
-      "tarea": "Le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": El Bloop es un buen caso, aunque el guion es algo predecible; lo recomendaría a otros amantes del misterio. (siguió hasta el segundo 50, lo compartiría). ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (oportunidades): ya entregó hoy; la próxima ronda es dentro de 10 h."
+      "tarea": "Le gustó \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\": El dato de la anguila me sorprendió, pero la falta de imágenes reales del Sargazo me decepciona. (siguió hasta el segundo 28, lo compartiría). FUNCIÓN (oportunidades): ya entregó hoy; la próxima ronda es dentro de 9 h."
     },
     "Crítico: adolescente": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "NO le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": El gancho es medio lento, y en 2‑3 s ya me estaba aburrido, paso. (siguió hasta el segundo 3). ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (otros-formatos): ya entregó hoy; la próxima ronda es dentro de 12 h."
+      "actividad": "leyendo",
+      "tarea": "NO le gustó \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\": El gancho es medio aburrido y los gráficos son genéricos, paso de ahí en 3 s. (siguió hasta el segundo 5). FUNCIÓN (otros-formatos): ya entregó hoy; la próxima ronda es dentro de 11 h."
     },
     "Crítica: universitaria": {
-      "estado": "trabajando",
+      "estado": "libre",
       "actividad": "leyendo",
-      "tarea": "Le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Me atrapó el misterio del sonido y el dato del iceberg, lo compartiría con mis amigas curiosas. (siguió hasta el segundo 45, lo compartiría). ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. FUNCIÓN (mentor): ya entregó hoy; la próxima ronda es dentro de 10 h."
+      "tarea": "Le gustó \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\": Me atrapó la curiosidad del misterio de la anguila, aunque los visuals son flojos. (siguió hasta el segundo 30, lo compartiría). FUNCIÓN (mentor): ya entregó hoy; la próxima ronda es dentro de 9 h."
     },
     "Crítico: joven dominicano": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "NO le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Suena a docu de escuela, me faltó chispa y lenguaje callejero, paso. (siguió hasta el segundo 3). ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (agenda): ya entregó hoy; la próxima ronda es dentro de 10 h."
+      "tarea": "NO le gustó \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\": Suena a documental de colegio, falta chispa y slang que me enganche. (siguió hasta el segundo 18). FUNCIÓN (agenda): ya entregó hoy; la próxima ronda es dentro de 9 h."
     },
     "Crítica: ama de casa": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Narración clara y ritmo cómodo, la voz no es monótona y entendí todo sin jerga. (siguió hasta el segundo 40). ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (infantil): ya entregó hoy; la próxima ronda es dentro de 10 h."
+      "tarea": "NO le gustó \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\": La voz está bien, pero el lenguaje es muy denso y los gráficos aburridos. (siguió hasta el segundo 20). FUNCIÓN (infantil): ya entregó hoy; la próxima ronda es dentro de 9 h."
     },
     "Crítico: escéptico": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "NO le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Demasiado click‑bait con el “rugido de criatura”, pero la ciencia lo desmiente; me dejó con sensación de exageración. (siguió hasta el segundo 20). ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy? FUNCIÓN (guardian): ya entregó hoy; la próxima ronda es dentro de 6 h."
+      "tarea": "NO le gustó \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\": Promete un misterio y al final solo suelta un dato sin pruebas visuales, típico clickbait. (siguió hasta el segundo 15). FUNCIÓN (guardian): ya entregó hoy; la próxima ronda es dentro de 5 h."
     },
     "Crítico: abuelo": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Historia bien contada, subtítulos claros, me gustó el final y lo compartiría con mis nietos. (siguió hasta el segundo 52, lo compartiría). ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (comunidad): No pude leer los comentarios (YouTube no me dio acceso)."
+      "tarea": "Le gustó \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\": Entendí la historia y los subtítulos estaban claros, pero quise ver fotos reales del mar. (siguió hasta el segundo 25). FUNCIÓN (comunidad): Espera que la analítica esté autorizada para leer los comentarios."
     },
     "Enlace de datos": {
       "estado": "trabajando",

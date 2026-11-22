@@ -1,15 +1,15 @@
 {
   "plan": [
-    "1. Lanzar la serie “El misterio de la brújula de piedra” (Parte 1/5) con Jules como responsable de producción, objetivo: alcanzar 2000 vistas y monetizar 30% de ingresos antes del 13 de diciembre.",
-    "2. Crear el video “Sabías que el reloj de sol más antiguo del mundo guarda un mensaje secreto” (Parte 2/5) con Carlos como responsable de investigación y edición, meta: generar 1500 vistas y monetizar 25% de ingresos antes del 13 de diciemb",
-    "3. Desarrollar el contenido “El objeto perdido de la civilización maya” (Parte 3/5) con Ana como responsable de guion y promoción, objetivo: lograr 1800 vistas y monetizar 20% de ingresos antes del 13 de diciembre."
+    "1. Lanzar la serie 'Sabías que nunca verás pingüino en un supermercado 🐧 (Parte 4/3)' con un enfoque de marketing cruzado en plataformas de streaming y patrocinadores de marcas de alimentos. Responsable: Oficina de Producción y Comercializ",
+    "2. Crear un episodio interactivo 'El avión que recogía personas del suelo 🤯 (Parte 6/5)' con contenido exclusivo para suscriptores premium y anuncios de marcas de tecnología. Responsable: Oficina de Contenido Digital y Monetización. Meta: ",
+    "3. Desarrollar un mini-documental 'Sabías que mataron 2 millones de pingüinos... y no para comérselos 😳 (Parte 4/3)' con colaboraciones con ONGs y campañas de concienciación. Responsable: Oficina de Relaciones Públicas y Alianzas. Meta: al"
   ],
   "ganchos": [
-    "Sabías que [TEMA] [CIFRA] | imagen de un objeto histórico iluminado por luces de neón",
-    "Sabías que [TEMA] [CIFRA] | imagen de una pista de aterrizaje vacía bajo la luna",
-    "Sabías que [TEMA] [CIFRA] | imagen de un mapa antiguo con marcas rojas brillantes",
-    "Sabías que [TEMA] [CIFRA] | imagen de un espejo roto reflejando un paisaje desconocido",
-    "Sabías que [TEMA] [CIFRA] | imagen de una sala de archivos con estanterías llenas de sellos misteriosos"
+    "Sabías que [CIFRA] personas han visto [TEMA] sin que nadie lo explique | Imagen de un horizonte nebuloso con una silueta misteriosa",
+    "Sabías que [CIFRA] minutos de tu vida están ocultos en [TEMA] | Imagen de un reloj de arena con partículas flotantes",
+    "Sabías que [CIFRA] objetos desaparecieron de la historia en [TEMA] | Imagen de un mapa antiguo con un punto rojo resaltado",
+    "Sabías que [CIFRA] teorías sobre [TEMA] nunca han sido confirmadas | Imagen de una biblioteca con libros abiertos y luces parpadeantes",
+    "Sabías que [CIFRA] veces el universo ha mostrado [TEMA] sin explicación | Imagen de un cielo estrellado con una forma geométrica resaltada"
   ],
   "mejorasGuion": [
     "1. Inicia con un gancho más impactante y directo: cambia “Sabías que una zona del Atlántico…” por “Sabías que en la zona más misteriosa del mundo, Florida, Bermudas y Puerto Rico, se esconden más de 1,000 desapariciones ",
@@ -24,12 +24,12 @@
     "The Voynich Manuscript"
   ],
   "titulos": [
-    "Sabías que nunca verás pingüino en un supermercado 🐧 (Parte 1/3)",
-    "El vestido que cambió 3 veces en 17 segundos y nadie supo cómo 😱 #Shorts #virales",
-    "El avión que recogía personas del suelo 🤯 (Parte 2/5)",
-    "Eligieron a dos hombres para saltar sobre el Ártico 🧊 (Parte 3/5)"
+    "Sabías que <tema intrigante> <emoji> (Parte <n>/<total>)",
+    "Sabías que <acción sorprendente> <emoji> (Parte <n>/<total>)",
+    "Sabías que <evento inexplicable> <emoji> (Parte <n>/<total>)",
+    "Sabías que <detalle curioso> <emoji> (Parte <n>/<total>)"
   ],
-  "fecha": "2026-11-21T18:09:13.668Z",
+  "fecha": "2026-11-22T01:32:01.443Z",
   "iniciativas": [
     "Valentina (Directora de contenido): Definir una guía de estilo clara que el equipo pueda seguir desde el primer video.",
     "Carolina (Coordinador de producción): Crear un calendario de producción con hitos diarios y asignar responsables para cada tarea.",
