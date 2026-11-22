@@ -64,7 +64,11 @@
           "idioma": "en"
         }
       ],
-      "vozGemini": "Sadaltager"
+      "vozGemini": "Sadaltager",
+      "facebook": {
+        "cuenta": "1414517028413600",
+        "repo": "geurii/videos-publicos"
+      }
     }
   ]
 }
