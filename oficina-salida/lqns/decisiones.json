@@ -1,6 +1,13 @@
 {
   "decisiones": [
     {
+      "id": "i1sznl4n",
+      "texto": "Sabías que [CIFRA] años de historia se borraron de los archivos nacionales | Imagen de un archivo con estanterías vacías y una luz tenue que resalta una sola página",
+      "categoria": "Gancho",
+      "decision": "si",
+      "fecha": "2026-11-22T19:23:06.130Z"
+    },
+    {
       "id": "i1wtyzvk",
       "texto": "Sabías que [CIFRA] segundos tardó un secreto militar en desaparecer del mapa | Imagen de un mapa antiguo con una zona tachada y un reloj marcando segundos",
       "categoria": "Gancho",
