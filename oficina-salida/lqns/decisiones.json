@@ -1,6 +1,13 @@
 {
   "decisiones": [
     {
+      "id": "i14jvtza",
+      "texto": "Sabías que [CIFRA] libros desaparecieron de una biblioteca sin dejar rastro | Una estantería vacía con una luz parpadeante",
+      "categoria": "Gancho",
+      "decision": "no",
+      "fecha": "2026-11-22T15:06:45.968Z"
+    },
+    {
       "id": "iw0tk7e",
       "texto": "Sabías que [CIFRA] personas se perderon en el laberinto subterráneo de [TEMA] | Una cámara revela pasillos oscuros iluminados por antorchas flotantes",
       "categoria": "Gancho",
