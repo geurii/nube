@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-22T00:12:37.215Z",
+  "actualizado": "2026-11-22T00:19:11.086Z",
   "canalesLeidos": 9,
   "videosRevisados": 132,
   "mejores": [
@@ -9,51 +9,40 @@
       "titulo": "Why Is Antarctica Closed? The Operation Highjump Mystery",
       "publicado": "2026-11-20T01:00:08.000Z",
       "vistas": 1982101,
-      "vistasPorHora": 41987
+      "vistasPorHora": 41889
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "Always open your fan mail",
       "publicado": "2026-11-21T19:00:32.000Z",
-      "vistas": 159483,
-      "vistasPorHora": 30663
+      "vistas": 161699,
+      "vistasPorHora": 30447
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "TOP 5 Bingeable SCARY STORIES • No Escape Edition",
       "publicado": "2026-11-20T19:00:34.000Z",
-      "vistas": 488428,
-      "vistasPorHora": 16727
+      "vistas": 488753,
+      "vistasPorHora": 16675
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "How Skydiving Changed Will Smith's Life!",
       "publicado": "2026-11-17T17:00:07.000Z",
-      "vistas": 1716398,
-      "vistasPorHora": 16630
+      "vistas": 1717137,
+      "vistasPorHora": 16620
     },
     {
       "canal": "The Why Files",
       "idioma": "en",
       "titulo": "America Is Hiding Something Underground",
       "publicado": "2026-11-18T18:00:14.000Z",
-      "vistas": 1153212,
-      "vistasPorHora": 14746
+      "vistas": 1152782,
+      "vistasPorHora": 14720
     }
   ],
-  "formula": {
-    "formula": "Título con pregunta intrigante o afirmación impactante + elemento misterioso o prohibido + pista de revelación",
-    "ganchos": [
-      "¿Qué [evento/objeto] oculta realmente [lugar/persona]?",
-      "Descubre el [secreto/plan] que [grupo/autoridad] no quiere que sepas",
-      "La verdad detrás de [fenómeno] que cambiará tu forma de ver [tema]"
-    ],
-    "evitar": [
-      "Títulos demasiado genéricos sin elemento de misterio o prohibición",
-      "Uso excesivo de palabras de moda sin prometer una revelación concreta"
-    ]
-  }
+  "formula": null
 }

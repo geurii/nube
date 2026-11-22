@@ -1,21 +1,23 @@
 {
-  "fecha": "2026-11-22T00:06:05.802Z",
-  "total": 2551,
+  "fecha": "2026-11-22T00:19:10.797Z",
+  "total": 2556,
   "promedio": 170,
-  "queFunciono": "Los videos con más vistas comparten títulos que hacen referencia a pingüinos, utilizan la estructura de series (Parte X/Y) y se publicaron en fechas recientes (20/11/2026), lo que sugiere que la combinación de un tema llamativo (pingüinos) con formato de serie y publicación en la misma fecha genera ",
+  "queFunciono": "Los videos con más vistas comparten temas de curiosidades sorprendentes sobre pingüinos y situaciones extremas (p. ej., \"pingüino en un supermercado\", \"huevos de pingüino\", \"matar 2 millones de pingüinos\"), usan emojis llamativos y están publicados en fechas cercanas (20‑21 de noviembre). Además, so",
   "porQueFallaron": [
-    "El contenido de los videos con pocas vistas carece de un tema central atractivo (ej.: títulos como \"Operación Coldfeet\" o \"El enigma del Bloop\"), lo que se evidencia en las bajas vistas (26-39).",
-    "Los videos con menor rendimiento no siguen la estructura de serie que parece funcionar (ej.: no tienen \"Parte X/Y\"), lo que se refleja en su menor rendimiento. ",
-    "Los títulos de los videos con pocas vistas son más genéricos y menos provocativos, lo que se confirma con las bajas vistas (3-20)."
+    "[object Object]",
+    "[object Object]",
+    "[object Object]",
+    "[object Object]"
   ],
   "noSePuedeSaber": [
-    "Datos de retención y suscriptores para los videos con más vistas.",
-    "Información sobre miniaturas, palabras clave y estrategias de promoción.",
-    "Datos de audiencia demográfica y de retención por segmento."
+    "Retención de los videos con más vistas (no se proporcionó).",
+    "Datos de miniaturas usadas (clic‑through rate).",
+    "Audiencia objetivo o segmentación demográfica.",
+    "Fuentes de tráfico (búsqueda, sugerencias, externos)."
   ],
   "reglas": [
-    "1. Mantener la estructura de serie con títulos claros \"Parte X/Y\" y un tema llamativo (p.ej., pingüinos).",
-    "2. Publicar los videos en fechas cercanas (idealmente el mismo día o días consecutivos) para aprovechar la atención del público.",
-    "3. Incluir títulos provocativos que generen curiosidad y una miniatura atractiva que destaque el elemento más llamativo del video."
+    "1. Mantener el formato de título corto, impactante y con emoji, centrado en una curiosidad extrema o inesperada (p. ej., \"pingüino\", \"Ártico\", \"CIA\").",
+    "2. Publicar en bloques de series numeradas (Parte X/Y) para crear expectativa y fomentar visualizaciones sucesivas; lanzar al menos 2‑3 episodios en la misma semana.",
+    "3. Priorizar la publicación en los días con mayor rendimiento (20‑21 de noviembre) o en fines de semana, y usar thumbnails con colores vivos y texto grande que refleje la curiosidad del título."
   ]
 }

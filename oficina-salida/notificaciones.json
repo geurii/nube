@@ -1,5 +1,14 @@
 [
   {
+    "id": "mwr3aidm8oa0",
+    "fecha": "2026-11-22T00:19:20.842Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "La oficina falló",
+    "texto": "Groq no respondió tras 4 intentos (límite de Groq (429)). Respaldos: Cerebras/gpt-oss-120b: JSON roto; Gemini/gemini-2.5-flash: 404; Gemini/gemini-flash-latest: Aprobados: 3. Rechazados: 5. Con error: 6. Próximo ciclo en 2 h."
+  },
+  {
     "id": "mwr320go7bch",
     "fecha": "2026-11-22T00:12:44.376Z",
     "canal": "lqns",
