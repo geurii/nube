@@ -1,8 +1,8 @@
 {
-  "fecha": "2026-11-22T12:11:32.693Z",
+  "fecha": "2026-11-22T14:25:22.547Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 2423,
-  "ganadasDesdeElUltimoCiclo": 87,
+  "total": 2425,
+  "ganadasDesdeElUltimoCiclo": 2,
   "videos": [
     {
       "id": "9CKxsZ7hmUg",
@@ -56,13 +56,13 @@
       "id": "ujvVWAyrSUg",
       "titulo": "Sabías que tres hombres caminaron en plena noche polar por 3 huevos de pingüino 🥚 (Parte 3/3)",
       "publicado": "2026-11-20T17:30:34+00:00",
-      "vistas": 589
+      "vistas": 590
     },
     {
       "id": "KURWolBJszo",
       "titulo": "Sabías que mataron 2 millones de pingüinos... y no para comérselos 😳 (Parte 2/3)",
       "publicado": "2026-11-20T16:30:10+00:00",
-      "vistas": 173
+      "vistas": 174
     },
     {
       "id": "Wj-zpd2iorA",
@@ -207,6 +207,10 @@
     {
       "fecha": "2026-11-22T12:11:32.693Z",
       "total": 2423
+    },
+    {
+      "fecha": "2026-11-22T14:25:22.547Z",
+      "total": 2425
     }
   ]
 }

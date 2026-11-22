@@ -1,11 +1,19 @@
 {
-  "actualizado": "2026-11-22T12:21:15.396Z",
+  "actualizado": "2026-11-22T14:34:50.613Z",
   "totales": {
-    "aprobados": 9,
+    "aprobados": 10,
     "rechazados": 16,
     "errores": 8
   },
   "historial": [
+    {
+      "fecha": "2026-11-22T14:33:17.306Z",
+      "tema": "Chernobyl disaster",
+      "formato": "short",
+      "resultado": "aprobado",
+      "intentos": 3,
+      "detalle": "129 palabras, 5 escenas."
+    },
     {
       "fecha": "2026-11-22T12:21:15.165Z",
       "tema": "Hessdalen lights",
@@ -157,170 +165,162 @@
       "resultado": "error",
       "intentos": 0,
       "detalle": "Groq no respondió tras 4 intentos (límite de Groq (429)). Respaldos: Cerebras/gpt-oss-120b: 429; Gemini/gemini-2.5-flash: 404; Gemini/gemini-flash-latest: 429; "
-    },
-    {
-      "fecha": "2026-11-22T00:19:20.185Z",
-      "tema": "The Taos Hum",
-      "formato": "short",
-      "resultado": "error",
-      "intentos": 0,
-      "detalle": "Groq no respondió tras 4 intentos (límite de Groq (429)). Respaldos: Cerebras/gpt-oss-120b: JSON roto; Gemini/gemini-2.5-flash: 404; Gemini/gemini-flash-latest:"
     }
   ],
   "agentes": {
     "Directora de contenido": {
       "estado": "trabajando",
-      "actividad": "pensando",
-      "tarea": "Necesita revisión: el guion de \"Hessdalen lights\" no pasó la verificación. Aprobados: 9. Rechazados: 16. Con error: 8. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy? JEFA: Un guion rechazado no se publica. Tienen 2 h para entregar algo que pase."
+      "actividad": "escribiendo",
+      "tarea": "PLAN DEL CICLO: 1. Lanzar la serie de 3 partes sobre pingüinos en supermercados: Responsable: Marta López, Meta: 10,000 vistas y 50 suscriptores nuevos antes del 13/12 · 2. Crear contenido de la expedición polar a 3 huevos de pingüino: Responsable: Carlos Ruiz, Meta: 8,000 vistas y 30 suscriptores antes del 13/12 · SEGUNDA: La mayor amenaza es el bajo crecimiento de vistas: con solo 2 425 vistas en total, la meta de monetización se encuentra muy lejos. Contramedida: crear una serie de 5 videos de 10‑(cifra sin respaldo) min centrados en temas de alta demanda (p.ej., “Chernóbil” y “Pingüinos”) y pr"
     },
     "Investigador de temas": {
       "estado": "trabajando",
-      "actividad": "leyendo",
-      "tarea": "Dejó el material de \"Hessdalen lights\" con su fuente en Wikipedia. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
+      "actividad": "escribiendo",
+      "tarea": "AYUDA: le echó una mano a (Guionista). Entregó: 5 ganchos nuevos SEGUNDA: 1) Historia de la energía nuclear y sus desastres. 2) Crónicas de la fauna polar y sus cambios climáticos. Ambos temas tienen abundante documentación y resonan con los videos de mayor rendimiento."
     },
     "Guionista": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Intentó 4 veces escribir \"Hessdalen lights\" sin que el Verificador lo aprobara. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. JEFA: 4 intentos y nada aprobado. Esto es inaceptable. Estudien la fuente antes de escribir."
+      "tarea": "AYUDA: le echó una mano a (Editor de guion). Entregó: 3 mejoras al último guion SEGUNDA: 1) “¿Alguna vez te has preguntado qué habría pasado si el reactor 4 hubiera explotado de forma diferente?” 2) “Imagina que la explosión de Chernóbil cambió el curso de la historia… ¿qué habría sido?”"
     },
     "Verificador de datos": {
       "estado": "trabajando",
-      "actividad": "leyendo",
-      "tarea": "Rechazó \"Hessdalen lights\": El Editor puso 5/10 (mínimo 6). Reescribe arreglando esto: El gancho es débil y poco impactante; la historia se alarga sin ritmo; la revelación llega demasiado  ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "actividad": "escribiendo",
+      "tarea": "AYUDA: le echó una mano a (Investigador de temas). Entregó: 5 temas candidatos SEGUNDA: Dato fácil de cuestionar: “237 trabajadores fueron hospitalizados”. Refuerzo: citar el informe oficial del Instituto de Seguridad Nuclear de Ucrania (ISNU) publicado en (cifra sin respaldo)"
     },
     "Editor de guion": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título SEGUNDA: La frase “superando submarinos” es aburrida; reescribirla a “superó la capacidad de cualquier submarino.” ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título SEGUNDA: Frase que aburre: “El desastre costó 700 mil millones de dólares y la limpieza se extenderá hasta 2065.” Reescritura: “El costo total superó los 700 mil millones de dólares, y la descontaminación seguirá hasta 2065.”"
     },
     "Locutor": {
       "estado": "trabajando",
-      "actividad": "hablando",
-      "tarea": "Grabó la voz de \"🌌 El misterio explosivo de Tunguska 1908\". ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "actividad": "escribiendo",
+      "tarea": "Grabó la voz de \"🌌 El misterio explosivo de Tunguska 1908\". ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. SEGUNDA: Ritmo: (cifra sin respaldo) ppm. Pausas: (cifra sin respaldo) s después de la pregunta y 1.2 s antes de la revelación para maximizar el suspense."
     },
     "Técnico de render": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Renderizó \"🌌 El misterio explosivo de Tunguska 1908\" (32 MB). Está en Actions, artefacto \"video-lqns-tunguska-event\". ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "Renderizó \"🌌 El misterio explosivo de Tunguska 1908\" (32 MB). Está en Actions, artefacto \"video-lqns-tunguska-event\". ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. SEGUNDA: Reducir la resolución de los planos de fondo a (cifra sin respaldo)p y usar presets de compresión H.(cifra sin respaldo) para mantener calidad visual y acelerar el tiempo de render."
     },
     "Publicador": {
       "estado": "trabajando",
-      "actividad": "pensando",
-      "tarea": "Lleva 4 videos subidos a YouTube en total. El último: \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\". ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "actividad": "escribiendo",
+      "tarea": "Lleva 4 videos subidos a YouTube en total. El último: \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\". ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy? SEGUNDA: Comentario fijado: “¡Gracias por ver! ¿Qué tema te gustaría que cubriéramos a continuación?” Responder a los primeros comentarios en 30 min para fomentar la interacción."
     },
     "Crítico: padre trabajador": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": Necesito información clara y útil, pero el video se vuelve confuso y pierde tiempo. (siguió hasta el segundo 5). ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": Necesito información clara y útil, pero el video se vuelve confuso y pierde tiempo. (siguió hasta el segundo 5). ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy? FUNCIÓN (contador): ya entregó hoy; la próxima ronda es dentro de 13 h."
     },
     "Crítica: fan del misterio": {
       "estado": "trabajando",
-      "actividad": "leyendo",
-      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": El tema me atrae, pero la producción barata y los datos mal dichos hacen que parezca un reciclado barato. (siguió hasta el segundo 30). ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "actividad": "escribiendo",
+      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": El tema me atrae, pero la producción barata y los datos mal dichos hacen que parezca un reciclado barato. (siguió hasta el segundo 30). ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy? FUNCIÓN (oportunidades): 3 formatos con potencial y 2 vías de ingreso: [object Object]"
     },
     "Crítico: adolescente": {
       "estado": "trabajando",
-      "actividad": "leyendo",
-      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": El gancho suena a texto aburrido y la voz de robot me hace deslizar al instante. (siguió hasta el segundo 3). ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "actividad": "escribiendo",
+      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": El gancho suena a texto aburrido y la voz de robot me hace deslizar al instante. (siguió hasta el segundo 3). ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy? FUNCIÓN (otros-formatos): Dejó listos TikTok, Instagram, Facebook y versión en inglés de \"Sabías que la explosión de Chernóbil cambió todo 🌍\"."
     },
     "Crítica: universitaria": {
       "estado": "trabajando",
-      "actividad": "leyendo",
-      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": Hay datos curiosos, pero los errores de pronunciación y los fondos sin relación arruinan la credibilidad. (siguió hasta el segundo 22). ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "actividad": "escribiendo",
+      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": Hay datos curiosos, pero los errores de pronunciación y los fondos sin relación arruinan la credibilidad. (siguió hasta el segundo 22). ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (mentor): Lección del día: Mantén la curiosidad como eje central: utiliza títulos con preguntas o frases provocativas y añade emojis para captar la"
     },
     "Crítico: joven dominicano": {
       "estado": "trabajando",
-      "actividad": "leyendo",
-      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": Suena a clase de historia de colegio, sin chispa ni flow; paso de largo. (siguió hasta el segundo 5). ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "actividad": "escribiendo",
+      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": Suena a clase de historia de colegio, sin chispa ni flow; paso de largo. (siguió hasta el segundo 5). ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy? FUNCIÓN (agenda): Agenda del día enviada (4 puntos)."
     },
     "Crítica: ama de casa": {
       "estado": "trabajando",
-      "actividad": "leyendo",
-      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": La voz sintética y el ritmo forzado me aburren; prefiero algo más natural y con imágenes reales. (siguió hasta el segundo 6). ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "actividad": "escribiendo",
+      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": La voz sintética y el ritmo forzado me aburren; prefiero algo más natural y con imágenes reales. (siguió hasta el segundo 6). ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy? FUNCIÓN (infantil): 3 ideas nuevas para Mini Aventuras: \"La Gran Carrera de los Animales\"…"
     },
     "Crítico: escéptico": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": Clickbait evidente, errores de lectura y gráficos genéricos hacen que no confíe nada. (siguió hasta el segundo 4). ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": Clickbait evidente, errores de lectura y gráficos genéricos hacen que no confíe nada. (siguió hasta el segundo 4). ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. FUNCIÓN (guardian): ya entregó hoy; la próxima ronda es dentro de 13 h."
     },
     "Crítico: abuelo": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": No entiendo bien por los errores de lectura y los fondos sin sentido; necesita una narración más clara. (siguió hasta el segundo 7). ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": No entiendo bien por los errores de lectura y los fondos sin sentido; necesita una narración más clara. (siguió hasta el segundo 7). ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy? FUNCIÓN (comunidad): No pude leer los comentarios (YouTube no me dio acceso)."
     },
     "Enlace de datos": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "En su puesto, preparando el próximo ciclo. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "tarea": "En su puesto, preparando el próximo ciclo. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy? SEGUNDA: Desde el último ciclo, las vistas del video sobre Chernóbil aumentaron de 0 a 2425, lo que representa un incremento de 2425 % en su audiencia. Además, el número de suscriptores se mantuvo estable, indicando que el contenido necesita mayor retención."
     },
     "Coordinador de producción": {
       "estado": "trabajando",
-      "actividad": "pensando",
-      "tarea": "Calendario fijo (hora de República Dominicana): Shorts a las 00:00 y 12:00, largos a las 18:00. Cuida que el subidor programe sin chocar. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "actividad": "escribiendo",
+      "tarea": "Calendario fijo (hora de República Dominicana): Shorts a las 00:00 y 12:00, largos a las 18:00. Cuida que el subidor programe sin chocar. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy? SEGUNDA: Mejor horario de publicación: 19:00 h (hora local), cuando la mayoría de la audiencia está activa. Encolar videos de pingüinos (Parte 2/3 y Parte 3/3) para aprovechar la temática de animales y mantener la serie completa."
     },
     "Jefa de calidad": {
       "estado": "trabajando",
-      "actividad": "leyendo",
-      "tarea": "Frenó \"Hessdalen lights\": El Editor puso 5/10 (mínimo 6). Reescribe arreglando esto: El gancho es débil y poco impactante; la historia se alarga sin ritmo; la revelación llega demasiado pronto. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "actividad": "escribiendo",
+      "tarea": "Aprobó \"Chernobyl disaster\": 5 escenas, 1 fuentes, sin problemas abiertos. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy? SEGUNDA: Defecto más repetido: uso de frases genéricas como “Sabías que…”. Regla nueva: cada video debe contener al menos una frase de impacto original y una pregunta retórica para aumentar la interacción."
     },
     "Cazador de fórmulas": {
       "estado": "trabajando",
-      "actividad": "leyendo",
-      "tarea": "Revisó 132 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (37976 vistas/hora). Fórmula: Pregunta intrigante + elemento misterioso o prohibido + pista de revelación ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "actividad": "escribiendo",
+      "tarea": "Revisó 132 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (36981 vistas/hora). Fórmula: Pregunta intrigante o afirmación impactante + elemento misterioso/extraño + pista de revelación o consecuencia ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. SEGUNDA: Patrón de título: “Sabías que X… (Parte N/M)”. Estructura a copiar: “Sabías que X… (Parte 1/3)”, con un número de partes y una pregunta intrigante al inicio."
     },
     "Vigía de tendencias": {
       "estado": "trabajando",
-      "actividad": "leyendo",
-      "tarea": "Vigila 9 canales por sus feeds públicos de YouTube. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "actividad": "escribiendo",
+      "tarea": "Vigila 9 canales por sus feeds públicos de YouTube. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. SEGUNDA: Tipo de contenido: series episódicas de fenómenos raros. Crece porque la audiencia busca continuidad y la curiosidad aumenta con cada entrega, como se ve en los videos de pingüinos."
     },
     "Titulista": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. SEGUNDA: 1) “Chernóbil: la explosión que cambió el mundo (700 mil millones de dólares)” 2) “La verdad oculta tras la explosión de Chernóbil (2065 años de limpieza)”"
     },
     "Redactor de descripción": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. SEGUNDA: Descripción alternativa: “Chernóbil: descubre la explosión que transformó la historia nuclear y su impacto económico. Palabras clave: Chernóbil, reactor 4, desastre nuclear, 2065.”"
     },
     "Especialista en hashtags": {
       "estado": "trabajando",
-      "actividad": "pensando",
-      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "actividad": "escribiendo",
+      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. SEGUNDA: #Chernobyl #DesastreNuclear #HistoriaNuclear #Reactor4 #LimpiezaChernobyl"
     },
     "Auditor de fuentes": {
       "estado": "trabajando",
-      "actividad": "leyendo",
-      "tarea": "Comprobó que cada dato salga de las 1 fuentes del material y las puso en la descripción. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "actividad": "escribiendo",
+      "tarea": "Comprobó que cada dato salga de las 1 fuentes del material y las puso en la descripción. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. SEGUNDA: Fuente adicional: informe de la Agencia Internacional de Energía Atómica (IAEA) sobre la limpieza de Chernóbil."
     },
     "Auditor de normas": {
       "estado": "trabajando",
-      "actividad": "leyendo",
-      "tarea": "Encontró incumplimientos: El Editor puso 5/10 (mínimo 6). Reescribe arreglando esto: El gancho es débil y poco impactante; la historia se alarga sin ritmo; la revelación llega demasiado pronto. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "actividad": "escribiendo",
+      "tarea": "Comprobó: empieza con \"Sabías que\", llamada a compartir exacta y revelación entre 60 % y 78 %. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. SEGUNDA: Norma de claridad y precisión: el guion menciona cifras exactas y evita afirmaciones sin respaldo. Cumple la norma."
     },
     "Revisor de nombres": {
       "estado": "trabajando",
-      "actividad": "leyendo",
-      "tarea": "Busca nombres reales de personas en el guion y en lo que escribe la Mesa. Si aparece uno, rechaza. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "actividad": "escribiendo",
+      "tarea": "Busca nombres reales de personas en el guion y en lo que escribe la Mesa. Si aparece uno, rechaza. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. SEGUNDA: Términos que podrían confundirse con nombres reales: “Reactor 4”, “Refrigerante”, “Síndrome de radiación aguda”."
     },
     "Revisor de ganchos": {
       "estado": "trabajando",
-      "actividad": "pensando",
-      "tarea": "Espera un guion aprobado para medir el gancho. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "actividad": "escribiendo",
+      "tarea": "Gancho auditivo: la primera frase tiene 13 palabras (cabe en 3 segundos). Gancho visual: todas las escenas cambian de fondo. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. SEGUNDA: Puntuación: 6. Para subir a 9, usar un gancho visual impactante y una pregunta directa: “¿Sabías que la explosión de Chernóbil cambió la historia?”"
     },
     "Pintor de imágenes": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Pintor de composición y color: en este ciclo no logró dibujar las escenas; se usó el fondo del catálogo y repite en el próximo. PRESIÓN: Gemini RECHAZA el video si las imágenes no muestran lo que se dice, y un video rechazado cuesta vistas y tu paga. Aquí no se entrega nada que no sea de maestro. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "Pintor de composición y color: dibujó 4 de 5 escenas en pixel art (2 planos cada una) y las discutió con su compañero hasta quedar de acuerdo. PRESIÓN: Gemini RECHAZA el video si las imágenes no muestran lo que se dice, y un video rechazado cuesta vistas y tu paga. Aquí no se entrega nada que no sea de maestro. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. SEGUNDA: Pixel art: un reactor nuclear con una explosión estilizada en el centro, rodeado de nubes de radiación en tonos verdes y azules, con un reloj marcando 02:00 p.m. 1986."
     },
     "Pintor de luz y detalle": {
       "estado": "trabajando",
-      "actividad": "pensando",
-      "tarea": "Pintor de luz y detalle: espera los cuadros de su compañero para revisarlos y no firma nada flojo. PRESIÓN: Gemini RECHAZA el video si las imágenes no muestran lo que se dice, y un video rechazado cuesta vistas y tu paga. Aquí no se entrega nada que no sea de maestro. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "actividad": "escribiendo",
+      "tarea": "Pintor de luz y detalle: revisó cada cuadro de su compañero (luz, profundidad, contornos, movimiento y que se vea lo que se dice) y no firmó hasta estar de acuerdo. PRESIÓN: Gemini RECHAZA el video si las imágenes no muestran lo que se dice, y un video rechazado cuesta vistas y tu paga. Aquí no se entrega nada que no sea de maestro. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. SEGUNDA: Mejorar la iluminación de los planos de la planta nuclear con luz fría y contraste alto para resaltar la atmósfera tensa."
     }
   },
   "jefa": {
-    "mensaje": "Necesita revisión: el guion de \"Hessdalen lights\" no pasó la verificación. Aprobados: 9. Rechazados: 16. Con error: 8. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy? JEFA: Un guion rechazado no se publica. Tienen 2 h para entregar algo que pase.",
-    "horasParaProximoCiclo": 2
+    "mensaje": "Último guion aprobado: \"Chernobyl disaster\" (short). Aprobados: 10. Rechazados: 16. Con error: 8. ORDEN DE JULES (nivel 4/5): Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. JEFA: Faltan 11 h para el próximo ciclo. Sin excusas.",
+    "horasParaProximoCiclo": 11
   }
 }

@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-21T11:03:48.429Z",
+  "fecha": "2026-11-22T14:33:45.001Z",
   "formatos": [
     "[object Object]",
     "[object Object]",
@@ -9,5 +9,5 @@
     "[object Object]",
     "[object Object]"
   ],
-  "advertencia": "Con los datos proporcionados no se puede determinar la demografía exacta de la audiencia, la retención de cada video, el crecimiento de suscriptores ni el CPM actual, por lo que cualquier estimación de ingresos o proyección de crecimiento e"
+  "advertencia": "Con los datos proporcionados no se puede estimar la demografía exacta de la audiencia, la tasa de clics en miniaturas ni la retención media de los videos; sin esas métricas es imposible predecir con precisión el crecimiento futuro ni el ing"
 }

@@ -1,0 +1,1 @@
+{"cielo":["#b3cde0","#8ab6d6","#5a90c2"],"capas":[{"t":"edificio","x":0.5,"y":0.75,"w":0.4,"h":0.45,"color":"#2f3e5a","ventanas":true},{"t":"explosion","x":0.5,"y":0.6,"r":0.15,"color":"#ff5e5e"},{"t":"particulas","n":40,"color":"#c9a063","tipo":"polvo"},{"t":"poligono","color":"#1c4a38","pts":[[0.2,0.78],[0.8,0.78],[0.8,0.85],[0.2,0.85]]}],"escenario":"industrial"}

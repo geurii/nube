@@ -1,34 +1,34 @@
 {
-  "fecha": "2026-11-21T11:03:51.132Z",
+  "fecha": "2026-11-22T14:34:07.305Z",
   "ideas": [
     {
-      "titulo": "El arcoíris de los animales",
-      "gancho": "¡Descubre qué animal lleva cada color del arcoíris!",
+      "titulo": "La Gran Carrera de los Animales",
+      "gancho": "¡Atención, pequeños exploradores! Hoy los animales del bosque van a competir en una carrera muy especial.",
       "escenas": [
-        "Un pajarito azul llega cantando al bosque.",
-        "Una rana verde salta entre las hojas brillantes.",
-        "Un gato naranja se acurruca bajo el sol dorado.",
-        "Un conejito rojo encuentra una zanahoria mágica."
+        "1. El mapache presenta el mapa del recorrido con colores brillantes.",
+        "2. El conejo y la tortuga se ponen sus zapatillas de colores y se preparan.",
+        "3. La tortuga avanza lentamente, pero con una sonrisa alegre.",
+        "4. Al final, todos aplauden y celebran la amistad y el trabajo en equipo."
       ]
     },
     {
-      "titulo": "Cuenta con los amigos del zoológico",
-      "gancho": "¡Vamos a contar hasta diez con los animales del zoológico!",
+      "titulo": "El Misterio de la Caja Musical",
+      "gancho": "¡Hola, pequeños artistas! Hoy descubriremos qué secretos guarda una caja musical encantada.",
       "escenas": [
-        "Un elefante dice \"uno\" mientras levanta su trompa.",
-        "Dos jirafas estiran su cuello y dicen \"dos\".",
-        "Tres monos se balancean y gritan \"tres\".",
-        "Cuatro pingüinos desfilan y cantan \"cuatro\"."
+        "1. Una caja de madera con dibujos de estrellas y arcoíris aparece en el jardín.",
+        "2. Los animales de colores tocan la caja y suena una melodía alegre.",
+        "3. Los personajes descubren que la música hace crecer flores de colores vivos.",
+        "4. Todos bailan bajo el arcoíris y cantan una canción sobre la amistad."
       ]
     },
     {
-      "titulo": "Los colores perdidos del jardín",
-      "gancho": "¡Ayuda a encontrar los colores que se escaparon del jardín!",
+      "titulo": "El Viaje del Globo de Colores",
+      "gancho": "¡Aventureros de colores, hoy viajaremos en un globo mágico que nos llevará a lugares increíbles!",
       "escenas": [
-        "Una mariposa amarilla vuela y muestra la pista del color.",
-        "Un caracol violeta deja un rastro brillante en el suelo.",
-        "Una mariquita rosa se esconde entre las flores.",
-        "Un gusano naranja emerge y revela el último color."
+        "1. Un globo multicolor se eleva sobre un prado lleno de mariposas.",
+        "2. Los niños y animales viajan por un arcoíris hasta una isla de dulces.",
+        "3. Encuentran una playa de arena de colores y construyen castillos de arena brillantes.",
+        "4. Regresan al hogar con recuerdos y una canción que celebra la curiosidad y la imaginación."
       ]
     }
   ]
