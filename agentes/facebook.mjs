@@ -9,7 +9,6 @@ import {avisarTelefono} from './aviso.mjs';
 
 const leer = (ruta, d) => { try { return JSON.parse(fs.readFileSync(ruta, 'utf8')); } catch { return d; } };
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
-const WINDSOR = 'https://connectors.windsor.ai/facebook_organic/actions';
 const MAX_ARCHIVOS = 15; // en el repo de videos se conservan los últimos 15 (Facebook ya los descargó)
 const MAX_COMPLETO_MB = 60; // por encima de esto se sube la versión liviana
 
@@ -91,8 +90,8 @@ const limpiarViejos = async ({token, repo, archivos}) => {
 };
 
 /** Pide a Windsor publicar el video en la página. Devuelve la respuesta de Windsor (sin la clave). */
-export const publicarConWindsor = async ({apiKey, cuenta, accion, params}) => {
-  const r = await fetch(`${WINDSOR}?api_key=${encodeURIComponent(apiKey)}`, {
+export const publicarConWindsor = async ({apiKey, conector = 'facebook_organic', cuenta, accion, params}) => {
+  const r = await fetch(`https://connectors.windsor.ai/${conector}/actions?api_key=${encodeURIComponent(apiKey)}`, {
     method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({account: cuenta, action: accion, params}), signal: AbortSignal.timeout(120000),
   });
   const texto = quitarClaves(await r.text(), apiKey).slice(0, 600);
@@ -103,45 +102,76 @@ export const publicarConWindsor = async ({apiKey, cuenta, accion, params}) => {
   return {status: r.status, texto, json};
 };
 
+/** Destinos de publicación en Windsor. Facebook y Instagram reciben el MISMO video (se sube una sola vez). */
+const destinos = ({largo, cfg, env}) => [
+  {
+    nombre: 'Facebook', conector: 'facebook_organic', archivoRegistro: 'facebook.json',
+    cuenta: (env.FB_PAGE_ACCOUNT || cfg.facebook?.cuenta || '').trim(),
+    accion: largo ? 'create_video_post' : 'create_reel',
+    params: (url, texto, titulo) => (largo ? {video_url: url, title: titulo.slice(0, 100), description: texto} : {video_url: url, description: texto}),
+  },
+  {
+    nombre: 'Instagram', conector: 'instagram', archivoRegistro: 'instagram.json',
+    cuenta: (env.IG_ACCOUNT || cfg.instagram?.cuenta || '').trim(),
+    accion: 'create_video_post', // Instagram publica todo video de feed como Reel
+    params: (url, texto) => ({video_url: url, caption: texto.slice(0, 2200)}),
+  },
+];
+
 export const principal = async () => {
   const ID = (process.env.ID ?? '').trim();
   const CANAL = (process.env.CANAL || 'lqns').trim();
   const apiKey = (process.env.WINDSOR_API_KEY ?? '').trim();
   const token = (process.env.FB_VIDEOS_TOKEN ?? '').trim();
-  const cfg = (leer(path.join('agentes', 'canales-propios.json'), {canales: []}).canales ?? []).find((c) => c.id === CANAL)?.facebook ?? {};
-  const cuenta = (process.env.FB_PAGE_ACCOUNT || cfg.cuenta || '').trim();
-  const repo = (process.env.FB_VIDEOS_REPO || cfg.repo || '').trim();
-  if (!ID) { console.log('Facebook: falta el id del video (ID). Se omite.'); return {omitido: 'sin id'}; }
-  if (!apiKey || !cuenta) {
-    console.log(`Facebook: se omite (falta ${[!apiKey && 'WINDSOR_API_KEY', !cuenta && 'la cuenta de la página'].filter(Boolean).join(', ')}).`);
-    return {omitido: 'sin configurar'};
-  }
+  const cfgCanal = (leer(path.join('agentes', 'canales-propios.json'), {canales: []}).canales ?? []).find((c) => c.id === CANAL) ?? {};
+  const repo = (process.env.FB_VIDEOS_REPO || cfgCanal.facebook?.repo || '').trim();
+  if (!ID) { console.log('Redes: falta el id del video (ID). Se omite.'); return {omitido: 'sin id'}; }
+  if (!apiKey) { console.log('Redes: se omite (falta WINDSOR_API_KEY).'); return {omitido: 'sin configurar'}; }
   const guion = leer(path.join('guion', 'serie', `${ID}.json`), null);
-  if (!guion) { console.log('Facebook: no encuentro el guion del video. Se omite.'); return {omitido: 'sin guion'}; }
+  if (!guion) { console.log('Redes: no encuentro el guion del video. Se omite.'); return {omitido: 'sin guion'}; }
+  const largo = guion.formato === 'largo';
   const dir = path.join('oficina-salida', CANAL);
   fs.mkdirSync(dir, {recursive: true});
-  const rutaRegistro = path.join(dir, 'facebook.json');
-  const registro = leer(rutaRegistro, {total: 0, posts: [], archivos: []});
-  if (registro.posts.some((p) => p.id === ID)) { console.log('Facebook: este video ya se publicó. No se repite.'); return {omitido: 'ya publicado'}; }
-  const archivo = elegirArchivo(ID);
-  if (!archivo) { console.log('Facebook: no encuentro el MP4 del video. Se omite.'); return {omitido: 'sin mp4'}; }
-
-  const largo = guion.formato === 'largo';
   const texto = textoDePublicacion(guion);
+  const titulo = String(guion.publicacion?.titulo ?? guion.titulo ?? '');
+
+  // qué destinos tienen cuenta configurada y todavía no tienen este video
+  const pendientes = [];
+  for (const d of destinos({largo, cfg: cfgCanal, env: process.env})) {
+    const registro = leer(path.join(dir, d.archivoRegistro), {total: 0, posts: [], archivos: []});
+    if (!d.cuenta) { console.log(`${d.nombre}: se omite (no hay cuenta conectada en la configuración).`); continue; }
+    if (registro.posts.some((p) => p.id === ID)) { console.log(`${d.nombre}: este video ya se publicó. No se repite.`); continue; }
+    pendientes.push({...d, registro});
+  }
+  if (!pendientes.length) return {omitido: 'nada pendiente'};
+
+  const archivo = elegirArchivo(ID);
+  if (!archivo) { console.log('Redes: no encuentro el MP4 del video. Se omite.'); return {omitido: 'sin mp4'}; }
   // con token de GitHub y repo público: se guarda ahí (permanente, últimos 15); si no, archivo temporal de 24 h sin ninguna clave
   const usaRepo = Boolean(token && repo);
   const pub = usaRepo ? await subirAlRepoPublico({token, repo, archivo, nombre: `${ID}.mp4`}) : await subirATemporal({archivo, nombre: `${ID}.mp4`});
-  const params = largo ? {video_url: pub.url, title: String(guion.publicacion?.titulo ?? guion.titulo ?? '').slice(0, 100), description: texto} : {video_url: pub.url, description: texto};
-  const resp = await publicarConWindsor({apiKey, cuenta, accion: largo ? 'create_video_post' : 'create_reel', params});
 
-  registro.posts.unshift({id: ID, titulo: String(guion.publicacion?.titulo ?? guion.titulo ?? '').slice(0, 140), fecha: new Date().toISOString(), formato: largo ? 'largo' : 'reel', alojamiento: usaRepo ? 'repositorio' : 'temporal-24h', video_url: pub.url, respuesta: resp.texto.slice(0, 300)});
-  if (usaRepo) registro.archivos = await limpiarViejos({token, repo, archivos: [...(registro.archivos ?? []), pub.ruta]});
-  registro.total = registro.posts.length;
-  registro.posts = registro.posts.slice(0, 200);
-  fs.writeFileSync(rutaRegistro, JSON.stringify(registro, null, 2));
-  console.log(`Facebook: ${largo ? 'video' : 'Reel'} publicado en la página de "${CANAL}" (${registro.total} en total).`);
-  try { avisarTelefono('subido', 'Video publicado en Facebook', `"${String(guion.publicacion?.titulo ?? guion.titulo).slice(0, 100)}" ya está en tu página de Facebook (Windsor).`); } catch { /* el aviso no debe fallar */ }
-  return {publicado: true};
+  const resultados = {};
+  let archivosRepo = null;
+  for (const d of pendientes) {
+    try { // un destino que falla no impide el otro
+      const resp = await publicarConWindsor({apiKey, conector: d.conector, cuenta: d.cuenta, accion: d.accion, params: d.params(pub.url, texto, titulo)});
+      d.registro.posts.unshift({id: ID, titulo: titulo.slice(0, 140), fecha: new Date().toISOString(), accion: d.accion, alojamiento: usaRepo ? 'repositorio' : 'temporal-24h', video_url: pub.url, respuesta: resp.texto.slice(0, 300)});
+      d.registro.posts = d.registro.posts.slice(0, 200);
+      d.registro.total = d.registro.posts.length;
+      if (usaRepo && archivosRepo === null) archivosRepo = await limpiarViejos({token, repo, archivos: [...(d.registro.archivos ?? []), pub.ruta]});
+      if (usaRepo) d.registro.archivos = archivosRepo;
+      fs.writeFileSync(path.join(dir, d.archivoRegistro), JSON.stringify(d.registro, null, 2));
+      console.log(`${d.nombre}: ${d.accion === 'create_reel' || d.conector === 'instagram' ? 'Reel' : 'video'} publicado en "${CANAL}" (${d.registro.total} en total).`);
+      try { avisarTelefono('subido', `Video publicado en ${d.nombre}`, `"${titulo.slice(0, 100)}" ya está en tu ${d.nombre} (Windsor).`); } catch { /* el aviso no debe fallar */ }
+      resultados[d.nombre] = 'publicado';
+    } catch (e) {
+      const msg = quitarClaves(String(e.message ?? e), apiKey, token).slice(0, 300);
+      console.log(`${d.nombre}: no se pudo publicar: ${msg}`);
+      resultados[d.nombre] = 'error: ' + msg.slice(0, 120);
+    }
+  }
+  return {publicado: Object.values(resultados).some((x) => x === 'publicado'), resultados};
 };
 
 if (path.basename(String(process.argv[1] ?? '')) === 'facebook.mjs') {

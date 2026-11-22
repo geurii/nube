@@ -116,7 +116,7 @@ jobs:
           git add oficina-salida || true
           git diff --cached --quiet || git commit -m "Publicador: resultado de la subida"
           git pull --rebase --autostash -X theirs origin main && git push || true
-      - name: Publicar en Facebook con Windsor (solo si hay claves; nunca falla el ciclo)
+      - name: Publicar en Facebook e Instagram con Windsor (solo si hay claves; nunca falla el ciclo)
         if: ${{ steps.producir.outputs.id != '' && steps.panel.outputs.aprobado != 'false' }}
         continue-on-error: true
         env:
