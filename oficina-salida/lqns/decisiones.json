@@ -1,6 +1,20 @@
 {
   "decisiones": [
     {
+      "id": "i1xptf8d",
+      "texto": "Daniela (Cazador de fórmulas): Probar tres estructuras de video diferentes en borradores internos y evaluar cuál genera mejor gancho.",
+      "categoria": "Iniciativa",
+      "decision": "si",
+      "fecha": "2026-11-22T15:08:20.459Z"
+    },
+    {
+      "id": "iiajaiz",
+      "texto": "Julieta (Vigía de tendencias): Suscribirme a newsletters de tendencias y crear un informe semanal de insights para el equipo.",
+      "categoria": "Iniciativa",
+      "decision": "si",
+      "fecha": "2026-11-22T15:08:12.603Z"
+    },
+    {
       "id": "itq4cl0",
       "texto": "Lucía (Guionista): Escribir un piloto de guion y someterlo a una breve lectura grupal para obtener feedback inmediato.",
       "categoria": "Iniciativa",
