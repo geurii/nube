@@ -27,6 +27,17 @@ const hacer = (cta) => [
   {tipo: 'revelacion', texto: 'Pero lo que no sabías: la agencia explicó que fue el crujido de hielo que se rompe en la Antártida.'},
   {tipo: 'veredicto', texto: `¿Tú qué piensas, un animal enorme o un bloque de hielo? Cuéntamelo en los comentarios. ${cta}`},
 ];
+
+// ---- Los dos pintores (simulados): A propone, B objeta la primera vez, A acepta ----
+let rondaB = 0;
+const cuadro = () => ({cielo: ['#10183a', '#3a4a8a', '#e8a070'], capas: [{t: 'estrellas', n: 40}, {t: 'olas', y: 0.62, color: '#1d4f86'}, {t: 'barco', x: 0.3, y: 0.64, w: 0.3}, {t: 'pez', tipo: 'ballena', x: 0.5, y: 0.45, w: 0.4}]});
+const indicesDe = (txt) => [...new Set([...txt.matchAll(/^(\d+)\. \[/gm)].map((m) => Number(m[1])).concat([...txt.matchAll(/"indice":(\d+)/g)].map((m) => Number(m[1]))))];
+const respuestaPintor = (sistema, usuario) => {
+  const ids = indicesDe(usuario);
+  const escenasP = ids.map((i) => ({indice: i, planos: [cuadro(), cuadro()]}));
+  if (sistema.includes('Eres el Pintor de luz y detalle')) { rondaB++; return {acuerdo: rondaB > 1, objeciones: rondaB > 1 ? [] : ['Falta un primer plano oscuro', 'Añade rayos de luz'], escenas: escenasP}; }
+  return {acuerdo: true, escenas: escenasP};
+};
 let cta = CTA_LQNS;
 let llamadas = 0;
 const original = globalThis.fetch;
@@ -39,7 +50,8 @@ globalThis.fetch = async (url, opciones) => {
     const sistema = cuerpo.messages[0].content;
     const escenas = hacer(cta);
     let respuesta;
-    if (sistema.includes('Director/a de contenido')) respuesta = {temas: ['Bloop']};
+    if (sistema.includes('Eres el Pintor')) respuesta = respuestaPintor(sistema, cuerpo.messages.at(-1)?.content ?? '');
+    else if (sistema.includes('Director/a de contenido')) respuesta = {temas: ['Bloop']};
     else if (sistema.includes('Mesa de publicación')) respuesta = {titulos: ['El sonido que asustó al océano 🌊', 'Un sonido de 99999 kilómetros 😱'], elegido: 'El sonido que asustó al océano 🌊', descripcion: 'Bloop: el sonido submarino más fuerte jamás registrado y su explicación.', hashtags: ['#viral', '#bloop', '#oceano', '#noaa', '#misterio', '#sonar'], comentario_fijado: '¿Qué crees que lo causó?', miniatura: {texto: 'EL BLOOP', idea: 'Una onda azul en el océano'}};
     else if (sistema.includes('Guionista')) respuesta = {titulo: 'El sonido del océano que parecía un monstruo 🌊', descripcion: 'Un sonido enorme y su explicación.', hashtags: ['#bloop', '#misterio', '#oceano', '#noaa', '#viral'], escenas};
     else if (sistema.includes('Editor/a crítico')) respuesta = {puntaje: 7, critica: 'Gancho claro; recorta la segunda frase.', titulo: 'El sonido del océano que parecía un monstruo 🌊', escenas};
@@ -69,7 +81,9 @@ for (const canal of ['lqns', 'demo']) {
   if (guion.canal !== canal) fallos.push(`${canal}: el guion no dice a qué canal pertenece`);
   if (!guion.audio.startsWith(`audio/${canal}-`)) fallos.push(`${canal}: el audio no lleva el nombre del canal (${guion.audio})`);
   if (guion.escenas.some((e) => e.fondo.includes('pixelinventado'))) fallos.push(`${canal}: dejó pasar un fondo inventado`);
-  if (!guion.escenas[0].fondo[1]?.startsWith('pixelcifra:1997|')) fallos.push(`${canal}: el parámetro del fondo salió mal`);
+  if (!guion.escenas.every((e) => e.fondo.length === 2 && e.fondo.every((x) => x.startsWith('pintado:')))) fallos.push(`${canal}: los dos pintores no dibujaron los 2 planos de cada escena`);
+  { const inf = fs.readFileSync(path.join(dir, 'informe-bloop.md'), 'utf8'); if (!/acuerdo/.test(inf)) fallos.push(`${canal}: no quedó el diálogo entre los dos pintores en el informe`); }
+  for (const e of guion.escenas) for (const x of e.fondo) if (!fs.existsSync(path.join('public', 'pintados', x.replace('pintado:', '') + '.json'))) fallos.push(`${canal}: falta el archivo del cuadro ${x}`);
   if (!guion.publicacion.comentarioFijado) fallos.push(canal + ': la Mesa de publicación no dejó comentario fijado');
   if (guion.publicacion.titulosAlternativos?.some((t) => t.includes('99999'))) fallos.push(canal + ': dejó pasar una cifra inventada en un título');
   if (Object.keys(JSON.parse(fs.readFileSync(path.join('oficina-salida', canal, 'estado.json'), 'utf8')).agentes).length < 15) fallos.push(canal + ': faltan puestos en el estado');

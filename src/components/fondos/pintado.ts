@@ -1,6 +1,7 @@
 // Motor de "escenas pintadas": convierte una descripción simple (JSON que escribe el Pintor de la oficina) en pixel art con el mismo
 // motor de los pingüinos (clase G): degradados con tramado, sombreado por luz y movimiento suave. Coordenadas normalizadas 0..1.
 import {G, bay, hex, hs, type RGB} from './pixelG';
+import {dibujarPro, type Pro} from './pintadoPro';
 
 export type Elemento = {t: string} & Record<string, unknown>;
 export type EscenaPintada = {cielo: string[]; capas: Elemento[]};
@@ -163,6 +164,7 @@ export function pintar(g: G, esc: EscenaPintada, t: number, lw: number, lh: numb
         break;
       }
       default:
+        try { dibujarPro(g, e as Pro, t, lw, lh, u); } catch { /* una forma mal descrita se omite sin romper el render */ }
         break;
     }
   }

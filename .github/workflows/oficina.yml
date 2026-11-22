@@ -92,7 +92,7 @@ jobs:
             CANAL=$c timeout 120 node agentes/analytics.mjs || true
             CANAL=$c timeout 120 node agentes/cazador.mjs || true
             for intento in 1 2 3; do
-              CANAL=$c timeout 600 node agentes/oficina.mjs || fallo=1
+              CANAL=$c timeout 900 node agentes/oficina.mjs || fallo=1
               CANAL=$c node agentes/ultimo-aprobado.mjs && break
               echo "No salió un guion aprobado (intento $intento de 3): pruebo con otro tema."
             done

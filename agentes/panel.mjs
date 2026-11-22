@@ -111,7 +111,8 @@ try {
   if (votos.length < 6) throw new Error('el panel devolvió menos de 6 votos');
   const gustos = votos.filter((v) => v.leGusto).length;
   const pasan = votos.filter((v) => v.pasa3).length;
-  const gemMalo = gem && (gem.recomendacion === 'no subir' || Number(gem.nota_general) < 6 || gem.subtitulos?.tapados_o_cortados === true || (Array.isArray(gem.defectos_graves) && gem.defectos_graves.length > 0));
+  // Gemini solo rechaza por fallos de fondo (subtítulos tapados o defectos graves); la calidad la juzgan los 8 críticos.
+  const gemMalo = gem && (gem.subtitulos?.tapados_o_cortados === true || (Array.isArray(gem.defectos_graves) && gem.defectos_graves.length > 0));
   const GARANTIA = enGarantia(CANAL);
   // Con garantía de publicación (más de 7 h sin publicar) el voto del público ya no bloquea; solo un defecto grave que vea Gemini.
   const aprobado = GARANTIA ? !gemMalo : gustos >= Math.ceil(votos.length * 0.6) && pasan >= Math.ceil(votos.length * 0.5) && !gemMalo;

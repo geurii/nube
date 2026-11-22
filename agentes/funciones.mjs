@@ -18,7 +18,7 @@ const config = (leer(path.join('agentes', 'canales-propios.json'), {canales: []}
 const estado = leer(path.join(carpeta, 'estado.json'), null);
 if (!estado) { console.log('Funciones: sin estado.'); process.exit(0); }
 fs.mkdirSync(dirF, {recursive: true});
-const TODOS_LOS_PUESTOS = ["Directora de contenido","Enlace de datos","Coordinador de producción","Jefa de calidad","Investigador de temas","Cazador de fórmulas","Vigía de tendencias","Guionista","Editor de guion","Titulista","Redactor de descripción","Especialista en hashtags","Verificador de datos","Auditor de fuentes","Auditor de normas","Revisor de nombres","Revisor de ganchos","Escenógrafo","Pintor de imágenes","Locutor","Técnico de render","Publicador","Crítico: adolescente","Crítica: universitaria","Crítico: padre trabajador","Crítico: escéptico","Crítica: fan del misterio","Crítica: ama de casa","Crítico: joven dominicano","Crítico: abuelo"];
+const TODOS_LOS_PUESTOS = ["Directora de contenido","Enlace de datos","Coordinador de producción","Jefa de calidad","Investigador de temas","Cazador de fórmulas","Vigía de tendencias","Guionista","Editor de guion","Titulista","Redactor de descripción","Especialista en hashtags","Verificador de datos","Auditor de fuentes","Auditor de normas","Revisor de nombres","Revisor de ganchos","Pintor de luz y detalle","Pintor de imágenes","Locutor","Técnico de render","Publicador","Crítico: adolescente","Crítica: universitaria","Crítico: padre trabajador","Crítico: escéptico","Crítica: fan del misterio","Crítica: ama de casa","Crítico: joven dominicano","Crítico: abuelo"];
 for (const r of TODOS_LOS_PUESTOS) estado.agentes[r] = estado.agentes[r] ?? {estado: 'trabajando', actividad: 'pensando', tarea: 'En su puesto, preparando el próximo ciclo.'};
 const reloj = leer(path.join(dirF, 'reloj.json'), {});
 const vistas = leer(path.join(carpeta, 'vistas.json'), null);
@@ -175,7 +175,7 @@ const SEGUNDA = {
   'Auditor de normas': 'comprobar de memoria una norma del canal y decir si el último guion la cumple',
   'Revisor de nombres': 'listar términos del último guion que podrían confundirse con nombres de personas reales',
   'Revisor de ganchos': 'puntuar de 0 a 10 el gancho del último video y decir cómo subirlo a 9',
-  'Escenógrafo': 'proponer 2 fondos nuevos que faltan en el catálogo para los temas próximos',
+  'Pintor de luz y detalle': 'proponer una mejora de luz o detalle para los cuadros del próximo tema',
   'Pintor de imágenes': 'describir una escena en pixel art que se podría dibujar para el próximo tema',
   'Locutor': 'proponer cómo ajustar el ritmo y las pausas de la voz en el gancho y la revelación',
   'Técnico de render': 'proponer una forma de reducir el tiempo de render sin perder calidad',

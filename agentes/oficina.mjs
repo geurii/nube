@@ -469,15 +469,15 @@ try {
       else informe.push('(La Mesa de publicación no entregó algo válido: se usa lo del Guionista.)');
     } catch (e) { informe.push('(La Mesa de publicación falló: ' + e.message + '. Se usa lo del Guionista.)'); }
   }
-  // PINTOR: las escenas sin imagen en el catálogo se dibujan en pixel art (2 planos por escena)
+  // LOS DOS PINTORES dibujan TODAS las escenas en pixel art (2 planos por escena); el catálogo solo queda de respaldo si no logran dibujar una
   if (aprobado) {
-    const idx = fondos.map((f, i) => (f.every((x) => x === 'pixelmisterio') ? i : -1)).filter((i) => i >= 0);
+    const idx = escenas.map((_, i) => i);
     if (idx.length) {
       try {
-        const p = await pintarEscenas({llamar: (m, max) => pedirJson(modelo, m, max), escenas, indices: idx, slug, tema: TEMA});
+        const p = await pintarEscenas({llamar: (m, max) => pedirJson(modelo, m, max), escenas, indices: idx, slug, tema: TEMA, nota: (t) => informe.push(t)});
         for (const [i, lista] of Object.entries(p)) { fondos[Number(i)] = lista; CTX.pintadas++; }
-        informe.push(`Pintor: ${CTX.pintadas} de ${idx.length} escenas dibujadas.`);
-      } catch (e) { informe.push('(El Pintor no pudo dibujar: ' + e.message + '. Se usa el fondo general.)'); }
+        informe.push(`Pintores: ${CTX.pintadas} de ${idx.length} escenas dibujadas.`);
+      } catch (e) { informe.push('(Los Pintores no pudieron dibujar: ' + e.message + '. Se usa el fondo del catálogo.)'); }
     }
   }
   const sinImagen = aprobado ? fondos.filter((f) => f.every((x) => x === 'pixelmisterio')).length : 0;
