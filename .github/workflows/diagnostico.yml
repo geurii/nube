@@ -1,0 +1,46 @@
+name: Diagnostico
+
+# Prueba REAL y corta (1-2 minutos): llama a cada proveedor de IA con las claves reales y guarda lo que contestan en oficina-salida/diagnostico.json.
+on:
+  push:
+    paths:
+      - 'agentes/diagnostico.disparo'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  models: read
+
+concurrency:
+  group: diagnostico
+  cancel-in-progress: false
+
+jobs:
+  diagnostico:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Llamar a los proveedores
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node agentes/diagnostico.mjs
+      - name: Guardar el resultado
+        if: always()
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add oficina-salida/diagnostico.json || true
+          git diff --cached --quiet || git commit -m "Diagnostico de proveedores"
+          for i in 1 2 3 4; do
+            git pull --rebase --autostash -X theirs origin main && git push && break
+            sleep 5
+          done
