@@ -1,5 +1,13 @@
 [
   {
+    "id": "mws80sbfneyo",
+    "fecha": "2026-11-22T19:19:31.419Z",
+    "canal": "lqns",
+    "tipo": "alerta",
+    "titulo": "No se pudo publicar en las redes",
+    "texto": "\"Sabías que una ola de melaza arrasó Boston? 🍯\": el repositorio público \"geurii/oficina-videos-legal\" no aceptó el video: no pude subir el video al repositorio público (422): {\"message\":\"Sorry, the file is too large to be processed. Consider creating/updating th; y el "
+  },
+  {
     "id": "mws7uimzt2kw",
     "fecha": "2026-11-22T19:14:38.939Z",
     "canal": "lqns",
@@ -673,13 +681,5 @@
     "tipo": "alerta",
     "titulo": "El panel rechazó: 📜 El manuscrito que nadie ha descifrado",
     "texto": "4 de 8 aprobaron, 6 pasaron los primeros 3 segundos, 2 lo compartirían. No se sube. Mejora principal: Empieza con un gancho visual o sonoro ultra impactante (ej. “Este libro del siglo XV sigue sin ser leído por nadie”) y corta la intro a menos de 2 segundos para retener a los espectadores que deciden en los primeros momentos."
-  },
-  {
-    "id": "mwqjlw0n58pj",
-    "fecha": "2026-11-21T15:08:19.415Z",
-    "canal": "lqns",
-    "tipo": "alerta",
-    "titulo": "Gemini no pudo mirar el video",
-    "texto": "ningún modelo respondió. gemini-4-hydrogen: 503 {\"error\":{\"message\":\"gemini-4-hydrogen is currently experiencing high demand, spikes in demand are usually temporary. Please try again later | gemini-3.8-flash: The operati El panel juzgó solo el guion."
   }
 ]
