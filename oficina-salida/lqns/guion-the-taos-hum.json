@@ -1,0 +1,74 @@
+{
+  "titulo": "🔊 El misterio del Taos Hum que nadie explica",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-DO-EmilioNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-the-taos-hum.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "publicacion": {
+    "titulo": "🔊 El misterio del Taos Hum que nadie explica",
+    "descripcion": "Un zumbido inexplicable que aterra a algunos en Nuevo México. Descubre los datos reales y lo que aún se oculta.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/The_Hum\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#TaosHum #MisterioSonoro #Enigma"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 5,
+    "critica": "El gancho es débil, el ritmo es lento y la revelación llega demasiado pronto."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que en Taos, Nuevo México, un zumbido misterioso atormenta a algunos residentes?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En los 90, un estudio halló que el 2 % escuchaba un tono de 32 a 80 Hz.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El zumbido suena en la madrugada y, según testigos, se extiende hasta 30 miles.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Los vecinos lo describen como una vibración constante que irrita y cansa.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Se sospecha de tuberías de gas de alta presión, pero no hay consenso definitivo.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Lo que no sabías: un residente afirmó que el rango del Taos Hum alcanzaba 48 km.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "El misterio persiste; tal vez la respuesta está en la infraestructura invisible. ¿Qué opinas? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

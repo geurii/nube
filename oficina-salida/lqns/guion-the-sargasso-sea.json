@@ -1,0 +1,73 @@
+{
+  "titulo": "Sabías que el Mar de Sargazo oculta un misterio milenario 🌊",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-DO-EmilioNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-the-sargasso-sea.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "publicacion": {
+    "titulo": "Sabías que el Mar de Sargazo oculta un misterio milenario 🌊",
+    "descripcion": "Un rincón del Atlántico sin costas donde la claridad del agua supera los 60 m. Descubre por qué la anguila europea elige este lugar para reproducirse.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Sargasso_Sea\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#SargassoSea #AtlanticGyre #Seaweed #Eel #OceanMystery"
+  },
+  "estado": "aprobado",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El gancho es confuso, el ritmo se arrastra y la revelación llega demasiado pronto."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que en el Atlántico hay un mar sin costas cubierto de algas flotantes?",
+      "fondo": [
+        "pixelmisterio",
+        "pixelcifra:1 MILLON|DE ALGAS|TEAL"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Se extiende entre 20°‑35° N y 40°‑70° W, 1,100 km de ancho y 3,200 km de largo.",
+      "fondo": [
+        "pixelcifra:1100 KM|ANCHO|AZUL",
+        "pixelcifra:3200 KM|LARGO|AZUL",
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El agua llega a una claridad de hasta 60 metros, un verdadero espejo submarino.",
+      "fondo": [
+        "pixelcifra:60 METROS|CLARIDAD|MINT",
+        "pixelsonar"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Los portugueses lo llamaron Sargazo; en 1492 un capitán temió quedar atrapado por la falta de viento.",
+      "fondo": [
+        "pixelmisterio",
+        "pixeldocs"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Lo que no sabías: la expedición Dana (1920‑1922) descubrió que la anguila europea se reproduce allí.",
+      "fondo": [
+        "pixeldocs"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Te imaginas cientos de huevos flotando entre la niebla azul del océano? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pintado:the-sargasso-sea-5a",
+        "pintado:the-sargasso-sea-5b"
+      ]
+    }
+  ]
+}
