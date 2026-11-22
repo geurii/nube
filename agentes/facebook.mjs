@@ -65,7 +65,7 @@ export const subirAlRepoPublico = async ({token, repo, archivo, nombre}) => {
 export const subirATemporal = async ({archivo, nombre}) => {
   const fd = new FormData();
   fd.append('reqtype', 'fileupload');
-  fd.append('time', '24h');
+  fd.append('time', '72h'); // 72 h: Buffer descarga el video cuando llega la hora del calendario (hasta ~2 días después)
   fd.append('fileToUpload', new Blob([fs.readFileSync(archivo)], {type: 'video/mp4'}), nombre);
   const r = await fetch('https://litterbox.catbox.moe/resources/internals/api.php', {method: 'POST', body: fd, signal: AbortSignal.timeout(300000)});
   const url = (await r.text()).trim();
@@ -147,6 +147,11 @@ export const principal = async () => {
   for (const d of destinos({largo, cfg: cfgCanal, env: process.env})) {
     const registro = leer(path.join(dir, d.archivoRegistro), {total: 0, posts: [], archivos: []});
     if (d.tipo !== 'buffer' && !apiKey) { console.log(`${d.nombre}: se omite (falta WINDSOR_API_KEY).`); continue; }
+    if (d.tipo === 'buffer' && d.cuenta) { // TikTok: cada video llena un día (un video por día en el calendario de Buffer)
+      const porDia = Math.max(1, Number(cfgCanal.tiktok?.porDia ?? 1));
+      const recientes = registro.posts.filter((p) => Date.now() - Date.parse(p.fecha) < 22 * 3600 * 1000).length;
+      if (recientes >= porDia) { console.log(`TikTok: ya hay ${recientes} video(s) en el calendario de las últimas 22 horas (un video por día). Este no se envía a TikTok.`); continue; }
+    }
     if (!d.cuenta) { console.log(`${d.nombre}: se omite (no hay cuenta conectada en la configuración).`); continue; }
     if (registro.posts.some((p) => p.id === ID)) { console.log(`${d.nombre}: este video ya se publicó. No se repite.`); continue; }
     pendientes.push({...d, registro});
@@ -155,7 +160,7 @@ export const principal = async () => {
 
   const archivo = elegirArchivo(ID);
   if (!archivo) { console.log('Redes: no encuentro el MP4 del video. Se omite.'); return {omitido: 'sin mp4'}; }
-  // con token de GitHub y repo público: se guarda ahí (permanente, últimos 15); si no, archivo temporal de 24 h sin ninguna clave
+  // con token de GitHub y repo público: se guarda ahí (permanente, últimos 15); si no, archivo temporal de 72 h sin ninguna clave
   const usaRepo = Boolean(token && repo);
   const pub = usaRepo ? await subirAlRepoPublico({token, repo, archivo, nombre: `${ID}.mp4`}) : await subirATemporal({archivo, nombre: `${ID}.mp4`});
 
@@ -164,9 +169,9 @@ export const principal = async () => {
   for (const d of pendientes) {
     try { // un destino que falla no impide el otro
       const resp = d.tipo === 'buffer'
-        ? await publicarEnTikTok({apiKey: bufferKey, url: pub.url, texto: textoTikTok(guion), ia: cfgCanal.tiktok?.ia === true, canal: String(cfgCanal.tiktok?.canal ?? '')})
+        ? await publicarEnTikTok({apiKey: bufferKey, url: pub.url, texto: textoTikTok(guion), ia: cfgCanal.tiktok?.ia === true, canal: String(cfgCanal.tiktok?.canal ?? ''), modo: cfgCanal.tiktok?.modo === 'ahora' ? 'ahora' : 'cola'})
         : await publicarConWindsor({apiKey, conector: d.conector, cuenta: d.cuenta, accion: d.accion, params: d.params(pub.url, texto, titulo)});
-      d.registro.posts.unshift({id: ID, titulo: titulo.slice(0, 140), fecha: new Date().toISOString(), accion: d.accion, alojamiento: usaRepo ? 'repositorio' : 'temporal-24h', video_url: pub.url, respuesta: resp.texto.slice(0, 300)});
+      d.registro.posts.unshift({id: ID, titulo: titulo.slice(0, 140), fecha: new Date().toISOString(), accion: d.accion, programado: resp.programado, alojamiento: usaRepo ? 'repositorio' : 'temporal-72h', video_url: pub.url, respuesta: resp.texto.slice(0, 300)});
       d.registro.posts = d.registro.posts.slice(0, 200);
       d.registro.total = d.registro.posts.length;
       if (usaRepo && archivosRepo === null) archivosRepo = await limpiarViejos({token, repo, archivos: [...(d.registro.archivos ?? []), pub.ruta]});

@@ -52,10 +52,8 @@ export const buscarCanalTikTok = async (apiKey, nombre = '') => {
 
 const MUTACION = 'mutation CreatePost($input: CreatePostInput!) { createPost(input: $input) { ... on PostActionSuccess { post { id } } ... on MutationError { message } } }';
 
-/** Publica el video en TikTok ahora mismo. `ia` = declarar que el contenido es generado por IA (TikTok lo pide para contenido realista). */
-export const publicarEnTikTok = async ({apiKey, url, texto, ia = false, canal = ''}) => {
-  const ch = await buscarCanalTikTok(apiKey, canal);
-  const entrada = {text: texto, channelId: ch.id, schedulingType: 'automatic', mode: 'shareNow', assets: [{video: {url}}], metadata: {tiktok: {isAiGenerated: Boolean(ia)}}};
+/** Crea la publicación (reintenta con needsApproval:false si la API lo exige) y devuelve el resultado de createPost. */
+const crear = async (apiKey, entrada) => {
   let d;
   try {
     d = await graphql(apiKey, MUTACION, {input: entrada});
@@ -68,5 +66,26 @@ export const publicarEnTikTok = async ({apiKey, url, texto, ia = false, canal = 
     res = (await graphql(apiKey, MUTACION, {input: {...entrada, needsApproval: false}}))?.createPost;
   }
   if (!res?.post?.id) throw new Error(`Buffer no publicó el video: ${String(res?.message ?? 'respuesta sin detalle').slice(0, 200)}`);
-  return {id: res.post.id, canal: ch.displayName ?? ch.name, texto: JSON.stringify({id: res.post.id, canal: ch.displayName ?? ch.name}).slice(0, 300)};
+  return res;
+};
+
+/**
+ * Publica el video en TikTok. modo "cola" (por defecto): Buffer lo pone en el SIGUIENTE ESPACIO LIBRE de tu calendario de publicación (un video por día);
+ * modo "ahora": se publica de inmediato. `ia` = declarar que el contenido es generado por IA (TikTok lo pide para contenido realista).
+ */
+export const publicarEnTikTok = async ({apiKey, url, texto, ia = false, canal = '', modo = 'cola'}) => {
+  const ch = await buscarCanalTikTok(apiKey, canal);
+  const base = {text: texto, channelId: ch.id, schedulingType: 'automatic', assets: [{video: {url}}], metadata: {tiktok: {isAiGenerated: Boolean(ia)}}};
+  let programado = modo === 'ahora' ? 'ahora' : 'cola';
+  let res;
+  try {
+    res = await crear(apiKey, {...base, mode: modo === 'ahora' ? 'shareNow' : 'addToQueue'});
+  } catch (e) {
+    // si el canal no tiene calendario de publicación (sin espacios), se publica ahora en vez de perder el video
+    if (modo === 'ahora' || !/schedule|slot|queue|calendar|horario|espacio/i.test(String(e.message))) throw e;
+    res = await crear(apiKey, {...base, mode: 'shareNow'});
+    programado = 'ahora (el canal no tiene calendario)';
+  }
+  const nombre = ch.displayName ?? ch.name;
+  return {id: res.post.id, canal: nombre, programado, texto: JSON.stringify({id: res.post.id, canal: nombre, programado}).slice(0, 300)};
 };
