@@ -17,7 +17,7 @@ import {completarHashtags} from './hashtags.mjs';
 import {ganchoDe} from './titular.mjs'; // titular gigante de los primeros segundos (nunca cortado a mitad de frase)
 import {evaluarGuionConPanel} from './panel-guion.mjs';
 import {titulosVirales, armarBloqueWeb, guardarWeb} from './web.mjs';
-import {filtrarTemas, sinRechazadas, leerPreferencias, fueRechazada} from './ideas.mjs';
+import {filtrarTemas, sinRechazadas, leerPreferencias, fueRechazada, temasAprobadosDelDueno} from './ideas.mjs';
 import {enGarantia} from './garantia.mjs';
 import {chatAlternativo, proveedoresConLlave, modelosDisponibles, diagnosticoRespaldo} from './llm.mjs';
 
@@ -290,7 +290,9 @@ const elegirTema = async (modelo) => {
   const subidosTitulos = (leerJson(path.join(SALIDA, 'subidos.json'), {}).videos ?? []).map((v) => v.titulo);
   const vistos = [...new Set([...hechos, ...guiones, ...leerJson(path.join(SALIDA, 'producidos.json'), []), ...subidosTitulos].map(clave).filter((k) => k.length >= 4))];
   const yaHecho = (x) => { if (fueRechazada(x, CANAL_ID)) return true; const k = clave(x); return k.length >= 4 && vistos.some((v) => v === k || (k.length >= 6 && v.length >= 6 && (v.includes(k) || k.includes(v)))); };
-  for (const t of [...ideasEquipo, ...(r.temas ?? [])]) {
+  const aprobadosDelDueno = temasAprobadosDelDueno(CANAL_ID); // ideas de la estrategia y de Jules que el dueño aprobó: van PRIMERO
+  if (aprobadosDelDueno.length) informe.push(`Temas aprobados por el dueño (se prueban primero): ${aprobadosDelDueno.slice(0, 5).join(', ')}`);
+  for (const t of [...aprobadosDelDueno, ...ideasEquipo, ...(r.temas ?? [])]) {
     if (typeof t !== 'string' || yaHecho(t)) continue;
     const p = await wikipedia('en', t);
     if (!p || (p.extract ?? '').length <= 3000) continue;

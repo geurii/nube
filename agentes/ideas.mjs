@@ -45,3 +45,18 @@ export const leerPreferencias = (canal = 'lqns') => {
   if (!si.length && !no.length) return '';
   return `DECISIONES DEL DUEÑO sobre ideas (respétalas, aprende su gusto y no repitas lo rechazado): ${si.length ? 'APROBÓ: ' + si.join(' | ') + '. ' : ''}${no.length ? 'RECHAZÓ: ' + no.join(' | ') + '.' : ''}`.trim();
 };
+
+/**
+ * Temas (títulos de Wikipedia en inglés) de las ideas de la ESTRATEGIA y de JULES que el dueño aprobó con SÍ: la oficina los prueba antes que cualquier otro.
+ * Se emparejan con su decisión por el comienzo del texto (el título de la idea).
+ */
+export const temasAprobadosDelDueno = (canal = 'lqns') => {
+  const si = leerDecisiones(canal).filter((d) => d.decision === 'si').map((d) => norm(d.texto));
+  if (!si.length) return [];
+  const leer = (f) => { try { return JSON.parse(fs.readFileSync(path.join('oficina-salida', canal, f), 'utf8')); } catch { return null; } };
+  const candidatos = [
+    ...((leer('estrategia.json')?.ideas ?? []).map((i) => ({titulo: i.titulo, tema: i.temaWikipedia}))),
+    ...((leer('ideas-jules.json') ?? []).map((i) => ({titulo: i.tema, tema: i.tema}))),
+  ];
+  return candidatos.filter((c) => c.tema && c.titulo && si.some((s) => s.startsWith(norm(c.titulo)))).map((c) => String(c.tema).trim()).filter(Boolean);
+};
