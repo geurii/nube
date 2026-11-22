@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-22T16:44:14.884Z",
+  "actualizado": "2026-11-22T16:44:24.294Z",
   "totales": {
     "aprobados": 11,
     "rechazados": 17,
@@ -204,9 +204,9 @@
       "tarea": "AYUDA: le echó una mano a (Editor de guion). Entregó: 3 mejoras al último guion"
     },
     "Publicador": {
-      "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Investigador de temas). Entregó: 5 temas candidatos"
+      "estado": "libre",
+      "actividad": "pensando",
+      "tarea": "Subió \"⚡ 1884: El inventor que encendió Niágara con su motor AC\" y quedó PÚBLICO ahora mismo: https://youtu.be/hVawPPY5K_Y"
     },
     "Crítico: padre trabajador": {
       "estado": "trabajando",
