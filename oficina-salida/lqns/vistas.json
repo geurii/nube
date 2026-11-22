@@ -1,8 +1,8 @@
 {
-  "fecha": "2026-11-22T00:06:04.262Z",
+  "fecha": "2026-11-22T00:11:13.878Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 2551,
-  "ganadasDesdeElUltimoCiclo": 43,
+  "total": 2554,
+  "ganadasDesdeElUltimoCiclo": 3,
   "videos": [
     {
       "id": "5BIAOJmE-dk",
@@ -38,7 +38,7 @@
       "id": "ujvVWAyrSUg",
       "titulo": "Sabías que tres hombres caminaron en plena noche polar por 3 huevos de pingüino 🥚 (Parte 3/3)",
       "publicado": "2026-11-20T17:30:34+00:00",
-      "vistas": 343
+      "vistas": 346
     },
     {
       "id": "KURWolBJszo",
@@ -143,6 +143,10 @@
     {
       "fecha": "2026-11-22T00:06:04.262Z",
       "total": 2551
+    },
+    {
+      "fecha": "2026-11-22T00:11:13.877Z",
+      "total": 2554
     }
   ]
 }
