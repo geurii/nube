@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-22T03:31:03.233Z",
+  "actualizado": "2026-11-22T03:32:13.978Z",
   "totales": {
     "aprobados": 7,
     "rechazados": 7,
@@ -204,9 +204,9 @@
       "tarea": "AYUDA: le echó una mano a (Investigador de temas). Entregó: 5 temas candidatos"
     },
     "Publicador": {
-      "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título"
+      "estado": "libre",
+      "actividad": "pensando",
+      "tarea": "Subió \"¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️\" y quedó PÚBLICO ahora mismo: https://youtu.be/8YRV5me-3uM"
     },
     "Crítico: padre trabajador": {
       "estado": "libre",
