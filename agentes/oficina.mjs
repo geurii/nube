@@ -13,6 +13,7 @@ import {investigarEnLaWeb} from './investigar-web.mjs';
 import {mirarFoto, textoDeVista} from './ojos.mjs';
 import {limpiarParaVoz} from './texto-voz.mjs';
 import {textoDeRadar} from './radar.mjs';
+import {completarHashtags} from './hashtags.mjs';
 import {reunirInspiracion} from './inspiracion.mjs';
 import {enGarantia} from './garantia.mjs';
 import {chatAlternativo, proveedoresConLlave, modelosDisponibles, diagnosticoRespaldo} from './llm.mjs';
@@ -547,6 +548,7 @@ try {
   }
   const palabras = escenas.reduce((s, e) => s + palabrasDe(e), 0);
   informe.push(`Palabras: ${palabras} · Escenas: ${escenas.length}`);
+  hashtags = completarHashtags(hashtags, TEMA); // regla fija: SIEMPRE 5 hashtags específicos, aunque la Mesa de publicación haya fallado
   const guion = {
     titulo,
     formato: FORMATO,
