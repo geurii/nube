@@ -16,11 +16,11 @@ const MAX_BYTES = 800 * 1024;
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
 const pedir = async (url, tiempo = 20000) => {
   let r;
-  for (let i = 1; i <= 3; i++) {
+  for (let i = 1; i <= 5; i++) {
     r = await fetch(url, {headers: {'User-Agent': UA}, signal: AbortSignal.timeout(tiempo)});
-    if (![429, 503].includes(r.status) || i === 3) return r;
+    if (![429, 503].includes(r.status) || i === 5) return r;
     const pide = Number(r.headers.get('retry-after'));
-    await dormir(Math.min(15000, (Number.isFinite(pide) && pide > 0 ? pide : 4 * i) * 1000));
+    await dormir(Math.min(30000, (Number.isFinite(pide) && pide > 0 ? pide : 5 * i) * 1000));
   }
   return r;
 };
@@ -109,7 +109,7 @@ export const buscarCandidatas = async (consulta, usadas = new Set(), necesarias 
       }
     } catch { /* una fuente que falla no detiene a las demás */ }
     if (buenas.length >= necesarias * 2) break;
-    await dormir(900);
+    await dormir(1200);
   }
   return buenas.sort((a, b) => b.punto - a.punto);
 };
@@ -138,7 +138,7 @@ export const guardarUsadas = (canal, usadas) => {
  * Para cada escena: el modelo propone hasta 4 CONCEPTOS concretos y fotografiables que la frase menciona (el sujeto principal primero),
  * se buscan fotos reales de cada uno y se bajan hasta 2 por escena. Devuelve {indice: {fotos: [{archivo, titulo, licencia, autor, pagina, fuente, consulta}]}}.
  */
-export const reunirFotos = async ({llamar, escenas, indices, slug, tema, canal = 'lqns', limiteMs = 200000, nota = () => {}}) => {
+export const reunirFotos = async ({llamar, escenas, indices, slug, tema, canal = 'lqns', limiteMs = 480000, nota = () => {}}) => {
   const salida = {};
   const usadas = leerUsadas(canal);
   const dir = path.resolve('public', 'referencias');
@@ -164,7 +164,7 @@ export const reunirFotos = async ({llamar, escenas, indices, slug, tema, canal =
           if (fotos.length >= meta) break;
           const archivo = `${slug}-${i}-${fotos.length + 1}.jpg`;
           try {
-            await descargar(c.url, path.join(dir, archivo));
+            await descargar(c.url, path.join(dir, archivo)); await dormir(1200);
             usadas.add(c.url); usadas.add(c.pagina);
             fotos.push({archivo, titulo: c.titulo, licencia: c.licencia, autor: c.autor, pagina: c.pagina, fuente: c.fuente, consulta: q});
           } catch (er) { nota(`(Foto de la escena ${i} "${q}": ${String(er.message ?? er).slice(0, 60)})`); }

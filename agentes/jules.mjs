@@ -7,6 +7,7 @@ import path from 'node:path';
 import {avisarTelefono} from './aviso.mjs';
 import {chatAlternativo, modelosDisponibles} from './llm.mjs';
 import {leerBloqueWeb} from './web.mjs';
+import {HECHOS_FIJOS, estadoDeHoy, buscarEnVivo} from './jules-saber.mjs';
 
 const KEY = process.env.GROQ_API_KEY;
 const RAIZ = path.resolve('oficina-salida');
@@ -65,6 +66,7 @@ for (const archivo of pendientes) {
   const agentes = Object.entries(estado.agentes ?? {});
   const parados = agentes.filter(([, a]) => a.estado === 'esperando_decision').map(([n]) => n);
   const dias = Math.max(0, Math.ceil((new Date('2026-12-13T23:59:59-04:00').getTime() - Date.now()) / 86400000));
+  const enVivo = await buscarEnVivo(texto).catch(() => ''); // wifi: lo que dice internet HOY sobre lo que pregunta el dueño
   const contexto = [
     `Días que faltan para la meta (monetizar antes del 13 de diciembre de 2026): ${dias}.`,
     vistas?.total !== undefined ? `Vistas TOTALES del canal (suma de todos sus últimos videos, NO son de un solo video): ${vistas.total}; ganadas en el último ciclo: ${vistas.ganadasDesdeElUltimoCiclo ?? 0}.` : 'Vistas del canal: aún no disponibles.',
@@ -77,7 +79,10 @@ for (const archivo of pendientes) {
     subidas.length ? `Últimos avisos de producción y subida (reales): ${subidas.join(' | ')}` : '',
     `Totales de la oficina: ${JSON.stringify(estado.totales ?? {})}. Puestos esperando una decisión: ${parados.length ? parados.join(', ') : 'ninguno'}.`,
     ordenes.length ? `Última orden que diste: "${ordenes[0].orden}" (nivel ${ordenes[0].nivel}).` : 'Aún no has dado órdenes por este chat.',
-  ].join('\n');
+    HECHOS_FIJOS,
+    `ESTADO REAL DE HOY: ${estadoDeHoy(canal)}`,
+    enVivo,
+  ].filter(Boolean).join('\n');
   const historia = chat.slice(0, 14).reverse().map((m) => `${m.de === 'tu' ? 'DUEÑO' : 'JULES'}: ${m.texto}`).join('\n');
   const r = await llamar([
     {role: 'system', content: leerBloqueWeb(canal) + ' ' + 'Eres Jules, la directora de una oficina de 30 profesionales que hacen videos de misterio y datos curiosos para YouTube. Eres la jefa más exigente: perfeccionista, ambiciosa, directa y presionas sin parar, pero hablas con respeto al DUEÑO del canal, que es quien te da la presión y las órdenes. Meta de la empresa: monetizar antes del 13 de diciembre de 2026. Reglas: usa SOLO las cifras del CONTEXTO; si te preguntan si un video ya se subió, responde SOLO con lo que digan el último video público y los avisos reales del CONTEXTO, y si no lo sabes, dilo; nunca inventes datos ni prometas un número de vistas; las VISTAS TOTALES del canal suman todos sus videos y NUNCA se le atribuyen a un solo video: para un video usa SOLO su cifra del CONTEXTO; si el dueño te dice que un dato está mal, NO te defiendas: vuelve a mirar el CONTEXTO, reconoce el error si lo hay y corrígelo, y si el dato no está en el CONTEXTO di claramente que no lo tienes en vez de repetir la cifra anterior; no te inventes cosas que la oficina ya hizo. Si el dueño te exige más, tú conviertes eso en UNA orden concreta y más dura para tus 30 empleados. Responde de forma natural y directa (máx. 120 palabras); puedes conversar de lo que el dueño quiera sobre el canal, la oficina, ideas, dudas o su plan, no solo de órdenes, en español, sin tecnicismos. REGLAS FIJAS DEL DUEÑO (no se discuten): el canal publica SHORTS verticales de MÁXIMO 60 SEGUNDOS (unas 100 a 130 palabras) todos los días Y, además, UN VIDEO LARGO HORIZONTAL (16:9) un día sí y otro no (días impares); eso YA está decidido y funcionando: NUNCA digas que el largo o el formato 16:9 no es posible ni que no se puede subir. No ordenes cambiar la duración de los Shorts, subirla a minutos, ni cambiar el estilo pixel del canal; el dueño decide el formato, no tú. Responde SOLO con JSON: {"respuesta": "lo que le dices al dueño", "orden": "la orden para el equipo (una frase) o cadena vacía si no hay", "nivel": número de 1 a 5 con la presión que aplicarás}.'},
