@@ -6,6 +6,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {avisarTelefono} from './aviso.mjs';
+import {publicarEnTikTok, textoTikTok} from './tiktok.mjs';
 
 const leer = (ruta, d) => { try { return JSON.parse(fs.readFileSync(ruta, 'utf8')); } catch { return d; } };
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -116,6 +117,11 @@ const destinos = ({largo, cfg, env}) => [
     accion: 'create_video_post', // Instagram publica todo video de feed como Reel
     params: (url, texto) => ({video_url: url, caption: texto.slice(0, 2200)}),
   },
+  {
+    // TikTok: Windsor no puede publicar en TikTok; se usa la API de Buffer (clave BUFFER_API_KEY). Sin clave, se omite.
+    nombre: 'TikTok', tipo: 'buffer', archivoRegistro: 'tiktok.json', accion: 'createPost',
+    cuenta: (env.BUFFER_API_KEY || '').trim() ? 'buffer' : '',
+  },
 ];
 
 export const principal = async () => {
@@ -123,10 +129,11 @@ export const principal = async () => {
   const CANAL = (process.env.CANAL || 'lqns').trim();
   const apiKey = (process.env.WINDSOR_API_KEY ?? '').trim();
   const token = (process.env.FB_VIDEOS_TOKEN ?? '').trim();
+  const bufferKey = (process.env.BUFFER_API_KEY ?? '').trim();
   const cfgCanal = (leer(path.join('agentes', 'canales-propios.json'), {canales: []}).canales ?? []).find((c) => c.id === CANAL) ?? {};
   const repo = (process.env.FB_VIDEOS_REPO || cfgCanal.facebook?.repo || '').trim();
   if (!ID) { console.log('Redes: falta el id del video (ID). Se omite.'); return {omitido: 'sin id'}; }
-  if (!apiKey) { console.log('Redes: se omite (falta WINDSOR_API_KEY).'); return {omitido: 'sin configurar'}; }
+  if (!apiKey && !bufferKey) { console.log('Redes: se omite (faltan WINDSOR_API_KEY y BUFFER_API_KEY).'); return {omitido: 'sin configurar'}; }
   const guion = leer(path.join('guion', 'serie', `${ID}.json`), null);
   if (!guion) { console.log('Redes: no encuentro el guion del video. Se omite.'); return {omitido: 'sin guion'}; }
   const largo = guion.formato === 'largo';
@@ -139,6 +146,7 @@ export const principal = async () => {
   const pendientes = [];
   for (const d of destinos({largo, cfg: cfgCanal, env: process.env})) {
     const registro = leer(path.join(dir, d.archivoRegistro), {total: 0, posts: [], archivos: []});
+    if (d.tipo !== 'buffer' && !apiKey) { console.log(`${d.nombre}: se omite (falta WINDSOR_API_KEY).`); continue; }
     if (!d.cuenta) { console.log(`${d.nombre}: se omite (no hay cuenta conectada en la configuración).`); continue; }
     if (registro.posts.some((p) => p.id === ID)) { console.log(`${d.nombre}: este video ya se publicó. No se repite.`); continue; }
     pendientes.push({...d, registro});
@@ -155,7 +163,9 @@ export const principal = async () => {
   let archivosRepo = null;
   for (const d of pendientes) {
     try { // un destino que falla no impide el otro
-      const resp = await publicarConWindsor({apiKey, conector: d.conector, cuenta: d.cuenta, accion: d.accion, params: d.params(pub.url, texto, titulo)});
+      const resp = d.tipo === 'buffer'
+        ? await publicarEnTikTok({apiKey: bufferKey, url: pub.url, texto: textoTikTok(guion), ia: cfgCanal.tiktok?.ia === true, canal: String(cfgCanal.tiktok?.canal ?? '')})
+        : await publicarConWindsor({apiKey, conector: d.conector, cuenta: d.cuenta, accion: d.accion, params: d.params(pub.url, texto, titulo)});
       d.registro.posts.unshift({id: ID, titulo: titulo.slice(0, 140), fecha: new Date().toISOString(), accion: d.accion, alojamiento: usaRepo ? 'repositorio' : 'temporal-24h', video_url: pub.url, respuesta: resp.texto.slice(0, 300)});
       d.registro.posts = d.registro.posts.slice(0, 200);
       d.registro.total = d.registro.posts.length;
@@ -166,7 +176,7 @@ export const principal = async () => {
       try { avisarTelefono('subido', `Video publicado en ${d.nombre}`, `"${titulo.slice(0, 100)}" ya está en tu ${d.nombre} (Windsor).`); } catch { /* el aviso no debe fallar */ }
       resultados[d.nombre] = 'publicado';
     } catch (e) {
-      const msg = quitarClaves(String(e.message ?? e), apiKey, token).slice(0, 300);
+      const msg = quitarClaves(String(e.message ?? e), apiKey, token, bufferKey).slice(0, 300);
       console.log(`${d.nombre}: no se pudo publicar: ${msg}`);
       resultados[d.nombre] = 'error: ' + msg.slice(0, 120);
     }
@@ -175,5 +185,5 @@ export const principal = async () => {
 };
 
 if (path.basename(String(process.argv[1] ?? '')) === 'facebook.mjs') {
-  principal().catch((e) => { console.log('Facebook no se pudo publicar:', quitarClaves(String(e.message ?? e), process.env.WINDSOR_API_KEY, process.env.FB_VIDEOS_TOKEN).slice(0, 300)); }).finally(() => process.exit(0));
+  principal().catch((e) => { console.log('Facebook no se pudo publicar:', quitarClaves(String(e.message ?? e), process.env.WINDSOR_API_KEY, process.env.FB_VIDEOS_TOKEN, process.env.BUFFER_API_KEY).slice(0, 300)); }).finally(() => process.exit(0));
 }
