@@ -1,0 +1,36 @@
+name: Aviso de prueba
+
+# Boton "Mandarme un aviso de prueba" del Estudio: manda un aviso al celular con el tema REAL guardado en los secretos (NTFY_TOPIC) y lo deja tambien en la campana de la oficina.
+on:
+  push:
+    paths:
+      - 'agentes/aviso-prueba.disparo'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: aviso-prueba
+  cancel-in-progress: false
+
+jobs:
+  aviso:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Mandar el aviso
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: node agentes/aviso-prueba.mjs
+      - name: Guardar en la campana
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add oficina-salida || true
+          git diff --cached --quiet || git commit -m "Aviso de prueba"
+          for i in 1 2 3 4; do git pull --rebase --autostash -X theirs origin main && git push && break; sleep 5; done
