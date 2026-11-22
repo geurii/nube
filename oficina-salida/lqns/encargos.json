@@ -1,5 +1,36 @@
 [
   {
+    "id": "mwsfk6k1",
+    "tipo": "ideas",
+    "texto": "",
+    "fecha": "2026-11-22T22:50:33.649Z",
+    "hecho": true,
+    "resultado": {
+      "titulo": "Ideas nuevas (30)",
+      "secciones": [
+        {
+          "titulo": "Las mejores",
+          "items": [
+            "El misterio de los 12 minutos del experimento de la Torre de Pisa — Sabías que 12 minutos cambiaron la historia de la Torre de Pisa? (estimada 9/10)",
+            "¿Cómo 7 segundos evitaron una catástrofe nuclear en 1961? — Sabías que 7 segundos salvaron una explosión nuclear en 1961? (estimada 8/10)",
+            "El secreto de los 33 minutos del Código Enigma en la Segunda Guerra — Sabías que 33 minutos fueron clave para descifrar Enigma? (estimada 9/10)",
+            "Los 5 kilómetros ocultos bajo la Antártida que nadie conoce — Sabías que existen 5 km de túneles bajo la Antártida? (estimada 8/10)",
+            "Cómo 42 segundos detuvieron el mayor robo de arte del siglo XX — Sabías que 42 segundos evitaron el robo del Louvre? (estimada 9/10)",
+            "El enigma de los 9 minutos del sonido del Mar de Aral — Sabías que 9 minutos de sonido revelan la muerte del Mar de Aral? (estimada 8/10)",
+            "Los 21 segundos que cambiaron la ruta del ferrocarril transcontinental — Sabías que 21 segundos alteraron la ruta del ferrocarril? (estimada 8/10)",
+            "El descubrimiento de 14 metros bajo el océano que cambió la biología — Sabías que 14 metros bajo el mar se halló una nueva especie? (estimada 9/10)"
+          ]
+        },
+        {
+          "titulo": "Dónde verlas todas",
+          "items": [
+            "Todas están en el botón «Ideas» de la casa 3D (responde Sí / No) y en oficina-salida/lqns/estrategia.md con guion y miniatura."
+          ]
+        }
+      ]
+    }
+  },
+  {
     "id": "mwsevb7v",
     "tipo": "investigar",
     "texto": "gta vi",
