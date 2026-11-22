@@ -142,15 +142,18 @@ const GEMINI_KEY = process.env.GEMINI_API_KEY;
 const GROQ_KEY = process.env.GROQ_API_KEY;
 const GEMINI_VOZ = guion.vozGemini || 'Sadaltager';
 const ESTILO_VOZ = guion.estiloVoz || 'narrador de documental en español, voz masculina grave, cálida y misteriosa, ritmo lento con pausas';
-const USAR_GEMINI = Boolean(GEMINI_KEY) && !ES_NINOS && process.env.VOZ_MOTOR !== 'edge' && guion.motorVoz !== 'edge';
+// REGLA DEL DUEÑO (22 nov 2026): la ÚNICA voz permitida es Gemini Sadaltager. NUNCA se cambia a la voz de Edge: si Gemini falla, el video NO se hace (se reintenta en el próximo ciclo).
+const USAR_GEMINI = !ES_NINOS;
+if (USAR_GEMINI && !GEMINI_KEY) { console.error('Falta GEMINI_API_KEY: este canal solo puede usar la voz Gemini Sadaltager. No se genera con otra voz.'); process.exit(1); }
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
 let ultimaGemini = 0;
 const sintetizarGemini = async (texto, destino) => {
-  for (let intento = 1; intento <= 5; intento++) {
+  for (let intento = 1; intento <= 8; intento++) {
     const espera = ultimaGemini + 21000 - Date.now();
     if (espera > 0) await dormir(espera);
     ultimaGemini = Date.now();
-    const resp = await fetch('https://generativelanguage.googleapis.com/v1beta/interactions', {
+    let resp;
+    try { resp = await fetch('https://generativelanguage.googleapis.com/v1beta/interactions', {
       method: 'POST',
       headers: {'x-goog-api-key': GEMINI_KEY, 'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -160,13 +163,14 @@ const sintetizarGemini = async (texto, destino) => {
         generation_config: {speech_config: [{voice: GEMINI_VOZ}]},
       }),
       signal: AbortSignal.timeout(120000),
-    });
+    }); } catch (e) { await dormir(15000 * Math.min(intento, 4)); continue; } // red caída o tiempo agotado: se reintenta con la MISMA voz
     const cuerpo = await resp.text();
     if (resp.status === 429) {
       const m = /retry in (\d+)/i.exec(cuerpo);
       await dormir(((m ? Number(m[1]) : 20) + 2) * 1000);
       continue;
     }
+    if (resp.status >= 500) { await dormir(20000 * Math.min(intento, 4)); continue; }
     if (!resp.ok) throw new Error('Gemini ' + resp.status + ': ' + cuerpo.replaceAll(GEMINI_KEY, '***').slice(0, 200));
     const audios = (JSON.parse(cuerpo).steps ?? []).filter((x) => x.type === 'model_output').flatMap((x) => x.content ?? []).filter((x) => x.type === 'audio');
     const dato = audios.at(-1)?.data;
@@ -231,11 +235,11 @@ const hacerEscenas = async (motor) => {
   return lista;
 };
 
-console.log(USAR_GEMINI ? `Voz: Gemini ${GEMINI_VOZ} (respaldo: ${VOZ})` : `Voz: ${VOZ} · velocidad ${VELOCIDAD}% · tono ${TONO} Hz`);
+console.log(USAR_GEMINI ? `Voz: Gemini ${GEMINI_VOZ} (única voz permitida, sin respaldo)` : `Voz: ${VOZ} · velocidad ${VELOCIDAD}% · tono ${TONO} Hz`);
 let escenas;
 if (USAR_GEMINI) {
   try { escenas = await hacerEscenas('gemini'); }
-  catch (e) { console.warn('\nGemini falló (' + e.message + '). Se hace TODO el video con la voz de Edge.'); escenas = await hacerEscenas('edge'); }
+  catch (e) { console.error('\nGemini falló (' + e.message + '). NO se usa otra voz: el video se reintenta en el próximo ciclo.'); process.exit(1); }
 } else {
   escenas = await hacerEscenas('edge');
 }
