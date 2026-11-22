@@ -1,6 +1,13 @@
 {
   "decisiones": [
     {
+      "id": "i3xe6rz",
+      "texto": "The Voynich Manuscript",
+      "categoria": "Tema",
+      "decision": "si",
+      "fecha": "2026-11-22T19:20:57.019Z"
+    },
+    {
       "id": "i1hr3cvi",
       "texto": "Sabías que [CIFRA] personas encontraron un objeto que no pertenece a nuestro planeta | Un planeta lejano flotando sobre la Tierra",
       "categoria": "Gancho",
