@@ -1,14 +1,14 @@
 {
-  "fecha": "2026-11-21T23:33:47.274Z",
+  "fecha": "2026-11-22T00:06:04.262Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 2508,
-  "ganadasDesdeElUltimoCiclo": 0,
+  "total": 2551,
+  "ganadasDesdeElUltimoCiclo": 43,
   "videos": [
     {
       "id": "5BIAOJmE-dk",
       "titulo": "🔊 El enigma del Bloop: el rugido del hielo",
       "publicado": "2026-11-21T18:10:09+00:00",
-      "vistas": 14
+      "vistas": 22
     },
     {
       "id": "Nd2x5UMBiLM",
@@ -38,7 +38,7 @@
       "id": "ujvVWAyrSUg",
       "titulo": "Sabías que tres hombres caminaron en plena noche polar por 3 huevos de pingüino 🥚 (Parte 3/3)",
       "publicado": "2026-11-20T17:30:34+00:00",
-      "vistas": 308
+      "vistas": 343
     },
     {
       "id": "KURWolBJszo",
@@ -139,6 +139,10 @@
     {
       "fecha": "2026-11-21T23:33:47.274Z",
       "total": 2508
+    },
+    {
+      "fecha": "2026-11-22T00:06:04.262Z",
+      "total": 2551
     }
   ]
 }

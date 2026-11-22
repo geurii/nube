@@ -1,5 +1,23 @@
 [
   {
+    "id": "mwr2trl4lgbi",
+    "fecha": "2026-11-22T00:06:19.625Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "La oficina falló",
+    "texto": "Groq no respondió tras 4 intentos (límite de Groq (429)). Respaldos: Cerebras/gpt-oss-120b: JSON roto; Gemini/gemini-2.5-flash: 404; Gemini/gemini-flash-latest: Aprobados: 3. Rechazados: 5. Con error: 4. Próximo ciclo en 2 h."
+  },
+  {
+    "id": "mwr2thyhnsst",
+    "fecha": "2026-11-22T00:06:07.145Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Una frase que combina una pregunta intrigante o una afirmación impactante con un elemento de misterio o sorpresa, seguida de un subtítulo que sugiere una revelación o un listado atractivo. El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (41995 vistas/hora)."
+  },
+  {
     "id": "mwqsd59k8p7r",
     "fecha": "2026-11-21T19:13:28.040Z",
     "canal": "lqns",

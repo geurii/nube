@@ -1,22 +1,21 @@
 {
-  "fecha": "2026-11-21T18:04:01.518Z",
-  "total": 3276,
-  "promedio": 218,
-  "queFunciono": "Los videos con mayor audiencia comparten títulos que incluyen palabras clave de curiosidad y misterio (p. ej. \"Sabías que\", \"El vestido que cambió 3 veces\", \"El avión que recogía personas\") y se publicaron en fechas recientes (20 y 14 de noviembre). Además, los títulos más atractivos usan emojis y f",
+  "fecha": "2026-11-22T00:06:05.802Z",
+  "total": 2551,
+  "promedio": 170,
+  "queFunciono": "Los videos con más vistas comparten títulos que hacen referencia a pingüinos, utilizan la estructura de series (Parte X/Y) y se publicaron en fechas recientes (20/11/2026), lo que sugiere que la combinación de un tema llamativo (pingüinos) con formato de serie y publicación en la misma fecha genera ",
   "porQueFallaron": [
-    "Contenido con títulos demasiado genéricos o sin gancho claro: por ejemplo, \"Sabías que un banco pagó 175 millones por clientes que no existían\" y \"Sabías que la acusaron de fraude un año después de elegirla\" tienen títulos que no generan curiosidad inmediata y",
-    "El uso de títulos con temas muy específicos o poco comunes sin contexto atractivo: \"Sabías que tres hombres caminaron en plena noche polar por 3 huevos de pingüino\" y \"Los \"jóvenes genios\" que terminaron acusados de fraude: ¿estafadores o genios?\" presentan co",
-    "Falta de formato de serie o continuidad en los títulos que no indican una narrativa progresiva: los videos con pocas vistas no siguen la estructura Parte X/5, lo que reduce la retención y la expectativa de ver más episodios."
+    "El contenido de los videos con pocas vistas carece de un tema central atractivo (ej.: títulos como \"Operación Coldfeet\" o \"El enigma del Bloop\"), lo que se evidencia en las bajas vistas (26-39).",
+    "Los videos con menor rendimiento no siguen la estructura de serie que parece funcionar (ej.: no tienen \"Parte X/Y\"), lo que se refleja en su menor rendimiento. ",
+    "Los títulos de los videos con pocas vistas son más genéricos y menos provocativos, lo que se confirma con las bajas vistas (3-20)."
   ],
   "noSePuedeSaber": [
-    "Qué miniaturas se usaron para cada video.",
-    "Cuántos espectadores se mostraron a cada video (audiencia objetivo).",
-    "Qué tipo de audiencia (demografía) respondió a cada título.",
-    "Si los videos se promocionaron en redes sociales o a través de anuncios pagados."
+    "Datos de retención y suscriptores para los videos con más vistas.",
+    "Información sobre miniaturas, palabras clave y estrategias de promoción.",
+    "Datos de audiencia demográfica y de retención por segmento."
   ],
   "reglas": [
-    "1. Utiliza títulos que incluyan una pregunta o afirmación de curiosidad con emojis y la estructura \"Parte X/5\" para crear expectativa y continuidad.",
-    "2. Publica los videos en fechas recientes y de forma consistente (por ejemplo, cada 2-3 días) para mantener el interés de la audiencia y aprovechar la retención de series.",
-    "3. Asegúrate de que la miniatura sea visualmente atractiva, con colores contrastantes y una imagen que refleje el misterio o la sorpresa del título, para maximizar el CTR inicial."
+    "1. Mantener la estructura de serie con títulos claros \"Parte X/Y\" y un tema llamativo (p.ej., pingüinos).",
+    "2. Publicar los videos en fechas cercanas (idealmente el mismo día o días consecutivos) para aprovechar la atención del público.",
+    "3. Incluir títulos provocativos que generen curiosidad y una miniatura atractiva que destaque el elemento más llamativo del video."
   ]
 }

@@ -1,10 +1,10 @@
 {
-  "fecha": "2026-11-21T15:09:52.885Z",
+  "fecha": "2026-11-22T00:06:05.037Z",
   "ultimos28Dias": {
-    "views": 3319,
+    "views": 3320,
     "estimatedMinutesWatched": 700,
     "averageViewDuration": 28,
-    "averageViewPercentage": 49.67,
+    "averageViewPercentage": 49.64,
     "subscribersGained": 17,
     "subscribersLost": 4
   },
@@ -13,8 +13,8 @@
     "faltanSuscriptores": 957,
     "horas12Meses": 12,
     "faltanHoras": 3988,
-    "vistasShorts90": 3292,
-    "faltanVistasShorts": 9996708,
+    "vistasShorts90": 3293,
+    "faltanVistasShorts": 9996707,
     "requisitos": "1.000 suscriptores y (4.000 horas en 12 meses o 10 millones de vistas de Shorts en 90 días)"
   },
   "porVideo": [
@@ -84,9 +84,9 @@
     },
     {
       "id": "plzlom47-f0",
-      "vistas": 36,
-      "retencionPct": 39.5,
-      "duracionMediaSeg": 24,
+      "vistas": 37,
+      "retencionPct": 37.8,
+      "duracionMediaSeg": 23,
       "minutos": 6,
       "suscriptoresGanados": 0
     },

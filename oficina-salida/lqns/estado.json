@@ -1,11 +1,19 @@
 {
-  "actualizado": "2026-11-21T23:37:47.673Z",
+  "actualizado": "2026-11-22T00:08:19.891Z",
   "totales": {
     "aprobados": 3,
     "rechazados": 5,
-    "errores": 3
+    "errores": 4
   },
   "historial": [
+    {
+      "fecha": "2026-11-22T00:06:18.949Z",
+      "tema": "The Taos Hum",
+      "formato": "short",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "Groq no respondió tras 4 intentos (límite de Groq (429)). Respaldos: Cerebras/gpt-oss-120b: JSON roto; Gemini/gemini-2.5-flash: 404; Gemini/gemini-flash-latest:"
+    },
     {
       "fecha": "2026-11-21T15:24:37.724Z",
       "tema": "Taos hum",
@@ -98,157 +106,157 @@
   "agentes": {
     "Directora de contenido": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "PLAN DEL CICLO: 1. Lanzar la serie “El misterio de la brújula de piedra” (Parte 1/5) con Jules como responsable de producción, objetivo: alcanzar 2000 vistas y monetizar 30% de ingresos antes del 13 de diciembre. · 2. Crear el video “Sabías que el reloj de sol más antiguo del mundo guarda un mensaje secreto” (Parte SEGUNDA: El mayor riesgo es la brecha de 1 (cifra sin respaldo) vistas entre la meta (23 (cifra sin respaldo)) y el total actual (3 276). La contramedida es lanzar una campaña de colaboración con canales de misterio de alto rendimiento y publicar un video de 10 min con contenido exclusivo en la fecha l SOY Valentina «La Visionaria»: visionaria, exigente. PIENSA: Siento la presión de mantener el control creativo mientras aún no hemos conseguido ninguna vista. INICIATIVA: Definir una guía de estilo clara que el equipo pueda seguir desde el primer video."
+      "actividad": "pensando",
+      "tarea": "La oficina falló en su último ciclo: Groq no respondió tras 4 intentos (límite de Groq (429)). Respaldos: Cerebras/gpt-oss-120b: JSON roto; Gemini/gemini-2.5-flash: 404; Gemini/gemini-flash-latest: ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. JEFA: Falló el ciclo. Quiero la causa y el arreglo antes de las próximas 2 h."
     },
     "Investigador de temas": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Guionista). Entregó: 5 ganchos nuevos SEGUNDA: 1) Fenómenos de desapariciones en el océano Atlántico con documentación histórica; 2) Casos de avistamientos de objetos voladores no identificados en la zona del Triángulo. SOY Camila «El Buscador de Secretos»: curioso, metódico. PIENSA: Me inquieta que la investigación quede incompleta al no haber material aún para analizar. INICIATIVA: Compilar una lista de fuentes potenciales y temas de tendencia para tener material listo cuando comencemos."
+      "tarea": "AYUDA: le echó una mano a (Guionista). Entregó: 5 ganchos nuevos SEGUNDA: 1) Fenómenos de desapariciones en el océano Atlántico con documentación histórica; 2) Casos de avistamientos de objetos voladores no identificados en la zona del Triángulo. SOY Camila «El Buscador de Secretos»: curioso, metódico. PIENSA: Me inquieta que la investigación quede incompleta al no haber material aún para analizar. INICIATIVA: Compilar una lista de fuentes potenciales y temas de tendencia para tener material listo cuando comencemos. ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Guionista": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Editor de guion). Entregó: 3 mejoras al último guion SEGUNDA: 1) \"¿Alguna vez te has preguntado por qué desaparecen barcos en la misma zona? Descúbrelo en 3 s.\" 2) \"¿Sabías que un triángulo en el Atlántico guarda más de 1 (cifra sin respaldo) misterios? Te lo revelamos en 3 s.\" SOY Lucía «El Narrador de Historias»: imaginativo, perfeccionista. PIENSA: Temo que mi historia sea percibida como aburrida cuando aún no hemos generado audiencia. INICIATIVA: Escribir un piloto de guion y someterlo a una breve lectura grupal para obtener feedback inmediato."
+      "tarea": "AYUDA: le echó una mano a (Editor de guion). Entregó: 3 mejoras al último guion SEGUNDA: 1) \"¿Alguna vez te has preguntado por qué desaparecen barcos en la misma zona? Descúbrelo en 3 s.\" 2) \"¿Sabías que un triángulo en el Atlántico guarda más de 1 (cifra sin respaldo) misterios? Te lo revelamos en 3 s.\" SOY Lucía «El Narrador de Historias»: imaginativo, perfeccionista. PIENSA: Temo que mi historia sea percibida como aburrida cuando aún no hemos generado audiencia. INICIATIVA: Escribir un piloto de guion y someterlo a una breve lectura grupal para obtener feedback inmediato. ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Verificador de datos": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Guionista). Entregó: 5 ganchos nuevos SEGUNDA: El dato más cuestionable es la afirmación de que el álbum de Buckethead no está relacionado con el misterio. Se puede reforzar citando la entrevista de Buckethead en (cifra sin respaldo) donde comenta que el título es una metáfora y no referencia al triángulo. SOY Sofía «El Verificador de la Verdad»: escéptico, riguroso. PIENSA: Temo publicar información errónea sin haber validado nada todavía. INICIATIVA: Establecer una fuente primaria obligatoria para cada dato y registrar la verificación en un documento compartido."
+      "tarea": "AYUDA: le echó una mano a (Guionista). Entregó: 5 ganchos nuevos SEGUNDA: El dato más cuestionable es la afirmación de que el álbum de Buckethead no está relacionado con el misterio. Se puede reforzar citando la entrevista de Buckethead en (cifra sin respaldo) donde comenta que el título es una metáfora y no referencia al triángulo. SOY Sofía «El Verificador de la Verdad»: escéptico, riguroso. PIENSA: Temo publicar información errónea sin haber validado nada todavía. INICIATIVA: Establecer una fuente primaria obligatoria para cada dato y registrar la verificación en un documento compartido. ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Editor de guion": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. SEGUNDA: La frase que más aburre es: \"El mito nació en 1950 con un artículo del Miami Herald y se alimentó con casos como el del escuadrón Flight 19 en mil novecientos cuarenta y cinco.\" Reescritura: \"El mito empezó en 1950 con un artículo del Miami Herald y se aliment SOY Mariana «El Pulidor de Palabras»: detallista, colaborativo. PIENSA: Me preocupa que los errores pasen desapercibidos sin haber revisado contenido alguno. INICIATIVA: Establecer una ronda de revisión cruzada entre editor y guionista antes de enviar al panel."
+      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Locutor": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Investigador de temas). Entregó: 5 temas candidatos SEGUNDA: Ajustar ritmo: velocidad media en el gancho, pausa de (cifra sin respaldo) s después de la pregunta inicial, y ritmo más lento en la revelación para enfatizar la información clave. SOY Isabella «El Voz de la Emoción»: carismático, expresivo. PIENSA: Siento la presión de mantener mi voz en forma mientras aún no he grabado nada. INICIATIVA: Comenzar ejercicios vocales diarios y grabar pruebas de voz para recibir feedback temprano."
+      "tarea": "AYUDA: le echó una mano a (Investigador de temas). Entregó: 5 temas candidatos SEGUNDA: Ajustar ritmo: velocidad media en el gancho, pausa de (cifra sin respaldo) s después de la pregunta inicial, y ritmo más lento en la revelación para enfatizar la información clave. SOY Isabella «El Voz de la Emoción»: carismático, expresivo. PIENSA: Siento la presión de mantener mi voz en forma mientras aún no he grabado nada. INICIATIVA: Comenzar ejercicios vocales diarios y grabar pruebas de voz para recibir feedback temprano. ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Técnico de render": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título SEGUNDA: Usar codificación H.(cifra sin respaldo) con bitrate de 4 Mbps y resolución (cifra sin respaldo)p; aplicar compresión sin pérdida de calidad en los primeros (cifra sin respaldo) s para acelerar el render. SOY Paula «El Renderizador Supremo»: técnico, paciente. PIENSA: Me preocupa que el hardware falle en el último minuto sin haberlo probado en producción. INICIATIVA: Realizar pruebas de render en hardware de respaldo y documentar tiempos de procesamiento."
+      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título SEGUNDA: Usar codificación H.(cifra sin respaldo) con bitrate de 4 Mbps y resolución (cifra sin respaldo)p; aplicar compresión sin pérdida de calidad en los primeros (cifra sin respaldo) s para acelerar el render. SOY Paula «El Renderizador Supremo»: técnico, paciente. PIENSA: Me preocupa que el hardware falle en el último minuto sin haberlo probado en producción. INICIATIVA: Realizar pruebas de render en hardware de respaldo y documentar tiempos de procesamiento. ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Publicador": {
-      "estado": "libre",
+      "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "Subió \"🔊 El enigma del Bloop: el rugido del hielo\" y quedó PÚBLICO ahora mismo: https://youtu.be/5BIAOJmE-dk"
+      "tarea": "Subió \"🔊 El enigma del Bloop: el rugido del hielo\" y quedó PÚBLICO ahora mismo: https://youtu.be/5BIAOJmE-dk ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Crítico: padre trabajador": {
-      "estado": "libre",
+      "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Me quedé porque aprendí algo concreto rápido, pero no lo enviaría a todos. (siguió hasta el segundo 30). FUNCIÓN (contador): ya entregó hoy; la próxima ronda es dentro de 13 h. SOY Carolina «El Crítico de la Rutina»: práctico, protector. PIENSA: Me inquieta que el canal pierda su enfoque familiar sin haber lanzado contenido. INICIATIVA: Diseñar un segmento de video orientado a padres que combine entretenimiento y valores familiares. FUNCIÓN (contador): ya entregó hoy; la próxima ronda es dentro de 7 h."
+      "tarea": "Le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Me quedé porque aprendí algo concreto rápido, pero no lo enviaría a todos. (siguió hasta el segundo 30). ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. FUNCIÓN (contador): ya entregó hoy; la próxima ronda es dentro de 7 h."
     },
     "Crítica: fan del misterio": {
-      "estado": "libre",
+      "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": El Bloop es un buen caso, aunque el guion es algo predecible; lo recomendaría a otros amantes del misterio. (siguió hasta el segundo 50, lo compartiría). FUNCIÓN (oportunidades): ya entregó hoy; la próxima ronda es dentro de 17 h. SOY Fernanda «La Crítica Misteriosa»: enigmatica, observadora. PIENSA: Me preocupa que el canal revele todos los secretos y pierda el suspense antes de crear expectativa. INICIATIVA: Planificar teasers y pistas graduales en la descripción y en los títulos. FUNCIÓN (oportunidades): ya entregó hoy; la próxima ronda es dentro de 11 h."
+      "tarea": "Le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": El Bloop es un buen caso, aunque el guion es algo predecible; lo recomendaría a otros amantes del misterio. (siguió hasta el segundo 50, lo compartiría). ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. FUNCIÓN (oportunidades): ya entregó hoy; la próxima ronda es dentro de 11 h."
     },
     "Crítico: adolescente": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "NO le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": El gancho es medio lento, y en 2‑3 s ya me estaba aburrido, paso. (siguió hasta el segundo 3). FUNCIÓN (otros-formatos): ya entregó hoy; la próxima ronda es dentro de 5 h. SOY Daniela «El Crítico Juvenil»: rebelde, espontáneo. PIENSA: Me preocupa ser excluido de la comunidad online del canal antes de que exista. INICIATIVA: Crear un espacio de interacción temprana en redes sociales para atraer a la audiencia juvenil."
+      "tarea": "NO le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": El gancho es medio lento, y en 2‑3 s ya me estaba aburrido, paso. (siguió hasta el segundo 3). ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Crítica: universitaria": {
-      "estado": "libre",
+      "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Me atrapó el misterio del sonido y el dato del iceberg, lo compartiría con mis amigas curiosas. (siguió hasta el segundo 45, lo compartiría). FUNCIÓN (mentor): ya entregó hoy; la próxima ronda es dentro de 17 h. SOY Julieta «La Crítica Académica»: analítica, idealista. PIENSA: Temo que el canal pierda su rigor intelectual antes de haber presentado nada. INICIATIVA: Incluir referencias académicas en la descripción y en los guiones para reforzar el rigor. FUNCIÓN (mentor): ya entregó hoy; la próxima ronda es dentro de 11 h."
+      "tarea": "Le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Me atrapó el misterio del sonido y el dato del iceberg, lo compartiría con mis amigas curiosas. (siguió hasta el segundo 45, lo compartiría). ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. FUNCIÓN (mentor): ya entregó hoy; la próxima ronda es dentro de 11 h."
     },
     "Crítico: joven dominicano": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "NO le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Suena a docu de escuela, me faltó chispa y lenguaje callejero, paso. (siguió hasta el segundo 3). FUNCIÓN (agenda): ya entregó hoy; la próxima ronda es dentro de 17 h. SOY Alejandra «El Crítico Caribeño»: vivaz, cultural. PIENSA: Me preocupa que el canal ignore la diversidad cultural latinoamericana antes de lanzar contenido. INICIATIVA: Buscar colaboraciones con creadores de diferentes países y reflejar esa diversidad en los temas. FUNCIÓN (agenda): ya entregó hoy; la próxima ronda es dentro de 11 h."
+      "tarea": "NO le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Suena a docu de escuela, me faltó chispa y lenguaje callejero, paso. (siguió hasta el segundo 3). ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. FUNCIÓN (agenda): ya entregó hoy; la próxima ronda es dentro de 11 h."
     },
     "Crítica: ama de casa": {
-      "estado": "libre",
+      "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Narración clara y ritmo cómodo, la voz no es monótona y entendí todo sin jerga. (siguió hasta el segundo 40). FUNCIÓN (infantil): ya entregó hoy; la próxima ronda es dentro de 17 h. SOY Natalia «La Crítica del Hogar»: cariñosa, práctica. PIENSA: Temo perder la conexión con mi comunidad de madres si el contenido no habla a nuestras experiencias. INICIATIVA: Incluir ejemplos cotidianos de la vida familiar en los guiones y descripciones. FUNCIÓN (infantil): ya entregó hoy; la próxima ronda es dentro de 11 h."
+      "tarea": "Le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Narración clara y ritmo cómodo, la voz no es monótona y entendí todo sin jerga. (siguió hasta el segundo 40). ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. FUNCIÓN (infantil): ya entregó hoy; la próxima ronda es dentro de 11 h."
     },
     "Crítico: escéptico": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "NO le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Demasiado click‑bait con el “rugido de criatura”, pero la ciencia lo desmiente; me dejó con sensación de exageración. (siguió hasta el segundo 20). FUNCIÓN (guardian): ya entregó hoy; la próxima ronda es dentro de 13 h. SOY Elena «El Escéptico Inquebrantable»: crítico, lógico. PIENSA: Temo ser engañado por información falsa antes de tener un proceso de verificación sólido. INICIATIVA: Establecer una fase de fact‑checking obligatoria antes de cualquier aprobación de video. FUNCIÓN (guardian): ya entregó hoy; la próxima ronda es dentro de 7 h."
+      "tarea": "NO le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Demasiado click‑bait con el “rugido de criatura”, pero la ciencia lo desmiente; me dejó con sensación de exageración. (siguió hasta el segundo 20). ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. FUNCIÓN (guardian): ya entregó hoy; la próxima ronda es dentro de 7 h."
     },
     "Crítico: abuelo": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Historia bien contada, subtítulos claros, me gustó el final y lo compartiría con mis nietos. (siguió hasta el segundo 52, lo compartiría). FUNCIÓN (comunidad): No pude leer los comentarios (YouTube no me dio acceso)."
+      "tarea": "Le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Historia bien contada, subtítulos claros, me gustó el final y lo compartiría con mis nietos. (siguió hasta el segundo 52, lo compartiría). ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. FUNCIÓN (comunidad): No pude leer los comentarios (YouTube no me dio acceso)."
     },
     "Enlace de datos": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "En su puesto, preparando el próximo ciclo. ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. SEGUNDA: Desde el último ciclo, el número de vistas en el video más visto se redujo de 1 (cifra sin respaldo) a 1 073, mientras que el total de vistas del canal cayó de 4 (cifra sin respaldo) a 3 276. La tendencia de los Shorts sigue creciendo, alcanzando 1 036 vistas en el segundo video más popular."
+      "tarea": "En su puesto, preparando el próximo ciclo. ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Coordinador de producción": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "Calendario fijo (hora de República Dominicana): Shorts a las 00:00 y 12:00, largos a las 18:00. Cuida que el subidor programe sin chocar. ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. SEGUNDA: El mejor horario es 20:(cifra sin respaldo) h (hora local), cuando el tráfico de YouTube alcanza su pico. Se recomienda encolar el video de 10 min sobre el Triángulo de las Bermudas, seguido por un Short de (cifra sin respaldo) seg para mantener la retención. SOY Carolina «El Maestro del Tiempo»: organizado, carismático. PIENSA: Me preocupa que el cronograma se desvíe sin siquiera haber empezado a producir. INICIATIVA: Crear un calendario de producción con hitos diarios y asignar responsables para cada tarea."
+      "actividad": "pensando",
+      "tarea": "Calendario fijo (hora de República Dominicana): Shorts a las 00:00 y 12:00, largos a las 18:00. Cuida que el subidor programe sin chocar. ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Jefa de calidad": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "Frenó \"Taos hum\": no pasó la verificación ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. SEGUNDA: El defecto más recurrente es la falta de cierre de la historia; propongo la regla: cada video debe terminar con una pregunta abierta que invite a comentarios y a compartir. SOY Fernanda «La Sentinela»: exigente, empática. PIENSA: Temo que cualquier error pase desapercibido y dañe la reputación del canal antes de lanzar el primer video. INICIATIVA: Implementar una checklist de calidad que se revise antes de cada envío al panel."
+      "actividad": "leyendo",
+      "tarea": "Frenó \"The Taos Hum\": no pasó la verificación ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Cazador de fórmulas": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "Revisó 132 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (47351 vistas/hora). Fórmula: Palabra clave impactante + pregunta intrigante o afirmación misteriosa + elemento de sorpresa/escala ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. SEGUNDA: Estructura gancho: \"¿Sabías que…? (3 s) + datos impactantes + pregunta final. Ejemplo: \"¿Sabías que 3 (cifra sin respaldo) barcos desaparecieron en 50 años? Descúbrelo ahora.\" SOY Daniela «El Alquimista del Video»: curioso, ingenioso. PIENSA: Siento la urgencia de encontrar la fórmula perfecta antes de que el tiempo se agote. INICIATIVA: Probar tres estructuras de video diferentes en borradores internos y evaluar cuál genera mejor gancho."
+      "actividad": "leyendo",
+      "tarea": "Revisó 132 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (41995 vistas/hora). Fórmula: Una frase que combina una pregunta intrigante o una afirmación impactante con un elemento de misterio o sorpre ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Vigía de tendencias": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "Vigila 9 canales por sus feeds públicos de YouTube. ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. SEGUNDA: El contenido de \"historias de desapariciones con pruebas fotográficas\" parece crecer, pues el Short más visto sobre el avión recogía personas del suelo obtuvo 513 vistas, más alto que otros videos de la serie. SOY Julieta «El Radar de Tendencias»: observador, proactivo. PIENSA: Me preocupa perder la pista de los cambios rápidos del mercado mientras aún no tenemos métricas. INICIATIVA: Suscribirme a newsletters de tendencias y crear un informe semanal de insights para el equipo."
+      "actividad": "leyendo",
+      "tarea": "Vigila 9 canales por sus feeds públicos de YouTube. ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Titulista": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. SEGUNDA: 1) \"Triángulo de las Bermudas: 1 (cifra sin respaldo) misterios sin resolver\" 2) \"La zona más peligrosa del Atlántico: 1 (cifra sin respaldo) historias que no entienden la ciencia\" SOY Alejandra «El Titulador de Éxitos»: creativo, persuasivo. PIENSA: Siento la presión de que nuestros títulos pasen desapercibidos entre miles de videos inexistentes. INICIATIVA: Generar una lista de 10 posibles títulos y probarlos con un pequeño grupo interno para medir impacto."
+      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Redactor de descripción": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy? SEGUNDA: Palabras clave al inicio: \"Misterio, Triángulo de las Bermudas, desapariciones, ciencia, historia\". Breve descripción: \"Exploramos 1 (cifra sin respaldo) desapariciones y la evidencia científica que explica el mito del Triángulo de las Bermudas.\" SOY Natalia «El Redactor de Magnetismo»: detallista, narrativo. PIENSA: Temo olvidar los detalles que hacen memorable un video que aún no hemos lanzado. INICIATIVA: Crear una plantilla de descripción que incluya puntos clave de historia, llamado a la acción y hashtags."
+      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
     },
     "Especialista en hashtags": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. SEGUNDA: #TriánguloBermudas #MisteriosMarinos #Desapariciones #CienciaYMisterio #HistoriaOculta SOY Elena «El Maestro de #»: analítico, estratégico. PIENSA: Me inquieta usar etiquetas equivocadas y perder alcance antes de tener datos reales. INICIATIVA: Investigar hashtags de nicho y armar una lista de 20 opciones para probar en los primeros videos."
+      "actividad": "pensando",
+      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Auditor de fuentes": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "Comprobó que cada dato salga de las 0 fuentes del material y las puso en la descripción. ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy? SEGUNDA: Citar el informe oficial de la FAA sobre el incidente de Flight 19 y el estudio de la NOAA sobre fenómenos meteorológicos en la zona. SOY Valentina «El Guardián de las Fuentes»: meticuloso, escéptico. PIENSA: Me preocupa que una fuente poco fiable dañe la credibilidad del canal antes de su lanzamiento. INICIATIVA: Crear un registro de fuentes aprobadas con criterios de fiabilidad y revisarlo antes de cualquier publicación."
+      "actividad": "leyendo",
+      "tarea": "Comprobó que cada dato salga de las 0 fuentes del material y las puso en la descripción. ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
     },
     "Auditor de normas": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "Encontró incumplimientos:  ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. SEGUNDA: La norma de evitar contenido engañoso se cumple; el guion presenta la información de manera objetiva y menciona la falta de evidencia de actividad anómala. SOY Camila «El Inspector de la Legalidad»: riguroso, justo. PIENSA: Temo incumplir una política de la plataforma y recibir sanciones sin haber subido contenido. INICIATIVA: Compilar las normas de la plataforma en un manual breve y compartirlo con todo el equipo."
+      "actividad": "leyendo",
+      "tarea": "Encontró incumplimientos:  ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Revisor de nombres": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "Busca nombres reales de personas en el guion y en lo que escribe la Mesa. Si aparece uno, rechaza. ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy? SEGUNDA: Términos que podrían confundirse con nombres reales: \"Gaddis\", \"Berlitz\", \"Winer\", \"Buckethead\". Se deben aclarar como autores y artistas. SOY Lucía «El Renombrador Creativo»: inventivo, crítico. PIENSA: Me preocupa que el nombre elegido sea confuso o ofensivo antes de tener audiencia que lo critique. INICIATIVA: Realizar una prueba de percepción con cinco colegas y descartar nombres con respuestas negativas."
+      "actividad": "leyendo",
+      "tarea": "Busca nombres reales de personas en el guion y en lo que escribe la Mesa. Si aparece uno, rechaza. ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
     },
     "Revisor de ganchos": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "Espera un guion aprobado para medir el gancho. ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy? SEGUNDA: Puntuación 7/10. Para subir a 9, añadir un elemento visual impactante y una pregunta más directa al final del gancho. SOY Sofía «El Gancho de la Atención»: persuasivo, analítico. PIENSA: Temo que el gancho no enganche y el video sea abandonado rápidamente, aunque aún no hay video. INICIATIVA: Escribir tres versiones de gancho para cada guion y elegir la que genere mayor curiosidad en una encuesta interna."
+      "actividad": "pensando",
+      "tarea": "Espera un guion aprobado para medir el gancho. ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
     },
     "Escenógrafo": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "Eligió los fondos de 0 escenas del catálogo; 0 no tenían imagen propia. ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. SEGUNDA: 1) Fondo de un mapa del Atlántico con luces de radar; 2) Fondo de un cielo nocturno con auroras polares simuladas. SOY Mariana «El Arquitecto Visual»: visual, práctico. PIENSA: Me inquieta que el set no transmita la atmósfera deseada cuando finalmente lo construyamos. INICIATIVA: Diseñar bocetos de set con referencias visuales y validar con el guionista antes de la producción."
+      "actividad": "pensando",
+      "tarea": "Eligió los fondos de 0 escenas del catálogo; 0 no tenían imagen propia. ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Pintor de imágenes": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Todas las escenas encontraron imagen en el catálogo. ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy? SEGUNDA: Pixel art de un barco desapareciendo en la niebla, con luces de faro y una silueta de un avión en el fondo. SOY Isabella «El Maestro de la Paleta»: artístico, perfeccionista. PIENSA: Temo que mis ilustraciones no reflejen la esencia del contenido que aún no existe. INICIATIVA: Crear moodboards de estilo visual basados en la temática del guion y compartirlos para alineación."
+      "tarea": "Todas las escenas encontraron imagen en el catálogo; ensayo composiciones para los próximos temas. ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
     }
   },
   "jefa": {
-    "mensaje": "La oficina falló en su último ciclo: Groq no respondió tras 8 intentos (límite de Groq (429)). ORDEN DE JULES (nivel 5/5): Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. JEFA: Falló el ciclo. Quiero la causa y el arreglo antes de las próximas 11 h.",
-    "horasParaProximoCiclo": 11
+    "mensaje": "La oficina falló en su último ciclo: Groq no respondió tras 4 intentos (límite de Groq (429)). Respaldos: Cerebras/gpt-oss-120b: JSON roto; Gemini/gemini-2.5-flash: 404; Gemini/gemini-flash-latest: ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. JEFA: Falló el ciclo. Quiero la causa y el arreglo antes de las próximas 2 h.",
+    "horasParaProximoCiclo": 2
   }
 }
