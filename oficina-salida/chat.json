@@ -1,5 +1,21 @@
 [
   {
+    "id": "mws8tkgtj",
+    "de": "jules",
+    "texto": "Si subimos un video largo diario (10 min promedio) y mantuvemos los 2 shorts de 1 min cada 3 h, en los 22 días restantes consumiríamos 22×10 = 220 min de GitHub Actions para los largos y 22×2 = 44 min para los shorts, sumando 264 min. Esto queda muy por debajo del límite de 2 000 min mensuales (y de los 1 800 min gratuitos), por lo que no habría problema de recursos.",
+    "fecha": "2026-11-22T19:41:54.247Z",
+    "orden": "Revisa el calendario y confirma que el equipo esté listo para producir 1 largo diario sin alterar el formato ni la calidad.",
+    "nivel": 4,
+    "canal": "lqns"
+  },
+  {
+    "id": "mws8tkgtt",
+    "de": "tu",
+    "texto": "Y cuánto usarían si se subiera un largo diario cuánto van a necesitar",
+    "fecha": "2026-11-22T19:41:35.521Z",
+    "canal": "lqns"
+  },
+  {
     "id": "mws8r8kqj",
     "de": "jules",
     "texto": "No podemos cambiar la frecuencia del video largo a diario sin exceder los recursos y sin tu autorización explícita. Mantendremos el cronograma vigente: un video largo 16:9 los días impares a las 12:23 UTC y un Short cada 3 horas.",
