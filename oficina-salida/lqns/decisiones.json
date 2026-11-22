@@ -1,6 +1,13 @@
 {
   "decisiones": [
     {
+      "id": "iajam33",
+      "texto": "Mantén la curiosidad como eje central: utiliza títulos con preguntas o frases provocativas y añade emojis para captar la atención. Usa la numeración de series para crear expectativa y retención, pero evita episodios demasiado específicos que no conecten con un público amplio. Publica en fechas con menor saturación y añade una llamada a la acción clara en cada título. Tarea: Revisa los 10 videos co",
+      "categoria": "Mentor",
+      "decision": "si",
+      "fecha": "2026-11-22T15:07:02.222Z"
+    },
+    {
       "id": "i14jvtza",
       "texto": "Sabías que [CIFRA] libros desaparecieron de una biblioteca sin dejar rastro | Una estantería vacía con una luz parpadeante",
       "categoria": "Gancho",
