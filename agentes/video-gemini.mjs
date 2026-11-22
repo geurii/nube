@@ -51,18 +51,21 @@ export const revisarVideo = async ({ruta, key, contexto = ''}) => {
   const prompt = `Eres un revisor técnico de videos cortos verticales para TikTok, YouTube Shorts e Instagram. MIRA y ESCUCHA este video completo y revísalo con rigor profesional. ${contexto}\nResponde SOLO con JSON: {"gancho_3s": {"nota": 0-10, "comentario": "qué se ve y qué se oye en los primeros 3 segundos"}, "audio": {"nota": 0-10, "comentario": "voz, ritmo, volumen, música"}, "subtitulos": {"legibles": true|false, "tapados_o_cortados": true|false, "comentario": "..."}, "imagen": {"nota": 0-10, "defectos": ["borroso, distorsionado, plano, repetitivo, texto cortado, etc."]}, "ritmo": {"nota": 0-10, "comentario": "¿cambia lo que se ve cada pocos segundos?"}, "defectos_graves": [SOLO fallos de fondo, lista vacía si no hay], "nota_general": 0-10, "recomendacion": "subir" | "no subir", "por_que": "una frase"}
 REGLA DE DEFECTOS GRAVES: escribe en "defectos_graves" ÚNICAMENTE fallos de fondo que impiden publicar: (1) audio ausente, cortado o ininteligible; (2) subtítulos tapados, cortados o ilegibles; (3) imagen negra, congelada, rota o con texto cortado; (4) imágenes que NO tienen relación alguna con lo que se dice (pantallas abstractas o fondos genéricos que no muestran el tema); (5) contenido peligroso o con datos claramente falsos. NO escribas ahí opiniones de calidad, estilo, ritmo, gancho, originalidad ni gustos: de eso se encargan otros 8 revisores. Si no hay fallos de fondo, "defectos_graves" va vacío y "recomendacion" es "subir".`;
   const intentos = [];
+  const hasta = Date.now() + 8 * 60 * 1000; // tope duro: la revisión del video nunca espera más de 8 minutos
+  const queda = () => hasta - Date.now();
   for (const modelo of MODELOS) {
     for (let i = 1; i <= 4; i++) {
+      if (queda() < 10000) return {error: `se acabó el tiempo asignado (8 min). ${intentos.join(' | ')}`};
       try {
         const r = await fetch(`${BASE}/v1beta/interactions`, {
-          method: 'POST', headers: {'x-goog-api-key': key, 'Content-Type': 'application/json'}, signal: AbortSignal.timeout(300000),
+          method: 'POST', headers: {'x-goog-api-key': key, 'Content-Type': 'application/json'}, signal: AbortSignal.timeout(Math.max(10000, Math.min(300000, queda()))),
           body: JSON.stringify({model: modelo, input: [video, {type: 'text', text: prompt}]}),
         });
         const cuerpo = await r.text();
         if (r.status === 429) { await dormir(((Number(/retry in (\d+)/i.exec(cuerpo)?.[1] ?? 20)) + 2) * 1000); continue; }
         if (!r.ok) {
           // 500/503/504 = Gemini saturado, es temporal: se espera y se reintenta antes de pasar al otro modelo
-          if ([500, 502, 503, 504].includes(r.status) && i < 4) { await dormir(i * 30000); continue; }
+          if ([500, 502, 503, 504].includes(r.status) && i < 4) { await dormir(Math.max(0, Math.min(queda() - 10000, i * 30000))); continue; }
           intentos.push(`${modelo}: ${r.status} ${cuerpo.replaceAll(key, '***').slice(0, 140)}`); break;
         }
         const txt = textoDe(JSON.parse(cuerpo));
