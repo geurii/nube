@@ -1,12 +1,12 @@
 {
-  "fecha": "2026-11-22T03:08:21.673Z",
-  "total": 2656,
-  "promedio": 177,
-  "queFunciono": "Los videos con más vistas comparten títulos que hacen preguntas o afirmaciones impactantes sobre pingüinos y situaciones extremas, y se publicaron en fechas cercanas (20‑21 noviembre 2026).",
+  "fecha": "2026-11-22T03:26:55.729Z",
+  "total": 2775,
+  "promedio": 185,
+  "queFunciono": "Los videos con más vistas comparten títulos que incluyen palabras clave llamativas y curiosas (p. ej., \"Sabías que\", \"El avión que\", \"Eligieron a dos hombres\") y se publican en fechas de alta actividad (últimos días de la semana, 20/11). Además, los títulos están estructurados en series (Parte 1/3, ",
   "porQueFallaron": [
-    "Poca retención media (24.8 % y 29.9 %) indica que el contenido no mantiene la atención; datos de retención confirman baja duración media (11 s y 14 s).",
-    "Los títulos de los videos con pocas vistas son más genéricos o menos llamativos (ej. “🔊 El enigma del Bloop: el rugido del hielo”) y se publicaron en fechas con menor actividad (14‑15 noviembre).",
-    "La falta de aumento de suscriptores (+0 en la mayoría) sugiere que el contenido no genera engagement ni retención de audiencia."
+    "Los videos con pocas vistas presentan títulos muy largos o con menos palabras clave atractivas, como \"🔊 El enigma del Bloop: el rugido del hielo\" y \"Los \"jóvenes genios\" que terminaron acusados de fraude: ¿estafadores o genios?\", lo que reduce la atracción in",
+    "Los videos con menor rendimiento también tienen retención media muy baja (por ejemplo, 19 % en \"Operación Coldfeet\" y 24.8 % en \"El avión que recogía personas del suelo\"), lo que indica que el contenido no retiene al espectador. Evidencia: retención media y du",
+    "Los videos con pocas vistas se publicaron en fechas con menor tráfico potencial (por ejemplo, 14 / 15 / 21 de noviembre) y no forman parte de una serie visible, lo que reduce la expectativa de seguimiento. Evidencia: fechas de publicación y ausencia de numerac"
   ],
   "noSePuedeSaber": [],
   "reglas": []

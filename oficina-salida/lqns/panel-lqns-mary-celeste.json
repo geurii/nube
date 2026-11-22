@@ -1,0 +1,105 @@
+{
+  "fecha": "2026-11-22T03:27:15.192Z",
+  "id": "lqns-mary-celeste",
+  "aprobado": true,
+  "resumen": "[Garantía de publicación activa] Gemini (gemini-4-hydrogen) lo vio: 6/10, subir. 5 de 8 aprobaron, 5 pasaron los primeros 3 segundos, 2 lo compartirían.",
+  "mejora": "Mejorar el gancho visual y auditivo en los primeros 3 s con una imagen impactante y una frase más intrigante, y usar gráficos más profesionales (incluyendo la ñ correcta) para evitar que la audiencia abandone al instante.",
+  "gemini": {
+    "modelo": "gemini-4-hydrogen",
+    "gancho_3s": {
+      "nota": 6,
+      "comentario": "En los primeros 3 segundos se ve un fondo azul con signos de interrogación, un personaje animado con gafas y lupa, y una tarjeta roja con el año 1872, mientras una voz en off pregunta si sabías sobre el bergantín encontrado a la deriva en 1872."
+    },
+    "audio": {
+      "nota": 7,
+      "comentario": "Voz sintética clara y bien modulada con buen volumen respecto a la música de misterio y efectos de transición; pronuncia 'Mary Celeste' en inglés pero es totalmente inteligible."
+    },
+    "subtitulos": {
+      "legibles": true,
+      "tapados_o_cortados": false,
+      "comentario": "Subtítulos grandes en blanco con resaltado en amarillo, bien centrados en la zona inferior y fáciles de leer en todo momento."
+    },
+    "imagen": {
+      "nota": 5,
+      "defectos": [
+        "gráficos 2D muy simples y planos",
+        "fondos repetitivos en el tramo final",
+        "falta la letra ñ en 'ANO' (1872) y la palabra 'ALCOHO' aparece incompleta en el barril"
+      ]
+    },
+    "ritmo": {
+      "nota": 6,
+      "comentario": "Al principio alterna tarjetas de datos e íconos (barriles, documentos, mar) cada pocos segundos, aunque en los últimos 15 segundos la imagen queda prácticamente estática sobre el mismo fondo nocturno."
+    },
+    "defectos_graves": [],
+    "nota_general": 6,
+    "recomendacion": "subir",
+    "por_que": "El video no presenta fallos técnicos graves de audio, subtítulos ni relación visual, aunque sus gráficos son básicos y tiene erratas tipográficas menores."
+  },
+  "votos": [
+    {
+      "quien": "Crítico: adolescente",
+      "pasa3": false,
+      "sigueHasta": 3,
+      "leGusto": false,
+      "compartiria": false,
+      "comentario": "El gancho es aburrido y la animación 2D se ve de paquete barato, paso al siguiente."
+    },
+    {
+      "quien": "Crítica: universitaria",
+      "pasa3": true,
+      "sigueHasta": 25,
+      "leGusto": true,
+      "compartiria": true,
+      "comentario": "Me atrapó el dato de la fecha y la pista del fraude del capitán, lo compartiría con mis amigas curiosas."
+    },
+    {
+      "quien": "Crítico: padre trabajador",
+      "pasa3": true,
+      "sigueHasta": 40,
+      "leGusto": true,
+      "compartiria": false,
+      "comentario": "El video entrega un dato concreto rápido, pero la parte visual es demasiado simple para volver a verlo."
+    },
+    {
+      "quien": "Crítico: escéptico",
+      "pasa3": false,
+      "sigueHasta": 4,
+      "leGusto": false,
+      "compartiria": false,
+      "comentario": "Se siente click‑bait: promete un misterio y termina con una historia de estafa ya conocida."
+    },
+    {
+      "quien": "Crítica: fan del misterio",
+      "pasa3": true,
+      "sigueHasta": 50,
+      "leGusto": true,
+      "compartiria": true,
+      "comentario": "Me gusta que incluya la revelación del capitán hundiendo el barco, aunque el gráfico de 2D es flojo."
+    },
+    {
+      "quien": "Crítica: ama de casa",
+      "pasa3": true,
+      "sigueHasta": 35,
+      "leGusto": true,
+      "compartiria": false,
+      "comentario": "La voz es clara y el ritmo está bien, pero los errores tipográficos y los dibujos planos me sacan de la inmersión."
+    },
+    {
+      "quien": "Crítico: joven dominicano",
+      "pasa3": false,
+      "sigueHasta": 5,
+      "leGusto": false,
+      "compartiria": false,
+      "comentario": "Suena a documental de colegio, sin chispa ni slang, paso rápido."
+    },
+    {
+      "quien": "Crítico: abuelo",
+      "pasa3": true,
+      "sigueHasta": 45,
+      "leGusto": true,
+      "compartiria": false,
+      "comentario": "Historia clara y subtítulos legibles, pero los gráficos simples y la falta de la ñ me hacen perder un poco la atención."
+    }
+  ]
+}

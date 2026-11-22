@@ -1,5 +1,22 @@
 [
   {
+    "id": "mwra05q186nh",
+    "fecha": "2026-11-22T03:27:15.193Z",
+    "canal": "lqns",
+    "tipo": "reporte",
+    "titulo": "El panel aprobó: ¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️",
+    "texto": "[Garantía de publicación activa] Gemini (gemini-4-hydrogen) lo vio: 6/10, subir. 5 de 8 aprobaron, 5 pasaron los primeros 3 segundos, 2 lo compartirían. Mejora sugerida: Mejorar el gancho visual y auditivo en los primeros 3 s con una imagen impactante y una frase más intrigante, y usar gráficos más profesionales (incluyendo la ñ correcta) para evitar que la audiencia abandone al instante."
+  },
+  {
+    "id": "mwr9zppzn8cw",
+    "fecha": "2026-11-22T03:26:54.455Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "listo",
+    "titulo": "Video listo: ¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️",
+    "texto": "Se renderizó \"¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️\" para Lo Que No Sabías (47 MB). Descárgalo en GitHub > Actions > Produccion > artefacto \"video-lqns-mary-celeste\". Falta subirlo a YouTube."
+  },
+  {
     "id": "mwr9bf2ncabj",
     "fecha": "2026-11-22T03:08:00.911Z",
     "canal": "lqns",

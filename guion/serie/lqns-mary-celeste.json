@@ -1,0 +1,72 @@
+{
+  "titulo": "¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-DO-EmilioNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-mary-celeste.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "publicacion": {
+    "titulo": "¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️",
+    "descripcion": "Un misterio del siglo XIX que aún intriga. Descubre el dato que pocos conocen.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://es.wikipedia.org/wiki/Mary_Celeste · https://en.wikipedia.org/wiki/Mary_Celeste\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#MaryCeleste #misterio"
+  },
+  "estado": "aprobado",
+  "editor": {
+    "puntaje": 5,
+    "critica": "El gancho es demasiado largo y confuso. La historia se extiende sin ritmo y el cierre suena forzado. Falta una revelación impactante en el momento adecuado."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que el bergantín encontrado a la deriva el 4 de diciembre de 1872 llevaba el nombre Mary Celeste?",
+      "fondo": [
+        "pixelmisterio",
+        "pixelcifra:1872|ANO|AZUL"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El barco había zarpado de Nueva York el 7 de noviembre rumbo a Génova, con abundantes provisiones y su cargamento de alcohol casi intacto.",
+      "fondo": [
+        "pixelbodega",
+        "pixelcifra:7 NOVIEMBRE|SALIDA|TEAL"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "La última entrada del cuaderno de bitácora data de diez días antes. Cuando el Dei Gratia lo avistó, las velas estaban parcialmente desplegadas y faltaba el bote salvavidas.",
+      "fondo": [
+        "pixeldocs",
+        "pixelcifra:10 DIAS|BITACORA|ROJO"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Sin embargo, la tripulación había desaparecido sin dejar rastro, dejando el misterio sin resolver.",
+      "fondo": [
+        "pintado:mary-celeste-3a",
+        "pintado:mary-celeste-3b"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: en 1885 el capitán hundió cerca de Haití para estafar a la aseguradora.",
+      "fondo": [
+        "pixelcifra:1885|HUNDIMIENTO|ORO"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "El misterio del Mary Celeste quedó sin explicación, intrigando a investigadores. ¿Te atreves a descubrir más? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pintado:mary-celeste-5a",
+        "pintado:mary-celeste-5b"
+      ]
+    }
+  ]
+}

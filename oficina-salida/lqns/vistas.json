@@ -1,8 +1,8 @@
 {
-  "fecha": "2026-11-22T03:05:40.427Z",
+  "fecha": "2026-11-22T03:26:54.721Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 2656,
-  "ganadasDesdeElUltimoCiclo": 26,
+  "total": 2775,
+  "ganadasDesdeElUltimoCiclo": 119,
   "videos": [
     {
       "id": "5BIAOJmE-dk",
@@ -14,7 +14,7 @@
       "id": "Nd2x5UMBiLM",
       "titulo": "Sabías que la acusaron de fraude un año después de elegirla 🚨",
       "publicado": "2026-11-21T16:00:33+00:00",
-      "vistas": 9
+      "vistas": 10
     },
     {
       "id": "yp4bUZPqnS4",
@@ -32,19 +32,19 @@
       "id": "Md9Rrt9EiTM",
       "titulo": "Sabías que un banco pagó 175 millones por clientes que no existían 👻🏦",
       "publicado": "2026-11-21T01:48:24+00:00",
-      "vistas": 86
+      "vistas": 103
     },
     {
       "id": "ujvVWAyrSUg",
       "titulo": "Sabías que tres hombres caminaron en plena noche polar por 3 huevos de pingüino 🥚 (Parte 3/3)",
       "publicado": "2026-11-20T17:30:34+00:00",
-      "vistas": 365
+      "vistas": 458
     },
     {
       "id": "KURWolBJszo",
       "titulo": "Sabías que mataron 2 millones de pingüinos... y no para comérselos 😳 (Parte 2/3)",
       "publicado": "2026-11-20T16:30:10+00:00",
-      "vistas": 118
+      "vistas": 126
     },
     {
       "id": "Wj-zpd2iorA",
@@ -175,6 +175,10 @@
     {
       "fecha": "2026-11-22T03:05:40.426Z",
       "total": 2656
+    },
+    {
+      "fecha": "2026-11-22T03:26:54.721Z",
+      "total": 2775
     }
   ]
 }

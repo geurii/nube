@@ -1,15 +1,15 @@
 {
   "plan": [
-    "Crear serie de 5 episodios sobre fenómenos históricos enigmáticos con alta documentación: Departamento de Investigación y Guion: Alcanzar 5,000 vistas en cada episodio antes del 13 de diciembre",
-    "Desarrollar contenido de 3 episodios sobre casos curiosos sin nombres reales, con tono de misterio y revelaciones entre 65% y 75%: Departamento de Producción y Edición: Lograr 3,500 vistas en cada episodio antes del 13 de diciembre",
-    "Optimizar estrategia de SEO y promoción en redes sociales para los nuevos episodios, enfocándose en palabras clave de misterio y fenómenos raros: Departamento de Marketing y Monetización: Incrementar el CTR en un 20% y generar ingresos publ"
+    "1) Crear una serie de 5 episodios sobre artefactos históricos enigmáticos con un enfoque documental y narrativa de misterio. Responsable: Ana Torres (Producción). Meta: generar al menos 3,000 vistas por episodio y monetizar 30% de ingresos ",
+    "2) Desarrollar un episodio interactivo sobre fenómenos paranormales no terroríficos, integrando datos reales y testimonios anónimos. Responsable: Luis Méndez (Guion y Efectos). Meta: alcanzar 2,500 vistas y lograr 25% de ingresos por patroc",
+    "3) Lanzar un mini-documental de 3 partes sobre casos curiosos con documentación exhaustiva, optimizado para SEO y redes sociales. Responsable: Carla Ruiz (Marketing y Distribución). Meta: superar 4,000 vistas en total y monetizar 35% de los"
   ],
   "ganchos": [
-    "Sabías que [CIFRA] personas desaparecieron sin dejar rastro | Imagen: mapa antiguo con puntos rojos dispersos",
-    "Sabías que [CIFRA] segundos se necesitan para que un objeto desaparezca en la noche | Imagen: reloj de arena con luz tenue y sombras misteriosas",
-    "Sabías que [CIFRA] objetos históricos fueron encontrados en un sótano sin luz | Imagen: estantería oscura con luces parpadeantes",
-    "Sabías que [CIFRA] experimentos fallidos se guardan en una caja sellada | Imagen: caja metálica antigua con cerradura oxidada",
-    "Sabías que [CIFRA] teorías conspirativas se basan en un único documento | Imagen: papel con anotaciones y una lupa sobre él"
+    "Sabías que [CIFRA] personas han encontrado [TEMA] sin dejar rastro? | Imagen de un mapa antiguo con un punto rojo resaltado",
+    "Sabías que [CIFRA] segundos de silencio revelan el secreto de [TEMA]? | Imagen de un reloj de arena con la arena formando una figura misteriosa",
+    "Sabías que [CIFRA] capas de hielo esconden [TEMA] que desafía la lógica? | Imagen de un glaciar con una sombra que parece una figura humana",
+    "Sabías que [CIFRA] años de investigación no lograron descifrar el misterio de [TEMA]? | Imagen de un laboratorio con tubos de ensayo y una luz parpadeante",
+    "Sabías que [CIFRA] objetos de [TEMA] están escondidos en la ciudad y nadie los ha visto? | Imagen de una calle iluminada con luces de neón que forman un patrón enigmático"
   ],
   "mejorasGuion": [
     "Incorporar un gancho más impactante al inicio, por ejemplo: \"Sabías que una ola de melaza arrasó Boston y dejó 21 muertos en un solo instante?\" para captar la atención inmediatamente.",
@@ -17,19 +17,19 @@
     "Añadir un cierre más intrigante que invite a la audiencia a descubrir más misterios, como: \"¿Te imaginas quedar atrapado en una marea de melaza? Descubre lo que ocurrió después en nuestro próximo episodio. Suscríbete y a"
   ],
   "temas": [
-    "The Enfield Poltergeist",
-    "The Mothman Prophecies",
-    "The Phoenix Lights",
+    "The Wow! Signal",
     "The Green Children of Woolpit",
-    "The Antikythera Mechanism"
+    "The Antikythera Mechanism",
+    "The Nazca Lines",
+    "The Tunguska Event"
   ],
   "titulos": [
-    "Sabías que [acción sorprendente] 🐧 (Parte X/Y)",
-    "El [objeto/vehículo] que [acción] 🤯 (Parte X/Y)",
-    "Sabías que [número] [personas] [acción] 🥚 (Parte X/Y)",
-    "Eligieron a [número] hombres para [acción] 🧊 (Parte X/Y)"
+    "Sabías que [verbo] [objeto] (Parte [X]/[Y])",
+    "El [sustantivo] que [verbo] [objeto] (Parte [X]/[Y])",
+    "Eligieron a [número] [sustantivo] para [verbo] [objeto] (Parte [X]/[Y])",
+    "Sabías que [número] [plural] [verbo] [objeto] (Parte [X]/[Y])"
   ],
-  "fecha": "2026-11-22T03:08:21.817Z",
+  "fecha": "2026-11-22T03:27:15.397Z",
   "iniciativas": [
     "Valentina (Directora de contenido): Definir una guía de estilo clara que el equipo pueda seguir desde el primer video.",
     "Carolina (Coordinador de producción): Crear un calendario de producción con hitos diarios y asignar responsables para cada tarea.",
