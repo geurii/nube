@@ -1,6 +1,27 @@
 {
   "decisiones": [
     {
+      "id": "i15y4sbt",
+      "texto": "Lo que [número] [personas] se llevaron de una [lugar] fantasma 🕵️ (Parte [n]/[total])",
+      "categoria": "Título",
+      "decision": "si",
+      "fecha": "2026-11-22T19:23:40.374Z"
+    },
+    {
+      "id": "ii61fyr",
+      "texto": "Sabías que un [institución] pagó [cantidad] por [objeto] 👻🏦",
+      "categoria": "Título",
+      "decision": "si",
+      "fecha": "2026-11-22T19:23:32.229Z"
+    },
+    {
+      "id": "iti8lis",
+      "texto": "Sabías que [número] [objeto]… y [consecuencia] 😳 (Parte [n]/[total])",
+      "categoria": "Título",
+      "decision": "no",
+      "fecha": "2026-11-22T19:23:28.115Z"
+    },
+    {
       "id": "i7jj2o",
       "texto": "Sabías que [acción] [objeto] en [lugar] 🐧 (Parte [n]/[total])",
       "categoria": "Título",
