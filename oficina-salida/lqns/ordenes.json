@@ -1,5 +1,10 @@
 [
   {
+    "fecha": "2026-11-22T16:06:24.436Z",
+    "orden": "Revisar calendario y asignar tareas para cumplir los 2 shorts diarios.",
+    "nivel": 5
+  },
+  {
     "fecha": "2026-11-22T16:03:05.120Z",
     "orden": "Reúnete hoy a las 10 a.m. y asigna tareas de inmediato.",
     "nivel": 5
@@ -42,11 +47,6 @@
   {
     "fecha": "2026-11-22T03:58:26.566Z",
     "orden": "Todos: revisen guiones y miniaturas de los próximos 2 videos, incluyan ganchos claros en los primeros 3 segundos y usen imágenes directamente relacionadas con el tema; entreguen versiones finales a las 12:23 a.m. y suban ambos antes de las 14:00 h de hoy.",
-    "nivel": 5
-  },
-  {
-    "fecha": "2026-11-22T03:56:31.446Z",
-    "orden": "Todos: revisen los últimos 3 Shorts, extraigan métricas de retención, rediseñen miniaturas y guiones con ganchos claros, y suban versiones mejoradas antes de las 14:00 h de hoy.",
     "nivel": 5
   }
 ]
