@@ -186,13 +186,16 @@ export const principal = async () => {
   // con token de GitHub y repo público: se guarda ahí (permanente, últimos 15); si no, archivo temporal de 72 h sin ninguna clave
   let usaRepo = Boolean(token && repo);
   let pub;
+  const limpio = (e) => quitarClaves(String(e.message ?? e), apiKey, token, bufferKey).replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 140);
+  let motivoRepo = usaRepo ? '' : (token ? 'falta configurar el repositorio público de videos' : 'falta el secreto FB_VIDEOS_TOKEN');
   try {
     pub = usaRepo ? await subirAlRepoPublico({token, repo, archivo, nombre: `${ID}.mp4`}) : await subirATemporal({archivo, nombre: `${ID}.mp4`});
   } catch (e) {
-    console.log('Redes: la copia pública falló (' + quitarClaves(String(e.message ?? e), apiKey, token, bufferKey).slice(0, 160) + '); pruebo con el archivo temporal.');
+    motivoRepo = usaRepo ? `el repositorio público "${repo}" no aceptó el video: ${limpio(e)}` : '';
+    console.log('Redes: la copia pública falló (' + limpio(e) + '); pruebo con el archivo temporal.');
     usaRepo = false;
     try { pub = await subirATemporal({archivo, nombre: `${ID}.mp4`}); }
-    catch (e2) { alertar(`no pude alojar el video para que las redes lo descarguen: ${quitarClaves(String(e2.message ?? e2), apiKey, token, bufferKey).slice(0, 160)}`); return {omitido: 'sin alojamiento'}; }
+    catch (e2) { alertar(`${motivoRepo || 'sin repositorio público'}; y el servicio temporal bloqueó a GitHub (${limpio(e2)}).`); return {omitido: 'sin alojamiento'}; }
   }
 
   const resultados = {};
