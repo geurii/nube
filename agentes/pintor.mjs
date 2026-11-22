@@ -11,7 +11,7 @@ const HEX = /^#[0-9a-fA-F]{6}$/;
 const n = (v, d, a, b) => { const x = Number(v); return Number.isFinite(x) ? Math.min(b, Math.max(a, x)) : d; };
 const rampa = (v, min = 2, max = 6) => (Array.isArray(v) ? v.filter((x) => typeof x === 'string' && HEX.test(x)).slice(0, max) : []).length >= min ? v.filter((x) => typeof x === 'string' && HEX.test(x)).slice(0, max) : null;
 export const TIPOS = new Set([
-  'estrellas', 'astro', 'resplandor', 'montanas', 'suelo', 'agua', 'niebla', 'arbol', 'edificio', 'circulo', 'rect', 'pergamino', 'texto',
+  'estrellas', 'astro', 'resplandor', 'montanas', 'suelo', 'agua', 'niebla', 'arbol', 'edificio', 'circulo', 'rect', 'pergamino',
   'poligono', 'linea', 'nubes', 'olas', 'particulas', 'rayos', 'barco', 'pez', 'roca', 'hielo', 'duna', 'algas', 'sargazo', 'faro', 'silueta', 'ovni', 'explosion', 'ciudad', 'bosque',
 ]);
 
@@ -60,7 +60,7 @@ FORMAS CLÁSICAS:
 - {"t":"montanas","y":0.8,"alto":0.28,"rampa":["#a","#b","#c"],"semilla":3,"picos":3}   {"t":"suelo","y":0.85,"rampa":[...]}   {"t":"agua","y":0.75,"rampa":[...]}
 - {"t":"arbol","x":0.2,"y":0.95,"h":0.22,"rampa":[...]}   {"t":"edificio","x":0.5,"w":0.2,"h":0.4,"y":0.85,"color":"#1d2140","ventanas":true}
 - {"t":"circulo","x":0.5,"y":0.5,"r":0.08,"rampa":[...]} (esfera sombreada)   {"t":"rect","x":0.3,"y":0.5,"w":0.2,"h":0.1,"color":"#5a4a3a"}
-- {"t":"pergamino","x":0.12,"y":0.2,"w":0.76,"h":0.5,"lineas":14,"simbolos":true}   {"t":"texto","s":"MÁX 22 LETRAS","x":0.5,"y":0.1,"tam":22,"color":"#ffd27a"}
+- {"t":"pergamino","x":0.12,"y":0.2,"w":0.76,"h":0.5,"lineas":14,"simbolos":true}
 FORMAS PROFESIONALES (con sombreado, contorno y movimiento propios; "color" = el tono base, el motor hace la rampa):
 - {"t":"nubes","y":0.2,"n":4,"color":"#7a6aa8"}   {"t":"olas","y":0.62,"alto":0.38,"color":"#1d4f86","espuma":true} (mar animado con espuma)
 - {"t":"sargazo","y":0.7,"n":60,"color":"#8a7a2a"} (algas flotando en la superficie)   {"t":"algas","n":14,"y":1,"color":"#2f7a4a"} (algas que se mecen desde el fondo)
@@ -69,9 +69,10 @@ FORMAS PROFESIONALES (con sombreado, contorno y movimiento propios; "color" = el
 - {"t":"roca","x":0.8,"y":1,"w":0.4,"h":0.14,"color":"#4a4f5c","semilla":2}   {"t":"hielo","x":0.5,"y":0.78,"w":0.3,"h":0.2,"color":"#b9e3ff"} (iceberg)   {"t":"duna","y":0.8,"alto":0.12,"color":"#c9a063","semilla":2}
 - {"t":"faro","x":0.3,"y":0.82,"h":0.34} (con rayo que gira)   {"t":"ovni","x":0.5,"y":0.3,"r":0.1}   {"t":"explosion","x":0.5,"y":0.46,"r":0.2}
 - {"t":"ciudad","y":0.85,"alto":0.3,"color":"#1f2442"} (horizonte de edificios con ventanas)   {"t":"bosque","y":0.88,"n":14,"color":"#1c4a38"} (pinos)
-- {"t":"silueta","x":0.5,"y":0.8,"h":0.22,"color":"#10121f"} (persona de espaldas o de perfil, SIN cara)
+- {"t":"silueta","x":0.5,"y":0.8,"h":0.22,"color":"#10121f"} (persona de espaldas, SIN cara). ÚSALA SOLO si la frase habla de una persona; NUNCA para representar una ola, un objeto, un animal o un lugar.
 - {"t":"particulas","tipo":"polvo"|"burbujas"|"nieve"|"brasas","n":50}   {"t":"rayos","x":0.1,"color":"#ffd9a0","alpha":0.1} (rayos de luz)
-FORMAS LIBRES para lo que no esté arriba (una botella, una casa, una torre, un cofre, un barco hundido):
+REGLA DE ORO: el cuadro debe mostrar EL OBJETO O EL HECHO que dice la frase, nunca un sustituto. NO escribas texto en el cuadro (los subtítulos ya lo hacen). Si lo que se dice no está en la lista de formas, DIBÚJALO con "poligono" y "linea" (varios polígonos juntos): por ejemplo una ola de melaza = una masa marrón oscura (#3b2314 a #7a4a22) de cresta curva y alta, con 8 a 14 puntos, avanzando sobre edificios; un tanque = rectángulo alto gris con remaches (líneas); un mecanismo de bronce = varios círculos dentados verdosos (#6b8f71) superpuestos.
+FORMAS LIBRES para lo que no esté arriba (una botella, una casa, una torre, un cofre, un barco hundido, una ola de líquido espeso):
 - {"t":"poligono","pts":[[0.4,0.5],[0.6,0.5],[0.62,0.7],[0.38,0.7]],"color":"#5a4a3a","luz":"izq"} (relleno sombreado con contorno; usa 4 a 14 puntos)
 - {"t":"linea","pts":[[0.2,0.5],[0.4,0.45],[0.6,0.5]],"grosor":0.006,"color":"#2a2a2a"} (cables, mástiles, grietas)
 ZONAS RESERVADAS (encima va el personaje, el título y los subtítulos): NO pongas nada importante en la esquina superior derecha (x>0.55 e y<0.3: ahí va el personaje) ni en la franja y entre 0.66 y 0.8 (subtítulos). El sujeto principal va entre y=0.30 y y=0.62, a la izquierda o al centro. Deja la parte de abajo (y>0.7) poco cargada.`;
