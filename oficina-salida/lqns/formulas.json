@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-22T00:55:41.106Z",
+  "actualizado": "2026-11-22T01:10:30.765Z",
   "canalesLeidos": 9,
   "videosRevisados": 132,
   "mejores": [
@@ -8,41 +8,52 @@
       "idioma": "en",
       "titulo": "Why Is Antarctica Closed? The Operation Highjump Mystery",
       "publicado": "2026-11-20T01:00:08.000Z",
-      "vistas": 1998288,
-      "vistasPorHora": 41696
+      "vistas": 2002225,
+      "vistasPorHora": 41563
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "Always open your fan mail",
       "publicado": "2026-11-21T19:00:32.000Z",
-      "vistas": 186821,
-      "vistasPorHora": 31563
+      "vistas": 194540,
+      "vistasPorHora": 31550
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "How Skydiving Changed Will Smith's Life!",
       "publicado": "2026-11-17T17:00:07.000Z",
-      "vistas": 1725005,
-      "vistasPorHora": 16598
+      "vistas": 1727261,
+      "vistasPorHora": 16581
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "TOP 5 Bingeable SCARY STORIES • No Escape Edition",
       "publicado": "2026-11-20T19:00:34.000Z",
-      "vistas": 491283,
-      "vistasPorHora": 16421
+      "vistas": 492303,
+      "vistasPorHora": 16320
     },
     {
       "canal": "The Why Files",
       "idioma": "en",
       "titulo": "America Is Hiding Something Underground",
       "publicado": "2026-11-18T18:00:14.000Z",
-      "vistas": 1155951,
-      "vistasPorHora": 14646
+      "vistas": 1156751,
+      "vistasPorHora": 14611
     }
   ],
-  "formula": null
+  "formula": {
+    "formula": "Título con pregunta intrigante o afirmación impactante + elemento misterioso o prohibido + pista de revelación",
+    "ganchos": [
+      "¿Qué [evento/objeto] oculta realmente [lugar/persona]?",
+      "La verdad que [autoridad/empresa] no quiere que veas sobre [tema]",
+      "Descubre el [secreto/misterio] que cambió la vida de [persona famosa]"
+    ],
+    "evitar": [
+      "Títulos demasiado genéricos sin elemento de misterio o prohibición",
+      "Uso excesivo de palabras de relleno que no añaden curiosidad (ej. “muy”, “increíblemente”)"
+    ]
+  }
 }

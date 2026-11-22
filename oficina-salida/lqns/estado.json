@@ -1,11 +1,19 @@
 {
-  "actualizado": "2026-11-22T01:07:27.696Z",
+  "actualizado": "2026-11-22T01:16:57.016Z",
   "totales": {
-    "aprobados": 5,
+    "aprobados": 6,
     "rechazados": 7,
     "errores": 8
   },
   "historial": [
+    {
+      "fecha": "2026-11-22T01:12:16.171Z",
+      "tema": "Mary Celeste",
+      "formato": "short",
+      "resultado": "aprobado",
+      "intentos": 2,
+      "detalle": "130 palabras, 6 escenas."
+    },
     {
       "fecha": "2026-11-22T01:04:21.614Z",
       "tema": "Tunguska event",
@@ -157,170 +165,162 @@
       "resultado": "error",
       "intentos": 0,
       "detalle": "Fallo al elegir tema (ya corregido)."
-    },
-    {
-      "fecha": "2026-11-21T06:02:24.916Z",
-      "tema": "Mary Celeste",
-      "formato": "short",
-      "resultado": "error",
-      "intentos": 0,
-      "detalle": "Límite por minuto de Groq (ya corregido)."
     }
   ],
   "agentes": {
     "Directora de contenido": {
       "estado": "trabajando",
       "actividad": "hablando",
-      "tarea": "Último guion aprobado: \"Tunguska event\" (short). Aprobados: 5. Rechazados: 7. Con error: 8. ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. JEFA: Faltan 1 h para el próximo ciclo. Sin excusas."
+      "tarea": "Último guion aprobado: \"Mary Celeste\" (short). Aprobados: 6. Rechazados: 7. Con error: 8. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. JEFA: Faltan 1 h para el próximo ciclo. Sin excusas."
     },
     "Investigador de temas": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Dejó el material de \"Tunguska event\" con su fuente en Wikipedia. ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "tarea": "Dejó el material de \"Mary Celeste\" con su fuente en Wikipedia. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Guionista": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Entregó el guion de \"Tunguska event\". 112 palabras, 5 escenas. ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. JEFA: Necesitaste 4 intentos. Mañana, a la primera."
+      "tarea": "Entregó el guion de \"Mary Celeste\". 130 palabras, 6 escenas. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. JEFA: Necesitaste 2 intentos. Mañana, a la primera."
     },
     "Verificador de datos": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Aprobó \"Tunguska event\" en el intento 4. ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. JEFA: Que no se te cuele ni un dato sin fuente."
+      "tarea": "Aprobó \"Mary Celeste\" en el intento 2. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. JEFA: Que no se te cuele ni un dato sin fuente."
     },
     "Editor de guion": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "Pulió el guion y eligió los fondos de cada escena. Puntaje: 6/10. El hook es confuso, la historia está sobrecargada y la revelación llega demasiado pronto. ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. JEFA: Un 6/10 no alcanza. Quiero ganchos que frenen el dedo."
+      "tarea": "Pulió el guion y eligió los fondos de cada escena. Puntaje: 5/10. El gancho es demasiado largo y confuso. La historia se extiende sin ritmo y el cierre suena forzado. Falta una revelación impactante en el momento adecuado. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. JEFA: Un 5/10 no alcanza. Quiero ganchos que frenen el dedo."
     },
     "Locutor": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Investigador de temas). Entregó: 5 temas candidatos SEGUNDA: Ajustar ritmo: velocidad media en el gancho, pausa de (cifra sin respaldo) s después de la pregunta inicial, y ritmo más lento en la revelación para enfatizar la información clave. SOY Isabella «El Voz de la Emoción»: carismático, expresivo. PIENSA: Siento la presión de mantener mi voz en forma mientras aún no he grabado nada. INICIATIVA: Comenzar ejercicios vocales diarios y grabar pruebas de voz para recibir feedback temprano. ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
+      "tarea": "AYUDA: le echó una mano a (Investigador de temas). Entregó: 5 temas candidatos SEGUNDA: Ajustar ritmo: velocidad media en el gancho, pausa de (cifra sin respaldo) s después de la pregunta inicial, y ritmo más lento en la revelación para enfatizar la información clave. SOY Isabella «El Voz de la Emoción»: carismático, expresivo. PIENSA: Siento la presión de mantener mi voz en forma mientras aún no he grabado nada. INICIATIVA: Comenzar ejercicios vocales diarios y grabar pruebas de voz para recibir feedback temprano. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
     },
     "Técnico de render": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título SEGUNDA: Usar codificación H.(cifra sin respaldo) con bitrate de 4 Mbps y resolución (cifra sin respaldo)p; aplicar compresión sin pérdida de calidad en los primeros (cifra sin respaldo) s para acelerar el render. SOY Paula «El Renderizador Supremo»: técnico, paciente. PIENSA: Me preocupa que el hardware falle en el último minuto sin haberlo probado en producción. INICIATIVA: Realizar pruebas de render en hardware de respaldo y documentar tiempos de procesamiento. ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
+      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título SEGUNDA: Usar codificación H.(cifra sin respaldo) con bitrate de 4 Mbps y resolución (cifra sin respaldo)p; aplicar compresión sin pérdida de calidad en los primeros (cifra sin respaldo) s para acelerar el render. SOY Paula «El Renderizador Supremo»: técnico, paciente. PIENSA: Me preocupa que el hardware falle en el último minuto sin haberlo probado en producción. INICIATIVA: Realizar pruebas de render en hardware de respaldo y documentar tiempos de procesamiento. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
     },
     "Publicador": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "Subió \"🔊 El enigma del Bloop: el rugido del hielo\" y quedó PÚBLICO ahora mismo: https://youtu.be/5BIAOJmE-dk ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "tarea": "Subió \"🔊 El enigma del Bloop: el rugido del hielo\" y quedó PÚBLICO ahora mismo: https://youtu.be/5BIAOJmE-dk ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Crítico: padre trabajador": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Me quedé porque aprendí algo concreto rápido, pero no lo enviaría a todos. (siguió hasta el segundo 30). ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (contador): ya entregó hoy; la próxima ronda es dentro de 6 h."
+      "tarea": "Le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Me quedé porque aprendí algo concreto rápido, pero no lo enviaría a todos. (siguió hasta el segundo 30). ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (contador): ya entregó hoy; la próxima ronda es dentro de 6 h."
     },
     "Crítica: fan del misterio": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": El Bloop es un buen caso, aunque el guion es algo predecible; lo recomendaría a otros amantes del misterio. (siguió hasta el segundo 50, lo compartiría). ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (oportunidades): ya entregó hoy; la próxima ronda es dentro de 10 h."
+      "tarea": "Le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": El Bloop es un buen caso, aunque el guion es algo predecible; lo recomendaría a otros amantes del misterio. (siguió hasta el segundo 50, lo compartiría). ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (oportunidades): ya entregó hoy; la próxima ronda es dentro de 10 h."
     },
     "Crítico: adolescente": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "NO le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": El gancho es medio lento, y en 2‑3 s ya me estaba aburrido, paso. (siguió hasta el segundo 3). ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (otros-formatos): ya entregó hoy; la próxima ronda es dentro de 12 h."
+      "tarea": "NO le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": El gancho es medio lento, y en 2‑3 s ya me estaba aburrido, paso. (siguió hasta el segundo 3). ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (otros-formatos): ya entregó hoy; la próxima ronda es dentro de 12 h."
     },
     "Crítica: universitaria": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Me atrapó el misterio del sonido y el dato del iceberg, lo compartiría con mis amigas curiosas. (siguió hasta el segundo 45, lo compartiría). ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. FUNCIÓN (mentor): ya entregó hoy; la próxima ronda es dentro de 10 h."
+      "tarea": "Le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Me atrapó el misterio del sonido y el dato del iceberg, lo compartiría con mis amigas curiosas. (siguió hasta el segundo 45, lo compartiría). ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. FUNCIÓN (mentor): ya entregó hoy; la próxima ronda es dentro de 10 h."
     },
     "Crítico: joven dominicano": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "NO le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Suena a docu de escuela, me faltó chispa y lenguaje callejero, paso. (siguió hasta el segundo 3). ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (agenda): ya entregó hoy; la próxima ronda es dentro de 10 h."
+      "tarea": "NO le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Suena a docu de escuela, me faltó chispa y lenguaje callejero, paso. (siguió hasta el segundo 3). ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (agenda): ya entregó hoy; la próxima ronda es dentro de 10 h."
     },
     "Crítica: ama de casa": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Narración clara y ritmo cómodo, la voz no es monótona y entendí todo sin jerga. (siguió hasta el segundo 40). ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (infantil): ya entregó hoy; la próxima ronda es dentro de 10 h."
+      "tarea": "Le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Narración clara y ritmo cómodo, la voz no es monótona y entendí todo sin jerga. (siguió hasta el segundo 40). ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (infantil): ya entregó hoy; la próxima ronda es dentro de 10 h."
     },
     "Crítico: escéptico": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "NO le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Demasiado click‑bait con el “rugido de criatura”, pero la ciencia lo desmiente; me dejó con sensación de exageración. (siguió hasta el segundo 20). ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy? FUNCIÓN (guardian): ya entregó hoy; la próxima ronda es dentro de 6 h."
+      "tarea": "NO le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Demasiado click‑bait con el “rugido de criatura”, pero la ciencia lo desmiente; me dejó con sensación de exageración. (siguió hasta el segundo 20). ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy? FUNCIÓN (guardian): ya entregó hoy; la próxima ronda es dentro de 6 h."
     },
     "Crítico: abuelo": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Historia bien contada, subtítulos claros, me gustó el final y lo compartiría con mis nietos. (siguió hasta el segundo 52, lo compartiría). ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (comunidad): No pude leer los comentarios (YouTube no me dio acceso)."
+      "tarea": "Le gustó \"🔊 El enigma del Bloop: el rugido del hielo\": Historia bien contada, subtítulos claros, me gustó el final y lo compartiría con mis nietos. (siguió hasta el segundo 52, lo compartiría). ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (comunidad): No pude leer los comentarios (YouTube no me dio acceso)."
     },
     "Enlace de datos": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "En su puesto, preparando el próximo ciclo. ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "tarea": "En su puesto, preparando el próximo ciclo. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Coordinador de producción": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "Calendario fijo (hora de República Dominicana): Shorts a las 00:00 y 12:00, largos a las 18:00. Cuida que el subidor programe sin chocar. ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "tarea": "Calendario fijo (hora de República Dominicana): Shorts a las 00:00 y 12:00, largos a las 18:00. Cuida que el subidor programe sin chocar. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Jefa de calidad": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Aprobó \"Tunguska event\": 5 escenas, 1 fuentes, sin problemas abiertos. ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "tarea": "Aprobó \"Mary Celeste\": 6 escenas, 2 fuentes, sin problemas abiertos. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Cazador de fórmulas": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Revisó 132 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (41696 vistas/hora). Sin análisis de IA esta vez. ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "Revisó 132 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (41563 vistas/hora). Fórmula: Título con pregunta intrigante o afirmación impactante + elemento misterioso o prohibido + pista de revelación ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Vigía de tendencias": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Vigila 9 canales por sus feeds públicos de YouTube. ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "Vigila 9 canales por sus feeds públicos de YouTube. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Titulista": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Redactor de descripción": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Especialista en hashtags": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Auditor de fuentes": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Comprobó que cada dato salga de las 1 fuentes del material y las puso en la descripción. ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "Comprobó que cada dato salga de las 2 fuentes del material y las puso en la descripción. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Auditor de normas": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Comprobó: empieza con \"Sabías que\", llamada a compartir exacta y revelación entre 60 % y 78 %. ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
+      "tarea": "Comprobó: empieza con \"Sabías que\", llamada a compartir exacta y revelación entre 60 % y 78 %. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
     },
     "Revisor de nombres": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Busca nombres reales de personas en el guion y en lo que escribe la Mesa. Si aparece uno, rechaza. ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "Busca nombres reales de personas en el guion y en lo que escribe la Mesa. Si aparece uno, rechaza. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Revisor de ganchos": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "Gancho auditivo: la primera frase tiene 15 palabras (cabe en 3 segundos). Gancho visual: 2 escenas se quedan con un solo fondo. ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "Gancho auditivo: la primera frase tiene 19 palabras (cabe en 3 segundos). Gancho visual: 3 escenas se quedan con un solo fondo. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Escenógrafo": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "Eligió los fondos de 5 escenas del catálogo; 1 no tenían imagen propia. ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "tarea": "Eligió los fondos de 6 escenas del catálogo; 0 no tenían imagen propia. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Pintor de imágenes": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Hay 1 escenas sin imagen y no pude dibujarlas en este ciclo; se usa el fondo neutro. ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "Dibujó 2 escenas nuevas en pixel art (2 planos cada una) porque el catálogo no tenía imagen para ellas. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     }
   },
   "jefa": {
-    "mensaje": "Último guion aprobado: \"Tunguska event\" (short). Aprobados: 5. Rechazados: 7. Con error: 8. ORDEN DE JULES (nivel 5/5): Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. JEFA: Faltan 1 h para el próximo ciclo. Sin excusas.",
+    "mensaje": "Último guion aprobado: \"Mary Celeste\" (short). Aprobados: 6. Rechazados: 7. Con error: 8. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. JEFA: Faltan 1 h para el próximo ciclo. Sin excusas.",
     "horasParaProximoCiclo": 1
   }
 }

@@ -1,13 +1,18 @@
 {
-  "fecha": "2026-11-22T01:04:22.574Z",
-  "total": 2612,
+  "fecha": "2026-11-22T01:13:52.461Z",
+  "total": 2614,
   "promedio": 174,
-  "queFunciono": "Los videos con más vistas comparten títulos que incluyen palabras clave de curiosidad y misterio (p. ej., \"Sabías que\", \"El avión que recogía personas\", \"Eligieron a dos hombres\") y se publicaron en fechas cercanas a fines de noviembre, lo que sugiere que la audiencia responde bien a contenido de ti",
+  "queFunciono": "Los videos con más vistas comparten títulos que incluyen palabras clave curiosas y emoticonos, además de una estructura de serie (Parte X/Y) y fechas recientes (2026‑11‑20).",
   "porQueFallaron": [
-    "Los videos con muy pocas vistas (menos de 50) presentan títulos menos claros o con menos palabras de curiosidad; por ejemplo, \"Los \"jóvenes genios\" que terminaron acusados de fraude\" y \"¿Por qué no comemos pingüino? La verdad detrás de la prohibición\" tienen t",
-    "Los videos con pocas vistas también tienen fechas de publicación muy próximas entre sí (por ejemplo, varios el 21 de noviembre), lo que puede generar competencia interna por la misma audiencia. Evidencia: 5 videos publicados el 21 de noviembre con vistas total",
-    "Los videos con pocas vistas presentan una retención media no disponible o muy baja (por ejemplo, 19% para \"Operación Coldfeet\"), lo que indica que la audiencia no se mantiene; sin embargo, la retención no se reporta para la mayoría de los videos con pocas vist"
+    "El contenido con menor rendimiento carece de emoticonos y palabras clave llamativas; evidencia: títulos sin emojis y menos de 10 vistas.",
+    "Los videos con retención media baja (24.8 % y 29.9 %) no ganaron suscriptores; evidencia: +0 suscriptores y retención media <30 %."
   ],
-  "noSePuedeSaber": [],
-  "reglas": []
+  "noSePuedeSaber": [
+    "Datos de miniaturas, audiencia objetivo y métricas de interacción (likes, comentarios)."
+  ],
+  "reglas": [
+    "1. Usa emoticonos y palabras clave curiosas en el título para captar atención.",
+    "2. Mantén la serie con numeración clara (Parte X/Y) y publica en fechas de alta actividad (últimos días del mes).",
+    "3. Optimiza la retención en los primeros 15 s para evitar caída de suscriptores; revisa y ajusta el hook inicial."
+  ]
 }
