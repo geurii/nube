@@ -1,0 +1,1 @@
+{"cielo":["#2b3d5e","#4a6a9c","#7aa0d6"],"capas":[{"t":"foto","archivo":"chernobyl-disaster-0-3.jpg","x0":0,"y0":0.1,"x1":1,"y1":0.84,"zoom":1,"pan":true},{"t":"particulas","n":35,"tipo":"brasas","luz":"izq"},{"t":"rayos","x":0.12,"alpha":0.12,"color":"#ffd9a0","luz":"izq"}],"escenario":"industrial"}

@@ -1,0 +1,1 @@
+{"cielo":["#4a5d7e","#6c8fb5","#9ac8f0"],"capas":[{"t":"ciudad","y":0.85,"alto":0.3,"color":"#1f2442","luz":"izq"},{"t":"particulas","n":25,"tipo":"polvo","luz":"izq"},{"t":"poligono","color":"#5a4a3a","luz":"izq","pts":[[0.34,0.6],[0.56,0.6],[0.6,0.78],[0.28,0.78]]},{"t":"linea","grosor":0.006,"color":"#2a2a2a","pts":[[0.36,0.62],[0.5,0.62]]}],"escenario":"industrial"}

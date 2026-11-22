@@ -11,12 +11,12 @@
     "esquina": "arriba-derecha",
     "visible": true
   },
-  "creado": "2026-11-22T14:33:17.305Z",
+  "creado": "2026-11-22T15:57:41.039Z",
   "estilo": "gancho",
-  "ganchoTexto": "¿El 26 abril de 1986 una explosión cambió la?",
+  "ganchoTexto": "¿El 26 abril de 1986 una explosión cambió la historia…?",
   "publicacion": {
     "titulo": "Sabías que la explosión de Chernóbil cambió todo 🌍",
-    "descripcion": "Una prueba de apagón provocó la peor catástrofe nuclear. Descubre los datos que pocos conocen.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Chernobyl_disaster\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#Chernobyl #DesastreNuclear #Historia #ExclusionZone #ChernobylDisaster"
+    "descripcion": "Una prueba de apagón provocó la peor catástrofe nuclear. Descubre los datos que pocos conocen.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Chernobyl_disaster\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#Chernobyl #DesastreNuclear #Historia #ExclusionZone #ChernobylDisaster\n\nFotos: Dmytro Petishkin (CC BY 4.0, Wikimedia Commons) · Артемий Титов (CC BY 3.0, Wikimedia Commons) · NSF/NSO/AURA (CC BY 4.0, Wikimedia Commons) · kawamoto takuo (CC BY 2.0, Wikimedia Commons)"
   },
   "estado": "aprobado",
   "editor": {
@@ -29,7 +29,8 @@
       "texto": "Sabías que el 26 abril de 1986 una explosión cambió la historia nuclear?",
       "fondo": [
         "pintado:chernobyl-disaster-0a",
-        "pintado:chernobyl-disaster-0b"
+        "pintado:chernobyl-disaster-0b",
+        "pintado:chernobyl-disaster-0c"
       ]
     },
     {
@@ -37,16 +38,17 @@
       "texto": "El reactor 4, con 1 661 canales de combustible, necesitaba 42 millones de litros de refrigerante por hora. Durante una prueba de simulación de apagón, los operadores redujeron la potencia de forma inestable, provocando una explosión de vapor que destruyó el edificio.",
       "fondo": [
         "pintado:chernobyl-disaster-1a",
-        "pintado:chernobyl-disaster-1b"
+        "pintado:chernobyl-disaster-1b",
+        "pintado:chernobyl-disaster-1c",
+        "pintado:chernobyl-disaster-1d"
       ]
     },
     {
       "tipo": "historia",
       "texto": "Más de 500 000 personas fueron movilizadas para contener el desastre, mientras que 237 trabajadores fueron hospitalizados; 134 mostraron síndrome de radiación aguda y 28 fallecieron en tres meses.",
       "fondo": [
-        "pixelcifra:500000 PERSONAS|MOBILIZADAS|TEAL",
-        "pixelcifra:237 TRABAJADORES|HOSPITALIZADOS|ROJO",
-        "pixelcifra:28 FALLECIDOS|EN 3 MESES|ORO"
+        "pintado:chernobyl-disaster-2a",
+        "pintado:chernobyl-disaster-2b"
       ]
     },
     {
@@ -65,5 +67,12 @@
         "pintado:chernobyl-disaster-4b"
       ]
     }
-  ]
+  ],
+  "reeditado": {
+    "fecha": "2026-11-22T15:57:41.039Z",
+    "fotos": {
+      "conFoto": 2,
+      "total": 5
+    }
+  }
 }
