@@ -7,10 +7,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {puestosDeLaOficina, mesaDePublicacion} from './puestos.mjs';
 import {avisarTelefono} from './aviso.mjs';
-import {pintarEscenas} from './pintor.mjs';
-import {reunirReferencias} from './referencias.mjs';
+import {crearVisuales} from './visuales.mjs';
 import {investigarEnLaWeb} from './investigar-web.mjs';
-import {mirarFoto, textoDeVista} from './ojos.mjs';
 import {limpiarParaVoz} from './texto-voz.mjs';
 import {textoDeRadar} from './radar.mjs';
 import {completarHashtags} from './hashtags.mjs';
@@ -18,7 +16,6 @@ import {ganchoDe} from './titular.mjs'; // titular gigante de los primeros segun
 import {evaluarGuionConPanel} from './panel-guion.mjs';
 import {titulosVirales, armarBloqueWeb, guardarWeb} from './web.mjs';
 import {filtrarTemas, sinRechazadas, leerPreferencias, fueRechazada} from './ideas.mjs';
-import {reunirInspiracion} from './inspiracion.mjs';
 import {enGarantia} from './garantia.mjs';
 import {chatAlternativo, proveedoresConLlave, modelosDisponibles, diagnosticoRespaldo} from './llm.mjs';
 
@@ -529,41 +526,15 @@ try {
       else informe.push('(La Mesa de publicación no entregó algo válido: se usa lo del Guionista.)');
     } catch (e) { informe.push('(La Mesa de publicación falló: ' + e.message + '. Se usa lo del Guionista.)'); }
   }
-  // LOS DOS PINTORES dibujan TODAS las escenas en pixel art (2 planos por escena); el catálogo solo queda de respaldo si no logran dibujar una
-  if (aprobado) {
-    const idx = escenas.map((_, i) => i);
-    if (idx.length) {
-      try {
-        const llamarPintor = (m, max) => pedirJson(modelo, m, max);
-        const referencias = await reunirReferencias({llamar: llamarPintor, escenas, indices: idx, slug, tema: TEMA, nota: (t) => informe.push(t)});
-        if (Object.keys(referencias).length) informe.push(`Referencias de internet (fotos libres) para ${Object.keys(referencias).length} escenas: ${Object.values(referencias).map((r) => r.titulo + ' (' + r.licencia + ')').join('; ').slice(0, 400)}`);
-        // los pintores no ven imágenes: Gemini MIRA cada foto de referencia y se la describe (composición, colores reales, dónde está cada cosa)
-        // TOPE DE TIEMPO: entre los ojos y las ideas de estilo nunca pasan de ~4 minutos, pase lo que pase con Gemini u OpenGameArt
-        let vistas = 0;
-        let modeloOjos = '';
-        let ideas = [];
-        try {
-          const hastaOjos = Date.now() + 130000;
-          let seguidos = 0;
-          for (const [i, ref] of Object.entries(referencias)) {
-            if (seguidos >= 2 || Date.now() > hastaOjos - 8000) { informe.push('(Gemini no miró el resto de las fotos: demasiados fallos o se acabó el tiempo asignado.)'); break; }
-            const g = await mirarFoto({ruta: path.resolve('public', 'referencias', ref.archivo), key: process.env.GEMINI_API_KEY, frase: escenas[Number(i)]?.texto, maxIntentos: 2, hasta: hastaOjos});
-            if (g.vista && g.vista.relevante === false) {
-              // Gemini la vio y NO tiene que ver con la frase (gráfico, mapa, retrato...): se descarta y la escena se pinta sin foto
-              informe.push(`(La foto de la escena ${i} "${ref.titulo}" se descartó: Gemini vio que no muestra lo que dice la frase.)`);
-              try { fs.rmSync(path.resolve('public', 'referencias', ref.archivo), {force: true}); } catch { /* ya no está */ }
-              delete referencias[i]; seguidos = 0; vistas++;
-            } else if (g.vista) { ref.vista = textoDeVista(g.vista); vistas++; seguidos = 0; modeloOjos = g.modelo; } else { seguidos++; informe.push(`(Gemini no pudo mirar la foto de la escena ${i}: ${String(g.error).slice(0, 420)})`); }
-          }
-          if (vistas) informe.push(`Gemini (${modeloOjos || 'modelo desconocido'}) miró ${vistas} fotos de referencia y se las describió a los pintores.`);
-          ideas = await reunirInspiracion({tema: TEMA, key: process.env.GEMINI_API_KEY, limiteMs: 100000, nota: (t) => informe.push(t)});
-          if (ideas.length) informe.push(`Ideas de estilo (pixel art CC0 de OpenGameArt vistos por Gemini): ${ideas.map((x) => x.paquete + ' <' + x.url + '>').join('; ')}`);
-        } catch (e) { informe.push('(Ojos e ideas de estilo no disponibles: ' + String(e.message ?? e).slice(0, 100) + ')'); }
-        const p = await pintarEscenas({llamar: llamarPintor, escenas, indices: idx, slug, tema: TEMA, nota: (t) => informe.push(t), referencias, ideas});
-        for (const [i, lista] of Object.entries(p)) { fondos[Number(i)] = lista; CTX.pintadas++; }
-        informe.push(`Pintores: ${CTX.pintadas} de ${idx.length} escenas dibujadas.`);
-      } catch (e) { informe.push('(Los Pintores no pudieron dibujar: ' + e.message + '. Se usa el fondo del catálogo.)'); }
-    }
+  // IMÁGENES DE CERO: fotos reales de internet por escena (pixeladas a pantalla completa) + los dos pintores añadiendo ambiente (agentes/visuales.mjs)
+  if (aprobado && escenas.length) {
+    try {
+      const v = await crearVisuales({llamar: (m, max) => pedirJson(modelo, m, max), escenas, slug, tema: TEMA, canal: CANAL_ID, nota: (t) => informe.push(t)});
+      for (const [i, lista] of Object.entries(v.fondos)) { fondos[Number(i)] = lista; CTX.pintadas++; }
+      if (v.creditos) descripcion = `${descripcion}\n\n${v.creditos}`;
+      CTX.fotos = v.cobertura;
+      informe.push(`Pintores: ${CTX.pintadas} de ${escenas.length} escenas dibujadas.`);
+    } catch (e) { informe.push('(Las imágenes no se pudieron generar: ' + e.message + '. Se usa el fondo del catálogo.)'); }
   }
   const sinImagen = aprobado ? fondos.filter((f) => f.every((x) => x === 'pixelmisterio')).length : 0;
   CTX.sinImagen = sinImagen;

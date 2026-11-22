@@ -125,12 +125,20 @@ const SISTEMA_B = `Eres el Pintor de luz y detalle de una oficina de videos de m
 
 let IDEAS = ''; // ideas de estilo de ejemplos CC0 (opcional)
 let VISTAS = {}; // lo que Gemini VIO en la foto de referencia de cada escena (los pintores no ven imágenes)
-const lote = (escenas, ids) => ids.map((i) => `${i}. [${escenas[i].tipo}] ${escenas[i].texto}${VISTAS[i] ? `\n   FOTO DE REFERENCIA (la vio Gemini; el motor ya la pone pixelada en el centro, tú pintas el entorno y la luz EN ARMONÍA con ella y sin tapar esa zona): ${VISTAS[i]}` : ''}`).join('\n');
+let VISTAS_COMPLETA = false;
+const lote = (escenas, ids) => ids.map((i) => `${i}. [${escenas[i].tipo}] ${escenas[i].texto}${VISTAS[i] ? `\n   FOTO REAL (la vio Gemini): el motor la pone PIXELADA A PANTALLA COMPLETA; tú NO dibujes el sujeto, solo AMBIENTE encima (resplandor, niebla, rayos, partículas, nubes) EN ARMONÍA con ella: ${VISTAS[i]}` : ''}`).join('\n');
 const FORMA = '{"escenas": [{"indice": N, "planos": [ESCENA_A, ESCENA_B]}, ...]} con el mismo orden y el mismo número de escenas.';
 
 const FONDO = new Set(['estrellas', 'astro', 'resplandor', 'montanas', 'suelo', 'agua', 'niebla', 'nubes', 'olas', 'duna', 'rayos']);
 /** Pone la foto de referencia (ya pixelada por el motor) sobre el fondo y bajo el resto; el plano B la acerca para variar. Quita la silueta, que taparía la foto. */
-const conFoto = (plano, archivo, k) => {
+// Con foto real a pantalla completa, los pintores SOLO añaden ambiente (luz, niebla, partículas): lo que dibujaría al sujeto se quita para no tapar ni duplicar la foto.
+const AMBIENTE = new Set(['resplandor', 'niebla', 'nubes', 'rayos', 'particulas', 'vapor', 'lluvia', 'nieve', 'estrellas', 'chispas', 'destello', 'brillo']);
+const conFoto = (plano, archivo, k, completa = true) => {
+  if (completa) {
+    plano.capas = plano.capas.filter((c) => AMBIENTE.has(c.t) || c.t === 'texto');
+    plano.capas.unshift({t: 'foto', archivo, x0: 0, y0: 0.1, x1: 1, y1: 0.84, zoom: k === 0 ? 1 : 1.45, pan: true});
+    return;
+  }
   let pos = 0;
   while (pos < plano.capas.length && pos < 4 && FONDO.has(plano.capas[pos].t)) pos++;
   plano.capas = plano.capas.filter((c) => c.t !== 'silueta');
@@ -160,6 +168,7 @@ export const pintarEscenas = async ({llamar, escenas, indices, slug, tema, nota 
 
 IDEAS DE ESTILO (ejemplos reales de pixel art con licencia CC0 que Gemini vio; NO se copian, aprovecha lo que hacen bien): ${ideas.map((x, k) => `(${k + 1}) ${x.texto}`).join(' ')}` : '';
   VISTAS = Object.fromEntries(Object.entries(referencias).filter(([, r]) => r?.vista).map(([i, r]) => [i, r.vista]));
+  VISTAS_COMPLETA = Object.values(referencias).some((r) => r?.fotos?.length);
   const finales = {};
   const TAM = 3; // escenas por tanda (cada escena lleva 2 planos)
   for (let b = 0; b < indices.length; b += TAM) {
@@ -192,12 +201,19 @@ IDEAS DE ESTILO (ejemplos reales de pixel art con licencia CC0 que Gemini vio; N
     nota(`Escenas ${ids.join(', ')}: ${acuerdo}.`);
     Object.assign(finales, final);
   }
+  // Si los pintores no entregaron una escena pero SÍ hay foto real, la escena sale igual: solo la foto pixelada (sin ambiente)
+  for (const i of indices) {
+    if (!finales[i] && referencias[i]?.fotos?.length) finales[i] = [0, 1].map(() => ({cielo: ['#0b0e1c', '#1c2238'], capas: []}));
+  }
   const salida = {};
   for (const [i, planos] of Object.entries(finales)) {
     const ids = [];
-    planos.slice(0, 2).forEach((p, k) => {
-      const id = `${slug}-${i}${'ab'[k]}`;
-      if (referencias[i]?.archivo) conFoto(p, referencias[i].archivo, k);
+    const fotos = referencias[i]?.fotos?.length ? referencias[i].fotos.map((f) => f.archivo) : referencias[i]?.archivo ? [referencias[i].archivo] : [];
+    // una foto real por plano (hasta 4): el plano cambia con lo que se va nombrando; los planos extra reutilizan el ambiente de los dos pintores
+    const lista = fotos.length > 2 && referencias[i]?.fotos?.length ? Array.from({length: Math.min(4, fotos.length)}, (_, k) => structuredClone(planos[k % planos.length])) : planos.slice(0, 2);
+    lista.forEach((p, k) => {
+      const id = `${slug}-${i}${'abcd'[k]}`;
+      if (fotos.length) conFoto(p, fotos[Math.min(k, fotos.length - 1)], fotos.length > 1 ? 0 : k, !!referencias[i]?.fotos?.length);
       fs.writeFileSync(path.join(dir, `${id}.json`), JSON.stringify(p));
       ids.push(`pintado:${id}`);
     });

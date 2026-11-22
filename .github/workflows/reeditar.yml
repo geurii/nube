@@ -1,0 +1,62 @@
+name: Reeditar
+
+# Rehace desde cero las imágenes de un video ya escrito (fotos reales pixeladas por escena) y lanza Producción.
+# Se activa al cambiar agentes/reeditar.disparo (su contenido: "fecha|slug") o a mano.
+on:
+  push:
+    paths:
+      - 'agentes/reeditar.disparo'
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: 'Video a reeditar (ej: chernobyl-disaster)'
+        required: true
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: oficina
+  cancel-in-progress: false
+
+jobs:
+  reeditar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Rehacer imagenes
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ENTRADA: ${{ inputs.slug }}
+        run: |
+          if [ -z "$ENTRADA" ] && [ -f agentes/reeditar.disparo ]; then ENTRADA=$(cut -d'|' -f2 agentes/reeditar.disparo | tr -d '[:space:]'); fi
+          echo "Reeditando: $ENTRADA"
+          SLUG="$ENTRADA" CANAL=lqns timeout 1200 node agentes/reeditar.mjs
+      - name: Guardar
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add oficina-salida public/pintados public/referencias 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "Reedicion: imagenes nuevas del video"
+          for i in 1 2 3 4; do
+            git pull --rebase --autostash -X theirs origin main && git push && break
+            sleep 5
+          done
+          if [ -n "$(git log origin/main..HEAD --oneline 2>/dev/null)" ]; then echo "ERROR: no se pudo subir"; exit 1; fi
+      - name: Lanzar Produccion (render, revision y subida a todas las redes)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run produccion.yml && echo "Produccion lanzada."
+          sleep 60
+          if node agentes/encadenar.mjs; then gh workflow run oficina.yml && echo "Ciclos normales retomados."; fi
