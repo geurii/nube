@@ -39,7 +39,7 @@ jobs:
           git add oficina-salida agentes/canales-propios.json || true
           git diff --cached --quiet || git commit -m "Fundador: canal nuevo"
           for i in 1 2 3 4; do
-            git pull --rebase origin main && git push && break
+            git pull --rebase --autostash -X theirs origin main && git push && break
             echo "No pude guardar (intento $i); reintento en 5 s"
             sleep 5
           done

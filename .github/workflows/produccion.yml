@@ -43,7 +43,7 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add oficina-salida || true
           git diff --cached --quiet || git commit -m "Progreso: Grabando la voz y renderizando el video"
-          for i in 1 2 3; do git pull --rebase -X theirs origin main && git push && break; sleep 4; done
+          for i in 1 2 3; do git pull --rebase --autostash -X theirs origin main && git push && break; sleep 4; done
       - name: Producir el video
         id: producir
         env:
@@ -83,10 +83,11 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "actions@users.noreply.github.com"
-          git add oficina-salida guion/serie || true
+          git add oficina-salida || true
+          git add guion/serie 2>/dev/null || true
           git diff --cached --quiet || git commit -m "Produccion: avance automatico"
           for i in 1 2 3 4; do
-            git pull --rebase -X theirs origin main && git push && break
+            git pull --rebase --autostash -X theirs origin main && git push && break
             echo "No pude guardar (intento $i); reintento en 5 s"
             sleep 5
           done
@@ -110,7 +111,7 @@ jobs:
           node agentes/subir.mjs
           git add oficina-salida || true
           git diff --cached --quiet || git commit -m "Publicador: resultado de la subida"
-          git pull --rebase -X theirs origin main && git push || true
+          git pull --rebase --autostash -X theirs origin main && git push || true
       - name: Marcar progreso final
         if: always()
         run: |
@@ -121,4 +122,4 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add oficina-salida || true
           git diff --cached --quiet || git commit -m "Progreso: terminado"
-          for i in 1 2 3; do git pull --rebase -X theirs origin main && git push && break; sleep 4; done
+          for i in 1 2 3; do git pull --rebase --autostash -X theirs origin main && git push && break; sleep 4; done

@@ -161,6 +161,7 @@ const groqDirecto = async (modelo, mensajes, maxTokens = FORMATO === 'largo' ? 4
         console.log(`Groq pide esperar ${espera} s (límite por minuto del nivel gratis). Intento ${intento}/8.`);
         ultimo = 'límite de Groq (429)';
         groqBloqueadoHasta = Date.now() + 90_000;
+        if (proveedoresConLlave().length) break; // hay respaldo: se pasa a otro proveedor sin esperar
         await dormir((Math.min(espera, 60) + 2) * 1000);
         continue;
       }

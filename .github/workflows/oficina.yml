@@ -58,7 +58,7 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add oficina-salida || true
           git diff --cached --quiet || git commit -m "Progreso: Buscando tema y escribiendo el guion"
-          for i in 1 2 3; do git pull --rebase -X theirs origin main && git push && break; sleep 4; done
+          for i in 1 2 3; do git pull --rebase --autostash -X theirs origin main && git push && break; sleep 4; done
       - name: Ciclo de todos los canales activos (el Cazador primero; si uno falla, los demás siguen)
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
@@ -103,10 +103,11 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "actions@users.noreply.github.com"
-          git add oficina-salida public/pintados || true
+          git add oficina-salida || true
+          git add public/pintados 2>/dev/null || true
           git diff --cached --quiet || git commit -m "Oficina: resultado automatico"
           for i in 1 2 3 4; do
-            git pull --rebase -X theirs origin main && git push && break
+            git pull --rebase --autostash -X theirs origin main && git push && break
             echo "No pude guardar (intento $i); reintento en 5 s"
             sleep 5
           done

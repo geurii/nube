@@ -28,6 +28,6 @@ jobs:
           git add muestras-voz || true
           git diff --cached --quiet || git commit -m "Muestras de voz"
           for i in 1 2 3 4; do
-            git pull --rebase origin main && git push && break
+            git pull --rebase --autostash -X theirs origin main && git push && break
             sleep 5
           done
