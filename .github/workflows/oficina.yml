@@ -129,6 +129,8 @@ jobs:
         run: |
           resultado=$(node agentes/ultimo-aprobado.mjs | head -1)
           echo "$resultado"
+          # Los ciclos que se lanzan solos NO activan a Produccion (limite de GitHub con el token): se le avisa directamente
+          if echo "$resultado" | grep -q 'oficina: aprobado'; then gh workflow run produccion.yml && echo "Produccion lanzada para el guion aprobado."; fi
           if echo "$resultado" | grep -qE 'aprobado|rechazado' && node agentes/encadenar.mjs; then
             sleep 90
             gh workflow run oficina.yml && echo "Siguiente ciclo lanzado."
