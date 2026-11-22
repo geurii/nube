@@ -1,5 +1,13 @@
 [
   {
+    "id": "mws73xgwg256",
+    "fecha": "2026-11-22T18:53:58.448Z",
+    "canal": "lqns",
+    "tipo": "alerta",
+    "titulo": "No se pudo publicar en las redes",
+    "texto": "\"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\": sin repositorio público; y el servicio temporal bloqueó a GitHub (el servicio de archivos temporales no devolvió un enlace válido (500): 500)."
+  },
+  {
     "id": "mws73p3bqo0p",
     "fecha": "2026-11-22T18:53:47.592Z",
     "canal": "lqns",
@@ -679,14 +687,5 @@
     "tipo": "reporte",
     "titulo": "Fórmula del momento",
     "texto": "Lo que hoy funciona para Lo Que No Sabías: Palabra/Frase Impactante + Pregunta o Declaración Intrigante + (Opcional: Número/Lista) + (Opcional: Referencia a lo desconocido o prohibido) El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (48374 vistas/hora)."
-  },
-  {
-    "id": "mwq84t4mrfcv",
-    "fecha": "2026-11-21T09:47:06.742Z",
-    "canal": "lqns",
-    "canalNombre": "Vigilante",
-    "tipo": "permiso",
-    "titulo": "Reconectar YouTube",
-    "texto": "YouTube no dio acceso (401): {\n  \"error\": \"invalid_client\",\n  \"error_description\": \"The OAuth client was not found.\"\n}"
   }
 ]
