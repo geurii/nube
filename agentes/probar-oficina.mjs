@@ -38,7 +38,7 @@ let llamadasPanel = 0;
 const respuestaPanel = () => {
   llamadasPanel++;
   const aprueba = llamadasPanel > 1;
-  return {votos: Array.from({length: 8}, (_, i) => ({quien: 'x', pasa_los_3_segundos: aprueba || i < 2, sigue_hasta_segundo: 20, le_gusto: aprueba ? i < 7 : i < 2, lo_compartiria: i < 3, comentario: aprueba ? 'Me atrapó.' : 'El gancho es flojo.'})), mejora_principal: 'Empieza con la cifra más impactante.'};
+  return {votos: Array.from({length: 8}, (_, i) => ({quien: 'x', pasa_los_3_segundos: aprueba || i < 2, sigue_hasta_segundo: aprueba ? 70 : 20, le_gusto: aprueba ? i < 7 : i < 2, lo_compartiria: i < 3, comentario: aprueba ? 'Me atrapó.' : 'El gancho es flojo.'})), mejora_principal: 'Empieza con la cifra más impactante.'};
 };
 
 // ---- Los dos pintores (simulados): A propone, B objeta la primera vez, A acepta ----
@@ -116,6 +116,16 @@ if (leer('oficina-salida/demo/guion-bloop.json').voz !== 'es-MX-JorgeNeural') fa
   const informes = ['lqns', 'demo'].map((c) => fs.readFileSync(path.join('oficina-salida', c, 'informe-bloop.md'), 'utf8'));
   if (!informes.every((inf) => /Panel de 8 espectadores \(guion/.test(inf))) fallos.push('el panel de 8 espectadores no juzgó el guion en el ciclo de la oficina');
   if (!informes.some((inf) => /NO le gustó/.test(inf) && /Intento 2: APROBADO/.test(inf))) fallos.push('un rechazo del panel no provocó que el guion se reescribiera y se aprobara en el intento 2');
+}
+{ // RETENCIÓN: un guion que les gusta pero con retención estimada < 70 % NO pasa, ni con la garantía de publicación
+  const {decidir, retencionEstimada} = await import(pathToFileURL(path.join(aqui, 'panel-guion.mjs')).href + '?ret');
+  const mk = (hasta) => Array.from({length: 8}, () => ({leGusto: true, pasa3: true, sigueHasta: hasta}));
+  const bajo = decidir({votos: mk(30), garantia: false, duracion: 60});
+  const bajoGarantia = decidir({votos: mk(30), garantia: true, duracion: 60});
+  const alto = decidir({votos: mk(52), garantia: false, duracion: 60});
+  if (bajo.aprobado || bajoGarantia.aprobado) fallos.push('retención: un guion con retención estimada baja NO debe pasar (ni con garantía)');
+  if (!alto.aprobado || retencionEstimada(mk(52), 60) !== 87) fallos.push('retención: un guion con 87 % debe pasar');
+  if (!bajo.rechazoPorRetencion) fallos.push('retención: debe marcar que el rechazo fue por retención');
 }
 if (!vioLecciones) fallos.push('las lecciones aprendidas NO llegaron al contexto de los agentes');
 const notis = leer('oficina-salida/notificaciones.json');

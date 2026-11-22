@@ -108,3 +108,6 @@ La ÚNICA voz permitida es es-MX-JorgeNeural (Edge, tono -6 Hz): la de los prime
 
 ## FORMATO FACELESS (decisión del usuario, 22 nov 2026; reemplaza al personaje con lupa)
 Los videos NO llevan personaje, cara ni mascota con lupa: solo voz en off y visuales en movimiento (guion.personaje.visible = false; producir.mjs lo fuerza). Orden principal de Jules: reformular y analizar el canal con datos reales y compararlo con grandes canales (agentes/estrategia.mjs → oficina-salida/<canal>/estrategia.json). Cada video de 8/10 o más y sin fondos vacíos. En la oficina 3D solo se dibuja la casa y su montaña (SOLO_CASA_Y_MONTANA en src/oficina/render/casa/Casa.tsx).
+
+## RETENCIÓN MÍNIMA DEL GUION (decisión del usuario, 22 nov 2026; no se negocia)
+Un guion con retención estimada menor a 70 % NO pasa: no se gasta voz ni render (agentes/panel-guion.mjs, RETENCION_MINIMA). Aplica incluso con la garantía de publicación. Es una estimación del panel de 8 espectadores, no la retención real de YouTube.

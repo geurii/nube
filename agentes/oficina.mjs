@@ -143,7 +143,7 @@ const investigar = async () => {
 
 /* ====================== Groq con reintentos ====================== */
 /** Cultura de la empresa: va delante de las instrucciones de todos los agentes. Ambición sin bajar el rigor: perfeccionistas. */
-const CULTURA = 'EMPRESA: ' + (CONFIG.nombre ?? 'el canal') + '. FORMATO FACELESS (decisión del dueño): videos SIN personaje, SIN caras ni rostros de nadie en pantalla y sin mascota con lupa; solo voz en off y visuales en movimiento que muestran lo que se dice. META: monetizar el canal antes del 13 de diciembre de 2026 (YouTube pide 1.000 suscriptores y 4.000 horas de reproducción, o 10 millones de vistas en Shorts en 90 días) y llevarlo arriba. Eres un/a profesional con cinco maestrías en tu área, perfeccionista y obsesionado/a con hacer videos virales. Tu paga individual son 10.000 vistas ganadas para el canal (Jules, la jefa, cobra 20.000): si el canal no las consigue no cobras, y tienes una familia que alimentar, así que trabajas duro y sin descanso. Jules te presiona a diario. Ambición NO es inventar: jamás sacrificas la verdad ni las normas por vistas.';
+const CULTURA = 'EMPRESA: ' + (CONFIG.nombre ?? 'el canal') + '. RETENCIÓN (regla del dueño): un guion con retención estimada menor a 70 % NO pasa y no se renderiza; escribe para sostener el interés hasta el final (un giro o dato nuevo cada 8-10 segundos, nada de relleno ni repeticiones). FORMATO FACELESS (decisión del dueño): videos SIN personaje, SIN caras ni rostros de nadie en pantalla y sin mascota con lupa; solo voz en off y visuales en movimiento que muestran lo que se dice. META: monetizar el canal antes del 13 de diciembre de 2026 (YouTube pide 1.000 suscriptores y 4.000 horas de reproducción, o 10 millones de vistas en Shorts en 90 días) y llevarlo arriba. Eres un/a profesional con cinco maestrías en tu área, perfeccionista y obsesionado/a con hacer videos virales. Tu paga individual son 10.000 vistas ganadas para el canal (Jules, la jefa, cobra 20.000): si el canal no las consigue no cobras, y tienes una familia que alimentar, así que trabajas duro y sin descanso. Jules te presiona a diario. Ambición NO es inventar: jamás sacrificas la verdad ni las normas por vistas.';
 const ORDEN_JULES = leerJson(path.join(SALIDA, 'ordenes.json'), [])[0];
 const ALTERNOS = process.env.GROQ_API_KEY ? (await modelosDisponibles(process.env.GROQ_API_KEY)).filter((m) => m !== 'openai/gpt-oss-120b') : []; // modelos de Groq con cuota separada que SÍ existen en la cuenta
 let groqBloqueadoHasta = 0; // mientras Groq esté en 429, se usan primero los demás proveedores
@@ -466,6 +466,7 @@ try {
   informe.push('## Investigación', ...fuentes.map((f) => `- ${f.apoyo ? 'web (apoyo)' : f.idioma}: [${f.titulo}](${f.url})`), '');
   const material = fuentes.map((f) => `### ${f.apoyo ? 'FUENTE DE APOYO (resumen de un buscador web: úsala solo para contrastar fechas y cifras con Wikipedia; si difiere, di las dos versiones)' : 'FUENTE (' + f.idioma + ')'} ${f.url}\n${f.texto}`).join('\n\n');
 
+  let retencionPanel = null;
   let escenas = [], titulo = TEMA, descripcion = '', hashtags = [], problemas = [], aprobado = false, intentos = 0, puntaje = null, critica = '';
   for (let intento = 1; intento <= 4 && !aprobado; intento++) {
     intentos = intento;
@@ -504,6 +505,7 @@ try {
         const pv = await evaluarGuionConPanel({llamar: (m) => pedirJson(modelo, m, 2500), guion: {titulo, escenas, publicacion: {titulo, descripcion}}, garantia: GARANTIA, autopsia: leerJson(path.join(SALIDA, 'autopsia.json'), null)});
         CTX.panelGuion = pv;
         informe.push(`Panel de 8 espectadores (guion, intento ${intento}): ${pv.resumen}${pv.mejora ? ' Mejora: ' + pv.mejora : ''}`, ...pv.votos.map((v) => `- ${v.quien}: ${v.leGusto ? 'le gustó' : 'NO le gustó'} · ${v.comentario}`));
+        retencionPanel = pv.retencion ?? null;
         if (!pv.aprobado) {
           problemas.push({frase: '(panel)', motivo: `El panel de 8 espectadores lo rechazó (${pv.resumen}). Lo único que más subiría las vistas: ${pv.mejora}. Reescribe el gancho y el ritmo arreglando esto.`});
           aprobado = false;
@@ -570,6 +572,7 @@ try {
     publicacion: {titulo, descripcion: `${descripcion}\n\n${CONFIG.ctaEscrito ?? ''}\n\nFuentes: ${fuentes.filter((f) => !f.apoyo).map((f) => f.url).join(' · ')}${CONFIG.enlaceCanal ? `\n\nMás historias en el canal: ${CONFIG.enlaceCanal}` : ''}${hashtags.length ? `\n\n${hashtags.join(' ')}` : ''}`},
     estado: aprobado ? (MANUAL.activo ? ESTADO_ESPERA : 'aprobado') : 'rechazado-necesita-revision',
     editor: {puntaje, critica},
+    retencionEstimada: retencionPanel,
     // el texto que se LEE en voz alta y se ve en los subtítulos sale limpio: sin rangos con guion, horas con dos puntos, comas de miles ni unidades abreviadas
     escenas: escenas.map((e, i) => ({...e, texto: limpiarParaVoz(e.texto), fondo: fondos[i]})),
   };
