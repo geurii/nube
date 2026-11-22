@@ -1,6 +1,13 @@
 {
   "decisiones": [
     {
+      "id": "i169m8yw",
+      "texto": "1. Gancho más impactante: inicia con una pregunta directa y provocadora, por ejemplo, \"Sabías que una colonia desapareció sin dejar rastro y su última palabra es un misterio que aún no se ha resuelto?\" para captar la cur",
+      "categoria": "Mejora de guion",
+      "decision": "si",
+      "fecha": "2026-11-22T19:24:01.150Z"
+    },
+    {
       "id": "i15y4sbt",
       "texto": "Lo que [número] [personas] se llevaron de una [lugar] fantasma 🕵️ (Parte [n]/[total])",
       "categoria": "Título",
