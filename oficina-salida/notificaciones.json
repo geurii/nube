@@ -1,5 +1,13 @@
 [
   {
+    "id": "mwse974bjrc2",
+    "fecha": "2026-11-22T22:14:01.547Z",
+    "canal": "lqns",
+    "tipo": "reporte",
+    "titulo": "Aviso de prueba",
+    "texto": "Salió al celular con tu tema guardado. Si no lo ves en la app ntfy, revisa que estés suscrito al mismo tema."
+  },
+  {
     "id": "mwsb5cxnahip",
     "fecha": "2026-11-22T20:47:03.611Z",
     "canal": "lqns",
@@ -670,14 +678,5 @@
     "tipo": "listo",
     "titulo": "Video listo: 🔊 El enigma del Bloop: el rugido del hielo",
     "texto": "Se renderizó \"🔊 El enigma del Bloop: el rugido del hielo\" para Lo Que No Sabías (31 MB). Descárgalo en GitHub > Actions > Produccion > artefacto \"video-lqns-bloop\". Falta subirlo a YouTube."
-  },
-  {
-    "id": "mwqk6uw6hf2l",
-    "fecha": "2026-11-21T15:24:37.734Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "La oficina falló",
-    "texto": "Groq no respondió tras 8 intentos (límite de Groq (429)). Aprobados: 3. Rechazados: 5. Con error: 3. Próximo ciclo en 11 h."
   }
 ]
