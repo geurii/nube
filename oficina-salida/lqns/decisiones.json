@@ -1,6 +1,20 @@
 {
   "decisiones": [
     {
+      "id": "i7jj2o",
+      "texto": "Sabías que [acción] [objeto] en [lugar] 🐧 (Parte [n]/[total])",
+      "categoria": "Título",
+      "decision": "no",
+      "fecha": "2026-11-22T19:23:26.259Z"
+    },
+    {
+      "id": "ii5571u",
+      "texto": "Sabías que [CIFRA] minutos antes de que un experimento saliera mal, la cámara se apagó sol. | Imagen de una cámara de seguridad con la pantalla en negro y un reloj marcando el tiempo",
+      "categoria": "Gancho",
+      "decision": "no",
+      "fecha": "2026-11-22T19:23:16.534Z"
+    },
+    {
       "id": "i1sznl4n",
       "texto": "Sabías que [CIFRA] años de historia se borraron de los archivos nacionales | Imagen de un archivo con estanterías vacías y una luz tenue que resalta una sola página",
       "categoria": "Gancho",
