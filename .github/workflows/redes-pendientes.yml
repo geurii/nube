@@ -4,6 +4,8 @@ name: Redes pendientes
 # Baja el MP4 del artefacto de cada Produccion (se guarda 14 días) y corre agentes/facebook.mjs, que no repite lo ya publicado.
 # Se activa al cambiar agentes/redes.disparo o a mano.
 on:
+  schedule:
+    - cron: '41 */6 * * *'   # revisa solo: si algun video de YouTube falta en Facebook, Instagram o TikTok, lo publica (max. 3 intentos por video)
   push:
     paths:
       - 'agentes/redes.disparo'
@@ -43,7 +45,9 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "actions@users.noreply.github.com"
-          if [ -z "$ENTRADA" ] && [ -f agentes/redes.disparo ]; then ENTRADA=$(cut -d'|' -f2 agentes/redes.disparo); fi
+          if [ -z "$ENTRADA" ] && [ "${{ github.event_name }}" = "push" ] && [ -f agentes/redes.disparo ]; then ENTRADA=$(cut -d'|' -f2 agentes/redes.disparo); fi
+          if [ -z "$ENTRADA" ]; then ENTRADA=$(node agentes/redes-pendientes.mjs --contar); fi
+          if [ -z "$ENTRADA" ]; then echo "Nada pendiente: todos los videos cortos ya estan en las redes."; exit 0; fi
           echo "Videos a revisar: $ENTRADA"
           mkdir -p out/serie
           for slug in $ENTRADA; do
@@ -64,3 +68,6 @@ jobs:
             git diff --cached --quiet || git commit -m "Redes pendientes: $id"
             for i in 1 2 3; do git pull --rebase --autostash -X theirs origin main && git push && break; sleep 4; done
           done
+          git add oficina-salida || true
+          git diff --cached --quiet || git commit -m "Redes pendientes: intentos y avisos"
+          for i in 1 2 3; do git pull --rebase --autostash -X theirs origin main && git push && break; sleep 4; done

@@ -138,6 +138,7 @@ export const principal = async () => {
   const guion = leer(path.join('guion', 'serie', `${ID}.json`), null);
   if (!guion) { console.log('Redes: no encuentro el guion del video. Se omite.'); return {omitido: 'sin guion'}; }
   const largo = guion.formato === 'largo';
+  if (largo) { console.log('Redes: los videos largos NO se publican en Facebook, Instagram ni TikTok (solo YouTube).'); return {omitido: 'largo'}; }
   const dir = path.join('oficina-salida', CANAL);
   fs.mkdirSync(dir, {recursive: true});
   const texto = textoDePublicacion(guion);
