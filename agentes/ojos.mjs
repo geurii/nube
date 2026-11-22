@@ -4,7 +4,9 @@
 import fs from 'node:fs';
 
 const BASE = 'https://generativelanguage.googleapis.com';
-const MODELOS = (process.env.GEMINI_MODELO_VIDEO ? [process.env.GEMINI_MODELO_VIDEO] : ['gemini-4-hydrogen', 'gemini-3.8-flash', 'gemini-2.5-flash']);
+// Para describir fotos se prueba PRIMERO el modelo más ligero (2.5-flash): responde rápido y tiene su propia cuota, así no se la quita a la revisión del video
+// (en el primer ciclo real, gemini-4-hydrogen se pasó de tiempo y 3.8-flash no tenía cuota).
+const MODELOS = (process.env.GEMINI_MODELO_OJOS ? [process.env.GEMINI_MODELO_OJOS] : ['gemini-2.5-flash', 'gemini-3.8-flash', 'gemini-4-hydrogen']);
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
 const HEX = /^#[0-9a-fA-F]{6}$/;
 
@@ -23,7 +25,7 @@ export const limpiarVista = (v) => {
   const num = (x) => Math.min(1, Math.max(0, Number(x) || 0));
   const paleta = (Array.isArray(v.paleta) ? v.paleta : []).filter((c) => typeof c === 'string' && HEX.test(c)).slice(0, 6);
   const elementos = (Array.isArray(v.elementos) ? v.elementos : []).slice(0, 6).map((e) => ({que: t(e?.que, 60), x: num(e?.x), y: num(e?.y), w: num(e?.w), h: num(e?.h)})).filter((e) => e.que);
-  const o = {sujeto: t(v.sujeto, 140), composicion: t(v.composicion, 220), paleta, elementos, consejo: t(v.consejo_pixel ?? v.consejo, 220)};
+  const o = {sujeto: t(v.sujeto, 140), composicion: t(v.composicion, 220), paleta, elementos, consejo: t(v.consejo_pixel ?? v.consejo, 220), relevante: typeof v.relevante === 'boolean' ? v.relevante : undefined};
   return o.sujeto || o.elementos.length ? o : null;
 };
 
@@ -43,7 +45,7 @@ export const mirarFoto = async ({ruta, key, frase = '', modo = 'foto', maxIntent
   if (bytes.length > 4 * 1024 * 1024) return {error: 'la foto pesa demasiado'};
   const mime = bytes.subarray(0, 4).toString('hex') === '89504e47' ? 'image/png' : 'image/jpeg';
   const PROMPT_ESTILO = `Eres los ojos de dos pintores de pixel art que NO pueden ver imágenes. Mira este EJEMPLO de pixel art (de otro artista, solo para inspirarse: no se copia). Cuéntales qué hace bien para que apliquen esas IDEAS a su propio cuadro sobre "${String(frase).slice(0, 120)}". Responde SOLO con JSON: {"sujeto": "qué muestra el ejemplo, en una frase", "composicion": "cómo reparte fondo, plano medio y primer plano y hacia dónde va la luz", "paleta": ["#rrggbb", ... 4 a 6 colores dominantes, de oscuro a claro], "elementos": [{"que": "recurso visual que usa (tramado, contorno, brillo, capas con parallax, niebla, reflejo, etc.)", "x": 0.5, "y": 0.5, "w": 0.2, "h": 0.2}, ... máximo 4], "consejo_pixel": "la idea más aprovechable para un cuadro nuevo, en una frase"}. No nombres personas reales ni describas caras.`;
-  const prompt = modo === 'estilo' ? PROMPT_ESTILO : `Eres los ojos de dos pintores de pixel art que NO pueden ver imágenes. Mira esta foto de referencia, que acompaña la frase: "${String(frase).slice(0, 220)}". Descríbesela con precisión para que la dibujen en pixel art. Responde SOLO con JSON: {"sujeto": "qué se ve, en una frase", "composicion": "dónde está lo principal, planos, dirección de la luz", "paleta": ["#rrggbb", ... de 4 a 6 colores dominantes reales de la foto, de oscuro a claro], "elementos": [{"que": "elemento clave", "x": 0-1, "y": 0-1, "w": 0-1, "h": 0-1}, ... máximo 6, con su caja aproximada: x,y es la esquina superior izquierda], "consejo_pixel": "cómo simplificarlo a pixel art con 3 planos de profundidad"}. No nombres personas reales ni describas caras.`;
+  const prompt = modo === 'estilo' ? PROMPT_ESTILO : `Eres los ojos de dos pintores de pixel art que NO pueden ver imágenes. Mira esta foto de referencia, que acompaña la frase: "${String(frase).slice(0, 220)}". Descríbesela con precisión para que la dibujen en pixel art. Responde SOLO con JSON: {"sujeto": "qué se ve, en una frase", "relevante": true o false (¿la foto muestra de verdad el objeto, lugar o suceso de la frase? false si es un gráfico, espectrograma, mapa, retrato, logo, ilustración técnica o algo sin relación con la frase),"composicion": "dónde está lo principal, planos, dirección de la luz", "paleta": ["#rrggbb", ... de 4 a 6 colores dominantes reales de la foto, de oscuro a claro], "elementos": [{"que": "elemento clave", "x": 0-1, "y": 0-1, "w": 0-1, "h": 0-1}, ... máximo 6, con su caja aproximada: x,y es la esquina superior izquierda], "consejo_pixel": "cómo simplificarlo a pixel art con 3 planos de profundidad"}. No nombres personas reales ni describas caras.`;
   const fallos = [];
   const queda = () => (hasta ? hasta - Date.now() : Infinity); // tiempo que queda del presupuesto (ms)
   for (const modelo of MODELOS) {
@@ -51,7 +53,7 @@ export const mirarFoto = async ({ruta, key, frase = '', modo = 'foto', maxIntent
       if (queda() < 5000) return {error: `Gemini no pudo mirar la foto: se acabó el tiempo asignado. ${fallos.join(' | ')}`};
       try {
         const r = await fetch(`${BASE}/v1beta/interactions`, {
-          method: 'POST', headers: {'x-goog-api-key': key, 'Content-Type': 'application/json'}, signal: AbortSignal.timeout(Math.max(5000, Math.min(60000, queda()))),
+          method: 'POST', headers: {'x-goog-api-key': key, 'Content-Type': 'application/json'}, signal: AbortSignal.timeout(Math.max(5000, Math.min(90000, queda()))),
           body: JSON.stringify({model: modelo, input: [{type: 'image', data: bytes.toString('base64'), mime_type: mime}, {type: 'text', text: prompt}]}),
         });
         const cuerpo = await r.text();

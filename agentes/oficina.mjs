@@ -11,6 +11,7 @@ import {pintarEscenas} from './pintor.mjs';
 import {reunirReferencias} from './referencias.mjs';
 import {investigarEnLaWeb} from './investigar-web.mjs';
 import {mirarFoto, textoDeVista} from './ojos.mjs';
+import {limpiarParaVoz} from './texto-voz.mjs';
 import {reunirInspiracion} from './inspiracion.mjs';
 import {enGarantia} from './garantia.mjs';
 import {chatAlternativo, proveedoresConLlave, modelosDisponibles, diagnosticoRespaldo} from './llm.mjs';
@@ -295,6 +296,7 @@ const NORMAS = `NORMAS DE LA JEFA (no se negocian):
 6. Las dudas se dicen como dudas ("según la fuente", "no se sabe"). Si dos fuentes difieren, di las dos.
 7. La revelación ("Pero lo que no sabías:") cae entre el 65 % y el 75 % del guion.
 8. Cierra con una pregunta al espectador y con esta frase EXACTA: "${CTA}"
+8b. TODO el texto se LEE EN VOZ ALTA por una voz en español: escríbelo en español puro, sin palabras en inglés (traduce: "estruendo", no "blast"), sin transliteraciones raras ni siglas sueltas, y los rangos con palabras ("entre 10 y 15", no "10-15").
 9. Escribe las cifras y los años con DÍGITOS, exactamente como aparecen en DATOS EXACTOS (por ejemplo 1609 o 1420 MHz). NUNCA conviertas un número a palabras ni lo cambies: un número mal copiado es un dato falso.
 11. GANCHO AUDITIVO (primeros 3 segundos, lo que se OYE): una pregunta imposible o una cifra dicha en voz alta, con frase corta y una pausa dramática justo antes de la respuesta. Nada de saludos ni introducciones.
 12. GANCHO VISUAL (lo que se VE): cada escena describe algo que se pueda mostrar y la cifra o la idea clave aparece escrita en pantalla; el fondo cambia cada 3 segundos.
@@ -504,6 +506,7 @@ try {
         // los pintores no ven imágenes: Gemini MIRA cada foto de referencia y se la describe (composición, colores reales, dónde está cada cosa)
         // TOPE DE TIEMPO: entre los ojos y las ideas de estilo nunca pasan de ~4 minutos, pase lo que pase con Gemini u OpenGameArt
         let vistas = 0;
+        let modeloOjos = '';
         let ideas = [];
         try {
           const hastaOjos = Date.now() + 130000;
@@ -511,9 +514,14 @@ try {
           for (const [i, ref] of Object.entries(referencias)) {
             if (seguidos >= 2 || Date.now() > hastaOjos - 8000) { informe.push('(Gemini no miró el resto de las fotos: demasiados fallos o se acabó el tiempo asignado.)'); break; }
             const g = await mirarFoto({ruta: path.resolve('public', 'referencias', ref.archivo), key: process.env.GEMINI_API_KEY, frase: escenas[Number(i)]?.texto, maxIntentos: 2, hasta: hastaOjos});
-            if (g.vista) { ref.vista = textoDeVista(g.vista); vistas++; seguidos = 0; } else { seguidos++; informe.push(`(Gemini no pudo mirar la foto de la escena ${i}: ${String(g.error).slice(0, 140)})`); }
+            if (g.vista && g.vista.relevante === false) {
+              // Gemini la vio y NO tiene que ver con la frase (gráfico, mapa, retrato...): se descarta y la escena se pinta sin foto
+              informe.push(`(La foto de la escena ${i} "${ref.titulo}" se descartó: Gemini vio que no muestra lo que dice la frase.)`);
+              try { fs.rmSync(path.resolve('public', 'referencias', ref.archivo), {force: true}); } catch { /* ya no está */ }
+              delete referencias[i]; seguidos = 0; vistas++;
+            } else if (g.vista) { ref.vista = textoDeVista(g.vista); vistas++; seguidos = 0; modeloOjos = g.modelo; } else { seguidos++; informe.push(`(Gemini no pudo mirar la foto de la escena ${i}: ${String(g.error).slice(0, 140)})`); }
           }
-          if (vistas) informe.push(`Gemini miró ${vistas} fotos de referencia y se las describió a los pintores.`);
+          if (vistas) informe.push(`Gemini (${modeloOjos || 'modelo desconocido'}) miró ${vistas} fotos de referencia y se las describió a los pintores.`);
           ideas = await reunirInspiracion({tema: TEMA, key: process.env.GEMINI_API_KEY, limiteMs: 100000, nota: (t) => informe.push(t)});
           if (ideas.length) informe.push(`Ideas de estilo (pixel art CC0 de OpenGameArt vistos por Gemini): ${ideas.map((x) => x.paquete + ' <' + x.url + '>').join('; ')}`);
         } catch (e) { informe.push('(Ojos e ideas de estilo no disponibles: ' + String(e.message ?? e).slice(0, 100) + ')'); }
@@ -548,7 +556,8 @@ try {
     publicacion: {titulo, descripcion: `${descripcion}\n\n${CONFIG.ctaEscrito ?? ''}\n\nFuentes: ${fuentes.filter((f) => !f.apoyo).map((f) => f.url).join(' · ')}${CONFIG.enlaceCanal ? `\n\nMás historias en el canal: ${CONFIG.enlaceCanal}` : ''}${hashtags.length ? `\n\n${hashtags.join(' ')}` : ''}`},
     estado: aprobado ? 'aprobado' : 'rechazado-necesita-revision',
     editor: {puntaje, critica},
-    escenas: escenas.map((e, i) => ({...e, fondo: fondos[i]})),
+    // el texto que se LEE en voz alta y se ve en los subtítulos sale limpio: sin rangos con guion, horas con dos puntos, comas de miles ni unidades abreviadas
+    escenas: escenas.map((e, i) => ({...e, texto: limpiarParaVoz(e.texto), fondo: fondos[i]})),
   };
   if (CTX.mesa) guion.publicacion = {...guion.publicacion, titulosAlternativos: CTX.mesa.titulos, comentarioFijado: CTX.mesa.comentarioFijado, miniatura: CTX.mesa.miniatura};
   fs.writeFileSync(path.join(SALIDA, `guion-${slug}.json`), JSON.stringify(guion, null, 2));

@@ -7,10 +7,22 @@ import path from 'node:path';
 const API = 'https://commons.wikimedia.org/w/api.php';
 const UA = 'FabricaDeVideos/1.0 (referencias de pixel art)';
 const LICENCIA_OK = /^(public domain|pd[- ]|cc0|cc[- ]?zero)/i;
-const TITULO_NO = /portrait|headshot|\bbust\b|logo|flag|coat of arms|diagram|\bmap\b|signature|stamp|banknote|screenshot|\.svg|\.gif|\.pdf|\.tif/i;
+// Fotos que NO sirven de referencia visual: retratos, gráficos, espectrogramas, mapas, logos, portadas, esquemas, carteles, texturas...
+const TITULO_NO = /portrait|headshot|\bbust\b|logo|flag|coat of arms|diagram|\bmap\b|signature|stamp|banknote|screenshot|spectrogram|spectrum|waveform|chart|graph|plot|schematic|infographic|poster|cover|icon|sprite|vector|texture|pattern|figure|table|\bscan\b|\.svg|\.gif|\.pdf|\.tif/i;
 const MAX_BYTES = 600 * 1024;
 
-const pedir = async (url, tiempo = 20000) => fetch(url, {headers: {'User-Agent': UA}, signal: AbortSignal.timeout(tiempo)});
+const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
+// Commons y Openverse limitan las peticiones (error 429): se espera lo que pidan (máx. 15 s) y se reintenta hasta 3 veces.
+const pedir = async (url, tiempo = 20000) => {
+  let r;
+  for (let i = 1; i <= 3; i++) {
+    r = await fetch(url, {headers: {'User-Agent': UA}, signal: AbortSignal.timeout(tiempo)});
+    if (![429, 503].includes(r.status) || i === 3) return r;
+    const pide = Number(r.headers.get('retry-after'));
+    await dormir(Math.min(15000, (Number.isFinite(pide) && pide > 0 ? pide : 4 * i) * 1000));
+  }
+  return r;
+};
 
 /** Busca UNA foto libre para la consulta (en inglés). Devuelve {url, titulo, licencia, pagina} o null. */
 export const buscarFotoLibre = async (consulta) => {
@@ -72,19 +84,25 @@ export const reunirReferencias = async ({llamar, escenas, indices, slug, tema, n
     const dir = path.resolve('public', 'referencias');
     fs.mkdirSync(dir, {recursive: true});
     const usadas = new Set();
+    const tope = Date.now() + 120000; // tope duro de tiempo para buscar y bajar todas las fotos
     for (const c of (Array.isArray(r?.consultas) ? r.consultas : []).slice(0, 12)) {
       const i = Number(c.indice);
       const q = String(c.q ?? '').trim().slice(0, 80);
       if (!indices.includes(i) || q.length < 3) continue;
-      try {
-        let f = await buscarFotoLibre(q);
-        if (!f || usadas.has(f.url)) { try { f = await buscarEnOpenverse(q); } catch { f = null; } }
-        if (!f || usadas.has(f.url)) continue;
-        const archivo = `${slug}-${i}.jpg`;
-        await descargar(f.url, path.join(dir, archivo));
-        usadas.add(f.url);
-        salida[i] = {archivo, titulo: f.titulo, licencia: f.licencia, pagina: f.pagina};
-      } catch (e) { nota(`(Referencia de la escena ${i}: ${String(e.message ?? e).slice(0, 80)})`); }
+      if (Date.now() > tope) { nota('(Referencias: se acabó el tiempo asignado (2 min); el resto de escenas va sin foto.)'); break; }
+      await dormir(1200); // sin ráfagas: Commons limita las peticiones seguidas
+      // Se prueba Commons y, si no hay foto o la descarga falla, Openverse
+      for (const buscar of [buscarFotoLibre, buscarEnOpenverse]) {
+        try {
+          const f = await buscar(q);
+          if (!f || usadas.has(f.url)) continue;
+          const archivo = `${slug}-${i}.jpg`;
+          await descargar(f.url, path.join(dir, archivo));
+          usadas.add(f.url);
+          salida[i] = {archivo, titulo: f.titulo, licencia: f.licencia, pagina: f.pagina};
+          break;
+        } catch (e) { nota(`(Referencia de la escena ${i}: ${String(e.message ?? e).slice(0, 80)})`); }
+      }
     }
   } catch (e) { nota(`(Sin referencias de internet: ${String(e.message ?? e).slice(0, 100)})`); }
   return salida;
