@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-22T03:51:25.040Z",
+  "actualizado": "2026-11-22T03:58:37.980Z",
   "totales": {
     "aprobados": 8,
     "rechazados": 7,
@@ -204,9 +204,9 @@
       "tarea": "Renderizó \"Sabías que una ola de melaza arrasó Boston? 🍯\" (53 MB). Está en Actions, artefacto \"video-lqns-the-great-molasses-flood\"."
     },
     "Publicador": {
-      "estado": "esperando_decision",
+      "estado": "libre",
       "actividad": "pensando",
-      "tarea": "Tiene un video listo: \"Sabías que una ola de melaza arrasó Boston? 🍯\". Falta subirlo a YouTube (necesita tu conexión; ver subir.mjs)."
+      "tarea": "Subió \"Sabías que una ola de melaza arrasó Boston? 🍯\" y quedó PÚBLICO ahora mismo: https://youtu.be/76aNbQdWBSc"
     },
     "Crítico: padre trabajador": {
       "estado": "trabajando",
