@@ -1,5 +1,10 @@
 [
   {
+    "fecha": "2026-11-22T08:38:10.839Z",
+    "orden": "Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h.",
+    "nivel": 4
+  },
+  {
     "fecha": "2026-11-22T07:20:45.525Z",
     "orden": "Equipo: eliminen el video 4 de la lista de producción y no lo suban.",
     "nivel": 4
@@ -42,11 +47,6 @@
   {
     "fecha": "2026-11-22T02:57:05.760Z",
     "orden": "Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones.",
-    "nivel": 5
-  },
-  {
-    "fecha": "2026-11-22T01:01:09.358Z",
-    "orden": "Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00.",
     "nivel": 5
   }
 ]
