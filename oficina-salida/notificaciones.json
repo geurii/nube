@@ -1,5 +1,13 @@
 [
   {
+    "id": "mws7uimzt2kw",
+    "fecha": "2026-11-22T19:14:38.939Z",
+    "canal": "lqns",
+    "tipo": "alerta",
+    "titulo": "No se pudo publicar en las redes",
+    "texto": "\"🔊 El enigma del Bloop: el rugido del hielo\": el repositorio público \"geurii/oficina-videos-legal\" no aceptó el video: no pude subir el video al repositorio público (403): {\"message\":\"The rule did not run because of a timeout.\",\"documentation_url\":\"https://do; y el "
+  },
+  {
     "id": "mws7u5yp5r7g",
     "fecha": "2026-11-22T19:14:22.513Z",
     "canal": "lqns",
@@ -673,14 +681,5 @@
     "tipo": "alerta",
     "titulo": "Gemini no pudo mirar el video",
     "texto": "ningún modelo respondió. gemini-4-hydrogen: 503 {\"error\":{\"message\":\"gemini-4-hydrogen is currently experiencing high demand, spikes in demand are usually temporary. Please try again later | gemini-3.8-flash: The operati El panel juzgó solo el guion."
-  },
-  {
-    "id": "mwqjf0drl6n1",
-    "fecha": "2026-11-21T15:02:58.479Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "listo",
-    "titulo": "Video listo: 📜 El manuscrito que nadie ha descifrado",
-    "texto": "Se renderizó \"📜 El manuscrito que nadie ha descifrado\" para Lo Que No Sabías (28 MB). Descárgalo en GitHub > Actions > Produccion > artefacto \"video-lqns-the-voynich-manuscript\". Falta subirlo a YouTube."
   }
 ]
