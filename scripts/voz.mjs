@@ -66,6 +66,8 @@ const guion = JSON.parse(fs.readFileSync(rutaGuion, 'utf8'));
 // El guion puede traer "voz", "tono" y "velocidad"; lo que se pase por consola manda.
 const ES_NINOS = guion.composicion === 'ninos';
 if (guion.voz && !args.includes('--voz')) VOZ = guion.voz;
+// REGLA DEL DUEÑO (22 nov 2026): voz única de los videos del canal = es-MX-JorgeNeural (la de los primeros videos, muestras A y B). Se ignora la voz que traiga el guion. NUNCA Gemini (muestra C).
+if (!args.includes('--voz') && guion.composicion !== 'ninos') VOZ = 'es-MX-JorgeNeural';
 if (guion.tono !== undefined && !args.includes('--tono')) TONO = Number(guion.tono);
 if (guion.velocidad !== undefined && !args.includes('--velocidad')) VELOCIDAD = Number(guion.velocidad);
 if (ES_NINOS) {
@@ -142,9 +144,7 @@ const GEMINI_KEY = process.env.GEMINI_API_KEY;
 const GROQ_KEY = process.env.GROQ_API_KEY;
 const GEMINI_VOZ = guion.vozGemini || 'Sadaltager';
 const ESTILO_VOZ = guion.estiloVoz || 'narrador de documental en español, voz masculina grave, cálida y misteriosa, ritmo lento con pausas';
-// REGLA DEL DUEÑO (22 nov 2026): la ÚNICA voz permitida es Gemini Sadaltager. NUNCA se cambia a la voz de Edge: si Gemini falla, el video NO se hace (se reintenta en el próximo ciclo).
-const USAR_GEMINI = !ES_NINOS;
-if (USAR_GEMINI && !GEMINI_KEY) { console.error('Falta GEMINI_API_KEY: este canal solo puede usar la voz Gemini Sadaltager. No se genera con otra voz.'); process.exit(1); }
+const USAR_GEMINI = false; // el dueño prohibió la voz de Gemini (muestra C): solo Edge es-MX-JorgeNeural
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
 let ultimaGemini = 0;
 const sintetizarGemini = async (texto, destino) => {
@@ -235,7 +235,7 @@ const hacerEscenas = async (motor) => {
   return lista;
 };
 
-console.log(USAR_GEMINI ? `Voz: Gemini ${GEMINI_VOZ} (única voz permitida, sin respaldo)` : `Voz: ${VOZ} · velocidad ${VELOCIDAD}% · tono ${TONO} Hz`);
+console.log(USAR_GEMINI ? `Voz: Gemini (DESACTIVADA por regla del dueño)` : `Voz: ${VOZ} · velocidad ${VELOCIDAD}% · tono ${TONO} Hz`);
 let escenas;
 if (USAR_GEMINI) {
   try { escenas = await hacerEscenas('gemini'); }

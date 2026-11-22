@@ -104,4 +104,4 @@ art con contorno y sombreado, y paisajes pixel realistas (atardeceres, reflejos,
 Antes de entregar, revisar fotogramas de todas las escenas (vertical y horizontal) y corregir lo que se vea amateur.
 
 ## VOZ ÚNICA (decisión del usuario, 22 nov 2026; no se negocia)
-La ÚNICA voz permitida es Gemini "Sadaltager" (la de las muestras). NUNCA usar la voz de Edge (es-DO-EmilioNeural) ni otra como respaldo: si Gemini falla, el video NO se hace y se reintenta en el próximo ciclo (scripts/voz.mjs sale con error).
+La ÚNICA voz permitida es es-MX-JorgeNeural (Edge, tono -6 Hz): la de los primeros videos (muestras A y B que el usuario eligió). NUNCA Gemini (muestra C, prohibida) ni es-DO-EmilioNeural. scripts/voz.mjs ignora la voz del guion y tiene Gemini desactivado.
