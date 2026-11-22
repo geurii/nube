@@ -17,6 +17,24 @@ export const HECHOS_FIJOS = [
   'LO QUE NO PUEDES HACER: publicar, borrar o cambiar videos tú misma; pedir claves; prometer vistas o resultados. Sí puedes: opinar, explicar el estado real y dar UNA orden concreta al equipo.',
 ].join(' ');
 
+/** Cada video subido a YouTube con su FORMATO real (Short o largo) y en qué redes está, según los registros. Así Jules no inventa "políticas" ni formatos. */
+export const videosYRedes = (canal = 'lqns', raiz = 'oficina-salida', serie = path.join('guion', 'serie')) => {
+  const carpeta = path.join(raiz, canal);
+  const subidos = leer(path.join(carpeta, 'subidos.json'), {videos: []}).videos ?? [];
+  const reg = Object.fromEntries(['facebook', 'instagram', 'tiktok'].map((r) => [r, new Set((leer(path.join(carpeta, `${r}.json`), {posts: []}).posts ?? []).map((p) => p.id))]));
+  const guiones = [];
+  try { for (const f of fs.readdirSync(serie)) if (/^lqns-.+\.json$/.test(f) && !f.endsWith('.palabras.json')) guiones.push({id: f.replace(/\.json$/, ''), g: leer(path.join(serie, f), null)}); } catch { /* sin guiones */ }
+  const norm = (t) => String(t ?? '').trim().toLowerCase();
+  const lineas = subidos.slice(0, 8).map((v) => {
+    const x = guiones.find((y) => norm(y.g?.publicacion?.titulo ?? y.g?.titulo) === norm(v.titulo));
+    const largo = x?.g?.formato === 'largo';
+    const formato = x ? (largo ? 'VIDEO LARGO' : 'SHORT') : 'formato no registrado';
+    const si = (r) => (x && reg[r].has(x.id) ? 'sí' : largo ? 'no (los largos van solo a YouTube)' : 'todavía no');
+    return `"${corto(v.titulo, 55)}" (${String(v.fecha).slice(5, 10)}, ${formato}): YouTube sí · Facebook ${si('facebook')} · Instagram ${si('instagram')} · TikTok ${si('tiktok')}`;
+  });
+  return lineas.length ? `VIDEOS Y REDES (datos reales; si un video no aparece aquí, no lo sabes): ${lineas.join(' | ')}. Los Shorts van a YouTube, Facebook, Instagram y TikTok; los videos largos SOLO a YouTube. No existe ninguna "política de formatos" distinta a esa.` : '';
+};
+
 /** Estado de hoy leído de los archivos reales de la oficina. */
 export const estadoDeHoy = (canal = 'lqns', raiz = 'oficina-salida') => {
   const carpeta = path.join(raiz, canal);
@@ -36,6 +54,7 @@ export const estadoDeHoy = (canal = 'lqns', raiz = 'oficina-salida') => {
   if (vig) partes.push(`Vigilante (${String(vig.fecha).slice(0, 16)}): ${vig.problemas?.length ? 'PROBLEMAS: ' + vig.problemas.map((p) => corto(p, 90)).join(' | ') : 'sin problemas'}; en orden: ${(vig.ok ?? []).slice(0, 6).join(', ')}.`);
   const reg = ['facebook', 'instagram', 'tiktok'].map((r) => { const j = leer(path.join(carpeta, r + '.json'), null); const n = Array.isArray(j) ? j.length : (j?.total ?? j?.videos?.length ?? 0); return `${r}: ${n} publicados`; });
   partes.push(`Redes (registros reales): ${reg.join(', ')}.`);
+  const vr = videosYRedes(canal, raiz); if (vr) partes.push(vr);
   return partes.join(' ');
 };
 
