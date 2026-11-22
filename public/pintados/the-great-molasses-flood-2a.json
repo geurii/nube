@@ -1,0 +1,1 @@
+{"cielo":["#c0d8ff","#8ab0e5","#5a87c0"],"capas":[{"t":"agua","y":0.68,"rampa":["#c28b6a","#b36a4e","#9c4a33","#82301b"]},{"t":"olas","y":0.68,"alto":0.28,"color":"#1d4f86","espuma":true},{"t":"texto","x":0.5,"y":0.35,"tam":18,"color":"#ffd27a","s":"Ola de 25 ft a 35 mph"},{"t":"particulas","n":30,"tipo":"burbujas"},{"t":"silueta","x":0.4,"y":0.55,"h":0.22,"color":"#10121f"}]}

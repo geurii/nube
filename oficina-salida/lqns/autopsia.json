@@ -1,20 +1,13 @@
 {
-  "fecha": "2026-11-22T01:30:21.910Z",
-  "total": 2630,
-  "promedio": 175,
-  "queFunciono": "Los videos con mayor audiencia comparten títulos que combinan curiosidades sobre pingüinos y eventos extremos, utilizan numeración de series (Parte 1/3, Parte 3/3) y fechas de publicación muy cercanas (todos el 20/11/2026).",
+  "fecha": "2026-11-22T03:08:21.673Z",
+  "total": 2656,
+  "promedio": 177,
+  "queFunciono": "Los videos con más vistas comparten títulos que hacen preguntas o afirmaciones impactantes sobre pingüinos y situaciones extremas, y se publicaron en fechas cercanas (20‑21 noviembre 2026).",
   "porQueFallaron": [
-    "Poca retención media (24.8 % y 29.9 %) y duración media de 11 s y 14 s, lo que indica que el contenido no mantiene el interés; evidencia: datos de retención proporcionados.",
-    "El contenido no parece estar optimizado para la audiencia objetivo, ya que los títulos son confusos y mezclan temas (pingüinos, aviones, CIA) sin una narrativa clara; evidencia: títulos variados y no coherentes entre sí.",
-    "Los videos con muy pocas vistas (menos de 100) tienen títulos demasiado largos o poco atractivos y no usan numeración de series; evidencia: títulos como \"Sabías que un banco pagó 175 millones por clientes que no existían\" y \"Los \"jóvenes genios\" que terminaron",
-    "La falta de datos sobre miniaturas, palabras clave y audiencia objetivo impide identificar si el problema es de descubrimiento; evidencia: no se proporcionan datos de miniaturas ni de palabras clave."
+    "Poca retención media (24.8 % y 29.9 %) indica que el contenido no mantiene la atención; datos de retención confirman baja duración media (11 s y 14 s).",
+    "Los títulos de los videos con pocas vistas son más genéricos o menos llamativos (ej. “🔊 El enigma del Bloop: el rugido del hielo”) y se publicaron en fechas con menor actividad (14‑15 noviembre).",
+    "La falta de aumento de suscriptores (+0 en la mayoría) sugiere que el contenido no genera engagement ni retención de audiencia."
   ],
-  "noSePuedeSaber": [
-    "Datos de miniaturas, audiencia objetivo y métricas de interacción (likes, comentarios)."
-  ],
-  "reglas": [
-    "1. Usa emoticonos y palabras clave curiosas en el título para captar atención.",
-    "2. Mantén la serie con numeración clara (Parte X/Y) y publica en fechas de alta actividad (últimos días del mes).",
-    "3. Optimiza la retención en los primeros 15 s para evitar caída de suscriptores; revisa y ajusta el hook inicial."
-  ]
+  "noSePuedeSaber": [],
+  "reglas": []
 }

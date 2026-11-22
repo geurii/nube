@@ -1,11 +1,19 @@
 {
-  "actualizado": "2026-11-22T01:36:37.850Z",
+  "actualizado": "2026-11-22T03:09:11.403Z",
   "totales": {
-    "aprobados": 6,
+    "aprobados": 7,
     "rechazados": 7,
     "errores": 8
   },
   "historial": [
+    {
+      "fecha": "2026-11-22T03:08:00.523Z",
+      "tema": "The Great Molasses Flood",
+      "formato": "short",
+      "resultado": "aprobado",
+      "intentos": 2,
+      "detalle": "133 palabras, 5 escenas."
+    },
     {
       "fecha": "2026-11-22T01:12:16.171Z",
       "tema": "Mary Celeste",
@@ -157,21 +165,13 @@
       "resultado": "rechazado",
       "intentos": 3,
       "detalle": "El material no respalda \"más de mil historias de desapariciones\"."
-    },
-    {
-      "fecha": "2026-11-21T06:02:24.916Z",
-      "tema": "(sin tema)",
-      "formato": "short",
-      "resultado": "error",
-      "intentos": 0,
-      "detalle": "Fallo al elegir tema (ya corregido)."
     }
   ],
   "agentes": {
     "Directora de contenido": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "PLAN DEL CICLO: 1. Lanzar la serie 'Sabías que nunca verás pingüino en un supermercado 🐧 (Parte 4/3)' con un enfoque de marketing cruzado en plataformas de streaming y patrocinadores de marcas de alimentos. Responsable: Oficina de Producción y Comercializ · 2. Crear un episodio interactivo 'El avión que recogía pe"
+      "tarea": "PLAN DEL CICLO: Crear serie de 5 episodios sobre fenómenos históricos enigmáticos con alta documentación: Departamento de Investigación y Guion: Alcanzar 5,000 vistas en cada episodio antes del 13 de diciembre · Desarrollar contenido de 3 episodios sobre casos curiosos sin nombres reales, con tono de misterio y rev"
     },
     "Investigador de temas": {
       "estado": "trabajando",
@@ -181,146 +181,146 @@
     "Guionista": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título"
+      "tarea": "AYUDA: le echó una mano a (Editor de guion). Entregó: 3 mejoras al último guion"
     },
     "Verificador de datos": {
       "estado": "trabajando",
-      "actividad": "leyendo",
-      "tarea": "Aprobó \"Mary Celeste\" en el intento 2. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. JEFA: Que no se te cuele ni un dato sin fuente."
+      "actividad": "escribiendo",
+      "tarea": "AYUDA: le echó una mano a (Investigador de temas). Entregó: 5 temas candidatos"
     },
     "Editor de guion": {
       "estado": "trabajando",
-      "actividad": "pensando",
-      "tarea": "Pulió el guion y eligió los fondos de cada escena. Puntaje: 5/10. El gancho es demasiado largo y confuso. La historia se extiende sin ritmo y el cierre suena forzado. Falta una revelación impactante en el momento adecuado. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. JEFA: Un 5/10 no alcanza. Quiero ganchos que frenen el dedo."
+      "actividad": "escribiendo",
+      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título"
     },
     "Locutor": {
-      "estado": "libre",
+      "estado": "trabajando",
       "actividad": "hablando",
-      "tarea": "Grabó la voz de \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\"."
+      "tarea": "Grabó la voz de \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\". ORDEN DE JULES (nivel 5/5): Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Técnico de render": {
-      "estado": "libre",
+      "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Renderizó \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\" (50 MB). Está en Actions, artefacto \"video-lqns-the-sargasso-sea\"."
+      "tarea": "Renderizó \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\" (50 MB). Está en Actions, artefacto \"video-lqns-the-sargasso-sea\". ORDEN DE JULES (nivel 5/5): Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Publicador": {
-      "estado": "esperando_decision",
+      "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "Tiene un video listo: \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\". Falta subirlo a YouTube (necesita tu conexión; ver subir.mjs)."
+      "tarea": "Lleva 1 video subido a YouTube en total. El último: \"🔊 El enigma del Bloop: el rugido del hielo\". ORDEN DE JULES (nivel 5/5): Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
     },
     "Crítico: padre trabajador": {
-      "estado": "libre",
+      "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Le gustó \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\": Aprendí algo concreto sobre el Sargazo, pero el ritmo lento me hizo mirar el móvil. (siguió hasta el segundo 22). FUNCIÓN (contador): ya entregó hoy; la próxima ronda es dentro de 5 h."
+      "tarea": "Le gustó \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\": Aprendí algo concreto sobre el Sargazo, pero el ritmo lento me hizo mirar el móvil. (siguió hasta el segundo 22). ORDEN DE JULES (nivel 5/5): Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. FUNCIÓN (contador): ya entregó hoy; la próxima ronda es dentro de 4 h."
     },
     "Crítica: fan del misterio": {
-      "estado": "libre",
+      "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Le gustó \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\": El dato de la anguila me sorprendió, pero la falta de imágenes reales del Sargazo me decepciona. (siguió hasta el segundo 28, lo compartiría). FUNCIÓN (oportunidades): ya entregó hoy; la próxima ronda es dentro de 9 h."
+      "tarea": "Le gustó \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\": El dato de la anguila me sorprendió, pero la falta de imágenes reales del Sargazo me decepciona. (siguió hasta el segundo 28, lo compartiría). ORDEN DE JULES (nivel 5/5): Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. FUNCIÓN (oportunidades): ya entregó hoy; la próxima ronda es dentro de 8 h."
     },
     "Crítico: adolescente": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "NO le gustó \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\": El gancho es medio aburrido y los gráficos son genéricos, paso de ahí en 3 s. (siguió hasta el segundo 5). FUNCIÓN (otros-formatos): ya entregó hoy; la próxima ronda es dentro de 11 h."
+      "tarea": "NO le gustó \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\": El gancho es medio aburrido y los gráficos son genéricos, paso de ahí en 3 s. (siguió hasta el segundo 5). ORDEN DE JULES (nivel 5/5): Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. FUNCIÓN (otros-formatos): ya entregó hoy; la próxima ronda es dentro de 10 h."
     },
     "Crítica: universitaria": {
-      "estado": "libre",
+      "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Le gustó \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\": Me atrapó la curiosidad del misterio de la anguila, aunque los visuals son flojos. (siguió hasta el segundo 30, lo compartiría). FUNCIÓN (mentor): ya entregó hoy; la próxima ronda es dentro de 9 h."
+      "tarea": "Le gustó \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\": Me atrapó la curiosidad del misterio de la anguila, aunque los visuals son flojos. (siguió hasta el segundo 30, lo compartiría). ORDEN DE JULES (nivel 5/5): Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. FUNCIÓN (mentor): ya entregó hoy; la próxima ronda es dentro de 8 h."
     },
     "Crítico: joven dominicano": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "NO le gustó \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\": Suena a documental de colegio, falta chispa y slang que me enganche. (siguió hasta el segundo 18). FUNCIÓN (agenda): ya entregó hoy; la próxima ronda es dentro de 9 h."
+      "tarea": "NO le gustó \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\": Suena a documental de colegio, falta chispa y slang que me enganche. (siguió hasta el segundo 18). ORDEN DE JULES (nivel 5/5): Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. FUNCIÓN (agenda): ya entregó hoy; la próxima ronda es dentro de 8 h."
     },
     "Crítica: ama de casa": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "NO le gustó \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\": La voz está bien, pero el lenguaje es muy denso y los gráficos aburridos. (siguió hasta el segundo 20). FUNCIÓN (infantil): ya entregó hoy; la próxima ronda es dentro de 9 h."
+      "tarea": "NO le gustó \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\": La voz está bien, pero el lenguaje es muy denso y los gráficos aburridos. (siguió hasta el segundo 20). ORDEN DE JULES (nivel 5/5): Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. FUNCIÓN (infantil): ya entregó hoy; la próxima ronda es dentro de 8 h."
     },
     "Crítico: escéptico": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "NO le gustó \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\": Promete un misterio y al final solo suelta un dato sin pruebas visuales, típico clickbait. (siguió hasta el segundo 15). FUNCIÓN (guardian): ya entregó hoy; la próxima ronda es dentro de 5 h."
+      "tarea": "NO le gustó \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\": Promete un misterio y al final solo suelta un dato sin pruebas visuales, típico clickbait. (siguió hasta el segundo 15). ORDEN DE JULES (nivel 5/5): Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. FUNCIÓN (guardian): ya entregó hoy; la próxima ronda es dentro de 4 h."
     },
     "Crítico: abuelo": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Le gustó \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\": Entendí la historia y los subtítulos estaban claros, pero quise ver fotos reales del mar. (siguió hasta el segundo 25). FUNCIÓN (comunidad): Espera que la analítica esté autorizada para leer los comentarios."
+      "tarea": "Le gustó \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\": Entendí la historia y los subtítulos estaban claros, pero quise ver fotos reales del mar. (siguió hasta el segundo 25). ORDEN DE JULES (nivel 5/5): Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. FUNCIÓN (comunidad): No pude leer los comentarios (YouTube no me dio acceso)."
     },
     "Enlace de datos": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "En su puesto, preparando el próximo ciclo. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "tarea": "En su puesto, preparando el próximo ciclo. ORDEN DE JULES (nivel 5/5): Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
     },
     "Coordinador de producción": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "Calendario fijo (hora de República Dominicana): Shorts a las 00:00 y 12:00, largos a las 18:00. Cuida que el subidor programe sin chocar. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "tarea": "Calendario fijo (hora de República Dominicana): Shorts a las 00:00 y 12:00, largos a las 18:00. Cuida que el subidor programe sin chocar. ORDEN DE JULES (nivel 5/5): Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
     },
     "Jefa de calidad": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Aprobó \"Mary Celeste\": 6 escenas, 2 fuentes, sin problemas abiertos. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "tarea": "Aprobó \"The Great Molasses Flood\": 5 escenas, 1 fuentes, sin problemas abiertos. ORDEN DE JULES (nivel 5/5): Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
     },
     "Cazador de fórmulas": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Revisó 132 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (41563 vistas/hora). Fórmula: Título con pregunta intrigante o afirmación impactante + elemento misterioso o prohibido + pista de revelación ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "Revisó 132 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (40860 vistas/hora). Fórmula: Pregunta intrigante o afirmación impactante + elemento misterioso/inhóspito + pista de revelación o consecuenc ORDEN DE JULES (nivel 5/5): Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Vigía de tendencias": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Vigila 9 canales por sus feeds públicos de YouTube. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "Vigila 9 canales por sus feeds públicos de YouTube. ORDEN DE JULES (nivel 5/5): Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Titulista": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Redactor de descripción": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Especialista en hashtags": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Auditor de fuentes": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Comprobó que cada dato salga de las 2 fuentes del material y las puso en la descripción. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "Comprobó que cada dato salga de las 1 fuentes del material y las puso en la descripción. ORDEN DE JULES (nivel 5/5): Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Auditor de normas": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Comprobó: empieza con \"Sabías que\", llamada a compartir exacta y revelación entre 60 % y 78 %. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
+      "tarea": "Comprobó: empieza con \"Sabías que\", llamada a compartir exacta y revelación entre 60 % y 78 %. ORDEN DE JULES (nivel 5/5): Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Revisor de nombres": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Busca nombres reales de personas en el guion y en lo que escribe la Mesa. Si aparece uno, rechaza. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "Busca nombres reales de personas en el guion y en lo que escribe la Mesa. Si aparece uno, rechaza. ORDEN DE JULES (nivel 5/5): Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Revisor de ganchos": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "Gancho auditivo: la primera frase tiene 19 palabras (cabe en 3 segundos). Gancho visual: 3 escenas se quedan con un solo fondo. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
-    },
-    "Escenógrafo": {
-      "estado": "trabajando",
-      "actividad": "pensando",
-      "tarea": "Eligió los fondos de 6 escenas del catálogo; 0 no tenían imagen propia. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "tarea": "Gancho auditivo: la primera frase tiene 8 palabras (cabe en 3 segundos). Gancho visual: 1 escenas se quedan con un solo fondo. ORDEN DE JULES (nivel 5/5): Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Pintor de imágenes": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Dibujó 2 escenas nuevas en pixel art (2 planos cada una) porque el catálogo no tenía imagen para ellas. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "Pintor de composición y color: dibujó 5 de 5 escenas en pixel art (2 planos cada una) y las discutió con su compañero hasta quedar de acuerdo. PRESIÓN: Gemini RECHAZA el video si las imágenes no muestran lo que se dice, y un video rechazado cuesta vistas y tu paga. Aquí no se entrega nada que no sea de maestro. ORDEN DE JULES (nivel 5/5): Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+    },
+    "Pintor de luz y detalle": {
+      "estado": "trabajando",
+      "actividad": "pensando",
+      "tarea": "Pintor de luz y detalle: revisó cada cuadro de su compañero (luz, profundidad, contornos, movimiento y que se vea lo que se dice) y no firmó hasta estar de acuerdo. PRESIÓN: Gemini RECHAZA el video si las imágenes no muestran lo que se dice, y un video rechazado cuesta vistas y tu paga. Aquí no se entrega nada que no sea de maestro. ORDEN DE JULES (nivel 5/5): Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     }
   },
   "jefa": {
-    "mensaje": "Último guion aprobado: \"Mary Celeste\" (short). Aprobados: 6. Rechazados: 7. Con error: 8. ORDEN DE JULES (nivel 5/5): Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. JEFA: Faltan 1 h para el próximo ciclo. Sin excusas.",
-    "horasParaProximoCiclo": 1
+    "mensaje": "Último guion aprobado: \"The Great Molasses Flood\" (short). Aprobados: 7. Rechazados: 7. Con error: 8. ORDEN DE JULES (nivel 5/5): Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. JEFA: Faltan 11 h para el próximo ciclo. Sin excusas.",
+    "horasParaProximoCiclo": 11
   }
 }

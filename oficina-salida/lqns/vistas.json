@@ -1,14 +1,14 @@
 {
-  "fecha": "2026-11-22T01:30:20.883Z",
+  "fecha": "2026-11-22T03:05:40.427Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 2630,
-  "ganadasDesdeElUltimoCiclo": 18,
+  "total": 2656,
+  "ganadasDesdeElUltimoCiclo": 26,
   "videos": [
     {
       "id": "5BIAOJmE-dk",
       "titulo": "🔊 El enigma del Bloop: el rugido del hielo",
       "publicado": "2026-11-21T18:10:09+00:00",
-      "vistas": 22
+      "vistas": 27
     },
     {
       "id": "Nd2x5UMBiLM",
@@ -20,7 +20,7 @@
       "id": "yp4bUZPqnS4",
       "titulo": "Sabías que dos jóvenes genios de una lista famosa suman 40 años de cárcel ⚖️",
       "publicado": "2026-11-21T04:00:38+00:00",
-      "vistas": 20
+      "vistas": 21
     },
     {
       "id": "YXozgtk50pI",
@@ -32,19 +32,19 @@
       "id": "Md9Rrt9EiTM",
       "titulo": "Sabías que un banco pagó 175 millones por clientes que no existían 👻🏦",
       "publicado": "2026-11-21T01:48:24+00:00",
-      "vistas": 78
+      "vistas": 86
     },
     {
       "id": "ujvVWAyrSUg",
       "titulo": "Sabías que tres hombres caminaron en plena noche polar por 3 huevos de pingüino 🥚 (Parte 3/3)",
       "publicado": "2026-11-20T17:30:34+00:00",
-      "vistas": 358
+      "vistas": 365
     },
     {
       "id": "KURWolBJszo",
       "titulo": "Sabías que mataron 2 millones de pingüinos... y no para comérselos 😳 (Parte 2/3)",
       "publicado": "2026-11-20T16:30:10+00:00",
-      "vistas": 113
+      "vistas": 118
     },
     {
       "id": "Wj-zpd2iorA",
@@ -171,6 +171,10 @@
     {
       "fecha": "2026-11-22T01:30:20.883Z",
       "total": 2630
+    },
+    {
+      "fecha": "2026-11-22T03:05:40.426Z",
+      "total": 2656
     }
   ]
 }

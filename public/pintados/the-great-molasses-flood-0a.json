@@ -1,0 +1,1 @@
+{"cielo":["#cfe8ff","#a0c4ff","#6a9edb"],"capas":[{"t":"nubes","y":0.15,"n":3,"color":"#7a6aa8"},{"t":"texto","x":0.5,"y":0.22,"tam":20,"color":"#fffa00","s":"¿Sabías que una ola de"},{"t":"silueta","x":0.3,"y":0.55,"h":0.25,"color":"#10121f"},{"t":"particulas","n":30,"tipo":"polvo"},{"t":"roca","x":0.15,"y":0.9,"w":0.2,"h":0.08,"semilla":1,"color":"#4a4f5c"}]}

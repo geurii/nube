@@ -1,35 +1,35 @@
 {
   "plan": [
-    "1. Lanzar la serie 'Sabías que nunca verás pingüino en un supermercado 🐧 (Parte 4/3)' con un enfoque de marketing cruzado en plataformas de streaming y patrocinadores de marcas de alimentos. Responsable: Oficina de Producción y Comercializ",
-    "2. Crear un episodio interactivo 'El avión que recogía personas del suelo 🤯 (Parte 6/5)' con contenido exclusivo para suscriptores premium y anuncios de marcas de tecnología. Responsable: Oficina de Contenido Digital y Monetización. Meta: ",
-    "3. Desarrollar un mini-documental 'Sabías que mataron 2 millones de pingüinos... y no para comérselos 😳 (Parte 4/3)' con colaboraciones con ONGs y campañas de concienciación. Responsable: Oficina de Relaciones Públicas y Alianzas. Meta: al"
+    "Crear serie de 5 episodios sobre fenómenos históricos enigmáticos con alta documentación: Departamento de Investigación y Guion: Alcanzar 5,000 vistas en cada episodio antes del 13 de diciembre",
+    "Desarrollar contenido de 3 episodios sobre casos curiosos sin nombres reales, con tono de misterio y revelaciones entre 65% y 75%: Departamento de Producción y Edición: Lograr 3,500 vistas en cada episodio antes del 13 de diciembre",
+    "Optimizar estrategia de SEO y promoción en redes sociales para los nuevos episodios, enfocándose en palabras clave de misterio y fenómenos raros: Departamento de Marketing y Monetización: Incrementar el CTR en un 20% y generar ingresos publ"
   ],
   "ganchos": [
-    "Sabías que [CIFRA] personas han visto [TEMA] sin que nadie lo explique | Imagen de un horizonte nebuloso con una silueta misteriosa",
-    "Sabías que [CIFRA] minutos de tu vida están ocultos en [TEMA] | Imagen de un reloj de arena con partículas flotantes",
-    "Sabías que [CIFRA] objetos desaparecieron de la historia en [TEMA] | Imagen de un mapa antiguo con un punto rojo resaltado",
-    "Sabías que [CIFRA] teorías sobre [TEMA] nunca han sido confirmadas | Imagen de una biblioteca con libros abiertos y luces parpadeantes",
-    "Sabías que [CIFRA] veces el universo ha mostrado [TEMA] sin explicación | Imagen de un cielo estrellado con una forma geométrica resaltada"
+    "Sabías que [CIFRA] personas desaparecieron sin dejar rastro | Imagen: mapa antiguo con puntos rojos dispersos",
+    "Sabías que [CIFRA] segundos se necesitan para que un objeto desaparezca en la noche | Imagen: reloj de arena con luz tenue y sombras misteriosas",
+    "Sabías que [CIFRA] objetos históricos fueron encontrados en un sótano sin luz | Imagen: estantería oscura con luces parpadeantes",
+    "Sabías que [CIFRA] experimentos fallidos se guardan en una caja sellada | Imagen: caja metálica antigua con cerradura oxidada",
+    "Sabías que [CIFRA] teorías conspirativas se basan en un único documento | Imagen: papel con anotaciones y una lupa sobre él"
   ],
   "mejorasGuion": [
-    "1. Inicia con un gancho más impactante y directo: cambia “Sabías que una zona del Atlántico…” por “Sabías que en la zona más misteriosa del mundo, Florida, Bermudas y Puerto Rico, se esconden más de 1,000 desapariciones ",
-    "2. Añade ritmo y repetición visual usando subtítulos o gráficos breves que resuman cada caso clave (Flight 19, el “escáner de radio”, etc.) y repite la pregunta final con un efecto de sonido misterioso: “¿Siguen guardand",
-    "3. Refuerza el CTA con un elemento de urgencia y comunidad: “Comparte este video con 3 amigos que también aman los misterios y suscríbete para descubrir la próxima pieza del rompecabezas” y coloca una miniatura con una i"
+    "Incorporar un gancho más impactante al inicio, por ejemplo: \"Sabías que una ola de melaza arrasó Boston y dejó 21 muertos en un solo instante?\" para captar la atención inmediatamente.",
+    "Reestructurar el ritmo dividiendo la información en bloques breves y visuales: primero la explosión, luego la ola, después la cifra de víctimas y el dato curioso sobre el peso del tanque, usando subtítulos y efectos de s",
+    "Añadir un cierre más intrigante que invite a la audiencia a descubrir más misterios, como: \"¿Te imaginas quedar atrapado en una marea de melaza? Descubre lo que ocurrió después en nuestro próximo episodio. Suscríbete y a"
   ],
   "temas": [
-    "The Taos Hum",
-    "The Sargasso Sea",
+    "The Enfield Poltergeist",
+    "The Mothman Prophecies",
+    "The Phoenix Lights",
     "The Green Children of Woolpit",
-    "The Nazca Lines",
-    "The Voynich Manuscript"
+    "The Antikythera Mechanism"
   ],
   "titulos": [
-    "Sabías que <tema intrigante> <emoji> (Parte <n>/<total>)",
-    "Sabías que <acción sorprendente> <emoji> (Parte <n>/<total>)",
-    "Sabías que <evento inexplicable> <emoji> (Parte <n>/<total>)",
-    "Sabías que <detalle curioso> <emoji> (Parte <n>/<total>)"
+    "Sabías que [acción sorprendente] 🐧 (Parte X/Y)",
+    "El [objeto/vehículo] que [acción] 🤯 (Parte X/Y)",
+    "Sabías que [número] [personas] [acción] 🥚 (Parte X/Y)",
+    "Eligieron a [número] hombres para [acción] 🧊 (Parte X/Y)"
   ],
-  "fecha": "2026-11-22T01:32:01.443Z",
+  "fecha": "2026-11-22T03:08:21.817Z",
   "iniciativas": [
     "Valentina (Directora de contenido): Definir una guía de estilo clara que el equipo pueda seguir desde el primer video.",
     "Carolina (Coordinador de producción): Crear un calendario de producción con hitos diarios y asignar responsables para cada tarea.",
