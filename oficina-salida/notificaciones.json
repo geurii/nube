@@ -1,5 +1,30 @@
 [
   {
+    "id": "mwrbw4iqqcix",
+    "fecha": "2026-11-22T04:20:06.243Z",
+    "canal": "lqns",
+    "tipo": "reporte",
+    "titulo": "El panel aprobó: 🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩",
+    "texto": "6 de 8 aprobaron, 6 pasaron los primeros 3 segundos, 3 lo compartirían. Mejora sugerida: Empieza con una frase ultra‑impactante en los primeros 2 segundos, por ejemplo: “¡Un artefacto de bronce bajo el mar es el primer ordenador del mundo!”"
+  },
+  {
+    "id": "mwrbw2xxnbng",
+    "fecha": "2026-11-22T04:20:04.197Z",
+    "canal": "lqns",
+    "tipo": "alerta",
+    "titulo": "Gemini no pudo mirar el video",
+    "texto": "ningún modelo respondió. gemini-4-hydrogen: 503 {\"error\":{\"message\":\"gemini-4-hydrogen is currently experiencing high demand, spikes in demand are usually temporary. Please try again later | gemini-3.8-flash: The operati El panel juzgó solo el guion."
+  },
+  {
+    "id": "mwrbpjinshcj",
+    "fecha": "2026-11-22T04:14:59.087Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "listo",
+    "titulo": "Video listo: 🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩",
+    "texto": "Se renderizó \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\" para Lo Que No Sabías (39 MB). Descárgalo en GitHub > Actions > Produccion > artefacto \"video-lqns-the-antikythera-mechanism\". Falta subirlo a YouTube."
+  },
+  {
     "id": "mwrb4io7liic",
     "fecha": "2026-11-22T03:58:38.215Z",
     "canal": "lqns",

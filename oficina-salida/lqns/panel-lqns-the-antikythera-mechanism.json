@@ -1,0 +1,74 @@
+{
+  "fecha": "2026-11-22T04:20:06.241Z",
+  "id": "lqns-the-antikythera-mechanism",
+  "aprobado": true,
+  "resumen": "6 de 8 aprobaron, 6 pasaron los primeros 3 segundos, 3 lo compartirían.",
+  "mejora": "Empieza con una frase ultra‑impactante en los primeros 2 segundos, por ejemplo: “¡Un artefacto de bronce bajo el mar es el primer ordenador del mundo!”",
+  "gemini": null,
+  "votos": [
+    {
+      "quien": "Crítico: adolescente",
+      "pasa3": false,
+      "sigueHasta": 3,
+      "leGusto": false,
+      "compartiria": false,
+      "comentario": "El gancho suena a dato viejo, no me atrapa en 2 segundos, paso."
+    },
+    {
+      "quien": "Crítica: universitaria",
+      "pasa3": true,
+      "sigueHasta": 45,
+      "leGusto": true,
+      "compartiria": true,
+      "comentario": "Me encanta el misterio del bronce y los datos raros, lo compartiría con mis amigas."
+    },
+    {
+      "quien": "Crítico: padre trabajador",
+      "pasa3": true,
+      "sigueHasta": 30,
+      "leGusto": true,
+      "compartiria": false,
+      "comentario": "El inicio me enganchó, pero después quiero algo más práctico, no lo compartiría."
+    },
+    {
+      "quien": "Crítico: escéptico",
+      "pasa3": false,
+      "sigueHasta": 2,
+      "leGusto": false,
+      "compartiria": false,
+      "comentario": "Suena a clickbait de “primer ordenador”, no veo pruebas, lo dejo."
+    },
+    {
+      "quien": "Crítica: fan del misterio",
+      "pasa3": true,
+      "sigueHasta": 50,
+      "leGusto": true,
+      "compartiria": true,
+      "comentario": "Buen giro con los engranajes y la historia del fondo marino, lo recomendaría."
+    },
+    {
+      "quien": "Crítica: ama de casa",
+      "pasa3": true,
+      "sigueHasta": 35,
+      "leGusto": true,
+      "compartiria": false,
+      "comentario": "Narración clara y ritmo cómodo, pero el llamado a compartir suena forzado."
+    },
+    {
+      "quien": "Crítico: joven dominicano",
+      "pasa3": true,
+      "sigueHasta": 40,
+      "leGusto": true,
+      "compartiria": true,
+      "comentario": "Me gustó el flow y el toque de misterio, suena fresco, lo paso a mis panas."
+    },
+    {
+      "quien": "Crítico: abuelo",
+      "pasa3": true,
+      "sigueHasta": 45,
+      "leGusto": true,
+      "compartiria": false,
+      "comentario": "Historia bien contada y fácil de seguir, aunque no lo enviaría a todos."
+    }
+  ]
+}

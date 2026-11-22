@@ -1,35 +1,35 @@
 {
   "plan": [
-    "1) Crear una serie de 5 episodios sobre artefactos históricos enigmáticos con un enfoque documental y narrativa de misterio. Responsable: Ana Torres (Producción). Meta: generar al menos 3,000 vistas por episodio y monetizar 30% de ingresos ",
-    "2) Desarrollar un episodio interactivo sobre fenómenos paranormales no terroríficos, integrando datos reales y testimonios anónimos. Responsable: Luis Méndez (Guion y Efectos). Meta: alcanzar 2,500 vistas y lograr 25% de ingresos por patroc",
-    "3) Lanzar un mini-documental de 3 partes sobre casos curiosos con documentación exhaustiva, optimizado para SEO y redes sociales. Responsable: Carla Ruiz (Marketing y Distribución). Meta: superar 4,000 vistas en total y monetizar 35% de los"
+    "Crear una serie documental de 5 partes sobre el misterioso hallazgo de un artefacto antiguo en la zona de la Gran Muralla China: Jules: Generar al menos 15,000 vistas y 500 suscriptores nuevos antes del 13 de diciembre",
+    "Desarrollar un episodio interactivo sobre la desaparición de un barco mercante en el Atlántico Norte, integrando datos históricos y teorías modernas: Carlos: Alcanzar 10,000 vistas y 300 suscriptores nuevos antes del 13 de diciembre",
+    "Investigar y publicar un miniserie sobre la leyenda de los guardianes de la cueva de hielo en el Ártico, con enfoque documental y entrevistas a expertos: María: Obtener 12,000 vistas y 400 suscriptores nuevos antes del 13 de diciembre"
   ],
   "ganchos": [
-    "Sabías que [CIFRA] personas han encontrado [TEMA] sin dejar rastro? | Imagen de un mapa antiguo con un punto rojo resaltado",
-    "Sabías que [CIFRA] segundos de silencio revelan el secreto de [TEMA]? | Imagen de un reloj de arena con la arena formando una figura misteriosa",
-    "Sabías que [CIFRA] capas de hielo esconden [TEMA] que desafía la lógica? | Imagen de un glaciar con una sombra que parece una figura humana",
-    "Sabías que [CIFRA] años de investigación no lograron descifrar el misterio de [TEMA]? | Imagen de un laboratorio con tubos de ensayo y una luz parpadeante",
-    "Sabías que [CIFRA] objetos de [TEMA] están escondidos en la ciudad y nadie los ha visto? | Imagen de una calle iluminada con luces de neón que forman un patrón enigmático"
+    "Sabías que [CIFRA] personas han desaparecido sin dejar rastro en el [TEMA] | Imagen de un mapa con puntos rojos dispersos y una sombra misteriosa",
+    "Sabías que [CIFRA] segundos se necesitan para que el [TEMA] revele su secreto | Imagen de un reloj de arena con una figura oculta emergiendo",
+    "Sabías que [CIFRA] objetos del [TEMA] se han encontrado sin explicación | Imagen de un tesoro antiguo con luces parpadeantes",
+    "Sabías que [CIFRA] teorías han sido descartadas sobre el [TEMA] | Imagen de un libro abierto con páginas que se desvanecen",
+    "Sabías que [CIFRA] veces el [TEMA] ha sido visto por testigos anónimos | Imagen de una silueta en la niebla con un brillo tenue"
   ],
   "mejorasGuion": [
-    "Incorporar un gancho más impactante al inicio, por ejemplo: \"Sabías que una ola de melaza arrasó Boston y dejó 21 muertos en un solo instante?\" para captar la atención inmediatamente.",
-    "Reestructurar el ritmo dividiendo la información en bloques breves y visuales: primero la explosión, luego la ola, después la cifra de víctimas y el dato curioso sobre el peso del tanque, usando subtítulos y efectos de s",
-    "Añadir un cierre más intrigante que invite a la audiencia a descubrir más misterios, como: \"¿Te imaginas quedar atrapado en una marea de melaza? Descubre lo que ocurrió después en nuestro próximo episodio. Suscríbete y a"
+    "1. Gancho más impactante: iniciar con una pregunta intrigante que evoque la sensación de misterio, por ejemplo, \"Sabías que un área del Atlántico ha sido escenario de más de mil desapariciones inexplicables?\"",
+    "2. Ritmo y estructura: dividir el guion en secciones breves con subtítulos visuales, usar pausas dramáticas y un tono narrativo que mantenga la curiosidad, evitando largas explicaciones técnicas sin conexión directa al m",
+    "3. Cierre más persuasivo: terminar con una pregunta abierta que invite a la interacción, como \"¿Qué crees que se esconde en esas aguas? Deja tu teoría en los comentarios y comparte con alguien que ame los enigmas.\""
   ],
   "temas": [
-    "The Wow! Signal",
-    "The Green Children of Woolpit",
+    "The Wow! signal",
+    "The Dyatlov Pass incident",
+    "The Bloop",
     "The Antikythera Mechanism",
-    "The Nazca Lines",
-    "The Tunguska Event"
+    "The Oak Island mystery"
   ],
   "titulos": [
-    "Sabías que [verbo] [objeto] (Parte [X]/[Y])",
-    "El [sustantivo] que [verbo] [objeto] (Parte [X]/[Y])",
-    "Eligieron a [número] [sustantivo] para [verbo] [objeto] (Parte [X]/[Y])",
-    "Sabías que [número] [plural] [verbo] [objeto] (Parte [X]/[Y])"
+    "Sabías que {hecho sorprendente} {emoji} (Parte {n}/{total})",
+    "Sabías que {evento inexplicable} {emoji} (Parte {n}/{total})",
+    "Sabías que {curiosidad histórica} {emoji} (Parte {n}/{total})",
+    "Sabías que {fenómeno raro} {emoji} (Parte {n}/{total})"
   ],
-  "fecha": "2026-11-22T03:27:15.397Z",
+  "fecha": "2026-11-22T04:20:06.535Z",
   "iniciativas": [
     "Valentina (Directora de contenido): Definir una guía de estilo clara que el equipo pueda seguir desde el primer video.",
     "Carolina (Coordinador de producción): Crear un calendario de producción con hitos diarios y asignar responsables para cada tarea.",

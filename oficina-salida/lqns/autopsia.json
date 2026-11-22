@@ -1,23 +1,13 @@
 {
-  "fecha": "2026-11-22T03:51:31.282Z",
-  "total": 2659,
-  "promedio": 177,
-  "queFunciono": "Los videos con más vistas comparten varios elementos: (1) títulos que empiezan con \"Sabías que\" y hacen una pregunta intrigante o presentan un dato sorprendente; (2) uso de emojis llamativos que resaltan el tema (🐧, 🤯, 🥚, 🧊); (3) publicación en fechas cercanas (todos entre el 14 y el 20 de novie",
+  "fecha": "2026-11-22T04:15:00.410Z",
+  "total": 2735,
+  "promedio": 182,
+  "queFunciono": "Los videos con mayor audiencia comparten títulos que presentan una pregunta o afirmación impactante sobre pingüinos y eventos extremos, y se publicaron en fechas recientes (20‑21 noviembre).",
   "porQueFallaron": [
-    "[object Object]",
-    "[object Object]",
-    "[object Object]",
-    "[object Object]"
+    "Los videos con pocas vistas tienen títulos menos claros o más ambiguos, como “🔊 El enigma del Bloop: el rugido del hielo” o “Sabías que una ola de melaza arrasó Boston?”, lo que sugiere menor curiosidad inmediata. Evidencia: estos títulos aparecen en la lista",
+    "Los videos con menor rendimiento también presentan una menor duración media (por ejemplo, 22 s para “Tres rescates colgados de un globo”) y no se reporta retención media, indicando posible falta de interés sostenido. Evidencia: la ausencia de datos de retenció",
+    "El número de suscriptores ganados es cero en todos los videos con datos de retención, lo que sugiere que la audiencia no se siente motivada a seguir el canal. Evidencia: los valores de +0 suscriptores en la tabla de retención."
   ],
-  "noSePuedeSaber": [
-    "Cuántas impresiones (impressions) tuvo cada video y su CTR (click‑through rate).",
-    "Qué miniaturas se usaron y su efectividad.",
-    "A qué audiencia demográfica se mostró cada video (edad, ubicación, intereses).",
-    "Cuántos suscriptores nuevos generó cada video (excepto los que ya se indican)."
-  ],
-  "reglas": [
-    "1. Mantener el formato \"Sabías que...\" con una pregunta intrigante y añadir al menos un emoji relevante en el título para captar la atención.",
-    "2. Publicar los videos de una serie en intervalos de 1‑2 días y asegurarse de que la numeración de partes sea consecutiva y clara, creando una expectativa de continuidad.",
-    "3. Optimizar la miniatura usando colores contrastantes y texto corto que refleje la pregunta del título; probar A/B con la misma miniatura en al menos dos videos para medir CTR antes de lanzar la serie completa."
-  ]
+  "noSePuedeSaber": [],
+  "reglas": []
 }

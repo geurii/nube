@@ -1,0 +1,93 @@
+{
+  "titulo": "🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-DO-EmilioNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-the-antikythera-mechanism.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "publicacion": {
+    "titulo": "🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩",
+    "descripcion": "Descubre el artefacto de bronce de 34 cm encontrado en 1901 que contiene 35 engranajes que siguen Sol, Luna y eclipses. Este mecanismo, con un engranaje de 13 cm y 223 dientes, es considerado el primer ordenador analógico helénico. Comparte y sigue para más misterios históricos.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Antikythera_mechanism\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#MecanismoAntikythera #PrimerOrdenador #EngranajesDeBronce #HistoriaOculta #MisteriosDelMar",
+    "titulosAlternativos": [
+      "🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩",
+      "🤯 35 Engranajes Ocultan el Sol y la Luna en 1901 🌞🌙",
+      "🕰️ El Engranaje de 13 cm con 223 Dientes: Misterio Antikythera",
+      "🚢 Del Fondo del Mar al Museo: 1901 y el Enigma de 35 Engranajes",
+      "💡 2005 Revela el Primer Computador Analógico de 223 Dientes"
+    ],
+    "comentarioFijado": "¿Qué crees que podría haber calculado este antiguo ordenador?",
+    "miniatura": {
+      "texto": "ENGRANAJE MISTERIOSO",
+      "idea": "Imagen del artefacto de bronce con enfoque en un engranaje grande, resaltado con luz y un fondo marino difuso"
+    }
+  },
+  "estado": "aprobado",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El gancho es débil, la historia se alarga demasiado y el cierre no cumple la frase requerida."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que un trozo de bronce del fondo del mar guarda un secreto milenario?",
+      "fondo": [
+        "pintado:the-antikythera-mechanism-0a",
+        "pintado:the-antikythera-mechanism-0b"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En 1901 buzos hallaron un artefacto extraño entre los restos de un barco romano.",
+      "fondo": [
+        "pintado:the-antikythera-mechanism-1a",
+        "pintado:the-antikythera-mechanism-1b"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El objeto, de 34 cm × 18 cm × 9 cm, quedó en el Museo Nacional de Atenas.",
+      "fondo": [
+        "pintado:the-antikythera-mechanism-2a",
+        "pintado:the-antikythera-mechanism-2b"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Un año después, un investigador descubrió una rueda dentada incrustada en una piedra.",
+      "fondo": [
+        "pintado:the-antikythera-mechanism-3a",
+        "pintado:the-antikythera-mechanism-3b"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Estudios de 2005 revelaron 35 engranajes de bronce que siguen Sol, Luna y eclipses.",
+      "fondo": [
+        "pintado:the-antikythera-mechanism-4a",
+        "pintado:the-antikythera-mechanism-4b"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Lo que no sabías: el mayor engranaje mide 13 cm y originalmente tenía 223 dientes.",
+      "fondo": [
+        "pintado:the-antikythera-mechanism-5a",
+        "pintado:the-antikythera-mechanism-5b"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "Este mecanismo es el primer ordenador analógico, una maravilla helénica que desapareció hasta el siglo 14. Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pintado:the-antikythera-mechanism-6a",
+        "pintado:the-antikythera-mechanism-6b"
+      ]
+    }
+  ]
+}
