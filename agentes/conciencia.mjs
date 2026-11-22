@@ -5,6 +5,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {modelosDisponibles} from './llm.mjs';
+import {leerBloqueWeb} from './web.mjs';
 const MODELOS = await modelosDisponibles(process.env.GROQ_API_KEY); // solo modelos que la cuenta tiene (cuotas separadas)
 
 const CANAL = (process.env.CANAL || 'lqns').trim();
@@ -32,7 +33,7 @@ const llamar = async (sistema, usuario, max = 3500) => {
     try {
       const r = await fetch('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST', headers: {Authorization: `Bearer ${KEY}`, 'Content-Type': 'application/json'}, signal: AbortSignal.timeout(120000),
-        body: JSON.stringify({model: MODELOS[(i - 1) % MODELOS.length], ...(MODELOS[(i - 1) % MODELOS.length].includes('gpt-oss') ? {reasoning_effort: 'low'} : {}), temperature: 0.8, max_tokens: max, messages: [{role: 'system', content: sistema}, {role: 'user', content: usuario}]}),
+        body: JSON.stringify({model: MODELOS[(i - 1) % MODELOS.length], ...(MODELOS[(i - 1) % MODELOS.length].includes('gpt-oss') ? {reasoning_effort: 'low'} : {}), temperature: 0.8, max_tokens: max, messages: [{role: 'system', content: leerBloqueWeb(CANAL) + ' ' + sistema}, {role: 'user', content: usuario}]}),
       });
       if (r.status === 429) { const t = await r.text(); await dormir((Number(/try again in ([\d.]+)s/i.exec(t)?.[1] ?? 15) + 1) * 1000); continue; }
       if (!r.ok) { await dormir(3000 * i); continue; }

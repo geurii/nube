@@ -15,6 +15,7 @@ import {limpiarParaVoz} from './texto-voz.mjs';
 import {textoDeRadar} from './radar.mjs';
 import {completarHashtags} from './hashtags.mjs';
 import {evaluarGuionConPanel} from './panel-guion.mjs';
+import {titulosVirales, armarBloqueWeb, guardarWeb} from './web.mjs';
 import {reunirInspiracion} from './inspiracion.mjs';
 import {enGarantia} from './garantia.mjs';
 import {chatAlternativo, proveedoresConLlave, modelosDisponibles, diagnosticoRespaldo} from './llm.mjs';
@@ -144,8 +145,9 @@ const CULTURA = 'EMPRESA: ' + (CONFIG.nombre ?? 'el canal') + '. META: monetizar
 const ORDEN_JULES = leerJson(path.join(SALIDA, 'ordenes.json'), [])[0];
 const ALTERNOS = process.env.GROQ_API_KEY ? (await modelosDisponibles(process.env.GROQ_API_KEY)).filter((m) => m !== 'openai/gpt-oss-120b') : []; // modelos de Groq con cuota separada que SÍ existen en la cuenta
 let groqBloqueadoHasta = 0; // mientras Groq esté en 429, se usan primero los demás proveedores
+let WEB_BLOQUE = ''; // lo que dice internet HOY sobre el tema: se les da a TODOS los agentes (se llena después de investigar)
 const groqDirecto = async (modelo, mensajes, maxTokens = FORMATO === 'largo' ? 4500 : 2500) => {
-  mensajes = mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (ORDEN_JULES ? ` ORDEN VIGENTE DE JULES (nivel ${ORDEN_JULES.nivel}/5, la dio el dueño): ${ORDEN_JULES.orden}` : '') + '\n\n' + m.content} : m));
+  mensajes = mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + (ORDEN_JULES ? ` ORDEN VIGENTE DE JULES (nivel ${ORDEN_JULES.nivel}/5, la dio el dueño): ${ORDEN_JULES.orden}` : '') + '\n\n' + m.content} : m));
   let ultimo = 'sin respuesta';
   const maxIntentos = proveedoresConLlave().length ? 4 : 8; // con respaldo disponible no se pierde tiempo esperando a Groq
   for (let intento = 1; intento <= maxIntentos; intento++) {
@@ -205,13 +207,13 @@ const groq = async (modelo, mensajes, maxTokens, json = false) => {
 };
 const groqUnaRonda = async (modelo, mensajes, maxTokens, json = false) => {
   if (Date.now() < groqBloqueadoHasta && proveedoresConLlave().length) {
-    const rapido = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + ' ' + m.content} : m)), {maxTokens: maxTokens ?? 2500, json});
+    const rapido = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: maxTokens ?? 2500, json});
     if (rapido) { console.log(`Groq en límite: se usó ${rapido.proveedor} (${rapido.modelo}).`); return rapido.texto; }
   }
   try { return await groqDirecto(modelo, mensajes, maxTokens); }
   catch (e) {
     if (e.fatal) throw e;
-    const alt = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + ' ' + m.content} : m)), {maxTokens: maxTokens ?? 2500, json});
+    const alt = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: maxTokens ?? 2500, json});
     if (!alt) { e.message += ` Respaldos: ${[...new Set(diagnosticoRespaldo)].join('; ').slice(0, 450) || 'ninguno con llave'}.`; throw e; }
     console.log(`Groq no respondió: se usó ${alt.proveedor} (${alt.modelo}).`);
     return alt.texto;
@@ -451,6 +453,14 @@ try {
   slug = slugDe(TEMA);
   const fuentes = await investigar();
   if (!fuentes.some((f) => !f.apoyo)) throw new Error(`No encontré el tema "${TEMA}" en Wikipedia (${IDIOMAS.join(', ')}). Pruébalo con el título exacto del artículo.`);
+  // INTERNET PARA TODOS: una vez por ciclo se reúne lo que dice la web de hoy y se les da a todos los agentes (Guionista, Editor, Verificador, Titulista, panel, pintores...)
+  try {
+    const tit = await Promise.race([titulosVirales(TEMA), new Promise((r) => setTimeout(() => r([]), 25000))]);
+    const resumenes = fuentes.filter((x) => x.apoyo).map((x) => ({host: String(x.titulo).split(':')[0], texto: x.texto}));
+    WEB_BLOQUE = armarBloqueWeb({tema: TEMA, resumenes, titulos: tit, radarTexto: textoDeRadar(leerJson(path.join(SALIDA, 'radar.json'), null), 2)});
+    guardarWeb(CANAL_ID, {tema: TEMA, bloque: WEB_BLOQUE, resumenes: resumenes.length, titulos: tit});
+    if (WEB_BLOQUE) informe.push(`Internet para todos los agentes: ${resumenes.length} resúmenes web y ${tit.length} videos virales de YouTube sobre el tema.`);
+  } catch { /* sin internet extra */ }
   informe.push('## Investigación', ...fuentes.map((f) => `- ${f.apoyo ? 'web (apoyo)' : f.idioma}: [${f.titulo}](${f.url})`), '');
   const material = fuentes.map((f) => `### ${f.apoyo ? 'FUENTE DE APOYO (resumen de un buscador web: úsala solo para contrastar fechas y cifras con Wikipedia; si difiere, di las dos versiones)' : 'FUENTE (' + f.idioma + ')'} ${f.url}\n${f.texto}`).join('\n\n');
 

@@ -6,6 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {avisarTelefono} from './aviso.mjs';
 import {modelosDisponibles} from './llm.mjs';
+import {leerBloqueWeb} from './web.mjs';
 const MODELOS = await modelosDisponibles(process.env.GROQ_API_KEY); // solo modelos que la cuenta tiene (cuotas separadas)
 
 const CANAL = (process.env.CANAL || 'lqns').trim();
@@ -35,7 +36,7 @@ const llamar = async (sistema, usuario) => {
       const r = await fetch('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST', headers: {Authorization: `Bearer ${KEY}`, 'Content-Type': 'application/json'}, signal: AbortSignal.timeout(90000),
         body: JSON.stringify({model: MODELOS[(i - 1) % MODELOS.length], ...(MODELOS[(i - 1) % MODELOS.length].includes('gpt-oss') ? {reasoning_effort: 'low'} : {}), temperature: 0.6, max_tokens: 1600, messages: [
-          {role: 'system', content: `${sistema} Tienes cinco maestrías en tu área y mucha ambición: tu paga depende de las vistas del canal. No inventes datos ni cifras: usa solo lo que se te da; si algo no se sabe, dilo. Sin nombres reales de personas. Responde SOLO con JSON.`},
+          {role: 'system', content: `${leerBloqueWeb(CANAL)} ${sistema} Tienes cinco maestrías en tu área y mucha ambición: tu paga depende de las vistas del canal. No inventes datos ni cifras: usa solo lo que se te da; si algo no se sabe, dilo. Sin nombres reales de personas. Responde SOLO con JSON.`},
           {role: 'user', content: usuario},
         ]}),
       });
