@@ -1,35 +1,35 @@
 {
   "plan": [
-    "Crear 3 videos de 10‑12 minutos sobre misterios históricos poco conocidos (ej.: objeto alienígena, mapa perdido, experimento militar), con títulos que comiencen por “Sabías que” y que generen al menos 2000 vistas cada uno.: Departamento de ",
-    "Optimizar la serie de 3 partes sobre pingüinos y la base soviética: subir los capítulos con subtítulos multilingües, mejorar miniaturas y promover en redes sociales para duplicar la audiencia actual.: Equipo de Marketing Digital: Alcanzar 6",
-    "Desarrollar un episodio piloto de “Sabías que [CIFRA] segundos tardó un secreto militar en desaparecer del mapa” con investigación documental y animaciones, y lanzarlo como teaser para la próxima temporada.: Equipo de Producción y Post‑prod"
+    "Optimizar y lanzar la serie de 3 partes sobre pingüinos y la base soviética: Departamento de Producción: Generar al menos 3.000 vistas combinadas y monetizar 150€ en ingresos publicitarios antes del 13 de diciembre",
+    "Crear 3 videos de 10‑12 minutos sobre misterios históricos poco conocidos (ej. objeto alienígena, The Marfa Lights, The Antikythera Mechanism): Equipo de Investigación y Guion: Alcanzar 4.500 vistas totales y monetizar 200€ antes del 13 de ",
+    "Desarrollar un episodio piloto de “Sabías que [CIFRA] segundos tardó un secreto militar en…”, con estructura de bloques y cierre memorable: Equipo de Contenido y Narrativa: Obtener 2.000 vistas y generar 120€ de monetización antes del 13 de"
   ],
   "ganchos": [
-    "Sabías que [CIFRA] personas encontraron un objeto que no pertenece a nuestro planeta | Imagen de un artefacto alienígena brillando bajo la luz de una luna lejana",
-    "Sabías que [CIFRA] segundos tardó un secreto militar en desaparecer del mapa | Imagen de un mapa antiguo con una zona tachada y un reloj marcando segundos",
-    "Sabías que [CIFRA] años de historia se borraron de los archivos nacionales | Imagen de un archivo con estanterías vacías y una luz tenue que resalta una sola página",
-    "Sabías que [CIFRA] minutos antes de que un experimento saliera mal, la cámara se apagó sol. | Imagen de una cámara de seguridad con la pantalla en negro y un reloj marcando el tiempo",
-    "Sabías que [CIFRA] minutos antes de que un experimento saliera mal, la cámara se apagó sol. | Imagen de una cámara de seguridad con la pantalla en negro y un reloj marcando el tiempo"
+    "Sabías que [CIFRA] segundos antes del eclipse total, el cielo se volvió rojo como sangre | Una cámara lenta de un cielo oscureciéndose con destellos rojizos",
+    "Sabías que [CIFRA] objetos desaparecieron sin dejar rastro en la base soviética | Una vista aérea de una base desierta con líneas de metal y una sombra difusa",
+    "Sabías que [CIFRA] millones de pingüinos fueron sacrificados por un secreto industrial | Una imagen de una granja de pingüinos con una fila de cajas de metal vacías",
+    "Sabías que [CIFRA] personas nunca llegaron a la luna, pero sus huellas siguen intactas | Un mapa lunar con marcas de pasos que se desvanecen en el horizonte",
+    "Sabías que [CIFRA] minutos antes de que el Titanic se hundiera, una alarma se apagó misteriosamente | Un timbre de alarma en rojo, con un fondo de agua y espuma"
   ],
   "mejorasGuion": [
-    "1. Gancho más impactante: inicia con una pregunta directa y provocadora, por ejemplo, \"Sabías que una colonia desapareció sin dejar rastro y su última palabra es un misterio que aún no se ha resuelto?\" para captar la cur",
-    "2. Ritmo y estructura: divide el guion en bloques claros con subtítulos mentales (\"El primer intento\", \"La llegada de nuevos colonos\", \"El último mensaje\"), usando transiciones breves y preguntas retóricas para mantener ",
-    "3. Cierre más memorable: termina con una invitación a la reflexión que deje al espectador pensando, como \"¿Crees que los desaparecidos se unieron a las tribus o fueron llevados a otro lugar? Deja tu teoría en los comenta"
+    "1. Gancho inicial más impactante: reemplazar “Sabías que un tesoro de más de 40 millones de dólares está oculto en Virginia?” por “Sabías que un tesoro de 40 millones de dólares se esconde en las montañas de Virginia y n",
+    "2. Ritmo y estructura: dividir el guion en bloques con subtítulos mentales, por ejemplo: “Sabías que el aventurero dejó una caja con tres mensajes cifrados (Parte 1/3)”, “Sabías que el posadero abrió la caja y solo uno d",
+    "3. Cierre memorable: terminar con una invitación a la reflexión que deje al espectador pensando, por ejemplo: “¿Crees que el tesoro sigue escondido o que el verdadero valor está en la búsqueda? Deja tu teoría en los come"
   ],
   "temas": [
-    "The Green Children of Woolpit",
-    "The Voynich Manuscript",
+    "The Voynich manuscript",
     "The Antikythera Mechanism",
-    "The Oak Island Money Pit",
-    "The Marfa Lights"
+    "The Bloop",
+    "The Marfa Lights",
+    "The Taos Hum"
   ],
   "titulos": [
-    "Sabías que [acción] [objeto] en [lugar] 🐧 (Parte [n]/[total])",
-    "Sabías que [número] [objeto]… y [consecuencia] 😳 (Parte [n]/[total])",
-    "Sabías que un [institución] pagó [cantidad] por [objeto] 👻🏦",
-    "Lo que [número] [personas] se llevaron de una [lugar] fantasma 🕵️ (Parte [n]/[total])"
+    "Sabías que nunca verás [OBJETO] en [LUGAR] 🐧 (Parte [N]/[TOTAL])",
+    "Sabías que [NÚMERO] [PERSONAS] caminaron en [CONDICIÓN] por [NÚMERO] [OBJETO] 🥚 (Parte [N]/[TOTAL])",
+    "Sabías que mataron [NÚMERO] [OBJETO]… y no para [PROPÓSITO] 😳 (Parte [N]/[TOTAL])",
+    "Sabías que un [INSTITUCIÓN] pagó [MONTO] por [OBJETO] que no existían 👻🏦"
   ],
-  "fecha": "2026-11-22T16:44:12.117Z",
+  "fecha": "2026-11-22T19:56:07.494Z",
   "iniciativas": [
     "Valentina (Directora de contenido): Definir una guía de estilo clara que el equipo pueda seguir desde el primer video.",
     "Carolina (Coordinador de producción): Crear un calendario de producción con hitos diarios y asignar responsables para cada tarea.",

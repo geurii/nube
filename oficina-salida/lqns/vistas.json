@@ -1,50 +1,56 @@
 {
-  "fecha": "2026-11-22T16:43:51.039Z",
+  "fecha": "2026-11-22T19:56:07.262Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 2145,
+  "total": 2137,
   "ganadasDesdeElUltimoCiclo": 0,
   "videos": [
+    {
+      "id": "hVawPPY5K_Y",
+      "titulo": "⚡ 1884: El inventor que encendió Niágara con su motor AC",
+      "publicado": "2026-11-22T16:44:58+00:00",
+      "vistas": 24
+    },
     {
       "id": "FEwqFlpnAe4",
       "titulo": "Sabías que la explosión de Chernóbil cambió todo 🌍",
       "publicado": "2026-11-22T16:25:30+00:00",
-      "vistas": 0
+      "vistas": 2
     },
     {
       "id": "9CKxsZ7hmUg",
       "titulo": "🌊 El Bloop: ¡5,000 km de misterio bajo el hielo!",
       "publicado": "2026-11-22T07:41:49+00:00",
-      "vistas": 14
+      "vistas": 19
     },
     {
       "id": "HHnlDcvo_vU",
       "titulo": "🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩",
       "publicado": "2026-11-22T04:24:01+00:00",
-      "vistas": 6
+      "vistas": 9
     },
     {
       "id": "76aNbQdWBSc",
       "titulo": "Sabías que una ola de melaza arrasó Boston? 🍯",
       "publicado": "2026-11-22T03:59:28+00:00",
-      "vistas": 5
+      "vistas": 10
     },
     {
       "id": "8YRV5me-3uM",
       "titulo": "¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️",
       "publicado": "2026-11-22T03:32:55+00:00",
-      "vistas": 43
+      "vistas": 44
     },
     {
       "id": "Nd2x5UMBiLM",
       "titulo": "Sabías que la acusaron de fraude un año después de elegirla 🚨",
       "publicado": "2026-11-21T16:00:33+00:00",
-      "vistas": 12
+      "vistas": 13
     },
     {
       "id": "yp4bUZPqnS4",
       "titulo": "Sabías que dos jóvenes genios de una lista famosa suman 40 años de cárcel ⚖️",
       "publicado": "2026-11-21T04:00:38+00:00",
-      "vistas": 21
+      "vistas": 22
     },
     {
       "id": "YXozgtk50pI",
@@ -56,19 +62,19 @@
       "id": "Md9Rrt9EiTM",
       "titulo": "Sabías que un banco pagó 175 millones por clientes que no existían 👻🏦",
       "publicado": "2026-11-21T01:48:24+00:00",
-      "vistas": 112
+      "vistas": 117
     },
     {
       "id": "ujvVWAyrSUg",
       "titulo": "Sabías que tres hombres caminaron en plena noche polar por 3 huevos de pingüino 🥚 (Parte 3/3)",
       "publicado": "2026-11-20T17:30:34+00:00",
-      "vistas": 590
+      "vistas": 602
     },
     {
       "id": "KURWolBJszo",
       "titulo": "Sabías que mataron 2 millones de pingüinos... y no para comérselos 😳 (Parte 2/3)",
       "publicado": "2026-11-20T16:30:10+00:00",
-      "vistas": 174
+      "vistas": 172
     },
     {
       "id": "Wj-zpd2iorA",
@@ -80,19 +86,13 @@
       "id": "VONOZ4NKXNI",
       "titulo": "Sabías que nunca verás pingüino en un supermercado 🐧 (Parte 1/3)",
       "publicado": "2026-11-20T14:06:43+00:00",
-      "vistas": 1073
+      "vistas": 1075
     },
     {
       "id": "7u0ukiN1pno",
       "titulo": "Tres rescates colgados de un globo 🎈 (Parte 5/5)",
       "publicado": "2026-11-15T05:28:04+00:00",
       "vistas": 22
-    },
-    {
-      "id": "sRAbgFH9Cuc",
-      "titulo": "Lo que dos hombres se llevaron de una base soviética fantasma 🕵️ (Parte 4/5)",
-      "publicado": "2026-11-15T03:08:21+00:00",
-      "vistas": 67
     }
   ],
   "historia": [
@@ -223,6 +223,10 @@
     {
       "fecha": "2026-11-22T16:43:51.039Z",
       "total": 2145
+    },
+    {
+      "fecha": "2026-11-22T19:56:07.261Z",
+      "total": 2137
     }
   ]
 }
