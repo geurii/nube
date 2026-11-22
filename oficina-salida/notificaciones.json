@@ -1,5 +1,13 @@
 [
   {
+    "id": "mwsb5cxnahip",
+    "fecha": "2026-11-22T20:47:03.611Z",
+    "canal": "lqns",
+    "tipo": "alerta",
+    "titulo": "No se pudo publicar en las redes",
+    "texto": "\"¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️\": el repositorio público \"geurii/oficina-videos-legal\" no aceptó el video: no pude subir el video al repositorio público (422): {\"message\":\"Sorry, the file is too large to be processed. Consider creating/updating th; y el "
+  },
+  {
     "id": "mwsb52pujqb9",
     "fecha": "2026-11-22T20:46:50.370Z",
     "canal": "lqns",
@@ -671,14 +679,5 @@
     "tipo": "alerta",
     "titulo": "La oficina falló",
     "texto": "Groq no respondió tras 8 intentos (límite de Groq (429)). Aprobados: 3. Rechazados: 5. Con error: 3. Próximo ciclo en 11 h."
-  },
-  {
-    "id": "mwqjz6mdt3ju",
-    "fecha": "2026-11-21T15:18:39.685Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: The Marfa Lights",
-    "texto": "El Verificador no aprobó \"The Marfa Lights\" tras 4 intentos: El material indica que científicos han concluido que las luces son reflejos de faros de automóviles, por lo que no es correcto afirmar que nadie ha logrado expl Aprobados: 3. Rechazados: 5. Con error: 2. No se publica. Próximo ciclo en 11 h."
   }
 ]
