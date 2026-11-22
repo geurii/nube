@@ -1,0 +1,70 @@
+{
+  "titulo": "🕵️‍♂️ El enigma de la colonia perdida de Roanoke",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-DO-EmilioNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-roanoke-colony.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "creado": "2026-11-22T12:14:57.207Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿La colonia de Roanoke desapareció sin dejar rastro en?",
+  "publicacion": {
+    "titulo": "🕵️‍♂️ El enigma de la colonia perdida de Roanoke",
+    "descripcion": "Descubre los hechos reales detrás del misterio de Roanoke. Cada pista nos acerca más a la verdad.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Roanoke_Colony\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#Roanoke #ColoniaPerdida #HistoriaOculta"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 5,
+    "critica": "Hook débil, falta de urgencia; la historia es demasiado lenta; el cierre no engancha."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que la colonia de Roanoke desapareció sin dejar rastro en 1590?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En 1585 se estableció un primer puesto militar, pero fue evacuado al año siguiente.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En 1587 el capitán llevó a nuevos colonos, y en 1590 una nave los encontró abandonados, con la palabra CROATOAN tallada en la cerca.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Los investigadores sospecharon que los colonos se unieron a tribus cercanas en la región, teoría que aparece en escritos desde 1605.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: la palabra CROATOAN indicaba que se trasladaron a la isla Croatoan.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "Así que el misterio sigue sin resolver, y quizás nunca sepamos su destino. ¿Qué crees que ocurrió? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

@@ -1,5 +1,41 @@
 [
   {
+    "id": "mwrt2w3ozgrz",
+    "fecha": "2026-11-22T12:21:15.396Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Hessdalen lights",
+    "texto": "El Verificador no aprobó \"Hessdalen lights\" tras 4 intentos: El Editor puso 5/10 (mínimo 6). Reescribe arreglando esto: El gancho es débil y poco impactante; la historia se alarga sin ritmo; la revelación llega demasiado  Aprobados: 9. Rechazados: 16. Con error: 8. No se publica. Próximo ciclo en 2 h."
+  },
+  {
+    "id": "mwrsusg414xp",
+    "fecha": "2026-11-22T12:14:57.412Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Roanoke Colony",
+    "texto": "El Verificador no aprobó \"Roanoke Colony\" tras 4 intentos: El Editor puso 5/10 (mínimo 6). Reescribe arreglando esto: Hook débil, falta de urgencia; la historia es demasiado lenta; el cierre no engancha. Aprobados: 9. Rechazados: 15. Con error: 8. No se publica. Próximo ciclo en 2 h."
+  },
+  {
+    "id": "mwrstca0zhoo",
+    "fecha": "2026-11-22T12:13:49.800Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Coso artifact",
+    "texto": "El Verificador no aprobó \"Coso artifact\" tras 4 intentos: La afirmación de que la piedra tiene 500 000 años no está respaldada por el material; se indica que la concreción no tiene esa antigüedad y que no hay evidencia Aprobados: 9. Rechazados: 14. Con error: 8. No se publica. Próximo ciclo en 2 h."
+  },
+  {
+    "id": "mwrsqgbavnft",
+    "fecha": "2026-11-22T12:11:35.062Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante + elemento misterioso o prohibido + pista de revelación El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (37976 vistas/hora)."
+  },
+  {
     "id": "mwrl930ct8iw",
     "fecha": "2026-11-22T08:42:07.356Z",
     "canal": "lqns",
