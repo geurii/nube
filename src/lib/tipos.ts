@@ -47,6 +47,10 @@ export type Guion = {
   voz?: string;
   tono?: number;
   velocidad?: number;
+  /** 'gancho' = edición rápida estilo reel: cortes cada ~1,8 s con glitch, líneas de escaneo y titular gigante al inicio. */
+  estilo?: 'gancho';
+  /** Titular que aparece los primeros segundos (la pregunta imposible), en pantalla y en el estilo pixelado del canal. */
+  ganchoTexto?: string;
   /** Opcional: esquina del personaje. Por defecto arriba-derecha. */
   personaje?: {esquina?: Esquina; visible?: boolean; imagen?: string | null};
   escenas: Escena[];

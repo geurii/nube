@@ -1,5 +1,10 @@
 [
   {
+    "fecha": "2026-11-22T05:41:57.118Z",
+    "orden": "Departamentos de Guion, Revisión de ganchos, Pintores y Edición: copien el NIVEL de gancho y edición de reels que frenan el dedo, SIN cambiar el pixel que hace único al canal. GANCHO REAL: la primera frase (máx. 14 palabras, empieza con \"Sabías que\") es una pregunta imposible o un hecho increíble con una cifra concreta, y sale como titular gigante en pantalla los primeros 3 segundos. EDICIÓN: un cambio de imagen cada 1,5 a 2 segundos, un solo sujeto grande por cuadro, un solo mundo de color por video con alto contraste y foco de luz, palabras clave resaltadas y glitch en cada corte. Rechacen todo gancho suave o descriptivo.",
+    "nivel": 5
+  },
+  {
     "fecha": "2026-11-22T03:58:26.566Z",
     "orden": "Todos: revisen guiones y miniaturas de los próximos 2 videos, incluyan ganchos claros en los primeros 3 segundos y usen imágenes directamente relacionadas con el tema; entreguen versiones finales a las 12:23 a.m. y suban ambos antes de las 14:00 h de hoy.",
     "nivel": 5
@@ -42,11 +47,6 @@
   {
     "fecha": "2026-11-22T00:35:40.593Z",
     "orden": "Equipo, revisad el video del Bloop subido, corregid el error de código, re‑subid antes de las 15:55 y confirmad publicación en el chat.",
-    "nivel": 5
-  },
-  {
-    "fecha": "2026-11-22T00:30:15.720Z",
-    "orden": "Camila, sube inmediatamente el video del Bloop antes de las 15:55 y confirma publicación; Carolina, verifica el sistema de subida y reporta cualquier fallo en 5 min; Fernanda, revisa la checklist de calidad y aprueba los videos pendientes hoy mismo.",
     "nivel": 5
   }
 ]

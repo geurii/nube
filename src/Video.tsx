@@ -5,6 +5,7 @@ import {Fondo} from './components/Fondo';
 import {Subtitulos} from './components/Subtitulos';
 import {Personaje} from './components/Personaje';
 import {Musica} from './components/Musica';
+import {Escaneo, Glitch, Titular} from './components/Gancho';
 
 /** Frames de solape entre un fondo y el siguiente (fundido). */
 /* El solape se calcula dentro del componente según los fps */
@@ -18,6 +19,8 @@ export const Video: React.FC<VideoProps> = ({guion, musica, tiempos}) => {
   const aFrame = (s: number) => Math.round(s * fps);
   const SOLAPE = Math.round(fps / 3); // fundido entre fondos (~0,33 s)
   const personajeVisible = guion.personaje?.visible !== false;
+  const gancho = guion.estilo === 'gancho'; // edición de gancho: cortes más rápidos, glitch, escaneo y titular
+  const maxPorFondo = gancho ? 1.8 : MAX_SEGUNDOS_POR_FONDO;
 
   // Cada escena se parte en tramos; cada tramo usa un fondo de la lista (en ciclo).
   const tramos = tiempos.escenas.flatMap((e) => {
@@ -25,7 +28,7 @@ export const Video: React.FC<VideoProps> = ({guion, musica, tiempos}) => {
     const inicio = aFrame(e.inicio);
     const fin = aFrame(e.fin);
     const total = fin - inicio;
-    const n = lista.length > 1 ? Math.max(lista.length, Math.ceil(total / (MAX_SEGUNDOS_POR_FONDO * fps))) : 1;
+    const n = lista.length > 1 ? Math.max(lista.length, Math.ceil(total / (maxPorFondo * fps))) : 1;
     return Array.from({length: n}).map((_, k) => {
       const desde = inicio + Math.round((total * k) / n);
       const hasta = inicio + Math.round((total * (k + 1)) / n);
@@ -81,6 +84,13 @@ export const Video: React.FC<VideoProps> = ({guion, musica, tiempos}) => {
         }}
       />
 
+      {gancho && <Escaneo />}
+      {gancho && tramos.slice(1).map((tr) => (
+        <Sequence key={`glitch-${tr.clave}`} from={tr.desde} durationInFrames={8}>
+          <Glitch semilla={tr.indice + 1} />
+        </Sequence>
+      ))}
+
       {/* Subtítulos karaoke: siempre por encima de cualquier fondo */}
       {tiempos.escenas.map((e) => {
         const desde = aFrame(e.inicio);
@@ -91,6 +101,12 @@ export const Video: React.FC<VideoProps> = ({guion, musica, tiempos}) => {
           </Sequence>
         );
       })}
+
+      {gancho && guion.ganchoTexto && (
+        <Sequence from={0} durationInFrames={Math.round(2.8 * fps)}>
+          <Titular texto={guion.ganchoTexto} />
+        </Sequence>
+      )}
 
       {/* Personaje */}
       {personajeVisible && (
