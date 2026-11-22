@@ -5,6 +5,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {avisarTelefono} from './aviso.mjs';
+import {registrarSubida} from './subidos.mjs';
 
 const {ID} = process.env;
 const YT_CLIENT_ID = (process.env.YT_CLIENT_ID || '').trim();
@@ -89,6 +90,7 @@ try {
   const video = await subida.json();
   const cuando = MODO === 'ahora' ? 'PÚBLICO ahora mismo' : 'PROGRAMADO para ' + programado.toLocaleString('es-DO', {timeZone: 'America/Santo_Domingo'}) + ' (hora RD)';
   marcar('Subió "' + guion.titulo + '" y quedó ' + cuando + ': https://youtu.be/' + video.id, 'libre');
+  try { const total = registrarSubida({canal: CANAL, id: video.id, titulo: guion.titulo}); console.log('Videos subidos en total: ' + total); } catch { /* el contador no debe tumbar la subida */ }
   avisar('reporte', 'Video subido a YouTube', '"' + guion.titulo + '" quedó ' + cuando + ': https://youtu.be/' + video.id);
   console.log('Subido (' + MODO + '): https://youtu.be/' + video.id);
 } catch (e) {

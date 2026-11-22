@@ -1,6 +1,6 @@
 // Los 30 puestos de la oficina: qué hace cada uno en cada ciclo, con datos reales del ciclo (CTX).
 // Se importa desde oficina.mjs. Nadie queda sin trabajo: lo que aún no está conectado dice exactamente qué le falta.
-export const puestosDeLaOficina = (ag, {resultado, tema, ctx, historial, formulas, vigilados, vistas, orden}) => {
+export const puestosDeLaOficina = (ag, {resultado, tema, ctx, historial, formulas, vigilados, vistas, orden, subidos}) => {
   const ok = resultado === 'aprobado';
   const p = (rol, estado, actividad, tarea) => { ag[rol] = {estado, actividad, tarea}; };
   const m = ctx.mesa;
@@ -16,6 +16,7 @@ export const puestosDeLaOficina = (ag, {resultado, tema, ctx, historial, formula
   p('Revisor de nombres', 'libre', 'leyendo', 'Busca nombres reales de personas en el guion y en lo que escribe la Mesa. Si aparece uno, rechaza.');
   const g = ctx.gancho;
   p('Revisor de ganchos', ok ? 'libre' : 'trabajando', 'pensando', ok && g ? `Gancho auditivo: la primera frase tiene ${g.palabrasPrimera} palabras${g.palabrasPrimera > 28 ? ' (demasiado larga: debe caber en 3 segundos)' : ' (cabe en 3 segundos)'}. Gancho visual: ${g.escenasConUnFondo === 0 ? 'todas las escenas cambian de fondo' : g.escenasConUnFondo + ' escenas se quedan con un solo fondo'}.` : 'Espera un guion aprobado para medir el gancho.');
+  p('Publicador', 'trabajando', 'pensando', subidos?.total ? `Lleva ${subidos.total} video${subidos.total === 1 ? '' : 's'} subido${subidos.total === 1 ? '' : 's'} a YouTube en total. El último: "${subidos.videos?.[0]?.titulo ?? ''}".` : 'Todavía no ha subido ningún video; sube apenas el panel apruebe uno.');
   delete ag['Escenógrafo']; // el puesto ahora es el segundo pintor
   const presionP = ' PRESIÓN: Gemini RECHAZA el video si las imágenes no muestran lo que se dice, y un video rechazado cuesta vistas y tu paga. Aquí no se entrega nada que no sea de maestro.';
   p('Pintor de imágenes', 'trabajando', 'escribiendo', (ctx.pintadas ? `Pintor de composición y color: dibujó ${ctx.pintadas} de ${ctx.escenas} escenas en pixel art (2 planos cada una) y las discutió con su compañero hasta quedar de acuerdo.` : ctx.escenas ? 'Pintor de composición y color: en este ciclo no logró dibujar las escenas; se usó el fondo del catálogo y repite en el próximo.' : 'Pintor de composición y color: espera un guion aprobado para dibujar sus escenas.') + presionP);

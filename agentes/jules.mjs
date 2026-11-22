@@ -59,6 +59,7 @@ for (const archivo of pendientes) {
   const ayudas = leer(path.join(carpeta, 'ayudas.json'), {});
   const progreso = leer(path.join(carpeta, 'progreso.json'), null);
   const subidas = leer(path.join(RAIZ, 'notificaciones.json'), []).filter((n) => /Video subido|Video listo|panel rechaz|panel aprob/i.test(n.titulo)).slice(0, 4).map((n) => `${n.fecha.slice(0, 16)} ${n.titulo}: ${String(n.texto).slice(0, 160)}`);
+  const subidos = leer(path.join(carpeta, 'subidos.json'), null);
   const ultimoVideo = [...(vistas?.videos ?? [])].sort((a, b) => new Date(b.publicado) - new Date(a.publicado))[0];
   const agentes = Object.entries(estado.agentes ?? {});
   const parados = agentes.filter(([, a]) => a.estado === 'esperando_decision').map(([n]) => n);
@@ -70,6 +71,7 @@ for (const archivo of pendientes) {
     ayudas?.iniciativas?.length ? 'Iniciativas propias que propuso tu equipo: ' + ayudas.iniciativas.slice(0, 4).join(' | ') : 'Tu equipo aún no ha propuesto iniciativas.',
     ultimoVideo ? `Último video PÚBLICO en el canal (dato real de YouTube): "${ultimoVideo.titulo}", publicado ${String(ultimoVideo.publicado).slice(0, 16)} UTC.` : 'Aún no hay datos del último video público.',
     progreso ? `Progreso del ciclo actual: ${progreso.porcentaje}% — ${progreso.etapa}.` : '',
+    subidos?.total ? `Videos subidos a YouTube por la oficina EN TOTAL: ${subidos.total}. El último: "${subidos.videos?.[0]?.titulo ?? ''}" (${String(subidos.videos?.[0]?.fecha ?? '').slice(0, 16)}).` : 'La oficina todavía no ha subido ningún video (según el contador).',
     subidas.length ? `Últimos avisos de producción y subida (reales): ${subidas.join(' | ')}` : '',
     `Totales de la oficina: ${JSON.stringify(estado.totales ?? {})}. Puestos esperando una decisión: ${parados.length ? parados.join(', ') : 'ninguno'}.`,
     ordenes.length ? `Última orden que diste: "${ordenes[0].orden}" (nivel ${ordenes[0].nivel}).` : 'Aún no has dado órdenes por este chat.',

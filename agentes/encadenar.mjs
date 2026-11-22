@@ -31,10 +31,17 @@ try {
   const dia = (d) => new Date(new Date(d).getTime() - 4 * 3600_000).toISOString().slice(0, 10);
   const hoyRD = dia(ahora);
   let aprobadosHoy = 0; // videos realmente subidos hoy a YouTube
+  const ids = new Set();
+  try {
+    for (const c of fs.readdirSync('oficina-salida', {withFileTypes: true}).filter((d) => d.isDirectory())) {
+      try { for (const v of JSON.parse(fs.readFileSync(`oficina-salida/${c.name}/subidos.json`, 'utf8')).videos ?? []) if (dia(v.fecha) === hoyRD) ids.add(v.id); } catch { /* canal sin contador */ }
+    }
+  } catch { /* sin carpeta */ }
   try {
     const n = JSON.parse(fs.readFileSync('oficina-salida/notificaciones.json', 'utf8'));
-    aprobadosHoy = n.filter((x) => /^Video subido/i.test(x.titulo ?? '') && dia(x.fecha) === hoyRD).length;
+    for (const x of n) if (/^Video subido/i.test(x.titulo ?? '') && dia(x.fecha) === hoyRD) ids.add(String(x.texto ?? '').match(/youtu\.be\/([\w-]+)/)?.[1] ?? x.id);
   } catch { /* sin notificaciones */ }
+  aprobadosHoy = ids.size;
   console.log(`Videos subidos hoy: ${aprobadosHoy} de ${META_DIA}.`);
   if (aprobadosHoy >= META_DIA) { console.log('Meta del día cumplida: se descansa hasta mañana.'); process.exit(1); }
 } catch (e) { console.log(`No pude contar los videos de hoy (${e.message}); se sigue con el presupuesto.`); }

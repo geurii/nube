@@ -72,7 +72,7 @@ const registrar = (resultado, detalle, intentos, extra = {}) => {
   } else {
     ag['Directora de contenido'] = {estado: 'trabajando', actividad: 'pensando', tarea: `La oficina falló en su último ciclo: ${detalle}`};
   }
-  puestosDeLaOficina(ag, {resultado, tema: TEMA, ctx: CTX, historial: leerJson(HISTORIAL, []), orden: ORDEN_JULES, formulas: leerJson(path.join(SALIDA, 'formulas.json'), null), vistas: leerJson(path.join(SALIDA, 'vistas.json'), null), vigilados: (CONFIG.vigilar ?? []).length});
+  puestosDeLaOficina(ag, {resultado, tema: TEMA, ctx: CTX, historial: leerJson(HISTORIAL, []), orden: ORDEN_JULES, formulas: leerJson(path.join(SALIDA, 'formulas.json'), null), vistas: leerJson(path.join(SALIDA, 'vistas.json'), null), subidos: leerJson(path.join(SALIDA, 'subidos.json'), null), vigilados: (CONFIG.vigilar ?? []).length});
   // Jules, la jefa: exigente, directa y con números reales. Nunca esconde un resultado malo.
   const h = horasParaProximoCiclo();
   const jefa = (rol, frase) => { if (ag[rol]) ag[rol].tarea = `${ag[rol].tarea} JEFA: ${frase}`; };
