@@ -1,11 +1,19 @@
 {
-  "actualizado": "2026-11-22T00:22:25.409Z",
+  "actualizado": "2026-11-22T00:29:08.887Z",
   "totales": {
     "aprobados": 3,
     "rechazados": 5,
-    "errores": 6
+    "errores": 7
   },
   "historial": [
+    {
+      "fecha": "2026-11-22T00:26:04.124Z",
+      "tema": "The Taos Hum",
+      "formato": "short",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "Groq no respondió tras 4 intentos (límite de Groq (429)). Respaldos: Cerebras/gpt-oss-120b: 429; Gemini/gemini-2.5-flash: 404; Gemini/gemini-flash-latest: 429; "
+    },
     {
       "fecha": "2026-11-22T00:19:20.185Z",
       "tema": "The Taos Hum",
@@ -123,7 +131,7 @@
     "Directora de contenido": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "La oficina falló en su último ciclo: Groq no respondió tras 4 intentos (límite de Groq (429)). Respaldos: Cerebras/gpt-oss-120b: JSON roto; Gemini/gemini-2.5-flash: 404; Gemini/gemini-flash-latest: ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. JEFA: Falló el ciclo. Quiero la causa y el arreglo antes de las próximas 2 h."
+      "tarea": "La oficina falló en su último ciclo: Groq no respondió tras 4 intentos (límite de Groq (429)). Respaldos: Cerebras/gpt-oss-120b: 429; Gemini/gemini-2.5-flash: 404; Gemini/gemini-flash-latest: 429;  ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. JEFA: Falló el ciclo. Quiero la causa y el arreglo antes de las próximas 2 h."
     },
     "Investigador de temas": {
       "estado": "trabajando",
@@ -218,7 +226,7 @@
     "Cazador de fórmulas": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Revisó 132 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (41889 vistas/hora). Sin análisis de IA esta vez. ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "Revisó 132 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (41906 vistas/hora). Fórmula: Pregunta intrigante o afirmación impactante + elemento misterioso o prohibido + pista de revelación ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 23 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Vigía de tendencias": {
       "estado": "trabajando",
@@ -272,7 +280,7 @@
     }
   },
   "jefa": {
-    "mensaje": "La oficina falló en su último ciclo: Groq no respondió tras 4 intentos (límite de Groq (429)). Respaldos: Cerebras/gpt-oss-120b: JSON roto; Gemini/gemini-2.5-flash: 404; Gemini/gemini-flash-latest: ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. JEFA: Falló el ciclo. Quiero la causa y el arreglo antes de las próximas 2 h.",
+    "mensaje": "La oficina falló en su último ciclo: Groq no respondió tras 4 intentos (límite de Groq (429)). Respaldos: Cerebras/gpt-oss-120b: 429; Gemini/gemini-2.5-flash: 404; Gemini/gemini-flash-latest: 429;  ORDEN DE JULES (nivel 4/5): Camila, elabora y entrega el nuevo short antes de las 13:30; Carolina, confirma el horario y asegura la subida a YouTube antes de las 14:00. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. JEFA: Falló el ciclo. Quiero la causa y el arreglo antes de las próximas 2 h.",
     "horasParaProximoCiclo": 2
   }
 }

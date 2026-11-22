@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-22T00:19:11.086Z",
+  "actualizado": "2026-11-22T00:25:54.567Z",
   "canalesLeidos": 9,
   "videosRevisados": 132,
   "mejores": [
@@ -8,41 +8,52 @@
       "idioma": "en",
       "titulo": "Why Is Antarctica Closed? The Operation Highjump Mystery",
       "publicado": "2026-11-20T01:00:08.000Z",
-      "vistas": 1982101,
-      "vistasPorHora": 41889
+      "vistas": 1987565,
+      "vistasPorHora": 41906
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "Always open your fan mail",
       "publicado": "2026-11-21T19:00:32.000Z",
-      "vistas": 161699,
-      "vistasPorHora": 30447
-    },
-    {
-      "canal": "MrBallen",
-      "idioma": "en",
-      "titulo": "TOP 5 Bingeable SCARY STORIES • No Escape Edition",
-      "publicado": "2026-11-20T19:00:34.000Z",
-      "vistas": 488753,
-      "vistasPorHora": 16675
+      "vistas": 167981,
+      "vistasPorHora": 30977
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "How Skydiving Changed Will Smith's Life!",
       "publicado": "2026-11-17T17:00:07.000Z",
-      "vistas": 1717137,
-      "vistasPorHora": 16620
+      "vistas": 1719464,
+      "vistasPorHora": 16624
+    },
+    {
+      "canal": "MrBallen",
+      "idioma": "en",
+      "titulo": "TOP 5 Bingeable SCARY STORIES • No Escape Edition",
+      "publicado": "2026-11-20T19:00:34.000Z",
+      "vistas": 489018,
+      "vistasPorHora": 16621
     },
     {
       "canal": "The Why Files",
       "idioma": "en",
       "titulo": "America Is Hiding Something Underground",
       "publicado": "2026-11-18T18:00:14.000Z",
-      "vistas": 1152782,
-      "vistasPorHora": 14720
+      "vistas": 1154027,
+      "vistasPorHora": 14715
     }
   ],
-  "formula": null
+  "formula": {
+    "formula": "Pregunta intrigante o afirmación impactante + elemento misterioso o prohibido + pista de revelación",
+    "ganchos": [
+      "¿Qué [evento/objeto] oculta realmente [lugar/persona]?",
+      "Descubre el [secreto/plan] que [grupo/autoridad] no quiere que sepas",
+      "La verdad detrás de [situación] que cambiará tu visión de [tema]"
+    ],
+    "evitar": [
+      "Títulos demasiado genéricos sin una promesa clara de misterio",
+      "Uso excesivo de palabras de relleno que diluyen el gancho principal"
+    ]
+  }
 }

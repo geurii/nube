@@ -1,23 +1,13 @@
 {
-  "fecha": "2026-11-22T00:19:10.797Z",
-  "total": 2556,
+  "fecha": "2026-11-22T00:25:53.695Z",
+  "total": 2555,
   "promedio": 170,
-  "queFunciono": "Los videos con más vistas comparten temas de curiosidades sorprendentes sobre pingüinos y situaciones extremas (p. ej., \"pingüino en un supermercado\", \"huevos de pingüino\", \"matar 2 millones de pingüinos\"), usan emojis llamativos y están publicados en fechas cercanas (20‑21 de noviembre). Además, so",
+  "queFunciono": "Los videos con más vistas comparten títulos que incluyen palabras clave de curiosidad y sorpresa (e.g., \"Sabías que\", \"El avión que\", \"Eligieron a dos hombres\") y se publicaron en fechas recientes (2026-11-20 y 2026-11-14). Además, la mayoría son partes de series numeradas, lo que incentiva el segui",
   "porQueFallaron": [
-    "[object Object]",
-    "[object Object]",
-    "[object Object]",
-    "[object Object]"
+    "Pocas vistas correlacionan con títulos que no usan la fórmula de curiosidad o sorpresa (e.g., \"Lo que dos hombres se llevaron de una base soviética fantasma\", \"Operación Coldfeet: la CIA saltó sobre una base soviética fantasma\"), con evidencia de retención med",
+    "Los videos con títulos más largos y menos palabras clave de curiosidad (e.g., \"Sabías que dos jóvenes genios de una lista famosa suman 40 años de cárcel ⚖️\") muestran una retención media no reportada pero vistas extremadamente bajas, lo que sugiere falta de in",
+    "Los videos con títulos que incluyen emojis y temas muy específicos (e.g., \"🔊 El enigma del Bloop: el rugido del hielo\") tienen retención media no reportada y vistas muy bajas, indicando que el tema no resonó con la audiencia."
   ],
-  "noSePuedeSaber": [
-    "Retención de los videos con más vistas (no se proporcionó).",
-    "Datos de miniaturas usadas (clic‑through rate).",
-    "Audiencia objetivo o segmentación demográfica.",
-    "Fuentes de tráfico (búsqueda, sugerencias, externos)."
-  ],
-  "reglas": [
-    "1. Mantener el formato de título corto, impactante y con emoji, centrado en una curiosidad extrema o inesperada (p. ej., \"pingüino\", \"Ártico\", \"CIA\").",
-    "2. Publicar en bloques de series numeradas (Parte X/Y) para crear expectativa y fomentar visualizaciones sucesivas; lanzar al menos 2‑3 episodios en la misma semana.",
-    "3. Priorizar la publicación en los días con mayor rendimiento (20‑21 de noviembre) o en fines de semana, y usar thumbnails con colores vivos y texto grande que refleje la curiosidad del título."
-  ]
+  "noSePuedeSaber": [],
+  "reglas": []
 }
