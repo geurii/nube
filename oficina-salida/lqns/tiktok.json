@@ -1,6 +1,16 @@
 {
-  "total": 1,
+  "total": 2,
   "posts": [
+    {
+      "id": "lqns-chernobyl-disaster",
+      "titulo": "Sabías que la explosión de Chernóbil cambió todo 🌍",
+      "fecha": "2026-11-22T19:11:31.511Z",
+      "accion": "createPost",
+      "programado": "cola",
+      "alojamiento": "repositorio",
+      "video_url": "https://raw.githubusercontent.com/geurii/oficina-videos-legal/main/v/lqns-chernobyl-disaster.mp4",
+      "respuesta": "{\"id\":\"6b033e63846b0ee907aeb768\",\"canal\":\"loquenosabias.do\",\"programado\":\"cola\"}"
+    },
     {
       "id": "lqns-nikola-tesla",
       "titulo": "⚡ 1884: El inventor que encendió Niágara con su motor AC",
@@ -13,6 +23,7 @@
     }
   ],
   "archivos": [
-    "v/lqns-nikola-tesla.mp4"
+    "v/lqns-nikola-tesla.mp4",
+    "v/lqns-chernobyl-disaster.mp4"
   ]
 }
