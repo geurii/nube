@@ -1,5 +1,14 @@
 [
   {
+    "id": "mws8nsfqc0ye",
+    "fecha": "2026-11-22T19:37:24.662Z",
+    "canal": "lqns",
+    "canalNombre": "Vigilante",
+    "tipo": "reporte",
+    "titulo": "Resumen del día",
+    "texto": "Últimas 24 h: 5 video(s) en YouTube, 4 en Facebook, 4 en Instagram, 4 en TikTok. Minutos de GitHub: 1077 de 2000. Todo en orden."
+  },
+  {
     "id": "mws811wyi6yr",
     "fecha": "2026-11-22T19:19:43.858Z",
     "canal": "lqns",
@@ -672,14 +681,5 @@
     "tipo": "alerta",
     "titulo": "Guion rechazado: Oak Island",
     "texto": "El Verificador no aprobó \"Oak Island\" tras 4 intentos: Las coordenadas citadas corresponden a Oak Island en Texas según la fuente en español, pero el material en inglés sobre Oak Island en Nova Scotia no proporciona Aprobados: 3. Rechazados: 4. Con error: 2. No se publica. Próximo ciclo en 11 h."
-  },
-  {
-    "id": "mwqjnwxzh9tw",
-    "fecha": "2026-11-21T15:09:53.927Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Palabra clave impactante + pregunta intrigante o afirmación misteriosa + elemento de sorpresa/escala El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (47351 vistas/hora)."
   }
 ]

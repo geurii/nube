@@ -1,12 +1,17 @@
 {
   "alertas": {},
-  "fecha": "2026-11-22T06:45:27.336Z",
+  "fecha": "2026-11-22T19:37:24.664Z",
   "ok": [
     "YouTube conectado",
     "analítica autorizada",
     "Groq responde",
     "Gemini responde",
+    "Windsor responde",
+    "Buffer responde",
+    "minutos de GitHub: 1077 de 2000",
+    "sin corridas fallidas en 24 h",
     "hay publicaciones recientes"
   ],
-  "problemas": []
+  "problemas": [],
+  "resumenDia": "2026-11-22"
 }
