@@ -1,5 +1,10 @@
 [
   {
+    "fecha": "2026-11-22T16:00:15.014Z",
+    "orden": "Revisa el calendario de producción y confirma que cada tarea se complete antes de las 12 p.m. hora del público objetivo.",
+    "nivel": 4
+  },
+  {
     "fecha": "2026-11-22T15:57:07.281Z",
     "orden": "Revisa el plan de promoción y ajusta títulos/miniaturas para el próximo video.",
     "nivel": 5
@@ -42,11 +47,6 @@
   {
     "fecha": "2026-11-22T03:41:22.804Z",
     "orden": "Todos: revisen hoy los datos de retención del último video público, ajusten títulos y miniaturas según los hallazgos y apliquen la nueva estructura de gancho en los próximos dos videos; entreguen informe de mejora antes de las 10:00 a.m.",
-    "nivel": 5
-  },
-  {
-    "fecha": "2026-11-22T03:12:14.026Z",
-    "orden": "Todo el equipo: produzcan y entreguen HOY dos videos completos con imágenes claramente relacionadas; revisen la checklist de calidad antes de enviarlos al panel; publiquen inmediatamente tras aprobación. No habrá tolerancia a rechazos.",
     "nivel": 5
   }
 ]
