@@ -4,7 +4,7 @@ name: Oficina
 # y el Escenógrafo elige los fondos. Resultado en oficina-salida/ (guion + informe + estado para la oficina 3D).
 on:
   schedule:
-    - cron: '23 2,8,14,20 * * *'   # un Short nuevo cada 6 horas
+    - cron: '23 1,4,7,10,13,16,19,22 * * *'   # un Short nuevo cada 6 horas
     - cron: '23 12 */2 * *'   # un video largo un dia si y otro no
   push:
     paths:
@@ -48,10 +48,17 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Presupuesto (los ciclos programados no pasan del presupuesto de minutos ni de la meta diaria)
+        id: pres
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ] && ! node agentes/encadenar.mjs; then echo "ok=no" >> "$GITHUB_OUTPUT"; echo "Sin presupuesto o meta cumplida: este ciclo se salta."; fi
       - name: Prueba de humo (simulada, no gasta Groq)
+        if: steps.pres.outputs.ok != 'no'
         run: node agentes/probar-oficina.mjs
       - name: Marcar inicio del video
-        if: always()
+        if: always() && steps.pres.outputs.ok != 'no'
         run: |
           node agentes/progreso.mjs 5 "Buscando tema y escribiendo el guion" || true
           git config user.name "github-actions"
@@ -60,6 +67,7 @@ jobs:
           git diff --cached --quiet || git commit -m "Progreso: Buscando tema y escribiendo el guion"
           for i in 1 2 3; do git pull --rebase --autostash -X theirs origin main && git push && break; sleep 4; done
       - name: Ciclo de todos los canales activos (el Cazador primero; si uno falla, los demás siguen)
+        if: steps.pres.outputs.ok != 'no'
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -82,24 +90,26 @@ jobs:
             echo "=== $c ==="
             CANAL=$c timeout 120 node agentes/vistas.mjs || true
             CANAL=$c timeout 120 node agentes/analytics.mjs || true
-            CANAL=$c timeout 120 node agentes/autopsia.mjs || true
             CANAL=$c timeout 120 node agentes/cazador.mjs || true
             for intento in 1 2 3; do
               CANAL=$c timeout 600 node agentes/oficina.mjs || fallo=1
               CANAL=$c node agentes/ultimo-aprobado.mjs && break
               echo "No salió un guion aprobado (intento $intento de 3): pruebo con otro tema."
             done
-            CANAL=$c timeout 120 node agentes/ayuda.mjs || true
-            CANAL=$c timeout 120 node agentes/funciones.mjs || true
-            CANAL=$c timeout 120 node agentes/conciencia.mjs || true
+            if CANAL=$c node agentes/ultimo-aprobado.mjs | grep -q aprobado; then
+              CANAL=$c timeout 120 node agentes/autopsia.mjs || true
+              CANAL=$c timeout 120 node agentes/ayuda.mjs || true
+              CANAL=$c timeout 120 node agentes/funciones.mjs || true
+              CANAL=$c timeout 120 node agentes/conciencia.mjs || true
+            fi
           done
           exit $fallo
       - name: Marcar progreso del guion
-        if: always()
+        if: always() && steps.pres.outputs.ok != 'no'
         run: |
-          if node agentes/ultimo-aprobado.mjs; then node agentes/progreso.mjs 35 'Guion aprobado: preparando voz y video'; else node agentes/progreso.mjs 0 'Sin guion aprobado en este ciclo: se reintenta'; fi
+          if node agentes/ultimo-aprobado.mjs | grep -q 'oficina: aprobado'; then node agentes/progreso.mjs 35 'Guion aprobado: preparando voz y video'; else node agentes/progreso.mjs 0 'Sin guion aprobado en este ciclo (cuota de IA agotada o tema rechazado): se reintenta'; fi
       - name: Guardar el resultado en el repositorio
-        if: always()
+        if: always() && steps.pres.outputs.ok != 'no'
         run: |
           git config user.name "github-actions"
           git config user.email "actions@users.noreply.github.com"
@@ -111,12 +121,15 @@ jobs:
             echo "No pude guardar (intento $i); reintento en 5 s"
             sleep 5
           done
+          if [ -n "$(git log origin/main..HEAD --oneline 2>/dev/null)" ]; then echo "ERROR: no se pudo subir el resultado al repositorio"; exit 1; fi
       - name: Encadenar el siguiente ciclo (lo maximo posible sin acabar los minutos del mes)
-        if: always()
+        if: always() && steps.pres.outputs.ok != 'no'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if node agentes/encadenar.mjs; then
+          resultado=$(node agentes/ultimo-aprobado.mjs | head -1)
+          echo "$resultado"
+          if echo "$resultado" | grep -qE 'aprobado|rechazado' && node agentes/encadenar.mjs; then
             sleep 90
             gh workflow run oficina.yml && echo "Siguiente ciclo lanzado."
           fi

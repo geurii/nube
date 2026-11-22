@@ -182,7 +182,18 @@ const groqDirecto = async (modelo, mensajes, maxTokens = FORMATO === 'largo' ? 4
   throw new Error(`Groq no respondió tras ${maxIntentos} intentos (${ultimo}).`);
 };
 /** Groq primero; si se agota, pasa a Gemini, Cerebras, OpenRouter o Mistral (los que tengan llave). */
+let esperaTotal = 0; // segundos esperando a que se libere la cuota (tope por ciclo)
 const groq = async (modelo, mensajes, maxTokens, json = false) => {
+  for (let ronda = 1; ; ronda++) {
+    try { return await groqUnaRonda(modelo, mensajes, maxTokens, json); }
+    catch (e) {
+      if (e.fatal || ronda >= 3 || esperaTotal >= 480 || !/429|Respaldos/.test(String(e.message))) throw e;
+      console.log(`Todos los proveedores en límite: espero 70 s a que se libere la cuota (ronda ${ronda}/3).`);
+      esperaTotal += 70; await dormir(70_000);
+    }
+  }
+};
+const groqUnaRonda = async (modelo, mensajes, maxTokens, json = false) => {
   if (Date.now() < groqBloqueadoHasta && proveedoresConLlave().length) {
     const rapido = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + ' ' + m.content} : m)), {maxTokens: maxTokens ?? 2500, json});
     if (rapido) { console.log(`Groq en límite: se usó ${rapido.proveedor} (${rapido.modelo}).`); return rapido.texto; }
@@ -191,7 +202,7 @@ const groq = async (modelo, mensajes, maxTokens, json = false) => {
   catch (e) {
     if (e.fatal) throw e;
     const alt = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + ' ' + m.content} : m)), {maxTokens: maxTokens ?? 2500, json});
-    if (!alt) { e.message += ` Respaldos: ${[...new Set(diagnosticoRespaldo)].join('; ').slice(0, 200) || 'ninguno con llave'}.`; throw e; }
+    if (!alt) { e.message += ` Respaldos: ${[...new Set(diagnosticoRespaldo)].join('; ').slice(0, 450) || 'ninguno con llave'}.`; throw e; }
     console.log(`Groq no respondió: se usó ${alt.proveedor} (${alt.modelo}).`);
     return alt.texto;
   }

@@ -56,11 +56,11 @@ export const chatAlternativo = async (mensajes, {maxTokens = 2500, temperatura =
       try {
         const r = await fetch(`${p.base}/chat/completions`, {
           method: 'POST', headers: {Authorization: `Bearer ${key}`, 'Content-Type': 'application/json', ...(p.cabeceras ?? {})}, signal: AbortSignal.timeout(50000),
-          body: JSON.stringify({model: modelo, messages: mensajes, temperature: temperatura, max_tokens: json ? Math.round(maxTokens * 1.8) : maxTokens, ...(json ? {response_format: {type: 'json_object'}} : {})}),
+          body: JSON.stringify({model: modelo, messages: mensajes, temperature: temperatura, max_tokens: json ? Math.round(maxTokens * 1.8) : maxTokens, ...(json ? {response_format: {type: 'json_object'}} : {}), ...(/gpt-oss/i.test(modelo) && p.nombre === 'Cerebras' ? {reasoning_effort: 'low'} : {})}),
         });
         if (!r.ok) { nota(`${p.nombre}/${modelo}: ${r.status}`); if (r.status === 429) { descansar(p.nombre, r); break; } fallos++; continue; }
         let texto = ((await r.json()).choices?.[0]?.message?.content ?? '').replace(/<think>[\s\S]*?<\/think>/gi, '');
-        if (json) { const a = texto.indexOf('{'), b = texto.lastIndexOf('}'); try { JSON.parse(texto.slice(a, b + 1)); } catch { nota(`${p.nombre}/${modelo}: JSON roto`); fallos++; continue; } }
+        if (json) { const a = texto.indexOf('{'), b = texto.lastIndexOf('}'); try { JSON.parse(texto.slice(a, b + 1)); } catch { nota(`${p.nombre}/${modelo}: JSON roto (${texto.trim() ? texto.trim().length + ' letras' : 'vacío'})`); fallos++; continue; } }
         if (texto.trim()) { ultimoBueno = p.nombre; return {texto, proveedor: p.nombre, modelo}; }
         nota(`${p.nombre}/${modelo}: vacío`);
       } catch (e) { fallos++; nota(`${p.nombre}/${modelo}: ${String(e.message ?? e).slice(0, 50)}`); }

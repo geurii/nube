@@ -91,6 +91,7 @@ jobs:
             echo "No pude guardar (intento $i); reintento en 5 s"
             sleep 5
           done
+          if [ -n "$(git log origin/main..HEAD --oneline 2>/dev/null)" ]; then echo "ERROR: no se pudo subir el resultado al repositorio"; exit 1; fi
       - uses: actions/upload-artifact@v4
         if: ${{ steps.producir.outputs.id != '' }}
         with:
