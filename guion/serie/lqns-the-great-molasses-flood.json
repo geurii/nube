@@ -1,0 +1,65 @@
+{
+  "titulo": "Sabías que una ola de melaza arrasó Boston? 🍯",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-DO-EmilioNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-the-great-molasses-flood.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "publicacion": {
+    "titulo": "Sabías que una ola de melaza arrasó Boston? 🍯",
+    "descripcion": "Una extraña ola de melaza arrasó las calles de Boston en 1919. Descubre los detalles de este desastre que aún sorprende.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Great_Molasses_Flood\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#MolassesFlood #Boston1919 #HistoriaMisteriosa #Desastre #Curiosidades"
+  },
+  "estado": "aprobado",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El gancho es débil, la historia se alarga y el cierre suena forzado."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que una ola de melaza arrasó Boston?",
+      "fondo": [
+        "pintado:the-great-molasses-flood-0a",
+        "pintado:the-great-molasses-flood-0b"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El 15 enero de 1919, el tanque de 2.3 M galones de la Purity Distilling en 529 Commercial Street, de 50 ft de alto y 90 ft de diámetro, estalló a las 12:30 p.m. tras una rápida subida de la temperatura por encima de 40 °F.",
+      "fondo": [
+        "pintado:the-great-molasses-flood-1a",
+        "pintado:the-great-molasses-flood-1b"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "La explosión lanzó una ola de melaza 25 ft alta que se desplazó a 35 mph, inundando varios bloques hasta 3 ft de profundidad, matando a 21 personas y a caballos, y dejando 150 heridos.",
+      "fondo": [
+        "pintado:the-great-molasses-flood-2a",
+        "pintado:the-great-molasses-flood-2b"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: El tanque pesaba 13,000 short tons y la limpieza tomó dos semanas.",
+      "fondo": [
+        "pintado:the-great-molasses-flood-3a",
+        "pintado:the-great-molasses-flood-3b"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Te imaginas quedar atrapado en una marea de melaza? historia muestra que la ciencia puede volverse. Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pintado:the-great-molasses-flood-4a",
+        "pintado:the-great-molasses-flood-4b"
+      ]
+    }
+  ]
+}

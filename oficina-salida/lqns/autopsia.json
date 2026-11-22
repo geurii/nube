@@ -1,21 +1,23 @@
 {
-  "fecha": "2026-11-22T03:39:57.251Z",
-  "total": 2657,
+  "fecha": "2026-11-22T03:51:31.282Z",
+  "total": 2659,
   "promedio": 177,
-  "queFunciono": "Los videos con más vistas comparten títulos que incluyen palabras clave curiosas y de sorpresa (\"Sabías que\", \"El avión que\", \"Eligieron a dos hombres\") y se publicaron en fechas recientes (2026-11-20 y 2026-11-14). Además, la mayoría son parte de series numeradas, lo que incentiva la continuidad y ",
+  "queFunciono": "Los videos con más vistas comparten varios elementos: (1) títulos que empiezan con \"Sabías que\" y hacen una pregunta intrigante o presentan un dato sorprendente; (2) uso de emojis llamativos que resaltan el tema (🐧, 🤯, 🥚, 🧊); (3) publicación en fechas cercanas (todos entre el 14 y el 20 de novie",
   "porQueFallaron": [
-    "Contenido demasiado específico o poco atractivo: títulos como \"Sabías que mataron 2 millones de pingüinos...\" y \"Sabías que un banco pagó 175 millones por clientes que no existían\" tienen audiencias muy limitadas, evidenciado por vistas <120.",
-    "Formato de series con demasiada división: títulos con numeración extensa (Parte 3/5, Parte 4/5) pueden confundir a la audiencia, lo que se refleja en bajas vistas y retención media de 19% o 24.8%.",
-    "Falta de datos de retención y suscriptores para la mayoría de los videos, lo que impide medir su rendimiento, indicando que la estrategia de publicación no está optimizada para mantener el interés."
+    "[object Object]",
+    "[object Object]",
+    "[object Object]",
+    "[object Object]"
   ],
   "noSePuedeSaber": [
-    "Retención y datos de suscriptores para los videos con menos vistas.",
-    "Miniaturas y descripciones utilizadas para cada video.",
-    "A quiénes se les mostró cada video (segmentación de audiencia)."
+    "Cuántas impresiones (impressions) tuvo cada video y su CTR (click‑through rate).",
+    "Qué miniaturas se usaron y su efectividad.",
+    "A qué audiencia demográfica se mostró cada video (edad, ubicación, intereses).",
+    "Cuántos suscriptores nuevos generó cada video (excepto los que ya se indican)."
   ],
   "reglas": [
-    "1. Publica videos con títulos claros y atractivos que incluyan una pregunta o afirmación sorprendente, manteniendo la numeración a un máximo de 3 partes para evitar confusión.",
-    "2. Optimiza la retención incluyendo un gancho fuerte en los primeros 15 segundos y manteniendo la duración entre 3 y 5 minutos para maximizar la retención media.",
-    "3. Publica los videos en fechas de mayor actividad de la audiencia (según análisis de tráfico), y acompaña cada publicación con una miniatura llamativa y una descripción que resuma el valor del contenido."
+    "1. Mantener el formato \"Sabías que...\" con una pregunta intrigante y añadir al menos un emoji relevante en el título para captar la atención.",
+    "2. Publicar los videos de una serie en intervalos de 1‑2 días y asegurarse de que la numeración de partes sea consecutiva y clara, creando una expectativa de continuidad.",
+    "3. Optimizar la miniatura usando colores contrastantes y texto corto que refleje la pregunta del título; probar A/B con la misma miniatura en al menos dos videos para medir CTR antes de lanzar la serie completa."
   ]
 }

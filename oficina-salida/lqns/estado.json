@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-22T03:43:01.794Z",
+  "actualizado": "2026-11-22T03:51:25.040Z",
   "totales": {
     "aprobados": 8,
     "rechazados": 7,
@@ -194,19 +194,19 @@
       "tarea": "Pulió el guion y eligió los fondos de cada escena. Puntaje: 6/10. El gancho es débil, la historia se alarga demasiado y el cierre no cumple la frase requerida. ORDEN DE JULES (nivel 5/5): Todo el equipo: produzcan y entreguen HOY dos videos completos con imágenes claramente relacionadas; revisen la checklist de calidad antes de enviarlos al panel; publiquen inmediatamente tras aprobación. No habrá tolerancia a rechazos. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. JEFA: Un 6/10 no alcanza. Quiero ganchos que frenen el dedo."
     },
     "Locutor": {
-      "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Guionista). Entregó: 5 ganchos nuevos ORDEN DE JULES (nivel 5/5): Todo el equipo: produzcan y entreguen HOY dos videos completos con imágenes claramente relacionadas; revisen la checklist de calidad antes de enviarlos al panel; publiquen inmediatamente tras aprobación. No habrá tolerancia a rechazos. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "estado": "libre",
+      "actividad": "hablando",
+      "tarea": "Grabó la voz de \"Sabías que una ola de melaza arrasó Boston? 🍯\"."
     },
     "Técnico de render": {
-      "estado": "trabajando",
+      "estado": "libre",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Investigador de temas). Entregó: 5 temas candidatos ORDEN DE JULES (nivel 5/5): Todo el equipo: produzcan y entreguen HOY dos videos completos con imágenes claramente relacionadas; revisen la checklist de calidad antes de enviarlos al panel; publiquen inmediatamente tras aprobación. No habrá tolerancia a rechazos. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "Renderizó \"Sabías que una ola de melaza arrasó Boston? 🍯\" (53 MB). Está en Actions, artefacto \"video-lqns-the-great-molasses-flood\"."
     },
     "Publicador": {
-      "estado": "trabajando",
+      "estado": "esperando_decision",
       "actividad": "pensando",
-      "tarea": "Lleva 2 videos subidos a YouTube en total. El último: \"¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️\". ORDEN DE JULES (nivel 5/5): Todo el equipo: produzcan y entreguen HOY dos videos completos con imágenes claramente relacionadas; revisen la checklist de calidad antes de enviarlos al panel; publiquen inmediatamente tras aprobación. No habrá tolerancia a rechazos. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
+      "tarea": "Tiene un video listo: \"Sabías que una ola de melaza arrasó Boston? 🍯\". Falta subirlo a YouTube (necesita tu conexión; ver subir.mjs)."
     },
     "Crítico: padre trabajador": {
       "estado": "trabajando",

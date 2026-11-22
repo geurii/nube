@@ -1,21 +1,28 @@
 [
   {
-    "id": "mwraggvrxucm",
-    "fecha": "2026-11-22T03:39:56.151Z",
+    "id": "mwraz6suau49",
+    "fecha": "2026-11-22T03:54:29.550Z",
     "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Guion aprobado: The Antikythera Mechanism",
-    "texto": "Short de \"The Antikythera Mechanism\" aprobado en el intento 3. 115 palabras, 7 escenas. Editor: Puntaje: 6/10. El gancho es débil, la historia se alarga demasiado y el cierre no cumple la frase requerida. Aprobados: 8. Rechazados: 7. Con error: 8. Próximo ciclo en 10 h."
+    "tipo": "alerta",
+    "titulo": "El panel de críticos falló",
+    "texto": "No pudo evaluar \"lqns-the-great-molasses-flood\" (Groq no respondió.). El video pasó sin su voto."
   },
   {
-    "id": "mwra7mutsyqz",
-    "fecha": "2026-11-22T03:33:03.989Z",
+    "id": "mwravra5cbhm",
+    "fecha": "2026-11-22T03:51:49.469Z",
+    "canal": "lqns",
+    "tipo": "alerta",
+    "titulo": "Gemini no pudo mirar el video",
+    "texto": "ningún modelo respondió. gemini-4-hydrogen: 503 {\"error\":{\"message\":\"gemini-4-hydrogen is currently experiencing high demand, spikes in demand are usually temporary. Please try again later | gemini-3.8-flash: 503 {\"error El panel juzgó solo el guion."
+  },
+  {
+    "id": "mwrav8floa4p",
+    "fecha": "2026-11-22T03:51:25.041Z",
     "canal": "lqns",
     "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante + elemento misterioso o prohibido + pista de revelación El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (40785 vistas/hora)."
+    "tipo": "listo",
+    "titulo": "Video listo: Sabías que una ola de melaza arrasó Boston? 🍯",
+    "texto": "Se renderizó \"Sabías que una ola de melaza arrasó Boston? 🍯\" para Lo Que No Sabías (53 MB). Descárgalo en GitHub > Actions > Produccion > artefacto \"video-lqns-the-great-molasses-flood\". Falta subirlo a YouTube."
   },
   {
     "id": "mwra6kcvmwte",

@@ -1,9 +1,15 @@
 {
-  "fecha": "2026-11-22T03:33:01.924Z",
+  "fecha": "2026-11-22T03:51:25.349Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 2657,
+  "total": 2659,
   "ganadasDesdeElUltimoCiclo": 0,
   "videos": [
+    {
+      "id": "8YRV5me-3uM",
+      "titulo": "¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️",
+      "publicado": "2026-11-22T03:32:55+00:00",
+      "vistas": 6
+    },
     {
       "id": "5BIAOJmE-dk",
       "titulo": "🔊 El enigma del Bloop: el rugido del hielo",
@@ -44,7 +50,7 @@
       "id": "KURWolBJszo",
       "titulo": "Sabías que mataron 2 millones de pingüinos... y no para comérselos 😳 (Parte 2/3)",
       "publicado": "2026-11-20T16:30:10+00:00",
-      "vistas": 118
+      "vistas": 153
     },
     {
       "id": "Wj-zpd2iorA",
@@ -87,12 +93,6 @@
       "titulo": "Operación Coldfeet: la CIA saltó sobre una base soviética fantasma",
       "publicado": "2026-11-14T21:47:40+00:00",
       "vistas": 26
-    },
-    {
-      "id": "QAz2Tc6UHbw",
-      "titulo": "La CIA saltó sobre una base soviética abandonada 😱 (Parte 1/5)",
-      "publicado": "2026-11-14T21:03:15+00:00",
-      "vistas": 39
     }
   ],
   "historia": [
@@ -181,8 +181,8 @@
       "total": 2775
     },
     {
-      "fecha": "2026-11-22T03:33:01.924Z",
-      "total": 2657
+      "fecha": "2026-11-22T03:51:25.349Z",
+      "total": 2659
     }
   ]
 }
