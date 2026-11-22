@@ -178,6 +178,14 @@ export const principal = async () => {
     } catch (e) {
       const msg = quitarClaves(String(e.message ?? e), apiKey, token, bufferKey).slice(0, 300);
       console.log(`${d.nombre}: no se pudo publicar: ${msg}`);
+      // se avisa al teléfono y a la campana: el video SÍ salió en YouTube; esa red se puede subir a mano si se quiere
+      try {
+        avisarTelefono('alerta', `No se pudo publicar en ${d.nombre}`, `"${titulo.slice(0, 80)}": ${msg.slice(0, 200)}`);
+        const rutaN = path.join('oficina-salida', 'notificaciones.json');
+        const lista = leer(rutaN, []);
+        lista.unshift({id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), fecha: new Date().toISOString(), canal: CANAL, tipo: 'alerta', titulo: `No se pudo publicar en ${d.nombre}`, texto: `"${titulo.slice(0, 80)}": ${msg.slice(0, 200)}`});
+        fs.writeFileSync(rutaN, JSON.stringify(lista.slice(0, 80), null, 2));
+      } catch { /* el aviso no debe fallar */ }
       resultados[d.nombre] = 'error: ' + msg.slice(0, 120);
     }
   }

@@ -1,6 +1,7 @@
 name: Vigilante
 
-# Cada 6 horas revisa que todo siga funcionando (permiso de YouTube, claves, corridas fallidas, publicaciones) y avisa al teléfono si algo falla.
+# Cada 6 horas revisa que todo siga funcionando (permiso de YouTube, claves de IA, Windsor, Buffer, minutos de GitHub, corridas fallidas, publicaciones),
+# avisa al teléfono si algo falla y manda un resumen una vez al día.
 on:
   schedule:
     - cron: '17 */6 * * *'
@@ -34,6 +35,8 @@ jobs:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WINDSOR_API_KEY: ${{ secrets.WINDSOR_API_KEY }}
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
         run: node agentes/vigilante.mjs
       - name: Guardar el resultado
         if: always()

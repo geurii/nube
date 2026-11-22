@@ -3,6 +3,7 @@
 // y que el canal haya publicado en las últimas 36 horas. No repite el mismo aviso en 20 horas. Nunca imprime claves.
 import fs from 'node:fs';
 import path from 'node:path';
+import {spawnSync} from 'node:child_process';
 import {avisarTelefono} from './aviso.mjs';
 
 const RAIZ = path.resolve('oficina-salida');
@@ -50,6 +51,35 @@ if (tokenAcceso) {
 if (GROQ_API_KEY) { const r = await pedir('https://api.groq.com/openai/v1/models', {headers: {Authorization: `Bearer ${GROQ_API_KEY}`}}); r.ok ? ok.push('Groq responde') : hallazgos.push({clave: 'groq', tipo: 'alerta', titulo: 'Groq no responde', texto: `La clave de Groq falló (${r.status}). Sin Groq no hay guiones ni críticos.`}); }
 if (GEMINI_API_KEY) { const r = await pedir('https://generativelanguage.googleapis.com/v1beta/models', {headers: {'x-goog-api-key': GEMINI_API_KEY}}); r.ok ? ok.push('Gemini responde') : hallazgos.push({clave: 'gemini', tipo: 'alerta', titulo: 'Gemini no responde', texto: `La clave de Gemini falló (${r.status}). Sin ella la voz usa Edge y nadie mira los videos.`}); }
 
+// 2b) Windsor (Facebook e Instagram) y Buffer (TikTok): solo si hay clave. Un problema aquí NO detiene la fábrica, pero hay que enterarse.
+const WINDSOR_API_KEY = (process.env.WINDSOR_API_KEY || '').trim();
+if (WINDSOR_API_KEY) {
+  const r = await pedir(`https://connectors.windsor.ai/facebook_organic/actions?api_key=${encodeURIComponent(WINDSOR_API_KEY)}`);
+  if (r.ok) ok.push('Windsor responde');
+  else hallazgos.push({clave: 'windsor', tipo: 'alerta', titulo: 'Windsor no responde bien', texto: `Windsor respondió ${r.status}. Facebook e Instagram no se publicarán hasta arreglarlo: revisa la clave WINDSOR_API_KEY, que las acciones de escritura estén activadas en tu equipo y que el plan de prueba (Trial) no haya vencido.`});
+}
+const BUFFER_API_KEY = (process.env.BUFFER_API_KEY || '').trim();
+if (BUFFER_API_KEY) {
+  const r = await pedir('https://api.buffer.com', {method: 'POST', headers: {Authorization: `Bearer ${BUFFER_API_KEY}`, 'Content-Type': 'application/json'}, body: JSON.stringify({query: 'query { account { organizations { id } } }'})});
+  const j = r.ok ? await r.json().catch(() => null) : null;
+  if (j?.data?.account) ok.push('Buffer responde');
+  else hallazgos.push({clave: 'buffer', tipo: 'alerta', titulo: 'Buffer no responde bien', texto: `Buffer respondió ${r.status}. TikTok no se publicará hasta arreglarlo: revisa la clave BUFFER_API_KEY y que el canal de TikTok siga conectado en Buffer.`});
+}
+
+// 2c) Minutos gratis de GitHub: si se acaban, GitHub detiene TODO hasta el día 1. Se usa el mismo cálculo (calibrado con la facturación real) del encadenado.
+let minutosMes = null;
+if (GITHUB_TOKEN && GITHUB_REPOSITORY) {
+  try {
+    const sal = spawnSync('node', [path.join('agentes', 'encadenar.mjs')], {encoding: 'utf8', timeout: 120000, env: {...process.env, GH_TOKEN: GITHUB_TOKEN}}).stdout ?? '';
+    const m = /Minutos usados este mes: ([0-9]+)/.exec(sal);
+    if (m) minutosMes = Number(m[1]);
+  } catch { /* sin cálculo */ }
+  if (minutosMes !== null) {
+    if (minutosMes >= 1800) hallazgos.push({clave: 'minutos', tipo: 'alerta', titulo: 'Se están acabando los minutos gratis de GitHub', texto: `Llevas unos ${minutosMes} de 2000 minutos gratis este mes. La fábrica frena sola para no pasarse; si se acaban, GitHub la detiene hasta el día 1.`});
+    else ok.push(`minutos de GitHub: ${minutosMes} de 2000`);
+  }
+}
+
 // 3) Corridas fallidas en GitHub (últimas 24 h)
 if (GITHUB_TOKEN && GITHUB_REPOSITORY) {
   const r = await pedir(`https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/runs?per_page=40`, {headers: {Authorization: `Bearer ${GITHUB_TOKEN}`, Accept: 'application/vnd.github+json'}});
@@ -71,6 +101,24 @@ const vistas = leer(path.join(RAIZ, 'lqns', 'vistas.json'), null);
 const ultimo = vistas?.videos?.map((v) => new Date(v.publicado).getTime()).filter(Number.isFinite).sort((a, b) => b - a)[0];
 if (ultimo && Date.now() - ultimo > 36 * 3600 * 1000) hallazgos.push({clave: 'sin-publicar', tipo: 'alerta', titulo: 'Llevan más de 36 horas sin publicar', texto: `El último video público salió hace ${Math.round((Date.now() - ultimo) / 3600000)} horas. La meta exige constancia.`});
 else if (ultimo) ok.push('hay publicaciones recientes');
+
+// 2d) Resumen diario al teléfono (una vez al día, desde las 8 a. m. de República Dominicana): para saber que todo funciona sin abrir nada.
+{
+  const rd = new Date(Date.now() - 4 * 3600000);
+  const hoyRD = rd.toISOString().slice(0, 10);
+  if (rd.getUTCHours() >= 8 && estado.resumenDia !== hoyRD) {
+    const hace24 = Date.now() - 24 * 3600000;
+    const cuenta = (archivo) => (leer(path.join(RAIZ, 'lqns', archivo), {posts: []}).posts ?? []).filter((p) => Date.parse(p.fecha) >= hace24).length;
+    const yt = (leer(path.join(RAIZ, 'lqns', 'subidos.json'), {videos: []}).videos ?? []).filter((v) => Date.parse(v.fecha) >= hace24).length;
+    const texto = `Últimas 24 h: ${yt} video(s) en YouTube, ${cuenta('facebook.json')} en Facebook, ${cuenta('instagram.json')} en Instagram, ${cuenta('tiktok.json')} en TikTok. ${minutosMes !== null ? `Minutos de GitHub: ${minutosMes} de 2000. ` : ''}${hallazgos.length ? 'Pendiente: ' + hallazgos.map((h) => h.titulo).join(' | ') : 'Todo en orden.'}`;
+    avisarTelefono('info', 'Fábrica: resumen del día', texto);
+    const lista = leer(RUTA_NOTIS, []);
+    lista.unshift({id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), fecha: new Date().toISOString(), canal: 'lqns', canalNombre: 'Vigilante', tipo: 'reporte', titulo: 'Resumen del día', texto});
+    fs.mkdirSync(RAIZ, {recursive: true});
+    fs.writeFileSync(RUTA_NOTIS, JSON.stringify(lista.slice(0, 80), null, 2));
+    estado.resumenDia = hoyRD;
+  }
+}
 
 // Avisos nuevos (sin repetir el mismo en 20 horas) y limpieza de los que ya se arreglaron
 const claves = new Set(hallazgos.map((h) => h.clave));
