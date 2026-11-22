@@ -1,6 +1,13 @@
 {
   "decisiones": [
     {
+      "id": "i11ushql",
+      "texto": "Sabías que [CIFRA] personas encontraron un objeto que no pertenece a nuestro planeta | Imagen de un artefacto alienígena brillando bajo la luz de una luna lejana",
+      "categoria": "Gancho",
+      "decision": "si",
+      "fecha": "2026-11-22T19:21:15.430Z"
+    },
+    {
       "id": "i48jn97",
       "texto": "The Marfa Lights",
       "categoria": "Tema",
