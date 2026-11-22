@@ -47,7 +47,12 @@ const gh = async (token, metodo, ruta, cuerpo) => {
 export const subirAlRepoPublico = async ({token, repo, archivo, nombre}) => {
   const ruta = `/repos/${repo}/contents/v/${nombre}`;
   const contenido = fs.readFileSync(archivo).toString('base64');
-  let r = await gh(token, 'PUT', ruta, {message: `Video ${nombre}`, content: contenido});
+  let r;
+  for (let intento = 1; intento <= 3; intento++) { // errores temporales de GitHub (403 por tiempo, 5xx): se reintenta
+    r = await gh(token, 'PUT', ruta, {message: `Video ${nombre}`, content: contenido});
+    if (![403, 500, 502, 503, 504].includes(r.status) || intento === 3) break;
+    await dormir(8000 * intento);
+  }
   if (r.status === 422) { // ya existía (reintento): se reemplaza con su sha
     const previo = await gh(token, 'GET', ruta);
     if (previo.json?.sha) r = await gh(token, 'PUT', ruta, {message: `Video ${nombre} (reemplazo)`, content: contenido, sha: previo.json.sha});
@@ -183,6 +188,17 @@ export const principal = async () => {
     }
   }
   if (!archivo) { alertar(`no encuentro el MP4 del video (${ID}) en out/serie.`); return {omitido: 'sin mp4'}; }
+  // GitHub rechaza archivos grandes ("file too large"): se reduce a ~30 MB (720x1280 sobra para Reels y TikTok)
+  try {
+    const MAX_MB = 30;
+    if (fs.statSync(archivo).size > MAX_MB * 1024 * 1024) {
+      const seg = Number(execFileSync('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'default=nw=1:nk=1', archivo], {encoding: 'utf8', timeout: 60000}).trim()) || 60;
+      const kbps = Math.max(300, Math.floor((MAX_MB * 8192 * 0.85) / seg) - 96);
+      const reducido = path.join(path.dirname(archivo), `${ID}-redes.mp4`);
+      execFileSync('ffmpeg', ['-y', '-i', archivo, '-vf', 'scale=-2:1280:force_original_aspect_ratio=decrease,scale=trunc(iw/2)*2:trunc(ih/2)*2', '-c:v', 'libx264', '-b:v', `${kbps}k`, '-maxrate', `${Math.round(kbps * 1.25)}k`, '-bufsize', `${kbps * 2}k`, '-preset', 'veryfast', '-c:a', 'aac', '-b:a', '96k', '-movflags', '+faststart', reducido], {stdio: 'ignore', timeout: 900000});
+      if (fs.existsSync(reducido) && fs.statSync(reducido).size < fs.statSync(archivo).size) { console.log(`Redes: video reducido a ${(fs.statSync(reducido).size / 1048576).toFixed(1)} MB.`); archivo = reducido; }
+    }
+  } catch (e) { console.log('Redes: no pude reducir el video (' + String(e.message ?? e).slice(0, 100) + '); se intenta con el original.'); }
   // con token de GitHub y repo público: se guarda ahí (permanente, últimos 15); si no, archivo temporal de 72 h sin ninguna clave
   let usaRepo = Boolean(token && repo);
   let pub;
