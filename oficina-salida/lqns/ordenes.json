@@ -1,5 +1,10 @@
 [
   {
+    "fecha": "2026-11-22T16:03:05.120Z",
+    "orden": "Reúnete hoy a las 10 a.m. y asigna tareas de inmediato.",
+    "nivel": 5
+  },
+  {
     "fecha": "2026-11-22T16:00:15.014Z",
     "orden": "Revisa el calendario de producción y confirma que cada tarea se complete antes de las 12 p.m. hora del público objetivo.",
     "nivel": 4
@@ -42,11 +47,6 @@
   {
     "fecha": "2026-11-22T03:56:31.446Z",
     "orden": "Todos: revisen los últimos 3 Shorts, extraigan métricas de retención, rediseñen miniaturas y guiones con ganchos claros, y suban versiones mejoradas antes de las 14:00 h de hoy.",
-    "nivel": 5
-  },
-  {
-    "fecha": "2026-11-22T03:41:22.804Z",
-    "orden": "Todos: revisen hoy los datos de retención del último video público, ajusten títulos y miniaturas según los hallazgos y apliquen la nueva estructura de gancho en los próximos dos videos; entreguen informe de mejora antes de las 10:00 a.m.",
     "nivel": 5
   }
 ]
