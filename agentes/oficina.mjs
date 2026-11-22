@@ -12,6 +12,7 @@ import {reunirReferencias} from './referencias.mjs';
 import {investigarEnLaWeb} from './investigar-web.mjs';
 import {mirarFoto, textoDeVista} from './ojos.mjs';
 import {limpiarParaVoz} from './texto-voz.mjs';
+import {textoDeRadar} from './radar.mjs';
 import {reunirInspiracion} from './inspiracion.mjs';
 import {enGarantia} from './garantia.mjs';
 import {chatAlternativo, proveedoresConLlave, modelosDisponibles, diagnosticoRespaldo} from './llm.mjs';
@@ -263,9 +264,16 @@ const existeEnWikipedia = async (titulo) => {
 };
 const elegirTema = async (modelo) => {
   const hechos = leerJson(HISTORIAL, []);
+  // RADAR: videos de canales CHICOS que acaban de explotar en el nicho (YouTube público). El tema se elige mirando lo que está pegando, no solo Wikipedia.
+  const radar = leerJson(path.join(SALIDA, 'radar.json'), null);
+  const resumenRadar = textoDeRadar(radar, 8);
+  const bloqueRadar = resumenRadar
+    ? ` RADAR DE CANALES POR EXPLOTAR (videos recientes de canales chicos del nicho que se dispararon): ${resumenRadar}. PRIORIDAD: los PRIMEROS temas de tu lista deben salir de lo que está pegando en ese radar: la misma idea (un suceso, objeto o lugar REAL y documentado) escrita como el título exacto de su artículo de Wikipedia. Descarta del radar lo que no sea un hecho real (películas, series, famosos, chismes, juegos).`
+    : '';
+  if (resumenRadar) informe.push(`Radar: ${radar.canales.length} canales chicos que explotaron (${String(radar.fecha).slice(0, 10)}); se usan para elegir el tema.`);
   const r = await pedirJson(modelo, [
     {role: 'system', content: `Eres el/la Director/a de contenido del canal de YouTube "${CONFIG.nombre}" (${CONFIG.nicho}). Respondes SOLO con JSON.`},
-    {role: 'user', content: `Dame 20 títulos EXACTOS de artículos de Wikipedia en inglés sobre ${CONFIG.nicho}, con mucha documentación. Prefiere casos con HECHOS CONCRETOS y bien documentados (un objeto, un lugar, un evento con fecha y cifras), no fenómenos que solo tienen teorías ni conspiraciones. Reglas: nada sobre personas (ni biografías), nada de política ni de violencia gráfica, nada ya hecho. Ya hechos: ${hechos.join(', ') || 'ninguno'}. Formato: {"temas": ["Titulo 1", "Titulo 2"]}`},
+    {role: 'user', content: `Dame 20 títulos EXACTOS de artículos de Wikipedia en inglés sobre ${CONFIG.nicho}, con mucha documentación. Prefiere casos con HECHOS CONCRETOS y bien documentados (un objeto, un lugar, un evento con fecha y cifras), no fenómenos que solo tienen teorías ni conspiraciones. Reglas: nada sobre personas (ni biografías), nada de política ni de violencia gráfica, nada ya hecho. Ya hechos: ${hechos.join(', ') || 'ninguno'}.${bloqueRadar} Formato: {"temas": ["Titulo 1", "Titulo 2"]}`},
   ], 1500);
   const ideasEquipo = leerJson(path.join(SALIDA, 'ayudas.json'), {}).temas ?? [];
   // NUNCA se repite un tema: "Bloop" y "The Bloop" son el MISMO tema (se compara sin mayúsculas, sin "The" inicial y sin signos).

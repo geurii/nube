@@ -94,6 +94,7 @@ jobs:
             CANAL=$c timeout 120 node agentes/vistas.mjs || true
             CANAL=$c timeout 120 node agentes/analytics.mjs || true
             CANAL=$c timeout 120 node agentes/cazador.mjs || true
+            CANAL=$c timeout 200 node agentes/radar.mjs || true
             for intento in 1 2 3; do
               CANAL=$c timeout 900 node agentes/oficina.mjs || fallo=1
               CANAL=$c node agentes/ultimo-aprobado.mjs && break
