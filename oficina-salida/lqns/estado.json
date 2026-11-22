@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-22T04:21:45.927Z",
+  "actualizado": "2026-11-22T04:22:57.585Z",
   "totales": {
     "aprobados": 8,
     "rechazados": 7,
@@ -204,9 +204,9 @@
       "tarea": "Renderizó \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\" (39 MB). Está en Actions, artefacto \"video-lqns-the-antikythera-mechanism\"."
     },
     "Publicador": {
-      "estado": "esperando_decision",
+      "estado": "libre",
       "actividad": "pensando",
-      "tarea": "Tiene un video listo: \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\". Falta subirlo a YouTube (necesita tu conexión; ver subir.mjs)."
+      "tarea": "Subió \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\" y quedó PÚBLICO ahora mismo: https://youtu.be/HHnlDcvo_vU"
     },
     "Crítico: padre trabajador": {
       "estado": "libre",
