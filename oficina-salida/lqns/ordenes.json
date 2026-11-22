@@ -1,5 +1,10 @@
 [
   {
+    "fecha": "2026-11-22T19:36:46.498Z",
+    "orden": "Revisa el calendario de producción y confirma que los largos no excedan 12 min para mantener el consumo bajo 300 min mensuales.",
+    "nivel": 4
+  },
+  {
     "fecha": "2026-11-22T19:34:33.625Z",
     "orden": "Revisar el calendario de publicación y asegurar que el Short se publique cada 3 horas sin excepción.",
     "nivel": 4
@@ -42,11 +47,6 @@
   {
     "fecha": "2026-11-22T07:20:45.525Z",
     "orden": "Equipo: eliminen el video 4 de la lista de producción y no lo suban.",
-    "nivel": 4
-  },
-  {
-    "fecha": "2026-11-22T07:19:05.020Z",
-    "orden": "Equipo: entreguen nuevos esquemas de intriga y gancho antes de la producción, sin repetir el guion anterior.",
     "nivel": 4
   }
 ]

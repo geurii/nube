@@ -1,5 +1,21 @@
 [
   {
+    "id": "mws8mz0dj",
+    "de": "jules",
+    "texto": "Con 22 días restantes y el plan actual (2 shorts de 1 min cada 3 h y 1 video largo de 10 min los días impares) consumiremos aproximadamente 264 min de GitHub Actions (220 min de largos + 44 min de shorts). Esto queda bien dentro del límite de 1 800 min gratuitos y del total de 2 000 min mensuales, por lo que no habrá sobrepaso y podremos seguir subiendo videos diarios sin riesgo de quedarnos sin recursos.",
+    "fecha": "2026-11-22T19:36:46.498Z",
+    "orden": "Revisa el calendario de producción y confirma que los largos no excedan 12 min para mantener el consumo bajo 300 min mensuales.",
+    "nivel": 4,
+    "canal": "lqns"
+  },
+  {
+    "id": "mws8mz0dt",
+    "de": "tu",
+    "texto": "Un vídeo largo diario revisen que tan rentable es con los Minutos de github y si llegaremos al mes con los recursos que hay",
+    "fecha": "2026-11-22T19:36:25.670Z",
+    "canal": "lqns"
+  },
+  {
     "id": "mws8k4grj",
     "de": "jules",
     "texto": "Entendido, el cronograma queda: un Short cada 3 horas, sin importar la hora exacta, y un video largo 16:9 los días impares a las 12:23 UTC. No habrá cambios en el formato ni en la frecuencia.",
