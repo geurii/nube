@@ -1,5 +1,13 @@
 [
   {
+    "id": "mws74kd8p38x",
+    "fecha": "2026-11-22T18:54:28.124Z",
+    "canal": "lqns",
+    "tipo": "alerta",
+    "titulo": "No se pudo publicar en las redes",
+    "texto": "\"🔊 El enigma del Bloop: el rugido del hielo\": sin repositorio público; y el servicio temporal bloqueó a GitHub (el servicio de archivos temporales no devolvió un enlace válido (500): 500)."
+  },
+  {
     "id": "mws74ebfr1pa",
     "fecha": "2026-11-22T18:54:20.283Z",
     "canal": "lqns",
@@ -676,14 +684,5 @@
     "tipo": "permiso",
     "titulo": "Necesito tu OK: faltan imágenes para \"The Voynich manuscript\"",
     "texto": "3 de 5 escenas no tienen una imagen que encaje y usarían un fondo neutro. Sigo adelante con el fondo neutro salvo que me digas que lo dibuje Claude antes de publicar."
-  },
-  {
-    "id": "mwqiwocqk8dk",
-    "fecha": "2026-11-21T14:48:43.082Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Palabra clave impactante + pregunta intrigante o afirmación sorprendente + elemento de misterio/lo prohibido + (opcional) número o lista El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (47862 vistas/hora)."
   }
 ]
