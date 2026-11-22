@@ -16,6 +16,7 @@ import {textoDeRadar} from './radar.mjs';
 import {completarHashtags} from './hashtags.mjs';
 import {evaluarGuionConPanel} from './panel-guion.mjs';
 import {titulosVirales, armarBloqueWeb, guardarWeb} from './web.mjs';
+import {filtrarTemas, sinRechazadas, leerPreferencias, fueRechazada} from './ideas.mjs';
 import {reunirInspiracion} from './inspiracion.mjs';
 import {enGarantia} from './garantia.mjs';
 import {chatAlternativo, proveedoresConLlave, modelosDisponibles, diagnosticoRespaldo} from './llm.mjs';
@@ -145,7 +146,7 @@ const CULTURA = 'EMPRESA: ' + (CONFIG.nombre ?? 'el canal') + '. META: monetizar
 const ORDEN_JULES = leerJson(path.join(SALIDA, 'ordenes.json'), [])[0];
 const ALTERNOS = process.env.GROQ_API_KEY ? (await modelosDisponibles(process.env.GROQ_API_KEY)).filter((m) => m !== 'openai/gpt-oss-120b') : []; // modelos de Groq con cuota separada que SÍ existen en la cuenta
 let groqBloqueadoHasta = 0; // mientras Groq esté en 429, se usan primero los demás proveedores
-let WEB_BLOQUE = ''; // lo que dice internet HOY sobre el tema: se les da a TODOS los agentes (se llena después de investigar)
+let WEB_BLOQUE = leerPreferencias(CANAL_ID); // arranca con lo que el dueño aprobó y rechazó; después se le suma lo que dice internet // lo que dice internet HOY sobre el tema: se les da a TODOS los agentes (se llena después de investigar)
 const groqDirecto = async (modelo, mensajes, maxTokens = FORMATO === 'largo' ? 4500 : 2500) => {
   mensajes = mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + (ORDEN_JULES ? ` ORDEN VIGENTE DE JULES (nivel ${ORDEN_JULES.nivel}/5, la dio el dueño): ${ORDEN_JULES.orden}` : '') + '\n\n' + m.content} : m));
   let ultimo = 'sin respuesta';
@@ -279,7 +280,7 @@ const elegirTema = async (modelo) => {
     {role: 'system', content: `Eres el/la Director/a de contenido del canal de YouTube "${CONFIG.nombre}" (${CONFIG.nicho}). Respondes SOLO con JSON.`},
     {role: 'user', content: `Dame 20 títulos EXACTOS de artículos de Wikipedia en inglés sobre ${CONFIG.nicho}, con mucha documentación. Prefiere casos con HECHOS CONCRETOS y bien documentados (un objeto, un lugar, un evento con fecha y cifras), no fenómenos que solo tienen teorías ni conspiraciones. Reglas: nada sobre personas (ni biografías), nada de política ni de violencia gráfica, nada ya hecho. Ya hechos: ${hechos.join(', ') || 'ninguno'}.${bloqueRadar} Formato: {"temas": ["Titulo 1", "Titulo 2"]}`},
   ], 1500);
-  const ideasEquipo = leerJson(path.join(SALIDA, 'ayudas.json'), {}).temas ?? [];
+  const ideasEquipo = filtrarTemas(leerJson(path.join(SALIDA, 'ayudas.json'), {}).temas ?? [], CANAL_ID); // los temas que el dueño rechazó se quitan y los que aprobó van primero
   // NUNCA se repite un tema: "Bloop" y "The Bloop" son el MISMO tema (se compara sin mayúsculas, sin "The" inicial y sin signos).
   // Se miran los temas anotados, todos los guiones que existen (aprobados o no), lo ya producido y lo ya subido a YouTube.
   const clave = (x) => String(x).toLowerCase().replace(/^the[-_ ]+/, '').replace(/[^a-z0-9]+/g, '');
@@ -287,7 +288,7 @@ const elegirTema = async (modelo) => {
   try { guiones = fs.readdirSync(SALIDA).filter((f) => /^guion-.+\.json$/.test(f)).map((f) => f.replace(/^guion-|\.json$/g, '')); } catch { /* sin carpeta */ }
   const subidosTitulos = (leerJson(path.join(SALIDA, 'subidos.json'), {}).videos ?? []).map((v) => v.titulo);
   const vistos = [...new Set([...hechos, ...guiones, ...leerJson(path.join(SALIDA, 'producidos.json'), []), ...subidosTitulos].map(clave).filter((k) => k.length >= 4))];
-  const yaHecho = (x) => { const k = clave(x); return k.length >= 4 && vistos.some((v) => v === k || (k.length >= 6 && v.length >= 6 && (v.includes(k) || k.includes(v)))); };
+  const yaHecho = (x) => { if (fueRechazada(x, CANAL_ID)) return true; const k = clave(x); return k.length >= 4 && vistos.some((v) => v === k || (k.length >= 6 && v.length >= 6 && (v.includes(k) || k.includes(v)))); };
   for (const t of [...ideasEquipo, ...(r.temas ?? [])]) {
     if (typeof t !== 'string' || yaHecho(t)) continue;
     const p = await wikipedia('en', t);
@@ -327,9 +328,9 @@ const ayudasDelEquipo = () => {
   const au = leerJson(path.join(SALIDA, 'autopsia.json'), null);
   const partes = [];
   if (au?.reglas?.length) partes.push(`AUTOPSIA de por qué los videos anteriores no cogieron vistas (reglas): ${au.reglas.join(' | ')}`);
-  if (y.ganchos?.length) partes.push(`Plantillas de gancho del equipo: ${y.ganchos.slice(0, 3).join(' // ')}`);
-  if (y.mejorasGuion?.length) partes.push(`Mejoras que el equipo vio en el guion anterior: ${y.mejorasGuion.join(' | ')}`);
-  if (y.titulos?.length) partes.push(`Patrones de título que funcionan: ${y.titulos.join(' | ')}`);
+  if (y.ganchos?.length) partes.push(`Plantillas de gancho del equipo: ${sinRechazadas(y.ganchos, CANAL_ID).slice(0, 3).join(' // ')}`);
+  if (y.mejorasGuion?.length) partes.push(`Mejoras que el equipo vio en el guion anterior: ${sinRechazadas(y.mejorasGuion, CANAL_ID).join(' | ')}`);
+  if (y.titulos?.length) partes.push(`Patrones de título que funcionan: ${sinRechazadas(y.titulos, CANAL_ID).join(' | ')}`);
   return partes.length ? `\n\nAYUDA DEL EQUIPO (úsala si encaja; los datos del MATERIAL mandan): ${partes.join('. ')}` : '';
 };
 const aprendizajesDelPanel = () => {
@@ -457,9 +458,10 @@ try {
   try {
     const tit = await Promise.race([titulosVirales(TEMA), new Promise((r) => setTimeout(() => r([]), 25000))]);
     const resumenes = fuentes.filter((x) => x.apoyo).map((x) => ({host: String(x.titulo).split(':')[0], texto: x.texto}));
-    WEB_BLOQUE = armarBloqueWeb({tema: TEMA, resumenes, titulos: tit, radarTexto: textoDeRadar(leerJson(path.join(SALIDA, 'radar.json'), null), 2)});
-    guardarWeb(CANAL_ID, {tema: TEMA, bloque: WEB_BLOQUE, resumenes: resumenes.length, titulos: tit});
-    if (WEB_BLOQUE) informe.push(`Internet para todos los agentes: ${resumenes.length} resúmenes web y ${tit.length} videos virales de YouTube sobre el tema.`);
+    const bloqueWeb = armarBloqueWeb({tema: TEMA, resumenes, titulos: tit, radarTexto: textoDeRadar(leerJson(path.join(SALIDA, 'radar.json'), null), 2)});
+    guardarWeb(CANAL_ID, {tema: TEMA, bloque: bloqueWeb, resumenes: resumenes.length, titulos: tit});
+    WEB_BLOQUE = [bloqueWeb, leerPreferencias(CANAL_ID)].filter(Boolean).join(' ');
+    if (bloqueWeb) informe.push(`Internet para todos los agentes: ${resumenes.length} resúmenes web y ${tit.length} videos virales de YouTube sobre el tema.`);
   } catch { /* sin internet extra */ }
   informe.push('## Investigación', ...fuentes.map((f) => `- ${f.apoyo ? 'web (apoyo)' : f.idioma}: [${f.titulo}](${f.url})`), '');
   const material = fuentes.map((f) => `### ${f.apoyo ? 'FUENTE DE APOYO (resumen de un buscador web: úsala solo para contrastar fechas y cifras con Wikipedia; si difiere, di las dos versiones)' : 'FUENTE (' + f.idioma + ')'} ${f.url}\n${f.texto}`).join('\n\n');

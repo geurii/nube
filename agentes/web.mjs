@@ -4,6 +4,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {buscarVideos} from './radar.mjs';
+import {leerPreferencias} from './ideas.mjs';
 
 const MAX_BLOQUE = 950;
 const corto = (t, n) => String(t ?? '').replace(/\s+/g, ' ').trim().slice(0, n);
@@ -37,9 +38,11 @@ export const guardarWeb = (canal, datos) => {
 
 /** Para los scripts que no son la Oficina (Jules, ayuda mutua, funciones, conciencia): lee el bloque del último ciclo si es de hace menos de 2 días. */
 export const leerBloqueWeb = (canal = 'lqns') => {
+  let web = '';
   try {
     const w = JSON.parse(fs.readFileSync(path.join('oficina-salida', canal, 'web.json'), 'utf8'));
-    if (Date.now() - Date.parse(w.fecha) > 2 * 86400000) return '';
-    return String(w.bloque ?? '');
-  } catch { return ''; }
+    if (Date.now() - Date.parse(w.fecha) <= 2 * 86400000) web = String(w.bloque ?? '');
+  } catch { /* sin web.json */ }
+  // además de internet, todos ven lo que el dueño aprobó y rechazó
+  return [web, leerPreferencias(canal)].filter(Boolean).join(' ');
 };
