@@ -1,39 +1,5 @@
 [
   {
-    "id": "mwrj2d0ix14t",
-    "fecha": "2026-11-22T07:40:54.498Z",
-    "canal": "lqns",
-    "tipo": "reporte",
-    "titulo": "Video subido a YouTube",
-    "texto": "\"🌊 El Bloop: ¡5,000 km de misterio bajo el hielo!\" quedó PÚBLICO ahora mismo: https://youtu.be/9CKxsZ7hmUg"
-  },
-  {
-    "id": "mwriyd31oj26",
-    "fecha": "2026-11-22T07:37:47.965Z",
-    "canal": "lqns",
-    "tipo": "alerta",
-    "titulo": "El panel de críticos falló",
-    "texto": "No pudo evaluar \"lqns-the-bloop\" (Groq no respondió.). El video pasó sin su voto."
-  },
-  {
-    "id": "mwritgofcjt1",
-    "fecha": "2026-11-22T07:33:59.343Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "listo",
-    "titulo": "Video listo: 🌊 El Bloop: ¡5,000 km de misterio bajo el hielo!",
-    "texto": "Se renderizó \"🌊 El Bloop: ¡5,000 km de misterio bajo el hielo!\" para Lo Que No Sabías (104 MB). Descárgalo en GitHub > Actions > Produccion > artefacto \"video-lqns-the-bloop\". Falta subirlo a YouTube."
-  },
-  {
-    "id": "mwri5babfng0",
-    "fecha": "2026-11-22T07:15:12.611Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Guion aprobado: The Bloop",
-    "texto": "Short de \"The Bloop\" aprobado en el intento 1. 91 palabras, 6 escenas. Editor: Puntaje: 7/10. El gancho está bien, pero el resto es demasiado extenso y poco rítmico; corta y enfoca cada línea. Aprobados: 9. Rechazados: 7. Con error: 8. Próximo ciclo en 7 h."
-  },
-  {
     "id": "mwrhzrwksizk",
     "fecha": "2026-11-22T07:10:54.212Z",
     "canal": "lqns",
