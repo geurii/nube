@@ -1,0 +1,1 @@
+{"cielo":["#1e2d3b","#33867d","#50555c"],"capas":[{"t":"foto","archivo":"nikola-tesla-0-3.jpg","x0":0,"y0":0.1,"x1":1,"y1":0.84,"zoom":1,"pan":true},{"t":"resplandor","x":0.5,"y":0.45,"r":0.2,"fuerza":1,"color":"#ffb347"},{"t":"particulas","n":30,"tipo":"polvo"}],"escenario":"industrial"}

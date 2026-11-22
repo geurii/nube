@@ -1,5 +1,32 @@
 [
   {
+    "id": "mws1cbl84zqf",
+    "fecha": "2026-11-22T16:12:32.300Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Guion aprobado: Nikola Tesla",
+    "texto": "Short de \"Nikola Tesla\" aprobado en el intento 3. 114 palabras, 6 escenas. Editor: Puntaje: 5/10. El gancho es demasiado largo y poco impactante; la historia carece de ritmo y contiene datos innecesarios; el cierre no destaca la revelación a tiempo. Panel: [Garantía de publicación a Aprobados: 11. Rechazados: 17. Con error: 8. Próximo ciclo en 10 h."
+  },
+  {
+    "id": "mws0vmyn13ks",
+    "fecha": "2026-11-22T15:59:33.887Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: ",
+    "texto": "El Verificador no aprobó \"\" tras 0 intentos: Tema descartado (no se pudo cargar):  Aprobados: 10. Rechazados: 17. Con error: 8. No se publica. Próximo ciclo en 10 h."
+  },
+  {
+    "id": "mws0vlv185cl",
+    "fecha": "2026-11-22T15:59:32.461Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante o afirmación impactante + elemento misterioso/inesperado + pista de revelación o consecuencia El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (36343 vistas/hora)."
+  },
+  {
     "id": "mwryv2ufs2xz",
     "fecha": "2026-11-22T15:03:08.583Z",
     "canal": "lqns",

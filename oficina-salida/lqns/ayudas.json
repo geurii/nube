@@ -1,35 +1,35 @@
 {
   "plan": [
-    "Crear una serie de 5 episodios sobre ‘El misterio de los pingüinos desaparecidos’: Departamento de Investigación y Producción: Alcanzar 10,000 vistas combinadas y generar 1,200 USD en ingresos publicitarios antes del 13 de diciembre",
-    "Desarrollar contenido exclusivo de ‘El banco fantasma’ con material documental y entrevistas ficticias: Equipo de Guion y Efectos Visuales: Obtener 5,000 vistas adicionales y monetizar 800 USD mediante anuncios y patrocinios antes del 13 de",
-    "Lanzar una campaña de cross‑promoción con canales emergentes de misterios y fenómenos paranormales: Departamento de Marketing y Relaciones Públicas: Incrementar la audiencia total en un 20% y generar 1,000 USD en ingresos de publicidad ante"
+    "1. Crear una serie de 5 episodios sobre el misterio del objeto perdido de la nave espacial, con un guion que comience con 'Sabías que...' y que genere al menos 5000 vistas por episodio. Responsable: Departamento de Investigación y Guion (Ju",
+    "2. Lanzar un episodio especial sobre el caso del banco que pagó 175  millones por clientes inexistentes, incluyendo entrevistas con expertos y análisis de datos. Responsable: Equipo de Producción de Documentales (Ana). Meta: alcanzar 10 000",
+    "3. Desarrollar una mini‑serie de 3 partes sobre los pingüinos en el supermercado y la expedición polar, optimizando SEO y colaboraciones con canales de ciencia. Responsable: Marketing Digital y Colaboraciones (Luis). Meta: generar 15 000 vi"
   ],
   "ganchos": [
-    "Sabías que [CIFRA] personas encontraron un objeto que no pertenece a nuestro planeta | Un planeta lejano flotando sobre la Tierra",
-    "Sabías que [CIFRA] segundos tardó un secreto militar en desaparecer del mapa | Un mapa con una zona tachada que se desvanece",
-    "Sabías que [CIFRA] libros desaparecieron de una biblioteca sin dejar rastro | Una estantería vacía con una luz parpadeante",
-    "Sabías que [CIFRA] años de historia se borraron de los archivos nacionales | Un archivo digital con una pantalla azul de error",
-    "Sabías que [CIFRA] minutos antes de que un experimento saliera mal, la cámara se apagó sola | Una cámara de seguridad con la pantalla en negro y un susurro"
+    "Sabías que [CIFRA] personas descubrieron un objeto que no pertenece a nuestro planeta | Imagen: una luz pulsante sobre un mapa estelar con un punto rojo resaltado",
+    "Sabías que [CIFRA] segundos tardó un secreto militar en desaparecer del mapa | Imagen: un mapa antiguo con una sección tachada y un reloj marcando el tiempo",
+    "Sabías que [CIFRA] años de historia se borraron de los archivos nacionales | Imagen: estanterías vacías con libros que se desvanecen en polvo",
+    "Sabías que [CIFRA] minutos antes de que un experimento saliera mal, la cámara se apagó sol | Imagen: una cámara con un visor negro y una pantalla de error flotando",
+    "Sabías que [CIFRA] segundos antes de que un experimento saliera mal, la cámara se apagó sol | Imagen: un laboratorio con luces parpadeantes y un cronómetro detenido"
   ],
   "mejorasGuion": [
-    "1. Gancho inicial más impactante: cambia \"Sabías que un tesoro de más de 40 millones de dólares está oculto en Virginia?\" por \"Sabías que una caja con 40 millones de dólares se perdió en los bosques de Virginia hace 200 ",
-    "2. Ritmo y repetición: inserta mini‑pistas entre párrafos, por ejemplo: \"El mensaje cifrado del posadero contenía la frase: ‘El tiempo es la llave’, y el segundo mensaje, descifrado con la Declaración de Independencia, r",
-    "3. Cierre con llamada a la acción más intrigante: reemplaza “Comparte este video con un amigo que haría lo mismo, sígueme” por “¿Te atreverías a buscarlo? Deja tu teoría en los comentarios y suscríbete para que no te pie"
+    "1. Gancho inicial más impactante: empieza con una pregunta intrigante como \"Sabías que un inventor secreto iluminó las Cataratas del Niágara sin usar cables?\" para captar la curiosidad de inmediato.",
+    "2. Ritmo dinámico: divide el relato en bloques cortos con transiciones claras y usa frases como \"Pero lo que no sabías\" en cada segmento para mantener el suspense y la velocidad narrativa.",
+    "3. Cierre más memorable: termina con una frase misteriosa que invite a la acción, por ejemplo \"¿Te atreves a descubrir el próximo secreto que Tesla dejó en la sombra? Suscríbete y comparte para no perderte la próxima rev"
   ],
   "temas": [
-    "The Mystery of the Oak Island Money Pit",
-    "The Mystery of the Shroud of Turin",
-    "The Mystery of the Nazca Lines",
-    "The Mystery of the Voynich Manuscript",
-    "The Mystery of the Antikythera Mechanism"
+    "The Voynich Manuscript",
+    "The Antikythera Mechanism",
+    "The Bloop",
+    "The Wow! Signal",
+    "The Sargasso Sea"
   ],
   "titulos": [
-    "Sabías que <evento> <emoji> (Parte <n>/<total>)",
-    "Sabías que <acción> <emoji> (Parte <n>/<total>)",
-    "Sabías que <sustitución> <emoji> (Parte <n>/<total>)",
-    "Sabías que <situación> <emoji> (Parte <n>/<total>)"
+    "Sabías que [número] [evento]… (Parte [x]/[y])",
+    "Sabías que [número] [objeto]… (Parte [x]/[y])",
+    "Sabías que [acción]… (Parte [x]/[y])",
+    "Sabías que [número] [acción]… (Parte [x]/[y])"
   ],
-  "fecha": "2026-11-22T15:03:08.777Z",
+  "fecha": "2026-11-22T16:12:33.237Z",
   "iniciativas": [
     "Valentina (Directora de contenido): Definir una guía de estilo clara que el equipo pueda seguir desde el primer video.",
     "Carolina (Coordinador de producción): Crear un calendario de producción con hitos diarios y asignar responsables para cada tarea.",
