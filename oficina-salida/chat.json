@@ -1,5 +1,21 @@
 [
   {
+    "id": "mws8e7y3j",
+    "de": "jules",
+    "texto": "El equipo está siguiendo el calendario: guiones aprobados, revisión de calidad y renderizado. Los videos pendientes están en el pipeline de GitHub Actions y se publicarán según la programación establecida (2 shorts cada 3 h y 1 largo los días impares). No hay retraso por falta de producción, solo por el proceso de aprobación del panel.",
+    "fecha": "2026-11-22T19:29:58.201Z",
+    "orden": "Revisar el flujo de aprobación del panel y asegurar que los guiones cumplan los 6/10 mínimos antes de enviar.",
+    "nivel": 5,
+    "canal": "lqns"
+  },
+  {
+    "id": "mws8e7y3t",
+    "de": "tu",
+    "texto": "Que están haciendo todos si no están produciendo vídeo M",
+    "fecha": "2026-11-22T19:29:42.337Z",
+    "canal": "lqns"
+  },
+  {
     "id": "mws14fqvj",
     "de": "jules",
     "texto": "No podemos subir videos en 16:9, el formato está definido por el dueño y no cambiaremos el estilo. Mantendremos los shorts verticales de máximo 60 s. Los 2 videos cortos diarios se cumplirán, pero el video largo no será posible.",

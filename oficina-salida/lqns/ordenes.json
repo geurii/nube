@@ -1,5 +1,10 @@
 [
   {
+    "fecha": "2026-11-22T19:29:58.201Z",
+    "orden": "Revisar el flujo de aprobación del panel y asegurar que los guiones cumplan los 6/10 mínimos antes de enviar.",
+    "nivel": 5
+  },
+  {
     "fecha": "2026-11-22T16:06:24.436Z",
     "orden": "Revisar calendario y asignar tareas para cumplir los 2 shorts diarios.",
     "nivel": 5
@@ -42,11 +47,6 @@
   {
     "fecha": "2026-11-22T05:41:57.118Z",
     "orden": "Departamentos de Guion, Revisión de ganchos, Pintores y Edición: copien el NIVEL de gancho y edición de reels que frenan el dedo, SIN cambiar el pixel que hace único al canal. GANCHO REAL: la primera frase (máx. 14 palabras, empieza con \"Sabías que\") es una pregunta imposible o un hecho increíble con una cifra concreta, y sale como titular gigante en pantalla los primeros 3 segundos. EDICIÓN: un cambio de imagen cada 1,5 a 2 segundos, un solo sujeto grande por cuadro, un solo mundo de color por video con alto contraste y foco de luz, palabras clave resaltadas y glitch en cada corte. Rechacen todo gancho suave o descriptivo.",
-    "nivel": 5
-  },
-  {
-    "fecha": "2026-11-22T03:58:26.566Z",
-    "orden": "Todos: revisen guiones y miniaturas de los próximos 2 videos, incluyan ganchos claros en los primeros 3 segundos y usen imágenes directamente relacionadas con el tema; entreguen versiones finales a las 12:23 a.m. y suban ambos antes de las 14:00 h de hoy.",
     "nivel": 5
   }
 ]
