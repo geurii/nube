@@ -1,8 +1,8 @@
 {
-  "fecha": "2026-11-22T14:25:22.547Z",
+  "fecha": "2026-11-22T15:01:36.516Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
   "total": 2425,
-  "ganadasDesdeElUltimoCiclo": 2,
+  "ganadasDesdeElUltimoCiclo": 0,
   "videos": [
     {
       "id": "9CKxsZ7hmUg",
@@ -14,7 +14,7 @@
       "id": "HHnlDcvo_vU",
       "titulo": "🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩",
       "publicado": "2026-11-22T04:24:01+00:00",
-      "vistas": 6
+      "vistas": 7
     },
     {
       "id": "76aNbQdWBSc",
@@ -62,7 +62,7 @@
       "id": "KURWolBJszo",
       "titulo": "Sabías que mataron 2 millones de pingüinos... y no para comérselos 😳 (Parte 2/3)",
       "publicado": "2026-11-20T16:30:10+00:00",
-      "vistas": 174
+      "vistas": 173
     },
     {
       "id": "Wj-zpd2iorA",
@@ -210,6 +210,10 @@
     },
     {
       "fecha": "2026-11-22T14:25:22.547Z",
+      "total": 2425
+    },
+    {
+      "fecha": "2026-11-22T15:01:36.516Z",
       "total": 2425
     }
   ]

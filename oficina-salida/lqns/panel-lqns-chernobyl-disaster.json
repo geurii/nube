@@ -1,0 +1,45 @@
+{
+  "fecha": "2026-11-22T15:03:08.335Z",
+  "id": "lqns-chernobyl-disaster",
+  "modo": "tecnico",
+  "aprobado": false,
+  "resumen": "Gemini (gemini-4-hydrogen) lo vio y lo oyó: imagen 4/10, audio 8/10, FALLAS GRAVES: El texto principal de la portada aparece cortado e incompleto ('¿EL 26 ABRIL DE 1986 UNA EXPLOSIÓN CAMBIÓ LA?'), y en varias escenas (00:10-00:37 y 00:59-01:26) se muestran cajas gráficas vacías donde.",
+  "motivos": [
+    "El texto principal de la portada aparece cortado e incompleto ('¿EL 26 ABRIL DE 1986 UNA EXPLOSIÓN CAMBIÓ LA?'), y en varias escenas (00:10-00:37 y 00:59-01:26) se muestran cajas gráficas vacías donde"
+  ],
+  "gemini": {
+    "modelo": "gemini-4-hydrogen",
+    "gancho_3s": {
+      "nota": 5,
+      "comentario": "Se escucha una voz grave y música dramática preguntando por la explosión del 26 de abril de 1986, mientras se ve un fondo pixel art con un avatar y un cartel rojo cuyo texto aparece incompleto ('¿EL 26 ABRIL DE 1986 UNA EXPLOSIÓN CAMBIÓ LA?')."
+    },
+    "audio": {
+      "nota": 8,
+      "comentario": "Voz en español clara, profunda y bien modulada, acompañada de música ambiental y efectos de transición con volumen equilibrado."
+    },
+    "subtitulos": {
+      "legibles": true,
+      "tapados_o_cortados": false,
+      "comentario": "Subtítulos inferiores centrados en blanco y amarillo, bien sincronizados, legibles y sin recortes."
+    },
+    "imagen": {
+      "nota": 4,
+      "defectos": [
+        "texto cortado",
+        "cajas de texto vacías",
+        "repetitivo",
+        "pixelado excesivo"
+      ]
+    },
+    "ritmo": {
+      "nota": 5,
+      "comentario": "Las animaciones en bucle duran tramos largos (casi 30 segundos en el diagrama del reactor y otros 27 segundos en la escena final de los edificios) con pocos cambios visuales reales."
+    },
+    "defectos_graves": [
+      "El texto principal de la portada aparece cortado e incompleto ('¿EL 26 ABRIL DE 1986 UNA EXPLOSIÓN CAMBIÓ LA?'), y en varias escenas (00:10-00:37 y 00:59-01:26) se muestran cajas gráficas vacías donde falta el texto."
+    ],
+    "nota_general": 4,
+    "recomendacion": "no subir",
+    "por_que": "El video presenta fallos visuales técnicos evidentes, con el titular inicial cortado a mitad de frase y recuadros informativos vacíos durante gran parte del metraje."
+  }
+}

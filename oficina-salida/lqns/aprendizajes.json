@@ -1,5 +1,13 @@
 [
   {
+    "fecha": "2026-11-22T15:03:08.335Z",
+    "video": "Sabías que la explosión de Chernóbil cambió todo 🌍",
+    "mejora": "Arreglar las fallas de imagen o sonido que vio Gemini.",
+    "quejas": [
+      "El texto principal de la portada aparece cortado e incompleto ('¿EL 26 ABRIL DE 1986 UNA EXPLOSIÓN CAMBIÓ LA?'), y en varias escenas (00:10-00:37 y 00:59-01:26) se muestran cajas gráficas vacías donde"
+    ]
+  },
+  {
     "fecha": "2026-11-22T07:59:35.367Z",
     "video": "🌌 El misterio explosivo de Tunguska 1908",
     "mejora": "Reemplaza la voz sintética y los fondos genéricos por una narración humana clara y visuales reales del desastre de Tunguska; un gancho impactante y sin errores aumentará drásticamente la retención.",

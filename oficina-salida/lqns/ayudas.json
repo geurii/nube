@@ -1,35 +1,35 @@
 {
   "plan": [
-    "1. Lanzar la serie de 3 partes sobre pingüinos en supermercados: Responsable: Marta López, Meta: 10,000 vistas y 50 suscriptores nuevos antes del 13/12",
-    "2. Crear contenido de la expedición polar a 3 huevos de pingüino: Responsable: Carlos Ruiz, Meta: 8,000 vistas y 30 suscriptores antes del 13/12",
-    "3. Publicar el episodio sobre el banco que pagó 175 millones por clientes inexistentes: Responsable: Elena García, Meta: 6,000 vistas y 20 suscriptores antes del 13/12"
+    "Crear una serie de 5 episodios sobre ‘El misterio de los pingüinos desaparecidos’: Departamento de Investigación y Producción: Alcanzar 10,000 vistas combinadas y generar 1,200 USD en ingresos publicitarios antes del 13 de diciembre",
+    "Desarrollar contenido exclusivo de ‘El banco fantasma’ con material documental y entrevistas ficticias: Equipo de Guion y Efectos Visuales: Obtener 5,000 vistas adicionales y monetizar 800 USD mediante anuncios y patrocinios antes del 13 de",
+    "Lanzar una campaña de cross‑promoción con canales emergentes de misterios y fenómenos paranormales: Departamento de Marketing y Relaciones Públicas: Incrementar la audiencia total en un 20% y generar 1,000 USD en ingresos de publicidad ante"
   ],
   "ganchos": [
-    "Sabías que [CIFRA] personas se perderon en el laberinto subterráneo de [TEMA] | Una cámara revela pasillos oscuros iluminados por antorchas flotantes",
-    "Sabías que [CIFRA] años antes de la caída, [TEMA] era la ciudad más avanzada del mundo | Un plano aéreo muestra un skyline futurista que desaparece en humo",
-    "Sabías que [CIFRA] objetos nunca se han recuperado de la zona de [TEMA] | Una mano temblorosa sostiene un artefacto brillante bajo una luz roja",
-    "Sabías que [CIFRA] veces se escuchó la misma canción en [TEMA] sin que nadie la grabara | Un micrófono antiguo vibra mientras la música se descompone",
-    "Sabías que [CIFRA] personas murieron al intentar abrir la caja de [TEMA] | Una caja metálica se abre lentamente, revelando una luz azul intensa"
+    "Sabías que [CIFRA] personas encontraron un objeto que no pertenece a nuestro planeta | Un planeta lejano flotando sobre la Tierra",
+    "Sabías que [CIFRA] segundos tardó un secreto militar en desaparecer del mapa | Un mapa con una zona tachada que se desvanece",
+    "Sabías que [CIFRA] libros desaparecieron de una biblioteca sin dejar rastro | Una estantería vacía con una luz parpadeante",
+    "Sabías que [CIFRA] años de historia se borraron de los archivos nacionales | Un archivo digital con una pantalla azul de error",
+    "Sabías que [CIFRA] minutos antes de que un experimento saliera mal, la cámara se apagó sola | Una cámara de seguridad con la pantalla en negro y un susurro"
   ],
   "mejorasGuion": [
-    "Añade un gancho inicial con una pregunta intrigante que invite a la curiosidad, por ejemplo: \"Sabías que una sola explosión cambió el mapa de la energía mundial?\" para captar al espectador en los primeros segundos.",
-    "Cambia la estructura de la narración a bloques de 10-15 segundos, intercalando datos impactantes con breves visuales o animaciones que refuercen la información, de modo que el ritmo sea dinámico y mantenga el interés.",
-    "Cierra con una revelación inesperada y un llamado a la acción que conecte con el tono misterioso, por ejemplo: \"Sabías que la verdad sobre Chernóbil sigue siendo un secreto guardado por la propia radioactividad? Comparte"
+    "1. Gancho inicial más impactante: cambia \"Sabías que un tesoro de más de 40 millones de dólares está oculto en Virginia?\" por \"Sabías que una caja con 40 millones de dólares se perdió en los bosques de Virginia hace 200 ",
+    "2. Ritmo y repetición: inserta mini‑pistas entre párrafos, por ejemplo: \"El mensaje cifrado del posadero contenía la frase: ‘El tiempo es la llave’, y el segundo mensaje, descifrado con la Declaración de Independencia, r",
+    "3. Cierre con llamada a la acción más intrigante: reemplaza “Comparte este video con un amigo que haría lo mismo, sígueme” por “¿Te atreverías a buscarlo? Deja tu teoría en los comentarios y suscríbete para que no te pie"
   ],
   "temas": [
-    "The Green Children of Woolpit",
-    "The Mystery of the Voynich Manuscript",
+    "The Mystery of the Oak Island Money Pit",
     "The Mystery of the Shroud of Turin",
     "The Mystery of the Nazca Lines",
+    "The Mystery of the Voynich Manuscript",
     "The Mystery of the Antikythera Mechanism"
   ],
   "titulos": [
-    "Sabías que nunca verás <objeto> en <lugar> (Parte <n>/<total>)",
-    "Sabías que <acción> por <cantidad> <objeto> (Parte <n>/<total>)",
-    "Eligieron a <número> <personas> para <acción> (Parte <n>/<total>)",
-    "Sabías que <institución> pagó <cantidad> por <objeto>"
+    "Sabías que <evento> <emoji> (Parte <n>/<total>)",
+    "Sabías que <acción> <emoji> (Parte <n>/<total>)",
+    "Sabías que <sustitución> <emoji> (Parte <n>/<total>)",
+    "Sabías que <situación> <emoji> (Parte <n>/<total>)"
   ],
-  "fecha": "2026-11-22T14:33:37.799Z",
+  "fecha": "2026-11-22T15:03:08.777Z",
   "iniciativas": [
     "Valentina (Directora de contenido): Definir una guía de estilo clara que el equipo pueda seguir desde el primer video.",
     "Carolina (Coordinador de producción): Crear un calendario de producción con hitos diarios y asignar responsables para cada tarea.",
