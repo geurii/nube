@@ -10,6 +10,11 @@ fs.mkdirSync(carpeta, {recursive: true});
 const ruta = path.join(carpeta, 'progreso.json');
 let previo = {};
 try { previo = JSON.parse(fs.readFileSync(ruta, 'utf8')); } catch { /* primera vez */ }
+// Si Produccion está grabando/renderizando (40-99 %, hace menos de 45 min), un ciclo nuevo de la Oficina NO pisa la barra.
+if (process.env.PROGRESO_DE === 'oficina' && previo.porcentaje >= 40 && previo.porcentaje < 100 && Date.now() - Date.parse(previo.actualizado) < 45 * 60_000) {
+  console.log(`Producción en curso (${previo.porcentaje} %): la barra no se pisa.`);
+  process.exit(0);
+}
 // Al empezar un ciclo (5 %) o si no hubo video (0 %) NO se arrastra el tema del video anterior; en las demás etapas se usa el último tema que eligió la oficina.
 const inicio = (Number(pct) || 0) <= 5;
 let temaActual = tema.join(' ').slice(0, 120);

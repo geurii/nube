@@ -60,7 +60,7 @@ jobs:
       - name: Marcar inicio del video
         if: always() && steps.pres.outputs.ok != 'no'
         run: |
-          node agentes/progreso.mjs 5 "Buscando tema y escribiendo el guion" || true
+          PROGRESO_DE=oficina node agentes/progreso.mjs 5 "Buscando tema y escribiendo el guion" || true
           git config user.name "github-actions"
           git config user.email "actions@users.noreply.github.com"
           git add oficina-salida || true
@@ -107,7 +107,7 @@ jobs:
       - name: Marcar progreso del guion
         if: always() && steps.pres.outputs.ok != 'no'
         run: |
-          if node agentes/ultimo-aprobado.mjs | grep -q 'oficina: aprobado'; then node agentes/progreso.mjs 35 'Guion aprobado: preparando voz y video'; else node agentes/progreso.mjs 0 'Sin guion aprobado en este ciclo (cuota de IA agotada o tema rechazado): se reintenta'; fi
+          if node agentes/ultimo-aprobado.mjs | grep -q 'oficina: aprobado'; then PROGRESO_DE=oficina node agentes/progreso.mjs 35 'Guion aprobado: preparando voz y video'; else PROGRESO_DE=oficina node agentes/progreso.mjs 0 'Sin guion aprobado en este ciclo (cuota de IA agotada o tema rechazado): se reintenta'; fi
       - name: Guardar el resultado en el repositorio
         if: always() && steps.pres.outputs.ok != 'no'
         run: |
