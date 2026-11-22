@@ -1,5 +1,10 @@
 [
   {
+    "fecha": "2026-11-22T00:46:26.625Z",
+    "orden": "Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55.",
+    "nivel": 5
+  },
+  {
     "fecha": "2026-11-22T00:38:37.575Z",
     "orden": "Equipo, revisad en tiempo real el estado de la carga del video del Bloop; si no está público, completad la subida y asegurad su publicación antes de las 15:55, confirmad en el chat.",
     "nivel": 5
@@ -43,10 +48,5 @@
     "fecha": "2026-11-21T18:14:37.430Z",
     "orden": "Publica el vídeo del enigma hoy mismo, antes de las 12h.",
     "nivel": 4
-  },
-  {
-    "fecha": "2026-11-21T18:13:06.694Z",
-    "orden": "Cada uno debe publicar un video de calidad diaria, siguiendo la guía, calendario y checklist, y entregar 5 temas de tendencia semanalmente.",
-    "nivel": 5
   }
 ]
