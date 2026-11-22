@@ -191,7 +191,7 @@ export const principal = async () => {
   try {
     pub = usaRepo ? await subirAlRepoPublico({token, repo, archivo, nombre: `${ID}.mp4`}) : await subirATemporal({archivo, nombre: `${ID}.mp4`});
   } catch (e) {
-    motivoRepo = usaRepo ? `el repositorio público "${repo}" no aceptó el video: ${limpio(e)}` : '';
+    if (usaRepo) motivoRepo = `el repositorio público "${repo}" no aceptó el video: ${limpio(e)}`;
     console.log('Redes: la copia pública falló (' + limpio(e) + '); pruebo con el archivo temporal.');
     usaRepo = false;
     try { pub = await subirATemporal({archivo, nombre: `${ID}.mp4`}); }
