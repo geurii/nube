@@ -1,6 +1,27 @@
 {
   "decisiones": [
     {
+      "id": "i1o9yv8k",
+      "texto": "The Mystery of the Nazca Lines",
+      "categoria": "Tema",
+      "decision": "si",
+      "fecha": "2026-11-22T15:05:48.899Z"
+    },
+    {
+      "id": "i1qln62g",
+      "texto": "The Mystery of the Shroud of Turin",
+      "categoria": "Tema",
+      "decision": "si",
+      "fecha": "2026-11-22T15:05:45.179Z"
+    },
+    {
+      "id": "ilw854y",
+      "texto": "The Mystery of the Voynich Manuscript",
+      "categoria": "Tema",
+      "decision": "si",
+      "fecha": "2026-11-22T15:05:42.365Z"
+    },
+    {
       "id": "i4rrt46",
       "texto": "The Green Children of Woolpit",
       "categoria": "Tema",
