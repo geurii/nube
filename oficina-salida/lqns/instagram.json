@@ -1,6 +1,15 @@
 {
-  "total": 5,
+  "total": 6,
   "posts": [
+    {
+      "id": "lqns-mary-celeste",
+      "titulo": "¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️",
+      "fecha": "2026-11-22T20:53:49.989Z",
+      "accion": "create_video_post",
+      "alojamiento": "repositorio",
+      "video_url": "https://raw.githubusercontent.com/geurii/oficina-videos-legal/main/v/lqns-mary-celeste.mp4",
+      "respuesta": "{\"result\":\"Published video post (Reel) to Instagram account 17841461180305578. Media id: 18111350288210227.\"}\n"
+    },
     {
       "id": "lqns-the-great-molasses-flood",
       "titulo": "Sabías que una ola de melaza arrasó Boston? 🍯",
@@ -52,6 +61,7 @@
     "v/lqns-chernobyl-disaster.mp4",
     "v/lqns-the-antikythera-mechanism.mp4",
     "v/lqns-bloop.mp4",
-    "v/lqns-the-great-molasses-flood.mp4"
+    "v/lqns-the-great-molasses-flood.mp4",
+    "v/lqns-mary-celeste.mp4"
   ]
 }
