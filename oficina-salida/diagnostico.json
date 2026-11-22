@@ -1,0 +1,26 @@
+{
+  "fecha": "2026-11-22T00:40:57.402Z",
+  "proveedoresConLlave": [
+    "Cerebras",
+    "Gemini",
+    "OpenRouter",
+    "GitHub Models"
+  ],
+  "groq": {
+    "status": 200,
+    "ms": 1181,
+    "restante": {
+      "peticionesDia": "998",
+      "tokensMin": "7718"
+    },
+    "cuerpo": "ok"
+  },
+  "respaldo": "Cerebras/gpt-oss-120b",
+  "notas": [
+    {
+      "usado": "Cerebras/gpt-oss-120b",
+      "ms": 587,
+      "fallos": []
+    }
+  ]
+}
