@@ -188,9 +188,10 @@ export const principal = async () => {
     }
   }
   if (!archivo) { alertar(`no encuentro el MP4 del video (${ID}) en out/serie.`); return {omitido: 'sin mp4'}; }
-  // GitHub rechaza archivos grandes ("file too large"): se reduce a ~30 MB (720x1280 sobra para Reels y TikTok)
+  // GitHub rechaza archivos grandes ("file too large"): se reduce a ~20 MB (720x1280 sobra para Reels y TikTok)
+  let notaVideo = '';
   try {
-    const MAX_MB = 30;
+    const MAX_MB = 20;
     if (fs.statSync(archivo).size > MAX_MB * 1024 * 1024) {
       const seg = Number(execFileSync('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'default=nw=1:nk=1', archivo], {encoding: 'utf8', timeout: 60000}).trim()) || 60;
       const kbps = Math.max(300, Math.floor((MAX_MB * 8192 * 0.85) / seg) - 96);
@@ -198,7 +199,7 @@ export const principal = async () => {
       execFileSync('ffmpeg', ['-y', '-i', archivo, '-vf', 'scale=-2:1280:force_original_aspect_ratio=decrease,scale=trunc(iw/2)*2:trunc(ih/2)*2', '-c:v', 'libx264', '-b:v', `${kbps}k`, '-maxrate', `${Math.round(kbps * 1.25)}k`, '-bufsize', `${kbps * 2}k`, '-preset', 'veryfast', '-c:a', 'aac', '-b:a', '96k', '-movflags', '+faststart', reducido], {stdio: 'ignore', timeout: 900000});
       if (fs.existsSync(reducido) && fs.statSync(reducido).size < fs.statSync(archivo).size) { console.log(`Redes: video reducido a ${(fs.statSync(reducido).size / 1048576).toFixed(1)} MB.`); archivo = reducido; }
     }
-  } catch (e) { console.log('Redes: no pude reducir el video (' + String(e.message ?? e).slice(0, 100) + '); se intenta con el original.'); }
+  } catch (e) { notaVideo = ' [no pude reducirlo: ' + String(e.message ?? e).slice(0, 80) + ']'; console.log('Redes: no pude reducir el video' + notaVideo + '; se intenta con el original.'); }
   // con token de GitHub y repo público: se guarda ahí (permanente, últimos 15); si no, archivo temporal de 72 h sin ninguna clave
   let usaRepo = Boolean(token && repo);
   let pub;
@@ -211,7 +212,7 @@ export const principal = async () => {
     console.log('Redes: la copia pública falló (' + limpio(e) + '); pruebo con el archivo temporal.');
     usaRepo = false;
     try { pub = await subirATemporal({archivo, nombre: `${ID}.mp4`}); }
-    catch (e2) { alertar(`${motivoRepo || 'sin repositorio público'}; y el servicio temporal bloqueó a GitHub (${limpio(e2)}).`); return {omitido: 'sin alojamiento'}; }
+    catch (e2) { alertar(`${motivoRepo || 'sin repositorio público'}; y el servicio temporal bloqueó a GitHub (${limpio(e2)}). Archivo enviado: ${(fs.statSync(archivo).size / 1048576).toFixed(1)} MB${notaVideo}.`); return {omitido: 'sin alojamiento'}; }
   }
 
   const resultados = {};
