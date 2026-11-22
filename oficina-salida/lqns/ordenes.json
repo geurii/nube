@@ -1,5 +1,10 @@
 [
   {
+    "fecha": "2026-11-22T07:19:05.020Z",
+    "orden": "Equipo: entreguen nuevos esquemas de intriga y gancho antes de la producción, sin repetir el guion anterior.",
+    "nivel": 4
+  },
+  {
     "fecha": "2026-11-22T07:12:12.128Z",
     "orden": "Revisa las métricas de retención de los últimos 3 Shorts, rediseña miniaturas y ganchos, y entrega los storyboards aprobados antes de la producción.",
     "nivel": 5
@@ -42,11 +47,6 @@
   {
     "fecha": "2026-11-22T00:46:26.625Z",
     "orden": "Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55.",
-    "nivel": 5
-  },
-  {
-    "fecha": "2026-11-22T00:38:37.575Z",
-    "orden": "Equipo, revisad en tiempo real el estado de la carga del video del Bloop; si no está público, completad la subida y asegurad su publicación antes de las 15:55, confirmad en el chat.",
     "nivel": 5
   }
 ]
