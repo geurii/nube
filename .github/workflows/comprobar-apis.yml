@@ -1,0 +1,48 @@
+name: Comprobar llaves
+
+# Prueba cada llave guardada en GitHub con una peticion pequena y de solo lectura, y guarda el resultado en oficina-salida/llaves.json.
+# Se activa al cambiar agentes/comprobar.disparo (boton "Probar" de la oficina 3D) o a mano.
+on:
+  push:
+    paths:
+      - 'agentes/comprobar.disparo'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: comprobar-apis
+  cancel-in-progress: false
+
+jobs:
+  comprobar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Probar las llaves
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          WINDSOR_API_KEY: ${{ secrets.WINDSOR_API_KEY }}
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          FB_VIDEOS_TOKEN: ${{ secrets.FB_VIDEOS_TOKEN }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: node agentes/comprobar-apis.mjs
+      - name: Guardar el resultado
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add oficina-salida/llaves.json || true
+          git diff --cached --quiet || git commit -m "Comprobador de llaves: resultado"
+          for i in 1 2 3 4; do git pull --rebase --autostash -X theirs origin main && git push && break; sleep 5; done
