@@ -1,45 +1,41 @@
 {
-  "fecha": "2026-11-22T15:03:08.335Z",
+  "fecha": "2026-11-22T16:24:00.852Z",
   "id": "lqns-chernobyl-disaster",
   "modo": "tecnico",
-  "aprobado": false,
-  "resumen": "Gemini (gemini-4-hydrogen) lo vio y lo oyó: imagen 4/10, audio 8/10, FALLAS GRAVES: El texto principal de la portada aparece cortado e incompleto ('¿EL 26 ABRIL DE 1986 UNA EXPLOSIÓN CAMBIÓ LA?'), y en varias escenas (00:10-00:37 y 00:59-01:26) se muestran cajas gráficas vacías donde.",
-  "motivos": [
-    "El texto principal de la portada aparece cortado e incompleto ('¿EL 26 ABRIL DE 1986 UNA EXPLOSIÓN CAMBIÓ LA?'), y en varias escenas (00:10-00:37 y 00:59-01:26) se muestran cajas gráficas vacías donde"
-  ],
+  "aprobado": true,
+  "resumen": "Gemini (gemini-4-hydrogen) lo vio y lo oyó: imagen 5/10, audio 8/10, sin fallas graves de imagen ni sonido.",
+  "motivos": [],
   "gemini": {
     "modelo": "gemini-4-hydrogen",
     "gancho_3s": {
-      "nota": 5,
-      "comentario": "Se escucha una voz grave y música dramática preguntando por la explosión del 26 de abril de 1986, mientras se ve un fondo pixel art con un avatar y un cartel rojo cuyo texto aparece incompleto ('¿EL 26 ABRIL DE 1986 UNA EXPLOSIÓN CAMBIÓ LA?')."
+      "nota": 7,
+      "comentario": "Se ve un texto grande rojo y blanco preguntando sobre la explosión de 1986, un avatar animado arriba a la derecha y fotos pixeladas con efecto glitch, mientras una voz grave pregunta si sabías que una explosión cambió la historia nuclear."
     },
     "audio": {
       "nota": 8,
-      "comentario": "Voz en español clara, profunda y bien modulada, acompañada de música ambiental y efectos de transición con volumen equilibrado."
+      "comentario": "Voz clara, bien modulada y con buen volumen; la música de fondo sombría y los efectos sonoros (glitch y alarma/explosión) acompañan bien sin tapar la narración."
     },
     "subtitulos": {
       "legibles": true,
       "tapados_o_cortados": false,
-      "comentario": "Subtítulos inferiores centrados en blanco y amarillo, bien sincronizados, legibles y sin recortes."
+      "comentario": "Subtítulos centrados en la parte inferior con fuente grande en blanco y amarillo bien contrastada, sin cortes ni superposiciones."
     },
     "imagen": {
-      "nota": 4,
+      "nota": 5,
       "defectos": [
-        "texto cortado",
-        "cajas de texto vacías",
-        "repetitivo",
-        "pixelado excesivo"
+        "muy pixelado/baja resolución",
+        "bucle repetitivo de pocas fotos en la primera mitad",
+        "fondos pixel-art poco dinámicos en la segunda mitad",
+        "uso de una foto con carteles en japonés que no corresponde a Chernóbil"
       ]
     },
     "ritmo": {
-      "nota": 5,
-      "comentario": "Las animaciones en bucle duran tramos largos (casi 30 segundos en el diagrama del reactor y otros 27 segundos en la escena final de los edificios) con pocos cambios visuales reales."
+      "nota": 6,
+      "comentario": "En los primeros 35 segundos alterna rápidamente entre unas pocas imágenes repetidas y en el último minuto el fondo apenas cambia más allá de una pequeña animación de explosión y humo."
     },
-    "defectos_graves": [
-      "El texto principal de la portada aparece cortado e incompleto ('¿EL 26 ABRIL DE 1986 UNA EXPLOSIÓN CAMBIÓ LA?'), y en varias escenas (00:10-00:37 y 00:59-01:26) se muestran cajas gráficas vacías donde falta el texto."
-    ],
-    "nota_general": 4,
-    "recomendacion": "no subir",
-    "por_que": "El video presenta fallos visuales técnicos evidentes, con el titular inicial cortado a mitad de frase y recuadros informativos vacíos durante gran parte del metraje."
+    "defectos_graves": [],
+    "nota_general": 6,
+    "recomendacion": "subir",
+    "por_que": "No presenta fallos técnicos graves de audio, subtítulos o imagen que impidan su publicación, aunque lo visual resulta algo repetitivo y de baja resolución."
   }
 }

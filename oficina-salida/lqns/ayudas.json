@@ -1,35 +1,35 @@
 {
   "plan": [
-    "1. Crear una serie de 5 episodios sobre el misterio del objeto perdido de la nave espacial, con un guion que comience con 'Sabías que...' y que genere al menos 5000 vistas por episodio. Responsable: Departamento de Investigación y Guion (Ju",
-    "2. Lanzar un episodio especial sobre el caso del banco que pagó 175  millones por clientes inexistentes, incluyendo entrevistas con expertos y análisis de datos. Responsable: Equipo de Producción de Documentales (Ana). Meta: alcanzar 10 000",
-    "3. Desarrollar una mini‑serie de 3 partes sobre los pingüinos en el supermercado y la expedición polar, optimizando SEO y colaboraciones con canales de ciencia. Responsable: Marketing Digital y Colaboraciones (Luis). Meta: generar 15 000 vi"
+    "Lanzar la serie de 5 partes sobre los misterios de los pingüinos en el Ártico: Oficina de Contenidos – Jules: Monetizar la serie alcanzando al menos 2 000 USD en ingresos publicitarios antes del 13 de diciembre",
+    "Crear y optimizar miniaturas A/B para cada video de la serie: Oficina de Diseño – Carla: Incrementar el CTR promedio a ≥ 7 % y generar 1 500 USD adicionales en ingresos antes del 13 de diciembre",
+    "Programar publicaciones consecutivas y promocionar en redes con teasers: Oficina de Community Management – Luis: Lograr 150 000 visualizaciones totales de la serie y obtener 3 000 USD en ingresos combinados antes del 13 de diciembre"
   ],
   "ganchos": [
-    "Sabías que [CIFRA] personas descubrieron un objeto que no pertenece a nuestro planeta | Imagen: una luz pulsante sobre un mapa estelar con un punto rojo resaltado",
-    "Sabías que [CIFRA] segundos tardó un secreto militar en desaparecer del mapa | Imagen: un mapa antiguo con una sección tachada y un reloj marcando el tiempo",
-    "Sabías que [CIFRA] años de historia se borraron de los archivos nacionales | Imagen: estanterías vacías con libros que se desvanecen en polvo",
-    "Sabías que [CIFRA] minutos antes de que un experimento saliera mal, la cámara se apagó sol | Imagen: una cámara con un visor negro y una pantalla de error flotando",
-    "Sabías que [CIFRA] segundos antes de que un experimento saliera mal, la cámara se apagó sol | Imagen: un laboratorio con luces parpadeantes y un cronómetro detenido"
+    "Sabías que [CIFRA] personas encontraron un objeto que no pertenece a nuestro planeta | Imagen de un objeto brillante flotando en un cielo estrellado",
+    "Sabías que [CIFRA] segundos tardó un secreto militar en desaparecer del mapa | Imagen de un mapa antiguo con un círculo rojo resaltado",
+    "Sabías que [CIFRA] años de historia se borraron de los archivos nacionales | Imagen de una estantería vacía con libros encuadernados en negro",
+    "Sabías que [CIFRA] minutos antes de que un experimento saliera mal, la cámara se apagó sol | Imagen de una cámara de video con un botón de encendido tachado",
+    "Sabías que [CIFRA] segundos antes de que un experimento saliera mal, la cámara se apagó sol | Imagen de un laboratorio oscuro con una pantalla parpadeante"
   ],
   "mejorasGuion": [
-    "1. Gancho inicial más impactante: empieza con una pregunta intrigante como \"Sabías que un inventor secreto iluminó las Cataratas del Niágara sin usar cables?\" para captar la curiosidad de inmediato.",
-    "2. Ritmo dinámico: divide el relato en bloques cortos con transiciones claras y usa frases como \"Pero lo que no sabías\" en cada segmento para mantener el suspense y la velocidad narrativa.",
-    "3. Cierre más memorable: termina con una frase misteriosa que invite a la acción, por ejemplo \"¿Te atreves a descubrir el próximo secreto que Tesla dejó en la sombra? Suscríbete y comparte para no perderte la próxima rev"
+    "Añadir un gancho visual y verbal al inicio: iniciar con una pregunta impactante tipo \"¿Qué harías si el cielo sobre tu ciudad explotara como en Siberia en 1908?\" y acompañarlo con una miniatura que muestre la explosión y",
+    "Reestructurar el ritmo con bloques de 20‑30 segundos: presentar primero los hechos sorprendentes (fecha, hora, magnitud) con datos visuales rápidos, luego intercalar breves clips de testimonios históricos y mapas animado",
+    "Incluir un cierre con llamado a la acción claro y repetitivo: después de la pregunta final, repetir \"Suscríbete para descubrir más misterios que la historia oculta\" y añadir una pista de la próxima serie (por ejemplo, \"P"
   ],
   "temas": [
-    "The Voynich Manuscript",
-    "The Antikythera Mechanism",
-    "The Bloop",
-    "The Wow! Signal",
-    "The Sargasso Sea"
+    "The Green Children of Woolpit",
+    "The Hum of the Bunker",
+    "The Lost City of Danziger",
+    "The Mystery of the Sphinx’s Eye",
+    "The Enigma of the Lake Monster"
   ],
   "titulos": [
-    "Sabías que [número] [evento]… (Parte [x]/[y])",
-    "Sabías que [número] [objeto]… (Parte [x]/[y])",
-    "Sabías que [acción]… (Parte [x]/[y])",
-    "Sabías que [número] [acción]… (Parte [x]/[y])"
+    "Sabías que nunca verás [objeto/actividad] (Parte [n]/[total])",
+    "Sabías que [número] [personas/objetos] [acción] (Parte [n]/[total])",
+    "Eligieron a [número] [personas] para [acción] (Parte [n]/[total])",
+    "Sabías que [acción] [detalle] (Parte [n]/[total])"
   ],
-  "fecha": "2026-11-22T16:12:33.237Z",
+  "fecha": "2026-11-22T16:24:01.091Z",
   "iniciativas": [
     "Valentina (Directora de contenido): Definir una guía de estilo clara que el equipo pueda seguir desde el primer video.",
     "Carolina (Coordinador de producción): Crear un calendario de producción con hitos diarios y asignar responsables para cada tarea.",
