@@ -1,5 +1,13 @@
 [
   {
+    "id": "mws3w5jbqto2",
+    "fecha": "2026-11-22T17:23:56.807Z",
+    "canal": "lqns",
+    "tipo": "alerta",
+    "titulo": "No se pudo publicar en las redes",
+    "texto": "\"⚡ 1884: El inventor que encendió Niágara con su motor AC\": no pude alojar el video para que las redes lo descarguen: el servicio de archivos temporales no devolvió un enlace válido (412): Invalid uploader"
+  },
+  {
     "id": "mws2hb25fywn",
     "fecha": "2026-11-22T16:44:24.509Z",
     "canal": "lqns",
