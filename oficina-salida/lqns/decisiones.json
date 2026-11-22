@@ -1,6 +1,13 @@
 {
   "decisiones": [
     {
+      "id": "i1wtyzvk",
+      "texto": "Sabías que [CIFRA] segundos tardó un secreto militar en desaparecer del mapa | Imagen de un mapa antiguo con una zona tachada y un reloj marcando segundos",
+      "categoria": "Gancho",
+      "decision": "si",
+      "fecha": "2026-11-22T19:22:56.897Z"
+    },
+    {
       "id": "i11ushql",
       "texto": "Sabías que [CIFRA] personas encontraron un objeto que no pertenece a nuestro planeta | Imagen de un artefacto alienígena brillando bajo la luz de una luna lejana",
       "categoria": "Gancho",
