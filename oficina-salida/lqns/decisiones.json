@@ -1,6 +1,20 @@
 {
   "decisiones": [
     {
+      "id": "iw0tk7e",
+      "texto": "Sabías que [CIFRA] personas se perderon en el laberinto subterráneo de [TEMA] | Una cámara revela pasillos oscuros iluminados por antorchas flotantes",
+      "categoria": "Gancho",
+      "decision": "si",
+      "fecha": "2026-11-22T15:06:08.937Z"
+    },
+    {
+      "id": "i1ghy6j9",
+      "texto": "The Mystery of the Antikythera Mechanism",
+      "categoria": "Tema",
+      "decision": "si",
+      "fecha": "2026-11-22T15:05:51.942Z"
+    },
+    {
       "id": "i1o9yv8k",
       "texto": "The Mystery of the Nazca Lines",
       "categoria": "Tema",
