@@ -1,5 +1,10 @@
 [
   {
+    "fecha": "2026-11-22T03:12:14.026Z",
+    "orden": "Todo el equipo: produzcan y entreguen HOY dos videos completos con imágenes claramente relacionadas; revisen la checklist de calidad antes de enviarlos al panel; publiquen inmediatamente tras aprobación. No habrá tolerancia a rechazos.",
+    "nivel": 5
+  },
+  {
     "fecha": "2026-11-22T02:57:05.760Z",
     "orden": "Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones.",
     "nivel": 5
@@ -42,11 +47,6 @@
   {
     "fecha": "2026-11-21T18:23:47.208Z",
     "orden": "Suban el vídeo del enigma del Bloop a YouTube inmediatamente y confirmen la subida en el chat del equipo.",
-    "nivel": 5
-  },
-  {
-    "fecha": "2026-11-21T18:17:20.539Z",
-    "orden": "Suban el vídeo del enigma a YouTube en los próximos 5 min.",
     "nivel": 5
   }
 ]
