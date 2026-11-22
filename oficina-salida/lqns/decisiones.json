@@ -1,6 +1,48 @@
 {
   "decisiones": [
     {
+      "id": "i1m5u7sn",
+      "texto": "Sabías que <evento> <emoji> (Parte <n>/<total>)",
+      "categoria": "Título",
+      "decision": "si",
+      "fecha": "2026-11-22T15:09:43.723Z"
+    },
+    {
+      "id": "ig37dir",
+      "texto": "Sabías que <acción> <emoji> (Parte <n>/<total>)",
+      "categoria": "Título",
+      "decision": "si",
+      "fecha": "2026-11-22T15:09:42.111Z"
+    },
+    {
+      "id": "ijuyln4",
+      "texto": "Sabías que <sustitución> <emoji> (Parte <n>/<total>)",
+      "categoria": "Título",
+      "decision": "si",
+      "fecha": "2026-11-22T15:09:40.871Z"
+    },
+    {
+      "id": "ih2t3ed",
+      "texto": "Sabías que <situación> <emoji> (Parte <n>/<total>)",
+      "categoria": "Título",
+      "decision": "si",
+      "fecha": "2026-11-22T15:09:39.183Z"
+    },
+    {
+      "id": "igxr15f",
+      "texto": "1. Gancho inicial más impactante: cambia \"Sabías que un tesoro de más de 40 millones de dólares está oculto en Virginia?\" por \"Sabías que una caja con 40 millones de dólares se perdió en los bosques de Virginia hace 200",
+      "categoria": "Mejora de guion",
+      "decision": "si",
+      "fecha": "2026-11-22T15:09:33.434Z"
+    },
+    {
+      "id": "ijtf9hl",
+      "texto": "2. Ritmo y repetición: inserta mini‑pistas entre párrafos, por ejemplo: \"El mensaje cifrado del posadero contenía la frase: ‘El tiempo es la llave’, y el segundo mensaje, descifrado con la Declaración de Independencia, r",
+      "categoria": "Mejora de guion",
+      "decision": "si",
+      "fecha": "2026-11-22T15:09:22.035Z"
+    },
+    {
       "id": "i32gdlv",
       "texto": "3. Cierre con llamada a la acción más intrigante: reemplaza “Comparte este video con un amigo que haría lo mismo, sígueme” por “¿Te atreverías a buscarlo? Deja tu teoría en los comentarios y suscríbete para que no te pie",
       "categoria": "Mejora de guion",
