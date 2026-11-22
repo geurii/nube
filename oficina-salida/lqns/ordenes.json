@@ -1,5 +1,10 @@
 [
   {
+    "fecha": "2026-11-22T15:57:07.281Z",
+    "orden": "Revisa el plan de promoción y ajusta títulos/miniaturas para el próximo video.",
+    "nivel": 5
+  },
+  {
     "fecha": "2026-11-22T08:38:10.839Z",
     "orden": "Revisen el conteo de vistas y aseguren que cada nuevo video alcance al menos 2 500 vistas en las primeras 48 h.",
     "nivel": 4
