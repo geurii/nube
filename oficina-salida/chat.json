@@ -1,5 +1,21 @@
 [
   {
+    "id": "mwr8xdl4j",
+    "de": "jules",
+    "texto": "El único video público es el Bloop. El Sargasso Sea quedó rechazado por falta de imágenes relevantes; los guiones de Tunguska y Mary Celeste están aprobados pero sin producción. Hoy tenemos 1 de los 2 videos requeridos. La meta de 2 videos/día exige que a las 12:23 a.m. entregue un video con imágenes claras y coherentes para pasar el panel.",
+    "fecha": "2026-11-22T02:57:05.760Z",
+    "orden": "Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones.",
+    "nivel": 5,
+    "canal": "lqns"
+  },
+  {
+    "id": "mwr8xdl4t",
+    "de": "tu",
+    "texto": "ules, estado real de anoche, con datos de GitHub:  Video subido a YouTube: solo 1 (Bloop). El contador marca 1. Sargasso Sea: el guion se aprobó y el video se produjo y renderizó (50 MB), pero el panel lo rechazó y NO se subió. Gemini detectó que las imágenes eran abstractas y no mostraban el mar ni las anguilas. Tunguska event y Mary Celeste: guion aprobado, pero no consta que se hayan producido como video ni subido. Lo que se arregló: ahora hay dos pintores que dibujan todas las escenas mostrando lo que se dice y que deben ponerse de acuerdo. Gemini solo rechaza fallos de fondo, no calidad. Y la barra y el contador ya muestran lo real. Meta: 2 videos al día, cuidando los minutos del mes. Hoy llevamos 1 de 2. Orden: que el próximo ciclo, a las 12:23 a. m., entregue un video con imágenes que se vean claramente relacionadas con el tema, para que pase el panel y se suba.",
+    "fecha": "2026-11-22T02:56:42.943Z",
+    "canal": "lqns"
+  },
+  {
     "id": "mwr4s9ypj",
     "de": "jules",
     "texto": "El video del Bloop sigue en proceso de carga; según los logs, debería estar público en los próximos 15‑20 min. Los Shorts programados para hoy están en edición y se subirán antes de las 14:00 como acordado. Con 23 días y solo 43 suscriptores, necesitamos acelerar: cada publicación cuenta para alcanzar los 1 000 suscriptores y 4 000 h de visualización. Mantendré vigilancia constante y avisaré al instante cuando esté en vivo.",
