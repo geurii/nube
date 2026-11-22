@@ -5,6 +5,7 @@
 // Variables: ID (ej. lqns-mary-celeste), CANAL. Sin secretos o sin cuenta de Facebook configurada, no hace nada y no falla.
 import fs from 'node:fs';
 import path from 'node:path';
+import os from 'node:os';
 import {execFileSync} from 'node:child_process';
 import {avisarTelefono} from './aviso.mjs';
 import {publicarEnTikTok, textoTikTok} from './tiktok.mjs';
@@ -44,7 +45,40 @@ const gh = async (token, metodo, ruta, cuerpo) => {
 };
 
 /** Sube el MP4 al repo público de videos y devuelve la dirección pública directa del archivo. */
+/** Sube el MP4 con git (clone + push con el token): aguanta archivos de hasta 100 MB, que la API de contenidos de GitHub rechaza ("file too large"). */
+const subirConGit = ({token, repo, archivo, nombre}) => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'videos-publicos-'));
+  const cab = 'AUTHORIZATION: basic ' + Buffer.from(`x-access-token:${token}`).toString('base64');
+  const git = (...a) => execFileSync('git', ['-c', `http.extraheader=${cab}`, ...a], {cwd: dir, stdio: 'pipe', timeout: 600000, encoding: 'utf8'});
+  try {
+    git('clone', '--depth', '1', `https://github.com/${repo}.git`, '.');
+    fs.mkdirSync(path.join(dir, 'v'), {recursive: true});
+    fs.copyFileSync(archivo, path.join(dir, 'v', nombre));
+    git('config', 'user.name', 'github-actions');
+    git('config', 'user.email', 'actions@users.noreply.github.com');
+    git('add', `v/${nombre}`);
+    git('commit', '-q', '-m', `Video ${nombre}`);
+    git('push', '-q', 'origin', 'HEAD');
+    return git('rev-parse', '--abbrev-ref', 'HEAD').trim() || 'main';
+  } finally { try { fs.rmSync(dir, {recursive: true, force: true}); } catch { /* ya no está */ } }
+};
+
 export const subirAlRepoPublico = async ({token, repo, archivo, nombre}) => {
+  try { // primero con git (sin el límite de la API); si falla, se prueba la API de contenidos
+    const rama = subirConGit({token, repo, archivo, nombre});
+    const url = `https://raw.githubusercontent.com/${repo}/${rama}/v/${nombre}`;
+    for (let i = 0; i < 10; i++) {
+      try { const h = await fetch(url, {method: 'HEAD', signal: AbortSignal.timeout(15000)}); if (h.ok) return {url, ruta: `v/${nombre}`}; } catch { /* aún no */ }
+      await dormir(3000);
+    }
+    throw new Error('el video se subió con git pero su dirección pública no responde todavía');
+  } catch (eGit) {
+    console.log('Redes: subida con git falló (' + quitarClaves(String(eGit.stderr ?? eGit.message ?? eGit), token).replace(/\s+/g, ' ').slice(0, 160) + '); pruebo con la API de GitHub.');
+    return subirPorApi({token, repo, archivo, nombre});
+  }
+};
+
+const subirPorApi = async ({token, repo, archivo, nombre}) => {
   const ruta = `/repos/${repo}/contents/v/${nombre}`;
   const contenido = fs.readFileSync(archivo).toString('base64');
   let r;
@@ -169,7 +203,7 @@ export const principal = async () => {
   const alertar = (msg) => {
     console.log('Redes: ' + msg);
     try {
-      avisarTelefono('alerta', 'No se pudo publicar en Facebook, Instagram ni TikTok', `"${titulo.slice(0, 80)}": ${msg.slice(0, 220)}`);
+      avisarTelefono('alerta', 'No se pudo publicar en Facebook, Instagram ni TikTok', `"${titulo.slice(0, 40)}": ${msg.slice(0, 260)}`);
       const rutaN = path.join('oficina-salida', 'notificaciones.json');
       const lista = leer(rutaN, []);
       lista.unshift({id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), fecha: new Date().toISOString(), canal: CANAL, tipo: 'alerta', titulo: 'No se pudo publicar en las redes', texto: `"${titulo.slice(0, 80)}": ${msg.slice(0, 220)}`});
