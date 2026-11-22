@@ -61,6 +61,22 @@ export const subirAlRepoPublico = async ({token, repo, archivo, nombre}) => {
   throw new Error('el video se subió pero su dirección pública no responde todavía');
 };
 
+/** Sin token de GitHub: sube el MP4 a Litterbox (archivos temporales gratis, sin cuenta; se borra solo a las 24 h) y devuelve su enlace público directo. */
+export const subirATemporal = async ({archivo, nombre}) => {
+  const fd = new FormData();
+  fd.append('reqtype', 'fileupload');
+  fd.append('time', '24h');
+  fd.append('fileToUpload', new Blob([fs.readFileSync(archivo)], {type: 'video/mp4'}), nombre);
+  const r = await fetch('https://litterbox.catbox.moe/resources/internals/api.php', {method: 'POST', body: fd, signal: AbortSignal.timeout(300000)});
+  const url = (await r.text()).trim();
+  if (!r.ok || !/^https:\/\/litter\.catbox\.moe\/[\w.-]+\.mp4$/.test(url)) throw new Error(`el servicio de archivos temporales no devolvió un enlace válido (${r.status}): ${url.slice(0, 120)}`);
+  for (let i = 0; i < 10; i++) {
+    try { const h = await fetch(url, {method: 'HEAD', signal: AbortSignal.timeout(15000)}); if (h.ok) return {url, ruta: null}; } catch { /* aún no */ }
+    await dormir(3000);
+  }
+  throw new Error('el video se subió pero su enlace no responde todavía');
+};
+
 /** Borra los archivos más viejos del repo de videos para que no crezca sin fin. Nunca lanza. */
 const limpiarViejos = async ({token, repo, archivos}) => {
   const quedan = [...archivos];
@@ -96,8 +112,8 @@ export const principal = async () => {
   const cuenta = (process.env.FB_PAGE_ACCOUNT || cfg.cuenta || '').trim();
   const repo = (process.env.FB_VIDEOS_REPO || cfg.repo || '').trim();
   if (!ID) { console.log('Facebook: falta el id del video (ID). Se omite.'); return {omitido: 'sin id'}; }
-  if (!apiKey || !token || !cuenta || !repo) {
-    console.log(`Facebook: se omite (falta ${[!apiKey && 'WINDSOR_API_KEY', !token && 'FB_VIDEOS_TOKEN', !cuenta && 'la cuenta de la página', !repo && 'el repositorio de videos'].filter(Boolean).join(', ')}).`);
+  if (!apiKey || !cuenta) {
+    console.log(`Facebook: se omite (falta ${[!apiKey && 'WINDSOR_API_KEY', !cuenta && 'la cuenta de la página'].filter(Boolean).join(', ')}).`);
     return {omitido: 'sin configurar'};
   }
   const guion = leer(path.join('guion', 'serie', `${ID}.json`), null);
@@ -112,12 +128,14 @@ export const principal = async () => {
 
   const largo = guion.formato === 'largo';
   const texto = textoDePublicacion(guion);
-  const pub = await subirAlRepoPublico({token, repo, archivo, nombre: `${ID}.mp4`});
+  // con token de GitHub y repo público: se guarda ahí (permanente, últimos 15); si no, archivo temporal de 24 h sin ninguna clave
+  const usaRepo = Boolean(token && repo);
+  const pub = usaRepo ? await subirAlRepoPublico({token, repo, archivo, nombre: `${ID}.mp4`}) : await subirATemporal({archivo, nombre: `${ID}.mp4`});
   const params = largo ? {video_url: pub.url, title: String(guion.publicacion?.titulo ?? guion.titulo ?? '').slice(0, 100), description: texto} : {video_url: pub.url, description: texto};
   const resp = await publicarConWindsor({apiKey, cuenta, accion: largo ? 'create_video_post' : 'create_reel', params});
 
-  registro.posts.unshift({id: ID, titulo: String(guion.publicacion?.titulo ?? guion.titulo ?? '').slice(0, 140), fecha: new Date().toISOString(), formato: largo ? 'largo' : 'reel', video_url: pub.url, respuesta: resp.texto.slice(0, 300)});
-  registro.archivos = await limpiarViejos({token, repo, archivos: [...(registro.archivos ?? []), pub.ruta]});
+  registro.posts.unshift({id: ID, titulo: String(guion.publicacion?.titulo ?? guion.titulo ?? '').slice(0, 140), fecha: new Date().toISOString(), formato: largo ? 'largo' : 'reel', alojamiento: usaRepo ? 'repositorio' : 'temporal-24h', video_url: pub.url, respuesta: resp.texto.slice(0, 300)});
+  if (usaRepo) registro.archivos = await limpiarViejos({token, repo, archivos: [...(registro.archivos ?? []), pub.ruta]});
   registro.total = registro.posts.length;
   registro.posts = registro.posts.slice(0, 200);
   fs.writeFileSync(rutaRegistro, JSON.stringify(registro, null, 2));
