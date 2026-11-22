@@ -1,18 +1,15 @@
 {
-  "fecha": "2026-11-22T07:15:13.366Z",
-  "total": 2394,
-  "promedio": 160,
-  "queFunciono": "los videos con más vistas comparten títulos que incluyen palabras clave de curiosidad extrema (p. ej., \"Sabías que\", \"¿Qué oculta\", \"El enigma\") y se publicaron en fechas recientes (20/11/2026), lo que sugiere que la combinación de títulos provocativos y una publicación en días con mayor tráfico de ",
+  "fecha": "2026-11-22T07:34:00.438Z",
+  "total": 2350,
+  "promedio": 157,
+  "queFunciono": "Los videos con más vistas comparten títulos que presentan una historia de misterio o un hecho sorprendente, usan emojis llamativos y están publicados en fechas de alta actividad (20 y 21 de noviembre). Además, los títulos son breves, claros y contienen una pregunta o afirmación que genera curiosidad",
   "porQueFallaron": [
-    "Los videos con muy pocas vistas presentan títulos menos atractivos o muy específicos (p. ej., \"🔎 34 cm de Bronce\", \"Sabías que una ola de melaza arrasó Boston\") y se publicaron en fechas con menor actividad (21/11/2026, 22/11/2026), lo que reduce la exposició",
-    "Los títulos de los videos con pocas vistas carecen de palabras clave de alta búsqueda o de un gancho emocional evidente, lo que dificulta captar la curiosidad del espectador"
+    "Contenido de nicho muy limitado: los videos con pocas vistas tratan temas muy específicos (por ejemplo, una ola de melaza en Boston) que atraen a una audiencia muy reducida.",
+    "Falta de emojis o de formato atractivo en el título: los títulos con menos vistas no usan emojis o usan pocos, lo que reduce el impacto visual.",
+    "Publicaciones en días con menor tráfico: los videos con menos vistas se publicaron el 15 y 22 de noviembre, días con menor actividad según el patrón de los videos más vistos.",
+    "Títulos demasiado largos o confusos: algunos títulos con pocas vistas son extensos y pueden perder la atención del espectador antes de que el video comience.",
+    "Falta de promoción externa: no hay datos de retención o suscriptores, lo que sugiere que no se compartieron en redes o no se promocionaron adecuadamente."
   ],
-  "noSePuedeSaber": [
-    "Datos de retención, miniatura, y a quién se mostró los videos con pocas vistas"
-  ],
-  "reglas": [
-    "1. Utilizar títulos que incluyan frases de curiosidad como \"Sabías que\" o \"¿Qué oculta\", combinadas con emojis para aumentar la visibilidad",
-    "2. Publicar los videos en fechas con mayor tráfico (por ejemplo, fines de semana o días con eventos relevantes) para maximizar la exposición inicial",
-    "3. Mantener una miniatura atractiva y coherente con el título, usando colores vivos y texto legible para captar la atención en la primera vista"
-  ]
+  "noSePuedeSaber": [],
+  "reglas": []
 }

@@ -1,15 +1,15 @@
 {
   "plan": [
-    "Crear y lanzar una serie de 5 videos sobre fenómenos históricos enigmáticos, cada uno con al menos 1,200 vistas en la primera semana: Equipo de Investigación y Guion: Monetizar la serie antes del 13 de diciembre mediante anuncios y patrocin",
-    "Optimizar la estrategia de publicación, programando los videos en fines de semana y días con eventos relevantes para maximizar la exposición inicial: Equipo de Programación y Métricas: Alcanzar un incremento del 30 % en vistas promedio por ",
-    "Diseñar una línea de miniaturas coherentes y atractivas, con colores vivos y texto legible, que aumenten la tasa de clics en un 20 %: Equipo de Diseño Gráfico: Incrementar la CTR de los videos antes del 13 de diciembre y mejorar la monetiza"
+    "1. Lanzar una serie de 5 episodios sobre el misterio de los objetos históricos enigmáticos, liderada por el Departamento de Investigación de Contenido, con el objetivo de generar 10,000 vistas y 200 suscripciones nuevas antes del 13 de dici",
+    "2. Desarrollar un episodio interactivo de fenómenos raros con votaciones en tiempo real, dirigido por el Equipo de Producción Digital, buscando alcanzar 5,000 vistas y 50 donaciones antes del 13 de diciembre.",
+    "3. Crear una campaña de patrocinio para el caso curioso documentado, coordinada por el Departamento de Monetización y Relaciones Públicas, con la meta de asegurar 3 patrocinios corporativos que aporten 30,000 euros antes del 13 de diciembre"
   ],
   "ganchos": [
-    "Sabías que [TEMA] desapareció en menos de [CIFRA] segundos? | Imagen de un reloj de arena derramando arena rápidamente",
-    "Sabías que [CIFRA] personas afirmaron haber visto [TEMA] al mismo tiempo? | Imagen de siluetas fantasmales sobre un cielo estrellado",
-    "Sabías que [TEMA] fue encontrado bajo [CIFRA] metros de hielo? | Imagen de una excavación con hielo brillante y un objeto brillante emergiendo",
-    "Sabías que [CIFRA] años después, [TEMA] sigue sin explicación? | Imagen de un manuscrito antiguo con símbolos enigmáticos iluminados",
-    "Sabías que solo [CIFRA] de cada 10,000 creen que [TEMA] es real? | Imagen de una encuesta con una barra mínima resaltada y un fondo misterioso"
+    "Sabías que [CIFRA] objetos de [TEMA] desaparecieron sin dejar rastro? | Imagen de una sombra difusa sobre un mapa antiguo con puntos rojos marcados",
+    "Sabías que [CIFRA] años después, el [TEMA] sigue sin explicación? | Imagen de un reloj de arena gigante con arena congelada en su interior",
+    "Sabías que sólo [CIFRA] personas han visto el [TEMA] en la vida real? | Imagen de una silueta luminosa emergiendo de la niebla en un bosque",
+    "Sabías que [CIFRA] documentos confidenciales revelan el verdadero origen del [TEMA]? | Imagen de un dossier clasificado con sellos rojos y una foto borrosa en el centro",
+    "Sabías que el [TEMA] fue encontrado a [CIFRA] metros bajo tierra? | Imagen de una excavación arqueológica con una luz brillante emergiendo del suelo"
   ],
   "mejorasGuion": [
     "1. Añadir un gancho inicial más impactante: cambiar “Sabías que el sonido Bloop se escuchó a 5,000 km en 1997?” por “Sabías que un eco imposible recorrió 5,000 km bajo el océano en 1997?” para captar curiosidad desde la ",
@@ -17,11 +17,11 @@
     "3. Fortalecer el cierre con una pregunta abierta y una llamada a la acción: terminar con “¿Crees que el Bloop era un monstruo submarino o solo el hielo? Deja tu teoría en los comentarios y suscríbete para más misterios.”"
   ],
   "temas": [
+    "The Nazca Lines",
+    "The Dyatlov Pass incident",
+    "The Roanoke Colony",
     "The Green Children of Woolpit",
-    "The Voynich Manuscript",
-    "The Mysterious Voyages of the Mary Celeste",
-    "The Sargasso Sea",
-    "The Wow! Signal"
+    "The Voynich manuscript"
   ],
   "titulos": [
     "Sabías que [acción sorprendente] [emoji] (Parte X/Y)",
@@ -29,7 +29,7 @@
     "[Verbo] a [número] [personas] para [acción] [emoji] (Parte X/Y)",
     "Sabías que [acción] ... [emoji]"
   ],
-  "fecha": "2026-11-22T07:21:33.202Z",
+  "fecha": "2026-11-22T07:37:48.119Z",
   "iniciativas": [
     "Valentina (Directora de contenido): Definir una guía de estilo clara que el equipo pueda seguir desde el primer video.",
     "Carolina (Coordinador de producción): Crear un calendario de producción con hitos diarios y asignar responsables para cada tarea.",
