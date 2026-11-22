@@ -267,11 +267,20 @@ const elegirTema = async (modelo) => {
     {role: 'user', content: `Dame 20 títulos EXACTOS de artículos de Wikipedia en inglés sobre ${CONFIG.nicho}, con mucha documentación. Prefiere casos con HECHOS CONCRETOS y bien documentados (un objeto, un lugar, un evento con fecha y cifras), no fenómenos que solo tienen teorías ni conspiraciones. Reglas: nada sobre personas (ni biografías), nada de política ni de violencia gráfica, nada ya hecho. Ya hechos: ${hechos.join(', ') || 'ninguno'}. Formato: {"temas": ["Titulo 1", "Titulo 2"]}`},
   ], 1500);
   const ideasEquipo = leerJson(path.join(SALIDA, 'ayudas.json'), {}).temas ?? [];
+  // NUNCA se repite un tema: "Bloop" y "The Bloop" son el MISMO tema (se compara sin mayúsculas, sin "The" inicial y sin signos).
+  // Se miran los temas anotados, todos los guiones que existen (aprobados o no), lo ya producido y lo ya subido a YouTube.
+  const clave = (x) => String(x).toLowerCase().replace(/^the[-_ ]+/, '').replace(/[^a-z0-9]+/g, '');
+  let guiones = [];
+  try { guiones = fs.readdirSync(SALIDA).filter((f) => /^guion-.+\.json$/.test(f)).map((f) => f.replace(/^guion-|\.json$/g, '')); } catch { /* sin carpeta */ }
+  const subidosTitulos = (leerJson(path.join(SALIDA, 'subidos.json'), {}).videos ?? []).map((v) => v.titulo);
+  const vistos = [...new Set([...hechos, ...guiones, ...leerJson(path.join(SALIDA, 'producidos.json'), []), ...subidosTitulos].map(clave).filter((k) => k.length >= 4))];
+  const yaHecho = (x) => { const k = clave(x); return k.length >= 4 && vistos.some((v) => v === k || (k.length >= 6 && v.length >= 6 && (v.includes(k) || k.includes(v)))); };
   for (const t of [...ideasEquipo, ...(r.temas ?? [])]) {
-    // "Bloop" y "The Bloop" son el MISMO tema: se compara sin mayúsculas, sin "The" inicial y sin signos
-    const clave = (x) => String(x).toLowerCase().replace(/^the[-_ ]+/, '').replace(/[^a-z0-9]+/g, '');
-    if (typeof t !== 'string' || hechos.some((h) => clave(h) === clave(t))) continue;
-    if (await existeEnWikipedia(t)) return t;
+    if (typeof t !== 'string' || yaHecho(t)) continue;
+    const p = await wikipedia('en', t);
+    if (!p || (p.extract ?? '').length <= 3000) continue;
+    if (yaHecho(p.title)) continue; // el artículo real (tras la redirección) tampoco debe ser un tema ya hecho
+    return p.title;
   }
   throw new Error('No encontré un tema nuevo con material suficiente en Wikipedia.');
 };
