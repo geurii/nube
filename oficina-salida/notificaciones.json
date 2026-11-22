@@ -1,5 +1,13 @@
 [
   {
+    "id": "mws746gd0uon",
+    "fecha": "2026-11-22T18:54:10.093Z",
+    "canal": "lqns",
+    "tipo": "alerta",
+    "titulo": "No se pudo publicar en las redes",
+    "texto": "\"Sabías que una ola de melaza arrasó Boston? 🍯\": sin repositorio público; y el servicio temporal bloqueó a GitHub (el servicio de archivos temporales no devolvió un enlace válido (500): 500)."
+  },
+  {
     "id": "mws73xgwg256",
     "fecha": "2026-11-22T18:53:58.448Z",
     "canal": "lqns",
@@ -678,14 +686,5 @@
     "tipo": "alerta",
     "titulo": "Guion rechazado: The Wow! Signal",
     "texto": "El Verificador no aprobó \"The Wow! Signal\" tras 3 intentos: El material indica que la frecuencia detectada fue 1420.4556 ± 0.005 MHz, no 4245 MHz. Aprobados: 2. Rechazados: 3. Con error: 2. No se publica. Próximo ciclo en 12 h."
-  },
-  {
-    "id": "mwqhfhhxrbey",
-    "fecha": "2026-11-21T14:07:21.429Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Palabra/Frase Impactante + Pregunta o Declaración Intrigante + (Opcional: Número/Lista) + (Opcional: Referencia a lo desconocido o prohibido) El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (48374 vistas/hora)."
   }
 ]
