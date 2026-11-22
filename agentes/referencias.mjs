@@ -36,7 +36,8 @@ export const buscarFotoLibre = async (consulta) => {
   const paginas = Object.values(j.query?.pages ?? {}).sort((a, b) => (a.index ?? 0) - (b.index ?? 0));
   for (const p of paginas) {
     const i = p.imageinfo?.[0];
-    if (!i?.thumburl || !/^image\/(jpeg|png)$/.test(i.mime ?? '')) continue;
+    // solo FOTOS (JPEG): los PNG de Commons casi siempre son diagramas, mapas o capturas (ej. "RBMK Reaktor ChNPP-4.PNG" salió como un cuadro de puntos de colores)
+    if (!i?.thumburl || !/^image\/jpeg$/.test(i.mime ?? '')) continue;
     const lic = String(i.extmetadata?.LicenseShortName?.value ?? '');
     if (!LICENCIA_OK.test(lic)) continue;
     if (TITULO_NO.test(p.title ?? '')) continue;
@@ -54,6 +55,7 @@ export const buscarEnOpenverse = async (consulta) => {
   for (const x of (await r.json()).results ?? []) {
     if (!x.thumbnail || TITULO_NO.test(x.title ?? '') || /portrait|retrato/i.test(x.tags?.map?.((t) => t.name).join(' ') ?? '')) continue;
     if ((x.width ?? 0) < 500 || (x.height ?? 0) < 300) continue;
+    if (String(x.filetype ?? '').toLowerCase() === 'png') continue; // los PNG suelen ser diagramas, no fotos
     return {url: x.thumbnail, titulo: String(x.title ?? 'sin título').slice(0, 100), licencia: String(x.license ?? '').toUpperCase() === 'PDM' ? 'Public domain' : 'CC0', pagina: x.foreign_landing_url};
   }
   return null;

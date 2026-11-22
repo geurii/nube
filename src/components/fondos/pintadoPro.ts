@@ -311,6 +311,38 @@ export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: n
       for (let s = -1; s <= 1; s += 2) for (let y = 0; y < lh * 0.3; y++) g.rect(cx + s * (w * 0.4 + y * (1.6 + ang * s)), topY - w * 0.25 + y * 0.12, 2 + y * 0.35, 1, [255, 240, 170], 0.1 * (1 - y / (lh * 0.3)));
       return true;
     }
+    case 'central': {
+      // central nuclear / planta industrial: torre de enfriamiento, chimenea con franjas y bloque del reactor (sin ventanas de apartamento) + vapor
+      const cx = X(e.x, 0.5), cy = Y(e.y, 0.82), H = num(e.h, 0.5, 0.15, 0.9) * lh, W = num(e.w, 0.55, 0.2, 1) * lw;
+      const hormigon = rampaDeE(e, '#aab1b8', 5);
+      const franja = rampaDe([200, 60, 55], 4), blanco = rampaDe([232, 232, 236], 4);
+      // torre de enfriamiento (hiperboloide: ancha abajo, cintura estrecha, boca un poco más ancha)
+      const tx = cx - W * 0.27, TH = H * 0.86, base = W * 0.36, cintura = W * 0.23, boca = W * 0.26, N = 12;
+      const ancho = (k: number) => (k <= 9 ? base - (base - cintura) * Math.sin((k / 9) * (Math.PI / 2)) : cintura + (boca - cintura) * ((k - 9) / 3));
+      const izq: [number, number][] = [], der: [number, number][] = [];
+      for (let k = 0; k <= N; k++) { const y = cy - (TH * k) / N; izq.push([tx - ancho(k) / 2, y]); der.push([tx + ancho(k) / 2, y]); }
+      poli(g, [...izq, ...der.reverse()], hormigon, 'izq', true);
+      g.ellA(tx, cy - TH, boca / 2, boca * 0.08, [60, 66, 74], 0.9); // boca oscura de la torre
+      // chimenea alta con franjas rojas y blancas
+      const hx = cx + W * 0.34, CH = H * 0.8, cw = W * 0.075;
+      for (let k = 0; k < 8; k++) {
+        const a = k % 2 ? franja : blanco, y0 = cy - (k / 8) * CH, y1 = cy - ((k + 1) / 8) * CH;
+        const w0 = cw * (1 - (k / 8) * 0.25), w1 = cw * (1 - ((k + 1) / 8) * 0.25);
+        poli(g, [[hx - w0 / 2, y0], [hx + w0 / 2, y0], [hx + w1 / 2, y1], [hx - w1 / 2, y1]], a, 'izq', false);
+      }
+      // bloque del reactor: macizo, techo plano con respiraderos, sin ventanas
+      const bx = cx + W * 0.02, bw = W * 0.34, bh = H * 0.34;
+      poli(g, [[bx - bw / 2, cy], [bx + bw / 2, cy], [bx + bw / 2, cy - bh], [bx - bw / 2, cy - bh]], hormigon, 'izq', true);
+      g.rect(bx - bw / 2, cy - bh * 0.62, bw, Math.max(1, bh * 0.03), [70, 76, 86], 0.8);
+      g.rect(bx - bw / 2, cy - bh * 0.3, bw, Math.max(1, bh * 0.03), [70, 76, 86], 0.8);
+      for (let k = 0; k < 4; k++) g.rect(bx - bw * 0.42 + k * bw * 0.26, cy - bh - bh * 0.07, bw * 0.12, bh * 0.07, [88, 95, 106]);
+      // vapor que sube de la torre
+      if (e.vapor !== false) for (let k = 0; k < 5; k++) {
+        const fase = (t * 0.25 + k * 0.2) % 1;
+        g.ellA(tx + Math.sin(t * 0.6 + k) * boca * 0.15, cy - TH - fase * H * 0.45, boca * (0.25 + fase * 0.35), boca * (0.18 + fase * 0.25), [225, 228, 232], 0.32 * (1 - fase));
+      }
+      return true;
+    }
     case 'silueta': {
       const cx = X(e.x, 0.5), cy = Y(e.y, 0.8), h = num(e.h, 0.22, 0.05, 0.7) * lh, c = col(e.color, '#10121f');
       const r = rampaDe(c, 4);

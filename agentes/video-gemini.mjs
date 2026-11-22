@@ -4,7 +4,7 @@
 import fs from 'node:fs';
 
 const BASE = 'https://generativelanguage.googleapis.com';
-const MODELOS = (process.env.GEMINI_MODELO_VIDEO ? [process.env.GEMINI_MODELO_VIDEO] : ['gemini-4-hydrogen', 'gemini-3.8-flash', 'gemini-2.5-flash']);
+const MODELOS = (process.env.GEMINI_MODELO_VIDEO ? [process.env.GEMINI_MODELO_VIDEO] : ['gemini-4-hydrogen', 'gemini-3.8-flash']);
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const subirArchivo = async (key, ruta, mime) => {

@@ -208,8 +208,11 @@ export function pintar(g: G, esc: EscenaPintada, t: number, lw: number, lh: numb
             const lum = 0.3 * r + 0.59 * gg + 0.11 * bb;
             if (Math.max(r, gg, bb) - Math.min(r, gg, bb) < 18) { r = lum * 1.06; gg = lum * 0.97; bb = lum * 0.82; } // foto en blanco y negro: tono sepia de archivo
             const d = bay(px / B, py / B) - 0.5;
-            const q = (v: number) => Math.max(0, Math.min(255, Math.round(((v / 255) * (NIV - 1)) + d * 0.55) / (NIV - 1) * 255));
-            g.rect(x0 + px, y0 + py, B, B, [q(r), q(gg), q(bb)]);
+            // se cuantiza SOLO el brillo y se conserva el color de la foto: así no salen puntos sueltos rojos, azules o amarillos en las fotos oscuras
+            const Y = 0.299 * r + 0.587 * gg + 0.114 * bb;
+            const Yq = Math.max(0, Math.min(255, (Math.round((Y / 255) * (NIV - 1) + d * 0.55) / (NIV - 1)) * 255));
+            const esc = Y > 2 ? Yq / Y : 1;
+            g.rect(x0 + px, y0 + py, B, B, [Math.min(255, r * esc), Math.min(255, gg * esc), Math.min(255, bb * esc)]);
           }
         }
         break;

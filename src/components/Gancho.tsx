@@ -7,9 +7,12 @@ import {loadFont} from '@remotion/google-fonts/PressStart2P';
 const {fontFamily: FUENTE_PIXEL} = loadFont();
 const ruido = (n: number) => { const x = Math.sin(n * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); };
 
+/** La fuente pixelada no tiene mayúsculas con tilde (salían como "EXPLOSIóN"): se quitan las tildes y se conserva la Ñ. */
+export const sinTildes = (t: string): string => t.replace(/[ÁÀÂÄ]/g, 'A').replace(/[ÉÈÊË]/g, 'E').replace(/[ÍÌÎÏ]/g, 'I').replace(/[ÓÒÔÖ]/g, 'O').replace(/[ÚÙÛÜ]/g, 'U');
+
 /** Parte el titular en líneas de máximo `max` letras (sin cortar palabras). */
 export const partirTitular = (texto: string, max: number, maxLineas = 4): string[] => {
-  const palabras = texto.trim().toUpperCase().split(/\s+/).filter(Boolean);
+  const palabras = sinTildes(texto.trim().toUpperCase()).split(/\s+/).filter(Boolean);
   const lineas: string[] = [];
   let actual = '';
   for (const p of palabras) {
@@ -26,9 +29,14 @@ export const Titular: React.FC<{texto: string; segundos?: number}> = ({texto, se
   const vertical = height > width;
   const fin = Math.round(segundos * fps);
   if (frame >= fin || !texto) return null;
-  const tam = Math.round(width * (vertical ? 0.056 : 0.03));
-  const maxLetras = Math.max(8, Math.floor((width * (vertical ? 0.9 : 0.8)) / tam));
-  const lineas = partirTitular(texto, maxLetras);
+  // el titular SIEMPRE se ve entero: si no cabe en 4 líneas, se achica la letra (nunca se corta)
+  let tam = Math.round(width * (vertical ? 0.056 : 0.03));
+  let lineas = partirTitular(texto, Math.max(8, Math.floor((width * (vertical ? 0.9 : 0.8)) / tam)), 12);
+  for (const f of [0.88, 0.76, 0.66, 0.58]) {
+    if (lineas.length <= 4) break;
+    tam = Math.round(width * (vertical ? 0.056 : 0.03) * f);
+    lineas = partirTitular(texto, Math.max(8, Math.floor((width * (vertical ? 0.9 : 0.8)) / tam)), 12);
+  }
   const entrada = interpolate(frame, [0, 5], [1.18, 1], {extrapolateRight: 'clamp'});
   const salida = interpolate(frame, [fin - 6, fin], [1, 0], {extrapolateLeft: 'clamp'});
   const dx = frame % 4 < 2 ? 5 : -5; // temblor RGB

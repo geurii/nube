@@ -2,11 +2,12 @@
 // (composición, paleta de colores reales, dónde está cada elemento y cómo llevarlo al pixel art).
 // Usa la misma Interactions API y la misma lista de modelos que la revisión del video. Nunca lanza: si falla devuelve {error}.
 import fs from 'node:fs';
+import {modelosGemini} from './gemini-modelos.mjs';
 
 const BASE = 'https://generativelanguage.googleapis.com';
 // Para describir fotos se prueba PRIMERO el modelo más ligero (2.5-flash): responde rápido y tiene su propia cuota, así no se la quita a la revisión del video
 // (en el primer ciclo real, gemini-4-hydrogen se pasó de tiempo y 3.8-flash no tenía cuota).
-const MODELOS = (process.env.GEMINI_MODELO_OJOS ? [process.env.GEMINI_MODELO_OJOS] : ['gemini-2.5-flash', 'gemini-3.8-flash', 'gemini-4-hydrogen']);
+// Los modelos se piden a Google en cada corrida (gemini-2.5-flash ya no está disponible y daba error 404): ver gemini-modelos.mjs
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
 const HEX = /^#[0-9a-fA-F]{6}$/;
 
@@ -48,6 +49,7 @@ export const mirarFoto = async ({ruta, key, frase = '', modo = 'foto', maxIntent
   const prompt = modo === 'estilo' ? PROMPT_ESTILO : `Eres los ojos de dos pintores de pixel art que NO pueden ver imágenes. Mira esta foto de referencia, que acompaña la frase: "${String(frase).slice(0, 220)}". Descríbesela con precisión para que la dibujen en pixel art. Responde SOLO con JSON: {"sujeto": "qué se ve, en una frase", "relevante": true o false (¿la foto muestra de verdad el objeto, lugar o suceso de la frase? false si es un gráfico, espectrograma, mapa, retrato, logo, ilustración técnica o algo sin relación con la frase),"composicion": "dónde está lo principal, planos, dirección de la luz", "paleta": ["#rrggbb", ... de 4 a 6 colores dominantes reales de la foto, de oscuro a claro], "elementos": [{"que": "elemento clave", "x": 0-1, "y": 0-1, "w": 0-1, "h": 0-1}, ... máximo 6, con su caja aproximada: x,y es la esquina superior izquierda], "consejo_pixel": "cómo simplificarlo a pixel art con 3 planos de profundidad"}. No nombres personas reales ni describas caras.`;
   const fallos = [];
   const queda = () => (hasta ? hasta - Date.now() : Infinity); // tiempo que queda del presupuesto (ms)
+  const MODELOS = process.env.GEMINI_MODELO_OJOS ? [process.env.GEMINI_MODELO_OJOS] : await modelosGemini(key);
   for (const modelo of MODELOS) {
     for (let i = 1; i <= maxIntentos; i++) {
       if (queda() < 5000) return {error: `Gemini no pudo mirar la foto: se acabó el tiempo asignado. ${fallos.join(' | ')}`};

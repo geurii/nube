@@ -21,9 +21,23 @@ export const ESCENARIOS = {
   'desierto-rocoso': 'desierto rocoso con montañas lejanas, cielo claro',
 };
 export const TIPOS = new Set([
-  'estrellas', 'astro', 'resplandor', 'montanas', 'suelo', 'agua', 'niebla', 'arbol', 'edificio', 'circulo', 'rect', 'pergamino',
+  'estrellas', 'astro', 'resplandor', 'montanas', 'suelo', 'agua', 'niebla', 'arbol', 'edificio', 'central', 'circulo', 'rect', 'pergamino',
   'poligono', 'linea', 'nubes', 'olas', 'particulas', 'rayos', 'barco', 'pez', 'roca', 'hielo', 'duna', 'algas', 'sargazo', 'faro', 'silueta', 'ovni', 'explosion', 'ciudad', 'bosque',
 ]);
+
+/** Una "caja vacía": barra o rectángulo ancho y bajo sin forma de objeto (parece un cuadro de texto sin texto). Gemini la marca como falla grave. */
+export const esCajaVacia = (e) => {
+  if (e.t === 'rect') return Number(e.w) >= 0.25 && Number(e.h) <= 0.2;
+  if (e.t === 'poligono' && Array.isArray(e.pts) && e.pts.length >= 3 && e.pts.length <= 5) {
+    const xs = e.pts.map((p) => p[0]);
+    const ys = e.pts.map((p) => p[1]);
+    const w = Math.max(...xs) - Math.min(...xs);
+    const h = Math.max(...ys) - Math.min(...ys);
+    const rectangulo = new Set(xs.map((x) => x.toFixed(2))).size <= 2 && new Set(ys.map((y) => y.toFixed(2))).size <= 2;
+    return rectangulo && w >= 0.25 && h <= 0.2;
+  }
+  return false;
+};
 
 /** Limpia una escena: solo tipos y rangos permitidos. Devuelve null si no sirve. */
 export const validarEscena = (raw) => {
@@ -39,14 +53,14 @@ export const validarEscena = (raw) => {
     if (typeof e.s === 'string') o.s = e.s.slice(0, 22);
     if (typeof e.tipo === 'string') o.tipo = e.tipo.toLowerCase().replace(/[^a-z]/g, '').slice(0, 12);
     if (['izq', 'der', 'arriba'].includes(e.luz)) o.luz = e.luz;
-    for (const k of ['ventanas', 'flip', 'espuma', 'borde', 'simbolos']) if (typeof e[k] === 'boolean') o[k] = e[k];
+    for (const k of ['ventanas', 'flip', 'espuma', 'borde', 'simbolos', 'vapor']) if (typeof e[k] === 'boolean') o[k] = e[k];
     if (Array.isArray(e.pts)) {
       const pts = e.pts.filter((p) => Array.isArray(p) && p.length >= 2).slice(0, 40).map((p) => [n(p[0], 0.5, 0, 1), n(p[1], 0.5, 0, 1)]);
       if (pts.length >= 2) o.pts = pts;
     }
     if ((e.t === 'poligono' && (o.pts?.length ?? 0) < 3) || (e.t === 'linea' && (o.pts?.length ?? 0) < 2)) return null;
     return o;
-  }).filter(Boolean);
+  }).filter(Boolean).filter((c) => !esCajaVacia(c)); // sin barras rectangulares vacías
   if (!cielo || capas.length < 3) return null;
   const salida = {cielo, capas};
   if (typeof raw.escenario === 'string' && Object.hasOwn(ESCENARIOS, raw.escenario)) salida.escenario = raw.escenario;
@@ -70,7 +84,7 @@ FORMAS CLÁSICAS:
 - {"t":"estrellas","n":60,"hasta":0.6}   {"t":"astro","x":0.7,"y":0.2,"r":0.09,"rampa":["#oscuro","#medio","#claro","#brillo"]} (luna, sol, planeta)
 - {"t":"resplandor","x":0.5,"y":0.5,"r":0.4,"color":"#ffb347","fuerza":1}   {"t":"niebla","y":0.7,"alto":0.2,"color":"#cfd8ee","alpha":0.25}
 - {"t":"montanas","y":0.8,"alto":0.28,"rampa":["#a","#b","#c"],"semilla":3,"picos":3}   {"t":"suelo","y":0.85,"rampa":[...]}   {"t":"agua","y":0.75,"rampa":[...]}
-- {"t":"arbol","x":0.2,"y":0.95,"h":0.22,"rampa":[...]}   {"t":"edificio","x":0.5,"w":0.2,"h":0.4,"y":0.85,"color":"#1d2140","ventanas":true}
+- {"t":"arbol","x":0.2,"y":0.95,"h":0.22,"rampa":[...]}   {"t":"edificio","x":0.5,"w":0.2,"h":0.4,"y":0.85,"color":"#1d2140","ventanas":true} (SOLO edificios de apartamentos u oficinas: NUNCA para un reactor, una fábrica o una planta)
 - {"t":"circulo","x":0.5,"y":0.5,"r":0.08,"rampa":[...]} (esfera sombreada)   {"t":"rect","x":0.3,"y":0.5,"w":0.2,"h":0.1,"color":"#5a4a3a"}
 - {"t":"pergamino","x":0.12,"y":0.2,"w":0.76,"h":0.5,"lineas":14,"simbolos":true}
 FORMAS PROFESIONALES (con sombreado, contorno y movimiento propios; "color" = el tono base, el motor hace la rampa):
@@ -80,11 +94,13 @@ FORMAS PROFESIONALES (con sombreado, contorno y movimiento propios; "color" = el
 - {"t":"pez","tipo":"ballena"|"tiburon"|"anguila"|"calamar"|"pez","x":0.45,"y":0.4,"w":0.5,"color":"#3a5f8a","flip":false}
 - {"t":"roca","x":0.8,"y":1,"w":0.4,"h":0.14,"color":"#4a4f5c","semilla":2}   {"t":"hielo","x":0.5,"y":0.78,"w":0.3,"h":0.2,"color":"#b9e3ff"} (iceberg)   {"t":"duna","y":0.8,"alto":0.12,"color":"#c9a063","semilla":2}
 - {"t":"faro","x":0.3,"y":0.82,"h":0.34} (con rayo que gira)   {"t":"ovni","x":0.5,"y":0.3,"r":0.1}   {"t":"explosion","x":0.5,"y":0.46,"r":0.2}
+- {"t":"central","x":0.5,"y":0.82,"w":0.6,"h":0.5,"color":"#aab1b8","vapor":true} (CENTRAL NUCLEAR o planta industrial: torre de enfriamiento, chimenea con franjas y bloque del reactor, con vapor; úsala para reactores, fábricas y energía)
 - {"t":"ciudad","y":0.85,"alto":0.3,"color":"#1f2442"} (horizonte de edificios con ventanas)   {"t":"bosque","y":0.88,"n":14,"color":"#1c4a38"} (pinos)
 - {"t":"silueta","x":0.5,"y":0.8,"h":0.22,"color":"#10121f"} (persona de espaldas, SIN cara). ÚSALA SOLO si la frase habla de una persona; NUNCA para representar una ola, un objeto, un animal o un lugar.
 - {"t":"particulas","tipo":"polvo"|"burbujas"|"nieve"|"brasas","n":50}   {"t":"rayos","x":0.1,"color":"#ffd9a0","alpha":0.1} (rayos de luz)
 ESCENARIOS YA HECHOS (pixel art libre): en el JSON de cada plano puedes añadir "escenario": "<id>" y ese fondo se dibuja a pantalla completa DEBAJO de tus capas (úsalo cuando el tema sea mar, bosque, montañas, ciudad industrial o desierto; si no encaja con la frase, NO lo pongas y dibuja tú el fondo). Disponibles: ${Object.entries(ESCENARIOS).map(([k, v]) => `"${k}" = ${v}`).join('; ')}. Con escenario, tus capas de cielo/montañas/agua se pueden omitir y te concentras en el sujeto, la luz y el primer plano.
 RITMO Y EDICIÓN DE GANCHO (copiado de los reels que frenan el dedo; el estilo pixel del canal NO cambia): cada plano dura ~1,5 a 2 s, así que cada cuadro debe leerse en un segundo: UN solo sujeto grande y claro, nada de escenas cargadas. Mantén UN solo mundo de color por video (por ejemplo rojos y negros para misterio oscuro, azules y ámbar para mar e historia) con alto contraste y un foco de luz (resplandor o rayos) sobre el sujeto. En la escena 0 (el gancho) un titular gigante ocupará el centro (y 0.33 a 0.5) los primeros 3 segundos: pon el sujeto más abajo (y 0.5 a 0.65) y deja el centro limpio.
+NUNCA dibujes rectángulos ni barras anchas y bajas (con "rect" o con un "poligono" de 4 puntos): parecen cajas de texto vacías y se marcan como falla grave. Los subtítulos van encima y NO necesitan caja. Todo "poligono" debe ser un OBJETO reconocible (torre, casco, bidón, barco...) con 6 o más puntos y silueta irregular.
 REGLA DE ORO: el cuadro debe mostrar EL OBJETO O EL HECHO que dice la frase, nunca un sustituto. NO escribas texto en el cuadro (los subtítulos ya lo hacen). Si lo que se dice no está en la lista de formas, DIBÚJALO con "poligono" y "linea" (varios polígonos juntos): por ejemplo una ola de melaza = una masa marrón oscura (#3b2314 a #7a4a22) de cresta curva y alta, con 8 a 14 puntos, avanzando sobre edificios; un tanque = rectángulo alto gris con remaches (líneas); un mecanismo de bronce = varios círculos dentados verdosos (#6b8f71) superpuestos.
 FORMAS LIBRES para lo que no esté arriba (una botella, una casa, una torre, un cofre, un barco hundido, una ola de líquido espeso):
 - {"t":"poligono","pts":[[0.4,0.5],[0.6,0.5],[0.62,0.7],[0.38,0.7]],"color":"#5a4a3a","luz":"izq"} (relleno sombreado con contorno; usa 4 a 14 puntos)

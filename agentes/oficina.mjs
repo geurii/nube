@@ -14,6 +14,7 @@ import {mirarFoto, textoDeVista} from './ojos.mjs';
 import {limpiarParaVoz} from './texto-voz.mjs';
 import {textoDeRadar} from './radar.mjs';
 import {completarHashtags} from './hashtags.mjs';
+import {ganchoDe} from './titular.mjs'; // titular gigante de los primeros segundos (nunca cortado a mitad de frase)
 import {evaluarGuionConPanel} from './panel-guion.mjs';
 import {titulosVirales, armarBloqueWeb, guardarWeb} from './web.mjs';
 import {filtrarTemas, sinRechazadas, leerPreferencias, fueRechazada} from './ideas.mjs';
@@ -437,12 +438,6 @@ const comprobar = (escenas) => {
   return p;
 };
 /** Titular de los primeros segundos: la frase del hook sin "Sabías que", en pregunta corta (máx. ~9 palabras). */
-const ganchoDe = (t) => {
-  let s = String(t ?? '').replace(/^¿?\s*sabías que\s*/i, '').trim();
-  s = (s.split(/(?<=[.!?])\s/)[0] ?? '').replace(/[.!¿?,]+$/g, '').trim();
-  s = s.split(/\s+/).slice(0, 9).join(' ').replace(/[,;:]+$/, '');
-  return s ? `¿${s.charAt(0).toUpperCase()}${s.slice(1)}?` : '';
-};
 const normalizar = (lista) => (lista ?? []).map((e) => ({tipo: ['hook', 'historia', 'revelacion', 'veredicto'].includes(e?.tipo) ? e.tipo : 'historia', texto: String(e?.texto ?? '').trim()})).filter((e) => e.texto);
 
 /* ====================== Flujo ====================== */
@@ -558,7 +553,7 @@ try {
               informe.push(`(La foto de la escena ${i} "${ref.titulo}" se descartó: Gemini vio que no muestra lo que dice la frase.)`);
               try { fs.rmSync(path.resolve('public', 'referencias', ref.archivo), {force: true}); } catch { /* ya no está */ }
               delete referencias[i]; seguidos = 0; vistas++;
-            } else if (g.vista) { ref.vista = textoDeVista(g.vista); vistas++; seguidos = 0; modeloOjos = g.modelo; } else { seguidos++; informe.push(`(Gemini no pudo mirar la foto de la escena ${i}: ${String(g.error).slice(0, 140)})`); }
+            } else if (g.vista) { ref.vista = textoDeVista(g.vista); vistas++; seguidos = 0; modeloOjos = g.modelo; } else { seguidos++; informe.push(`(Gemini no pudo mirar la foto de la escena ${i}: ${String(g.error).slice(0, 420)})`); }
           }
           if (vistas) informe.push(`Gemini (${modeloOjos || 'modelo desconocido'}) miró ${vistas} fotos de referencia y se las describió a los pintores.`);
           ideas = await reunirInspiracion({tema: TEMA, key: process.env.GEMINI_API_KEY, limiteMs: 100000, nota: (t) => informe.push(t)});
