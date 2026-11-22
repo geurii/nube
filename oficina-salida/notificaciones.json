@@ -1,5 +1,13 @@
 [
   {
+    "id": "mwsb52pujqb9",
+    "fecha": "2026-11-22T20:46:50.370Z",
+    "canal": "lqns",
+    "tipo": "alerta",
+    "titulo": "No se pudo publicar en las redes",
+    "texto": "\"Sabías que una ola de melaza arrasó Boston? 🍯\": el repositorio público \"geurii/oficina-videos-legal\" no aceptó el video: no pude subir el video al repositorio público (422): {\"message\":\"Sorry, the file is too large to be processed. Consider creating/updating th; y el "
+  },
+  {
     "id": "mws8nsfqc0ye",
     "fecha": "2026-11-22T19:37:24.662Z",
     "canal": "lqns",
@@ -672,14 +680,5 @@
     "tipo": "alerta",
     "titulo": "Guion rechazado: The Marfa Lights",
     "texto": "El Verificador no aprobó \"The Marfa Lights\" tras 4 intentos: El material indica que científicos han concluido que las luces son reflejos de faros de automóviles, por lo que no es correcto afirmar que nadie ha logrado expl Aprobados: 3. Rechazados: 5. Con error: 2. No se publica. Próximo ciclo en 11 h."
-  },
-  {
-    "id": "mwqjss2k54cf",
-    "fecha": "2026-11-21T15:13:40.892Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: Oak Island",
-    "texto": "El Verificador no aprobó \"Oak Island\" tras 4 intentos: Las coordenadas citadas corresponden a Oak Island en Texas según la fuente en español, pero el material en inglés sobre Oak Island en Nova Scotia no proporciona Aprobados: 3. Rechazados: 4. Con error: 2. No se publica. Próximo ciclo en 11 h."
   }
 ]
