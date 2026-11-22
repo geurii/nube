@@ -1,5 +1,11 @@
 [
   {
+    "fecha": "2026-11-22T21:25:29.094Z",
+    "orden": "ORDEN PRINCIPAL (del dueño): ejecutar la estrategia faceless de estrategia.json: videos SIN personaje ni cara, solo voz en off y visuales en movimiento; usar las ideas aprobadas por el dueño; cada video de 8/10 o más y sin fondos vacíos; comparar siempre el canal con los grandes del nicho; no inventar datos ni prometer viralidad.",
+    "nivel": 5,
+    "principal": true
+  },
+  {
     "fecha": "2026-11-22T19:47:43.726Z",
     "orden": "Revisar que el Short programado de 12:00 UTC esté listo y aprobado para publicación.",
     "nivel": 5
@@ -42,11 +48,6 @@
   {
     "fecha": "2026-11-22T19:29:58.201Z",
     "orden": "Revisar el flujo de aprobación del panel y asegurar que los guiones cumplan los 6/10 mínimos antes de enviar.",
-    "nivel": 5
-  },
-  {
-    "fecha": "2026-11-22T16:06:24.436Z",
-    "orden": "Revisar calendario y asignar tareas para cumplir los 2 shorts diarios.",
     "nivel": 5
   }
 ]
