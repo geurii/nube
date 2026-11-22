@@ -1,5 +1,10 @@
 [
   {
+    "fecha": "2026-11-22T07:20:45.525Z",
+    "orden": "Equipo: eliminen el video 4 de la lista de producción y no lo suban.",
+    "nivel": 4
+  },
+  {
     "fecha": "2026-11-22T07:19:05.020Z",
     "orden": "Equipo: entreguen nuevos esquemas de intriga y gancho antes de la producción, sin repetir el guion anterior.",
     "nivel": 4
@@ -42,11 +47,6 @@
   {
     "fecha": "2026-11-22T01:01:09.358Z",
     "orden": "Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00.",
-    "nivel": 5
-  },
-  {
-    "fecha": "2026-11-22T00:46:26.625Z",
-    "orden": "Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55.",
     "nivel": 5
   }
 ]
