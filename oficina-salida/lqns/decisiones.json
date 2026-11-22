@@ -1,6 +1,34 @@
 {
   "decisiones": [
     {
+      "id": "inlc63r",
+      "texto": "The Mystery of the Oak Island Money Pit",
+      "categoria": "Tema",
+      "decision": "si",
+      "fecha": "2026-11-22T15:10:18.817Z"
+    },
+    {
+      "id": "i1wwof17",
+      "texto": "Sabías que [CIFRA] segundos tardó un secreto militar en desaparecer del mapa | Un mapa con una zona tachada que se desvanece",
+      "categoria": "Gancho",
+      "decision": "si",
+      "fecha": "2026-11-22T15:10:13.899Z"
+    },
+    {
+      "id": "iccygzy",
+      "texto": "Sabías que [CIFRA] años de historia se borraron de los archivos nacionales | Un archivo digital con una pantalla azul de error",
+      "categoria": "Gancho",
+      "decision": "si",
+      "fecha": "2026-11-22T15:10:01.573Z"
+    },
+    {
+      "id": "i3854wi",
+      "texto": "Sabías que [CIFRA] minutos antes de que un experimento saliera mal, la cámara se apagó sola | Una cámara de seguridad con la pantalla en negro y un susurro",
+      "categoria": "Gancho",
+      "decision": "si",
+      "fecha": "2026-11-22T15:09:55.651Z"
+    },
+    {
       "id": "i1m5u7sn",
       "texto": "Sabías que <evento> <emoji> (Parte <n>/<total>)",
       "categoria": "Título",
