@@ -1,0 +1,42 @@
+name: Analizar videos
+
+# Modo manual: el dueño pega enlaces de videos que le gustan; la oficina los lee y explica por que pegan y como adaptarlos al canal faceless.
+# Se activa al cambiar oficina-salida/<canal>/analizar-pedido.json (lo escribe la oficina 3D) o a mano.
+on:
+  push:
+    paths:
+      - 'oficina-salida/*/analizar-pedido.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: analizar-videos
+  cancel-in-progress: false
+
+jobs:
+  analizar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Leer y analizar los videos
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          CANAL: lqns
+        run: node agentes/analizar-videos.mjs
+      - name: Guardar
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add oficina-salida || true
+          git diff --cached --quiet || git commit -m "Analisis de videos que le gustan al dueno"
+          for i in 1 2 3 4; do git pull --rebase --autostash -X theirs origin main && git push && break; sleep 5; done

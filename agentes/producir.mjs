@@ -60,7 +60,7 @@ const {canal, slug, g, producidos} = pendientes[0];
 const id = `${canal}-${slug}`;
 console.log(`Produciendo ${id}: "${g.titulo}" (${g.formato}) del canal ${nombreDe(canal)}`);
 fs.mkdirSync(path.join('guion', 'serie'), {recursive: true});
-fs.writeFileSync(path.join('guion', 'serie', `${id}.json`), JSON.stringify({...g, audio: `audio/${id}.wav`}, null, 2));
+fs.writeFileSync(path.join('guion', 'serie', `${id}.json`), JSON.stringify({...g, personaje: {visible: false}, audio: `audio/${id}.wav`}, null, 2));
 
 // lote.mjs: voz (msedge-tts) + render + versión liviana. La voz sale de guion.voz (cada canal tiene la suya).
 const r = spawnSync('node', ['scripts/lote.mjs', id, '--forzar'], {stdio: 'inherit'});

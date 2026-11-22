@@ -1,0 +1,45 @@
+name: Estrategia
+
+# ORDEN PRINCIPAL de Jules: analiza el canal con sus datos reales, lo compara con grandes canales y entrega el formato faceless y 30 ideas.
+# Se activa al cambiar agentes/estrategia.disparo o a mano. No publica nada.
+on:
+  push:
+    paths:
+      - 'agentes/estrategia.disparo'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: estrategia
+  cancel-in-progress: false
+
+jobs:
+  estrategia:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Analizar y reformular
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          CANAL: lqns
+        run: |
+          node agentes/estrategia.mjs
+          node -e "import('./agentes/aviso.mjs').then(m=>m.avisarTelefono('info','Estrategia faceless lista','Jules y el equipo ya analizaron el canal: abre la oficina para leer el diagnostico, el nuevo formato y las 30 ideas.'))" || true
+      - name: Guardar
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add oficina-salida || true
+          git diff --cached --quiet || git commit -m "Estrategia faceless: diagnostico, nuevo formato y 30 ideas"
+          for i in 1 2 3 4; do git pull --rebase --autostash -X theirs origin main && git push && break; sleep 5; done

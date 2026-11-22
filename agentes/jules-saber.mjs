@@ -14,6 +14,7 @@ export const HECHOS_FIJOS = [
   'Después: voz, imágenes (fotos reales de internet pixeladas + pintores que añaden ambiente), render y revisión técnica de Gemini (solo frena fallas graves de imagen o sonido). Luego se publica solo en YouTube, Facebook, Instagram y TikTok (por Windsor y Buffer).',
   'HORARIOS: un Short nuevo cada 3 horas si hay presupuesto; un VIDEO LARGO horizontal 16:9 los días impares a las 12:23 UTC. Meta: 2 videos por día y no pasar de 1800 de los 2000 minutos gratis de GitHub al mes (se reinicia el 1 de diciembre).',
   'REGLAS DEL DUEÑO: Shorts verticales de máx. 60 s; largo 16:9 de 8 a 12 min; estilo pixel art fijo; sin nombres reales de personas; voz masculina grave; música solo en TikTok/Instagram. Meta: monetizar antes del 13 de diciembre de 2026.',
+  'FORMATO FACELESS (decisión del dueño, 22 nov 2026): los videos NO llevan personaje, cara ni mascota con lupa; solo voz en off y visuales en movimiento. ORDEN PRINCIPAL DE JULES: reformular y analizar el canal con datos reales, comparándolo con grandes canales del nicho, y ejecutar la estrategia (estrategia.json) usando a todo el equipo; cada video de 8/10 o más y sin fondos vacíos; nada se publica sin aprobación del dueño salvo en automático.',
   'LO QUE NO PUEDES HACER: publicar, borrar o cambiar videos tú misma; pedir claves; prometer vistas o resultados. Sí puedes: opinar, explicar el estado real y dar UNA orden concreta al equipo.',
 ].join(' ');
 
