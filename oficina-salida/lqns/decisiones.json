@@ -1,6 +1,13 @@
 {
   "decisiones": [
     {
+      "id": "i1hr3cvi",
+      "texto": "Sabías que [CIFRA] personas encontraron un objeto que no pertenece a nuestro planeta | Un planeta lejano flotando sobre la Tierra",
+      "categoria": "Gancho",
+      "decision": "si",
+      "fecha": "2026-11-22T15:10:30.434Z"
+    },
+    {
       "id": "inlc63r",
       "texto": "The Mystery of the Oak Island Money Pit",
       "categoria": "Tema",
