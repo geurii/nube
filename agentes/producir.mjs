@@ -28,6 +28,8 @@ const notificar = (canal, tipo, titulo, texto) => {
 };
 
 fs.mkdirSync(RAIZ, {recursive: true});
+/** "the-bloop" y "bloop" son el mismo tema: no se produce dos veces. */
+const claveTema = (x) => String(x).toLowerCase().replace(/^the[-_ ]+/, '').replace(/[^a-z0-9]+/g, '');
 const pendientes = fs.readdirSync(RAIZ, {withFileTypes: true})
   .filter((d) => d.isDirectory() && d.name !== 'pedidos')
   .flatMap((d) => {
@@ -35,9 +37,10 @@ const pendientes = fs.readdirSync(RAIZ, {withFileTypes: true})
     return fs.readdirSync(path.join(RAIZ, d.name))
       .filter((f) => /^guion-.+\.json$/.test(f))
       .map((f) => ({canal: d.name, slug: f.replace(/^guion-|\.json$/g, ''), g: leer(path.join(RAIZ, d.name, f), null), t: fs.statSync(path.join(RAIZ, d.name, f)).mtimeMs, producidos}))
-      .filter((x) => x.g && x.g.estado === 'aprobado' && !x.producidos.includes(x.slug));
+      .filter((x) => x.g && x.g.estado === 'aprobado' && !x.producidos.some((p) => claveTema(p) === claveTema(x.slug)));
   })
-  .sort((a, b) => a.t - b.t);
+  // por fecha de creación del guion (en GitHub Actions la fecha del archivo es la del checkout y no sirve para ordenar)
+  .sort((a, b) => (Date.parse(a.g.creado) || a.t) - (Date.parse(b.g.creado) || b.t));
 
 if (!pendientes.length) {
   console.log('No hay guiones aprobados sin producir. Nada que hacer.');

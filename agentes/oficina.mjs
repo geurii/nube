@@ -268,7 +268,9 @@ const elegirTema = async (modelo) => {
   ], 1500);
   const ideasEquipo = leerJson(path.join(SALIDA, 'ayudas.json'), {}).temas ?? [];
   for (const t of [...ideasEquipo, ...(r.temas ?? [])]) {
-    if (typeof t !== 'string' || hechos.includes(t)) continue;
+    // "Bloop" y "The Bloop" son el MISMO tema: se compara sin mayúsculas, sin "The" inicial y sin signos
+    const clave = (x) => String(x).toLowerCase().replace(/^the[-_ ]+/, '').replace(/[^a-z0-9]+/g, '');
+    if (typeof t !== 'string' || hechos.some((h) => clave(h) === clave(t))) continue;
     if (await existeEnWikipedia(t)) return t;
   }
   throw new Error('No encontré un tema nuevo con material suficiente en Wikipedia.');
@@ -531,6 +533,7 @@ try {
     audio: `audio/${CANAL_ID}-${slug}.wav`,
     musica: CONFIG.musica ?? null,
     personaje: {esquina: 'arriba-derecha', visible: true},
+    creado: new Date().toISOString(),
     estilo: 'gancho', // edición de gancho: titular gigante, cortes rápidos con glitch y escaneo (copia el ritmo de los reels que frenan el dedo, sin cambiar el pixel del canal)
     ganchoTexto: ganchoDe(escenas[0]?.texto),
     publicacion: {titulo, descripcion: `${descripcion}\n\n${CONFIG.ctaEscrito ?? ''}\n\nFuentes: ${fuentes.filter((f) => !f.apoyo).map((f) => f.url).join(' · ')}${CONFIG.enlaceCanal ? `\n\nMás historias en el canal: ${CONFIG.enlaceCanal}` : ''}${hashtags.length ? `\n\n${hashtags.join(' ')}` : ''}`},
