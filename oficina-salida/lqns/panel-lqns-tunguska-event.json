@@ -1,0 +1,108 @@
+{
+  "fecha": "2026-11-22T07:59:35.366Z",
+  "id": "lqns-tunguska-event",
+  "aprobado": false,
+  "resumen": "Gemini (gemini-4-hydrogen) lo vio: 3/10, no subir. 0 de 8 aprobaron, 2 pasaron los primeros 3 segundos, 0 lo compartirían.",
+  "mejora": "Reemplaza la voz sintética y los fondos genéricos por una narración humana clara y visuales reales del desastre de Tunguska; un gancho impactante y sin errores aumentará drásticamente la retención.",
+  "gemini": {
+    "modelo": "gemini-4-hydrogen",
+    "gancho_3s": {
+      "nota": 4,
+      "comentario": "Se ve un fondo azul genérico con signos de interrogación pixelados, una lupa y un avatar en la esquina, mientras una voz en off pregunta sobre una explosión misteriosa en Siberia el 30 de junio de 1908."
+    },
+    "audio": {
+      "nota": 4,
+      "comentario": "Voz sintética con música de fondo suave y efectos de transición; comete errores graves de lectura y traducción como decir 'el blast' en inglés, '7:14 krat' y leer '10-15' como 'octubre de 15 megatoneladas'."
+    },
+    "subtitulos": {
+      "legibles": true,
+      "tapados_o_cortados": false,
+      "comentario": "Subtítulos grandes en blanco y amarillo centrados en el tercio inferior, bien contrastados y sin recortes, aunque reflejan errores del guion como 'EL BLAST'."
+    },
+    "imagen": {
+      "nota": 2,
+      "defectos": [
+        "fondos genéricos y abstractos sin relación visual con Tunguska ni la explosión",
+        "textos sin sentido en plantilla como '5 MAGNITUD ROJO'",
+        "repetitivo y plano"
+      ]
+    },
+    "ritmo": {
+      "nota": 5,
+      "comentario": "Alterna entre pantallas rojas de datos y fondos azules con iconos cada pocos segundos, pero visualmente resulta muy monótono por usar siempre la misma plantilla."
+    },
+    "defectos_graves": [
+      "Fondos genéricos y abstractos en todo el video que no muestran el tema del que se habla (ni Siberia, ni el bosque, ni el meteoroide o la explosión)",
+      "Errores de audio/datos por lectura defectuosa ('octubre de 15 megatoneladas' en lugar de 10-15 megatoneladas)"
+    ],
+    "nota_general": 3,
+    "recomendacion": "no subir",
+    "por_que": "Todo el video usa fondos genéricos de plantilla sin mostrar ninguna imagen relacionada con Tunguska y la voz comete errores de lectura como decir 'octubre de 15 megatoneladas'."
+  },
+  "votos": [
+    {
+      "quien": "Crítico: adolescente",
+      "pasa3": false,
+      "sigueHasta": 3,
+      "leGusto": false,
+      "compartiria": false,
+      "comentario": "El gancho suena a texto aburrido y la voz de robot me hace deslizar al instante."
+    },
+    {
+      "quien": "Crítica: universitaria",
+      "pasa3": true,
+      "sigueHasta": 22,
+      "leGusto": false,
+      "compartiria": false,
+      "comentario": "Hay datos curiosos, pero los errores de pronunciación y los fondos sin relación arruinan la credibilidad."
+    },
+    {
+      "quien": "Crítico: padre trabajador",
+      "pasa3": false,
+      "sigueHasta": 5,
+      "leGusto": false,
+      "compartiria": false,
+      "comentario": "Necesito información clara y útil, pero el video se vuelve confuso y pierde tiempo."
+    },
+    {
+      "quien": "Crítico: escéptico",
+      "pasa3": false,
+      "sigueHasta": 4,
+      "leGusto": false,
+      "compartiria": false,
+      "comentario": "Clickbait evidente, errores de lectura y gráficos genéricos hacen que no confíe nada."
+    },
+    {
+      "quien": "Crítica: fan del misterio",
+      "pasa3": true,
+      "sigueHasta": 30,
+      "leGusto": false,
+      "compartiria": false,
+      "comentario": "El tema me atrae, pero la producción barata y los datos mal dichos hacen que parezca un reciclado barato."
+    },
+    {
+      "quien": "Crítica: ama de casa",
+      "pasa3": false,
+      "sigueHasta": 6,
+      "leGusto": false,
+      "compartiria": false,
+      "comentario": "La voz sintética y el ritmo forzado me aburren; prefiero algo más natural y con imágenes reales."
+    },
+    {
+      "quien": "Crítico: joven dominicano",
+      "pasa3": false,
+      "sigueHasta": 5,
+      "leGusto": false,
+      "compartiria": false,
+      "comentario": "Suena a clase de historia de colegio, sin chispa ni flow; paso de largo."
+    },
+    {
+      "quien": "Crítico: abuelo",
+      "pasa3": false,
+      "sigueHasta": 7,
+      "leGusto": false,
+      "compartiria": false,
+      "comentario": "No entiendo bien por los errores de lectura y los fondos sin sentido; necesita una narración más clara."
+    }
+  ]
+}

@@ -1,15 +1,21 @@
 {
-  "fecha": "2026-11-22T07:34:00.438Z",
-  "total": 2350,
-  "promedio": 157,
-  "queFunciono": "Los videos con más vistas comparten títulos que presentan una historia de misterio o un hecho sorprendente, usan emojis llamativos y están publicados en fechas de alta actividad (20 y 21 de noviembre). Además, los títulos son breves, claros y contienen una pregunta o afirmación que genera curiosidad",
+  "fecha": "2026-11-22T07:58:39.530Z",
+  "total": 2289,
+  "promedio": 153,
+  "queFunciono": "Los videos con más vistas comparten títulos que incluyen preguntas o afirmaciones impactantes sobre pingüinos, combinados con una numeración de partes (Parte 1/3, Parte 3/3) y fechas de publicación recientes (2026-11-20).",
   "porQueFallaron": [
-    "Contenido de nicho muy limitado: los videos con pocas vistas tratan temas muy específicos (por ejemplo, una ola de melaza en Boston) que atraen a una audiencia muy reducida.",
-    "Falta de emojis o de formato atractivo en el título: los títulos con menos vistas no usan emojis o usan pocos, lo que reduce el impacto visual.",
-    "Publicaciones en días con menor tráfico: los videos con menos vistas se publicaron el 15 y 22 de noviembre, días con menor actividad según el patrón de los videos más vistos.",
-    "Títulos demasiado largos o confusos: algunos títulos con pocas vistas son extensos y pueden perder la atención del espectador antes de que el video comience.",
-    "Falta de promoción externa: no hay datos de retención o suscriptores, lo que sugiere que no se compartieron en redes o no se promocionaron adecuadamente."
+    "Poca curiosidad temática: videos con temas menos llamativos (p. ej. 'El Bloop', '34 cm de Bronce') tienen muy pocas vistas, lo que sugiere que la audiencia del canal prefiere contenido relacionado con pingüinos y misterios de la naturaleza.",
+    "Formato de series incompleto: los videos que forman parte de series (Parte 3/5, Parte 4/5, Parte 5/5) no siguen la secuencia completa, lo que puede confundir a los espectadores y reducir la retención y el interés.",
+    "Duración y retención baja: los videos con retención media de 29.9 % y 45.6 % (14 s y 18 s respectivamente) indican que el contenido no mantiene la atención, lo que se refleja en bajas vistas y sin suscriptores adicionales."
   ],
-  "noSePuedeSaber": [],
-  "reglas": []
+  "noSePuedeSaber": [
+    "Datos de retención y suscriptores para los videos con más vistas no están disponibles.",
+    "Información sobre la miniatura, la descripción y las palabras clave utilizadas en cada video.",
+    "Datos demográficos de la audiencia y el algoritmo de recomendación que mostró los videos."
+  ],
+  "reglas": [
+    "1. Mantener la coherencia temática: publicar videos sobre pingüinos o misterios naturales con títulos que incluyan preguntas o afirmaciones impactantes y numeración de partes para crear expectativa.",
+    "2. Completar series: asegurar que cada serie tenga al menos 3-5 partes y publicar todas las partes en un plazo corto (máximo 3 días) para evitar confusión y mantener la retención.",
+    "3. Optimizar duración y contenido: estructurar cada video en 60-90 s con un gancho inicial fuerte, y medir la retención para ajustar la edición y evitar caídas bruscas de interés."
+  ]
 }

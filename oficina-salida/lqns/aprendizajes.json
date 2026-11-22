@@ -1,5 +1,16 @@
 [
   {
+    "fecha": "2026-11-22T07:59:35.367Z",
+    "video": "🌌 El misterio explosivo de Tunguska 1908",
+    "mejora": "Reemplaza la voz sintética y los fondos genéricos por una narración humana clara y visuales reales del desastre de Tunguska; un gancho impactante y sin errores aumentará drásticamente la retención.",
+    "quejas": [
+      "Gemini: Todo el video usa fondos genéricos de plantilla sin mostrar ninguna imagen relacionada con Tunguska y la voz comete errores de lectura como decir 'octubre de 15 megatoneladas'. / Fondos genéricos y abstractos en todo el video que no muestran el tema del que se habla (ni Siberia, ni el bosque, ni el meteoroide o la explosión) / Errores de audio/datos por lectura defectuosa ('octubre de 15 megatoneladas' en lugar de 10-15 megatoneladas)",
+      "Crítico: adolescente: El gancho suena a texto aburrido y la voz de robot me hace deslizar al instante.",
+      "Crítica: universitaria: Hay datos curiosos, pero los errores de pronunciación y los fondos sin relación arruinan la credibilidad.",
+      "Crítico: padre trabajador: Necesito información clara y útil, pero el video se vuelve confuso y pierde tiempo."
+    ]
+  },
+  {
     "fecha": "2026-11-22T01:32:00.945Z",
     "video": "Sabías que el Mar de Sargazo oculta un misterio milenario 🌊",
     "mejora": "Incluir imágenes o video real del Mar de los Sargazos y de anguilas para acompañar la narración; el visual impactante retendrá a todos.",

@@ -1,0 +1,63 @@
+{
+  "titulo": "🌌 El misterio explosivo de Tunguska 1908",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-DO-EmilioNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-tunguska-event.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "esquina": "arriba-derecha",
+    "visible": true
+  },
+  "publicacion": {
+    "titulo": "🌌 El misterio explosivo de Tunguska 1908",
+    "descripcion": "Una explosión sin precedentes sacudió Siberia en 1908. Descubre los datos que aún sorprenden a la ciencia.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Tunguska_event\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#Tunguska #Meteoroide #Historia #Misterio"
+  },
+  "estado": "aprobado",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El hook es confuso, la historia está sobrecargada y la revelación llega demasiado pronto."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que el 30 jun 1908, a las 7:14 KRAT, una explosión misteriosa sacudió Siberia?",
+      "fondo": [
+        "pixelmisterio",
+        "pixelcifra:30 JUN|EXPLOSION|ROJO"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El blast, registrado en estaciones rusas y alemanas con magnitud ~5, derribó testigos, mató al menos tres personas y rompió ventanas hasta 200 km de radio.",
+      "fondo": [
+        "pixelcifra:5 MAGNITUD|ROJO",
+        "pixeldocs"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Durante tres días, cielos de Eurasia brillaron intensamente sobre 12,000,000 km2, mientras la taiga perdió casi 2,150 km2 de bosque en forma radial, indicando origen aéreo.",
+      "fondo": [
+        "pixelcifra:12 MILLONES|KM2|AZUL"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: un meteoroide de 50–60 m explotó a 5–10 km, liberando 10–15 megatoneladas de TNT.",
+      "fondo": [
+        "pixelcifra:50-60 METEOROIDE|METROS|ORO",
+        "pixelcifra:10-15 MEGATONELADAS|TNT|ORO"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "Reflexiona sobre la fragilidad de nuestro planeta. ¿Podría un evento similar amenazar nuestras ciudades hoy? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}
