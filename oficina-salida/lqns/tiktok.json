@@ -1,0 +1,18 @@
+{
+  "total": 1,
+  "posts": [
+    {
+      "id": "lqns-nikola-tesla",
+      "titulo": "⚡ 1884: El inventor que encendió Niágara con su motor AC",
+      "fecha": "2026-11-22T19:09:39.949Z",
+      "accion": "createPost",
+      "programado": "cola",
+      "alojamiento": "repositorio",
+      "video_url": "https://raw.githubusercontent.com/geurii/oficina-videos-legal/main/v/lqns-nikola-tesla.mp4",
+      "respuesta": "{\"id\":\"6b033df3846b0ee907ae8443\",\"canal\":\"loquenosabias.do\",\"programado\":\"cola\"}"
+    }
+  ],
+  "archivos": [
+    "v/lqns-nikola-tesla.mp4"
+  ]
+}
