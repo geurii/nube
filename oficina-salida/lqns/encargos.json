@@ -1,5 +1,62 @@
 [
   {
+    "id": "mwsevb7v",
+    "tipo": "investigar",
+    "texto": "gta vi",
+    "fecha": "2026-11-22T22:31:13.291Z",
+    "hecho": true,
+    "resultado": {
+      "titulo": "Investigación: gta vi",
+      "secciones": [
+        {
+          "titulo": "Confirmado",
+          "items": [
+            "Grand Theft Auto VI es un videojuego de acción‑aventura desarrollado y publicado por Rockstar Games, lanzado en 2026.",
+            "Es la octava entrega principal de la serie y la decimosexta en total.",
+            "La historia se sitúa en el estado ficticio de Leonida, basado en Florida, y sigue a la pareja criminal Jason Duval y Lucia Caminos.",
+            "El mundo abierto incluye una ciudad ficticia llamada Vice City, inspirada en Miami.",
+            "El álbum oficial de la banda sonora, Grand Theft Auto VI: The Album, fue lanzado el 19‑20 de noviembre de 2026 a través de Atlantic Records y contiene 34 pistas originales.",
+            "El tráiler promocional \"Grand Theft Auto VI: An Extended Look\" se estrenó en Netflix el 27 de agosto de 2026 y alcanzó el primer puesto en la lista de trailers en inglés en 87 países durante su primera semana.",
+            "El tráiler recibió elogios por sus visuales y la protagonismo de Lucia, aunque hubo críticas a la caracterización de Jason."
+          ]
+        },
+        {
+          "titulo": "Dudoso",
+          "items": [
+            "La afirmación de que el trabajo preliminar comenzó en 2014 y la producción principal después del lanzamiento de Red Dead Redemption 2 en 2018 está presente en la fuente en inglés, pero no hay datos exactos que confirmen fechas de hitos internos del desarrollo.",
+            "Se menciona que Rockstar duplicó sus equipos globales tras Red Dead Redemption 2, pero no se especifica cuántos empleados fueron añadidos ni el impacto concreto en GTA VI."
+          ]
+        },
+        {
+          "titulo": "Ángulos de video",
+          "items": [
+            "¿Qué secretos esconden Jason y Lucia? Analizamos la trama de GTA VI y revelamos los giros más inesperados del juego.",
+            "Detrás de la música: 10 singles del álbum de GTA VI que están marcando tendencia – ¿Cuál será el próximo hit?",
+            "El trailer que rompió Netflix: cómo el \"Extended Look\" de GTA VI se volvió viral y qué nos dice del futuro de los videojuegos."
+          ]
+        },
+        {
+          "titulo": "Cuidado con",
+          "items": [
+            "Confundir la fecha de lanzamiento del álbum (19‑20 de noviembre de 2026) con la del juego, generando información errónea sobre disponibilidad.",
+            "Atribuir a los personajes del juego hechos no confirmados en la trama, como motivaciones o eventos que no aparecen en las fuentes oficiales.",
+            "Exagerar la popularidad del trailer diciendo que \"rompió\" todas las plataformas sin citar cifras concretas; la fuente solo menciona alta demanda y rankings en 87 países."
+          ]
+        },
+        {
+          "titulo": "Fuentes leídas",
+          "items": [
+            "Wikipedia (en): Grand Theft Auto VI — https://en.wikipedia.org/wiki/Grand_Theft_Auto_VI",
+            "Wikipedia (en): Grand Theft Auto VI: The Album — https://en.wikipedia.org/wiki/Grand_Theft_Auto_VI%3A_The_Album",
+            "Wikipedia (en): Grand Theft Auto VI: An Extended Look — https://en.wikipedia.org/wiki/Grand_Theft_Auto_VI%3A_An_Extended_Look",
+            "Wikipedia (es): Grand Theft Auto VI — https://es.wikipedia.org/wiki/Grand_Theft_Auto_VI",
+            "Wikipedia (es): Grand Theft Auto VI: The Album — https://es.wikipedia.org/wiki/Grand_Theft_Auto_VI%3A_The_Album"
+          ]
+        }
+      ]
+    }
+  },
+  {
     "id": "mwsev976",
     "tipo": "investigar",
     "texto": "gta vi",
