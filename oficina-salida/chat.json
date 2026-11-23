@@ -1,5 +1,21 @@
 [
   {
+    "id": "mwsq0ur2j",
+    "de": "jules",
+    "texto": "El canal tiene 2237 vistas totales, 43 suscriptores y 15.3 h vistas en 12 meses. Necesitamos subir un video largo (8‑12 min) hoy, día impar, y un Short cada 3 h. El último video público es el de 1884 con 34 vistas. No hay renders activos; el workflow de GTA VI no se ha iniciado. Iniciaremos el workflow de render del nuevo video largo ahora mismo y Fernanda verificará el run. Cuando tenga el número y el enlace, se lo enviaré inmediatamente. Además, debemos lanzar el Short programado para hoy a las 16:23 UTC y continuar con el calendario de 3 h.\n\nNo se publicará nada sin aprobación del dueño. Si el ciclo falla, se intentará de nuevo con otro guion aprobado.\n",
+    "fecha": "2026-11-23T03:43:27.659Z",
+    "orden": "",
+    "nivel": 5,
+    "canal": "lqns"
+  },
+  {
+    "id": "mwsq0ur2t",
+    "de": "tu",
+    "texto": "ACTUALIZACION IMPORTANTE SI UN CICLO FALLA SE INTENTARA DE NUEVO OTRO GUIN APROVADO",
+    "fecha": "2026-11-23T03:43:09.715Z",
+    "canal": "lqns"
+  },
+  {
     "id": "mwsppn71j",
     "de": "jules",
     "texto": "Entiendo su frustración. Acabo de verificar: no hay ningún render activo en GitHub Actions. El último run registrado es del 20 de noviembre. Iniciaré inmediatamente un nuevo workflow de render para el video largo de GTA VI y, en cuanto Fernanda confirme el número de run y el enlace, se lo enviaré sin demora. No hay mentiras aquí: si no está, no está.",
@@ -941,22 +957,6 @@
     "de": "tu",
     "texto": "ese video ya esta en mi canal sigan trabajando en hacerme rico si te digo que algo ya esta confia en mi tonta soy tu jefe",
     "fecha": "2026-11-22T00:44:51.165Z",
-    "canal": "lqns"
-  },
-  {
-    "id": "mwr44o0vj",
-    "de": "jules",
-    "texto": "Entiendo, si me indicas que no se suba, detendré la carga inmediatamente. Sin embargo, reitero que con 23 días restantes y solo 43 suscriptores, cada publicación es vital para alcanzar la meta de monetización antes del 13 de dic. Necesito tu confirmación definitiva para proceder.",
-    "fecha": "2026-11-22T00:42:47.700Z",
-    "orden": "",
-    "nivel": 4,
-    "canal": "lqns"
-  },
-  {
-    "id": "mwr44o0vt",
-    "de": "tu",
-    "texto": "esa yo lo tengo si te digo no lo hagas no lo haces",
-    "fecha": "2026-11-22T00:40:30.723Z",
     "canal": "lqns"
   }
 ]
