@@ -1,5 +1,10 @@
 [
   {
+    "fecha": "2026-11-23T01:34:45.011Z",
+    "orden": "Equipo de render y verificación: prioricen al 100% el video de GTA VI. Suban a YouTube en el instante en que el render finalice, sin esperar más aprobaciones.",
+    "nivel": 5
+  },
+  {
     "fecha": "2026-11-23T01:31:35.614Z",
     "orden": "Equipo de render: prioricen al 100 % el render de GTA VI y, al terminar, suban el video a YouTube inmediatamente; coordinación de voz y verificación en paralelo para evitar cualquier espera.",
     "nivel": 5
@@ -42,11 +47,6 @@
   {
     "fecha": "2026-11-23T00:21:05.598Z",
     "orden": "Iniciar la cadena de producción de GTA VI: investigación → guion → edición → verificación → voz → render → subir a YouTube y TikTok a las 12:23 UTC.",
-    "nivel": 5
-  },
-  {
-    "fecha": "2026-11-23T00:07:34.043Z",
-    "orden": "Asignar a Camila investigación GTA VI → guionista escribe guion → editor revisa → verificador valida → producción de voz y visuales → render → subir a YouTube a las 12:00 UTC y a TikTok inmediatamente después",
     "nivel": 5
   }
 ]
