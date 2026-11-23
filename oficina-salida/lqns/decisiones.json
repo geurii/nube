@@ -1,6 +1,13 @@
 {
   "decisiones": [
     {
+      "id": "i18xt411",
+      "texto": "Desarrollar y publicar un video de 12 minutos sobre el caso del banco que pagó 175 millones por clientes ficticios, optimizando SEO y promoción en redes sociales: Equipo de Investigación y Producción de Documentales: Alcanzar 2,000 vistas y",
+      "categoria": "Plan",
+      "decision": "si",
+      "fecha": "2026-11-23T20:43:34.488Z"
+    },
+    {
       "id": "id673u2",
       "texto": "Fernanda (Jefa de calidad): Implementar una checklist de calidad de 5 pasos que incluya revisión de datos, guion, edición y subtítulos antes de aprobar cualquier contenido.",
       "categoria": "Iniciativa",
