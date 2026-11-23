@@ -1,5 +1,15 @@
 [
   {
+    "fecha": "2026-11-23T04:18:14.693Z",
+    "orden": "Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente.",
+    "nivel": 5
+  },
+  {
+    "fecha": "2026-11-23T04:16:13.376Z",
+    "orden": "Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h.",
+    "nivel": 5
+  },
+  {
     "fecha": "2026-11-23T04:10:30.301Z",
     "orden": "Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC), mantén los Shorts cada 3 h y avisa al instante si rozamos los 1800 minutos de GitHub.",
     "nivel": 5
@@ -38,15 +48,5 @@
     "fecha": "2026-11-23T02:17:42.294Z",
     "orden": "Carolina abre un issue en GitHub, lanza un nuevo run de render para GTA VI y envía al dueño el número de run y el link del workflow; Fernanda verifica que el render inicie sin errores.",
     "nivel": 5
-  },
-  {
-    "fecha": "2026-11-23T02:12:48.012Z",
-    "orden": "Carolina debe abrir un issue en GitHub, lanzar un nuevo run de render para GTA VI y enviar al dueño el número de run y el link del workflow; Fernanda verificará que el render inicie sin errores.",
-    "nivel": 5
-  },
-  {
-    "fecha": "2026-11-23T02:04:07.387Z",
-    "orden": "Verificar estado del render en GitHub Actions y, si ya está listo, subirlo a YouTube de inmediato.",
-    "nivel": 3
   }
 ]

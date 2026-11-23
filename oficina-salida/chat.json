@@ -1,38 +1,38 @@
 [
   {
-    "id": "mwsr5193j",
+    "id": "mwsr9l45j",
     "de": "jules",
-    "texto": "Entendido. Eliminaremos la restricción de días impares y configuraremos la subida de un video largo cada 12 horas. El equipo ajustará el calendario de producción de inmediato para cumplir con esta nueva frecuencia.",
-    "fecha": "2026-11-23T04:14:42.327Z",
-    "orden": "",
-    "nivel": 4,
+    "texto": "Entendido. El equipo seguirá intentando ciclo tras ciclo con guiones aprobados hasta lograr la publicación. No pararemos hasta cumplir con el calendario de un video largo cada 12 horas y Shorts cada 3 horas. Si un ciclo falla, se reusa otro guion aprobado sin detener la línea. Mantendré informado sobre el progreso y cualquier obstáculo.",
+    "fecha": "2026-11-23T04:18:14.693Z",
+    "orden": "Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente.",
+    "nivel": 5,
     "canal": "lqns"
   },
   {
-    "id": "mwsr5193t",
+    "id": "mwsr9l45t",
+    "de": "tu",
+    "texto": "EXACTO NUNCA PAREN DE HACER GUINES HE INTENTAR SUBIR HASTA LOGRARLO NO SE RINDAN INTENTEN CICLO TRAS CICLO",
+    "fecha": "2026-11-23T04:13:40.035Z",
+    "canal": "lqns"
+  },
+  {
+    "id": "mwsr6ziaj",
+    "de": "jules",
+    "texto": "He actualizado el calendario según tu indicación: el video largo 16:9 se publica cada 12 horas (00:23 y 12:23 UTC), sin distinguir días pares o impares. Los Shorts siguen a las 3 horas. No se publicará nada sin tu visto‑bueno a menos que así lo decidas. El equipo seguirá el nuevo cronograma y monitorizará el límite de 1800 minutos de GitHub.",
+    "fecha": "2026-11-23T04:16:13.376Z",
+    "orden": "Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h.",
+    "nivel": 5,
+    "canal": "lqns"
+  },
+  {
+    "id": "mwsr6ziat",
     "de": "tu",
     "texto": "ELIMINA LOS DIAS IMPARES DEL CALENDARIO TE DIJE QUE EL VIDEO LRGO ES CADA 12 HORAS CAMBIA LA CONFIGURACION ACTUAL",
     "fecha": "2026-11-23T04:09:20.316Z",
     "canal": "lqns"
   },
   {
-    "id": "mwsr2j14j",
-    "de": "jules",
-    "texto": "Entendido. Actualizaremos el calendario para subir un video largo cada 12 horas, eliminando la restricción de días impares. El equipo ajustará el flujo de producción inmediatamente para cumplir con esta nueva frecuencia.",
-    "fecha": "2026-11-23T04:12:45.369Z",
-    "orden": "",
-    "nivel": 4,
-    "canal": "lqns"
-  },
-  {
-    "id": "mwsr2j14t",
-    "de": "tu",
-    "texto": "YA NO EXISTIRAN DIAS IMPARES SE SUBE UN VIDEO  LARGO CADA 12 HORAS ACTUALIZA EL CALENDARIO",
-    "fecha": "2026-11-23T04:05:10.736Z",
-    "canal": "lqns"
-  },
-  {
-    "id": "mwsqt4nlj",
+    "id": "mwsqzmsdj",
     "de": "jules",
     "texto": "Recibido, jefe: quedan 21 días y el canal va en 2237 vistas totales, 43 suscriptores y 15.3 h vistas. Calendario actualizado: un largo 16:9 cada 12 h, sin tocar los Shorts de 60 s cada 3 h. Vigilaremos el tope de 1800 minutos de GitHub y el panel de calidad; si un ciclo falla, se reusa otro guion aprobado. La línea no se detiene.",
     "fecha": "2026-11-23T04:10:30.301Z",
@@ -957,22 +957,6 @@
     "de": "tu",
     "texto": "Dame un informe de por qué mis vídeos no son virales ahora",
     "fecha": "2026-11-22T03:53:34.143Z",
-    "canal": "lqns"
-  },
-  {
-    "id": "mwrb1suxj",
-    "de": "jules",
-    "texto": "Informe breve: Los Shorts no están reteniendo audiencia porque la tasa de visualización completa es baja (<15 %). Gemini rechazó el video del Sargasso Sea por imágenes abstractas que no muestran el tema, lo que reduce el CTR y la retención. Además, el contenido carece de ganchos claros en los primeros 3 segundos y la miniatura no destaca el misterio. Necesitamos datos de retención de los últimos Shorts, optimizar títulos con palabras clave de tendencia, crear miniaturas con texto grande y visuales del tema, y asegurar que las primeras 5 segundos presenten la pregunta central.\nOrden: Todos: revisen los últimos 3 Shorts, extraigan métricas de retención, rediseñen miniaturas y guiones con ganchos claros, y suban versiones mejoradas antes de las 14:00 h de hoy.",
-    "fecha": "2026-11-22T03:56:31.446Z",
-    "orden": "Todos: revisen los últimos 3 Shorts, extraigan métricas de retención, rediseñen miniaturas y guiones con ganchos claros, y suban versiones mejoradas antes de las 14:00 h de hoy.",
-    "nivel": 5,
-    "canal": "lqns"
-  },
-  {
-    "id": "mwrb1suxt",
-    "de": "tu",
-    "texto": "Dame un informe por qué no está funcionando mis shorts",
-    "fecha": "2026-11-22T03:52:06.702Z",
     "canal": "lqns"
   }
 ]
