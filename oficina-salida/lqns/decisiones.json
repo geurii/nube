@@ -1,6 +1,20 @@
 {
   "decisiones": [
     {
+      "id": "i1i64cdc",
+      "texto": "Sabías que [CIFRA] segundos antes del eclipse total, el cielo se volvió rojo como sangre | Una cámara lenta de un cielo oscureciéndose con destellos rojizos",
+      "categoria": "Gancho",
+      "decision": "si",
+      "fecha": "2026-11-23T00:24:21.091Z"
+    },
+    {
+      "id": "i1b5793e",
+      "texto": "The Taos Hum",
+      "categoria": "Tema",
+      "decision": "no",
+      "fecha": "2026-11-23T00:24:13.018Z"
+    },
+    {
       "id": "i15rbqv9",
       "texto": "The Bloop",
       "categoria": "Tema",
