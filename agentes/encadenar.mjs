@@ -66,8 +66,7 @@ try {
   console.log(`Videos subidos hoy: ${aprobadosHoy} de ${META_DIA}.`);
   if (aprobadosHoy >= META_DIA) { console.log('Meta del día cumplida: se descansa hasta mañana.'); process.exit(1); }
 } catch (e) { console.log(`No pude contar los videos de hoy (${e.message}); se sigue con el presupuesto.`); }
-const antesDeHoy = usadoMes - usadoHoy;
-const presupuestoHoy = Math.max(0, (PRESUPUESTO - antesDeHoy) / diasQuedan);
-console.log(`Minutos usados este mes: ${usadoMes}. Hoy: ${usadoHoy} de ${Math.round(presupuestoHoy)} permitidos.`);
-if (usadoHoy + CICLO <= presupuestoHoy) { console.log('Hay presupuesto: se lanza otro ciclo.'); process.exit(0); }
-console.log('Presupuesto de hoy gastado: se espera al siguiente día para no quedarse sin minutos.'); process.exit(1);
+const restanteMes = Math.max(0, PRESUPUESTO - usadoMes);
+console.log(`Minutos usados este mes: ${usadoMes}. Presupuesto mensual restante: ${restanteMes}.`);
+if (usadoMes + CICLO <= PRESUPUESTO) { console.log('Hay presupuesto mensual: se lanza otro ciclo.'); process.exit(0); }
+console.log('Presupuesto mensual agotado: se espera al siguiente mes.'); process.exit(1);
