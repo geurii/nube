@@ -1,5 +1,21 @@
 [
   {
+    "id": "mwsjudl0j",
+    "de": "jules",
+    "texto": "El canal está muy lejos de monetizar: 957 suscriptores y 3984.7 horas vistas faltantes. Necesitamos acelerar la producción de Shorts y videos largos con temas de alta tendencia. Propongo 5 nuevos títulos de Wikipedia que no están en el canal y que pueden generar vistas rápidas. Además, el equipo debe cumplir el calendario diario: un Short cada 3 h y un video largo los días impares. La prioridad es subir el próximo video largo de GTA VI hoy, con aprobación final del dueño antes de las 12:23 UTC. El equipo debe seguir la guía de estilo y checklist de calidad para evitar rechazos.\n\nTemas:\n- \"The Great Smog of London\" porque el evento influyó en la legislación ambiental.\n- \"The Tunguska event\" porque la explosión de 1908 sigue sin explicación completa.\n- \"The Voynich manuscript\" porque su contenido sigue siendo un misterio.\n- \"The Dyatlov Pass incident\" porque la investigación sigue abierta.\n- \"The Roswell incident\" porque mantiene interés público.\n\nOrden para el equipo: \"Iniciar la investigación y guion del tema \"The Great Smog of London\" y entregarlo antes de las 09:00 UTC para el próximo Short\"",
+    "fecha": "2026-11-23T00:50:27.780Z",
+    "orden": "Iniciar la investigación y guion del tema \"The Great Smog of London\" y entregarlo antes de las 09:00 UTC para el próximo Short",
+    "nivel": 5,
+    "canal": "lqns"
+  },
+  {
+    "id": "mwsjudl0t",
+    "de": "tu",
+    "texto": "SE PUBLICA DESDE QUE SE TERMINE DE HACER",
+    "fecha": "2026-11-23T00:50:07.363Z",
+    "canal": "lqns"
+  },
+  {
     "id": "mwsjrt9rj",
     "de": "jules",
     "texto": "El ciclo de GTA VI ya está en marcha: Camila está investigando, el guion se entregará antes de las 09:00 UTC y la producción de voz y render sigue en curso. No hay retraso y se publicará a las 12:23 UTC. No se ha visto en la barra porque la actualización se realiza en tiempo real en el panel de producción. Si necesitas ver el estado, revisa el tablero de GitHub Actions.",

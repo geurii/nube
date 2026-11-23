@@ -1,5 +1,10 @@
 [
   {
+    "fecha": "2026-11-23T00:50:27.780Z",
+    "orden": "Iniciar la investigación y guion del tema \"The Great Smog of London\" y entregarlo antes de las 09:00 UTC para el próximo Short",
+    "nivel": 5
+  },
+  {
     "fecha": "2026-11-23T00:45:23.504Z",
     "orden": "Iniciar la publicación de GTA VI hoy a las 12:23 UTC en YouTube y TikTok, asegurando que el archivo esté listo antes de esa hora.",
     "nivel": 4
@@ -43,11 +48,6 @@
   {
     "fecha": "2026-11-22T19:46:03.281Z",
     "orden": "Revisar la compatibilidad de Facebook para el largo y actualizar el cronograma de publicación.",
-    "nivel": 4
-  },
-  {
-    "fecha": "2026-11-22T19:41:54.247Z",
-    "orden": "Revisa el calendario y confirma que el equipo esté listo para producir 1 largo diario sin alterar el formato ni la calidad.",
     "nivel": 4
   }
 ]
