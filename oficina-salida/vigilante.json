@@ -1,6 +1,8 @@
 {
-  "alertas": {},
-  "fecha": "2026-11-23T07:34:53.639Z",
+  "alertas": {
+    "corrida-Oficina": "2026-11-23T23:52:29.224Z"
+  },
+  "fecha": "2026-11-23T23:52:29.409Z",
   "ok": [
     "YouTube conectado",
     "analítica autorizada",
@@ -8,9 +10,11 @@
     "Gemini responde",
     "Windsor responde",
     "Buffer responde",
-    "minutos de GitHub: 1263 de 2000",
+    "minutos de GitHub: 1292 de 2000",
     "hay publicaciones recientes"
   ],
-  "problemas": [],
-  "resumenDia": "2026-11-22"
+  "problemas": [
+    "Falló \"Oficina\" en GitHub"
+  ],
+  "resumenDia": "2026-11-23"
 }

@@ -1,5 +1,23 @@
 [
   {
+    "id": "mwtx7o6h9e7q",
+    "fecha": "2026-11-23T23:52:29.225Z",
+    "canal": "lqns",
+    "canalNombre": "Vigilante",
+    "tipo": "alerta",
+    "titulo": "Falló \"Oficina\" en GitHub",
+    "texto": "2 corrida(s) fallida(s) en 24 h; la última: https://github.com/geurii/nube/actions/runs/45285190570"
+  },
+  {
+    "id": "mwtx7o6fnie6",
+    "fecha": "2026-11-23T23:52:29.223Z",
+    "canal": "lqns",
+    "canalNombre": "Vigilante",
+    "tipo": "reporte",
+    "titulo": "Resumen del día",
+    "texto": "Últimas 24 h: 0 video(s) en YouTube, 0 en Facebook, 0 en Instagram, 0 en TikTok. Minutos de GitHub: 1292 de 2000. Pendiente: Falló \"Oficina\" en GitHub"
+  },
+  {
     "id": "mwsqp6uhe4nw",
     "fecha": "2026-11-23T04:02:23.081Z",
     "canal": "lqns",
@@ -663,23 +681,5 @@
     "tipo": "reporte",
     "titulo": "Guion aprobado: The Sargasso Sea",
     "texto": "Short de \"The Sargasso Sea\" aprobado en el intento 4. 101 palabras, 6 escenas. Editor: Puntaje: 6/10. El gancho es confuso, el ritmo se arrastra y la revelación llega demasiado pronto. Aprobados: 4. Rechazados: 6. Con error: 8. Próximo ciclo en 1 h."
-  },
-  {
-    "id": "mwr452o25iec",
-    "fecha": "2026-11-22T00:43:06.818Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: The Taos Hum",
-    "texto": "El Verificador no aprobó \"The Taos Hum\" tras 4 intentos: El Editor puso 5/10 (mínimo 6). Reescribe arreglando esto: El gancho es débil, el ritmo es lento y la revelación llega demasiado pronto. Aprobados: 3. Rechazados: 6. Con error: 8. No se publica. Próximo ciclo en 1 h."
-  },
-  {
-    "id": "mwr40q1cfom5",
-    "fecha": "2026-11-22T00:39:43.824Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante o afirmación impactante + elemento misterioso/inhóspito + pista de revelación o consecuencia inesperada El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (41749 vistas/hora)."
   }
 ]
