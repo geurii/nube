@@ -1,5 +1,10 @@
 [
   {
+    "fecha": "2026-11-23T00:41:26.198Z",
+    "orden": "Completar render de GTA VI y subir a YouTube a las 12:23 UTC del 23‑11‑2026.",
+    "nivel": 4
+  },
+  {
     "fecha": "2026-11-23T00:21:11.345Z",
     "orden": "Ejecutar producción GTA VI según el flujo descrito, con entrega de guion antes de 09:00 UTC.",
     "nivel": 5
@@ -43,11 +48,6 @@
   {
     "fecha": "2026-11-22T19:40:05.496Z",
     "orden": "Mantener el cronograma vigente sin cambiar la frecuencia del largo",
-    "nivel": 4
-  },
-  {
-    "fecha": "2026-11-22T19:39:31.659Z",
-    "orden": "Revisar el calendario de producción y confirmar que los largos no excedan 12 min para mantener el consumo bajo 300 min mensuales.",
     "nivel": 4
   }
 ]
