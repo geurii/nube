@@ -1,6 +1,13 @@
 {
   "decisiones": [
     {
+      "id": "i1wxp4h5",
+      "texto": "12 Minutos que Desencadenaron la Guerra de los Bóvedas — Sabías que 12 minutos iniciaron la Guerra de los Bóvedas? (estimada 7/10)",
+      "categoria": "Estrategia",
+      "decision": "no",
+      "fecha": "2026-11-23T00:25:04.014Z"
+    },
+    {
       "id": "i1i64cdc",
       "texto": "Sabías que [CIFRA] segundos antes del eclipse total, el cielo se volvió rojo como sangre | Una cámara lenta de un cielo oscureciéndose con destellos rojizos",
       "categoria": "Gancho",
