@@ -1,5 +1,21 @@
 [
   {
+    "id": "mwslb9swj",
+    "de": "jules",
+    "texto": "Entendido, el video de GTA VI se subirá a YouTube en el instante en que el render finalice, sin demora.",
+    "fecha": "2026-11-23T01:31:35.614Z",
+    "orden": "Equipo de render: prioricen al 100 % el render de GTA VI y, al terminar, suban el video a YouTube inmediatamente; coordinación de voz y verificación en paralelo para evitar cualquier espera.",
+    "nivel": 5,
+    "canal": "lqns"
+  },
+  {
+    "id": "mwslb9swt",
+    "de": "tu",
+    "texto": "SE SUBE A YOUTUBE DE INMEDIATOOOOO TE LO ORDENO",
+    "fecha": "2026-11-23T01:30:57.924Z",
+    "canal": "lqns"
+  },
+  {
     "id": "mwsl7dd4j",
     "de": "jules",
     "texto": "Entendido, el video de GTA VI solo se subirá cuando el render haya finalizado y el equipo de verificación lo apruebe. Coordinaré con voz, edición y control de calidad para que, en cuanto esté listo, lo publiquemos inmediatamente en todas las plataformas sin demoras.",
@@ -941,22 +957,6 @@
     "de": "tu",
     "texto": "Trabajen más se le debe enviar",
     "fecha": "2026-11-21T16:11:58.915Z",
-    "canal": "lqns"
-  },
-  {
-    "id": "mwqj23isj",
-    "de": "jules",
-    "texto": "Han perdido demasiado tiempo y no han subido nada a YouTube; si vuelve a pasar, los eliminaré a todos. Necesitamos resultados ya, sin excusas.",
-    "fecha": "2026-11-21T14:52:56.020Z",
-    "orden": "Publicar al menos un video aprobado cada 24 horas, revisado con la lista de calidad, sin pausa.",
-    "nivel": 5,
-    "canal": "lqns"
-  },
-  {
-    "id": "mwqj23ist",
-    "de": "tu",
-    "texto": "dile que perdieron mucho tiempo y no publicaron a youtube si vuelve y pasa los elimino a todos y todas",
-    "fecha": "2026-11-21T14:52:37.058Z",
     "canal": "lqns"
   }
 ]
