@@ -1,0 +1,92 @@
+{
+  "titulo": "🔥 El Gran Incendio de Londres: ¿Qué secretos ocultó la reconstrucción?",
+  "formato": "largo",
+  "orientacion": "horizontal",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-great-fire-of-london.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-23T03:22:39.146Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿Un incendio en una panadería en 1666 devastó Londres…?",
+  "publicacion": {
+    "titulo": "🔥 El Gran Incendio de Londres: ¿Qué secretos ocultó la reconstrucción?",
+    "descripcion": "Descubre cómo un incendio en una panadería cambió Londres para siempre. ¿Sabías que una táctica con pólvora fue clave para detener las llamas?\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Great_Fire_of_London\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#GranIncendioLondres #HistoriaOculta #Londres1666 #ReconstruccionCiudad #MisteriosHistoricos"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El gancho es largo y no intriga lo suficiente. La revelación llega tarde y falta impacto en el cierre. Ritmo mejorable con frases más cortas."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que un incendio en una panadería en 1666 devastó Londres durante cuatro días. ¿Qué táctica desesperada detuvo las llamas?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El fuego comenzó en Pudding Lane, poco después de la medianoche del 2 de septiembre de 1666. Londres, con entre 300000 y 400000 habitantes, era una ciudad abarrotada, con casas de madera y calles estrechas.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El alcalde dudó en ordenar la demolición de edificios para crear cortafuegos. Cuando finalmente lo hizo, el viento ya había convertido el incendio en un infierno incontrolable.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El pánico se extendió. Se rumoreaba que extranjeros estaban provocando incendios. Los franceses y holandeses, enemigos en la guerra, fueron atacados en las calles.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El fuego destruyó la Catedral de San Pablo y amenazó el Palacio de Whitehall. La ciudad, ya golpeada por la peste de 1665, enfrentaba su mayor crisis.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: la guarnición de la Torre de Londres usó pólvora para crear cortafuegos efectivos, deteniendo el avance del fuego hacia el este.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Esta táctica, junto con la disminución del viento, salvó parte de la ciudad. Sin embargo, el 80 por ciento de Londres dentro de la muralla romana quedó en ruinas.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Tras el incendio, Londres se reconstruyó sobre el mismo plano medieval, pero con regulaciones más estrictas para prevenir futuros desastres.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Crees que Londres habría sobrevivido sin la intervención de la Torre de Londres? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

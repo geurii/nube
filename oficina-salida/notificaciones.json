@@ -1,5 +1,41 @@
 [
   {
+    "id": "mwspa3jeg2ap",
+    "fecha": "2026-11-23T03:22:39.338Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Great Fire of London",
+    "texto": "El Verificador no aprobó \"Great Fire of London\" tras 4 intentos: La revelación cae al 58 % (133 de 230 palabras antes de ella) y debe caer entre 65 % y 75 %: añade historia antes de la revelación o acórtala. Aprobados: 11. Rechazados: 22. Con error: 8. No se publica. Próximo ciclo en 11 h."
+  },
+  {
+    "id": "mwsp6usypppp",
+    "fecha": "2026-11-23T03:20:08.050Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Sea of Azov",
+    "texto": "El Verificador no aprobó \"Sea of Azov\" tras 4 intentos: La primera frase debe empezar con \"Sabías que\". Aprobados: 11. Rechazados: 21. Con error: 8. No se publica. Próximo ciclo en 11 h."
+  },
+  {
+    "id": "mwsp3imtq78i",
+    "fecha": "2026-11-23T03:17:32.309Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Enigma machine",
+    "texto": "El Verificador no aprobó \"Enigma machine\" tras 4 intentos: No se especifica que la Enigma protegiera 'los secretos más críticos del siglo XX', solo que fue usada para proteger comunicaciones comerciales, diplomáticas y  Aprobados: 11. Rechazados: 20. Con error: 8. No se publica. Próximo ciclo en 11 h."
+  },
+  {
+    "id": "mwsoznsbkbdq",
+    "fecha": "2026-11-23T03:14:32.363Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante o afirmación impactante + elemento misterioso/extraño + pista de revelación o consecuencia El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (32895 vistas/hora)."
+  },
+  {
     "id": "mwsitgjvrza2",
     "fecha": "2026-11-23T00:21:45.355Z",
     "canal": "lqns",
@@ -645,40 +681,5 @@
     "tipo": "reporte",
     "titulo": "Fórmula del momento",
     "texto": "Lo que hoy funciona para Lo Que No Sabías: Título con pregunta intrigante o afirmación impactante + elemento misterioso o prohibido + pista de revelación El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (41987 vistas/hora)."
-  },
-  {
-    "id": "mwr2trl4lgbi",
-    "fecha": "2026-11-22T00:06:19.625Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "La oficina falló",
-    "texto": "Groq no respondió tras 4 intentos (límite de Groq (429)). Respaldos: Cerebras/gpt-oss-120b: JSON roto; Gemini/gemini-2.5-flash: 404; Gemini/gemini-flash-latest: Aprobados: 3. Rechazados: 5. Con error: 4. Próximo ciclo en 2 h."
-  },
-  {
-    "id": "mwr2thyhnsst",
-    "fecha": "2026-11-22T00:06:07.145Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Una frase que combina una pregunta intrigante o una afirmación impactante con un elemento de misterio o sorpresa, seguida de un subtítulo que sugiere una revelación o un listado atractivo. El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (41995 vistas/hora)."
-  },
-  {
-    "id": "mwqsd59k8p7r",
-    "fecha": "2026-11-21T19:13:28.040Z",
-    "canal": "lqns",
-    "canalNombre": "Vigilante",
-    "tipo": "alerta",
-    "titulo": "Falló \".github/workflows/produccion.yml\" en GitHub",
-    "texto": "2 corrida(s) fallida(s) en 24 h; la última: https://github.com/geurii/nube/actions/runs/44926537079"
-  },
-  {
-    "id": "mwqq36i4p605",
-    "fecha": "2026-11-21T18:09:43.852Z",
-    "canal": "lqns",
-    "tipo": "reporte",
-    "titulo": "Video subido a YouTube",
-    "texto": "\"🔊 El enigma del Bloop: el rugido del hielo\" quedó PÚBLICO ahora mismo: https://youtu.be/5BIAOJmE-dk"
   }
 ]

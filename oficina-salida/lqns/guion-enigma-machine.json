@@ -1,0 +1,85 @@
+{
+  "titulo": "🔐 ¿Cómo una máquina de 26 letras cambió el resultado de la Segunda Guerra Mundial?",
+  "formato": "largo",
+  "orientacion": "horizontal",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-enigma-machine.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-23T03:17:32.116Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿Una máquina con 26 letras protegió los secretos…?",
+  "publicacion": {
+    "titulo": "🔐 ¿Cómo una máquina de 26 letras cambió el resultado de la Segunda Guerra Mundial?",
+    "descripcion": "Descubre cómo la Enigma, una máquina de cifrado con 26 letras, se convirtió en el escudo de los secretos más críticos del siglo XX. Un viaje a través de su historia, su funcionamiento y su impacto en la Segunda Guerra Mundial.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Enigma_machine\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#Enigma #Cifrado #SegundaGuerraMundial #Historia #EnigmaMachine"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 8,
+    "critica": "Buen gancho y ritmo, pero la revelación llega tarde y el cierre es débil. Simplificar detalles técnicos para mantener el interés."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que una máquina con 26 letras protegió los secretos más críticos del siglo XX? Un dispositivo que cambió el curso de la historia.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "La Enigma, inventada tras la Primera Guerra Mundial, era una máquina de cifrado con rotores que encriptaba mensajes con claves cambiantes.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Con 26 luces, transformaba texto en código secreto. Cada tecla presionada generaba una nueva combinación.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Adoptada por la Alemania nazi, la Enigma era su escudo de comunicación durante la Segunda Guerra Mundial.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Su complejidad: rotores que cambiaban conexiones eléctricas, haciendo imposible descifrar sin la configuración diaria.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Pero Polonia descubrió un fallo en 1932: patrones repetitivos en el cifrado.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Polonia compartió su secreto con los Aliados. Descifrar la Enigma acortó la guerra y alteró su resultado.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Crees que la Enigma fue el dispositivo más influyente del siglo XX? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

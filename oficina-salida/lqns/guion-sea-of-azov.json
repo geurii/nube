@@ -1,0 +1,85 @@
+{
+  "titulo": "🌊 Sabías que el Mar de Azov es el más somero del mundo",
+  "formato": "largo",
+  "orientacion": "horizontal",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-sea-of-azov.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-23T03:20:07.862Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿El Mar de Azov tiene una profundidad máxima de solo 14…?",
+  "publicacion": {
+    "titulo": "🌊 Sabías que el Mar de Azov es el más somero del mundo",
+    "descripcion": "Descubre los secretos del Mar de Azov, desde su profundidad única hasta su papel en la historia antigua y las teorías que lo rodean. Un viaje a través de misterios geográficos y leyendas.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Sea_of_Azov\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#MarDeAzov #HistoriaAntigua #MarSomero #SeaOfAzov #HistoriaOculta"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El gancho es descriptivo, no intriga. La revelación llega tarde y falta impacto en el cierre. Ritmo lento en escenas históricas."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Sabías que el Mar de Azov tiene una profundidad máxima de solo 14 metros? Este mar, el más somero del mundo, esconde secretos que desafían la historia y la geografía.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Situado entre Rusia y Ucrania, el Mar de Azov está conectado al Mar Negro por el estrecho de Kerch, de apenas 4 kilómetros de ancho. Es una importante ruta de acceso para Central Asia a través del Canal Volga-Don.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Su nombre proviene del Kipchak turco 'asak' o 'azaq', que significa 'tierras bajas'. Una leyenda rusa, sin embargo, lo atribuye a un príncipe Cuman llamado 'Azum' o 'Asuf', asociado con la región en el siglo XI.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En la antigüedad, se le conocía como el Maeotis Swamp, un nombre ligado a los pantanos al noreste. Los Maeotians lo llamaban Temarunda, 'Madre de las Aguas', reflejando su importancia vital.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El mar es alimentado por ríos como el Don y el Kuban, que depositan arena, limo y conchas, formando bahías y estrechos bancos de arena. Esto crea un fondo marino plano y poco profundo, ideal para la vida marina.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Su baja salinidad y alta productividad de peces lo convierten en un ecosistema único. Sin embargo, su profundidad promedio de solo 7 metros lo hace vulnerable a cambios ambientales.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: en 1997, dos investigadores teorizaron que hace unos 7600 años, una masiva inundación del Mediterráneo conectó el Mar Negro con el Mediterráneo, posiblemente afectando al Mar de Azov y transformando la región.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Crees que esta teoría explica los misterios del Mar de Azov? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}
