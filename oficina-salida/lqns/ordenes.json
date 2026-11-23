@@ -1,5 +1,10 @@
 [
   {
+    "fecha": "2026-11-23T02:04:07.387Z",
+    "orden": "Verificar estado del render en GitHub Actions y, si ya está listo, subirlo a YouTube de inmediato.",
+    "nivel": 3
+  },
+  {
     "fecha": "2026-11-23T01:34:45.011Z",
     "orden": "Equipo de render y verificación: prioricen al 100% el video de GTA VI. Suban a YouTube en el instante en que el render finalice, sin esperar más aprobaciones.",
     "nivel": 5
@@ -42,11 +47,6 @@
   {
     "fecha": "2026-11-23T00:21:11.345Z",
     "orden": "Ejecutar producción GTA VI según el flujo descrito, con entrega de guion antes de 09:00 UTC.",
-    "nivel": 5
-  },
-  {
-    "fecha": "2026-11-23T00:21:05.598Z",
-    "orden": "Iniciar la cadena de producción de GTA VI: investigación → guion → edición → verificación → voz → render → subir a YouTube y TikTok a las 12:23 UTC.",
     "nivel": 5
   }
 ]

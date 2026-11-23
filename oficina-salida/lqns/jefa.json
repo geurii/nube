@@ -1,5 +1,5 @@
 {
-  "nivel": 5,
-  "orden": "Equipo de render y verificación: prioricen al 100% el video de GTA VI. Suban a YouTube en el instante en que el render finalice, sin esperar más aprobaciones.",
-  "fecha": "2026-11-23T01:34:45.011Z"
+  "nivel": 3,
+  "orden": "Verificar estado del render en GitHub Actions y, si ya está listo, subirlo a YouTube de inmediato.",
+  "fecha": "2026-11-23T02:04:07.387Z"
 }

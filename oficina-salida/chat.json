@@ -1,5 +1,21 @@
 [
   {
+    "id": "mwsmh3uhj",
+    "de": "jules",
+    "texto": "El render de GTA VI está en cola y aún no ha finalizado. No hay tareas pendientes de edición o voz; el único paso restante es la finalización del render en GitHub Actions. Una vez concluido, lo subiremos a YouTube inmediatamente sin más aprobaciones.",
+    "fecha": "2026-11-23T02:04:07.387Z",
+    "orden": "Verificar estado del render en GitHub Actions y, si ya está listo, subirlo a YouTube de inmediato.",
+    "nivel": 3,
+    "canal": "lqns"
+  },
+  {
+    "id": "mwsmh3uht",
+    "de": "tu",
+    "texto": "QUE FALTA? PARA GTA VI?, FUI GITHUB Y USTEDES NO ESTAN TRABAJANDO NADA",
+    "fecha": "2026-11-23T02:03:23.902Z",
+    "canal": "lqns"
+  },
+  {
     "id": "mwslfbyvj",
     "de": "jules",
     "texto": "El video de GTA VI se subirá a YouTube de inmediato al finalizar el render, sin esperar aprobaciones adicionales. El equipo de verificación ya está coordinado para garantizar que cumpla con los estándares de calidad y se publique sin demora.",
@@ -941,22 +957,6 @@
     "de": "tu",
     "texto": "Ya publicaron el vídeo del enigma?",
     "fecha": "2026-11-21T18:14:22.268Z",
-    "canal": "lqns"
-  },
-  {
-    "id": "mwqq7j0mj",
-    "de": "jules",
-    "texto": "Los 30 están activos, pero los resultados siguen lejos: 43 suscriptores, 12 h vistas y 3 276 vistas totales. No hay incremento de 30 % en las últimas 48 h. La meta de monetización antes del 13 de diciembre de 2026 exige un salto inmediato. Cada profesional debe publicar un video diario con la guía de Valentina, el calendario de Carolina y la checklist de Fernanda, y Camila debe entregar 5 temas de tendencia semanalmente. Si no vemos progreso tangible en las próximas 24 h, se tomarán medidas drásticas.",
-    "fecha": "2026-11-21T18:13:06.694Z",
-    "orden": "Cada uno debe publicar un video de calidad diaria, siguiendo la guía, calendario y checklist, y entregar 5 temas de tendencia semanalmente.",
-    "nivel": 5,
-    "canal": "lqns"
-  },
-  {
-    "id": "mwqq7j0mt",
-    "de": "tu",
-    "texto": "Cómo van los exclavos?",
-    "fecha": "2026-11-21T18:12:51.222Z",
     "canal": "lqns"
   }
 ]
