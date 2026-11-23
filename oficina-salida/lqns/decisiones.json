@@ -1,6 +1,20 @@
 {
   "decisiones": [
     {
+      "id": "i574krd",
+      "texto": "Sabías que nunca verás [OBJETO] en [LUGAR] 🐧 (Parte [N]/[TOTAL])",
+      "categoria": "Título",
+      "decision": "no",
+      "fecha": "2026-11-23T00:30:03.674Z"
+    },
+    {
+      "id": "iany0z4",
+      "texto": "Sabías que [CIFRA] minutos antes de que el Titanic se hundiera, una alarma se apagó misteriosamente | Un timbre de alarma en rojo, con un fondo de agua y espuma",
+      "categoria": "Gancho",
+      "decision": "no",
+      "fecha": "2026-11-23T00:29:55.262Z"
+    },
+    {
       "id": "i12xul2",
       "texto": "Sabías que [CIFRA] personas nunca llegaron a la luna, pero sus huellas siguen intactas | Un mapa lunar con marcas de pasos que se desvanecen en el horizonte",
       "categoria": "Gancho",
