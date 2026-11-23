@@ -1,5 +1,21 @@
 [
   {
+    "id": "mwsnksfqj",
+    "de": "jules",
+    "texto": "No hay ningún run activo para el render de GTA VI; el último registrado es del 20 noviembre y no aparece nada en GitHub Actions ahora. Iniciaré inmediatamente un nuevo workflow de render y, en cuanto se genere, enviaré el número de run y el enlace al dueño, con Fernanda verificando que arranca sin errores.",
+    "fecha": "2026-11-23T02:34:58.891Z",
+    "orden": "Carolina crea y lanza un nuevo workflow de render para GTA VI en GitHub Actions; Fernanda verifica que el run inicia sin errores y envía al dueño el número y el link inmediatamente.",
+    "nivel": 5,
+    "canal": "lqns"
+  },
+  {
+    "id": "mwsnksfqt",
+    "de": "tu",
+    "texto": "YA?",
+    "fecha": "2026-11-23T02:34:01.456Z",
+    "canal": "lqns"
+  },
+  {
     "id": "mwsmykksj",
     "de": "jules",
     "texto": "Entendido. Iniciaremos un nuevo workflow de render para el video largo de GTA VI ahora mismo. Fernanda verificará que el render se inicie sin errores y te enviará el número de run y el enlace de GitHub Actions una vez esté en marcha.",
@@ -941,22 +957,6 @@
     "de": "tu",
     "texto": "“Jules, exígele a los 30 ahora mismo: si a las 4 de la tarde no veo el video del enigma del Bloop publicado en YouTube, los elimino a todos. Ya hay un sistema de subida, úsenlo, no hay excusa. Quiero el video subido, no en 100%, subido.",
     "fecha": "2026-11-21T18:23:32.079Z",
-    "canal": "lqns"
-  },
-  {
-    "id": "mwqqcyw0j",
-    "de": "jules",
-    "texto": "El vídeo del enigma está aprobado al 100 % y listo para subir. La única razón por la que no aparece en la barra de progreso es que todavía no se ha enviado a YouTube; el proceso de carga tarda entre 15 y 30 min y el panel solo actualiza cada 5 min. Si no lo subimos en las próximas 5 min, la barra seguirá sin avanzar. No hay retraso técnico, solo falta la acción final.",
-    "fecha": "2026-11-21T18:17:20.539Z",
-    "orden": "Suban el vídeo del enigma a YouTube en los próximos 5 min.",
-    "nivel": 5,
-    "canal": "lqns"
-  },
-  {
-    "id": "mwqqcyw0t",
-    "de": "tu",
-    "texto": "Osea que si lo están ejecutando?",
-    "fecha": "2026-11-21T18:17:04.995Z",
     "canal": "lqns"
   }
 ]
