@@ -1,6 +1,20 @@
 {
   "decisiones": [
     {
+      "id": "i1r62564",
+      "texto": "The Voynich manuscript — Su contenido sigue siendo un misterio y genera curiosidad histórica",
+      "categoria": "Tema de Jules",
+      "decision": "si",
+      "fecha": "2026-11-23T01:18:15.241Z"
+    },
+    {
+      "id": "ivqw39r",
+      "texto": "The Tunguska event — La explosión de 1908 sigue sin explicación completa y atrae a audiencias de ciencia",
+      "categoria": "Tema de Jules",
+      "decision": "si",
+      "fecha": "2026-11-23T01:18:10.184Z"
+    },
+    {
       "id": "io0n6qf",
       "texto": "The Great Smog of London — El evento influyó en la legislación ambiental y sigue siendo relevante en estudios urbanos",
       "categoria": "Tema de Jules",
