@@ -1,5 +1,21 @@
 [
   {
+    "id": "mwsl4pi8j",
+    "de": "jules",
+    "texto": "El video largo de GTA VI está en fase final: el guion ya fue entregado, la voz grabada y el render está en cola. No ha terminado aún, por lo que no puedo subirlo. Estaremos atentos a su finalización y lo publicaremos tan pronto esté listo.",
+    "fecha": "2026-11-23T01:26:29.407Z",
+    "orden": "Monitorea el estado del render de GTA VI y avisa cuando esté finalizado para subirlo inmediatamente.",
+    "nivel": 3,
+    "canal": "lqns"
+  },
+  {
+    "id": "mwsl4pi8t",
+    "de": "tu",
+    "texto": "COMO VA GTA VI??????????????????????????????????????????????????",
+    "fecha": "2026-11-23T01:26:09.761Z",
+    "canal": "lqns"
+  },
+  {
     "id": "mwskk03jj",
     "de": "jules",
     "texto": "El video largo de GTA VI ya está en render y, una vez finalizado, lo subiré a YouTube inmediatamente y lo publicaré en todas las plataformas sin esperar. Mantendremos el flujo de producción para que cualquier nuevo short que termine después también se publique al instante.",
@@ -941,22 +957,6 @@
     "de": "tu",
     "texto": "ya estan todos ahora haz el anlisis",
     "fecha": "2026-11-21T11:13:17.486Z",
-    "canal": "lqns"
-  },
-  {
-    "id": "mwqb60r6j",
-    "de": "jules",
-    "texto": "Informe: hoy solo 22 trabajando, 0 vistas nuevas, 3724 vistas acumuladas; sin analítica de suscriptores. En 7 días, si no aumentamos a 30, mantendremos 0 vistas y no monetizaremos. Necesitamos los 30 en sus puestos ahora.",
-    "fecha": "2026-11-21T11:12:02.130Z",
-    "orden": "Todos los 30 deben estar en sus puestos trabajando sin pausa, sin excusas ni descansos, inmediatamente.",
-    "nivel": 5,
-    "canal": "lqns"
-  },
-  {
-    "id": "mwqb60r6t",
-    "de": "tu",
-    "texto": "elabora un informe de como vamos y dimelo que crees que pasaria hoy y la proxima semana damen un informe de lo esperado realista}",
-    "fecha": "2026-11-21T11:11:39.126Z",
     "canal": "lqns"
   }
 ]
