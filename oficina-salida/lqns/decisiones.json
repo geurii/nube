@@ -1,6 +1,13 @@
 {
   "decisiones": [
     {
+      "id": "i1es9w6u",
+      "texto": "Sabías que [CIFRA] millones de pingüinos fueron sacrificados por un secreto industrial | Una imagen de una granja de pingüinos con una fila de cajas de metal vacías",
+      "categoria": "Gancho",
+      "decision": "no",
+      "fecha": "2026-11-23T00:29:24.212Z"
+    },
+    {
       "id": "i1e2p6gj",
       "texto": "Sabías que [CIFRA] objetos desaparecieron sin dejar rastro en la base soviética | Una vista aérea de una base desierta con líneas de metal y una sombra difusa",
       "categoria": "Gancho",
