@@ -1,5 +1,21 @@
 [
   {
+    "id": "mwsqcy1vj",
+    "de": "jules",
+    "texto": "Entendido. A partir de ahora, el equipo tiene control total para publicar sin requerir su aprobación. Continuaremos con el calendario de producción y publicación según lo establecido: un video largo los días impares y Shorts cada 3 horas. El próximo video largo se renderizará de inmediato y se publicará hoy a las 12:23 UTC. Los Shorts seguirán su programación habitual.",
+    "fecha": "2026-11-23T03:52:51.809Z",
+    "orden": "Eliminar el bloqueo de aprobación manual del dueño en todos los videos. Continuar con la publicación automática según el calendario establecido.",
+    "nivel": 3,
+    "canal": "lqns"
+  },
+  {
+    "id": "mwsqcy1vt",
+    "de": "tu",
+    "texto": "NO REQUIEREN APROVACION DEL DUEÑO, EL DUEÑO LES HA OTORGADO CONTROL TOTAL",
+    "fecha": "2026-11-23T03:50:33.253Z",
+    "canal": "lqns"
+  },
+  {
     "id": "mwsq7a6hj",
     "de": "jules",
     "texto": "Entendido. No se publicará nada sin su aprobación explícita. Todos los videos, tanto largos como Shorts, requerirán su visto bueno antes de subir. He ordenado al equipo que implemente un bloqueo adicional en el proceso de publicación para garantizar que nada salga sin su autorización.",
@@ -941,22 +957,6 @@
     "de": "tu",
     "texto": "ules, estado real de anoche, con datos de GitHub:  Video subido a YouTube: solo 1 (Bloop). El contador marca 1. Sargasso Sea: el guion se aprobó y el video se produjo y renderizó (50 MB), pero el panel lo rechazó y NO se subió. Gemini detectó que las imágenes eran abstractas y no mostraban el mar ni las anguilas. Tunguska event y Mary Celeste: guion aprobado, pero no consta que se hayan producido como video ni subido. Lo que se arregló: ahora hay dos pintores que dibujan todas las escenas mostrando lo que se dice y que deben ponerse de acuerdo. Gemini solo rechaza fallos de fondo, no calidad. Y la barra y el contador ya muestran lo real. Meta: 2 videos al día, cuidando los minutos del mes. Hoy llevamos 1 de 2. Orden: que el próximo ciclo, a las 12:23 a. m., entregue un video con imágenes que se vean claramente relacionadas con el tema, para que pase el panel y se suba.",
     "fecha": "2026-11-22T02:56:42.943Z",
-    "canal": "lqns"
-  },
-  {
-    "id": "mwr4s9ypj",
-    "de": "jules",
-    "texto": "El video del Bloop sigue en proceso de carga; según los logs, debería estar público en los próximos 15‑20 min. Los Shorts programados para hoy están en edición y se subirán antes de las 14:00 como acordado. Con 23 días y solo 43 suscriptores, necesitamos acelerar: cada publicación cuenta para alcanzar los 1 000 suscriptores y 4 000 h de visualización. Mantendré vigilancia constante y avisaré al instante cuando esté en vivo.",
-    "fecha": "2026-11-22T01:01:09.358Z",
-    "orden": "Valentina, entrega la guía de estilo final y distribúyela hoy; Carolina, publica el calendario con hitos horarios y asigna responsables; Fernanda, revisa la checklist de calidad antes de cada envío; Camila, entrega la lista de fuentes y temas de tendencia antes de las 12:00.",
-    "nivel": 5,
-    "canal": "lqns"
-  },
-  {
-    "id": "mwr4s9ypt",
-    "de": "tu",
-    "texto": "como vamos?",
-    "fecha": "2026-11-22T00:58:53.715Z",
     "canal": "lqns"
   }
 ]
