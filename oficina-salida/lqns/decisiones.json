@@ -1,6 +1,20 @@
 {
   "decisiones": [
     {
+      "id": "i1ldbl89",
+      "texto": "Ourang Medan",
+      "categoria": "Tema",
+      "decision": "no",
+      "fecha": "2026-11-23T10:15:16.852Z"
+    },
+    {
+      "id": "i1wlc5d3",
+      "texto": "Flying Saucers",
+      "categoria": "Tema",
+      "decision": "si",
+      "fecha": "2026-11-23T10:15:14.438Z"
+    },
+    {
       "id": "i1fgxyu7",
       "texto": "The Dyatlov Pass incident — La investigación sigue abierta y mantiene interés en la comunidad de misterio",
       "categoria": "Tema de Jules",
