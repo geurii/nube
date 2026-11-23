@@ -1,5 +1,21 @@
 [
   {
+    "id": "mwsqt4nlj",
+    "de": "jules",
+    "texto": "Bloqueo eliminado. Ya no se necesita su orden para publicar: el equipo tiene control total y sigue el calendario en automático (Short cada 3 h; largo 16:9 los días impares a las 12:23 UTC). Si un ciclo falla, se reintenta con otro guion aprobado. No hay render de GTA VI ni nada en cola; no lo invento. Último video público: \"⚡ 1884: El inventor que encendió Niágara con su motor AC\" con 32 vistas; el canal suma 2235 vistas totales. Seguimos así hasta el 13-dic.",
+    "fecha": "2026-11-23T04:05:26.830Z",
+    "orden": "Quiten el bloqueo de aprobación manual y mantengan publicación automática según calendario, reintentando con otro guion aprobado si un ciclo falla.",
+    "nivel": 3,
+    "canal": "lqns"
+  },
+  {
+    "id": "mwsqt4nlt",
+    "de": "tu",
+    "texto": "QUITA ESE BLOQUEO YO YA NO NECESITO DARLES ORDENES DE AHORA EN ADELANTE",
+    "fecha": "2026-11-23T04:02:14.761Z",
+    "canal": "lqns"
+  },
+  {
     "id": "mwsqcy1vj",
     "de": "jules",
     "texto": "Entendido. A partir de ahora, el equipo tiene control total para publicar sin requerir su aprobación. Continuaremos con el calendario de producción y publicación según lo establecido: un video largo los días impares y Shorts cada 3 horas. El próximo video largo se renderizará de inmediato y se publicará hoy a las 12:23 UTC. Los Shorts seguirán su programación habitual.",
@@ -941,22 +957,6 @@
     "de": "tu",
     "texto": "no me sirve que hagan videos para no subir nada",
     "fecha": "2026-11-22T03:10:03.370Z",
-    "canal": "lqns"
-  },
-  {
-    "id": "mwr8xdl4j",
-    "de": "jules",
-    "texto": "El único video público es el Bloop. El Sargasso Sea quedó rechazado por falta de imágenes relevantes; los guiones de Tunguska y Mary Celeste están aprobados pero sin producción. Hoy tenemos 1 de los 2 videos requeridos. La meta de 2 videos/día exige que a las 12:23 a.m. entregue un video con imágenes claras y coherentes para pasar el panel.",
-    "fecha": "2026-11-22T02:57:05.760Z",
-    "orden": "Camila, produce y entrega el video del próximo ciclo a las 12:23 a.m. con imágenes directamente relacionadas al tema; no más abstracciones.",
-    "nivel": 5,
-    "canal": "lqns"
-  },
-  {
-    "id": "mwr8xdl4t",
-    "de": "tu",
-    "texto": "ules, estado real de anoche, con datos de GitHub:  Video subido a YouTube: solo 1 (Bloop). El contador marca 1. Sargasso Sea: el guion se aprobó y el video se produjo y renderizó (50 MB), pero el panel lo rechazó y NO se subió. Gemini detectó que las imágenes eran abstractas y no mostraban el mar ni las anguilas. Tunguska event y Mary Celeste: guion aprobado, pero no consta que se hayan producido como video ni subido. Lo que se arregló: ahora hay dos pintores que dibujan todas las escenas mostrando lo que se dice y que deben ponerse de acuerdo. Gemini solo rechaza fallos de fondo, no calidad. Y la barra y el contador ya muestran lo real. Meta: 2 videos al día, cuidando los minutos del mes. Hoy llevamos 1 de 2. Orden: que el próximo ciclo, a las 12:23 a. m., entregue un video con imágenes que se vean claramente relacionadas con el tema, para que pase el panel y se suba.",
-    "fecha": "2026-11-22T02:56:42.943Z",
     "canal": "lqns"
   }
 ]

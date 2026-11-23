@@ -1,5 +1,5 @@
 {
   "nivel": 3,
-  "orden": "Eliminar el bloqueo de aprobación manual del dueño en todos los videos. Continuar con la publicación automática según el calendario establecido.",
-  "fecha": "2026-11-23T03:52:51.809Z"
+  "orden": "Quiten el bloqueo de aprobación manual y mantengan publicación automática según calendario, reintentando con otro guion aprobado si un ciclo falla.",
+  "fecha": "2026-11-23T04:05:26.830Z"
 }
