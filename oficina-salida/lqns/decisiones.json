@@ -1,6 +1,20 @@
 {
   "decisiones": [
     {
+      "id": "ilbgq22",
+      "texto": "12 Segundos que Detuvieron la Carrera Espacial — Sabías que 12 segundos cambiaron el destino de la carrera espacial? (estimada 9/10)",
+      "categoria": "Estrategia",
+      "decision": "si",
+      "fecha": "2026-11-23T00:35:18.568Z"
+    },
+    {
+      "id": "iy6uhhf",
+      "texto": "45 Segundos que Cambiaron la Historia del Código Enigma — Sabías que 45 segundos fueron clave para romper el Enigma? (estimada 9/10)",
+      "categoria": "Estrategia",
+      "decision": "si",
+      "fecha": "2026-11-23T00:35:05.470Z"
+    },
+    {
       "id": "i1btmy6h",
       "texto": "30 Años bajo el Hielo: El Avión Perdido de los Andes — Sabías que 30 años bajo el hielo ocultaron un avión misterioso? (estimada 8/10)",
       "categoria": "Estrategia",
