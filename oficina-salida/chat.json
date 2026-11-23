@@ -1,5 +1,21 @@
 [
   {
+    "id": "mwskfernj",
+    "de": "jules",
+    "texto": "Entendido: a partir de ahora produciremos 4 Shorts y 2 videos largos cada día, sin alternar días, y garantizaremos que ninguno falle en calidad. Ajustaremos el calendario y asignaremos dos líneas de producción paralelas para cumplir este ritmo.",
+    "fecha": "2026-11-23T01:06:49.088Z",
+    "orden": "",
+    "nivel": 5,
+    "canal": "lqns"
+  },
+  {
+    "id": "mwskfernt",
+    "de": "tu",
+    "texto": "ELIMINA LO DE: UN DIA SI UN DIA NO, SERAN 4 SHORTS Y 2 LARGOS DIARIO Y NO QUIERO QUE NINGUN VIDEO FALLE",
+    "fecha": "2026-11-23T01:05:47.228Z",
+    "canal": "lqns"
+  },
+  {
     "id": "mwsk9f7cj",
     "de": "jules",
     "texto": "El canal necesita duplicar la producción para alcanzar la meta de monetización antes del 13 diciembre. Tendremos que triplicar el ritmo: 4 shorts diarios (máx. 60 s cada uno) y 2 videos largos (16:9) cada día (uno en días impares y otro en días pares). Esto implica 8 shorts y 4 videos largos por día, totalizando 48 shorts y 24 videos largos en 22 días. Para mantener los 1700 minutos de uso de GitHub Actions, cada video largo se limitará a 8 minutos y cada short a 1 minuto; el tiempo total diario será de 8 min + 4 min = 12 min, sumando 264 minutos en 22 días, por lo que queda margen para revisiones y buffers. La guía de estilo, checklist de calidad y el flujo de producción se mantendrán sin cambios, pero se asignarán dos equipos paralelos para cumplir el doble de entregas.",
@@ -941,22 +957,6 @@
     "de": "tu",
     "texto": "aun veo 22 no 30",
     "fecha": "2026-11-21T08:38:11.081Z",
-    "canal": "lqns"
-  },
-  {
-    "id": "mwq5lznlj",
-    "de": "jules",
-    "texto": "Entiendo la urgencia, pero necesitamos a los 30 profesionales trabajando, no 22. Cada uno es esencial para alcanzar la meta en 23 días.",
-    "fecha": "2026-11-21T08:36:29.505Z",
-    "orden": "Todos los 30 deben estar en sus puestos, trabajando sin pausa y cumpliendo sus tareas al 100% hasta monetizar.",
-    "nivel": 5,
-    "canal": "lqns"
-  },
-  {
-    "id": "mwq5lznlt",
-    "de": "tu",
-    "texto": "Sabias que ustedes cobran por vistas cada uno 20k y tu 100k entonces si no generamos las vistas ustedes perderian sun trabajo asi que quiero presion total nadie descansa solo 22 estan trabajando dime por que no 29?",
-    "fecha": "2026-11-21T08:36:01.725Z",
     "canal": "lqns"
   }
 ]
