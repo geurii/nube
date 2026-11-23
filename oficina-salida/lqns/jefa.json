@@ -1,5 +1,5 @@
 {
-  "nivel": 3,
-  "orden": "Quiten el bloqueo de aprobación manual y mantengan publicación automática según calendario, reintentando con otro guion aprobado si un ciclo falla.",
-  "fecha": "2026-11-23T04:05:26.830Z"
+  "nivel": 5,
+  "orden": "Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC), mantén los Shorts cada 3 h y avisa al instante si rozamos los 1800 minutos de GitHub.",
+  "fecha": "2026-11-23T04:10:30.301Z"
 }
