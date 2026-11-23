@@ -1,5 +1,21 @@
 [
   {
+    "id": "mwsk9f7cj",
+    "de": "jules",
+    "texto": "El canal necesita duplicar la producción para alcanzar la meta de monetización antes del 13 diciembre. Tendremos que triplicar el ritmo: 4 shorts diarios (máx. 60 s cada uno) y 2 videos largos (16:9) cada día (uno en días impares y otro en días pares). Esto implica 8 shorts y 4 videos largos por día, totalizando 48 shorts y 24 videos largos en 22 días. Para mantener los 1700 minutos de uso de GitHub Actions, cada video largo se limitará a 8 minutos y cada short a 1 minuto; el tiempo total diario será de 8 min + 4 min = 12 min, sumando 264 minutos en 22 días, por lo que queda margen para revisiones y buffers. La guía de estilo, checklist de calidad y el flujo de producción se mantendrán sin cambios, pero se asignarán dos equipos paralelos para cumplir el doble de entregas.",
+    "fecha": "2026-11-23T01:02:09.718Z",
+    "orden": "",
+    "nivel": 5,
+    "canal": "lqns"
+  },
+  {
+    "id": "mwsk9f7ct",
+    "de": "tu",
+    "texto": "NO :66., SI: 172 DUPLICANDO TODO, HARAS EL DOBLE",
+    "fecha": "2026-11-23T01:01:52.288Z",
+    "canal": "lqns"
+  },
+  {
     "id": "mwsk5mhgj",
     "de": "jules",
     "texto": "Según el cronograma actual, cada día producimos 1 video largo (16:9, 8‑12 min) y 2 shorts (máx. 60 s cada uno). En 22 días, eso suma 22 videos largos y 44 shorts, totalizando 66 videos publicados. Si te refieres a los videos que ya están en canal, son 6 (todos shorts). El resto se publicará conforme al calendario establecido.",
