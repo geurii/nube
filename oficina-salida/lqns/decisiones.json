@@ -1,6 +1,20 @@
 {
   "decisiones": [
     {
+      "id": "ibk776v",
+      "texto": "22 años de silencio: la torre que nunca se completó — Sabías que 22 años pasaron sin que la torre se completara? (estimada 7/10)",
+      "categoria": "Estrategia",
+      "decision": "no",
+      "fecha": "2026-11-23T00:36:29.214Z"
+    },
+    {
+      "id": "i4pt9p0",
+      "texto": "5 minutos que revelaron la verdadera causa del incendio de Londres — Sabías que 5 minutos cambiaron la teoría del Gran Incendio? (estimada 9/10)",
+      "categoria": "Estrategia",
+      "decision": "si",
+      "fecha": "2026-11-23T00:36:19.157Z"
+    },
+    {
       "id": "i1pqz9ld",
       "texto": "18 segundos que explican el sonido del lago fantasma — Sabías que 18 segundos de audio revelan el lago fantasma? (estimada 8/10)",
       "categoria": "Estrategia",
