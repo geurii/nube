@@ -1,6 +1,13 @@
 {
   "decisiones": [
     {
+      "id": "i1clqz6u",
+      "texto": "Sabías que mataron [NÚMERO] [OBJETO]… y no para [PROPÓSITO] 😳 (Parte [N]/[TOTAL])",
+      "categoria": "Título",
+      "decision": "no",
+      "fecha": "2026-11-23T00:30:34.936Z"
+    },
+    {
       "id": "ijyppfi",
       "texto": "Sabías que [NÚMERO] [PERSONAS] caminaron en [CONDICIÓN] por [NÚMERO] [OBJETO] 🥚 (Parte [N]/[TOTAL])",
       "categoria": "Título",
