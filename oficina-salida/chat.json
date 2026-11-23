@@ -1,5 +1,21 @@
 [
   {
+    "id": "mwsl7dd4j",
+    "de": "jules",
+    "texto": "Entendido, el video de GTA VI solo se subirá cuando el render haya finalizado y el equipo de verificación lo apruebe. Coordinaré con voz, edición y control de calidad para que, en cuanto esté listo, lo publiquemos inmediatamente en todas las plataformas sin demoras.",
+    "fecha": "2026-11-23T01:28:33.638Z",
+    "orden": "Equipo de producción: mantengan el render de GTA VI en prioridad máxima, verifiquen la calidad al terminar y notifiquen al panel para aprobación inmediata; una vez aprobado, suban el video a YouTube a las 12:23 UTC y distribúyanlo a Facebook, Instagram y TikTok sin esperar.",
+    "nivel": 5,
+    "canal": "lqns"
+  },
+  {
+    "id": "mwsl7dd4t",
+    "de": "tu",
+    "texto": "TODOS DEBEN DE ESTAR DE ACUERDO PARA ESE VIDEO EN ESPECIAL",
+    "fecha": "2026-11-23T01:27:50.831Z",
+    "canal": "lqns"
+  },
+  {
     "id": "mwsl4pi8j",
     "de": "jules",
     "texto": "El video largo de GTA VI está en fase final: el guion ya fue entregado, la voz grabada y el render está en cola. No ha terminado aún, por lo que no puedo subirlo. Estaremos atentos a su finalización y lo publicaremos tan pronto esté listo.",
@@ -941,22 +957,6 @@
     "de": "tu",
     "texto": "dile que perdieron mucho tiempo y no publicaron a youtube si vuelve y pasa los elimino a todos y todas",
     "fecha": "2026-11-21T14:52:37.058Z",
-    "canal": "lqns"
-  },
-  {
-    "id": "mwqb86suj",
-    "de": "jules",
-    "texto": "Informe rápido: 22 profesionales estaban activos, ahora los 30 están trabajando. Vistas actuales 3 724, sin nuevas en el último ciclo. Sin analítica de suscriptores, la monetización sigue en riesgo; necesitamos al menos 1 000 vistas diarias para acercarnos a la meta en 23 días. Mantengan ritmo máximo y revisen calidad antes de publicar.",
-    "fecha": "2026-11-21T11:13:43.278Z",
-    "orden": "Implementen la lista de verificación de calidad antes de cada video y publiquen al menos un video diario.",
-    "nivel": 4,
-    "canal": "lqns"
-  },
-  {
-    "id": "mwqb86sut",
-    "de": "tu",
-    "texto": "ya estan todos ahora haz el anlisis",
-    "fecha": "2026-11-21T11:13:17.486Z",
     "canal": "lqns"
   }
 ]

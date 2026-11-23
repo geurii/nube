@@ -1,5 +1,10 @@
 [
   {
+    "fecha": "2026-11-23T01:28:33.638Z",
+    "orden": "Equipo de producción: mantengan el render de GTA VI en prioridad máxima, verifiquen la calidad al terminar y notifiquen al panel para aprobación inmediata; una vez aprobado, suban el video a YouTube a las 12:23 UTC y distribúyanlo a Facebook, Instagram y TikTok sin esperar.",
+    "nivel": 5
+  },
+  {
     "fecha": "2026-11-23T01:26:29.407Z",
     "orden": "Monitorea el estado del render de GTA VI y avisa cuando esté finalizado para subirlo inmediatamente.",
     "nivel": 3
@@ -43,11 +48,5 @@
     "fecha": "2026-11-23T00:07:29.709Z",
     "orden": "Reasignar al guionista para que escriba el guion de GTA VI siguiendo la estrategia faceless y entregarlo para revisión antes de las 12:00 UTC.",
     "nivel": 4
-  },
-  {
-    "fecha": "2026-11-22T23:05:58.624Z",
-    "orden": "ORDEN PRINCIPAL (del dueño): ejecutar la estrategia faceless de estrategia.json: videos SIN personaje ni cara, solo voz en off y visuales en movimiento; usar las ideas aprobadas por el dueño; cada video de 8/10 o más y sin fondos vacíos; comparar siempre el canal con los grandes del nicho; no inventar datos ni prometer viralidad.",
-    "nivel": 5,
-    "principal": true
   }
 ]
