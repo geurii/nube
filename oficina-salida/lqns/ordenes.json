@@ -1,5 +1,10 @@
 [
   {
+    "fecha": "2026-11-23T03:26:02.787Z",
+    "orden": "Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño.",
+    "nivel": 5
+  },
+  {
     "fecha": "2026-11-23T02:38:25.523Z",
     "orden": "Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas.",
     "nivel": 5
@@ -43,10 +48,5 @@
     "fecha": "2026-11-23T01:26:29.407Z",
     "orden": "Monitorea el estado del render de GTA VI y avisa cuando esté finalizado para subirlo inmediatamente.",
     "nivel": 3
-  },
-  {
-    "fecha": "2026-11-23T01:10:23.356Z",
-    "orden": "Priorizar la finalización del render de GTA VI y publicar el video en YouTube y en todas las redes tan pronto como termine; luego, publicar cualquier short completado inmediatamente.",
-    "nivel": 5
   }
 ]
