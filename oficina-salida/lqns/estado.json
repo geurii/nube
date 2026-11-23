@@ -1,11 +1,27 @@
 {
-  "actualizado": "2026-11-23T03:22:39.339Z",
+  "actualizado": "2026-11-23T03:40:04.023Z",
   "totales": {
     "aprobados": 11,
-    "rechazados": 22,
+    "rechazados": 24,
     "errores": 8
   },
   "historial": [
+    {
+      "fecha": "2026-11-23T03:40:03.981Z",
+      "tema": "The Voynich manuscript",
+      "formato": "short",
+      "resultado": "rechazado",
+      "intentos": 4,
+      "detalle": "El material indica que el manuscrito tiene 'alrededor de 240 páginas', no exactamente 240, y no especifica que el texto esté en un 'idioma', sino en un 'script "
+    },
+    {
+      "fecha": "2026-11-23T03:38:36.051Z",
+      "tema": "The Voynich manuscript",
+      "formato": "short",
+      "resultado": "rechazado",
+      "intentos": 4,
+      "detalle": "El número exacto de páginas no es 240, sino alrededor de 240, y el período de 600 años no está respaldado por las fechas proporcionadas en el material (1404-143"
+    },
     {
       "fecha": "2026-11-23T03:22:39.147Z",
       "tema": "Great Fire of London",
@@ -149,178 +165,162 @@
       "resultado": "aprobado",
       "intentos": 1,
       "detalle": "91 palabras, 6 escenas."
-    },
-    {
-      "fecha": "2026-11-22T03:39:55.862Z",
-      "tema": "The Antikythera Mechanism",
-      "formato": "short",
-      "resultado": "aprobado",
-      "intentos": 3,
-      "detalle": "115 palabras, 7 escenas."
-    },
-    {
-      "fecha": "2026-11-22T03:08:00.523Z",
-      "tema": "The Great Molasses Flood",
-      "formato": "short",
-      "resultado": "aprobado",
-      "intentos": 2,
-      "detalle": "133 palabras, 5 escenas."
     }
   ],
   "agentes": {
     "Directora de contenido": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "Necesita revisión: el guion de \"Great Fire of London\" no pasó la verificación. Aprobados: 11. Rechazados: 22. Con error: 8. ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy? JEFA: Un guion rechazado no se publica. Tienen 11 h para entregar algo que pase."
+      "tarea": "Necesita revisión: el guion de \"The Voynich manuscript\" no pasó la verificación. Aprobados: 11. Rechazados: 24. Con error: 8. ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy? JEFA: Un guion rechazado no se publica. Tienen 10 h para entregar algo que pase."
     },
     "Investigador de temas": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Dejó el material de \"Great Fire of London\" con su fuente en Wikipedia. ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
+      "tarea": "Dejó el material de \"The Voynich manuscript\" con su fuente en Wikipedia. ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
     },
     "Guionista": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Intentó 4 veces escribir \"Great Fire of London\" sin que el Verificador lo aprobara. ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. JEFA: 4 intentos y nada aprobado. Esto es inaceptable. Estudien la fuente antes de escribir."
+      "tarea": "Intentó 4 veces escribir \"The Voynich manuscript\" sin que el Verificador lo aprobara. ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. JEFA: 4 intentos y nada aprobado. Esto es inaceptable. Estudien la fuente antes de escribir."
     },
     "Verificador de datos": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Rechazó \"Great Fire of London\": La revelación cae al 58 % (133 de 230 palabras antes de ella) y debe caer entre 65 % y 75 %: añade historia antes de la revelación o acórtala. ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "tarea": "Rechazó \"The Voynich manuscript\": El material indica que el manuscrito tiene 'alrededor de 240 páginas', no exactamente 240, y no especifica que el texto esté en un 'idioma', sino en un 'script  ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Editor de guion": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Locutor": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Guionista). Entregó: 5 ganchos nuevos ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "AYUDA: le echó una mano a (Guionista). Entregó: 5 ganchos nuevos ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Técnico de render": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Editor de guion). Entregó: 3 mejoras al último guion ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "AYUDA: le echó una mano a (Editor de guion). Entregó: 3 mejoras al último guion ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Publicador": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "Lleva 6 videos subidos a YouTube en total. El último: \"⚡ 1884: El inventor que encendió Niágara con su motor AC\". ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "tarea": "Lleva 6 videos subidos a YouTube en total. El último: \"⚡ 1884: El inventor que encendió Niágara con su motor AC\". ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Crítico: padre trabajador": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Crítica: fan del misterio": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Crítico: adolescente": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Crítica: universitaria": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Editor de guion). Entregó: 3 mejoras al último guion ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "AYUDA: le echó una mano a (Editor de guion). Entregó: 3 mejoras al último guion ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Crítico: joven dominicano": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Investigador de temas). Entregó: 5 temas candidatos ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "tarea": "AYUDA: le echó una mano a (Investigador de temas). Entregó: 5 temas candidatos ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Crítica: ama de casa": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Crítico: escéptico": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": Clickbait evidente, errores de lectura y gráficos genéricos hacen que no confíe nada. (siguió hasta el segundo 4). ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": Clickbait evidente, errores de lectura y gráficos genéricos hacen que no confíe nada. (siguió hasta el segundo 4). ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Crítico: abuelo": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": No entiendo bien por los errores de lectura y los fondos sin sentido; necesita una narración más clara. (siguió hasta el segundo 7). ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "tarea": "NO le gustó \"🌌 El misterio explosivo de Tunguska 1908\": No entiendo bien por los errores de lectura y los fondos sin sentido; necesita una narración más clara. (siguió hasta el segundo 7). ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Enlace de datos": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "En su puesto, preparando el próximo ciclo. ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "tarea": "En su puesto, preparando el próximo ciclo. ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Coordinador de producción": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "Calendario fijo (hora de República Dominicana): Shorts a las 00:00 y 12:00, largos a las 18:00. Cuida que el subidor programe sin chocar. ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "tarea": "Calendario fijo (hora de República Dominicana): Shorts a las 00:00 y 12:00, largos a las 18:00. Cuida que el subidor programe sin chocar. ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Jefa de calidad": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Frenó \"Great Fire of London\": La revelación cae al 58 % (133 de 230 palabras antes de ella) y debe caer entre 65 % y 75 %: añade historia antes de la revelación o acórtala. ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "tarea": "Frenó \"The Voynich manuscript\": El material indica que el manuscrito tiene 'alrededor de 240 páginas', no exactamente 240, y no especifica que el texto esté en un 'idioma', sino en un 'script indescifrado' o 'Voynichese'. ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Cazador de fórmulas": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Revisó 132 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (32895 vistas/hora). Fórmula: Pregunta intrigante o afirmación impactante + elemento misterioso/extraño + pista de revelación o consecuencia ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "tarea": "Revisó 132 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (32767 vistas/hora). Fórmula: Pregunta intrigante o afirmación impactante + elemento misterioso/extraño + pista de revelación o consecuencia ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Vigía de tendencias": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Vigila 9 canales por sus feeds públicos de YouTube. ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "tarea": "Vigila 9 canales por sus feeds públicos de YouTube. ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Titulista": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Redactor de descripción": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Especialista en hashtags": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Auditor de fuentes": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Comprobó que cada dato salga de las 1 fuentes del material y las puso en la descripción. ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "Comprobó que cada dato salga de las 1 fuentes del material y las puso en la descripción. ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Auditor de normas": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Encontró incumplimientos: La revelación cae al 58 % (133 de 230 palabras antes de ella) y debe caer entre 65 % y 75 %: añade historia antes de la revelación o acórtala. | El material no menciona el porcentaje exacto de Londres que quedó en ruinas dentro de la muralla romana. ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "Encontró incumplimientos: El material indica que el manuscrito tiene 'alrededor de 240 páginas', no exactamente 240, y no especifica que el texto esté en un 'idioma', sino en un 'script indescifrado' o 'Voynichese'. | El material menciona que el manuscrito puede haber sido compuesto entre 1404 y 1438, pero no afirma que fue 'creado' en ese período. Además, no se especifica que el texto esté en un 'alfabeto único', sino en un 'script indescifrado'. ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Revisor de nombres": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Busca nombres reales de personas en el guion y en lo que escribe la Mesa. Si aparece uno, rechaza. ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "Busca nombres reales de personas en el guion y en lo que escribe la Mesa. Si aparece uno, rechaza. ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Revisor de ganchos": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "Espera un guion aprobado para medir el gancho. ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "Espera un guion aprobado para medir el gancho. ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Pintor de imágenes": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Pintor de composición y color: en este ciclo no logró dibujar las escenas; se usó el fondo del catálogo y repite en el próximo. PRESIÓN: Gemini RECHAZA el video si las imágenes no muestran lo que se dice, y un video rechazado cuesta vistas y tu paga. Aquí no se entrega nada que no sea de maestro. ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "Pintor de composición y color: en este ciclo no logró dibujar las escenas; se usó el fondo del catálogo y repite en el próximo. PRESIÓN: Gemini RECHAZA el video si las imágenes no muestran lo que se dice, y un video rechazado cuesta vistas y tu paga. Aquí no se entrega nada que no sea de maestro. ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Pintor de luz y detalle": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "Pintor de luz y detalle: espera los cuadros de su compañero para revisarlos y no firma nada flojo. PRESIÓN: Gemini RECHAZA el video si las imágenes no muestran lo que se dice, y un video rechazado cuesta vistas y tu paga. Aquí no se entrega nada que no sea de maestro. ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "Pintor de luz y detalle: espera los cuadros de su compañero para revisarlos y no firma nada flojo. PRESIÓN: Gemini RECHAZA el video si las imágenes no muestran lo que se dice, y un video rechazado cuesta vistas y tu paga. Aquí no se entrega nada que no sea de maestro. ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     }
   },
   "jefa": {
-    "mensaje": "Necesita revisión: el guion de \"Great Fire of London\" no pasó la verificación. Aprobados: 11. Rechazados: 22. Con error: 8. ORDEN DE JULES (nivel 5/5): Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy? JEFA: Un guion rechazado no se publica. Tienen 11 h para entregar algo que pase.",
-    "horasParaProximoCiclo": 11
+    "mensaje": "Necesita revisión: el guion de \"The Voynich manuscript\" no pasó la verificación. Aprobados: 11. Rechazados: 24. Con error: 8. ORDEN DE JULES (nivel 5/5): Carolina, arranca inmediatamente el workflow de render de GTA VI y Fernanda verifica el run; envía el número y link al dueño. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 22 días y sin un video viral no cobras. ¿Qué entregaste hoy? JEFA: Un guion rechazado no se publica. Tienen 10 h para entregar algo que pase.",
+    "horasParaProximoCiclo": 10
   }
 }
