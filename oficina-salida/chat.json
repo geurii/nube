@@ -1,5 +1,21 @@
 [
   {
+    "id": "mwsq7a6hj",
+    "de": "jules",
+    "texto": "Entendido. No se publicará nada sin su aprobación explícita. Todos los videos, tanto largos como Shorts, requerirán su visto bueno antes de subir. He ordenado al equipo que implemente un bloqueo adicional en el proceso de publicación para garantizar que nada salga sin su autorización.",
+    "fecha": "2026-11-23T03:48:27.591Z",
+    "orden": "Implementar un bloqueo de publicación que requiera aprobación manual del dueño en todos los videos antes de subir.",
+    "nivel": 5,
+    "canal": "lqns"
+  },
+  {
+    "id": "mwsq7a6ht",
+    "de": "tu",
+    "texto": "ACTUALIZACIOM URGENTE SI SE PUBLICA EN AUTOMATICO SIN MI APROVACION DEL DUEÑO TIENEN EL CONTROL DE TODO",
+    "fecha": "2026-11-23T03:46:10.259Z",
+    "canal": "lqns"
+  },
+  {
     "id": "mwsq0ur2j",
     "de": "jules",
     "texto": "El canal tiene 2237 vistas totales, 43 suscriptores y 15.3 h vistas en 12 meses. Necesitamos subir un video largo (8‑12 min) hoy, día impar, y un Short cada 3 h. El último video público es el de 1884 con 34 vistas. No hay renders activos; el workflow de GTA VI no se ha iniciado. Iniciaremos el workflow de render del nuevo video largo ahora mismo y Fernanda verificará el run. Cuando tenga el número y el enlace, se lo enviaré inmediatamente. Además, debemos lanzar el Short programado para hoy a las 16:23 UTC y continuar con el calendario de 3 h.\n\nNo se publicará nada sin aprobación del dueño. Si el ciclo falla, se intentará de nuevo con otro guion aprobado.\n",
@@ -941,22 +957,6 @@
     "de": "tu",
     "texto": "como vamos?",
     "fecha": "2026-11-22T00:58:53.715Z",
-    "canal": "lqns"
-  },
-  {
-    "id": "mwr49cuej",
-    "de": "jules",
-    "texto": "Según el registro más reciente, el video \"🔊 El enigma del Bloop: el rugido del hielo\" aún no aparece como público; la carga está en proceso y suele tardar entre 15 y 30 minutos. No hay evidencia de que ya esté en el canal. Necesitamos confirmar su publicación antes de continuar.",
-    "fecha": "2026-11-22T00:46:26.625Z",
-    "orden": "Revisar y subir el video del Bloop inmediatamente, asegurando su publicación antes de las 15:55.",
-    "nivel": 5,
-    "canal": "lqns"
-  },
-  {
-    "id": "mwr49cuet",
-    "de": "tu",
-    "texto": "ese video ya esta en mi canal sigan trabajando en hacerme rico si te digo que algo ya esta confia en mi tonta soy tu jefe",
-    "fecha": "2026-11-22T00:44:51.165Z",
     "canal": "lqns"
   }
 ]
