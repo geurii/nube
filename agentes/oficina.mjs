@@ -306,7 +306,7 @@ const elegirTema = async (modelo) => {
 const NORMAS = `NORMAS DE LA JEFA (no se negocian):
 1. Solo puedes usar datos que estén en el MATERIAL. Si un dato no está en el material, no existe. Prohibido inventar.
 2. Si el material no alcanza para lo que se pide, dilo y escribe menos. Un guion corto y verdadero vale más que uno largo con relleno.
-3. La primera frase empieza exactamente con "Sabías que", dura MÁXIMO 14 palabras y es un GANCHO REAL: una pregunta intrigante o un hecho increíble (con un número o una cifra concreta SOLO si el material la trae; nunca inventes una), que se entienda en un segundo y deje la duda abierta (que el dedo se frene). Esa frase saldrá además como titular gigante en pantalla.
+3. SHORT: la primera frase es un gancho natural, original y contundente de MÁXIMO 14 palabras; NO tiene que empezar con "Sabías que". VIDEO LARGO: la primera frase puede abrir con una pregunta intrigante o un hecho sorprendente, sin obligación de usar "Sabías que". En ambos formatos debe ser un GANCHO REAL: una pregunta intrigante o un hecho increíble (con un número o una cifra concreta SOLO si el material la trae; nunca inventes una), que se entienda en un segundo y deje la duda abierta (que el dedo se frene). Esa frase saldrá además como titular gigante en pantalla.
 4. ${CONFIG.tono ?? 'Tono de misterio, no de miedo.'} Lenguaje claro para gente normal. Sin tecnicismos.
 5. Sin nombres de personas reales: di "el capitán", "un científico", "los investigadores". Sí puedes nombrar lugares, barcos, libros u objetos.
 6. Las dudas se dicen como dudas ("según la fuente", "no se sabe"). Si dos fuentes difieren, di las dos.
@@ -358,7 +358,7 @@ const guionista = (material, problemas) => [
   {role: 'user', content: `Escribe un guion de ${FORMATO === 'largo' ? 'video largo' : 'Short vertical de unos 55 segundos'} de unas ${PALABRAS} palabras sobre "${TEMA}". ${REPARTO}${formulaActual()}${aprendizajesDelPanel()}${ayudasDelEquipo()}\n\nDATOS EXACTOS (cualquier cifra o fecha que escribas debe ser EXACTAMENTE una de estas, dicha en palabras):\n${datosExactos(material)}${prohibidosTexto()}\n\nMATERIAL (única fuente permitida):\n${material}\n\n${problemas?.length ? `El Verificador o el Editor rechazaron la versión anterior. Corrige exactamente esto:\n${problemas.map((p) => `- "${p.frase}": ${p.motivo}`).join('\n')}\n\n` : ''}Formato JSON: {"titulo": "...(máx. 90 caracteres, con un emoji)", "descripcion": "...(2 frases)", "hashtags": ["#cinco", "#especificos", "#del", "#tema", "#sinviral"], "escenas": [...]}. Los hashtags son 5, específicos del tema; nunca #viral ni #fyp. ${FORMATO_ESCENAS}`},
 ];
 const editor = (titulo, escenas) => [
-  {role: 'system', content: `Eres el/la Editor/a crítico/a de guiones de un canal de YouTube. Eres implacable: tu trabajo es encontrar lo que haría que alguien deslice el video y arreglarlo. Evalúas gancho (¿se entiende en un segundo? ¿es una pregunta intrigante o un hecho increíble, de máximo 14 palabras, que saldrá como titular gigante en pantalla? Si cumple eso, merece 7 o más aunque no lleve cifra: solo baja de 7 si es descriptivo, largo o aburrido. Sé exigente pero JUSTO: no castigues lo que el material no permite), ritmo (frases cortas, nada de relleno), claridad para gente normal y fuerza del cierre. Reglas duras: NO agregues datos nuevos ni cifras; solo recorta, reordena y mejora la redacción de lo que ya está. Mantén "Sabías que" al inicio, la frase final exacta "${CTA}" y la revelación entre el 65 % y el 75 %. Cada escena debe poder mostrarse con un cambio de imagen cada 3 segundos: frases de máximo 18 palabras. Responde SOLO con JSON.`},
+  {role: 'system', content: `Eres el/la Editor/a crítico/a de guiones de un canal de YouTube. Eres implacable: tu trabajo es encontrar lo que haría que alguien deslice el video y arreglarlo. Evalúas gancho (¿se entiende en un segundo? ¿es una pregunta intrigante o un hecho increíble, de máximo 14 palabras, que saldrá como titular gigante en pantalla? Si cumple eso, merece 7 o más aunque no lleve cifra: solo baja de 7 si es descriptivo, largo o aburrido. Sé exigente pero JUSTO: no castigues lo que el material no permite), ritmo (frases cortas, nada de relleno), claridad para gente normal y fuerza del cierre. Reglas duras: NO agregues datos nuevos ni cifras; solo recorta, reordena y mejora la redacción de lo que ya está. En Shorts y videos largos usa una apertura natural, original y atractiva; nunca impongas una fórmula fija como "Sabías que". Mantén la frase final exacta "${CTA}" y la revelación entre el 65 % y el 75 %. Cada escena debe poder mostrarse con un cambio de imagen cada 3 segundos: frases de máximo 18 palabras. Responde SOLO con JSON.`},
   {role: 'user', content: `TÍTULO: ${titulo}\nGUION:\n${JSON.stringify(escenas)}\n\nDevuelve: {"puntaje": número del 0 al 10 del guion ORIGINAL, "critica": "máximo 3 frases, directas y duras", "titulo": "título mejorado, máx. 90 caracteres, con un emoji", "escenas": [versión mejorada, mismo formato]}.`},
 ];
 const verificador = (material, escenas) => [
@@ -426,7 +426,8 @@ const validarFondos = (propuesta, total, escenas) => {
 const palabrasDe = (e) => e.texto.split(/\s+/).filter(Boolean).length;
 const comprobar = (escenas) => {
   const p = [];
-  if (!/^Sabías que/.test(escenas[0]?.texto ?? '')) p.push({frase: escenas[0]?.texto ?? '', motivo: 'La primera frase debe empezar con "Sabías que".'});
+  if (!String(escenas[0]?.texto ?? '').trim()) p.push({frase: '', motivo: 'Falta un gancho inicial claro.'});
+  else if (palabrasDe(escenas[0]) > 14) p.push({frase: escenas[0].texto, motivo: 'El gancho inicial debe tener 14 palabras o menos.'});
   const ultima = escenas[escenas.length - 1]?.texto ?? '';
   if (!ultima.includes(CTA)) p.push({frase: ultima, motivo: `Falta la frase de cierre exacta: "${CTA}"`});
   const total = escenas.reduce((s, e) => s + palabrasDe(e), 0);
@@ -435,7 +436,7 @@ const comprobar = (escenas) => {
   else {
     const antes = escenas.slice(0, i).reduce((s, e) => s + palabrasDe(e), 0);
     const pct = Math.round((antes / total) * 100);
-    if (pct < 60 || pct > 78) p.push({frase: escenas[i].texto, motivo: `La revelación cae al ${pct} % (${antes} de ${total} palabras antes de ella) y debe caer entre 65 % y 75 %: añade historia antes de la revelación o acórtala.`});
+    if (pct < 65 || pct > 75) p.push({frase: escenas[i].texto, motivo: `La revelación cae al ${pct} % (${antes} de ${total} palabras antes de ella) y debe caer entre 65 % y 75 %: añade historia antes de la revelación o acórtala.`});
   }
   return p;
 };
@@ -587,7 +588,7 @@ try {
     notificar('permiso', `Guion listo para tu visto bueno: ${titulo.slice(0, 70)}`, 'Modo manual: la voz y el render esperan tu respuesta en la oficina (Me gusta, seguir / Pedir cambios / Descartar).');
   }
   // Rechazar un guion es un resultado normal (queda anotado en estado.json); solo un error real hace fallar el flujo.
-  if (!aprobado) console.log('El Verificador no aprobó el guion tras 3 intentos. Queda marcado para revisión.');
+  if (!aprobado) console.log('El Verificador no aprobó el guion tras 4 intentos. Queda marcado para revisión.');
 } catch (e) {
   informe.push('## ERROR', String(e.message ?? e));
   const temaMalo = /No encontré el tema|material suficiente|sin material/i.test(String(e.message ?? e));

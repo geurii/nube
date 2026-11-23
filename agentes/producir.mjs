@@ -78,13 +78,14 @@ if (r.status !== 0 || !fs.existsSync(mp4)) {
 }
 
 const mb = (fs.statSync(mp4).size / 1024 / 1024).toFixed(0);
-fs.writeFileSync(path.join(RAIZ, canal, 'producidos.json'), JSON.stringify([...producidos, slug], null, 2));
+// NO marcar como producido aquí: renderizar no equivale a publicar.
+// subir.mjs registra el slug únicamente después de que YouTube confirme la subida.
 marcar(canal, {
   'Locutor': {estado: 'libre', actividad: 'hablando', tarea: `Grabó la voz de "${g.titulo}".`},
   'Técnico de render': {estado: 'libre', actividad: 'escribiendo', tarea: `Renderizó "${g.titulo}" (${mb} MB). Está en Actions, artefacto "video-${id}".`},
-  'Publicador': {estado: 'esperando_decision', actividad: 'pensando', tarea: `Tiene un video listo: "${g.titulo}". Falta subirlo a YouTube (necesita tu conexión; ver subir.mjs).`},
+  'Publicador': {estado: 'libre', actividad: 'pensando', tarea: `Video renderizado: "${g.titulo}". En cola para publicación automática; todavía NO está publicado.`},
 });
-notificar(canal, 'listo', `Video listo: ${g.titulo}`, `Se renderizó "${g.titulo}" para ${nombreDe(canal)} (${mb} MB). Descárgalo en GitHub > Actions > Produccion > artefacto "video-${id}". Falta subirlo a YouTube.`);
+notificar(canal, 'listo', `Video renderizado: ${g.titulo}`, `Se renderizó "${g.titulo}" para ${nombreDe(canal)} (${mb} MB). Sigue en cola de publicación; este aviso NO significa que ya esté publicado.`);
 salida('id', id);
 salida('canal', canal);
 console.log(`Producción terminada: ${mp4} (${mb} MB)`);

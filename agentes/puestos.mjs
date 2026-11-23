@@ -5,18 +5,18 @@ export const puestosDeLaOficina = (ag, {resultado, tema, ctx, historial, formula
   const p = (rol, estado, actividad, tarea) => { ag[rol] = {estado, actividad, tarea}; };
   const m = ctx.mesa;
   const sinMesa = 'La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista.';
-  p('Coordinador de producción', 'trabajando', 'pensando', 'Calendario fijo (hora de República Dominicana): Shorts a las 00:00 y 12:00, largos a las 18:00. Cuida que el subidor programe sin chocar.');
+  p('Coordinador de producción', 'libre', 'pensando', 'En espera entre ciclos. Calendario configurado: Shorts cada 3 horas y videos largos cada 12 horas; la programación real está en GitHub Actions.');
   p('Jefa de calidad', ok ? 'libre' : 'trabajando', 'leyendo', ok ? `Aprobó "${tema}": ${ctx.escenas} escenas, ${ctx.fuentes} fuentes, sin problemas abiertos.` : `Frenó "${tema}": ${ctx.problemas[0]?.motivo ?? 'no pasó la verificación'}`);
-  p('Vigía de tendencias', vigilados ? 'trabajando' : 'trabajando', 'leyendo', vigilados ? `Vigila ${vigilados} canales por sus feeds públicos de YouTube.` : 'No hay canales que vigilar: faltan los channel_id en la configuración del canal.');
+  p('Vigía de tendencias', vigilados ? 'libre' : 'libre', 'leyendo', vigilados ? `Revisión de feeds terminada: ${vigilados} canales vigilados en este ciclo.` : 'En espera: faltan channel_id en la configuración del canal.');
   p('Titulista', m ? 'libre' : 'trabajando', 'escribiendo', m ? `Propuso ${m.titulos.length} títulos y eligió: "${m.titulo}". También dejó la idea de miniatura ("${m.miniatura.texto}") y el comentario fijado.` : sinMesa);
   p('Redactor de descripción', m ? 'libre' : 'trabajando', 'escribiendo', m ? 'Escribió la descripción con las palabras clave al inicio, la llamada a compartir y las fuentes.' : sinMesa);
   p('Especialista en hashtags', m ? 'libre' : 'trabajando', 'pensando', m ? `Eligió 5 hashtags específicos: ${m.hashtags.join(' ')}` : sinMesa);
   p('Auditor de fuentes', 'libre', 'leyendo', `Comprobó que cada dato salga de las ${ctx.fuentes} fuentes del material y las puso en la descripción.`);
-  p('Auditor de normas', ok ? 'libre' : 'trabajando', 'leyendo', ok ? 'Comprobó: empieza con "Sabías que", llamada a compartir exacta y revelación entre 60 % y 78 %.' : `Encontró incumplimientos: ${ctx.problemas.slice(0, 2).map((x) => x.motivo).join(' | ')}`);
+  p('Auditor de normas', ok ? 'libre' : 'trabajando', 'leyendo', ok ? 'Comprobó: gancho claro y breve, llamada a compartir exacta y revelación entre 65 % y 75 %.' : `Encontró incumplimientos: ${ctx.problemas.slice(0, 2).map((x) => x.motivo).join(' | ')}`);
   p('Revisor de nombres', 'libre', 'leyendo', 'Busca nombres reales de personas en el guion y en lo que escribe la Mesa. Si aparece uno, rechaza.');
   const g = ctx.gancho;
   p('Revisor de ganchos', ok ? 'libre' : 'trabajando', 'pensando', ok && g ? `Gancho auditivo: la primera frase tiene ${g.palabrasPrimera} palabras${g.palabrasPrimera > 28 ? ' (demasiado larga: debe caber en 3 segundos)' : ' (cabe en 3 segundos)'}. Gancho visual: ${g.escenasConUnFondo === 0 ? 'todas las escenas cambian de fondo' : g.escenasConUnFondo + ' escenas se quedan con un solo fondo'}.` : 'Espera un guion aprobado para medir el gancho.');
-  p('Publicador', 'trabajando', 'pensando', subidos?.total ? `Lleva ${subidos.total} video${subidos.total === 1 ? '' : 's'} subido${subidos.total === 1 ? '' : 's'} a YouTube en total. El último: "${subidos.videos?.[0]?.titulo ?? ''}".` : 'Todavía no ha subido ningún video; sube apenas el panel apruebe uno.');
+  p('Publicador', 'libre', 'pensando', subidos?.total ? `Registro confirmado: ${subidos.total} video${subidos.total === 1 ? '' : 's'} subido${subidos.total === 1 ? '' : 's'} a YouTube. El último: "${subidos.videos?.[0]?.titulo ?? ''}".` : 'En espera: no hay todavía una publicación confirmada en el registro.');
   delete ag['Escenógrafo']; // el puesto ahora es el segundo pintor
   const presionP = ' PRESIÓN: Gemini RECHAZA el video si las imágenes no muestran lo que se dice, y un video rechazado cuesta vistas y tu paga. Aquí no se entrega nada que no sea de maestro.';
   p('Pintor de imágenes', 'trabajando', 'escribiendo', (ctx.pintadas ? `Pintor de composición y color: dibujó ${ctx.pintadas} de ${ctx.escenas} escenas en pixel art (2 planos cada una) y las discutió con su compañero hasta quedar de acuerdo.` : ctx.escenas ? 'Pintor de composición y color: en este ciclo no logró dibujar las escenas; se usó el fondo del catálogo y repite en el próximo.' : 'Pintor de composición y color: espera un guion aprobado para dibujar sus escenas.') + presionP);
@@ -42,7 +42,6 @@ export const puestosDeLaOficina = (ag, {resultado, tema, ctx, historial, formula
     if (!ag[rol]?.tarea) continue;
     const meta = rol === 'Directora de contenido' ? 20000 : 10000;
     const limpia = ag[rol].tarea.replace(/ (FUNCIÓN|ORDEN DE JULES|BONO:|PAGA:|JULES:).*$/s, '');
-    if (ag[rol].estado === 'libre') ag[rol].estado = 'trabajando'; // nadie se queda parado: sigue donde estaba
     ag[rol].tarea = limpia + (orden ? ` ORDEN DE JULES (nivel ${orden.nivel}/5): ${orden.orden}` : '') + pagaDe(meta) + presion(rol);
   }
 };

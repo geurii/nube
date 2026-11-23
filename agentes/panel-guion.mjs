@@ -51,7 +51,7 @@ export const evaluarGuionConPanel = async ({llamar, guion, garantia = false, aut
     compartiria: v?.lo_compartiria === true,
     comentario: String(v?.comentario ?? '').slice(0, 220),
   }));
-  if (votos.length < 6) throw new Error('el panel devolvió menos de 6 votos');
+  if (votos.length < 8) throw new Error(`el panel devolvió ${votos.length} de 8 votos; evaluación incompleta, se requiere reintento`);
   const {aprobado, gustos, pasan, retencion, rechazoPorRetencion} = decidir({votos, garantia, duracion: duracionAprox});
   const compartirian = votos.filter((v) => v.compartiria).length;
   const quienesSeVan = votos.filter((v) => v.sigueHasta < duracionAprox * 0.7).map((v) => `${v.quien.replace(/^Cr[ií]tic[oa]: /, '')} se va en el segundo ${v.sigueHasta}`).slice(0, 4);

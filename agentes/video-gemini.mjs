@@ -1,79 +1,332 @@
-// Gemini MIRA el video terminado (imagen y audio) y devuelve una revisión técnica en JSON.
-// Usa la Interactions API (la que muestra hoy la documentación). Prueba varios modelos en orden y deja dicho cuál funcionó.
-// Si algo falla, devuelve {error} y NUNCA lanza: quien lo llama sigue sin esta revisión.
 import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import {execFile} from 'node:child_process';
+import {promisify} from 'node:util';
+import {randomUUID} from 'node:crypto';
 
-const BASE = 'https://generativelanguage.googleapis.com';
-const MODELOS = (process.env.GEMINI_MODELO_VIDEO ? [process.env.GEMINI_MODELO_VIDEO] : ['gemini-4-hydrogen', 'gemini-3.8-flash']);
+const ejecutar = promisify(execFile);
+
+const NVIDIA_URL = 'https://integrate.api.nvidia.com/v1/chat/completions';
+const NVIDIA_MODELO = 'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning';
+const GROQ_URL = 'https://api.groq.com/openai/v1/audio/transcriptions';
+const GROQ_MODELO = 'whisper-large-v3';
+
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
 
-const subirArchivo = async (key, ruta, mime) => {
-  const bytes = fs.readFileSync(ruta);
-  const ini = await fetch(`${BASE}/upload/v1beta/files`, {
-    method: 'POST',
-    headers: {'x-goog-api-key': key, 'X-Goog-Upload-Protocol': 'resumable', 'X-Goog-Upload-Command': 'start', 'X-Goog-Upload-Header-Content-Length': String(bytes.length), 'X-Goog-Upload-Header-Content-Type': mime, 'Content-Type': 'application/json'},
-    body: JSON.stringify({file: {display_name: 'video-a-revisar'}}),
-    signal: AbortSignal.timeout(60000),
-  });
-  const url = ini.headers.get('x-goog-upload-url');
-  if (!ini.ok || !url) throw new Error(`no pude iniciar la subida (${ini.status})`);
-  const sub = await fetch(url, {method: 'POST', headers: {'Content-Length': String(bytes.length), 'X-Goog-Upload-Offset': '0', 'X-Goog-Upload-Command': 'upload, finalize'}, body: bytes, signal: AbortSignal.timeout(300000)});
-  if (!sub.ok) throw new Error(`falló la subida (${sub.status})`);
-  const file = (await sub.json()).file;
-  if (!file?.uri || !file?.name) throw new Error('la subida no devolvió el archivo');
-  for (let i = 0; i < 40; i++) {
-    const e = await (await fetch(`${BASE}/v1beta/${file.name}`, {headers: {'x-goog-api-key': key}, signal: AbortSignal.timeout(30000)})).json();
-    if (e.state === 'ACTIVE') return file.uri;
-    if (e.state === 'FAILED') throw new Error('Gemini no pudo procesar el video');
-    await dormir(5000);
+const respuestaTexto = (contenido) => {
+  if (typeof contenido === 'string') return contenido;
+  if (Array.isArray(contenido)) {
+    return contenido.map((p) => p?.text ?? '').join('\n');
   }
-  throw new Error('Gemini tardó demasiado en procesar el video');
+  return '';
 };
 
-const textoDe = (j) => {
-  const piezas = [];
-  if (typeof j.output_text === 'string') piezas.push(j.output_text);
-  for (const s of j.steps ?? []) for (const c of s.content ?? []) if (c.type === 'text' && c.text) piezas.push(c.text);
-  for (const o of j.outputs ?? []) if (o.type === 'text' && o.text) piezas.push(o.text);
-  return piezas.join('\n');
+const extraerJSON = (texto) => {
+  const limpio = texto.replace(/```json|```/gi, '').trim();
+  const inicio = limpio.indexOf('{');
+  const final = limpio.lastIndexOf('}');
+  if (inicio < 0 || final <= inicio) {
+    throw new Error('NVIDIA no devolvió un JSON válido');
+  }
+  return JSON.parse(limpio.slice(inicio, final + 1));
+};
+
+const prepararAudio = async (ruta) => {
+  const temporal = path.join(os.tmpdir(), `revision-${randomUUID()}.mp3`);
+
+  try {
+    const {stdout} = await ejecutar('ffprobe', [
+      '-v', 'error',
+      '-show_entries', 'format=duration',
+      '-show_entries', 'stream=codec_type',
+      '-of', 'json',
+      ruta,
+    ], {timeout: 30000, maxBuffer: 2 * 1024 * 1024});
+
+    const datos = JSON.parse(stdout);
+    const duracion = Number(datos.format?.duration);
+    const tieneAudio = (datos.streams ?? []).some((s) => s.codec_type === 'audio');
+
+    if (!Number.isFinite(duracion) || duracion <= 0) {
+      throw new Error('No se pudo determinar la duración del video');
+    }
+
+    if (duracion > 120) {
+      throw new Error('El video supera los 2 minutos. Esta versión no puede revisarlo completo con NVIDIA.');
+    }
+
+    if (!tieneAudio) {
+      throw new Error('El video no contiene una pista de audio');
+    }
+
+    await ejecutar('ffmpeg', [
+      '-y', '-i', ruta,
+      '-vn', '-ac', '1', '-ar', '16000',
+      '-b:a', '64k', '-f', 'mp3',
+      temporal,
+    ], {timeout: 90000, maxBuffer: 2 * 1024 * 1024});
+
+    const audio = fs.readFileSync(temporal);
+
+    if (!audio.length || audio.length > 25 * 1024 * 1024) {
+      throw new Error('El audio extraído está vacío o supera el límite de 25 MB');
+    }
+
+    return {audio, temporal, duracion};
+  } catch (e) {
+    try { fs.rmSync(temporal, {force: true}); } catch {}
+    throw e;
+  }
+};
+
+const transcribirAudio = async (audio, key) => {
+  const formulario = new FormData();
+
+  formulario.append(
+    'file',
+    new Blob([audio], {type: 'audio/mpeg'}),
+    'revision.mp3'
+  );
+  formulario.append('model', GROQ_MODELO);
+  formulario.append('language', 'es');
+  formulario.append('response_format', 'json');
+
+  let ultimoError = '';
+
+  for (let intento = 1; intento <= 3; intento++) {
+    try {
+      const r = await fetch(GROQ_URL, {
+        method: 'POST',
+        headers: {Authorization: `Bearer ${key}`},
+        body: formulario,
+        signal: AbortSignal.timeout(90000),
+      });
+
+      const cuerpo = await r.text();
+
+      if (r.status === 429 || [500, 502, 503, 504].includes(r.status)) {
+        ultimoError = `Groq respondió ${r.status}`;
+        if (intento < 3) {
+          await dormir(intento * 5000);
+          continue;
+        }
+      }
+
+      if (!r.ok) {
+        throw new Error(`Groq ${r.status}: ${cuerpo.slice(0, 250)}`);
+      }
+
+      const datos = JSON.parse(cuerpo);
+
+      if (typeof datos.text !== 'string') {
+        throw new Error('Groq no devolvió la transcripción');
+      }
+
+      return datos.text.trim();
+    } catch (e) {
+      ultimoError = String(e.message).slice(0, 250);
+      if (intento < 3) await dormir(intento * 3000);
+    }
+  }
+
+  throw new Error(`No se pudo transcribir el audio: ${ultimoError}`);
+};
+
+const revisarImagen = async (ruta, key, contexto, transcripcion) => {
+  const bytes = fs.readFileSync(ruta);
+
+  if (!bytes.length || bytes.length > 50 * 1024 * 1024) {
+    throw new Error('El video está vacío o supera el límite de 50 MB para esta revisión');
+  }
+
+  const prompt = `
+You are a strict technical visual quality inspector for vertical social media videos.
+
+Inspect the complete video visually. Do NOT judge taste, popularity, creativity, storytelling, or factual accuracy.
+
+Context: ${contexto || 'No additional context'}.
+
+The Spanish speech transcription is provided only as context:
+${transcripcion.slice(0, 5000)}
+
+Check only serious technical visual failures:
+1. Black, frozen, corrupted or missing video frames.
+2. Subtitles or essential on-screen text visibly cut off, covered or unreadable.
+3. Visuals completely unrelated to the subject described in the context.
+4. Major rendering defects that make the video impossible to publish.
+
+Do not reject a video for ordinary stylistic choices, repeated shots, pacing, visual simplicity or personal taste.
+If there are no serious technical defects, defectos_graves must be an empty array.
+If there are no subtitles, consider subtitles legible and not cut off.
+
+Return ONLY valid JSON, with this exact structure:
+{
+  "imagen": {
+    "nota": 0,
+    "defectos": []
+  },
+  "subtitulos": {
+    "legibles": true,
+    "tapados_o_cortados": false,
+    "comentario": ""
+  },
+  "defectos_graves": []
+}
+
+Use a score from 0 to 10. Do not invent defects.`;
+
+  let ultimoError = '';
+
+  for (let intento = 1; intento <= 3; intento++) {
+    try {
+      const r = await fetch(NVIDIA_URL, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${key}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          model: NVIDIA_MODELO,
+          temperature: 0.1,
+          max_tokens: 1200,
+          messages: [{
+            role: 'user',
+            content: [
+              {type: 'text', text: prompt},
+              {
+                type: 'video_url',
+                video_url: {
+                  url: `data:video/mp4;base64,${bytes.toString('base64')}`,
+                },
+              },
+            ],
+          }],
+        }),
+        signal: AbortSignal.timeout(180000),
+      });
+
+      const cuerpo = await r.text();
+
+      if (r.status === 429 || [500, 502, 503, 504].includes(r.status)) {
+        ultimoError = `NVIDIA respondió ${r.status}`;
+        if (intento < 3) {
+          await dormir(intento * 7000);
+          continue;
+        }
+      }
+
+      if (!r.ok) {
+        throw new Error(`NVIDIA ${r.status}: ${cuerpo.slice(0, 250)}`);
+      }
+
+      const datos = JSON.parse(cuerpo);
+      const contenido = respuestaTexto(datos.choices?.[0]?.message?.content);
+
+      if (!contenido) {
+        throw new Error('NVIDIA devolvió una respuesta vacía');
+      }
+
+      const revision = extraerJSON(contenido);
+
+      if (
+        !revision.imagen ||
+        !Number.isFinite(Number(revision.imagen.nota)) ||
+        !revision.subtitulos ||
+        typeof revision.subtitulos.legibles !== 'boolean' ||
+        typeof revision.subtitulos.tapados_o_cortados !== 'boolean' ||
+        !Array.isArray(revision.defectos_graves)
+      ) {
+        throw new Error('La revisión visual está incompleta');
+      }
+
+      revision.imagen.nota = Math.max(0, Math.min(10, Number(revision.imagen.nota)));
+      revision.imagen.defectos = Array.isArray(revision.imagen.defectos)
+        ? revision.imagen.defectos
+        : [];
+
+      return revision;
+    } catch (e) {
+      ultimoError = String(e.message).slice(0, 250);
+      if (intento < 3) await dormir(intento * 3000);
+    }
+  }
+
+  throw new Error(`No se pudo revisar la imagen: ${ultimoError}`);
 };
 
 export const revisarVideo = async ({ruta, key, contexto = ''}) => {
-  if (!key) return {error: 'falta GEMINI_API_KEY'};
-  if (!ruta || !fs.existsSync(ruta)) return {error: 'no encuentro el archivo de video'};
-  const tam = fs.statSync(ruta).size;
-  let video;
+  let temporal = null;
+
   try {
-    video = tam < 15 * 1024 * 1024
-      ? {type: 'video', data: fs.readFileSync(ruta).toString('base64'), mime_type: 'video/mp4'}
-      : {type: 'video', uri: await subirArchivo(key, ruta, 'video/mp4'), mime_type: 'video/mp4'};
-  } catch (e) { return {error: `no pude preparar el video: ${e.message}`}; }
-  const prompt = `Eres un revisor técnico de videos cortos verticales para TikTok, YouTube Shorts e Instagram. MIRA y ESCUCHA este video completo y revísalo con rigor profesional. ${contexto}\nResponde SOLO con JSON: {"gancho_3s": {"nota": 0-10, "comentario": "qué se ve y qué se oye en los primeros 3 segundos"}, "audio": {"nota": 0-10, "comentario": "voz, ritmo, volumen, música"}, "subtitulos": {"legibles": true|false, "tapados_o_cortados": true|false, "comentario": "..."}, "imagen": {"nota": 0-10, "defectos": ["borroso, distorsionado, plano, repetitivo, texto cortado, etc."]}, "ritmo": {"nota": 0-10, "comentario": "¿cambia lo que se ve cada pocos segundos?"}, "defectos_graves": [SOLO fallos de fondo, lista vacía si no hay], "nota_general": 0-10, "recomendacion": "subir" | "no subir", "por_que": "una frase"}
-REGLA DE DEFECTOS GRAVES: escribe en "defectos_graves" ÚNICAMENTE fallos de fondo que impiden publicar: (1) audio ausente, cortado o ininteligible; (2) subtítulos tapados, cortados o ilegibles; (3) imagen negra, congelada, rota o con texto cortado; (4) imágenes que NO tienen relación alguna con lo que se dice (pantallas abstractas o fondos genéricos que no muestran el tema). SOLO fallas de IMAGEN o SONIDO. NO escribas ahí opiniones de calidad, estilo, ritmo, gancho, originalidad, gustos ni errores de contenido o de datos: eso ya lo juzgaron antes los 8 espectadores y los verificadores sobre el guion. Si no hay fallos de fondo, "defectos_graves" va vacío y "recomendacion" es "subir".`;
-  const intentos = [];
-  const hasta = Date.now() + 8 * 60 * 1000; // tope duro: la revisión del video nunca espera más de 8 minutos
-  const queda = () => hasta - Date.now();
-  for (const modelo of MODELOS) {
-    for (let i = 1; i <= 4; i++) {
-      if (queda() < 10000) return {error: `se acabó el tiempo asignado (8 min). ${intentos.join(' | ')}`};
-      try {
-        const r = await fetch(`${BASE}/v1beta/interactions`, {
-          method: 'POST', headers: {'x-goog-api-key': key, 'Content-Type': 'application/json'}, signal: AbortSignal.timeout(Math.max(10000, Math.min(300000, queda()))),
-          body: JSON.stringify({model: modelo, input: [video, {type: 'text', text: prompt}]}),
-        });
-        const cuerpo = await r.text();
-        if (r.status === 429) { await dormir(((Number(/retry in (\d+)/i.exec(cuerpo)?.[1] ?? 20)) + 2) * 1000); continue; }
-        if (!r.ok) {
-          // 500/503/504 = Gemini saturado, es temporal: se espera y se reintenta antes de pasar al otro modelo
-          if ([500, 502, 503, 504].includes(r.status) && i < 4) { await dormir(Math.max(0, Math.min(queda() - 10000, i * 30000))); continue; }
-          intentos.push(`${modelo}: ${r.status} ${cuerpo.replaceAll(key, '***').slice(0, 140)}`); break;
-        }
-        const txt = textoDe(JSON.parse(cuerpo));
-        const m = /\{[\s\S]*\}/.exec(txt.replace(/```json|```/g, ''));
-        if (!m) { intentos.push(`${modelo}: respuesta sin JSON`); break; }
-        return {modelo, revision: JSON.parse(m[0])};
-      } catch (e) { intentos.push(`${modelo}: ${String(e.message).slice(0, 140)}`); break; }
+    const nvidiaKey = process.env.NVIDIA_API_KEY;
+    const groqKey = process.env.GROQ_API_KEY;
+
+    if (!nvidiaKey) return {error: 'Falta NVIDIA_API_KEY'};
+    if (!groqKey) return {error: 'Falta GROQ_API_KEY'};
+    if (!ruta || !fs.existsSync(ruta)) {
+      return {error: 'No encuentro el archivo de video'};
+    }
+
+    const preparado = await prepararAudio(ruta);
+    temporal = preparado.temporal;
+
+    const transcripcion = await transcribirAudio(preparado.audio, groqKey);
+
+    if (!transcripcion || transcripcion.length < 3) {
+      return {error: 'Groq no detectó voz inteligible en el video. Revisión bloqueada.'};
+    }
+
+    const visual = await revisarImagen(
+      ruta,
+      nvidiaKey,
+      contexto,
+      transcripcion
+    );
+
+    const defectos = [...visual.defectos_graves];
+
+    if (
+      visual.subtitulos.tapados_o_cortados ||
+      !visual.subtitulos.legibles
+    ) {
+      defectos.push('Subtítulos tapados, cortados o ilegibles');
+    }
+
+    const revision = {
+      gancho_3s: {
+        nota: visual.imagen.nota,
+        comentario: 'Revisión visual técnica; no es una valoración del gancho.',
+      },
+      audio: {
+        nota: 8,
+        comentario: `Groq Whisper transcribió el audio en español. Duración: ${Math.round(preparado.duracion)} segundos. Transcripción: ${transcripcion.slice(0, 1200)}`,
+      },
+      subtitulos: visual.subtitulos,
+      imagen: visual.imagen,
+      ritmo: {
+        nota: 8,
+        comentario: 'No se utiliza el ritmo como motivo de rechazo técnico.',
+      },
+      defectos_graves: defectos,
+      nota_general: visual.imagen.nota,
+      recomendacion: defectos.length ? 'no subir' : 'subir',
+      por_que: defectos.length
+        ? defectos.join(' / ')
+        : 'No se detectaron fallas visuales graves y Groq pudo transcribir el audio.',
+    };
+
+    return {
+      modelo: `NVIDIA ${NVIDIA_MODELO} + Groq ${GROQ_MODELO}`,
+      revision,
+    };
+  } catch (e) {
+    return {
+      error: String(e.message || e).slice(0, 500),
+    };
+  } finally {
+    if (temporal) {
+      try { fs.rmSync(temporal, {force: true}); } catch {}
     }
   }
-  return {error: `ningún modelo respondió. ${intentos.join(' | ')}`};
 };

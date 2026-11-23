@@ -4,8 +4,8 @@ name: Oficina
 # y el Escenógrafo elige los fondos. Resultado en oficina-salida/ (guion + informe + estado para la oficina 3D).
 on:
   schedule:
-    - cron: '23 1,4,7,10,13,16,19,22 * * *'   # un Short nuevo cada 6 horas
-    - cron: '23 12 */2 * *'   # un video largo un dia si y otro no
+    - cron: '23 1,4,7,10,13,16,19,22 * * *'   # Shorts: cada 3 horas (UTC)
+    - cron: '23 0,12 * * *'   # videos largos: cada 12 horas (UTC)
   push:
     paths:
       - 'agentes/oficina.disparo'
@@ -17,7 +17,7 @@ on:
       formato:
         description: 'short o largo'
         required: false
-        default: 'short'
+        default: 'largo'
       canal:
         description: 'Opcional: solo este canal (ej: lqns). Vacio = todos los activos'
         required: false
@@ -97,7 +97,7 @@ jobs:
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           TEMA: ${{ inputs.tema || steps.pres.outputs.tema }}
           CANAL_PEDIDO: ${{ inputs.canal }}
-          FORMATO: ${{ inputs.formato || steps.pres.outputs.formato || (github.event.schedule == '23 12 */2 * *' && 'largo' || 'short') }}
+          FORMATO: ${{ inputs.formato || steps.pres.outputs.formato || (github.event.schedule == '23 0,12 * * *' && 'largo' || 'short') }}
           PALABRAS: ${{ inputs.palabras }}
         run: |
           canales=$(node agentes/canales-activos.mjs)
@@ -141,16 +141,6 @@ jobs:
             sleep 5
           done
           if [ -n "$(git log origin/main..HEAD --oneline 2>/dev/null)" ]; then echo "ERROR: no se pudo subir el resultado al repositorio"; exit 1; fi
-      - name: Encadenar el siguiente ciclo (lo maximo posible sin acabar los minutos del mes)
-        if: always() && steps.pres.outputs.ok != 'no'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          resultado=$(node agentes/ultimo-aprobado.mjs | head -1)
-          echo "$resultado"
-          # Los ciclos que se lanzan solos NO activan a Produccion (limite de GitHub con el token): se le avisa directamente
-          if echo "$resultado" | grep -q 'oficina: aprobado'; then gh workflow run produccion.yml && echo "Produccion lanzada para el guion aprobado."; fi
-          if echo "$resultado" | grep -qE 'aprobado|rechazado' && node agentes/encadenar.mjs; then
-            sleep 90
-            gh workflow run oficina.yml && echo "Siguiente ciclo lanzado."
-          fi
+      - name: Esperar al siguiente horario programado
+        if: always()
+        run: echo Ciclos ejecutados segun horario programado

@@ -45,8 +45,8 @@ try {
 usadoMes = Math.round(usadoMes * factor);
 usadoHoy = Math.round(usadoHoy * factor);
 console.log(`Minutos usados este mes: ${usadoMes}. Hoy: ${usadoHoy}.`); // se imprime siempre (el vigilante lo lee), incluso si luego se descansa por la meta del día
-// Meta: 2 videos al día (día de República Dominicana, UTC-4). Con 2 guiones aprobados hoy, se descansa para ahorrar minutos.
-const META_DIA = 2;
+// Meta: hasta 10 videos al día (8 Shorts cada 3 h + 2 largos cada 12 h), día de República Dominicana (UTC-4). El presupuesto mensual de GitHub sigue siendo el límite real.
+const META_DIA = 10;
 try {
   const fs = await import('node:fs');
   const dia = (d) => new Date(new Date(d).getTime() - 4 * 3600_000).toISOString().slice(0, 10);

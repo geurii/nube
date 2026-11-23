@@ -1,9 +1,9 @@
 name: Produccion
 
-# Después de cada corrida de la Oficina: toma el guion aprobado, graba la voz, renderiza el video y (si hay claves) lo sube como privado a YouTube.
+# DespuÃ©s de cada corrida de la Oficina: toma el guion aprobado, graba la voz, renderiza el video y (si hay claves) lo sube como privado a YouTube.
 on:
   workflow_run:
-    workflows: ["Oficina"]
+    workflows: [Oficina]
     types: [completed]
   push:
     paths:
@@ -23,14 +23,14 @@ env:
 
 jobs:
   producir:
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'push' || github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ !github.event.workflow_run || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-24.04
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
       - name: Dependencias del sistema (Chrome de Remotion y ffmpeg)
         run: |
           sudo apt-get update
@@ -38,7 +38,7 @@ jobs:
       - run: npm install --no-audit --no-fund
       - name: Voz (msedge-tts solo para este flujo)
         run: npm install --no-save --no-audit --no-fund msedge-tts@2.1.1
-      - name: Marcar inicio de producción
+      - name: Marcar inicio de producciÃ³n
         if: always()
         run: |
           node agentes/progreso.mjs 40 "Grabando la voz y renderizando el video" || true
@@ -53,14 +53,14 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: node agentes/producir.mjs
-      - name: Autopsia (por qué los videos anteriores no cogieron vistas)
+      - name: Autopsia (por quÃ© los videos anteriores no cogieron vistas)
         if: ${{ steps.producir.outputs.id != '' }}
         continue-on-error: true
         env:
           CANAL: ${{ steps.producir.outputs.canal }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: node agentes/vistas.mjs && node agentes/autopsia.mjs
-      - name: Revision tecnica del video (Gemini, solo frena fallas graves de imagen o sonido)
+      - name: Revision tecnica del video (Gemini: imagen, audio y subtitulos)
         id: panel
         if: ${{ steps.producir.outputs.id != '' }}
         continue-on-error: true
@@ -68,7 +68,7 @@ jobs:
           ID: ${{ steps.producir.outputs.id }}
           CANAL: ${{ steps.producir.outputs.canal }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
         run: node agentes/panel.mjs
       - name: Ayuda mutua (los puestos libres hacen otras tareas)
         if: ${{ steps.producir.outputs.id != '' }}
@@ -101,8 +101,9 @@ jobs:
           name: video-${{ steps.producir.outputs.id }}
           path: out/serie/*.mp4
           retention-days: 14
-      - name: Subir a YouTube como privado (solo si hay claves; sin probar)
-        if: ${{ steps.producir.outputs.id != '' && steps.panel.outputs.aprobado != 'false' }}
+      - name: Subir a YouTube (publicaciÃ³n automÃ¡tica si hay credenciales)
+        id: subir
+        if: ${{ steps.producir.outputs.id != '' && steps.panel.outputs.aprobado == 'true' }}
         continue-on-error: true
         env:
           ID: ${{ steps.producir.outputs.id }}
@@ -117,7 +118,7 @@ jobs:
           git diff --cached --quiet || git commit -m "Publicador: resultado de la subida"
           git pull --rebase --autostash -X theirs origin main && git push || true
       - name: Publicar en Facebook, Instagram y TikTok (Windsor y Buffer; solo si hay claves; nunca falla el ciclo)
-        if: ${{ steps.producir.outputs.id != '' && steps.panel.outputs.aprobado != 'false' }}
+        if: ${{ steps.producir.outputs.id != '' && steps.panel.outputs.aprobado == 'true' }}
         continue-on-error: true
         env:
           ID: ${{ steps.producir.outputs.id }}
@@ -136,8 +137,9 @@ jobs:
         if: always()
         run: |
           if [ -z "${{ steps.producir.outputs.id }}" ]; then node agentes/progreso.mjs 0 'Ciclo sin video: no habia guion aprobado' || true
-          elif [ "${{ steps.panel.outputs.aprobado }}" = "false" ]; then node agentes/progreso.mjs 0 'Gemini vio fallas graves de imagen o sonido: no se subio' || true
-          else node agentes/progreso.mjs 100 'Video enviado a YouTube' || true; fi
+          elif [ "${{ steps.panel.outputs.aprobado }}" = "false" ]; then node agentes/progreso.mjs 0 'La revision tecnica detecto defectos graves o datos incompletos: no se publico' || true
+          elif [ "${{ steps.subir.outputs.subido }}" = "true" ]; then node agentes/progreso.mjs 100 'Video subido a YouTube y confirmado por la API' || true
+          else node agentes/progreso.mjs 85 'Video renderizado, pero NO publicado. Sigue pendiente para reintento; revisar el motivo en el registro.' || true; echo 'ERROR: la publicaciÃ³n no fue confirmada; el video permanece en cola para reintento.'; exit 1; fi
           git config user.name "github-actions"
           git config user.email "actions@users.noreply.github.com"
           git add oficina-salida || true

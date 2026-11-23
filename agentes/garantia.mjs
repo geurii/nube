@@ -9,6 +9,7 @@ export const enGarantia = (canal = 'lqns') => {
   try {
     const v = JSON.parse(fs.readFileSync(path.join('oficina-salida', canal, 'vistas.json'), 'utf8'));
     const ultimo = (v.videos ?? []).map((x) => new Date(x.publicado).getTime()).filter(Number.isFinite).sort((a, b) => b - a)[0];
-    return !ultimo || Date.now() - ultimo > 7 * 3600 * 1000;
-  } catch { return true; }
+    if (!ultimo) return false; // Sin evidencia fiable no se activa la excepción.
+    return Date.now() - ultimo > 7 * 3600 * 1000;
+  } catch { return false; }
 };

@@ -35,7 +35,7 @@ const ultimoGuion = (() => {
     return f ? leer(path.join(carpeta, f.n), null) : null;
   } catch { return null; }
 })();
-const base = `Canal: "${config.nombre ?? CANAL}" (${config.nicho ?? ''}). ${config.tono ?? ''} Reglas: nada de nombres reales de personas; todo guion empieza con "Sabías que"; revelación entre 65 % y 75 %. Datos reales de vistas: ${topTitulos || 'aún no hay'}. ${autopsia?.reglas?.length ? 'Reglas de la autopsia: ' + autopsia.reglas.join(' | ') : ''}`;
+const base = `Canal: "${config.nombre ?? CANAL}" (${config.nicho ?? ''}). ${config.tono ?? ''} Reglas: nada de nombres reales de personas; los ganchos deben ser naturales, variados y específicos; no hay frase inicial obligatoria; revelación entre 65 % y 75 %. Datos reales de vistas: ${topTitulos || 'aún no hay'}. ${autopsia?.reglas?.length ? 'Reglas de la autopsia: ' + autopsia.reglas.join(' | ') : ''}`;
 
 const llamar = async (instruccion) => {
   for (let i = 1; i <= 4; i++) {
@@ -62,7 +62,7 @@ const TAREAS = [
   {id: 'plan', para: 'Jules (su plan del ciclo)', rol: 'Directora de contenido', solo: 'Directora de contenido',
     pedir: () => `Eres Jules, la jefa. Escribe el plan de prioridades del próximo ciclo. Devuelve {"plan": ["3 prioridades concretas, cada una con un responsable de la oficina y la meta de monetizar antes del 13 de diciembre"]}`,
     guardar: (r) => { ayudas.plan = lista(r.plan, 3, 240); return ayudas.plan.join(' · '); }},
-  {id: 'ganchos', para: 'Guionista', rol: 'Guionista', pedir: () => `Escribe 5 plantillas de PRIMERA FRASE (gancho auditivo, empiezan con "Sabías que", caben en 3 segundos, con una cifra o pregunta imposible) y para cada una la imagen que se ve (gancho visual). Usa [TEMA] y [CIFRA] como huecos. Devuelve {"ganchos": ["frase | imagen en pantalla"]}`,
+  {id: 'ganchos', para: 'Guionista', rol: 'Guionista', pedir: () => `Escribe 5 plantillas de PRIMERA FRASE (gancho auditivo, son variados, caben en 3 segundos y despiertan curiosidad sin inventar cifras) y para cada una la imagen que se ve (gancho visual). Usa [TEMA] y [CIFRA] como huecos. Devuelve {"ganchos": ["frase | imagen en pantalla"]}`,
     guardar: (r) => { ayudas.ganchos = lista(r.ganchos, 5); return `${ayudas.ganchos.length} ganchos nuevos`; }},
   {id: 'revision', para: 'Editor de guion', rol: 'Editor de guion', hay: () => !!ultimoGuion, pedir: () => `Revisa este guion con ojo crítico de editor y di las 3 mejoras que más subirían las vistas (gancho, ritmo, repetición, cierre). Guion: ${ultimoGuion.escenas.map((e) => e.texto).join(' ').slice(0, 2500)}\nDevuelve {"mejoras": ["mejora concreta"]}`,
     guardar: (r) => { ayudas.mejorasGuion = lista(r.mejoras, 3); return `${ayudas.mejorasGuion.length} mejoras al último guion`; }},

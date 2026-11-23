@@ -1,30 +1,21 @@
 // Subida a YouTube: sube el video y lo deja PROGRAMADO (privado con fecha; YouTube lo publica solo a esa hora).
-// Horarios (hora de República Dominicana, UTC-4): Shorts a las 00:00 y 12:00; videos largos a las 18:00.
+// Horarios: Shorts cada 3 horas y videos largos cada 12 horas (los slots del workflow están expresados en UTC).
 // Desde el 2 nov 2026 Google ya no exige auditoría para publicar (developers.google.com/youtube/data/revision_history).
 // Secretos: YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN. Variable: ID (por ejemplo oficina-bloop).
 import fs from 'node:fs';
 import path from 'node:path';
 import {avisarTelefono} from './aviso.mjs';
 import {registrarSubida} from './subidos.mjs';
+import {proximoHorario} from './horarios.mjs';
 
 const {ID} = process.env;
+const salida = (clave, valor) => { if (process.env.GITHUB_OUTPUT) fs.appendFileSync(process.env.GITHUB_OUTPUT, `${clave}=${String(valor).replace(/[\r\n]/g, ' ')}\n`); };
 const YT_CLIENT_ID = (process.env.YT_CLIENT_ID || '').trim();
 const YT_CLIENT_SECRET = (process.env.YT_CLIENT_SECRET || '').trim();
 const CANAL = process.env.CANAL || 'lqns';
 // Cada canal puede tener su propio YouTube: YT_REFRESH_TOKEN_<CANAL> (el de un canal nuevo) o, si no, YT_REFRESH_TOKEN.
 const YT_REFRESH_TOKEN = (process.env.YT_REFRESH_TOKEN_CANAL || process.env.YT_REFRESH_TOKEN || '').trim();
 // Próxima hora libre: al menos 40 min en el futuro. Las horas locales (UTC-4) pasadas a UTC.
-const proximoHorario = (formato) => {
-  const horasUtc = formato === 'largo' ? [22] : [4, 16];
-  const ahora = Date.now() + 40 * 60000;
-  for (let d = 0; d < 3; d++) {
-    for (const h of horasUtc) {
-      const t = new Date(ahora); t.setUTCDate(t.getUTCDate() + d); t.setUTCHours(h, 0, 0, 0);
-      if (t.getTime() >= ahora) return t;
-    }
-  }
-  return new Date(ahora + 3600000);
-};
 // Modo de publicación (agentes/publicacion.json): "ahora" = público de inmediato; "programado" = privado con fecha y YouTube lo publica a su hora.
 const MODO = (() => { try { return JSON.parse(fs.readFileSync(path.join('agentes', 'publicacion.json'), 'utf8')).modo; } catch { return 'programado'; } })();
 const ESTADO = path.join('oficina-salida', CANAL, 'estado.json');
@@ -46,11 +37,12 @@ const marcar = (texto, estado = 'esperando_decision') => {
   } catch { /* sin estado */ }
 };
 
-if (!ID) { console.log('Sin video que subir.'); process.exit(0); }
+if (!ID) { console.log('Sin video que subir.'); salida('subido', 'false'); salida('motivo', 'sin_id'); process.exit(0); }
 if (!YT_CLIENT_ID || !YT_CLIENT_SECRET || !YT_REFRESH_TOKEN) {
-  avisar('permiso', 'Necesito tu permiso: conectar YouTube', `El video "${ID}" está listo pero faltan los secretos de YouTube de este canal.`);
+  avisar('alerta', 'Publicación bloqueada: falta conectar YouTube', `El video "${ID}" está listo, pero faltan credenciales OAuth de YouTube. No requiere aprobación creativa: requiere configurar la conexión una sola vez.`);
   marcar(`Video "${ID}" listo, pero falta conectar YouTube para este canal: crea YT_CLIENT_ID, YT_CLIENT_SECRET y YT_REFRESH_TOKEN (o YT_REFRESH_TOKEN_<CANAL>) como secretos del repositorio. JEFA: un video que no se sube no existe.`);
   console.log('Faltan los secretos de YouTube. Se omite la subida.');
+  salida('subido', 'false'); salida('motivo', 'credenciales_ausentes');
   process.exit(0);
 }
 
@@ -90,13 +82,22 @@ try {
   const video = await subida.json();
   const cuando = MODO === 'ahora' ? 'PÚBLICO ahora mismo' : 'PROGRAMADO para ' + programado.toLocaleString('es-DO', {timeZone: 'America/Santo_Domingo'}) + ' (hora RD)';
   marcar('Subió "' + guion.titulo + '" y quedó ' + cuando + ': https://youtu.be/' + video.id, 'libre');
+  // La marca de producido se escribe SOLO tras la confirmación real de YouTube.
+  try {
+    const rutaProducidos = path.join('oficina-salida', CANAL, 'producidos.json');
+    const listaProducidos = fs.existsSync(rutaProducidos) ? JSON.parse(fs.readFileSync(rutaProducidos, 'utf8')) : [];
+    const slug = ID.replace(new RegExp('^' + CANAL + '-'), '');
+    if (!listaProducidos.includes(slug)) fs.writeFileSync(rutaProducidos, JSON.stringify([...listaProducidos, slug], null, 2));
+  } catch (e) { console.log('YouTube confirmó la subida, pero no pude actualizar producidos.json: ' + String(e.message ?? e).slice(0, 120)); }
   try { const total = registrarSubida({canal: CANAL, id: video.id, titulo: guion.titulo}); console.log('Videos subidos en total: ' + total); } catch { /* el contador no debe tumbar la subida */ }
   avisar('reporte', 'Video subido a YouTube', '"' + guion.titulo + '" quedó ' + cuando + ': https://youtu.be/' + video.id);
   console.log('Subido (' + MODO + '): https://youtu.be/' + video.id);
+  salida('subido', 'true'); salida('video_id', video.id); salida('url', `https://youtu.be/${video.id}`);
 } catch (e) {
   marcar(`No pude subir "${ID}": ${String(e.message ?? e).slice(0, 220)}`);
   if (/invalid_grant|401|403/.test(String(e.message))) avisar('permiso', 'Necesito tu permiso: reconectar YouTube', `YouTube rechazó la autorización (${String(e.message).slice(0, 120)}). Hay que volver a sacar el token con scripts/token-youtube.mjs y pegarlo en YT_REFRESH_TOKEN.`);
   else avisar('alerta', 'No pude subir un video', `No pude subir "${ID}": ${String(e.message ?? e).slice(0, 160)}`);
   console.error('ERROR al subir:', e.message ?? e);
+  salida('subido', 'false'); salida('motivo', String(e.message ?? e).slice(0, 180));
   process.exit(1);
 }
