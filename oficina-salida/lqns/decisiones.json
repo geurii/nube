@@ -1,6 +1,13 @@
 {
   "decisiones": [
     {
+      "id": "ijyppfi",
+      "texto": "Sabías que [NÚMERO] [PERSONAS] caminaron en [CONDICIÓN] por [NÚMERO] [OBJETO] 🥚 (Parte [N]/[TOTAL])",
+      "categoria": "Título",
+      "decision": "no",
+      "fecha": "2026-11-23T00:30:17.453Z"
+    },
+    {
       "id": "i574krd",
       "texto": "Sabías que nunca verás [OBJETO] en [LUGAR] 🐧 (Parte [N]/[TOTAL])",
       "categoria": "Título",
