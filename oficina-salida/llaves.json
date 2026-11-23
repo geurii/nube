@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-22T22:50:53.913Z",
+  "fecha": "2026-11-23T23:02:21.306Z",
   "resultados": [
     {
       "id": "groq",
@@ -9,7 +9,7 @@
       ],
       "estado": "ok",
       "detalle": "responde (openai/gpt-oss-120b, 0.3 s)",
-      "ms": 311
+      "ms": 313
     },
     {
       "id": "gemini",
@@ -27,8 +27,8 @@
         "OPENROUTER_API_KEY"
       ],
       "estado": "ok",
-      "detalle": "responde (baidu/ernie-5.5-flash-preview:free, 1.1 s)",
-      "ms": 1086
+      "detalle": "responde (baidu/ernie-5.5-flash-preview:free, 0.8 s)",
+      "ms": 836
     },
     {
       "id": "cerebras",
@@ -37,8 +37,8 @@
         "CEREBRAS_API_KEY"
       ],
       "estado": "ok",
-      "detalle": "responde (gpt-oss-120b, 0.1 s)",
-      "ms": 92
+      "detalle": "responde (gpt-oss-120b, 0.2 s)",
+      "ms": 224
     },
     {
       "id": "mistral",
@@ -56,7 +56,7 @@
         "SAMBANOVA_API_KEY"
       ],
       "estado": "error",
-      "detalle": "SambaNova: The operation was aborted due to timeout"
+      "detalle": "SambaNova: error 402"
     },
     {
       "id": "nvidia",
@@ -65,8 +65,8 @@
         "NVIDIA_API_KEY"
       ],
       "estado": "ok",
-      "detalle": "responde (mistralai/mistral-large-4-1t-a52b, 21.6 s)",
-      "ms": 21648
+      "detalle": "responde (mistralai/mistral-large-4-1t-a52b, 7.8 s)",
+      "ms": 7774
     },
     {
       "id": "cohere",
@@ -76,7 +76,7 @@
       ],
       "estado": "ok",
       "detalle": "responde (command-a-03-2025, 0.2 s)",
-      "ms": 157
+      "ms": 189
     },
     {
       "id": "zai",
@@ -122,7 +122,7 @@
       ],
       "estado": "ok",
       "detalle": "responde (openai-fast, 0.2 s) · sin cuenta",
-      "ms": 177
+      "ms": 171
     },
     {
       "id": "ovh",
@@ -131,8 +131,8 @@
         "OVH_API_KEY"
       ],
       "estado": "ok",
-      "detalle": "responde (Meta-Llama-3_3-70B-Instruct, 0.6 s) · sin cuenta",
-      "ms": 645
+      "detalle": "responde (Meta-Llama-3_3-70B-Instruct, 0.7 s) · sin cuenta",
+      "ms": 699
     },
     {
       "id": "windsor",
@@ -141,8 +141,8 @@
         "WINDSOR_API_KEY"
       ],
       "estado": "ok",
-      "detalle": "responde (0.6 s)",
-      "ms": 641
+      "detalle": "responde (0.8 s)",
+      "ms": 804
     },
     {
       "id": "buffer",
@@ -152,7 +152,7 @@
       ],
       "estado": "ok",
       "detalle": "responde (1 organización)",
-      "ms": 345
+      "ms": 440
     },
     {
       "id": "youtube",
@@ -163,8 +163,8 @@
         "YT_REFRESH_TOKEN"
       ],
       "estado": "ok",
-      "detalle": "conectado (0.3 s)",
-      "ms": 335
+      "detalle": "conectado (0.4 s)",
+      "ms": 447
     },
     {
       "id": "videos",
@@ -172,9 +172,9 @@
       "secretos": [
         "FB_VIDEOS_TOKEN"
       ],
-      "estado": "ok",
-      "detalle": "puede escribir en geurii/oficina-videos-legal",
-      "ms": 415
+      "estado": "error",
+      "detalle": "GitHub: error 401 (llave inválida o sin acceso al repositorio)",
+      "ms": 335
     },
     {
       "id": "ntfy",
