@@ -1,5 +1,10 @@
 [
   {
+    "fecha": "2026-11-23T02:12:48.012Z",
+    "orden": "Carolina debe abrir un issue en GitHub, lanzar un nuevo run de render para GTA VI y enviar al dueño el número de run y el link del workflow; Fernanda verificará que el render inicie sin errores.",
+    "nivel": 5
+  },
+  {
     "fecha": "2026-11-23T02:04:07.387Z",
     "orden": "Verificar estado del render en GitHub Actions y, si ya está listo, subirlo a YouTube de inmediato.",
     "nivel": 3
@@ -43,10 +48,5 @@
     "fecha": "2026-11-23T00:41:26.198Z",
     "orden": "Completar render de GTA VI y subir a YouTube a las 12:23 UTC del 23‑11‑2026.",
     "nivel": 4
-  },
-  {
-    "fecha": "2026-11-23T00:21:11.345Z",
-    "orden": "Ejecutar producción GTA VI según el flujo descrito, con entrega de guion antes de 09:00 UTC.",
-    "nivel": 5
   }
 ]
