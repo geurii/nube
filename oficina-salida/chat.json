@@ -1,5 +1,21 @@
 [
   {
+    "id": "mwsk5mhgj",
+    "de": "jules",
+    "texto": "Según el cronograma actual, cada día producimos 1 video largo (16:9, 8‑12 min) y 2 shorts (máx. 60 s cada uno). En 22 días, eso suma 22 videos largos y 44 shorts, totalizando 66 videos publicados. Si te refieres a los videos que ya están en canal, son 6 (todos shorts). El resto se publicará conforme al calendario establecido.",
+    "fecha": "2026-11-23T00:59:12.490Z",
+    "orden": "",
+    "nivel": 4,
+    "canal": "lqns"
+  },
+  {
+    "id": "mwsk5mhgt",
+    "de": "tu",
+    "texto": "ENTONCES AL DIA TENDREMOS CUANTOS VIDEOS 6 ?, SI NO ES ASI DIME POR QUE SUBI TU PRODUCCION",
+    "fecha": "2026-11-23T00:58:49.570Z",
+    "canal": "lqns"
+  },
+  {
     "id": "mwsk131hj",
     "de": "jules",
     "texto": "El canal necesita un calendario de producción que no supere 1700 minutos antes del 13 diciembre y que garantice un video largo cada 12 h y al menos dos shorts diarios en todas las plataformas. Para cumplirlo, propongo usar la siguiente distribución de minutos: 8 minutos por video largo (16 minutos cada 12 h) y 1 minuto por short (2 minutos diarios). Con 8 minutos por video largo y 2 minutos por día de shorts, cada día consume 10 minutos. En 22 días quedan 220 minutos, lo que deja 1480 minutos libres que podemos usar para mejoras, revisiones y buffers de producción. Así mantenemos el total bajo 1700 minutos y cumplimos con la frecuencia solicitada. Además, sugiero priorizar temas de alta tendencia que no estén en el canal: \"The Great Smog of London\", \"The Tunguska event\", \"The Voynich manuscript\", \"The Dyatlov Pass incident\" y \"The Roswell incident\".\n\nEl calendario debe incluir: 1) Investigación y guion (2 h), 2) Revisión de calidad (30 min), 3) Voz y render (2 h), 4) Publicación y difusión (30 min). Repite este bloque cada 12 h para el video largo y cada 3 h para los shorts.\n\nEsto garantiza que no se excedan 1700 minutos y se cumpla la frecuencia de publicación.\n\n",
