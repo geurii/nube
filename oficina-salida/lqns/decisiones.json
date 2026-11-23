@@ -1,6 +1,13 @@
 {
   "decisiones": [
     {
+      "id": "iltrete",
+      "texto": "Sabías que <sustantivo> <verbo> <número> <emoción>",
+      "categoria": "Título",
+      "decision": "si",
+      "fecha": "2026-11-23T10:16:13.562Z"
+    },
+    {
       "id": "io2y9n3",
       "texto": "Sabías que <verbo> <sustantivo> <número> <emoción> (<Parte X/Y>)",
       "categoria": "Título",
