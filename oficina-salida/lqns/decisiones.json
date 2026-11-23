@@ -1,6 +1,41 @@
 {
   "decisiones": [
     {
+      "id": "i1qedqdp",
+      "texto": "Sabías que [CIFRA] kilómetros de hielo esconden una ciudad abandonada? | Imagen de un glaciar con una silueta de ciudad oculta en el fondo",
+      "categoria": "Gancho",
+      "decision": "no",
+      "fecha": "2026-11-23T10:15:43.217Z"
+    },
+    {
+      "id": "i1tjww1t",
+      "texto": "Sabías que [CIFRA] personas han desaparecido sin dejar rastro en el mismo día? | Imagen de un calendario con el día tachado y sombras misteriosas",
+      "categoria": "Gancho",
+      "decision": "si",
+      "fecha": "2026-11-23T10:15:36.871Z"
+    },
+    {
+      "id": "i1c0q0ew",
+      "texto": "The Mystery of the Sargasso Sea",
+      "categoria": "Tema",
+      "decision": "si",
+      "fecha": "2026-11-23T10:15:30.897Z"
+    },
+    {
+      "id": "ihkt00s",
+      "texto": "The Mystery of the 1918 'Flying Saucers' Incident",
+      "categoria": "Tema",
+      "decision": "no",
+      "fecha": "2026-11-23T10:15:24.987Z"
+    },
+    {
+      "id": "i1y0rmb5",
+      "texto": "Hollow Earth",
+      "categoria": "Tema",
+      "decision": "si",
+      "fecha": "2026-11-23T10:15:21.390Z"
+    },
+    {
       "id": "i1ldbl89",
       "texto": "Ourang Medan",
       "categoria": "Tema",
