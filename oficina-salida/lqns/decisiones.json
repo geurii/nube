@@ -1,6 +1,13 @@
 {
   "decisiones": [
     {
+      "id": "i1g27zf6",
+      "texto": "3 Minutos que Evitaron la Explosión del Chernóbil — Sabías que 3 minutos salvaron a miles del desastre de Chernóbil? (estimada 10/10)",
+      "categoria": "Estrategia",
+      "decision": "si",
+      "fecha": "2026-11-23T00:28:01.244Z"
+    },
+    {
       "id": "i73cf9r",
       "texto": "15 Minutos que Cambiaron el Destino del Titanic — Sabías que 15 minutos alteraron la ruta final del Titanic? (estimada 9/10)",
       "categoria": "Estrategia",
