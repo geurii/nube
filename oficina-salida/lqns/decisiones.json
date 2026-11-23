@@ -1,6 +1,13 @@
 {
   "decisiones": [
     {
+      "id": "iackixh",
+      "texto": "Sabías que un [INSTITUCIÓN] pagó [MONTO] por [OBJETO] que no existían 👻🏦",
+      "categoria": "Título",
+      "decision": "no",
+      "fecha": "2026-11-23T00:30:48.541Z"
+    },
+    {
       "id": "i1clqz6u",
       "texto": "Sabías que mataron [NÚMERO] [OBJETO]… y no para [PROPÓSITO] 😳 (Parte [N]/[TOTAL])",
       "categoria": "Título",
