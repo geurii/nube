@@ -1,6 +1,38 @@
 [
   {
-    "id": "mwsqzmsdj",
+    "id": "mwsr5193j",
+    "de": "jules",
+    "texto": "Entendido. Eliminaremos la restricción de días impares y configuraremos la subida de un video largo cada 12 horas. El equipo ajustará el calendario de producción de inmediato para cumplir con esta nueva frecuencia.",
+    "fecha": "2026-11-23T04:14:42.327Z",
+    "orden": "",
+    "nivel": 4,
+    "canal": "lqns"
+  },
+  {
+    "id": "mwsr5193t",
+    "de": "tu",
+    "texto": "ELIMINA LOS DIAS IMPARES DEL CALENDARIO TE DIJE QUE EL VIDEO LRGO ES CADA 12 HORAS CAMBIA LA CONFIGURACION ACTUAL",
+    "fecha": "2026-11-23T04:09:20.316Z",
+    "canal": "lqns"
+  },
+  {
+    "id": "mwsr2j14j",
+    "de": "jules",
+    "texto": "Entendido. Actualizaremos el calendario para subir un video largo cada 12 horas, eliminando la restricción de días impares. El equipo ajustará el flujo de producción inmediatamente para cumplir con esta nueva frecuencia.",
+    "fecha": "2026-11-23T04:12:45.369Z",
+    "orden": "",
+    "nivel": 4,
+    "canal": "lqns"
+  },
+  {
+    "id": "mwsr2j14t",
+    "de": "tu",
+    "texto": "YA NO EXISTIRAN DIAS IMPARES SE SUBE UN VIDEO  LARGO CADA 12 HORAS ACTUALIZA EL CALENDARIO",
+    "fecha": "2026-11-23T04:05:10.736Z",
+    "canal": "lqns"
+  },
+  {
+    "id": "mwsqt4nlj",
     "de": "jules",
     "texto": "Recibido, jefe: quedan 21 días y el canal va en 2237 vistas totales, 43 suscriptores y 15.3 h vistas. Calendario actualizado: un largo 16:9 cada 12 h, sin tocar los Shorts de 60 s cada 3 h. Vigilaremos el tope de 1800 minutos de GitHub y el panel de calidad; si un ciclo falla, se reusa otro guion aprobado. La línea no se detiene.",
     "fecha": "2026-11-23T04:10:30.301Z",
@@ -941,22 +973,6 @@
     "de": "tu",
     "texto": "Dame un informe por qué no está funcionando mis shorts",
     "fecha": "2026-11-22T03:52:06.702Z",
-    "canal": "lqns"
-  },
-  {
-    "id": "mwraibqxj",
-    "de": "jules",
-    "texto": "Entiendo, investigaré inmediatamente por qué el algoritmo no retiene tu canal: analizaré métricas de retención, CTR y datos de YouTube Analytics, y ajustaré títulos, miniaturas y estructura de los videos para mejorar la retención en los próximos ciclos. Te entrego un informe preliminar en una hora y aplicaré los cambios antes de la siguiente subida.",
-    "fecha": "2026-11-22T03:41:22.804Z",
-    "orden": "Todos: revisen hoy los datos de retención del último video público, ajusten títulos y miniaturas según los hallazgos y apliquen la nueva estructura de gancho en los próximos dos videos; entreguen informe de mejora antes de las 10:00 a.m.",
-    "nivel": 5,
-    "canal": "lqns"
-  },
-  {
-    "id": "mwraibqxt",
-    "de": "tu",
-    "texto": "Antes de la subida investiga por que no está reteniendo mi canal y mejora la retención en los siguientes ciclos",
-    "fecha": "2026-11-22T03:39:11.800Z",
     "canal": "lqns"
   }
 ]
