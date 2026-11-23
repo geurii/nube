@@ -1,6 +1,20 @@
 {
   "decisiones": [
     {
+      "id": "i1fgxyu7",
+      "texto": "The Dyatlov Pass incident — La investigación sigue abierta y mantiene interés en la comunidad de misterio",
+      "categoria": "Tema de Jules",
+      "decision": "si",
+      "fecha": "2026-11-23T01:18:24.652Z"
+    },
+    {
+      "id": "i1755ir",
+      "texto": "The Roswell incident — El caso mantiene un alto nivel de interés público y debate",
+      "categoria": "Tema de Jules",
+      "decision": "si",
+      "fecha": "2026-11-23T01:18:22.921Z"
+    },
+    {
       "id": "i1r62564",
       "texto": "The Voynich manuscript — Su contenido sigue siendo un misterio y genera curiosidad histórica",
       "categoria": "Tema de Jules",
