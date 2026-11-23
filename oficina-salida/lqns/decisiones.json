@@ -1,6 +1,20 @@
 {
   "decisiones": [
     {
+      "id": "ix70cwl",
+      "texto": "Sabías que [CIFRA] piezas de un artefacto antiguo aún no se han ensamblado? | Imagen de fragmentos de un objeto antiguo dispersos sobre una mesa con luz tenue",
+      "categoria": "Gancho",
+      "decision": "si",
+      "fecha": "2026-11-23T10:15:55.866Z"
+    },
+    {
+      "id": "i1rxdgnl",
+      "texto": "Sabías que [CIFRA] minutos de silencio pueden revelar secretos ocultos en la noche? | Imagen de un reloj marcando 00:00 y un paisaje nocturno iluminado por auroras",
+      "categoria": "Gancho",
+      "decision": "no",
+      "fecha": "2026-11-23T10:15:49.070Z"
+    },
+    {
       "id": "i1qedqdp",
       "texto": "Sabías que [CIFRA] kilómetros de hielo esconden una ciudad abandonada? | Imagen de un glaciar con una silueta de ciudad oculta en el fondo",
       "categoria": "Gancho",
