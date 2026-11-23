@@ -1,0 +1,71 @@
+{
+  "titulo": "Sabías que bajo la Gran Pirámide de Guiza hay una cámara oculta 🏜️",
+  "formato": "largo",
+  "orientacion": "horizontal",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-great-pyramid-of-giza.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-23T03:58:28.362Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿La Gran Pirámide de Guiza, con 146.5 metros, fue…?",
+  "publicacion": {
+    "titulo": "Sabías que bajo la Gran Pirámide de Guiza hay una cámara oculta 🏜️",
+    "descripcion": "Descubre cómo se construyó la Gran Pirámide de Guiza y el misterio que yace bajo sus cimientos. Un viaje a la antigua Egipto que revelará secretos que han permanecido ocultos durante milenios.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://es.wikipedia.org/wiki/Gran_Pir%C3%A1mide_de_Guiza · https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#Guiza #EgiptoAntiguo #Arquitectura #Misterios #GreatPyramidOfGiza"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El gancho es demasiado largo y descriptivo. La revelación llega tarde y no impacta lo suficiente. Falta ritmo en las transiciones entre escenas."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que la Gran Pirámide de Guiza, con 146,5 metros, fue el edificio más alto por 3700 años? Pero su mayor secreto está bajo tierra.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Construida en el 2600 a. C., usó 2,3 millones de bloques. Algunos pesaban 60 toneladas. ¿Cómo los movieron?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Papiros de 2013 revelan: 200 bloques al mes desde Tura. Pero su propósito va más allá de una tumba.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Recubierta de piedra caliza blanca, brillaba como un faro. Símbolo de poder y avanzada ingeniería.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "A 10 metros bajo tierra, una cámara funeraria tallada en roca permaneció oculta durante siglos. ¿Qué más esconde?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Crees que aún hay más secretos por descubrir en la Gran Pirámide de Guiza? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "titulo": "Sabías que un avión se estrelló en los Andes en 1972 y solo 16 sobrevivieron ❄️",
+  "formato": "largo",
+  "orientacion": "horizontal",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-uruguayan-air-force-flight-571.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-23T04:02:23.022Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿Un avión con 45 personas a bordo se estrelló en los Andes…?",
+  "publicacion": {
+    "titulo": "Sabías que un avión se estrelló en los Andes en 1972 y solo 16 sobrevivieron ❄️",
+    "descripcion": "Un vuelo de la Fuerza Aérea Uruguaya se estrelló en los Andes en 1972, dejando a los sobrevivientes en una lucha desesperada por la vida. Descubre cómo 16 personas lograron sobrevivir 72 días en condiciones extremas.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Uruguayan_Air_Force_Flight_571\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#Vuelo571 #Supervivencia #Andes #Tragedia #Milagro"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El gancho es descriptivo y no intriga lo suficiente. La revelación llega tarde y el ritmo se ralentiza en detalles técnicos. El título es largo y poco atractivo."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Sabías que un avión con 45 personas a bordo se estrelló en los Andes en 1972? Una historia de supervivencia que desafió todos los límites.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El vuelo 571 de la Fuerza Aérea Uruguaya, un Fairchild FH-227D, partió de Montevideo con destino a Santiago de Chile. A bordo viajaban 40 pasajeros y 5 tripulantes, incluyendo 19 miembros de un equipo de rugby.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El copiloto, con poca experiencia, creyó erróneamente que habían sobrevolado Curicó y comenzó a descender hacia lo que pensó era el aeropuerto de Santiago. Pero aún estaban a entre 60 y 69 kilómetros de Curicó.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El avión golpeó una cresta montañosa a 3660 metros de altitud, arrancando las alas y la cola. El fuselaje deslizó 725 metros por un glaciar a 350 kilómetros por hora antes de detenerse.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "De los 45 a bordo, 3 tripulantes y 9 pasajeros murieron en el acto. Otros fallecieron poco después por el frío extremo y las lesiones. Los sobrevivientes quedaron aislados en una zona remota de los Andes.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Durante 72 días, los sobrevivientes enfrentaron temperaturas bajo cero, exposición, hambre y una avalancha que mató a 13 más. Para sobrevivir, recurrieron a comer los cuerpos de los fallecidos.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "De los 19 miembros del equipo de rugby, solo 7 sobrevivieron. 11 jugadores y el médico del equipo perecieron.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: el 12 de diciembre, tres sobrevivientes decidieron cruzar las montañas en busca de ayuda. Tras 9 días, uno de ellos encontró a un arriero, lo que llevó al rescate de los 14 restantes el 22 y 23 de diciembre.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Crees que hubieras tenido el coraje de cruzar las montañas en esas condiciones? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

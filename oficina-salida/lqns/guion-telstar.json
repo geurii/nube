@@ -1,0 +1,85 @@
+{
+  "titulo": "🛰️ Telstar: El satélite que revolucionó las comunicaciones en 1962",
+  "formato": "largo",
+  "orientacion": "horizontal",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-telstar.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-23T04:00:21.552Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿En 1962 un satélite del tamaño de una maleta cambió…?",
+  "publicacion": {
+    "titulo": "🛰️ Telstar: El satélite que revolucionó las comunicaciones en 1962",
+    "descripcion": "Descubre cómo Telstar, lanzado en 1962, cambió las comunicaciones globales al transmitir las primeras imágenes de televisión, llamadas telefónicas y telegramas a través del espacio. Un hito tecnológico que aún orbita la Tierra.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://es.wikipedia.org/wiki/Telstar · https://en.wikipedia.org/wiki/Telstar\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#Telstar #Comunicaciones #1962 #HistoriaOculta #MisteriosSinResolver"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El gancho es bueno pero falta impacto en el ritmo. La revelación llega tarde y el cierre es débil. Simplificar detalles técnicos para mantener el interés."
+  },
+  "retencionEstimada": 64,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Sabías que en 1962 un satélite del tamaño de una maleta cambió las comunicaciones para siempre?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Telstar 1, lanzado el 10 de julio de 1962, fue el primer satélite en transmitir televisión, llamadas telefónicas y telegramas a través del espacio.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Con 88 centímetros de longitud y 77 kilogramos, Telstar era una esfera cubierta de células solares que generaban 14 watts de energía.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Seis estaciones terrestres en EE.UU., Francia, Reino Unido, Canadá, Alemania Occidental e Italia coordinaron las comunicaciones con Telstar.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Telstar orbitaba la Tierra cada 2 horas y 37 minutos en una trayectoria elíptica, a una altitud máxima de 5933 kilómetros.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Su innovador transponder convertía señales de 6 GHz a 4 GHz, amplificándolas para retransmitirlas a las estaciones terrestres.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: Telstar 1 y 2, aunque ya no funcionan, aún orbitan la Tierra más de 60 años después de su lanzamiento.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Crees que Telstar sentó las bases para la era digital actual? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

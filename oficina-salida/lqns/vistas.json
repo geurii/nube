@@ -1,14 +1,14 @@
 {
-  "fecha": "2026-11-23T03:37:06.312Z",
+  "fecha": "2026-11-23T03:55:51.493Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 2235,
-  "ganadasDesdeElUltimoCiclo": 0,
+  "total": 2237,
+  "ganadasDesdeElUltimoCiclo": 2,
   "videos": [
     {
       "id": "hVawPPY5K_Y",
       "titulo": "⚡ 1884: El inventor que encendió Niágara con su motor AC",
       "publicado": "2026-11-22T16:44:58+00:00",
-      "vistas": 32
+      "vistas": 34
     },
     {
       "id": "FEwqFlpnAe4",
@@ -239,6 +239,10 @@
     {
       "fecha": "2026-11-23T03:37:06.311Z",
       "total": 2235
+    },
+    {
+      "fecha": "2026-11-23T03:55:51.493Z",
+      "total": 2237
     }
   ]
 }

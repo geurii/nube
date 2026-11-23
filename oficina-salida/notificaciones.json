@@ -1,5 +1,41 @@
 [
   {
+    "id": "mwsqp6uhe4nw",
+    "fecha": "2026-11-23T04:02:23.081Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Uruguayan Air Force Flight 571",
+    "texto": "El Verificador no aprobó \"Uruguayan Air Force Flight 571\" tras 4 intentos: La primera frase debe empezar con \"Sabías que\". Aprobados: 11. Rechazados: 27. Con error: 8. No se publica. Próximo ciclo en 10 h."
+  },
+  {
+    "id": "mwsqml4fvfos",
+    "fecha": "2026-11-23T04:00:21.615Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Telstar",
+    "texto": "El Verificador no aprobó \"Telstar\" tras 4 intentos: La primera frase debe empezar con \"Sabías que\". Aprobados: 11. Rechazados: 26. Con error: 8. No se publica. Próximo ciclo en 10 h."
+  },
+  {
+    "id": "mwsqk5s8sj3n",
+    "fecha": "2026-11-23T03:58:28.424Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Great Pyramid of Giza",
+    "texto": "El Verificador no aprobó \"Great Pyramid of Giza\" tras 4 intentos: La altura de 146.5 metros no coincide con la fuente en inglés, que indica 146.6 metros. Además, la duración de 3,700 años como el edificio más alto no está resp Aprobados: 11. Rechazados: 25. Con error: 8. No se publica. Próximo ciclo en 10 h."
+  },
+  {
+    "id": "mwsqguhyhw29",
+    "fecha": "2026-11-23T03:55:53.830Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante o afirmación impactante + elemento misterioso o prohibido + pista de revelación El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (32772 vistas/hora)."
+  },
+  {
     "id": "mwspwhmfdy6i",
     "fecha": "2026-11-23T03:40:04.023Z",
     "canal": "lqns",
@@ -645,41 +681,5 @@
     "tipo": "reporte",
     "titulo": "Fórmula del momento",
     "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante o afirmación impactante + elemento misterioso/inhóspito + pista de revelación o consecuencia inesperada El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (41749 vistas/hora)."
-  },
-  {
-    "id": "mwr3sta72wjw",
-    "fecha": "2026-11-22T00:33:34.783Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "La oficina falló",
-    "texto": "Groq no respondió tras 4 intentos (límite de Groq (429)). Respaldos: Cerebras/gpt-oss-120b: JSON roto; Gemini/gemini-2.5-flash: 404; Gemini/gemini-flash-latest: Aprobados: 3. Rechazados: 5. Con error: 8. Próximo ciclo en 1 h."
-  },
-  {
-    "id": "mwr3snfrb2pf",
-    "fecha": "2026-11-22T00:33:27.207Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante o afirmación impactante + elemento misterioso/extraño + pista de revelación o consecuencia El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (41841 vistas/hora)."
-  },
-  {
-    "id": "mwr3j5ohcxst",
-    "fecha": "2026-11-22T00:26:04.289Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "La oficina falló",
-    "texto": "Groq no respondió tras 4 intentos (límite de Groq (429)). Respaldos: Cerebras/gpt-oss-120b: 429; Gemini/gemini-2.5-flash: 404; Gemini/gemini-flash-latest: 429;  Aprobados: 3. Rechazados: 5. Con error: 7. Próximo ciclo en 2 h."
-  },
-  {
-    "id": "mwr3iy6hup1j",
-    "fecha": "2026-11-22T00:25:54.569Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante o afirmación impactante + elemento misterioso o prohibido + pista de revelación El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (41906 vistas/hora)."
   }
 ]
