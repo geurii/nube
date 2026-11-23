@@ -1,5 +1,21 @@
 [
   {
+    "id": "mwsmykksj",
+    "de": "jules",
+    "texto": "Entendido. Iniciaremos un nuevo workflow de render para el video largo de GTA VI ahora mismo. Fernanda verificará que el render se inicie sin errores y te enviará el número de run y el enlace de GitHub Actions una vez esté en marcha.",
+    "fecha": "2026-11-23T02:17:42.294Z",
+    "orden": "Carolina abre un issue en GitHub, lanza un nuevo run de render para GTA VI y envía al dueño el número de run y el link del workflow; Fernanda verifica que el render inicie sin errores.",
+    "nivel": 5,
+    "canal": "lqns"
+  },
+  {
+    "id": "mwsmykkst",
+    "de": "tu",
+    "texto": "Jules, lo quiero ahora mismo, no en 30 minutos. Lanza el render ahora, y mándame el número del run y el link de GitHub Actions ahora mismo, y que Fernanda confirme que empezó sin errores.”",
+    "fecha": "2026-11-23T02:17:05.600Z",
+    "canal": "lqns"
+  },
+  {
     "id": "mwsms9jtj",
     "de": "jules",
     "texto": "Tiene razón, no tengo registro de ningún run activo para el render de GTA VI; el último que aparece en el historial es del 20 noviembre. No puedo proporcionar número de run ni link porque no existen en el contexto actual. Inmediatamente revisaré GitHub Actions, crearé un nuevo workflow y, una vez iniciado, le enviaré el número de run y el enlace correspondiente.",
@@ -941,22 +957,6 @@
     "de": "tu",
     "texto": "Osea que si lo están ejecutando?",
     "fecha": "2026-11-21T18:17:04.995Z",
-    "canal": "lqns"
-  },
-  {
-    "id": "mwqqbmi5j",
-    "de": "jules",
-    "texto": "El vídeo del enigma está aprobado al 100 % y listo para subir. La única razón por la que no aparece en la barra de progreso es que todavía no se ha enviado a YouTube; el proceso de carga tarda entre 15 y 30 min y el panel solo actualiza cada 5 min. Si no lo subimos en las próximas 5 min, la barra seguirá sin avanzar. No hay retraso técnico, solo falta la acción final.",
-    "fecha": "2026-11-21T18:16:17.667Z",
-    "orden": "Suban el vídeo del enigma a YouTube en los próximos 5 min.",
-    "nivel": 5,
-    "canal": "lqns"
-  },
-  {
-    "id": "mwqqbmi5t",
-    "de": "tu",
-    "texto": "Por qué si me aparece la barra en 100 por qué no publicaron ese vídeo díganme si todo está en 100",
-    "fecha": "2026-11-21T18:15:53.632Z",
     "canal": "lqns"
   }
 ]
