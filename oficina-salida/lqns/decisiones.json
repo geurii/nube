@@ -1,6 +1,13 @@
 {
   "decisiones": [
     {
+      "id": "i15i5ejl",
+      "texto": "Añadir un gancho más impactante al inicio, por ejemplo: \"Sabías que un tesoro de 40 millones de dólares está escondido en un lugar que nadie ha descubierto en 200 años?\", para captar la curiosidad de inmediato.",
+      "categoria": "Mejora de guion",
+      "decision": "si",
+      "fecha": "2026-11-23T20:42:51.792Z"
+    },
+    {
       "id": "iltrete",
       "texto": "Sabías que <sustantivo> <verbo> <número> <emoción>",
       "categoria": "Título",
