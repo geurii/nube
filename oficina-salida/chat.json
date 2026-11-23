@@ -1,5 +1,21 @@
 [
   {
+    "id": "mwsnp7wjj",
+    "de": "jules",
+    "texto": "No, todavía no: no tengo ningún número de run ni link de GitHub Actions, y no me lo voy a inventar. En el contexto no hay ningún render activo; el último video público sigue siendo \"⚡ 1884: El inventor que encendió Niágara con su motor AC\" con 26 vistas. No le miento: si no está, no está.",
+    "fecha": "2026-11-23T02:38:25.523Z",
+    "orden": "Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas.",
+    "nivel": 5,
+    "canal": "lqns"
+  },
+  {
+    "id": "mwsnp7wjt",
+    "de": "tu",
+    "texto": "YAAA??????",
+    "fecha": "2026-11-23T02:34:51.875Z",
+    "canal": "lqns"
+  },
+  {
     "id": "mwsnksfqj",
     "de": "jules",
     "texto": "No hay ningún run activo para el render de GTA VI; el último registrado es del 20 noviembre y no aparece nada en GitHub Actions ahora. Iniciaré inmediatamente un nuevo workflow de render y, en cuanto se genere, enviaré el número de run y el enlace al dueño, con Fernanda verificando que arranca sin errores.",
@@ -941,22 +957,6 @@
     "de": "tu",
     "texto": "Ys se subió?",
     "fecha": "2026-11-21T18:35:24.955Z",
-    "canal": "lqns"
-  },
-  {
-    "id": "mwqql98sj",
-    "de": "jules",
-    "texto": "El vídeo del enigma del Bloop debe estar subido a YouTube antes de las 4 pm. Si no lo vemos, los elimino a los 30. No hay margen de error.",
-    "fecha": "2026-11-21T18:23:47.208Z",
-    "orden": "Suban el vídeo del enigma del Bloop a YouTube inmediatamente y confirmen la subida en el chat del equipo.",
-    "nivel": 5,
-    "canal": "lqns"
-  },
-  {
-    "id": "mwqql98st",
-    "de": "tu",
-    "texto": "“Jules, exígele a los 30 ahora mismo: si a las 4 de la tarde no veo el video del enigma del Bloop publicado en YouTube, los elimino a todos. Ya hay un sistema de subida, úsenlo, no hay excusa. Quiero el video subido, no en 100%, subido.",
-    "fecha": "2026-11-21T18:23:32.079Z",
     "canal": "lqns"
   }
 ]

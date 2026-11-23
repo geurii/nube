@@ -1,5 +1,10 @@
 [
   {
+    "fecha": "2026-11-23T02:38:25.523Z",
+    "orden": "Carolina arranca AHORA el workflow de render y Fernanda me confirma en menos de 10 minutos el número de run, el link directo y la captura de pantalla; si no arranca o falla, me lo reporta de inmediato sin excusas.",
+    "nivel": 5
+  },
+  {
     "fecha": "2026-11-23T02:34:58.891Z",
     "orden": "Carolina crea y lanza un nuevo workflow de render para GTA VI en GitHub Actions; Fernanda verifica que el run inicia sin errores y envía al dueño el número y el link inmediatamente.",
     "nivel": 5
@@ -42,11 +47,6 @@
   {
     "fecha": "2026-11-23T01:10:23.356Z",
     "orden": "Priorizar la finalización del render de GTA VI y publicar el video en YouTube y en todas las redes tan pronto como termine; luego, publicar cualquier short completado inmediatamente.",
-    "nivel": 5
-  },
-  {
-    "fecha": "2026-11-23T00:50:27.780Z",
-    "orden": "Iniciar la investigación y guion del tema \"The Great Smog of London\" y entregarlo antes de las 09:00 UTC para el próximo Short",
     "nivel": 5
   }
 ]
