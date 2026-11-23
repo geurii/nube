@@ -1,6 +1,13 @@
 {
   "decisiones": [
     {
+      "id": "i12xul2",
+      "texto": "Sabías que [CIFRA] personas nunca llegaron a la luna, pero sus huellas siguen intactas | Un mapa lunar con marcas de pasos que se desvanecen en el horizonte",
+      "categoria": "Gancho",
+      "decision": "no",
+      "fecha": "2026-11-23T00:29:53.494Z"
+    },
+    {
       "id": "i1es9w6u",
       "texto": "Sabías que [CIFRA] millones de pingüinos fueron sacrificados por un secreto industrial | Una imagen de una granja de pingüinos con una fila de cajas de metal vacías",
       "categoria": "Gancho",
