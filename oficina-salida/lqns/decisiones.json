@@ -1,6 +1,20 @@
 {
   "decisiones": [
     {
+      "id": "i1bvtf8b",
+      "texto": "42 Segundos que Revelaron el Código Enigma — Sabías que 42 segundos descifraron una clave del Enigma? (estimada 9/10)",
+      "categoria": "Estrategia",
+      "decision": "si",
+      "fecha": "2026-11-23T00:33:23.829Z"
+    },
+    {
+      "id": "i160rw29",
+      "texto": "60 Segundos que Cambiaron la Historia del Metro de Londres — Sabías que 60 segundos redefinieron el diseño del Metro de Londres? (estimada 8/10)",
+      "categoria": "Estrategia",
+      "decision": "si",
+      "fecha": "2026-11-23T00:33:19.404Z"
+    },
+    {
       "id": "ifqrq6d",
       "texto": "9 Segundos que Evitaron el Naufragio del USS Clemson — Sabías que 9 segundos salvaron al USS Clemson del hundimiento? (estimada 9/10)",
       "categoria": "Estrategia",
