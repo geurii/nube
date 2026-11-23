@@ -1,6 +1,20 @@
 {
   "decisiones": [
     {
+      "id": "i1pqz9ld",
+      "texto": "18 segundos que explican el sonido del lago fantasma — Sabías que 18 segundos de audio revelan el lago fantasma? (estimada 8/10)",
+      "categoria": "Estrategia",
+      "decision": "no",
+      "fecha": "2026-11-23T00:36:13.523Z"
+    },
+    {
+      "id": "i967tfo",
+      "texto": "9 objetos misteriosos encontrados bajo la pirámide de Giza — Sabías que 9 objetos fueron hallados bajo la Gran Pirámide? (estimada 9/10)",
+      "categoria": "Estrategia",
+      "decision": "si",
+      "fecha": "2026-11-23T00:36:07.254Z"
+    },
+    {
       "id": "i1bn85j3",
       "texto": "22 Segundos que Cambiaron la Ruta del Titanic — Sabías que 22 segundos alteraron la ruta final del Titanic? (estimada 9/10)",
       "categoria": "Estrategia",
