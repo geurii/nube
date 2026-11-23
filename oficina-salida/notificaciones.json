@@ -1,5 +1,32 @@
 [
   {
+    "id": "mwsitgjvrza2",
+    "fecha": "2026-11-23T00:21:45.355Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Wardenclyffe Tower",
+    "texto": "El Verificador no aprobó \"Wardenclyffe Tower\" tras 4 intentos: El material menciona transmisión de mensajes, telefonía y facsimile, pero no afirma que la torre prometía transmitir energía. Aprobados: 11. Rechazados: 19. Con error: 8. No se publica. Próximo ciclo en 2 h."
+  },
+  {
+    "id": "mwsir8t0ppiv",
+    "fecha": "2026-11-23T00:20:02.004Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: ",
+    "texto": "El Verificador no aprobó \"\" tras 0 intentos: Tema descartado (no se pudo cargar):  Aprobados: 11. Rechazados: 18. Con error: 8. No se publica. Próximo ciclo en 2 h."
+  },
+  {
+    "id": "mwsiq97mm5f5",
+    "fecha": "2026-11-23T00:19:15.874Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título que plantea una pregunta intrigante o una afirmación impactante + elemento misterioso/extraño + pista de revelación o consecuencia El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (33475 vistas/hora)."
+  },
+  {
     "id": "mwse974bjrc2",
     "fecha": "2026-11-22T22:14:01.547Z",
     "canal": "lqns",
@@ -653,30 +680,5 @@
     "tipo": "reporte",
     "titulo": "Video subido a YouTube",
     "texto": "\"🔊 El enigma del Bloop: el rugido del hielo\" quedó PÚBLICO ahora mismo: https://youtu.be/5BIAOJmE-dk"
-  },
-  {
-    "id": "mwqq2j2ww801",
-    "fecha": "2026-11-21T18:09:13.496Z",
-    "canal": "lqns",
-    "tipo": "reporte",
-    "titulo": "El panel aprobó: 🔊 El enigma del Bloop: el rugido del hielo",
-    "texto": "5 de 8 aprobaron, 6 pasaron los primeros 3 segundos, 3 lo compartirían. Mejora sugerida: Haz un gancho visual y verbal más impactante en los primeros 2‑3 segundos (ej. \"¡Escucha el rugido que asustó a la ciencia!\"), con texto grande y emojis, para retener a los espectadores que deciden en segundos."
-  },
-  {
-    "id": "mwqq2hlj6mec",
-    "fecha": "2026-11-21T18:09:11.575Z",
-    "canal": "lqns",
-    "tipo": "alerta",
-    "titulo": "Gemini no pudo mirar el video",
-    "texto": "ningún modelo respondió. gemini-4-hydrogen: 503 {\"error\":{\"message\":\"gemini-4-hydrogen is currently experiencing high demand, spikes in demand are usually temporary. Please try again later | gemini-3.8-flash: The operati El panel juzgó solo el guion."
-  },
-  {
-    "id": "mwqpvt53n71o",
-    "fecha": "2026-11-21T18:03:59.943Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "listo",
-    "titulo": "Video listo: 🔊 El enigma del Bloop: el rugido del hielo",
-    "texto": "Se renderizó \"🔊 El enigma del Bloop: el rugido del hielo\" para Lo Que No Sabías (31 MB). Descárgalo en GitHub > Actions > Produccion > artefacto \"video-lqns-bloop\". Falta subirlo a YouTube."
   }
 ]

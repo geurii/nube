@@ -1,44 +1,44 @@
 {
-  "fecha": "2026-11-22T19:56:07.262Z",
+  "fecha": "2026-11-23T00:19:13.942Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 2137,
-  "ganadasDesdeElUltimoCiclo": 0,
+  "total": 2194,
+  "ganadasDesdeElUltimoCiclo": 57,
   "videos": [
     {
       "id": "hVawPPY5K_Y",
       "titulo": "⚡ 1884: El inventor que encendió Niágara con su motor AC",
       "publicado": "2026-11-22T16:44:58+00:00",
-      "vistas": 24
+      "vistas": 26
     },
     {
       "id": "FEwqFlpnAe4",
       "titulo": "Sabías que la explosión de Chernóbil cambió todo 🌍",
       "publicado": "2026-11-22T16:25:30+00:00",
-      "vistas": 2
+      "vistas": 5
     },
     {
       "id": "9CKxsZ7hmUg",
       "titulo": "🌊 El Bloop: ¡5,000 km de misterio bajo el hielo!",
       "publicado": "2026-11-22T07:41:49+00:00",
-      "vistas": 19
+      "vistas": 24
     },
     {
       "id": "HHnlDcvo_vU",
       "titulo": "🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩",
       "publicado": "2026-11-22T04:24:01+00:00",
-      "vistas": 9
+      "vistas": 13
     },
     {
       "id": "76aNbQdWBSc",
       "titulo": "Sabías que una ola de melaza arrasó Boston? 🍯",
       "publicado": "2026-11-22T03:59:28+00:00",
-      "vistas": 10
+      "vistas": 13
     },
     {
       "id": "8YRV5me-3uM",
       "titulo": "¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️",
       "publicado": "2026-11-22T03:32:55+00:00",
-      "vistas": 44
+      "vistas": 49
     },
     {
       "id": "Nd2x5UMBiLM",
@@ -62,13 +62,13 @@
       "id": "Md9Rrt9EiTM",
       "titulo": "Sabías que un banco pagó 175 millones por clientes que no existían 👻🏦",
       "publicado": "2026-11-21T01:48:24+00:00",
-      "vistas": 117
+      "vistas": 128
     },
     {
       "id": "ujvVWAyrSUg",
       "titulo": "Sabías que tres hombres caminaron en plena noche polar por 3 huevos de pingüino 🥚 (Parte 3/3)",
       "publicado": "2026-11-20T17:30:34+00:00",
-      "vistas": 602
+      "vistas": 626
     },
     {
       "id": "KURWolBJszo",
@@ -227,6 +227,10 @@
     {
       "fecha": "2026-11-22T19:56:07.261Z",
       "total": 2137
+    },
+    {
+      "fecha": "2026-11-23T00:19:13.942Z",
+      "total": 2194
     }
   ]
 }

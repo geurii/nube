@@ -1,0 +1,99 @@
+{
+  "titulo": "🔎 Lo que la Torre Wardenclyffe oculta y nadie quiere que sepas",
+  "formato": "largo",
+  "orientacion": "horizontal",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-wardenclyffe-tower.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-23T00:21:45.089Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿En 1901 Tesla empezó a levantar una torre de 57 m…?",
+  "publicacion": {
+    "titulo": "🔎 Lo que la Torre Wardenclyffe oculta y nadie quiere que sepas",
+    "descripcion": "Explora el misterio detrás de la Torre Wardenclyffe, una estructura pionera diseñada para cambiar las telecomunicaciones. Descubre por qué este proyecto visionario fue abandonado y qué secretos aún guarda.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://es.wikipedia.org/wiki/Wardenclyffe_Tower · https://en.wikipedia.org/wiki/Wardenclyffe_Tower\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#Wardenclyffe #Tesla #Telecomunicaciones #Historia #Misterio"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 5,
+    "critica": "El gancho es demasiado largo y poco impactante; el ritmo se arrastra con frases extensas; la revelación llega muy tarde."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que en 1901 Tesla empezó a levantar una torre de 57 metros en Long Island?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Sabías que la torre, llamada Wardenclyffe, prometía transmitir energía y voz a través del Atlántico.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Sabías que un banquero ofreció 200 acres, soñando con una “Ciudad de la Radio”.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Sabías que Tesla rechazó las ondas de radio y quiso usar la Tierra como conductor.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Sabías que el inversor inicial retiró su apoyo cuando Tesla amplió el proyecto.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Sabías que, pese a pruebas exitosas, la torre quedó inconclusa por falta de fondos.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Sabías que durante la Primera Guerra Mundial la torre fue demolida bajo misteriosas órdenes.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Sabías que en 1917 la torre se desmanteló para vender chatarra y cubrir deudas de Tesla.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Sabías que el sitio sirvió 50 años como planta fotográfica antes de convertirse en museo.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Crees que el mundo estaba listo para esa visión? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-# Informe de la oficina · Lo Que No Sabías · tema por elegir (short)
+# Informe de la oficina · Lo Que No Sabías · tema por elegir (largo)
 
 Modelo usado en Groq: openai/gpt-oss-120b
 
