@@ -1,6 +1,27 @@
 {
   "decisiones": [
     {
+      "id": "i1aty91w",
+      "texto": "3. Cierre memorable: terminar con una invitación a la reflexión que deje al espectador pensando, por ejemplo: “¿Crees que el tesoro sigue escondido o que el verdadero valor está en la búsqueda? Deja tu teoría en los come",
+      "categoria": "Mejora de guion",
+      "decision": "si",
+      "fecha": "2026-11-23T00:32:26.056Z"
+    },
+    {
+      "id": "ixrf674",
+      "texto": "2. Ritmo y estructura: dividir el guion en bloques con subtítulos mentales, por ejemplo: “Sabías que el aventurero dejó una caja con tres mensajes cifrados (Parte 1/3)”, “Sabías que el posadero abrió la caja y solo uno d",
+      "categoria": "Mejora de guion",
+      "decision": "no",
+      "fecha": "2026-11-23T00:32:15.431Z"
+    },
+    {
+      "id": "i1ngtj5h",
+      "texto": "1. Gancho inicial más impactante: reemplazar “Sabías que un tesoro de más de 40 millones de dólares está oculto en Virginia?” por “Sabías que un tesoro de 40 millones de dólares se esconde en las montañas de Virginia y n",
+      "categoria": "Mejora de guion",
+      "decision": "si",
+      "fecha": "2026-11-23T00:31:30.845Z"
+    },
+    {
       "id": "iackixh",
       "texto": "Sabías que un [INSTITUCIÓN] pagó [MONTO] por [OBJETO] que no existían 👻🏦",
       "categoria": "Título",
