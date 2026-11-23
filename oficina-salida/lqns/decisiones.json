@@ -1,6 +1,13 @@
 {
   "decisiones": [
     {
+      "id": "ifqrq6d",
+      "texto": "9 Segundos que Evitaron el Naufragio del USS Clemson — Sabías que 9 segundos salvaron al USS Clemson del hundimiento? (estimada 9/10)",
+      "categoria": "Estrategia",
+      "decision": "si",
+      "fecha": "2026-11-23T00:33:12.802Z"
+    },
+    {
       "id": "i1aty91w",
       "texto": "3. Cierre memorable: terminar con una invitación a la reflexión que deje al espectador pensando, por ejemplo: “¿Crees que el tesoro sigue escondido o que el verdadero valor está en la búsqueda? Deja tu teoría en los come",
       "categoria": "Mejora de guion",
