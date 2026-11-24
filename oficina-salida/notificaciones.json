@@ -1,5 +1,41 @@
 [
   {
+    "id": "mwu6yg3q59em",
+    "fecha": "2026-11-24T04:25:15.014Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: DATOS GENERALES de GTA VI",
+    "texto": "El Verificador no aprobó \"DATOS GENERALES de GTA VI\" tras 0 intentos: Tema descartado (no se pudo cargar): DATOS GENERALES de GTA VI Aprobados: 11. Rechazados: 36. Con error: 9. No se publica. Próximo ciclo en 10 h."
+  },
+  {
+    "id": "mwu6yfhf6m1t",
+    "fecha": "2026-11-24T04:25:14.211Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: DATOS GENERALES de GTA VI",
+    "texto": "El Verificador no aprobó \"DATOS GENERALES de GTA VI\" tras 0 intentos: Tema descartado (no se pudo cargar): DATOS GENERALES de GTA VI Aprobados: 11. Rechazados: 35. Con error: 9. No se publica. Próximo ciclo en 10 h."
+  },
+  {
+    "id": "mwu6yewckj63",
+    "fecha": "2026-11-24T04:25:13.452Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: DATOS GENERALES de GTA VI",
+    "texto": "El Verificador no aprobó \"DATOS GENERALES de GTA VI\" tras 0 intentos: Tema descartado (no se pudo cargar): DATOS GENERALES de GTA VI Aprobados: 11. Rechazados: 34. Con error: 9. No se publica. Próximo ciclo en 10 h."
+  },
+  {
+    "id": "mwu6ydz3p4ey",
+    "fecha": "2026-11-24T04:25:12.255Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante o afirmación impactante + elemento misterioso o inesperado + pista de contenido (ej. \"¿Por qué…?\", \"El secreto de…\", \"Lo que nadie te contó sobre…\") El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (27796 vistas/hora)."
+  },
+  {
     "id": "mwu584cdu6za",
     "fecha": "2026-11-24T03:36:47.101Z",
     "canal": "lqns",
@@ -651,38 +687,5 @@
     "tipo": "listo",
     "titulo": "Video listo: 🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩",
     "texto": "Se renderizó \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\" para Lo Que No Sabías (39 MB). Descárgalo en GitHub > Actions > Produccion > artefacto \"video-lqns-the-antikythera-mechanism\". Falta subirlo a YouTube."
-  },
-  {
-    "id": "mwrb4io7liic",
-    "fecha": "2026-11-22T03:58:38.215Z",
-    "canal": "lqns",
-    "tipo": "reporte",
-    "titulo": "Video subido a YouTube",
-    "texto": "\"Sabías que una ola de melaza arrasó Boston? 🍯\" quedó PÚBLICO ahora mismo: https://youtu.be/76aNbQdWBSc"
-  },
-  {
-    "id": "mwraz6suau49",
-    "fecha": "2026-11-22T03:54:29.550Z",
-    "canal": "lqns",
-    "tipo": "alerta",
-    "titulo": "El panel de críticos falló",
-    "texto": "No pudo evaluar \"lqns-the-great-molasses-flood\" (Groq no respondió.). El video pasó sin su voto."
-  },
-  {
-    "id": "mwravra5cbhm",
-    "fecha": "2026-11-22T03:51:49.469Z",
-    "canal": "lqns",
-    "tipo": "alerta",
-    "titulo": "Gemini no pudo mirar el video",
-    "texto": "ningún modelo respondió. gemini-4-hydrogen: 503 {\"error\":{\"message\":\"gemini-4-hydrogen is currently experiencing high demand, spikes in demand are usually temporary. Please try again later | gemini-3.8-flash: 503 {\"error El panel juzgó solo el guion."
-  },
-  {
-    "id": "mwrav8floa4p",
-    "fecha": "2026-11-22T03:51:25.041Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "listo",
-    "titulo": "Video listo: Sabías que una ola de melaza arrasó Boston? 🍯",
-    "texto": "Se renderizó \"Sabías que una ola de melaza arrasó Boston? 🍯\" para Lo Que No Sabías (53 MB). Descárgalo en GitHub > Actions > Produccion > artefacto \"video-lqns-the-great-molasses-flood\". Falta subirlo a YouTube."
   }
 ]

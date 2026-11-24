@@ -1,8 +1,8 @@
 {
-  "fecha": "2026-11-24T04:13:41.801Z",
+  "fecha": "2026-11-24T04:25:09.768Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 2243,
-  "ganadasDesdeElUltimoCiclo": 0,
+  "total": 2244,
+  "ganadasDesdeElUltimoCiclo": 1,
   "videos": [
     {
       "id": "hVawPPY5K_Y",
@@ -20,7 +20,7 @@
       "id": "9CKxsZ7hmUg",
       "titulo": "🌊 El Bloop: ¡5,000 km de misterio bajo el hielo!",
       "publicado": "2026-11-22T07:41:49+00:00",
-      "vistas": 27
+      "vistas": 28
     },
     {
       "id": "HHnlDcvo_vU",
@@ -267,6 +267,10 @@
     {
       "fecha": "2026-11-24T04:13:41.801Z",
       "total": 2243
+    },
+    {
+      "fecha": "2026-11-24T04:25:09.768Z",
+      "total": 2244
     }
   ]
 }
