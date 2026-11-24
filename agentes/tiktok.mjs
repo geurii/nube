@@ -2,6 +2,8 @@
 // Todo según la documentación oficial de Buffer (developers.buffer.com): clave en "Authorization: Bearer", consulta de organizaciones, consulta de canales
 // (service = tiktok), mutación createPost con video por enlace público (Buffer no recibe archivos). Se publica YA (shareNow) en modo automático.
 // Nunca lanza hacia afuera: devuelve el resultado o lanza un Error con un mensaje claro que el llamador captura.
+import {sinEnlaces} from './sin-enlaces.mjs';
+
 const API = 'https://api.buffer.com';
 const dormir = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -11,7 +13,7 @@ const quitarClave = (t, clave) => String(t ?? '').split(clave).join('***');
 export const textoTikTok = (guion) => {
   const p = guion?.publicacion ?? {};
   const titulo = String(p.titulo ?? guion?.titulo ?? '').trim();
-  const desc = String(p.descripcion ?? '');
+  const desc = sinEnlaces(p.descripcion ?? '');
   const hashtags = [...new Set(desc.match(/#[\p{L}\p{N}_]+/gu) ?? [])].slice(0, 5);
   const primer = desc.split('\n').map((l) => l.trim()).find((l) => l && !l.startsWith('#') && !/^(Fuentes|Más historias)/i.test(l) && !/^https?:/i.test(l)) ?? '';
   const sinHashtags = primer.replace(/#[\p{L}\p{N}_]+/gu, '').trim();
