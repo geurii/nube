@@ -519,14 +519,14 @@ try {
   // INTERNET PARA TODOS: una vez por ciclo se reúne lo que dice la web de hoy y se les da a todos los agentes (Guionista, Editor, Verificador, Titulista, panel, pintores...)
   try {
     const tit = await Promise.race([titulosVirales(TEMA), new Promise((r) => setTimeout(() => r([]), 25000))]);
-    const resumenes = fuentesInstitucionales.map((x) => ({host: x.institucion || x.dominio, texto: x.texto}));
+    const resumenes = fuentes.filter((x) => !x.apoyo).map((x) => ({host: x.institucion || x.dominio, texto: x.texto}));
     const bloqueWeb = armarBloqueWeb({tema: TEMA, resumenes, titulos: tit, radarTexto: textoDeRadar(leerJson(path.join(SALIDA, 'radar.json'), null), 2)});
     guardarWeb(CANAL_ID, {tema: TEMA, bloque: bloqueWeb, resumenes: resumenes.length, titulos: tit});
     WEB_BLOQUE = [bloqueWeb, leerPreferencias(CANAL_ID), textoDeLecciones(CANAL_ID)].filter(Boolean).join(' ');
     if (bloqueWeb) informe.push(`Internet para todos los agentes: ${resumenes.length} resúmenes web y ${tit.length} videos virales de YouTube sobre el tema.`);
   } catch { /* sin internet extra */ }
   informe.push('## Investigación web (fuentes consultadas; no se exige que sean institucionales)', ...fuentes.map((f) => `- ${f.apoyo ? 'Wikipedia (opcional; no cuenta como prueba)' : `${f.institucion || f.idioma} (${f.dominio || 'fuente consultada'})`}: [${f.titulo}](${f.url})`), '');
-  const materialRecuperado = fuentes.map((f) => `### ${f.apoyo ? 'ENCICLOPEDIA / APOYO' : 'FUENTE CONSULTADA'} ${f.url}\n${f.texto}`).join('\n\n');
+  const materialRecuperado = fuentes.filter((f) => !f.apoyo).map((f) => `### FUENTE CONSULTADA ${f.url}\n${f.texto}`).join('\n\n');
   const material = materialRecuperado || `MODO FICCIÓN EXPLÍCITA: no se recuperó documentación consultable para "${TEMA}". Solo se permite crear un relato original de misterio claramente presentado como ficción; no atribuyas hechos, fechas, cifras, lugares ni causas al mundo real. La narración debe decir explícitamente que es un relato ficticio y nunca fingir que ocurrió.`;
 
   let retencionPanel = null;
