@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {avisarTelefono} from './aviso.mjs';
+import {limpiarParaVoz} from './texto-voz.mjs';
 
 const RAIZ = 'oficina-salida';
 const leer = (ruta, porDefecto) => { try { return JSON.parse(fs.readFileSync(ruta, 'utf8')); } catch { return porDefecto; } };
@@ -89,7 +90,8 @@ console.log(`Produciendo ${id}: "${g.titulo}" (${g.formato}) del canal ${nombreD
 fs.mkdirSync(path.join('guion', 'serie'), {recursive: true});
 if (!['short', 'largo'].includes(g.formato)) throw new Error(`Formato inválido para ${id}: ${g.formato}`);
 const orientacion = g.formato === 'short' ? 'vertical' : 'horizontal';
-fs.writeFileSync(path.join('guion', 'serie', `${id}.json`), JSON.stringify({...g, orientacion, personaje: {visible: false}, audio: `audio/${id}.wav`}, null, 2));
+const guionVoz = {...g, escenas: (g.escenas ?? []).map((e) => ({...e, texto: limpiarParaVoz(e.texto)}))};
+fs.writeFileSync(path.join('guion', 'serie', `${id}.json`), JSON.stringify({...guionVoz, orientacion, personaje: {visible: false}, audio: `audio/${id}.wav`}, null, 2));
 
 // lote.mjs: voz (msedge-tts) + render + versión liviana. La voz sale de guion.voz (cada canal tiene la suya).
 const r = spawnSync('node', ['scripts/lote.mjs', id, '--forzar'], {stdio: 'inherit'});
