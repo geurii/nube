@@ -1,6 +1,69 @@
 {
   "decisiones": [
     {
+      "id": "i1hbzqq0",
+      "texto": "Sabías que [acción] [número] [emoji] (Parte [X]/[Y])",
+      "categoria": "Título",
+      "decision": "si",
+      "fecha": "2026-11-24T02:36:32.132Z"
+    },
+    {
+      "id": "iu11rmh",
+      "texto": "Un lugar donde [CIFRA] secretos se esconden bajo la arena. | Imagen de una playa con patrones extraños en la arena",
+      "categoria": "Gancho",
+      "decision": "si",
+      "fecha": "2026-11-24T02:36:31.858Z"
+    },
+    {
+      "id": "i1fv1u1s",
+      "texto": "Se perdió un tesoro de [CIFRA] piezas en la selva. | Imagen de una selva densa con una sombra entre los árboles",
+      "categoria": "Gancho",
+      "decision": "si",
+      "fecha": "2026-11-24T02:36:31.238Z"
+    },
+    {
+      "id": "ijrg1tz",
+      "texto": "Dicen que [CIFRA] personas encontraron un objeto que cambió sus vidas. | Imagen de un objeto misterioso iluminado por una luz tenue",
+      "categoria": "Gancho",
+      "decision": "si",
+      "fecha": "2026-11-24T02:36:29.326Z"
+    },
+    {
+      "id": "ijlbdpv",
+      "texto": "En la noche, [CIFRA] luces se encendieron sobre el mar sin explicación. | Imagen de un horizonte oscuro con destellos de luz",
+      "categoria": "Gancho",
+      "decision": "si",
+      "fecha": "2026-11-24T02:36:23.940Z"
+    },
+    {
+      "id": "i121vevj",
+      "texto": "¿Sabías que [CIFRA] objetos desaparecieron sin dejar rastro? | Imagen de un mapa antiguo con una zona tachada",
+      "categoria": "Gancho",
+      "decision": "si",
+      "fecha": "2026-11-24T02:36:22.493Z"
+    },
+    {
+      "id": "i1qf1ph2",
+      "texto": "The Enigma of the Voynich Manuscript",
+      "categoria": "Tema",
+      "decision": "si",
+      "fecha": "2026-11-24T02:36:18.776Z"
+    },
+    {
+      "id": "i4lom15",
+      "texto": "The Case of the Lost Colony of San Miguel de Allende",
+      "categoria": "Tema",
+      "decision": "si",
+      "fecha": "2026-11-24T02:36:18.277Z"
+    },
+    {
+      "id": "ifl1z3t",
+      "texto": "The Mystery of the Green Children of Woolpit",
+      "categoria": "Tema",
+      "decision": "si",
+      "fecha": "2026-11-24T02:36:17.641Z"
+    },
+    {
       "id": "iw3xks2",
       "texto": "The Disappearance of the Roanoke Colony",
       "categoria": "Tema",
