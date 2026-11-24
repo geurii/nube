@@ -46,11 +46,17 @@ let slug = 'sin-tema';
 const ESTADO = path.join(SALIDA, 'estado.json');
 const HISTORIAL = path.join(SALIDA, 'historial.json');
 const leerJson = (ruta, porDefecto) => { try { return JSON.parse(fs.readFileSync(ruta, 'utf8')); } catch { return porDefecto; } };
-/** Próximo ciclo automático (02:00 y 14:00 UTC): cuánto falta, para que la jefa meta presión con plazos reales. */
+/** Próximo ciclo automático: Short diario a la 01:23 UTC y video largo los domingos a las 00:23 UTC. */
 const horasParaProximoCiclo = () => {
   const ahora = new Date();
-  const candidatos = [2, 14].flatMap((h) => [0, 1].map((d) => { const t = new Date(Date.UTC(ahora.getUTCFullYear(), ahora.getUTCMonth(), ahora.getUTCDate() + d, h)); return t; })).filter((t) => t > ahora).sort((a, b) => a - b);
-  return Math.max(1, Math.round((candidatos[0] - ahora) / 3600000));
+  const candidatos = [];
+  for (let d = 0; d <= 7; d++) {
+    const dia = new Date(Date.UTC(ahora.getUTCFullYear(), ahora.getUTCMonth(), ahora.getUTCDate() + d));
+    candidatos.push(new Date(Date.UTC(dia.getUTCFullYear(), dia.getUTCMonth(), dia.getUTCDate(), 1, 23)));
+    if (dia.getUTCDay() === 0) candidatos.push(new Date(Date.UTC(dia.getUTCFullYear(), dia.getUTCMonth(), dia.getUTCDate(), 0, 23)));
+  }
+  const siguiente = candidatos.filter((t) => t > ahora).sort((a, b) => a - b)[0];
+  return Math.max(1, Math.round((siguiente - ahora) / 3600000));
 };
 /** Reporte para la campana de la oficina 3D. tipo: reporte | alerta | listo. */
 const notificar = (tipo, titulo, texto) => {
