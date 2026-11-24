@@ -1,0 +1,1 @@
+{"cielo":["#27283a","#74604e","#c9985b"],"capas":[{"t":"cerveza","x":0.5,"y":0.91,"w":0.98,"h":0.54},{"t":"edificio","x":0.27,"y":0.83,"w":0.3,"h":0.55,"color":"#704a38","ventanas":false},{"t":"edificio","x":0.73,"y":0.83,"w":0.32,"h":0.56,"color":"#81543b","ventanas":false},{"t":"barril","x":0.51,"y":0.69,"w":0.23,"h":0.34},{"t":"particulas","n":32,"tipo":"burbujas"}]}
