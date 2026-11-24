@@ -53,6 +53,8 @@ const leerJson = (ruta, porDefecto) => { try { return JSON.parse(fs.readFileSync
 // Normaliza variantes como "Bloop" y "The Bloop" para impedir que un tema ya tratado vuelva a entrar.
 const claveTema = (x) => String(x ?? '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/^the[\s_-]+/, '').replace(/[^a-z0-9]+/g, '');
 const esTemaBloop = (tema) => claveTema(tema).includes('bloop');
+const esTemaLituya = (tema) => claveTema(tema).includes('lituya');
+const esTemaExcluido = (tema) => esTemaBloop(tema) || esTemaLituya(tema);
 const temaYaRegistrado = (tema) => {
   const tituloDe = (x) => typeof x === 'string' ? x : (x?.tema ?? x?.titulo ?? x?.title ?? x?.nombre ?? '');
   const vistos = [
@@ -63,7 +65,7 @@ const temaYaRegistrado = (tema) => {
   ].map(tituloDe).map(claveTema).filter((x) => x.length >= 4);
   const k = claveTema(tema);
   // Bloop ya fue producido: exclusión editorial permanente, incluso si el historial local se perdió.
-  if (esTemaBloop(tema) && process.env.MODO_PRUEBA !== '1') return true;
+  if (esTemaExcluido(tema) && process.env.MODO_PRUEBA !== '1') return true;
   const coincide = (v) => v === k || (k.length >= 6 && v.length >= 6 && (v.includes(k) || k.includes(v)));
   const guionesMismoTema = fs.readdirSync(SALIDA).filter((f) => /^guion-.+\.json$/.test(f)).map((f) => {
     const ruta = path.join(SALIDA, f);
@@ -356,7 +358,7 @@ const elegirTema = async (modelo) => {
   const yaHecho = (x) => {
     if (fueRechazada(x, CANAL_ID)) return true;
     // No volver a gastar ciclos ni avisos con Bloop/The Bloop: ya está producido.
-    if (esTemaBloop(x) && process.env.MODO_PRUEBA !== '1') return true;
+    if (esTemaExcluido(x) && process.env.MODO_PRUEBA !== '1') return true;
     const k = clave(x);
     return k.length >= 4 && vistos.some((v) => v === k || (k.length >= 6 && v.length >= 6 && (v.includes(k) || k.includes(v))));
   };
