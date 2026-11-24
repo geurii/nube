@@ -1,5 +1,23 @@
 [
   {
+    "id": "mwuq8z993doj",
+    "fecha": "2026-11-24T13:25:19.101Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "La oficina falló",
+    "texto": "No se encontraron dos fuentes institucionales independientes con contenido consultable para un tema nuevo. Se reintentará en otro ciclo. Aprobados: 11. Rechazados: 56. Con error: 12. Próximo ciclo en 1 h."
+  },
+  {
+    "id": "mwupyi8z1v4v",
+    "fecha": "2026-11-24T13:17:10.499Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título con pregunta intrigante o afirmación impactante + elemento misterioso o inesperado + pista de contenido (ej.: \"¿Por qué…? El misterio de…\") El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (26407 vistas/hora)."
+  },
+  {
     "id": "mwups9rdwoe1",
     "fecha": "2026-11-24T13:12:19.561Z",
     "canal": "lqns",
@@ -685,21 +703,5 @@
     "tipo": "alerta",
     "titulo": "No se pudo publicar en las redes",
     "texto": "\"🔊 El enigma del Bloop: el rugido del hielo\": no pude alojar el video para que las redes lo descarguen: el servicio de archivos temporales no devolvió un enlace válido (403): <!doctype html><html lang=\"en\"><meta charset=\"UTF-8\"><meta content=\"nofollow,noarchive,no"
-  },
-  {
-    "id": "mws3wqplmopu",
-    "fecha": "2026-11-22T17:24:24.249Z",
-    "canal": "lqns",
-    "tipo": "alerta",
-    "titulo": "No se pudo publicar en las redes",
-    "texto": "\"¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️\": no pude alojar el video para que las redes lo descarguen: el servicio de archivos temporales no devolvió un enlace válido (403): <!doctype html><html lang=\"en\"><meta charset=\"UTF-8\"><meta content=\"nofollow,noarchive,no"
-  },
-  {
-    "id": "mws3wm9kda1x",
-    "fecha": "2026-11-22T17:24:18.488Z",
-    "canal": "lqns",
-    "tipo": "alerta",
-    "titulo": "No se pudo publicar en las redes",
-    "texto": "\"Sabías que una ola de melaza arrasó Boston? 🍯\": no pude alojar el video para que las redes lo descarguen: el servicio de archivos temporales no devolvió un enlace válido (403): <!doctype html><html lang=\"en\"><meta charset=\"UTF-8\"><meta content=\"nofollow,noarchive,no"
   }
 ]
