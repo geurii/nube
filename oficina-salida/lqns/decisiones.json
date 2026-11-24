@@ -1,6 +1,13 @@
 {
   "decisiones": [
     {
+      "id": "i1qxk2z6",
+      "texto": "Programar publicación de los tres episodios con intervalos de 1‑2 días y promocionar en redes y foros de misterio para impulsar suscripciones: Community manager y estratega de contenidos: Aumentar la tasa de suscripción en 10 % y generar 50",
+      "categoria": "Plan",
+      "decision": "no",
+      "fecha": "2026-11-24T22:51:01.276Z"
+    },
+    {
       "id": "if8vala",
       "texto": "Desarrollar miniaturas A/B con colores contrastantes y textos legibles para la serie sobre Lituya Bay, optimizando CTR en el 5 %: Diseñador gráfico y analista de datos: Incrementar el CTR medio de la serie en al menos 3 % y monetizar 500 US",
       "categoria": "Plan",
