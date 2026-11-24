@@ -162,7 +162,8 @@ export const buscarReferenciasLargas = async ({
       const video = lista[i++];
       try {
         const d = await datosDeVideo(video.id);
-        if (!esReferenciaLarga(d) || String(d.transcripcion ?? '').trim().length < 1800) continue;
+        const segundos = Number(d.segundos ?? video.segundos);
+        if (!esReferenciaLarga({segundos}) || String(d.transcripcion ?? '').trim().length < 1800) continue;
         detalles.push({
           ...video,
           ...d,
@@ -171,7 +172,7 @@ export const buscarReferenciasLargas = async ({
           titulo: d.titulo || video.titulo,
           canal: d.canal || video.canal,
           vistas: d.vistas ?? video.vistas,
-          segundos: d.segundos ?? video.segundos,
+          segundos,
           caracteresTranscripcion: String(d.transcripcion).length,
         });
       } catch (e) { nota(`No se pudo leer la referencia ${video.id}: ${String(e.message ?? e).slice(0, 80)}`); }
