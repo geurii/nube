@@ -33,7 +33,7 @@ export type Escena = {
 
 export type Guion = {
   titulo: string;
-  /** short = máximo 60 s. largo = sin límite. */
+  /** short = máximo 65 s. largo = sin límite. */
   formato: 'short' | 'largo';
   /** tiktok / instagram usan musica/tiktok.mp3, youtube usa musica/youtube.mp3 */
   plataforma: Plataforma;
