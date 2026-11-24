@@ -101,10 +101,41 @@ const subirPorApi = async ({token, repo, archivo, nombre}) => {
   throw new Error('el video se subió pero su dirección pública no responde todavía');
 };
 
+/** Alojamiento primario compatible con runners de GitHub Actions: Beacon usa URL prefirmada para archivos >4 MB. */
+export const subirABeacon = async ({archivo, nombre}) => {
+  const bytes = fs.readFileSync(archivo);
+  const hash = (await import('node:crypto')).createHash('sha256').update(bytes).digest('hex');
+  const registro = await fetch('https://beacon.host/v1/sites', {
+    method: 'POST', headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({files: [{path: nombre, size: bytes.length, contentType: 'video/mp4', hash: `sha256:${hash}`}]}),
+    signal: AbortSignal.timeout(60000),
+  });
+  const rj = await registro.json().catch(() => ({}));
+  if (!registro.ok) throw new Error(`Beacon registro HTTP ${registro.status}: ${JSON.stringify(rj).slice(0,180)}`);
+  const pending = rj.uploads?.pending?.[0];
+  const finalizeUrl = rj.version?.finalizeUrl;
+  const claimToken = rj.claimToken;
+  if (!pending?.uploadUrl || !finalizeUrl || !claimToken) throw new Error('Beacon no devolvió URL de carga/finalización');
+  const put = await fetch(pending.uploadUrl, {method: 'PUT', headers: {'Content-Type': 'video/mp4'}, body: bytes, signal: AbortSignal.timeout(300000)});
+  if (!put.ok) throw new Error(`Beacon carga HTTP ${put.status}: ${(await put.text()).slice(0,120)}`);
+  const finUrl = finalizeUrl.startsWith('http') ? finalizeUrl : `https://beacon.host${finalizeUrl}`;
+  const fin = await fetch(finUrl, {method: 'POST', headers: {'X-Claim-Token': claimToken}, signal: AbortSignal.timeout(60000)});
+  const fj = await fin.json().catch(() => ({}));
+  if (!fin.ok) throw new Error(`Beacon finalización HTTP ${fin.status}: ${JSON.stringify(fj).slice(0,160)}`);
+  const url = fj.fileUrls?.[0] ?? fj.files?.[0]?.url ?? (fj.site?.url ? `${fj.site.url.replace(/\\/$/,'')}/${encodeURIComponent(nombre)}` : '');
+  if (!url) throw new Error('Beacon finalizó pero no devolvió enlace directo del MP4');
+  const head = await fetch(url, {method: 'HEAD', signal: AbortSignal.timeout(30000)});
+  if (!head.ok) throw new Error(`Beacon enlace directo HTTP ${head.status}`);
+  console.log(`Redes: MP4 alojado en Beacon (${(bytes.length/1048576).toFixed(1)} MB; enlace temporal 24 h).`);
+  return {url, ruta: null};
+};
+
 /** Sin token de GitHub: sube el MP4 a Litterbox (archivos temporales gratis, sin cuenta; se borra solo a las 24 h) y devuelve su enlace público directo. */
 export const subirATemporal = async ({archivo, nombre}) => {
-  // Primer respaldo: TempFile.org ofrece API pública sin clave, MP4 hasta 100 MB y enlaces directos de descarga.
-  // 48 h cubren la cola de Buffer; el enlace directo evita que Buffer reciba una página HTML.
+  // Primario: Beacon usa carga directa prefirmada y acepta runners de CI; sin credenciales GitHub ni API keys.
+  try { return await subirABeacon({archivo, nombre}); }
+  catch (e) { console.log('Redes: Beacon no respondió (' + String(e.message ?? e).slice(0, 140) + '); pruebo TempFile.org.'); }
+  // Segundo respaldo: TempFile.org.
   try {
     const fd = new FormData();
     fd.append('expiryHours', '48');
