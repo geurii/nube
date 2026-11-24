@@ -106,7 +106,7 @@ export const publicarEnTikTok = async ({apiKey, url, texto, ia = false, canal = 
   const nombre = ch.displayName ?? ch.name;
   if (modo === 'ahora') {
     const enviado = await esperarEnvioTikTok(apiKey, res.post.id);
-    return {id: res.post.id, canal: nombre, programado: 'ahora', externalLink: enviado.externalLink ?? '', texto: JSON.stringify({id: res.post.id, canal: nombre, programado: 'ahora', status: enviado.status, externalLink: enviado.externalLink ?? ''}).slice(0, 300)};
+    return {id: res.post.id, canal: nombre, programado: 'ahora', estado: enviado.status, externalLink: enviado.externalLink ?? '', texto: JSON.stringify({id: res.post.id, canal: nombre, programado: 'ahora', status: enviado.status, externalLink: enviado.externalLink ?? ''}).slice(0, 300)};
   }
   return {id: res.post.id, canal: nombre, programado, texto: JSON.stringify({id: res.post.id, canal: nombre, programado}).slice(0, 300)};
 };
