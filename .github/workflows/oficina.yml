@@ -129,7 +129,7 @@ jobs:
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           TEMA: ${{ inputs.tema || steps.pres.outputs.tema }}
           CANAL_PEDIDO: ${{ inputs.canal }}
-          FORMATO: ${{ inputs.formato || steps.pres.outputs.formato || (github.event.schedule == '23 0,12 * * *' && 'largo' || 'short') }}
+          FORMATO: ${{ inputs.formato || steps.pres.outputs.formato || (github.event.schedule == '23 0 * * 0' && 'largo' || 'short') }}
           PALABRAS: ${{ inputs.palabras }}
         run: |
           canales=$(node agentes/canales-activos.mjs)
