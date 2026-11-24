@@ -8,6 +8,7 @@ import {spawnSync} from 'node:child_process';
 import {avisarTelefono} from './aviso.mjs';
 import {registrarSubida} from './subidos.mjs';
 import {proximoHorario} from './horarios.mjs';
+import {sinEnlaces} from './sin-enlaces.mjs';
 
 const {ID} = process.env;
 const salida = (clave, valor) => { if (process.env.GITHUB_OUTPUT) fs.appendFileSync(process.env.GITHUB_OUTPUT, `${clave}=${String(valor).replace(/[\r\n]/g, ' ')}\n`); };
@@ -79,7 +80,7 @@ try {
       'X-Upload-Content-Type': 'video/mp4',
     },
     body: JSON.stringify({
-      snippet: {title: guion.publicacion.titulo.slice(0, 100), description: guion.publicacion.descripcion.slice(0, 4900), categoryId: '27', defaultLanguage: 'es'},
+      snippet: {title: guion.publicacion.titulo.slice(0, 100), description: sinEnlaces(guion.publicacion.descripcion).slice(0, 4900), categoryId: '27', defaultLanguage: 'es'},
       status: MODO === 'ahora' ? {privacyStatus: 'public', selfDeclaredMadeForKids: false} : {privacyStatus: 'private', publishAt: programado.toISOString(), selfDeclaredMadeForKids: false},
     }),
   });
