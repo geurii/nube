@@ -10,7 +10,7 @@ import {avisarTelefono} from './aviso.mjs';
 import {leerManual, pendientesDeVistoBueno, ESTADO_ESPERA} from './manual.mjs';
 import {textoDeLecciones} from './lecciones.mjs';
 import {crearVisuales} from './visuales.mjs';
-import {investigarEnLaWeb} from './investigar-web.mjs';
+import {investigarEnLaWeb, descubrirTemasEnFuentes} from './investigar-web.mjs';
 import {limpiarParaVoz} from './texto-voz.mjs';
 import {validarGancho} from './reglas-guion.mjs';
 import {textoDeRadar} from './radar.mjs';
@@ -72,7 +72,7 @@ const registrar = (resultado, detalle, intentos, extra = {}) => {
   const ag = e.agentes ?? {};
   if (resultado === 'aprobado') {
     ag['Directora de contenido'] = {estado: 'libre', actividad: 'hablando', tarea: `Último guion aprobado: "${TEMA}" (${FORMATO}). ${resumen}`};
-    ag['Investigador de temas'] = {estado: 'libre', actividad: 'leyendo', tarea: `Dejó el material de "${TEMA}" con su fuente en Wikipedia.`};
+    ag['Investigador de temas'] = {estado: 'libre', actividad: 'leyendo', tarea: `Dejó el material de "${TEMA}" con sus fuentes institucionales independientes.`};
     ag['Guionista'] = {estado: 'libre', actividad: 'escribiendo', tarea: `Entregó el guion de "${TEMA}". ${detalle}`};
     ag['Editor de guion'] = {estado: 'libre', actividad: 'pensando', tarea: `Pulió el guion y eligió los fondos de cada escena. ${extra.editor ?? ''}`.trim()};
     ag['Verificador de datos'] = {estado: 'libre', actividad: 'leyendo', tarea: `Aprobó "${TEMA}" en el intento ${intentos}.`};
@@ -112,7 +112,7 @@ const registrar = (resultado, detalle, intentos, extra = {}) => {
 const fallar = (m) => { console.error('ERROR:', m); process.exit(1); };
 if (!KEY) { try { registrar('error', 'Falta el secreto GROQ_API_KEY.', 0); } catch { /* sin estado */ } fallar('Falta el secreto GROQ_API_KEY.'); }
 
-/* ====================== Investigación: Wikipedia (gratis, con fuente) ====================== */
+/* ====================== Investigación: ocho fuentes institucionales; Wikipedia opcional ====================== */
 const wikipedia = async (lang, titulo) => {
   const url = `https://${lang}.wikipedia.org/w/api.php?action=query&prop=extracts%7Cinfo&inprop=url&explaintext=1&exsectionformat=plain&redirects=1&format=json&titles=${encodeURIComponent(titulo)}`;
   for (let i = 1; i <= 3; i++) {
@@ -139,7 +139,7 @@ const investigar = async () => {
   }
   // segunda fuente que no es Wikipedia (DuckDuckGo, gratis y sin llave): solo apoyo para contrastar fechas y cifras
   const web = await investigarEnLaWeb(TEMA);
-  return [...fuentes, ...web];
+  return [...web, ...fuentes.map((f) => ({...f, apoyo: true, tipo: 'enciclopedia_opcional'}))];
 };
 
 /* ====================== Groq con reintentos ====================== */
@@ -272,11 +272,8 @@ const elegirModelo = async () => {
 };
 
 /* ====================== Dirección: elige el tema sola ====================== */
-const minimoMaterialTema = FORMATO === 'largo' ? 3000 : 1600;
-const existeEnWikipedia = async (titulo) => {
-  const p = await wikipedia('en', titulo);
-  return !!p && (p.extract ?? '').trim().length >= minimoMaterialTema;
-};
+const MIN_FUENTES_INDEPENDIENTES = 2;
+const tieneDocumentacionInstitucional = async (tema) => (await investigarEnLaWeb(tema)).length >= MIN_FUENTES_INDEPENDIENTES;
 const elegirTema = async (modelo) => {
   // El historial real contiene registros {fecha, tema, formato, resultado...}, no solo cadenas.
   const tituloDe = (x) => typeof x === 'string' ? x : (x?.tema ?? x?.titulo ?? x?.title ?? x?.nombre ?? '');
@@ -308,21 +305,19 @@ const elegirTema = async (modelo) => {
   const candidatosLocales = [...temasAprobadosDelDueno(CANAL_ID), ...ideasEquipo, ...ideasEstrategia, ...ideasJules];
   for (const t of candidatosLocales) {
     if (typeof t !== 'string' || yaHecho(t)) continue;
-    const p = await wikipedia('en', t);
-    if (p && (p.extract ?? '').trim().length >= minimoMaterialTema && !yaHecho(p.title)) return p.title;
+    if (await tieneDocumentacionInstitucional(t)) return t;
   }
   for (let ronda = 1; ronda <= 3; ronda++) {
     const r = await pedirJson(modelo, [
       {role: 'system', content: `Eres Director/a de contenido del canal "${CONFIG.nombre}" (${CONFIG.nicho}). Respondes SOLO JSON válido.`},
-      {role: 'user', content: `Propón 40 títulos EXACTOS de artículos de Wikipedia en inglés, distintos entre sí, sobre ${CONFIG.nicho}. Deben ser temas NUEVOS para este canal, con abundante documentación y hechos concretos (lugares, objetos, eventos o descubrimientos). No personas, biografías, política, violencia gráfica, películas, series, juegos ni chismes. PROHIBIDO repetir o proponer variantes de esta lista de temas ya usados, rechazados, producidos, publicados o reservados: ${inventario.join(' | ').slice(0, 9000) || 'ninguno'}. No devuelvas ningún título de esa lista aunque cambies "The", signos, idioma o redacción. Prioriza variedad temática y artículos con documentación suficiente: mínimo ${minimoMaterialTema} caracteres de contenido para este formato. ${bloqueRadar} Ronda ${ronda}/3: busca candidatos diferentes a los de una lista anterior. Formato: {"temas":["Título exacto 1","Título exacto 2"]}.`},
+      {role: 'user', content: `Propón 20 temas NUEVOS y concretos sobre ${CONFIG.nicho}, distintos entre sí, documentables en archivos, organismos científicos, museos o publicaciones académicas. No dependas de Wikipedia. No personas, biografías, política, violencia gráfica, películas, series, juegos ni chismes. PROHIBIDO repetir o proponer variantes de esta lista de temas ya usados, rechazados, producidos, publicados o reservados: ${inventario.join(' | ').slice(0, 9000) || 'ninguno'}. No devuelvas ningún título de esa lista aunque cambies "The", signos, idioma o redacción. Prioriza variedad y temas que puedan confirmarse con al menos ${MIN_FUENTES_INDEPENDIENTES} fuentes institucionales independientes. ${bloqueRadar} Ronda ${ronda}/3: busca candidatos diferentes a los de una lista anterior. Formato: {"temas":["Título exacto 1","Título exacto 2"]}.`},
     ], 2600);
     const propuestas = Array.isArray(r.temas) ? r.temas : [];
     for (const t of propuestas) {
       if (typeof t !== 'string' || !t.trim() || yaHecho(t)) continue;
-      const p = await wikipedia('en', t.trim());
-      if (!p || (p.extract ?? '').trim().length < minimoMaterialTema || yaHecho(p.title)) continue;
-      informe.push(`Tema elegido por la Oficina en ronda ${ronda}; se comprobó que no aparece en el historial.`);
-      return p.title;
+      if (!(await tieneDocumentacionInstitucional(t.trim())) || yaHecho(t.trim())) continue;
+      informe.push(`Tema elegido por la Oficina en ronda ${ronda}; se comprobó documentación institucional independiente y que no aparece en el historial.`);
+      return t.trim();
     }
     // Los títulos de esta ronda también se excluyen de las siguientes para no dar vueltas sobre lo mismo.
     for (const t of propuestas) {
@@ -330,9 +325,10 @@ const elegirTema = async (modelo) => {
       if (k.length >= 4 && !vistos.includes(k)) { vistos.push(k); inventario.push(String(t).trim()); }
     }
   }
-  // Respaldo editorial independiente del proveedor de IA: evita que una cuota agotada deje la fábrica sin tema.
-  // Cada candidato se consulta en Wikipedia y pasa por las MISMAS exclusiones y el mismo mínimo documental.
-  const reserva = [
+  // Respaldo editorial independiente: descubre candidatos directamente en los ocho dominios institucionales.
+  const reserva = await descubrirTemasEnFuentes(`${CONFIG.nicho} history discoveries`, 24);
+  /* Lista histórica conservada como referencia editorial, nunca como prueba documental.
+  const reservaAnterior = [
     'Green Children of Woolpit',
     'Dancing plague of 1518',
     'Ourang Medan',
@@ -358,15 +354,14 @@ const elegirTema = async (modelo) => {
     'Dancing mania',
     'Moberly-Jourdain incident',
     'Cahokia'
-  ];
+  ]; */
   for (const t of reserva) {
-    if (yaHecho(t)) continue;
-    const p = await wikipedia('en', t);
-    if (!p || (p.extract ?? '').trim().length < minimoMaterialTema || yaHecho(p.title)) continue;
-    informe.push('Tema elegido desde la reserva editorial verificada; se comprobó Wikipedia y se respetó el historial.');
-    return p.title;
+    if (typeof t !== 'string' || yaHecho(t)) continue;
+    if (!(await tieneDocumentacionInstitucional(t))) continue;
+    informe.push('Tema descubierto en dominios institucionales y respaldado por al menos dos fuentes independientes.');
+    return t;
   }
-  throw new Error('La Directora agotó 3 rondas y la reserva editorial; no encontró tema nuevo y verificable. No se reutilizaron temas.');
+  throw new Error('No se encontraron dos fuentes institucionales independientes con contenido consultable para un tema nuevo. Se reintentará en otro ciclo.');
 };
 
 /* ====================== Normas de la jefa (las cumplen todos) ====================== */
@@ -525,18 +520,19 @@ try {
   if (!TEMA.trim()) throw new Error('La Oficina no puede investigar ni escribir sin un tema seleccionado.');
   slug = slugDe(TEMA);
   const fuentes = await investigar();
-  if (!fuentes.some((f) => !f.apoyo)) throw new Error(`No encontré el tema "${TEMA}" en Wikipedia (${IDIOMAS.join(', ')}). Pruébalo con el título exacto del artículo.`);
+  const fuentesInstitucionales = fuentes.filter((f) => !f.apoyo && f.tipo === 'fuente_primaria_o_institucional');
+  if (fuentesInstitucionales.length < MIN_FUENTES_INDEPENDIENTES) throw new Error(`El tema "${TEMA}" no reunió ${MIN_FUENTES_INDEPENDIENTES} fuentes institucionales independientes con contenido consultable. Wikipedia no cuenta como prueba.`);
   // INTERNET PARA TODOS: una vez por ciclo se reúne lo que dice la web de hoy y se les da a todos los agentes (Guionista, Editor, Verificador, Titulista, panel, pintores...)
   try {
     const tit = await Promise.race([titulosVirales(TEMA), new Promise((r) => setTimeout(() => r([]), 25000))]);
-    const resumenes = fuentes.filter((x) => x.apoyo).map((x) => ({host: String(x.titulo).split(':')[0], texto: x.texto}));
+    const resumenes = fuentesInstitucionales.map((x) => ({host: x.institucion || x.dominio, texto: x.texto}));
     const bloqueWeb = armarBloqueWeb({tema: TEMA, resumenes, titulos: tit, radarTexto: textoDeRadar(leerJson(path.join(SALIDA, 'radar.json'), null), 2)});
     guardarWeb(CANAL_ID, {tema: TEMA, bloque: bloqueWeb, resumenes: resumenes.length, titulos: tit});
     WEB_BLOQUE = [bloqueWeb, leerPreferencias(CANAL_ID), textoDeLecciones(CANAL_ID)].filter(Boolean).join(' ');
     if (bloqueWeb) informe.push(`Internet para todos los agentes: ${resumenes.length} resúmenes web y ${tit.length} videos virales de YouTube sobre el tema.`);
   } catch { /* sin internet extra */ }
-  informe.push('## Investigación', ...fuentes.map((f) => `- ${f.apoyo ? 'web (apoyo)' : f.idioma}: [${f.titulo}](${f.url})`), '');
-  const material = fuentes.map((f) => `### ${f.apoyo ? 'FUENTE DE APOYO (resumen de un buscador web: úsala solo para contrastar fechas y cifras con Wikipedia; si difiere, di las dos versiones)' : 'FUENTE (' + f.idioma + ')'} ${f.url}\n${f.texto}`).join('\n\n');
+  informe.push('## Investigación (fuentes institucionales independientes)', ...fuentes.map((f) => `- ${f.apoyo ? 'Wikipedia (opcional; no cuenta como prueba)' : `${f.institucion || f.idioma} (${f.dominio || 'fuente institucional'})`}: [${f.titulo}](${f.url})`), '');
+  const material = fuentes.map((f) => `### ${f.apoyo ? 'ENCICLOPEDIA OPCIONAL (no es requisito ni prueba única)' : 'FUENTE INSTITUCIONAL INDEPENDIENTE: ' + (f.institucion || f.dominio)} ${f.url}\n${f.texto}`).join('\n\n');
 
   let retencionPanel = null;
   let escenas = [], titulo = TEMA, descripcion = '', hashtags = [], problemas = [], aprobado = false, intentos = 0, puntaje = null, critica = '';
