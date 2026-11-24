@@ -4,10 +4,10 @@ name: Oficina
 # y el Escenógrafo elige los fondos. Resultado en oficina-salida/ (guion + informe + estado para la oficina 3D).
 on:
   schedule:
-    - cron: '23 1 * * *'     # Short 1: 21:23 hora RD (día anterior)
-    - cron: '23 7 * * *'     # Short 2: 03:23 hora RD
-    - cron: '23 13 * * *'    # Video largo: 09:23 hora RD, YouTube + TikTok
-    - cron: '23 19 * * *'    # Short 3: 15:23 hora RD
+    - cron: '0 11 * * *'     # Short 1: 07:00 hora RD
+    - cron: '0 20 * * *'     # Short 2: 16:00 hora RD
+    - cron: '0 16 * * *'     # Video largo: 12:00 hora RD, YouTube + TikTok
+    - cron: '0 1 * * *'      # Short 3: 21:00 hora RD
   push:
     paths:
       - 'agentes/oficina.disparo'
@@ -65,7 +65,7 @@ jobs:
               echo "ok=no" >> "$GITHUB_OUTPUT"
               echo "El estado de la secuencia no se puede leer: se pausa de forma segura."
             elif [ "$fase" = "largo" ]; then
-              if [ "${{ github.event.schedule }}" = '23 13 * * *' ]; then
+              if [ "${{ github.event.schedule }}" = '0 16 * * *' ]; then
                 echo "formato=largo" >> "$GITHUB_OUTPUT"
                 echo "Secuencia extraordinaria: este horario reintenta el video largo pendiente."
               else
@@ -73,7 +73,7 @@ jobs:
                 echo "Secuencia extraordinaria: se omiten los Shorts hasta publicar el largo."
               fi
             elif [ "$fase" = "short-encolado" ]; then
-              if [ "${{ github.event.schedule }}" != '23 13 * * *' ]; then
+              if [ "${{ github.event.schedule }}" != '0 16 * * *' ]; then
                 echo "formato=short" >> "$GITHUB_OUTPUT"
                 echo "Secuencia extraordinaria: este horario reintenta el Short pendiente."
               else
@@ -137,7 +137,7 @@ jobs:
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           TEMA: ${{ inputs.tema || steps.pres.outputs.tema }}
           CANAL_PEDIDO: ${{ inputs.canal }}
-          FORMATO: ${{ inputs.formato || steps.pres.outputs.formato || (github.event.schedule == '23 13 * * *' && 'largo' || 'short') }}
+          FORMATO: ${{ inputs.formato || steps.pres.outputs.formato || (github.event.schedule == '0 16 * * *' && 'largo' || 'short') }}
           PALABRAS: ${{ inputs.palabras }}
         run: |
           canales=$(node agentes/canales-activos.mjs)
