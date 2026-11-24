@@ -165,7 +165,7 @@ jobs:
           git push
 
       - name: Encolar un Short único después del largo publicado
-        if: ${{ success() && hashFiles('agentes/PAUSA') == '' && steps.producir.outputs.id != '' && steps.panel.outputs.aprobado == 'true' && steps.subir.outputs.subido == 'true' }}
+        if: ${{ success() && hashFiles('agentes/PAUSA') == '' && steps.producir.outputs.id != '' && steps.producir.outputs.formato == 'largo' && steps.panel.outputs.aprobado == 'true' && steps.subir.outputs.subido == 'true' }}
         env:
           ID: ${{ steps.producir.outputs.id }}
         run: |
