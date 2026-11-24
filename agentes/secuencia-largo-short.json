@@ -1,7 +1,9 @@
 {
-  "activo": true,
-  "fase": "short-encolado",
+  "activo": false,
+  "fase": "completada",
   "descripcion": "Secuencia extraordinaria de una sola vez: publicar un video largo, luego un Short y reanudar los horarios automáticos solo cuando ambos estén publicados.",
   "videoLargoId": "lqns-the-taos-hum",
-  "fechaLargoPublicado": "2026-11-24T15:04:30.622Z"
+  "fechaLargoPublicado": "2026-11-24T15:04:30.622Z",
+  "videoShortId": "lqns-sabias-que-el-crater-de-la-isla-de-pascua-oculta-una-camara-subterranea-nunca-explorada",
+  "fechaShortPublicado": "2026-11-24T16:29:45.831Z"
 }
