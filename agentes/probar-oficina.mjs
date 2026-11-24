@@ -23,6 +23,9 @@ process.env.GROQ_API_KEY = 'prueba';
 process.env.FORMATO = 'short';
 
 const CTA_LQNS = base.cta;
+const {validarGancho} = await import(pathToFileURL(path.join(aqui, 'reglas-guion.mjs')).href);
+const hook16 = 'El barco desapareció y nadie pudo explicar qué ocurrió aquella noche en medio del océano Atlántico.';
+if (validarGancho(hook16, 'short').valido || !validarGancho(hook16, 'largo').valido) throw new Error('La regla del gancho debe permitir 24 palabras en largo y mantener 14 en short.');
 const CTA_DEMO = 'Suscríbete y cuéntale a un amigo.';
 const hacer = (cta) => [
   {tipo: 'hook', texto: 'El oceano registro un sonido imposible en 1997.'},
