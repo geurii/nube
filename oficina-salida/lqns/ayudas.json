@@ -1,35 +1,35 @@
 {
   "plan": [
-    "Crear una serie de 3 videos de 12 minutos sobre el caso del banco que pagó 175 millones por clientes inexistentes, con investigación documental y análisis de impacto financiero.: Equipo de Investigación y Guion: Generar al menos 20,000 vist",
-    "Desarrollar un mini-documental sobre los pingüinos y la misteriosa muerte de 2 millones, incorporando datos reales y entrevistas con expertos en fauna polar.: Equipo de Producción y Postproducción: Alcanzar 15,000 vistas y 2,000 suscriptore",
-    "Investigar y narrar el misterio del Mary Celeste, creando un video de 12 minutos con teoría y evidencias, optimizado para SEO y redes sociales.: Equipo de SEO y Redes Sociales: Obtener 10,000 vistas y 1,500 suscriptores nuevos antes del 13 "
+    "Crear y lanzar la serie de 3 videos sobre el caso del banco que pagó 175 millones por clientes inexistentes: Equipo de Investigación y Guion: Generar al menos 10,000 vistas combinadas y monetizar $1,200 en ingresos publicitarios antes del 1",
+    "Desarrollar el mini-documental de 12 minutos sobre el misterio del Mary Celeste, con enfoque narrativo y datos históricos verificados: Equipo de Producción y Postproducción: Alcanzar 5,000 vistas y monetizar $800 en ingresos publicitarios a",
+    "Planificar y ejecutar la campaña de promoción para los videos sobre los pingüinos (3 partes) y el caso del banco, incluyendo teasers y colaboraciones con canales nicho: Departamento de Marketing y Relaciones Públicas: Incrementar el total d"
   ],
   "ganchos": [
-    "¿Sabías que [CIFRA] objetos desaparecieron sin dejar rastro? | Imagen de un mapa antiguo con una zona tachada",
-    "En la noche, [CIFRA] luces se encendieron sobre el mar sin explicación. | Imagen de un horizonte oscuro con destellos de luz",
-    "Dicen que [CIFRA] personas encontraron un objeto que cambió sus vidas. | Imagen de un objeto misterioso iluminado por una luz tenue",
-    "Se perdió un tesoro de [CIFRA] piezas en la selva. | Imagen de una selva densa con una sombra entre los árboles",
-    "Un lugar donde [CIFRA] secretos se esconden bajo la arena. | Imagen de una playa con patrones extraños en la arena"
+    "¿Sabías que [TEMA] apareció en la escena de un [CIFRA] años atrás? | Imagen de un viejo mapa o foto antigua con un punto rojo resaltado",
+    "[CIFRA] segundos antes de que [TEMA] desapareciera, se escuchó un susurro que nadie captó. | Imagen de un reloj de arena con la arena casi agotada",
+    "En la noche más oscura, [TEMA] se iluminó por [CIFRA] segundos. ¿Qué pasó? | Imagen de un cielo nocturno con una luz puntual y una sombra misteriosa",
+    "[TEMA] dejó una pista que solo se puede ver con [CIFRA] filtros especiales. | Imagen de una foto en blanco y negro con un filtro de color brillante resaltando un detalle",
+    "[TEMA] se perdió en el tiempo, pero el registro de [CIFRA] años lo revive. | Imagen de una cinta de video antigua con un número de reel visible"
   ],
   "mejorasGuion": [
-    "Incorpora un gancho inicial más impactante y misterioso, por ejemplo: \"Sabías que en medio del Gran Incendio de Londres, una fuerza secreta de la Torre de Londres usó pólvora para detener el fuego\", para captar la atenci",
-    "Reestructura el ritmo dividiendo la narración en bloques más cortos y dinámicos: describe el incendio, luego la sospecha de intriga extranjera, y finalmente la táctica de la Torre de Londres. Utiliza transiciones como \"P",
-    "Añade un cierre que invite a la interacción sin ser demasiado directo: por ejemplo, pregunta: \"¿Qué otras estrategias de supervivencia histórica crees que han cambiado el curso de la historia? Deja tu respuesta en los co"
+    "Reformular el gancho inicial para que combine curiosidad y sorpresa, por ejemplo: “¿Sabías que en un pequeño pueblo de Nuevo México un zumbido invisible ahuyenta a sus habitantes?” – esto capta la atención en los primero",
+    "Ajustar el ritmo introduciendo micro‑cliffhangers cada 15‑20 segundos: presentar primero el dato del 2 % de residentes, luego, justo antes del minuto 1, lanzar la anécdota del residente que escuchó el hum a 48 km, y desp",
+    "Crear un cierre más contundente y llamativo que invite a la interacción: en lugar de “¿Qué opinas? Comparte…”, usar una pregunta abierta que incite a comentar teorías y prometer un próximo video que explore otro “hum” fa"
   ],
   "temas": [
-    "The Sinking of the MV Princess Alice",
-    "The Disappearance of the Roanoke Colony",
-    "The Mystery of the Green Children of Woolpit",
-    "The Case of the Lost Colony of San Miguel de Allende",
-    "The Enigma of the Voynich Manuscript"
+    "The Lost City of Petra",
+    "The Mystery of the Voynich Manuscript",
+    "The Bermuda Triangle",
+    "The Strange Case of the Dancing Plague of 1518",
+    "The Sphinx of Giza"
   ],
   "titulos": [
-    "Sabías que [acción] [número] [emoji] (Parte [X]/[Y])",
-    "Sabías que [acción] [número] [emoji]",
-    "Sabías que [acción] [número] [emoji] (Parte [X]/[Y])",
-    "¿Qué oculta realmente el [objeto]?"
+    "Sabías que <acción> <objeto> <adjetivo> (<Parte X/3>)",
+    "Sabías que <número> <objeto> <acción> (<Parte X/3>)",
+    "Sabías que <objeto> <verbo> <número> <adjetivo> (<Parte X/3>)",
+    "Sabías que <objeto> <verbo> <número> <adjetivo> (<Parte X/3>)"
   ],
-  "fecha": "2026-11-24T00:16:21.354Z",
+  "fecha": "2026-11-24T04:13:42.045Z",
   "iniciativas": [
     "Valentina (Directora de contenido): Definir una línea editorial clara y un documento de estilo que guíe a todo el equipo desde el primer video.",
     "Carolina (Coordinador de producción): Crear un tablero de tareas con fechas límite rígidas y alertas automáticas para cada entrega.",

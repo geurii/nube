@@ -1,9 +1,9 @@
 {
-  "fecha": "2026-11-23T08:06:25.554Z",
+  "fecha": "2026-11-24T04:13:47.843Z",
   "resumen": [
-    "Último chequeo del Vigilante: 2026-11-23T07:34:53.639Z.",
-    "Bien: YouTube conectado, analítica autorizada, Groq responde, Gemini responde, Windsor responde, Buffer responde, minutos de GitHub: 1263 de 2000, hay publicaciones recientes.",
-    "Problemas: ninguno.",
+    "Último chequeo del Vigilante: 2026-11-23T23:52:29.409Z.",
+    "Bien: YouTube conectado, analítica autorizada, Groq responde, Gemini responde, Windsor responde, Buffer responde, minutos de GitHub: 1292 de 2000, hay publicaciones recientes.",
+    "Problemas: Falló \"Oficina\" en GitHub.",
     "Recordatorio: los archivos de claves del Escritorio deben borrarse y el permiso de Google debe seguir \"En producción\"."
   ]
 }
