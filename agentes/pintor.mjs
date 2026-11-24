@@ -152,10 +152,15 @@ export const pintarEscenas = async ({llamar, escenas, indices, slug, tema, nota 
   for (let b = 0; b < indices.length; b += TAM) {
     const ids = indices.slice(b, b + TAM);
     const encargo = `Tema del video: "${tema}". Para CADA escena dibuja DOS planos distintos (otra composición o ángulo, mismo mundo de color) que MUESTREN literalmente el objeto, lugar, fenómeno o acción mencionados en la narración. Traduce cada frase a una imagen concreta: si se menciona un zumbido, dibuja su fuente o el fenómeno acústico; si se menciona un barco, dibuja ese barco; si se menciona una explosión, dibuja la explosión y el entorno. No uses paisajes de relleno, fondos genéricos, símbolos abstractos ni objetos que no aparezcan en la frase. Si no puedes representar un detalle con precisión, representa el elemento real más cercano que sí esté respaldado por la frase, sin inventar contexto. Los dos planos deben ser reconocibles de inmediato y distintos entre sí.\n\n${MANUAL}\n\n${GUIA}\n\nESCENAS:\n${lote(escenas, ids)}\n\nDevuelve ${FORMA}`;
-    let a;
-    try { a = limpiar(await llamar([{role: 'system', content: `${SISTEMA_A} ${presionPintores()}`}, {role: 'user', content: encargo}], 6500), ids, slug); }
-    catch (e) { nota(`El Pintor de composición y color no pudo dibujar las escenas ${ids.join(', ')}: ${String(e.message ?? e).slice(0, 120)}`); continue; }
-    if (!Object.keys(a).length) { nota(`El Pintor de composición y color no entregó cuadros válidos para las escenas ${ids.join(', ')}.`); continue; }
+    let a = {};
+    for (let intento = 1; intento <= 3; intento++) {
+      const pendientes = ids.filter((i) => !a[i]);
+      if (!pendientes.length) break;
+      const encargoReintento = intento === 1 ? encargo : `REINTENTO ${intento}/3: faltan DOS cuadros válidos, completos y visualmente diferentes para estas escenas. No reutilices el mismo cuadro dos veces.\n${lote(escenas, pendientes)}\n\n${MANUAL}\n\n${GUIA}\n\nDevuelve ${FORMA}`;
+      try { const nueva = limpiar(await llamar([{role: 'system', content: `${SISTEMA_A} ${presionPintores()}`}, {role: 'user', content: encargoReintento}], 6500), pendientes, slug); Object.assign(a, nueva); }
+      catch (e) { nota(`Pintor A, intento ${intento}/3: ${String(e.message ?? e).slice(0, 120)}`); }
+    }
+    if (ids.some((i) => !a[i])) { nota(`Faltan dos cuadros distintos para las escenas ${ids.filter((i) => !a[i]).join(', ')}; se aborta esta tanda, no se usarán fondos de relleno.`); continue; }
     let final = a;
     let acuerdo = 'sin revisión (el Pintor de luz y detalle no respondió)';
     try {
