@@ -1,11 +1,19 @@
 {
-  "actualizado": "2026-11-24T16:34:46.149Z",
+  "actualizado": "2026-11-24T16:48:25.249Z",
   "totales": {
     "aprobados": 13,
     "rechazados": 72,
-    "errores": 17
+    "errores": 18
   },
   "historial": [
+    {
+      "fecha": "2026-11-24T16:48:25.247Z",
+      "tema": "Sabías que el cráter de la Laguna de los Cráteres en México oculta una extraña capa de gases que se encienden sin chispa",
+      "formato": "short",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "No se recuperó una fuente consultable para \"Sabías que el cráter de la Laguna de los Cráteres en México oculta una extraña capa de gases que se encienden sin ch"
+    },
     {
       "fecha": "2026-11-24T16:34:46.147Z",
       "tema": "Sabías que el lago de los 100 mil peces de Lough Neagh desapareció sin dejar rastro?",
@@ -157,21 +165,13 @@
       "resultado": "rechazado",
       "intentos": 4,
       "detalle": "El gancho inicial debe tener 14 palabras o menos para formato short."
-    },
-    {
-      "fecha": "2026-11-24T14:14:55.113Z",
-      "tema": "The Taos Hum",
-      "formato": "largo",
-      "resultado": "aprobado",
-      "intentos": 4,
-      "detalle": "200 palabras, 9 escenas."
     }
   ],
   "agentes": {
     "Directora de contenido": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "La oficina falló en su último ciclo: No se recuperó una fuente consultable para \"Sabías que el lago de los 100 mil peces de Lough Neagh desapareció sin dejar rastro?\". Se descarta el tema; no se in ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. JEFA: Falló el ciclo. Quiero la causa y el arreglo antes de las próximas 9 h."
+      "tarea": "La oficina falló en su último ciclo: No se recuperó una fuente consultable para \"Sabías que el cráter de la Laguna de los Cráteres en México oculta una extraña capa de gases que se encienden sin ch ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. JEFA: Falló el ciclo. Quiero la causa y el arreglo antes de las próximas 9 h."
     },
     "Investigador de temas": {
       "estado": "trabajando",
@@ -261,12 +261,12 @@
     "Jefa de calidad": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Frenó \"Sabías que el lago de los 100 mil peces de Lough Neagh desapareció sin dejar rastro?\": no pasó la verificación ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 20 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "Frenó \"Sabías que el cráter de la Laguna de los Cráteres en México oculta una extraña capa de gases que se encienden sin chispa\": no pasó la verificación ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 20 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Cazador de fórmulas": {
       "estado": "libre",
       "actividad": "leyendo",
-      "tarea": "Revisó 133 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (25808 vistas/hora). Fórmula: Título que plantea una pregunta intrigante o una afirmación impactante + elemento de misterio o dato sorprende ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
+      "tarea": "Revisó 133 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (25774 vistas/hora). Fórmula: Título con pregunta intrigante o afirmación impactante + elemento de misterio o dato sorprendente + referencia ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
     },
     "Vigía de tendencias": {
       "estado": "libre",
@@ -320,7 +320,7 @@
     }
   },
   "jefa": {
-    "mensaje": "La oficina falló en su último ciclo: No se recuperó una fuente consultable para \"Sabías que el lago de los 100 mil peces de Lough Neagh desapareció sin dejar rastro?\". Se descarta el tema; no se in ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. JEFA: Falló el ciclo. Quiero la causa y el arreglo antes de las próximas 9 h.",
+    "mensaje": "La oficina falló en su último ciclo: No se recuperó una fuente consultable para \"Sabías que el cráter de la Laguna de los Cráteres en México oculta una extraña capa de gases que se encienden sin ch ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos. JEFA: Falló el ciclo. Quiero la causa y el arreglo antes de las próximas 9 h.",
     "horasParaProximoCiclo": 9
   }
 }

@@ -1,5 +1,14 @@
 [
   {
+    "id": "mwuxi40wzp12",
+    "fecha": "2026-11-24T16:48:22.496Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título con pregunta intrigante o afirmación impactante + elemento de misterio o dato sorprendente + referencia a un caso/objeto concreto El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (25774 vistas/hora)."
+  },
+  {
     "id": "mwux0kinzidy",
     "fecha": "2026-11-24T16:34:44.063Z",
     "canal": "lqns",
@@ -696,14 +705,5 @@
     "tipo": "alerta",
     "titulo": "Guion rechazado: DynaTAC",
     "texto": "El Verificador no aprobó \"DynaTAC\" tras 4 intentos: La revelación cae al 59 % (106 de 179 palabras antes de ella) y debe caer entre 65 % y 75 %: añade historia antes de la revelación o acórtala. Aprobados: 11. Rechazados: 32. Con error: 9. No se publica. Próximo ciclo en 10 h."
-  },
-  {
-    "id": "mwu51p7sjhmu",
-    "fecha": "2026-11-24T03:31:47.560Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: Area 51",
-    "texto": "El Verificador no aprobó \"Area 51\" tras 4 intentos: El material indica que USAF y CIA adquirieron el sitio en 1955, pero no menciona una compra por parte de la CIA ni el propósito específico. Aprobados: 11. Rechazados: 31. Con error: 9. No se publica. Próximo ciclo en 10 h."
   }
 ]
