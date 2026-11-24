@@ -1,5 +1,21 @@
 [
   {
+    "fecha": "2026-11-24T14:29:24.826Z",
+    "canal": "lqns",
+    "tipo": "alerta",
+    "titulo": "Revision tecnica fallida",
+    "texto": "¿Qué oculta el zumbido de Taos que nadie puede explicar? 🌍. Revision fallida: No se pudo revisar la imagen: NVIDIA devolvió una respuesta vacía No se publicara."
+  },
+  {
+    "id": "mwush54rc93w",
+    "fecha": "2026-11-24T14:27:39.195Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "listo",
+    "titulo": "Video renderizado: ¿Qué oculta el zumbido de Taos que nadie puede explicar? 🌍",
+    "texto": "Se renderizó \"¿Qué oculta el zumbido de Taos que nadie puede explicar? 🌍\" para Lo Que No Sabías (122 MB). Sigue en cola de publicación; este aviso NO significa que ya esté publicado."
+  },
+  {
     "id": "mwus0rkb9rob",
     "fecha": "2026-11-24T14:14:55.115Z",
     "canal": "lqns",
@@ -693,21 +709,5 @@
     "tipo": "alerta",
     "titulo": "No se pudo publicar en las redes",
     "texto": "\"¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️\": el repositorio público \"geurii/oficina-videos-legal\" no aceptó el video: no pude subir el video al repositorio público (422): {\"message\":\"Sorry, the file is too large to be processed. Consider creating/updating th; y el "
-  },
-  {
-    "id": "mws7tvkbfrov",
-    "fecha": "2026-11-22T19:14:09.035Z",
-    "canal": "lqns",
-    "tipo": "alerta",
-    "titulo": "No se pudo publicar en las redes",
-    "texto": "\"Sabías que una ola de melaza arrasó Boston? 🍯\": el repositorio público \"geurii/oficina-videos-legal\" no aceptó el video: no pude subir el video al repositorio público (422): {\"message\":\"Sorry, the file is too large to be processed. Consider creating/updating th; y el "
-  },
-  {
-    "id": "mws74kd8p38x",
-    "fecha": "2026-11-22T18:54:28.124Z",
-    "canal": "lqns",
-    "tipo": "alerta",
-    "titulo": "No se pudo publicar en las redes",
-    "texto": "\"🔊 El enigma del Bloop: el rugido del hielo\": sin repositorio público; y el servicio temporal bloqueó a GitHub (el servicio de archivos temporales no devolvió un enlace válido (500): 500)."
   }
 ]

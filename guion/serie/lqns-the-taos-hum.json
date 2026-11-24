@@ -1,0 +1,107 @@
+{
+  "titulo": "¿Qué oculta el zumbido de Taos que nadie puede explicar? 🌍",
+  "formato": "largo",
+  "orientacion": "horizontal",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-the-taos-hum.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T14:14:55.108Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿¿Has escuchado hablar del zumbido de Taos?",
+  "publicacion": {
+    "titulo": "¿Qué oculta el zumbido de Taos que nadie puede explicar? 🌍",
+    "descripcion": "Un misterio auditivo que ha intrigado a científicos y residentes por décadas. Descubre la verdad detrás del zumbido de Taos y otros fenómenos similares en todo el mundo.\n\nFotos: Sufe (CC BY 4.0, Wikimedia Commons) · TrotterFechan (CC BY, Openverse/flickr) · Amanda.yuu (CC BY 4.0, Wikimedia Commons) · ^ Missi ^ from Mississauga, Canada (CC BY 2.0, Wikimedia Commons) · Amitabha Gupta (CC BY 4.0, Wikimedia Commons) · Theo Crazzolara (CC BY 2.0, Wikimedia Commons)\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: \n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#TaosHum #MisterioAuditivo #ZumbidoGlobal #CienciaYMisterio #HistoriaOculta"
+  },
+  "estado": "aprobado",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El gancho es débil y no genera curiosidad inmediata. La revelación llega tarde y no impacta lo suficiente. El ritmo es lento en la primera mitad. Panel: [Garantía de publicación activa] 5 de 8 aprobaron el guion, 8 pasaron los primeros 3 segundos, 2 lo compartirían. Retención estimada: 80% (mínimo 70%)."
+  },
+  "retencionEstimada": 80,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Has escuchado hablar del zumbido de Taos? Un sonido misterioso que solo algunos pueden oír.",
+      "fondo": [
+        "pintado:the-taos-hum-0a",
+        "pintado:the-taos-hum-0b",
+        "pintado:the-taos-hum-0c"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En los años 90, en Taos, Nuevo México, se reportó un zumbido persistente que afectaba al 2 por ciento de la población.",
+      "fondo": [
+        "pintado:the-taos-hum-1a",
+        "pintado:the-taos-hum-1b",
+        "pintado:the-taos-hum-1c"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Este sonido, entre 32 y 80 Hz, modulado de 0,5 a 2 Hz, era más común en climas frescos con brisa ligera y por las mañanas.",
+      "fondo": [
+        "pintado:the-taos-hum-2a"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El área afectada era de unos 48 kilómetros de diámetro, y quienes lo escuchaban podían alejarse de la fuente.",
+      "fondo": [
+        "pintado:the-taos-hum-3a",
+        "pintado:the-taos-hum-3b",
+        "pintado:the-taos-hum-3c"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "No es el único caso: en Windsor, Ontario, un zumbido similar en 2011 generó 22000 quejas en una noche.",
+      "fondo": [
+        "pintado:the-taos-hum-4a",
+        "pintado:the-taos-hum-4b",
+        "pintado:the-taos-hum-4c"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En Auckland, Nueva Zelanda, se grabó un zumbido de 56 Hz en 2006, y en Darmstadt, Alemania, se identificaron fuentes como aires acondicionados defectuosos en 2021.",
+      "fondo": [
+        "pintado:the-taos-hum-5a",
+        "pintado:the-taos-hum-5b",
+        "pintado:the-taos-hum-5c"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Casos recientes se han reportado en Omagh, Irlanda del Norte (2023), y Whitehorse, Canadá (2025).",
+      "fondo": [
+        "pintado:the-taos-hum-6a",
+        "pintado:the-taos-hum-6b",
+        "pintado:the-taos-hum-6c"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: el zumbido de Taos afecta más a personas de mediana edad, sin diferencia significativa entre géneros, y ha sido vinculado a causas como plantas industriales o incluso tinnitus.",
+      "fondo": [
+        "pintado:the-taos-hum-7a",
+        "pintado:the-taos-hum-7b"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Crees que el zumbido de Taos tiene una explicación científica o es un misterio sin resolver? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pintado:the-taos-hum-8a",
+        "pintado:the-taos-hum-8b",
+        "pintado:the-taos-hum-8c"
+      ]
+    }
+  ]
+}

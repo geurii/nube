@@ -1,0 +1,10 @@
+{
+  "fecha": "2026-11-24T14:29:24.612Z",
+  "id": "lqns-the-taos-hum",
+  "aprobado": false,
+  "resumen": "Revision fallida: No se pudo revisar la imagen: NVIDIA devolvió una respuesta vacía",
+  "motivos": [
+    "Revision fallida: No se pudo revisar la imagen: NVIDIA devolvió una respuesta vacía"
+  ],
+  "revision": null
+}

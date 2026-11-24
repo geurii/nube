@@ -1,33 +1,35 @@
 {
   "plan": [
-    "Crear y lanzar la serie de 3 videos sobre el caso del banco que pagó 175 millones por clientes que no existían: Jules: Generar al menos 500 000 vistas totales y monetizar 12 000 USD antes del 13 de diciembre",
-    "Desarrollar el mini-documental de 12 minutos sobre la misteriosa muerte de 2 millones de pingüinos: Mariana: Alcanzar 250 000 vistas y monetizar 6 000 USD antes del 13 de diciembre",
-    "Investigar y narrar el misterio del Mary Celeste en un formato de 12 minutos: Carlos: Obtener 150 000 vistas y monetizar 4 000 USD antes del 13 de diciembre"
+    "Crear y lanzar una mini-serie de 3 episodios (12 min cada uno) sobre el misterio del Mary Celeste, con investigación profunda y narrativa envolvente.: Jules (Productora de contenido): Generar al menos 500 vistas en la primera semana y alcan",
+    "Desarrollar un documental de 12 min sobre la muerte masiva de 2 millones de pingüinos, combinando datos científicos y testimonios de expertos, y publicar en la plataforma principal y en YouTube Shorts para ampliar alcance.: Mariana (Guionis",
+    "Planificar y producir un episodio de 12 min sobre el caso del banco que pagó 175 millones por clientes ficticios, con enfoque en análisis financiero y entrevistas a analistas, y distribuirlo en el canal y en redes sociales para maximizar la"
   ],
   "ganchos": [
-    "¿Sabías que [TEMA] apareció en [CIFRA] lugares diferentes? | Imagen: un mapa con puntos rojos dispersos",
-    "¿Te imaginas que [TEMA] se oculta en la rutina diaria? | Imagen: una cafetera con una sombra extraña",
-    "¿Qué pasa cuando [TEMA] se repite 3 veces seguidas? | Imagen: tres relojes marcando la misma hora",
-    "¿Existe un secreto detrás de cada [TEMA] que nadie menciona? | Imagen: una caja fuerte abierta revelando luces",
-    "¿Alguna vez has sentido que [TEMA] habla a través de los objetos? | Imagen: un espejo con reflejos distorsionados"
+    "[TEMA] que te hará cuestionar la realidad | Imagen de un objeto o escena enigmática",
+    "¿Sabías que [CIFRA] segundos antes de [TEMA] algo inesperado sucedió? | Primer plano de un reloj o cronómetro",
+    "[TEMA] que nadie explicó en 3 minutos | Escena de un lugar oscuro y misterioso",
+    "¿Qué pasa cuando [CIFRA] personas descubren [TEMA]? | Grupo de personas mirando algo sorprendente",
+    "[TEMA] que se oculta tras una capa de silencio | Imagen de un objeto cubierto con una tela o velo"
   ],
   "mejorasGuion": [
-    "1️⃣ **Gancho más impactante y específico**: comienza con una pregunta que despierte la curiosidad y aporte un dato sorprendente, por ejemplo: \"¿Sabías que en Taos, Nuevo México, un 2 % de la población escuchó un zumbido "
+    "1️⃣ Cambia el gancho a una pregunta intrigante y específica que capte la curiosidad, por ejemplo: \"¿Sabías que las luces del desierto de Texas podrían estar guiando algo más que vehículos?\".",
+    "2️⃣ Añade datos más impactantes y poco conocidos (por ejemplo, número de avistamientos, testimonios de expertos) y mantén la revelación entre el 70‑75 % del video para que el público quede con ganas de saber más.",
+    "3️⃣ Cierra con una llamada a la acción más fuerte y directa, invitando a comentar su teoría y a suscribirse, en vez de solo “compartir y seguir”, para aumentar la interacción y la retención."
   ],
   "temas": [
     "The Voynich Manuscript",
-    "The Tunguska Event",
-    "The Oak Island Mystery",
-    "The Piri Reis Map (not listed)",
-    "The Sphinx of Giza (not listed)"
+    "The Taos Hum",
+    "The Green Children of Woolpit",
+    "The Hum of the Earthquake in 1906",
+    "The Mystery of the Bermuda Triangle"
   ],
   "titulos": [
-    "Sabías que <acción> <objeto> <número> <emocion> (Parte <X>/<Y>)",
-    "Sabías que <número> <objeto> <acción> <emocion> (Parte <X>/<Y>)",
-    "Sabías que <objeto> <acción> <número> <emocion> (Parte <X>/<Y>)",
-    "¿Qué <acción> realmente <objeto>? <emoji>"
+    "Sabías que [verbo] [objeto] [emoji] (Parte [X]/[Y])",
+    "Sabías que [verbo] [objeto] [emoji]",
+    "Sabías que [nombre] pagó [cantidad] por [objeto] [emoji]",
+    "¿Qué oculta realmente el [objeto]? 🕵️‍♂️"
   ],
-  "fecha": "2026-11-24T14:14:56.219Z",
+  "fecha": "2026-11-24T14:29:25.005Z",
   "iniciativas": [
     "Valentina (Directora de contenido): Definir una línea editorial clara y un documento de estilo que guíe a todo el equipo desde el primer video.",
     "Carolina (Coordinador de producción): Crear un tablero de tareas con fechas límite rígidas y alertas automáticas para cada entrega.",
