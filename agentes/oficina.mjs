@@ -274,7 +274,7 @@ const elegirModelo = async () => {
 
 /* ====================== Dirección: elige el tema sola ====================== */
 const MIN_FUENTES_INDEPENDIENTES = 2;
-const tieneDocumentacionInstitucional = async (tema) => (await investigarEnLaWeb(tema)).length >= MIN_FUENTES_INDEPENDIENTES;
+const tieneDocumentacionInstitucional = async (tema) => new Set((await investigarEnLaWeb(tema)).map((f) => f.dominio)).size >= MIN_FUENTES_INDEPENDIENTES;
 const elegirTema = async (modelo) => {
   // El historial real contiene registros {fecha, tema, formato, resultado...}, no solo cadenas.
   const tituloDe = (x) => typeof x === 'string' ? x : (x?.tema ?? x?.titulo ?? x?.title ?? x?.nombre ?? '');
@@ -522,7 +522,7 @@ try {
   slug = slugDe(TEMA);
   const fuentes = await investigar();
   const fuentesInstitucionales = fuentes.filter((f) => !f.apoyo && f.tipo === 'fuente_primaria_o_institucional');
-  if (fuentesInstitucionales.length < MIN_FUENTES_INDEPENDIENTES) throw new Error(`El tema "${TEMA}" no reunió ${MIN_FUENTES_INDEPENDIENTES} fuentes institucionales independientes con contenido consultable. Wikipedia no cuenta como prueba.`);
+  if (new Set(fuentesInstitucionales.map((f) => f.dominio)).size < MIN_FUENTES_INDEPENDIENTES) throw new Error(`El tema "${TEMA}" no reunió ${MIN_FUENTES_INDEPENDIENTES} fuentes institucionales independientes con contenido consultable. Wikipedia no cuenta como prueba.`);
   // INTERNET PARA TODOS: una vez por ciclo se reúne lo que dice la web de hoy y se les da a todos los agentes (Guionista, Editor, Verificador, Titulista, panel, pintores...)
   try {
     const tit = await Promise.race([titulosVirales(TEMA), new Promise((r) => setTimeout(() => r([]), 25000))]);
