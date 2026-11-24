@@ -124,7 +124,7 @@ const SISTEMA_A = `Eres el Pintor de composición y color de una oficina de vide
 const SISTEMA_B = `Eres el Pintor de luz y detalle de una oficina de videos de misterio: un maestro del pixel art dibujado desde cero. Dominas la luz, el volumen, los contornos, el detalle y la animación. Prohibidas fotografías, imágenes reales, capturas, rostros o identidades reconocibles. Las personas, si son imprescindibles, solo pueden ser siluetas anónimas de espaldas. Revisa y corrige con rigor el trabajo de tu compañero. Responde SOLO con JSON.`;
 
 const lote = (escenas, ids) => ids.map((i) => `${i}. [${escenas[i].tipo}] ${escenas[i].texto}`).join('\n');
-const FORMA = '{"escenas": [{"indice": N, "planos": [ESCENA_A, ESCENA_B]}, ...]} con el mismo orden y el mismo número de escenas.';
+const FORMA = '{"escenas": [{"indice": N, "planos": [ESCENA_A, ESCENA_B, ESCENA_C]}, ...]}' con el mismo orden y el mismo número de escenas.';
 
 
 
@@ -148,7 +148,7 @@ export const pintarEscenas = async ({llamar, escenas, indices, slug, tema, nota 
   const dir = path.resolve('public', 'pintados');
   fs.mkdirSync(dir, {recursive: true});
   const finales = {};
-  const TAM = 3; // escenas por tanda (cada escena lleva 2 planos)
+  const TAM = 3; // escenas por tanda (cada escena lleva 3 cuadros distintos)
   for (let b = 0; b < indices.length; b += TAM) {
     const ids = indices.slice(b, b + TAM);
     const encargo = `Tema del video: "${tema}". Para CADA escena dibuja TRES planos distintos (otra composición o ángulo, mismo mundo de color) que MUESTREN literalmente el objeto, lugar, fenómeno o acción mencionados en la narración. Traduce cada frase a una imagen concreta: si se menciona un zumbido, dibuja su fuente o el fenómeno acústico; si se menciona un barco, dibuja ese barco; si se menciona una explosión, dibuja la explosión y el entorno. No uses paisajes de relleno, fondos genéricos, símbolos abstractos ni objetos que no aparezcan en la frase. Si no puedes representar un detalle con precisión, representa el elemento real más cercano que sí esté respaldado por la frase, sin inventar contexto. Los tres planos deben ser reconocibles de inmediato, distintos entre sí y representar exactamente la misma frase desde composiciones diferentes.\n\n${MANUAL}\n\n${GUIA}\n\nESCENAS:\n${lote(escenas, ids)}\n\nDevuelve ${FORMA}`;
