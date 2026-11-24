@@ -47,7 +47,7 @@ const ESTADO = path.join(SALIDA, 'estado.json');
 const HISTORIAL = path.join(SALIDA, 'historial.json');
 const leerJson = (ruta, porDefecto) => { try { return JSON.parse(fs.readFileSync(ruta, 'utf8')); } catch { return porDefecto; } };
 // Normaliza variantes como "Bloop" y "The Bloop" para impedir que un tema ya tratado vuelva a entrar.
-const claveTema = (x) => String(x ?? '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/^the[\\s_-]+/, '').replace(/[^a-z0-9]+/g, '');
+const claveTema = (x) => String(x ?? '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/^the[\s_-]+/, '').replace(/[^a-z0-9]+/g, '');
 const temaYaRegistrado = (tema) => {
   const tituloDe = (x) => typeof x === 'string' ? x : (x?.tema ?? x?.titulo ?? x?.title ?? x?.nombre ?? '');
   const vistos = [
