@@ -29,12 +29,26 @@ export const buscarEnLaWeb = async (consulta, max = 6) => {
   const r = await fetch(`https://html.duckduckgo.com/html/?q=${encodeURIComponent(consulta)}`, {headers: {'User-Agent': UA}, signal: AbortSignal.timeout(25000)});
   if (!r.ok) throw new Error('buscador ' + r.status);
   const html = await r.text(), salida = [];
-  const re = /class="result__a"[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>[\s\S]*?class="result__snippet"[^>]*>([\s\S]*?)<\/a>/g;
-  for (const m of html.matchAll(re)) {
-    const url=destino(m[1]); if (!url || !/^https?:/.test(url) || SIN_WIKI.test(hostDe(url))) continue;
-    const texto=limpiar(m[3]); if(texto.length<40) continue;
-    salida.push({titulo:limpiar(m[2]).slice(0,160),url,texto:texto.slice(0,500),host:hostDe(url)});
-    if(salida.length>=max) break;
+  // No asumir el orden de class/href ni que result__snippet sea un <a>:
+  // DuckDuckGo cambia el marcado entre variantes y puede omitir el snippet.
+  const enlaces = [...html.matchAll(/<a\b(?=[^>]*\bclass=["'][^"']*\bresult__a\b[^"']*["'])[^>]*>/gi)];
+  for (let i = 0; i < enlaces.length; i++) {
+    const inicio = enlaces[i].index;
+    const etiqueta = enlaces[i][0];
+    const href = /\bhref=["']([^"']+)["']/i.exec(etiqueta)?.[1];
+    const cierre = html.indexOf('</a>', inicio + etiqueta.length);
+    if (!href || cierre < 0) continue;
+    const url = destino(href);
+    if (!url || !/^https?:/.test(url) || SIN_WIKI.test(hostDe(url))) continue;
+    const titulo = limpiar(html.slice(inicio + etiqueta.length, cierre));
+    const siguiente = enlaces[i + 1]?.index ?? html.length;
+    const bloque = html.slice(cierre + 4, siguiente);
+    const sm = /<([a-z][\w:-]*)\b(?=[^>]*\bclass=["'][^"']*\bresult__snippet\b[^"']*["'])[^>]*>([\s\S]*?)<\/\1>/i.exec(bloque);
+    const texto = limpiar(sm?.[2] ?? '');
+    // El snippet es opcional: la página institucional real se consulta después.
+    if (!titulo) continue;
+    salida.push({titulo:titulo.slice(0,160),url,texto:texto.slice(0,500),host:hostDe(url)});
+    if (salida.length >= max) break;
   }
   return salida;
 };
