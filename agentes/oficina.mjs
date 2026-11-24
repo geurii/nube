@@ -1,5 +1,5 @@
 // Oficina de videos de "Lo Que No Sabías" · corre en GitHub Actions, sin que Claude participe.
-// Departamentos: Dirección (elige tema) → Investigación institucional multifuente (Wikipedia opcional) → Guionista (Groq)
+// Departamentos: Dirección (elige curiosidad) → Investigación web general (sin requisito institucional) → Guionista (Groq)
 //   → Editor crítico (retención y ritmo) → Verificador (rechaza lo que no esté en la fuente) → Escenógrafo (fondos de cada escena).
 // Salida en oficina-salida/: guion-<tema>.json (formato del render), informe-<tema>.md, estado.json (lo que ve la oficina 3D), historial.json.
 // Variables: GROQ_API_KEY (secreto), TEMA (opcional: tema libre), FORMATO (short|largo), IDIOMAS (por defecto "es,en"), PALABRAS (largo).
@@ -10,7 +10,7 @@ import {avisarTelefono} from './aviso.mjs';
 import {leerManual, pendientesDeVistoBueno, ESTADO_ESPERA} from './manual.mjs';
 import {textoDeLecciones} from './lecciones.mjs';
 import {crearVisuales} from './visuales.mjs';
-import {investigarEnLaWeb, descubrirTemasEnFuentes} from './investigar-web.mjs';
+import {investigarEnLaWeb} from './investigar-web.mjs';
 import {limpiarParaVoz} from './texto-voz.mjs';
 import {validarGancho, medirRevelacion, validarRevelacion} from './reglas-guion.mjs';
 import {textoDeRadar} from './radar.mjs';
@@ -516,7 +516,6 @@ try {
   if (!TEMA.trim()) throw new Error('La Oficina no puede investigar ni escribir sin un tema seleccionado.');
   slug = slugDe(TEMA);
   const fuentes = await investigar();
-  const fuentesInstitucionales = fuentes.filter((f) => !f.apoyo && f.tipo === 'fuente_primaria_o_institucional');
   // INTERNET PARA TODOS: una vez por ciclo se reúne lo que dice la web de hoy y se les da a todos los agentes (Guionista, Editor, Verificador, Titulista, panel, pintores...)
   try {
     const tit = await Promise.race([titulosVirales(TEMA), new Promise((r) => setTimeout(() => r([]), 25000))]);
@@ -526,7 +525,7 @@ try {
     WEB_BLOQUE = [bloqueWeb, leerPreferencias(CANAL_ID), textoDeLecciones(CANAL_ID)].filter(Boolean).join(' ');
     if (bloqueWeb) informe.push(`Internet para todos los agentes: ${resumenes.length} resúmenes web y ${tit.length} videos virales de YouTube sobre el tema.`);
   } catch { /* sin internet extra */ }
-  informe.push('## Investigación web (fuentes consultadas; no se exige que sean institucionales)', ...fuentes.map((f) => `- ${f.apoyo ? 'Wikipedia (opcional; no cuenta como prueba)' : `${f.institucion || f.idioma} (${f.dominio || 'fuente institucional'})`}: [${f.titulo}](${f.url})`), '');
+  informe.push('## Investigación web (fuentes consultadas; no se exige que sean institucionales)', ...fuentes.map((f) => `- ${f.apoyo ? 'Wikipedia (opcional; no cuenta como prueba)' : `${f.institucion || f.idioma} (${f.dominio || 'fuente consultada'})`}: [${f.titulo}](${f.url})`), '');
   const materialRecuperado = fuentes.map((f) => `### ${f.apoyo ? 'ENCICLOPEDIA / APOYO' : 'FUENTE CONSULTADA'} ${f.url}\n${f.texto}`).join('\n\n');
   const material = materialRecuperado || `MODO FICCIÓN EXPLÍCITA: no se recuperó documentación consultable para "${TEMA}". Solo se permite crear un relato original de misterio claramente presentado como ficción; no atribuyas hechos, fechas, cifras, lugares ni causas al mundo real. La narración debe decir explícitamente que es un relato ficticio y nunca fingir que ocurrió.`;
 
