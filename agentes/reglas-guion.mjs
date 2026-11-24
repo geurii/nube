@@ -20,3 +20,9 @@ export const validarRevelacion = (escenas = [], minimo = 55, maximo = 80) => {
   const m = medirRevelacion(escenas);
   return {...m, valido: m.existe && m.total > 0 && m.porcentaje >= minimo && m.porcentaje <= maximo};
 };
+
+/** Un largo compartido entre YouTube y TikTok debe narrarse entre 8 y 10 minutos. */
+export const validarLongitudGuion = (escenas = [], minimo = 1200, maximo = 1350) => {
+  const palabras = escenas.reduce((total, e) => total + String(e?.texto ?? '').trim().split(/\\s+/).filter(Boolean).length, 0);
+  return {palabras, minimo, maximo, valido: palabras >= minimo && palabras <= maximo};
+};
