@@ -43,7 +43,7 @@ export const esCajaVacia = (e) => {
 export const sujetosDelTexto = (texto = '') => {
   const t = String(texto).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   const reglas = [
-    [/\b(calendario|fecha|año|anos|siglo|cronologia|tiempo|reloj|hora|horas)\b/, ['calendario','reloj','pergamino']],
+    [/\b(calendario|fecha|ano|anos|siglo|cronologia|tiempo|reloj|hora|horas)\b/, ['calendario','reloj','pergamino']],
     [/\b(castillo|medieval|reino|rey|reina|corona|monarquia|moneda|iglesia|caballero|caballo)\b/, ['castillo','corona','moneda','iglesia','caballo','pergamino']],
     [/\b(barco|nave|embarcacion|marinero|naufragio|hundido|velero|naufragar)\b/, ['barco','submarino','faro']],
     [/\b(submarino|submarinos|hidrofono|hidrofonos|microfono|microfonos|sonar|sensor|sensores)\b/, ['hidrofono','sonar','microfono','submarino']],
@@ -80,7 +80,12 @@ export const tieneAnclaNarrativa = (plano, texto = '') => {
   if (!plano || !Array.isArray(plano.capas)) return false;
   const esperados = sujetosDelTexto(texto);
   if (!esperados.length) return false;
-  return plano.capas.some((c) => OBJETOS_NARRATIVOS.has(c.t) && esperados.includes(c.t));
+  return plano.capas.some((c) => {
+    if (!OBJETOS_NARRATIVOS.has(c.t) || !esperados.includes(c.t)) return false;
+    const dimensiones = ['w','h','r','alto'].map((k) => Number(c[k])).filter(Number.isFinite);
+    const tamanoVisible = c.t === 'bosque' ? Number(c.n ?? 0) >= 6 : Math.max(0, ...dimensiones) >= 0.08;
+    return tamanoVisible;
+  });
 };
 
 /** Limpia una escena: solo tipos y rangos permitidos. Devuelve null si no sirve. */
