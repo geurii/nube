@@ -1,6 +1,15 @@
 {
-  "total": 9,
+  "total": 10,
   "posts": [
+    {
+      "id": "lqns-1958-lituya-bay-earthquake-and-megatsunami",
+      "titulo": "⚡ La ola de 524 metros: El megatsunami que escaló una montaña en Alaska (1958)",
+      "fecha": "2026-11-24T21:05:38.874Z",
+      "accion": "create_video_post",
+      "alojamiento": "temporal-72h",
+      "video_url": "https://trim-hyacinth-90.beacon.host/lqns-1958-lituya-bay-earthquake-and-megatsunami.mp4",
+      "respuesta": "{\"result\":\"Published video post (Reel) to Instagram account 17841461180305578. Media id: 18102305384430906.\"}\n"
+    },
     {
       "id": "lqns-london-beer-flood",
       "titulo": "🍺 1 470 000 Litros: La Inundación que Cambió Londres para Siempre",
