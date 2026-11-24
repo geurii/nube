@@ -11,9 +11,14 @@ const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
 const pedir = async (url, opts) => { try { return await fetch(url, opts); } catch { await dormir(3000); return await fetch(url, opts); } }; // YouTube a veces corta la conexión: un reintento
 const leer = (ruta, d) => { try { return JSON.parse(fs.readFileSync(ruta, 'utf8')); } catch { return d; } };
 
+// Búsqueda multilingüe: no limitar el descubrimiento a creadores anglófonos.
 export const CONSULTAS_POR_DEFECTO = [
-  'unsolved mystery explained', 'true story shocking history', 'strange discovery nobody can explain', 'scam genius true story',
-  'historical mystery you never knew', 'creepy true facts history', 'lost ancient technology mystery', 'weird history facts',
+  'unsolved mystery explained', 'true strange history story', 'mysterious discovery explained',
+  '歴史 ミステリー 不思議な出来事 解説', '未解決事件 奇妙な歴史 雑学',
+  '历史 未解之谜 奇闻真实故事', '离奇历史事件 真相揭秘',
+  'misterios sin resolver historia extraña', 'historias reales sorprendentes misterio',
+  'mystère historique inexpliqué histoire vraie', 'mistério histórico história real surpreendente',
+  '기묘한 역사 미스터리 실화', 'غموض تاريخي قصة حقيقية غريبة',
 ];
 
 /** Filtro de búsqueda de YouTube (protobuf en base64): orden por vistas, publicado este mes (4) o esta semana (3), solo videos. */
@@ -71,8 +76,12 @@ export const datosDeCanal = async (canalId) => {
   const html = await r.text();
   const subs = /"content":"([\d.,]+[KMB]?) subscribers"/.exec(html)?.[1];
   const videos = /"content":"([\d,]+) videos"/.exec(html)?.[1];
-  if (!subs) return null;
-  return {suscriptores: numeroDe(subs), videos: videos ? numeroDe(videos) : null};
+  const joined = /"joinedDateText":\s*\{\s*"content":"([^"]+)"/.exec(html)?.[1]
+    ?? /"joinedDateText":\s*\{\s*"simpleText":"([^"]+)"/.exec(html)?.[1]
+    ?? /Joined\s+([A-Z][a-z]+\s+\d{1,2},\s+\d{4})/.exec(html)?.[1];
+  const fechaAlta = joined ? Date.parse(joined.replace(/^Joined\s+/i, '').replace(/\s+$/, '')) : NaN;
+  if (!subs || !Number.isFinite(fechaAlta)) return null;
+  return {suscriptores: numeroDe(subs), videos: videos ? numeroDe(videos) : null, fechaAlta: new Date(fechaAlta).toISOString(), diasCanal: Math.max(0, (Date.now() - fechaAlta) / 86400000)};
 };
 
 /** Feed público del canal (RSS, sin clave): sus últimos 15 videos con las vistas de cada uno. */
@@ -95,7 +104,7 @@ export const feedDeCanal = async (canalId) => {
 const mediana = (xs) => { const s = [...xs].sort((a, b) => a - b); return s.length ? s[Math.floor(s.length / 2)] : 0; };
 
 /** ¿Este canal tiene un video que EXPLOTÓ? Devuelve el video y cuánto se salió de lo normal del canal, o null. */
-export const detectarExplosion = (videos, {minVistas = 15000, maxDias = 60, veces = 8} = {}) => {
+export const detectarExplosion = (videos, {minVistas = 5000, maxDias = 90, veces = 5} = {}) => {
   const recientes = videos.filter((v) => v.dias !== null && v.dias <= maxDias);
   if (recientes.length < 3) return null;
   const normal = Math.max(mediana(videos.map((v) => v.vistas)), 50);
@@ -138,27 +147,27 @@ export const construirRadar = async ({consultas = CONSULTAS_POR_DEFECTO, maxSubs
     if (Date.now() > hasta - 25000) return;
     const videos = await feedDeCanal(id);
     const e = detectarExplosion(videos, {minVistas});
-    if (e && esIngles(e.video.titulo)) explotaron.push({id, nombre, ...e}); // solo videos en inglés
+    if (e) explotaron.push({id, nombre, ...e}); // cualquier idioma
   });
   // 3) Solo los chicos: leer sus suscriptores
   const canales = [];
   await enParalelo(explotaron.sort((a, b) => b.video.vistas - a.video.vistas).slice(0, 25), 3, async (x) => {
     if (Date.now() > hasta) return;
     const c = await datosDeCanal(x.id);
-    if (!c || c.suscriptores > maxSubs) return;
+    if (!c || c.suscriptores > maxSubs || c.diasCanal > 90) return;
     canales.push({
-      id: x.id, nombre: x.nombre, suscriptores: c.suscriptores, videosDelCanal: c.videos, veces: x.veces,
+      id: x.id, nombre: x.nombre, suscriptores: c.suscriptores, videosDelCanal: c.videos, fechaAlta: c.fechaAlta, diasCanal: Math.round(c.diasCanal), veces: x.veces,
       mejor: {id: x.video.id, titulo: x.video.titulo, vistas: x.video.vistas, hace: Math.round(x.video.dias), url: `https://youtube.com/watch?v=${x.video.id}`},
       puntaje: puntuar(x.video, c, x.veces),
     });
   });
   canales.sort((a, b) => b.puntaje - a.puntaje);
-  return {fecha: new Date().toISOString(), consultas, canalesRevisados: canalesVistos.size, explotaron: explotaron.length, canales: canales.slice(0, 15)};
+  return {fecha: new Date().toISOString(), criterio: 'canales creados hace 90 días o menos; videos publicados hace 90 días o menos; rendimiento mínimo 5x la mediana del canal', consultas, canalesRevisados: canalesVistos.size, explotaron: explotaron.length, canales: canales.slice(0, 15), videosVirales: canales.slice(0, 15).map(c => ({canal:c.nombre, canalId:c.id, diasCanal:c.diasCanal, suscriptores:c.suscriptores, titulo:c.mejor.titulo, vistas:c.mejor.vistas, hace:c.mejor.hace, veces:c.veces, url:c.mejor.url, idiomaDetectado:'multilingüe'}))};
 };
 
 /** Texto corto para meter en el encargo del Director de contenido. */
 export const textoDeRadar = (radar, max = 8) => (radar?.canales ?? []).slice(0, max)
-  .map((c) => `"${c.mejor.titulo}" (${c.mejor.vistas.toLocaleString('en-US')} vistas en ${c.mejor.hace ?? "?"} días, ${c.veces} veces lo normal del canal; canal de ${c.suscriptores.toLocaleString('en-US')} suscriptores)`).join(' | ');
+  .map((c) => `"${c.mejor.titulo}" (${c.mejor.vistas.toLocaleString('en-US')} vistas en ${c.mejor.hace ?? "?"} días; canal creado hace ${c.diasCanal} días, ${c.veces}x su rendimiento habitual; ${c.suscriptores.toLocaleString('en-US')} suscriptores)`).join(' | ');
 
 const principal = async () => {
   const CANAL = (process.env.CANAL || 'lqns').trim();
