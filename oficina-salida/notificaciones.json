@@ -1,5 +1,13 @@
 [
   {
+    "id": "mwuzj79lj7pn",
+    "fecha": "2026-11-24T17:45:12.585Z",
+    "canal": "lqns",
+    "tipo": "reporte",
+    "titulo": "Video subido a YouTube",
+    "texto": "\"🕰️ ¿297 años falsos? La teoría que borra a Carlomagno\" quedó PÚBLICO ahora mismo: https://youtu.be/i0w6F46yv3o"
+  },
+  {
     "fecha": "2026-11-24T17:45:02.434Z",
     "canal": "lqns",
     "tipo": "reporte",
@@ -694,14 +702,5 @@
     "tipo": "alerta",
     "titulo": "Guion rechazado: Mary Celeste",
     "texto": "El Verificador no aprobó \"Mary Celeste\" tras 4 intentos: El gancho inicial debe tener 14 palabras o menos. Aprobados: 11. Rechazados: 38. Con error: 9. No se publica. Próximo ciclo en 9 h."
-  },
-  {
-    "id": "mwu72wk8mxij",
-    "fecha": "2026-11-24T04:28:42.968Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: Mary Celeste",
-    "texto": "El Verificador no aprobó \"Mary Celeste\" tras 4 intentos: El gancho inicial debe tener 14 palabras o menos. Aprobados: 11. Rechazados: 37. Con error: 9. No se publica. Próximo ciclo en 10 h."
   }
 ]

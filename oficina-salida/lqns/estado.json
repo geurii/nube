@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-24T17:45:04.988Z",
+  "actualizado": "2026-11-24T17:45:12.446Z",
   "totales": {
     "aprobados": 14,
     "rechazados": 73,
@@ -204,9 +204,9 @@
       "tarea": "AYUDA: le echó una mano a (Editor de guion). Entregó: 3 mejoras al último guion"
     },
     "Publicador": {
-      "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Investigador de temas). Entregó: 5 temas candidatos"
+      "estado": "libre",
+      "actividad": "pensando",
+      "tarea": "Subió \"🕰️ ¿297 años falsos? La teoría que borra a Carlomagno\" y quedó PÚBLICO ahora mismo: https://youtu.be/i0w6F46yv3o"
     },
     "Crítico: padre trabajador": {
       "estado": "trabajando",
