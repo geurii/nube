@@ -48,6 +48,7 @@ jobs:
           node --check agentes/subir.mjs
           node --check agentes/facebook.mjs
           node --check agentes/tiktok.mjs
+          npx tsc --noEmit
       - name: Voz (msedge-tts solo para este flujo)
         if: ${{ hashFiles('agentes/PAUSA') == '' }}
         run: npm install --no-save --no-audit --no-fund msedge-tts@2.1.1
