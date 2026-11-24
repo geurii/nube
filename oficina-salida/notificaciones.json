@@ -1,5 +1,21 @@
 [
   {
+    "fecha": "2026-11-24T16:19:34.148Z",
+    "canal": "lqns",
+    "tipo": "reporte",
+    "titulo": "Revision aprobada: 🌋 ¿Qué secreto ancestral esconde el cráter de la Isla de Pascua?",
+    "texto": "Sin defectos graves detectados."
+  },
+  {
+    "id": "mwuwghrzbwz8",
+    "fecha": "2026-11-24T16:19:07.391Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "listo",
+    "titulo": "Video renderizado: 🌋 ¿Qué secreto ancestral esconde el cráter de la Isla de Pascua?",
+    "texto": "Se renderizó \"🌋 ¿Qué secreto ancestral esconde el cráter de la Isla de Pascua?\" para Lo Que No Sabías (14 MB). Sigue en cola de publicación; este aviso NO significa que ya esté publicado."
+  },
+  {
     "id": "mwuw86z0e0yv",
     "fecha": "2026-11-24T16:12:40.140Z",
     "canal": "lqns",
@@ -693,23 +709,5 @@
     "tipo": "alerta",
     "titulo": "Guion rechazado: Titanic",
     "texto": "El Verificador no aprobó \"Titanic\" tras 4 intentos: El gancho inicial debe tener 14 palabras o menos. Aprobados: 11. Rechazados: 29. Con error: 8. No se publica. Próximo ciclo en 12 h."
-  },
-  {
-    "id": "mwu2g0zctwpw",
-    "fecha": "2026-11-24T02:18:57.144Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: Loch Ness Monster",
-    "texto": "El Verificador no aprobó \"Loch Ness Monster\" tras 4 intentos: El gancho inicial debe tener 14 palabras o menos. Aprobados: 11. Rechazados: 28. Con error: 8. No se publica. Próximo ciclo en 12 h."
-  },
-  {
-    "id": "mwu2c8n1skkh",
-    "fecha": "2026-11-24T02:16:00.445Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título con pregunta intrigante o afirmación impactante + referencia a un misterio/evento desconocido + elemento de sorpresa o promesa de revelación El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (28111 vistas/hora)."
   }
 ]

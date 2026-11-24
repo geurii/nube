@@ -1,0 +1,36 @@
+{
+  "fecha": "2026-11-24T16:19:34.147Z",
+  "id": "lqns-sabias-que-el-crater-de-la-isla-de-pascua-oculta-una-camara-subterranea-nunca-explorada",
+  "modo": "tecnico",
+  "aprobado": true,
+  "resumen": "Sin defectos graves detectados.",
+  "motivos": [],
+  "revision": {
+    "modelo": "NVIDIA nvidia/nemotron-3-nano-omni-30b-a3b-reasoning + Groq whisper-large-v3",
+    "gancho_3s": {
+      "nota": 0,
+      "comentario": "Revisión visual técnica; no es una valoración del gancho."
+    },
+    "audio": {
+      "nota": 8,
+      "comentario": "Groq Whisper transcribió el audio en español. Duración: 36 segundos. Transcripción: ¿Qué misterio oculta el cráter de la Isla de Pascua? En un relato ficticio, exploradores detectaron una anomalía bajo el cráter, una cavidad sellada, inaccesible. Leyendas locales mencionan una cámara ritual, pero sin pruebas. Cada intento de acceso falla. Lo que no sabías, en esta ficción, una puerta misteriosa sella la cámara, nunca abierta. ¿Qué crees que oculta esa puerta? Recuerda, es ficción. Sígueme para descubrir más misterios."
+    },
+    "subtitulos": {
+      "legibles": true,
+      "tapados_o_cortados": false,
+      "comentario": ""
+    },
+    "imagen": {
+      "nota": 0,
+      "defectos": []
+    },
+    "ritmo": {
+      "nota": 8,
+      "comentario": "No se utiliza el ritmo como motivo de rechazo técnico."
+    },
+    "defectos_graves": [],
+    "nota_general": 0,
+    "recomendacion": "subir",
+    "por_que": "No se detectaron fallas visuales graves y Groq pudo transcribir el audio."
+  }
+}

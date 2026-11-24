@@ -1,0 +1,65 @@
+{
+  "titulo": "🌋 ¿Qué secreto ancestral esconde el cráter de la Isla de Pascua?",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-sabias-que-el-crater-de-la-isla-de-pascua-oculta-una-camara-subterranea-nunca-explorada.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T16:11:05.204Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿¿Qué misterio oculta el cráter de la Isla de Pascua?",
+  "publicacion": {
+    "titulo": "🌋 ¿Qué secreto ancestral esconde el cráter de la Isla de Pascua?",
+    "descripcion": "Explora el misterio de un cráter que esconde una cámara subterránea nunca antes vista. Un relato ficticio que te dejará intrigado.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: \n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#misterio #isldepascua #crter #cmaraoculta #relatoficticio"
+  },
+  "estado": "aprobado",
+  "editor": {
+    "puntaje": 5,
+    "critica": "El gancho es intrigante pero la historia carece de ritmo y detalles concretos. La revelación llega tarde y no impacta. El cierre es débil y no invita a la acción. Panel: 3 de 8 aprobaron el guion, 8 pasaron los primeros 3 segundos, 1 lo compartirían. Retención estimada: 83% (mínimo 55%)."
+  },
+  "retencionEstimada": 83,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Qué misterio oculta el cráter de la Isla de Pascua?",
+      "fondo": [
+        "pixelmisterio",
+        "pixelcifra:1000|ANOS DE HISTORIA|ORO"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En un relato ficticio, exploradores detectaron una anomalía bajo el cráter: una cavidad sellada, inaccesible.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Leyendas locales mencionan una cámara ritual, pero sin pruebas. Cada intento de acceso falla.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Lo que no sabías: en esta ficción, una puerta misteriosa sella la cámara, nunca abierta.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Qué crees que oculta esa puerta? Recuerda, es ficción. Sígueme para descubrir más misterios.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ],
+  "orientacion": "vertical"
+}
