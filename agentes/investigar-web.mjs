@@ -111,24 +111,40 @@ const leerFuente = async (resultado, institucion) => {
   } catch { return null; }
 };
 /** Busca primero en toda la web, sin exigir dominios institucionales; si no hay páginas legibles, intenta organismos oficiales como respaldo. */
-export const investigarEnLaWeb = async (tema,{maxPorFuente=2}={}) => {
+export const investigarEnLaWeb = async (tema,{maxPorFuente=2,minimoDominios=0}={}) => {
   let paginas = [];
   try {
     const resultados = await buscarEnLaWeb(tema, Math.max(4, maxPorFuente * 3));
     paginas = (await Promise.all(resultados.map(leerFuenteGeneral))).filter(Boolean);
   } catch { /* se intenta el respaldo institucional */ }
-  if (!paginas.length) {
+
+  const dominios = () => new Set(paginas.map(f => String(f.dominio || hostDe(f.url)).toLowerCase().replace(/^www\\./,'')));
+  // Si la búsqueda general no trae suficientes dominios independientes, completar con organismos oficiales.
+  if (dominios().size < minimoDominios) {
     const grupos = await Promise.all(FUENTES_INSTITUCIONALES.map(async inst => {
       try {
-        const resultados = await buscarEnLaWeb(`site:${inst.dominio} ${tema}`, maxPorFuente);
-        const validos = resultados.filter(x => pertenece(x.url, inst.dominio)).slice(0, maxPorFuente);
+        const resultados = await buscarEnLaWeb(`site:${inst.dominio} ${tema}`, Math.max(1, Math.min(2, maxPorFuente)));
+        const validos = resultados.filter(x => pertenece(x.url, inst.dominio)).slice(0, Math.max(1, Math.min(2, maxPorFuente)));
         return (await Promise.all(validos.map(x => leerFuente(x, inst)))).filter(Boolean);
       } catch { return []; }
     }));
-    paginas = grupos.flat();
+    const vistos = dominios();
+    for (const fuente of grupos.flat()) {
+      const dominio = String(fuente.dominio || hostDe(fuente.url)).toLowerCase().replace(/^www\\./,'');
+      if (!dominio || vistos.has(dominio)) continue;
+      paginas.push(fuente);
+      vistos.add(dominio);
+      if (vistos.size >= minimoDominios) break;
+    }
   }
-  const vistos = new Set();
-  return paginas.filter(f => { const k = f.url.split('#')[0]; if (vistos.has(k)) return false; vistos.add(k); return true; });
+
+  const urls = new Set();
+  return paginas.filter(f => {
+    const k = String(f.url ?? '').split('#')[0];
+    if (!k || urls.has(k)) return false;
+    urls.add(k);
+    return true;
+  });
 };
 /** Descubre temas desde los ocho dominios oficiales, no desde Wikipedia. */
 export const descubrirTemasEnFuentes = async (consulta,max=16) => {
