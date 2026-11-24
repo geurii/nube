@@ -22,7 +22,7 @@ for (const c of ['lqns', 'demo']) {
 process.env.GROQ_API_KEY = 'prueba';
 process.env.FORMATO = 'short';
 
-const CTA_LQNS = '¿Qué explicación te convence sobre "Taos Hum"? Sígueme para descubrir más misterios.';
+const CTA_LQNS = '¿Qué explicación te convence sobre "Bloop"? Sígueme para descubrir más misterios.';
 const {validarGancho, validarRevelacion} = await import(pathToFileURL(path.join(aqui, 'reglas-guion.mjs')).href);
 const hook16 = 'El barco desapareció y nadie pudo explicar qué ocurrió aquella noche en medio del océano Atlántico.';
 if (validarGancho(hook16, 'short').valido || !validarGancho(hook16, 'largo').valido) throw new Error('La regla del gancho debe permitir 24 palabras en largo y mantener 14 en short.');
@@ -77,11 +77,11 @@ globalThis.fetch = async (url, opciones) => {
     const consulta = new URL(u).searchParams.get('q') || '';
     const dominio = /site:([^\s]+)/.exec(consulta)?.[1] || 'historia.test';
     const snippet = 'Artículo web con contexto histórico, descripción del fenómeno y datos concretos consultables para verificar este tema.';
-    return new Response(`<div class="result"><h2><a href="https://${dominio}/taos-hum" class="result__a">Taos Hum research article</a></h2><div class="result__snippet">${snippet}</div></div>`, {status: 200});
+    return new Response(`<div class="result"><h2><a href="https://${dominio}/bloop" class="result__a">Bloop research article</a></h2><div class="result__snippet">${snippet}</div></div>`, {status: 200});
   }
-  if (/^https:\/\/[^/]+\/taos-hum$/.test(u)) {
-    const texto = 'The article describes the Taos Hum acoustic event, the hydrophone observations, the recorded date, the geographic context and the scientific explanations. This page provides enough descriptive detail for the research test. '.repeat(2);
-    return new Response(`<html><head><title>Taos Hum Research Article</title><meta name="description" content="${texto}"></head><body><p>${texto}</p><p>${texto}</p></body></html>`, {status: 200});
+  if (/^https:\/\/[^/]+\/bloop$/.test(u)) {
+    const texto = 'The article describes the Bloop acoustic event, the hydrophone observations, the recorded date, the geographic context and the scientific explanations. This page provides enough descriptive detail for the research test. '.repeat(2);
+    return new Response(`<html><head><title>Bloop Research Article</title><meta name="description" content="${texto}"></head><body><p>${texto}</p><p>${texto}</p></body></html>`, {status: 200});
   }
   if (u.includes('.wikipedia.org/w/api.php')) return new Response(JSON.stringify({query:{pages:{'-1':{missing:''}}}}), {status:200});
   if (u.includes('api.groq.com/openai/v1/models')) return new Response(JSON.stringify({data: [{id: 'openai/gpt-oss-120b'}]}), {status: 200});
@@ -94,9 +94,9 @@ globalThis.fetch = async (url, opciones) => {
     let respuesta;
     if (sistema.includes('Eres el Pintor')) respuesta = respuestaPintor(sistema, cuerpo.messages.at(-1)?.content ?? '');
     else if (sistema.includes('panel de 8 espectadores')) respuesta = respuestaPanel();
-    else if (sistema.includes('Director/a de contenido')) respuesta = {temas: ['Taos Hum']};
-    else if (sistema.includes('Mesa de publicación')) respuesta = {titulos: ['El sonido que asustó al océano 🌊', 'Un sonido de 99999 kilómetros 😱'], elegido: 'El sonido que asustó al océano 🌊', descripcion: 'Taos Hum: el sonido submarino más fuerte jamás registrado y su explicación.', hashtags: ['#viral', '#taoshum', '#oceano', '#noaa', '#misterio', '#sonar'], comentario_fijado: '¿Qué crees que lo causó?', miniatura: {texto: 'EL BLOOP', idea: 'Una onda azul en el océano'}};
-    else if (sistema.includes('Guionista')) respuesta = {titulo: 'El sonido del océano que parecía un monstruo 🌊', descripcion: 'Un sonido enorme y su explicación.', hashtags: ['#taoshum', '#misterio', '#oceano', '#noaa', '#viral'], escenas};
+    else if (sistema.includes('Director/a de contenido')) respuesta = {temas: ['Bloop']};
+    else if (sistema.includes('Mesa de publicación')) respuesta = {titulos: ['El sonido que asustó al océano 🌊', 'Un sonido de 99999 kilómetros 😱'], elegido: 'El sonido que asustó al océano 🌊', descripcion: 'Bloop: el sonido submarino más fuerte jamás registrado y su explicación.', hashtags: ['#viral', '#bloop', '#oceano', '#noaa', '#misterio', '#sonar'], comentario_fijado: '¿Qué crees que lo causó?', miniatura: {texto: 'EL BLOOP', idea: 'Una onda azul en el océano'}};
+    else if (sistema.includes('Guionista')) respuesta = {titulo: 'El sonido del océano que parecía un monstruo 🌊', descripcion: 'Un sonido enorme y su explicación.', hashtags: ['#bloop', '#misterio', '#oceano', '#noaa', '#viral'], escenas};
     else if (sistema.includes('Editor/a crítico')) respuesta = {puntaje: 7, critica: 'Gancho claro; recorta la segunda frase.', titulo: 'El sonido del océano que parecía un monstruo 🌊', escenas};
     else if (sistema.includes('Verificador/a')) respuesta = {aprobado: true, problemas: [], nombres_de_personas: ['Nadie Inventado']};
     else if (sistema.includes('Escenógrafo')) respuesta = {fondos: escenas.map(() => ['pixelsonar', 'pixelcifra:1997|EL ANO DEL BLOOP|azul', 'pixelinventado'])};
@@ -109,11 +109,14 @@ globalThis.fetch = async (url, opciones) => {
 // una lección guardada (crítica / resultado / pedido del dueño) debe llegar a los agentes
 fs.writeFileSync(path.join('oficina-salida', 'lqns', 'lecciones.json'), JSON.stringify([{id: 'x', fecha: new Date().toISOString(), fuente: 'critica', texto: 'LECCION-DE-PRUEBA: empieza con una cifra concreta en los primeros tres segundos'}]));
 
+// Permite simular el tema Bloop en un entorno temporal; la exclusión permanente sigue activa en producción.
+process.env.MODO_PRUEBA = '1';
+
 // Dos canales, uno detrás de otro (como hace el flujo de GitHub)
 for (const [canal, ctaCanal, n] of [['lqns', CTA_LQNS, 1], ['demo', CTA_DEMO, 2]]) {
   cta = ctaCanal;
   process.env.CANAL = canal;
-  process.env.TEMA = 'Taos Hum';
+  process.env.TEMA = 'Bloop';
   await import(pathToFileURL(path.join(aqui, 'oficina.mjs')).href + `?canal=${n}`);
 }
 
@@ -121,14 +124,14 @@ const fallos = [];
 const leer = (r) => JSON.parse(fs.readFileSync(path.join(tmp, r), 'utf8'));
 for (const canal of ['lqns', 'demo']) {
   const dir = path.join('oficina-salida', canal);
-  const guion = leer(path.join(dir, 'guion-taos-hum.json'));
+  const guion = leer(path.join(dir, 'guion-bloop.json'));
   const estado = leer(path.join(dir, 'estado.json'));
   if (guion.estado !== 'aprobado') fallos.push(`${canal}: el guion no quedó aprobado (${guion.estado})`);
   if (guion.canal !== canal) fallos.push(`${canal}: el guion no dice a qué canal pertenece`);
   if (!guion.audio.startsWith(`audio/${canal}-`)) fallos.push(`${canal}: el audio no lleva el nombre del canal (${guion.audio})`);
   if (guion.escenas.some((e) => e.fondo.includes('pixelinventado'))) fallos.push(`${canal}: dejó pasar un fondo inventado`);
   if (!guion.escenas.every((e) => e.fondo.length === 3 && e.fondo.every((x) => x.startsWith('pintado:')))) fallos.push(`${canal}: los dos pintores no dibujaron los 3 cuadros distintos de cada escena`);
-  { const inf = fs.readFileSync(path.join(dir, 'informe-taos-hum.md'), 'utf8'); if (!/acuerdo/.test(inf)) fallos.push(`${canal}: no quedó el diálogo entre los dos pintores en el informe`); if (!/historia\.test/.test(inf)) fallos.push(`${canal}: no se usó una fuente web general sin exigir dominio institucional`); }
+  { const inf = fs.readFileSync(path.join(dir, 'informe-bloop.md'), 'utf8'); if (!/acuerdo/.test(inf)) fallos.push(`${canal}: no quedó el diálogo entre los dos pintores en el informe`); if (!/historia\.test/.test(inf)) fallos.push(`${canal}: no se usó una fuente web general sin exigir dominio institucional`); }
   for (const e of guion.escenas) for (const x of e.fondo) if (!fs.existsSync(path.join('public', 'pintados', x.replace('pintado:', '') + '.json'))) fallos.push(`${canal}: falta el archivo del cuadro ${x}`);
   if (!guion.publicacion.comentarioFijado) fallos.push(canal + ': la Mesa de publicación no dejó comentario fijado');
   if (guion.publicacion.titulosAlternativos?.some((t) => t.includes('99999'))) fallos.push(canal + ': dejó pasar una cifra inventada en un título');
@@ -137,10 +140,10 @@ for (const canal of ['lqns', 'demo']) {
   if (estado.totales.aprobados !== 1) fallos.push(`${canal}: el estado no contó el guion aprobado`);
   if (!estado.agentes['Editor de guion']) fallos.push(`${canal}: el Editor no aparece en el estado`);
 }
-if (leer('oficina-salida/lqns/guion-taos-hum.json').voz !== 'es-MX-JorgeNeural') fallos.push('lqns: voz equivocada');
-if (leer('oficina-salida/demo/guion-taos-hum.json').voz !== 'es-MX-JorgeNeural') fallos.push('demo: cada canal debe usar su propia voz');
+if (leer('oficina-salida/lqns/guion-bloop.json').voz !== 'es-MX-JorgeNeural') fallos.push('lqns: voz equivocada');
+if (leer('oficina-salida/demo/guion-bloop.json').voz !== 'es-MX-JorgeNeural') fallos.push('demo: cada canal debe usar su propia voz');
 { // el panel es el PASO 2: juzga el guion antes de producir; si lo rechaza, se reescribe y el segundo intento se aprueba
-  const informes = ['lqns', 'demo'].map((c) => fs.readFileSync(path.join('oficina-salida', c, 'informe-taos-hum.md'), 'utf8'));
+  const informes = ['lqns', 'demo'].map((c) => fs.readFileSync(path.join('oficina-salida', c, 'informe-bloop.md'), 'utf8'));
   if (!informes.every((inf) => /Panel de 8 espectadores \(guion/.test(inf))) fallos.push('el panel de 8 espectadores no juzgó el guion en el ciclo de la oficina');
   if (!informes.some((inf) => /NO le gustó/.test(inf) && /Intento 2: APROBADO/.test(inf))) fallos.push('un rechazo del panel no provocó que el guion se reescribiera y se aprobara en el intento 2');
 }
@@ -162,9 +165,9 @@ if (notis.some((x) => !x.id || !x.fecha || !x.texto)) fallos.push('una notificac
   fs.writeFileSync(path.join('oficina-salida', 'lqns', 'manual.json'), JSON.stringify({activo: true}));
   cta = CTA_LQNS;
   process.env.CANAL = 'lqns';
-  process.env.TEMA = 'Taos Hum';
+  process.env.TEMA = 'Bloop';
   await import(pathToFileURL(path.join(aqui, 'oficina.mjs')).href + '?canal=3');
-  const g = leer('oficina-salida/lqns/guion-taos-hum.json');
+  const g = leer('oficina-salida/lqns/guion-bloop.json');
   fs.writeFileSync(path.join('oficina-salida', 'lqns', 'manual.json'), JSON.stringify({activo: false, acciones: [], aplicadas: []})); if (g.estado !== 'aprobado') fallos.push('produccion automatica: el guion no continuo sin visto bueno (' + g.estado + ')');
 }
 console.log(`Prueba simulada: ${llamadas} llamadas a Groq · canales: lqns y demo · notificaciones: ${notis.length}. No comprueba conectividad externa ni fuentes reales.`);
