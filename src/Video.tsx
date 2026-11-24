@@ -22,19 +22,23 @@ export const Video: React.FC<VideoProps> = ({guion, musica, tiempos}) => {
   const gancho = guion.estilo === 'gancho'; // edición de gancho: cortes más rápidos, glitch, escaneo y titular
   const maxPorFondo = MAX_SEGUNDOS_POR_FONDO;
 
-  // Cada escena se parte en tramos; cada tramo usa un fondo de la lista (en ciclo).
+  // Cada imagen dura como máximo 3 s. Nunca se recicla una imagen: si faltan cuadros,
+  // se detiene el render para que no salga un video con visuales repetidos o de relleno.
   const tramos = tiempos.escenas.flatMap((e) => {
     const lista = Array.isArray(e.fondo) ? e.fondo : [e.fondo];
     const inicio = aFrame(e.inicio);
     const fin = aFrame(e.fin);
     const total = fin - inicio;
-    const n = lista.length > 1 ? Math.max(lista.length, Math.ceil(total / (maxPorFondo * fps))) : 1;
+    const n = Math.max(1, Math.ceil(total / (maxPorFondo * fps)));
+    if (lista.length < n) {
+      throw new Error(`Visuales insuficientes en escena ${e.indice}: hacen falta ${n} imágenes distintas para ${(total / fps).toFixed(1)} s y solo hay ${lista.length}. Se bloquea el render para no repetir imágenes.`);
+    }
     return Array.from({length: n}).map((_, k) => {
       const desde = inicio + Math.round((total * k) / n);
       const hasta = inicio + Math.round((total * (k + 1)) / n);
       return {
         clave: `${e.indice}-${k}`,
-        fondo: lista[k % lista.length],
+        fondo: lista[k],
         indice: e.indice + k,
         indiceEscena: e.indice,
         subindice: k,
