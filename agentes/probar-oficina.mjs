@@ -58,13 +58,18 @@ let cta = CTA_LQNS;
 let llamadas = 0;
 let vioLecciones = false; // ¿llegaron las lecciones aprendidas al contexto de los agentes?
 const original = globalThis.fetch;
+const logOriginal = console.log;
+console.log = (...args) => {
+  if (args.length && String(args[0]).startsWith('# Informe de la oficina')) return;
+  logOriginal(...args);
+};
 globalThis.fetch = async (url, opciones) => {
   const u = String(url);
   if (u.includes('html.duckduckgo.com/html/')) {
     const consulta = new URL(u).searchParams.get('q') || '';
     const dominio = /site:([^\s]+)/.exec(consulta)?.[1] || 'si.edu';
     const snippet = 'Registro institucional con fechas, contexto histórico, descripción documental y datos concretos consultables para verificar este tema.';
-    return new Response(`<a class="result__a" href="https://${dominio}/bloop">Bloop institutional record</a><a class="result__snippet">${snippet}</a>`, {status: 200});
+    return new Response(`<div class="result"><h2><a href="https://${dominio}/bloop" class="result__a">Bloop institutional record</a></h2><div class="result__snippet">${snippet}</div></div>`, {status: 200});
   }
   if (/^https:\/\/[^/]+\/bloop$/.test(u)) {
     const texto = 'The institutional record documents the Bloop acoustic event, the hydrophone observations, the recorded date, the geographic context and the scientific explanation. This page provides a primary institutional account and enough descriptive detail for the research test. '.repeat(2);
@@ -154,6 +159,6 @@ if (notis.some((x) => !x.id || !x.fecha || !x.texto)) fallos.push('una notificac
   const g = leer('oficina-salida/lqns/guion-bloop.json');
   fs.writeFileSync(path.join('oficina-salida', 'lqns', 'manual.json'), JSON.stringify({activo: false, acciones: [], aplicadas: []})); if (g.estado !== 'aprobado') fallos.push('produccion automatica: el guion no continuo sin visto bueno (' + g.estado + ')');
 }
-console.log(`Prueba: ${llamadas} llamadas simuladas a Groq · canales: lqns y demo · notificaciones: ${notis.length}`);
+console.log(`Prueba simulada: ${llamadas} llamadas a Groq · canales: lqns y demo · notificaciones: ${notis.length}. No comprueba conectividad externa ni fuentes reales.`);
 if (fallos.length) { console.error('FALLÓ:', fallos.join('; ')); process.exit(1); }
-console.log('PRUEBA OK: dos canales con carpetas, voces y reportes propios.');
+console.log('PRUEBA SIMULADA OK: dos canales, carpetas, voces y reportes. La búsqueda real requiere validación en ejecución.');
