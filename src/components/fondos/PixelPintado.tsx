@@ -8,7 +8,8 @@ import type {PropsEscena} from './Escenas';
 
 const {fontFamily: FUENTE_PIXEL} = loadFont();
 const F = 2;
-const VACIA: EscenaPintada = {cielo: ['#0a0c24', '#1c2a5e', '#6b4a7a'], capas: [{t: 'estrellas', n: 60}]};
+const OBJETOS_NARRATIVOS = new Set(['barco','pez','hielo','faro','ovni','explosion','ciudad','bosque','arbol','edificio','central','pergamino','calendario','reloj','castillo','corona','libro','moneda','iglesia','caballo','silueta','astro','duna','montanas','hidrofono','sonar','microfono','volcan','fuego','lago','avion','tren','submarino']);
+const CAPAS_PROHIBIDAS = new Set(['circulo','rect','poligono','linea','texto','foto']);
 
 const Lienzo: React.FC<{id: string}> = ({id}) => {
   const {width, height, fps, durationInFrames} = useVideoConfig();
@@ -34,6 +35,11 @@ const Lienzo: React.FC<{id: string}> = ({id}) => {
       .then(async (j) => {
         if (!j || !Array.isArray(j.capas) || j.capas.length < 3) throw new Error('Cuadro pixel art inválido: ' + id);
         const esc = j as EscenaPintada;
+        const capaSinObjeto = esc.capas.some((cap) => CAPAS_PROHIBIDAS.has(String(cap?.t ?? '')));
+        const protagonista = esc.capas.some((cap) => OBJETOS_NARRATIVOS.has(String(cap?.t ?? '')));
+        if (capaSinObjeto || !protagonista) {
+          throw new Error('Cuadro rechazado: contiene geometría suelta o no tiene un objeto protagonista reconocible: ' + id);
+        }
         // fotos de referencia: se cargan y se leen como píxeles antes de dibujar (si una falla, la escena se pinta sin ella)
         const pedidas: {clave: string; ruta: string}[] = [];
         for (const cap of esc.capas) {
