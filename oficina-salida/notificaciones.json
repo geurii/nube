@@ -1,5 +1,32 @@
 [
   {
+    "id": "mwuw65q0bhx3",
+    "fecha": "2026-11-24T16:11:05.208Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Guion aprobado: Sabías que el cráter de la Isla de Pascua oculta una cámara subterránea nunca explorada?",
+    "texto": "Short de \"Sabías que el cráter de la Isla de Pascua oculta una cámara subterránea nunca explorada?\" aprobado en el intento 3. 68 palabras, 5 escenas. Editor: Puntaje: 5/10. El gancho es intrigante pero la historia carece de ritmo y detalles concretos. La revelación llega tarde y no impacta. El cierre es débil y no invita a la acción. Panel: 3 de 8 aprobaro Aprobados: 13. Rechazados: 66. Con error: 14. Próximo ciclo en 9 h."
+  },
+  {
+    "id": "mwuw65ptxv1l",
+    "fecha": "2026-11-24T16:11:05.201Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Aviso (no necesita tu OK): faltan imágenes para \"Sabías que el cráter de la Isla de Pascua oculta una cámara subterránea nunca explorada?\"",
+    "texto": "4 de 5 escenas no tienen una imagen que encaje y usarían un fondo neutro. Sigo adelante solo con el fondo neutro; la mejora (pintor de imágenes) está pendiente."
+  },
+  {
+    "id": "mwuw2hg6qvjt",
+    "fecha": "2026-11-24T16:08:13.782Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título con pregunta intrigante o afirmación impactante + referencia a un misterio/evento desconocido + elemento de sorpresa o número El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (25881 vistas/hora)."
+  },
+  {
     "id": "mwuvz3fv4ija",
     "fecha": "2026-11-24T16:05:35.659Z",
     "canal": "lqns",
@@ -684,32 +711,5 @@
     "tipo": "alerta",
     "titulo": "Guion rechazado: Telstar",
     "texto": "El Verificador no aprobó \"Telstar\" tras 4 intentos: La primera frase debe empezar con \"Sabías que\". Aprobados: 11. Rechazados: 26. Con error: 8. No se publica. Próximo ciclo en 10 h."
-  },
-  {
-    "id": "mwsqk5s8sj3n",
-    "fecha": "2026-11-23T03:58:28.424Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: Great Pyramid of Giza",
-    "texto": "El Verificador no aprobó \"Great Pyramid of Giza\" tras 4 intentos: La altura de 146.5 metros no coincide con la fuente en inglés, que indica 146.6 metros. Además, la duración de 3,700 años como el edificio más alto no está resp Aprobados: 11. Rechazados: 25. Con error: 8. No se publica. Próximo ciclo en 10 h."
-  },
-  {
-    "id": "mwsqguhyhw29",
-    "fecha": "2026-11-23T03:55:53.830Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante o afirmación impactante + elemento misterioso o prohibido + pista de revelación El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (32772 vistas/hora)."
-  },
-  {
-    "id": "mwspwhmfdy6i",
-    "fecha": "2026-11-23T03:40:04.023Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: The Voynich manuscript",
-    "texto": "El Verificador no aprobó \"The Voynich manuscript\" tras 4 intentos: El material indica que el manuscrito tiene 'alrededor de 240 páginas', no exactamente 240, y no especifica que el texto esté en un 'idioma', sino en un 'script  Aprobados: 11. Rechazados: 24. Con error: 8. No se publica. Próximo ciclo en 10 h."
   }
 ]
