@@ -208,7 +208,7 @@ const groqDirecto = async (modelo, mensajes, maxTokens = FORMATO === 'largo' ? 4
           model: mod,
           messages: mensajes,
           temperature: 0.4,
-          max_tokens: Math.min(maxTokens ?? 2500, FORMATO === 'largo' ? 2200 : 1200),
+          max_tokens: maxTokens > 3000 ? Math.min(maxTokens, 6500) : Math.min(maxTokens ?? 2500, FORMATO === 'largo' ? 2200 : 1200),
           ...(json ? {response_format: {type: 'json_object'}} : {}),
           // los modelos "gpt-oss" razonan antes de responder: poco razonamiento = más espacio para el texto
           ...(mod.includes('gpt-oss') ? {reasoning_effort: 'low'} : {}),
