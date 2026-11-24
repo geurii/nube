@@ -155,6 +155,49 @@ export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: n
       }
       return true;
     }
+    case 'calendario': {
+      const cx=X(e.x,0.5), cy=Y(e.y,0.55), w=num(e.w,0.48,0.18,0.8)*lw, h=num(e.h,0.48,0.18,0.75)*lh;
+      const x=cx-w/2, y=cy-h/2, r=rampaDeE(e,'#b58a52',5);
+      g.rect(x-3,y-3,w+6,h+6,[28,22,20]); g.rect(x,y,w,h,r[2]);
+      g.rect(x,y,w,h*0.22,r[0]); g.rect(x+w*0.12,y-h*0.06,w*0.08,h*0.18,[210,190,150]); g.rect(x+w*0.8,y-h*0.06,w*0.08,h*0.18,[210,190,150]);
+      for(let row=0;row<4;row++) for(let col=0;col<5;col++){const xx=x+w*(0.12+col*0.17), yy=y+h*(0.34+row*0.14);g.rect(xx,yy,w*0.07,h*0.055,(row===2&&col===3)?[210,55,45]:r[0]);}
+      break;
+    }
+    case 'reloj': {
+      const cx=X(e.x,0.5),cy=Y(e.y,0.48),rad=num(e.r,0.18,0.06,0.35)*S*1.8,r=rampaDeE(e,'#d9b66f',5);
+      g.ellO(cx,cy,rad,rad,r);g.ellO(cx,cy,rad*0.82,rad*0.82,[r[0],r[1],r[2]]);
+      for(let k=0;k<12;k++){const a=k*Math.PI/6-Math.PI/2;g.set(cx+Math.cos(a)*rad*0.68,cy+Math.sin(a)*rad*0.68,r[4]);}
+      g.line(cx,cy,cx+rad*0.48,cy-rad*0.2,[45,32,22],Math.max(2,Math.round(u*2)));g.line(cx,cy,cx-rad*0.08,cy-rad*0.5,[45,32,22],Math.max(2,Math.round(u*2)));g.ellA(cx,cy,3,3,[35,25,20]);
+      break;
+    }
+    case 'castillo': {
+      const cx=X(e.x,0.5),base=Y(e.y,0.86),w=num(e.w,0.65,0.3,0.9)*lw,h=num(e.h,0.5,0.25,0.8)*lh,r=rampaDeE(e,'#827b78',5);
+      const block=(x,y,bw,bh)=>{g.rect(x-2,y-2,bw+4,bh+2,[25,25,34]);g.rect(x,y,bw,bh,r[2]);g.rect(x,y,bw*0.18,bh,r[3]);for(let wy=y+bh*0.28;wy<base-5;wy+=Math.max(10,bh*0.25))g.rect(x+bw*0.42,wy,Math.max(3,bw*0.12),Math.max(5,bh*0.1),[30,30,40]);};
+      block(cx-w*0.32,base-h*0.58,w*0.64,h*0.58);block(cx-w*0.48,base-h*0.9,w*0.22,h*0.9);block(cx+w*0.26,base-h*0.9,w*0.22,h*0.9);
+      for(const tx of [cx-w*0.48,cx+w*0.26]){for(let k=0;k<4;k++)g.rect(tx+k*w*0.055,base-h*0.96,w*0.035,h*0.08,r[3]);}
+      g.rect(cx-w*0.07,base-h*0.28,w*0.14,h*0.28,[34,26,24]);break;
+    }
+    case 'corona': {
+      const cx=X(e.x,0.5),cy=Y(e.y,0.5),w=num(e.w,0.3,0.12,0.6)*lw,h=w*0.55,r=rampaDeE(e,'#d9b33d',5);
+      const pts:[[number,number],[number,number],[number,number],[number,number],[number,number],[number,number],[number,number]]=[[cx-w/2,cy+h/2],[cx-w*0.42,cy-h/2],[cx-w*0.12,cy+h*0.02],[cx,cy-h*0.62],[cx+w*0.12,cy+h*0.02],[cx+w*0.42,cy-h/2],[cx+w/2,cy+h/2]];
+      poli(g,pts,r);g.rect(cx-w/2,cy+h*0.35,w,h*0.22,r[3]);break;
+    }
+    case 'libro': {
+      const cx=X(e.x,0.5),cy=Y(e.y,0.6),w=num(e.w,0.38,0.18,0.65)*lw,h=num(e.h,0.32,0.16,0.55)*lh,r=rampaDeE(e,'#7a3f32',5);
+      g.rect(cx-w/2,cy-h/2,w/2,h,r[1]);g.rect(cx,cy-h/2,w/2,h,r[2]);g.line(cx,cy-h/2,cx,cy+h/2,r[0],2);g.line(cx-w*0.36,cy-h*0.28,cx-w*0.08,cy-h*0.28,r[4],2);g.line(cx+w*0.08,cy-h*0.28,cx+w*0.36,cy-h*0.28,r[4],2);break;
+    }
+    case 'moneda': {
+      const cx=X(e.x,0.5),cy=Y(e.y,0.5),rad=num(e.r,0.1,0.04,0.24)*S*1.7,r=rampaDeE(e,'#d9b33d',5);
+      g.ellO(cx,cy,rad,rad,r);g.ellO(cx,cy,rad*0.7,rad*0.7,[r[2],r[3]]);g.ellO(cx,cy,rad*0.28,rad*0.28,[r[1],r[2],r[3]]);break;
+    }
+    case 'iglesia': {
+      const cx=X(e.x,0.5),base=Y(e.y,0.86),w=num(e.w,0.42,0.2,0.7)*lw,h=num(e.h,0.42,0.2,0.7)*lh,r=rampaDeE(e,'#b7a58c',5);
+      g.rect(cx-w*0.36,base-h*0.68,w*0.72,h*0.68,r[2]);g.rect(cx-w*0.12,base-h*1.05,w*0.24,h*0.38,r[3]);g.rect(cx-w*0.025,base-h*1.13,w*0.05,h*0.16,r[4]);g.rect(cx-w*0.4,base-h*0.72,w*0.18,h*0.72,r[1]);g.rect(cx+w*0.22,base-h*0.72,w*0.18,h*0.72,r[1]);g.rect(cx-w*0.06,base-h*0.3,w*0.12,h*0.3,[34,27,25]);break;
+    }
+    case 'caballo': {
+      const cx=X(e.x,0.5),cy=Y(e.y,0.65),w=num(e.w,0.38,0.2,0.65)*lw,r=rampaDeE(e,'#79513a',5);
+      g.ellO(cx,cy,w*0.34,w*0.17,r);g.ellO(cx+w*0.27,cy-w*0.17,w*0.1,w*0.11,r);g.line(cx+w*0.18,cy-w*0.12,cx+w*0.29,cy-w*0.28,r[0],Math.max(3,Math.round(u*4)));for(const dx of [-0.2,-0.05,0.13,0.27])g.line(cx+w*dx,cy+w*0.1,cx+w*dx*1.02,cy+w*0.42,r[0],Math.max(3,Math.round(u*4)));g.line(cx-w*0.3,cy-w*0.02,cx-w*0.46,cy-w*0.22,r[0],Math.max(2,Math.round(u*3)));break;
+    }
     case 'particulas': {
       const tipo = String(e.tipo ?? 'polvo');
       const n = Math.round(num(e.n, 50, 5, 140));
