@@ -54,6 +54,18 @@ const cuadroVolcan = validarEscena({cielo:['#101820','#26384a'],capas:[
 if (!cuadroVolcan || !tieneAnclaNarrativa(cuadroVolcan, 'La erupcion del volcan cubrio el crater de lava')) {
   throw new Error('El pintor debe reconocer un volcán cuando la narración habla de una erupción.');
 }
+const cuadroCerveza = validarEscena({cielo:['#101820','#26384a'],capas:[
+  capa('estrellas',{n:30}), capa('edificio',{x:0.3,y:0.8,w:0.3,h:0.4}), capa('cerveza',{x:0.5,y:0.8,w:0.9,h:0.4}),
+]});
+if (!cuadroCerveza || !tieneAnclaNarrativa(cuadroCerveza, 'La inundacion de cerveza arraso las calles de Londres')) {
+  throw new Error('El pintor debe reconocer una ola de cerveza en una escena de inundación cervecera.');
+}
+const cuadroTsunami = validarEscena({cielo:['#101820','#26384a'],capas:[
+  capa('estrellas',{n:30}), capa('deslizamiento',{x:0.4,y:0.85,w:0.6,h:0.4}), capa('tsunami',{x:0.55,y:0.8,w:0.9,h:0.6}),
+]});
+if (!cuadroTsunami || !tieneAnclaNarrativa(cuadroTsunami, 'Un megatsunami arraso la costa tras el terremoto de Lituya Bay')) {
+  throw new Error('El pintor debe reconocer un megatsunami y no sustituirlo por formas decorativas.');
+}
 const hook16 = 'El barco desapareció y nadie pudo explicar qué ocurrió aquella noche en medio del océano Atlántico.';
 if (validarGancho(hook16, 'short').valido || !validarGancho(hook16, 'largo').valido) throw new Error('La regla del gancho debe permitir 24 palabras en largo y mantener 14 en short.');
 const escena = (tipo, texto, n) => ({tipo, texto: Array.from({length:n}, (_,i)=>`palabra${i}`).join(' ')});
@@ -99,6 +111,11 @@ const cuadro = (v = 0, sujeto = 'sonar') => {
     submarino: {t: 'submarino', x: 0.5 + variacion, y: 0.58, w: 0.58, h: 0.24},
     volcan: {t: 'volcan', x: 0.5 + variacion, y: 0.82, w: 0.68, h: 0.56},
     fuego: {t: 'fuego', x: 0.5 + variacion, y: 0.78, w: 0.34, h: 0.43},
+    barril: {t: 'barril', x: 0.5 + variacion, y: 0.82, w: 0.27, h: 0.38},
+    cerveza: {t: 'cerveza', x: 0.5 + variacion, y: 0.86, w: 0.94, h: 0.38},
+    cerveceria: {t: 'cerveceria', x: 0.5 + variacion, y: 0.84, w: 0.7, h: 0.52},
+    tsunami: {t: 'tsunami', x: 0.5 + variacion, y: 0.86, w: 0.96, h: 0.58},
+    deslizamiento: {t: 'deslizamiento', x: 0.56 + variacion, y: 0.9, w: 0.72, h: 0.56},
   }[sujeto] ?? {t: 'sonar', x: 0.5 + variacion, y: 0.56, w: 0.58, h: 0.48};
   return {cielo: ['#10183a', '#3a4a8a', '#e8a070'], capas: [
     {t: 'estrellas', n: 40 + v * 7}, {t: 'olas', y: 0.62 + variacion, color: '#1d4f86'},
@@ -108,12 +125,15 @@ const cuadro = (v = 0, sujeto = 'sonar') => {
 const sujetoDeTexto = (texto) => {
   const t = String(texto).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   if (/hielo|iceberg|criosismo/.test(t)) return 'hielo';
+  if (/cerveza|cerveceria|barril|tonel/.test(t)) return 'cerveza';
+  if (/tsunami|megatsunami|maremoto/.test(t)) return 'tsunami';
+  if (/terremoto|deslizamiento|avalancha/.test(t)) return 'deslizamiento';
   if (/hidrofono|microfono|submarino/.test(t)) return 'hidrofono';
   if (/sonido|ruido|zumbido|sensor|frecuencia/.test(t)) return 'sonar';
   if (/animal|ballena|tiburon|criatura|pez/.test(t)) return 'pez';
   if (/gente|persona|poblacion/.test(t)) return 'silueta';
   if (/barco|buque|velero|naufrag/.test(t)) return 'barco';
-  const ancla = sujetosDelTexto(t).find((x) => ['sonar','hidrofono','microfono','hielo','pez','silueta','barco','lago','avion','tren','submarino','volcan','fuego'].includes(x));
+  const ancla = sujetosDelTexto(t).find((x) => ['sonar','hidrofono','microfono','hielo','pez','silueta','barco','lago','avion','tren','submarino','volcan','fuego','barril','cerveza','cerveceria','tsunami','deslizamiento'].includes(x));
   return ancla || 'sonar';
 };
 const indicesDe = () => [0, 1, 2, 3, 4, 5];
