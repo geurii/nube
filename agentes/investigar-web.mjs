@@ -1,6 +1,4 @@
-// Investigación institucional multifuente. Wikipedia es opcional y nunca es requisito de aprobación.
-// Ocho catálogos/organismos: Smithsonian, NASA, National Archives, Library of Congress,
-// NOAA, USGS, PubMed y UNESCO. Se recupera contenido de la página real, no solo el snippet del buscador.
+// Investigación web general: ninguna fuente institucional es requisito. Se recupera el contenido de páginas reales; Wikipedia se excluye como fuente única.
 const UA = 'Mozilla/5.0 (compatible; FabricaDeVideos/2.0; educational research)';
 export const FUENTES_INSTITUCIONALES = [
   {id:'smithsonian',nombre:'Smithsonian Institution',dominio:'si.edu'},
@@ -59,6 +57,16 @@ const extraerPagina = (html) => {
   const texto=[limpiar(desc),...parrafos].filter(Boolean).join(' ').replace(/\s+/g,' ').trim();
   return {titulo:limpiar(title).slice(0,180),texto:texto.slice(0,5200)};
 };
+const leerFuenteGeneral = async (resultado) => {
+  try {
+    const r = await fetch(resultado.url, {headers: {'User-Agent': UA}, signal: AbortSignal.timeout(18000), redirect: 'follow'});
+    if (!r.ok) return null;
+    const pagina = extraerPagina(await r.text());
+    if (pagina.texto.length < 220) return null;
+    const dominio = hostDe(resultado.url);
+    return {idioma: 'web', tipo: 'fuente_consultada', institucion: dominio, dominio, titulo: pagina.titulo || resultado.titulo, url: resultado.url, texto: pagina.texto, apoyo: false};
+  } catch { return null; }
+};
 const leerFuente = async (resultado, institucion) => {
   try {
     const r=await fetch(resultado.url,{headers:{'User-Agent':UA},signal:AbortSignal.timeout(18000),redirect:'follow'});
@@ -68,18 +76,25 @@ const leerFuente = async (resultado, institucion) => {
     return {idioma:'institucional',tipo:'fuente_primaria_o_institucional',institucion:institucion.nombre,dominio:institucion.dominio,titulo:pagina.titulo||resultado.titulo,url:resultado.url,texto:pagina.texto,apoyo:false};
   } catch { return null; }
 };
-/** Busca en las ocho instituciones en paralelo y extrae la página original. Devuelve fuentes únicas y comprobables. */
+/** Busca primero en toda la web, sin exigir dominios institucionales; si no hay páginas legibles, intenta organismos oficiales como respaldo. */
 export const investigarEnLaWeb = async (tema,{maxPorFuente=2}={}) => {
-  const grupos=await Promise.all(FUENTES_INSTITUCIONALES.map(async inst=>{
-    try {
-      const resultados=await buscarEnLaWeb(`site:${inst.dominio} ${tema}`,maxPorFuente);
-      const validos=resultados.filter(x=>pertenece(x.url,inst.dominio)).slice(0,maxPorFuente);
-      const paginas=await Promise.all(validos.map(x=>leerFuente(x,inst)));
-      return paginas.filter(Boolean);
-    } catch { return []; }
-  }));
-  const vistos=new Set();
-  return grupos.flat().filter(f=>{const k=f.url.split('#')[0];if(vistos.has(k))return false;vistos.add(k);return true;});
+  let paginas = [];
+  try {
+    const resultados = await buscarEnLaWeb(tema, Math.max(4, maxPorFuente * 3));
+    paginas = (await Promise.all(resultados.map(leerFuenteGeneral))).filter(Boolean);
+  } catch { /* se intenta el respaldo institucional */ }
+  if (!paginas.length) {
+    const grupos = await Promise.all(FUENTES_INSTITUCIONALES.map(async inst => {
+      try {
+        const resultados = await buscarEnLaWeb(`site:${inst.dominio} ${tema}`, maxPorFuente);
+        const validos = resultados.filter(x => pertenece(x.url, inst.dominio)).slice(0, maxPorFuente);
+        return (await Promise.all(validos.map(x => leerFuente(x, inst)))).filter(Boolean);
+      } catch { return []; }
+    }));
+    paginas = grupos.flat();
+  }
+  const vistos = new Set();
+  return paginas.filter(f => { const k = f.url.split('#')[0]; if (vistos.has(k)) return false; vistos.add(k); return true; });
 };
 /** Descubre temas desde los ocho dominios oficiales, no desde Wikipedia. */
 export const descubrirTemasEnFuentes = async (consulta,max=16) => {
