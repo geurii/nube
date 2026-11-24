@@ -32,6 +32,9 @@ if (!guion) {
   process.exit(1);
 }
 const palabras = leerJson(rutaPalabras, []);
+if (!['short', 'largo'].includes(guion.formato)) throw new Error(`Formato inválido: ${guion.formato}`);
+// El formato manda: el Short siempre es vertical y el largo siempre horizontal.
+guion.orientacion = guion.formato === 'short' ? 'vertical' : 'horizontal';
 if (opcion('plataforma')) guion.plataforma = opcion('plataforma');
 
 const existeEnPublic = (rel) => rel && fs.existsSync(path.join(raiz, 'public', rel));
@@ -150,6 +153,8 @@ const composition = await selectComposition({
 });
 const tiempos = composition.props.tiempos;
 const total = tiempos.duracionTotal;
+if (guion.formato === 'short' && total > 60) throw new Error(`PUBLICACIÓN BLOQUEADA: Short de ${total.toFixed(1)} s; el máximo es 60 s.`);
+if (guion.formato === 'largo' && total < 480) throw new Error(`PUBLICACIÓN BLOQUEADA: video largo de ${total.toFixed(1)} s; el mínimo es 480 s (8 minutos).`);
 
 // --- Comprobación de estructura -------------------------------------------
 const pct = (s) => `${Math.round((s / total) * 100)}%`;
