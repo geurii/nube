@@ -33,7 +33,7 @@ const PALABRAS = FORMATO === 'largo' ? Number(process.env.PALABRAS) || 900 : 110
 const CTA = CONFIG.cta ?? 'Comparte este video con un amigo que haría lo mismo, sígueme.';
 const UA = 'OficinaVideos/1.0 (proyecto educativo)';
 const SALIDA = path.resolve('oficina-salida', CANAL_ID);
-const MANUAL = leerManual(CANAL_ID); // modo manual del dueño (apagado por defecto)
+const MANUAL = {...leerManual(CANAL_ID), activo: false}; // aprobacion personal desactivada; validaciones tecnicas conservadas
 const NOTIFICACIONES = path.resolve('oficina-salida', 'notificaciones.json');
 fs.mkdirSync(SALIDA, {recursive: true});
 

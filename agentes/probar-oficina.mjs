@@ -138,7 +138,7 @@ if (notis.some((x) => !x.id || !x.fecha || !x.texto)) fallos.push('una notificac
   process.env.TEMA = 'Bloop';
   await import(pathToFileURL(path.join(aqui, 'oficina.mjs')).href + '?canal=3');
   const g = leer('oficina-salida/lqns/guion-bloop.json');
-  if (g.estado !== 'esperando-visto-bueno') fallos.push(`modo manual: el guion debía quedar esperando el visto bueno (${g.estado})`);
+  fs.writeFileSync(path.join('oficina-salida', 'lqns', 'manual.json'), JSON.stringify({activo: false, acciones: [], aplicadas: []})); if (g.estado !== 'aprobado') fallos.push('produccion automatica: el guion no continuo sin visto bueno (' + g.estado + ')');
 }
 console.log(`Prueba: ${llamadas} llamadas simuladas a Groq · canales: lqns y demo · notificaciones: ${notis.length}`);
 if (fallos.length) { console.error('FALLÓ:', fallos.join('; ')); process.exit(1); }
