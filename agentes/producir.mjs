@@ -45,8 +45,25 @@ const colaCompleta = fs.readdirSync(RAIZ, {withFileTypes: true})
     const producidos = leer(path.join(RAIZ, d.name, 'producidos.json'), []);
     return fs.readdirSync(path.join(RAIZ, d.name))
       .filter((f) => /^guion-.+\.json$/.test(f))
-      .map((f) => ({canal: d.name, slug: f.replace(/^guion-|\.json$/g, ''), g: leer(path.join(RAIZ, d.name, f), null), t: fs.statSync(path.join(RAIZ, d.name, f)).mtimeMs, producidos}))
-      .filter((x) => x.g && x.g.estado === 'aprobado' && !x.producidos.some((p) => claveTema(p) === claveTema(x.slug)));
+      .map((f) => ({canal: d.name, slug: f.replace(/^guion-|\.json$/g, ''), ruta: path.join(RAIZ, d.name, f), g: leer(path.join(RAIZ, d.name, f), null), t: fs.statSync(path.join(RAIZ, d.name, f)).mtimeMs, producidos}))
+      .filter((x) => x.g && x.g.estado === 'aprobado' && !x.producidos.some((p) => claveTema(p) === claveTema(x.slug)))
+      .filter((x) => {
+        const palabras = (x.g.escenas ?? []).reduce((n, e) => n + String(e.texto ?? '').trim().split(/\s+/).filter(Boolean).length, 0);
+        const motivo = x.g.formato === 'largo' && palabras < 1000
+          ? `Video largo demasiado corto: ${palabras} palabras; mínimo 1000 antes de renderizar.`
+          : x.g.formato === 'short' && palabras > 160
+            ? `Short demasiado largo: ${palabras} palabras; máximo preventivo 160 antes de medir el MP4.`
+            : '';
+        if (motivo) {
+          x.g.estado = 'rechazado-necesita-revision';
+          x.g.errorFormato = motivo;
+          fs.writeFileSync(x.ruta, JSON.stringify(x.g, null, 2));
+          console.warn(`Se aparta ${x.canal}-${x.slug}: ${motivo}`);
+          notificar(x.canal, 'alerta', 'Guion apartado por duración', `${x.g.titulo}: ${motivo}`);
+          return false;
+        }
+        return true;
+      });
   })
   .sort((a, b) => (Date.parse(a.g.creado) || a.t) - (Date.parse(b.g.creado) || b.t));
 let pendientes = colaCompleta;
@@ -88,6 +105,29 @@ if (r.status !== 0 || !fs.existsSync(mp4)) {
   process.exit(1);
 }
 
+const probe = spawnSync('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'default=noprint_wrappers=1:nokey=1', mp4], {encoding: 'utf8', timeout: 60000});
+const duracion = Number(probe.stdout?.trim());
+const formatoInvalido = !Number.isFinite(duracion) || duracion <= 0
+  ? 'No se pudo medir la duración real del MP4.'
+  : g.formato === 'short' && duracion > 60.5
+    ? `Short excede 60 segundos: ${duracion.toFixed(1)} s.`
+    : g.formato === 'largo' && duracion < 480
+      ? `Video largo dura ${duracion.toFixed(1)} s; mínimo 480 s (8 minutos).`
+      : '';
+if (formatoInvalido) {
+  g.estado = 'rechazado-necesita-revision';
+  g.errorFormato = formatoInvalido;
+  fs.writeFileSync(path.join(RAIZ, canal, `guion-${slug}.json`), JSON.stringify(g, null, 2));
+  marcar(canal, {
+    'Técnico de render': {estado: 'esperando_decision', actividad: 'pensando', tarea: formatoInvalido},
+    'Publicador': {estado: 'esperando_decision', actividad: 'pensando', tarea: `No se sube "${g.titulo}": ${formatoInvalido}`},
+  });
+  notificar(canal, 'alerta', 'Video apartado por duración incorrecta', `${g.titulo}: ${formatoInvalido} No se publica en formato equivocado.`);
+  salida('id', '');
+  salida('canal', '');
+  console.error(formatoInvalido);
+  process.exit(0);
+}
 const mb = (fs.statSync(mp4).size / 1024 / 1024).toFixed(0);
 // NO marcar como producido aquí: renderizar no equivale a publicar.
 // subir.mjs registra el slug únicamente después de que YouTube confirme la subida.
