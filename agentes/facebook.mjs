@@ -6,7 +6,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
-import {execFileSync} from 'node:child_process';
+import {execFileSync, spawnSync} from 'node:child_process';
 import {avisarTelefono} from './aviso.mjs';
 import {publicarEnTikTok, textoTikTok} from './tiktok.mjs';
 
