@@ -1,5 +1,32 @@
 [
   {
+    "id": "mwus0rkb9rob",
+    "fecha": "2026-11-24T14:14:55.115Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Guion aprobado: The Taos Hum",
+    "texto": "Video largo de \"The Taos Hum\" aprobado en el intento 4. 200 palabras, 9 escenas. Editor: Puntaje: 6/10. El gancho es débil y no genera curiosidad inmediata. La revelación llega tarde y no impacta lo suficiente. El ritmo es lento en la primera mitad. Panel: [Garantía de publicación activa] Aprobados: 12. Rechazados: 57. Con error: 14. Próximo ciclo en 12 h."
+  },
+  {
+    "id": "mwurn89566ky",
+    "fecha": "2026-11-24T14:04:23.562Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: The Taos Hum",
+    "texto": "El Verificador no aprobó \"The Taos Hum\" tras 4 intentos: La revelación cae al 79 % (192 de 244 palabras antes de ella) y debe caer entre 65 % y 75 %: añade historia antes de la revelación o acórtala. Aprobados: 11. Rechazados: 57. Con error: 14. No se publica. Próximo ciclo en 12 h."
+  },
+  {
+    "id": "mwurkmhwe3rr",
+    "fecha": "2026-11-24T14:02:22.052Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título que plantea una pregunta intrigante o una afirmación impactante + elemento de misterio o dato sorprendente + referencia a un caso/tema específico El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (26263 vistas/hora)."
+  },
+  {
     "id": "mwurfcbmaywg",
     "fecha": "2026-11-24T13:58:15.586Z",
     "canal": "lqns",
@@ -682,29 +709,5 @@
     "tipo": "alerta",
     "titulo": "No se pudo publicar en las redes",
     "texto": "\"🔊 El enigma del Bloop: el rugido del hielo\": sin repositorio público; y el servicio temporal bloqueó a GitHub (el servicio de archivos temporales no devolvió un enlace válido (500): 500)."
-  },
-  {
-    "id": "mws74ebfr1pa",
-    "fecha": "2026-11-22T18:54:20.283Z",
-    "canal": "lqns",
-    "tipo": "alerta",
-    "titulo": "No se pudo publicar en las redes",
-    "texto": "\"¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️\": sin repositorio público; y el servicio temporal bloqueó a GitHub (el servicio de archivos temporales no devolvió un enlace válido (500): 500)."
-  },
-  {
-    "id": "mws746gd0uon",
-    "fecha": "2026-11-22T18:54:10.093Z",
-    "canal": "lqns",
-    "tipo": "alerta",
-    "titulo": "No se pudo publicar en las redes",
-    "texto": "\"Sabías que una ola de melaza arrasó Boston? 🍯\": sin repositorio público; y el servicio temporal bloqueó a GitHub (el servicio de archivos temporales no devolvió un enlace válido (500): 500)."
-  },
-  {
-    "id": "mws73xgwg256",
-    "fecha": "2026-11-22T18:53:58.448Z",
-    "canal": "lqns",
-    "tipo": "alerta",
-    "titulo": "No se pudo publicar en las redes",
-    "texto": "\"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\": sin repositorio público; y el servicio temporal bloqueó a GitHub (el servicio de archivos temporales no devolvió un enlace válido (500): 500)."
   }
 ]

@@ -1,20 +1,13 @@
 {
-  "fecha": "2026-11-22T16:43:52.271Z",
-  "total": 2145,
-  "promedio": 143,
-  "queFunciono": "Los videos con más vistas comparten títulos que incluyen palabras clave de curiosidad y sorpresa (p.ej., \"Sabías que\", \"¿Qué oculta\", \"El Bloop\") y están agrupados en series numeradas (Parte 1/3, Parte 2/3, Parte 3/3). Además, se publicaron en la misma fecha (2026-11-20) y tienen un tema de animales",
+  "fecha": "2026-11-24T14:14:55.918Z",
+  "total": 2244,
+  "promedio": 150,
+  "queFunciono": "Los videos con mayor rendimiento comparten títulos que utilizan la palabra clave \"Sabías que\" y hacen una promesa de curiosidad con un tema inusual (pingüinos, banco, Mary Celeste). Además, se publicaron en la misma fecha (2026-11-20) y el contenido está dividido en series (Parte 1/3, Parte 3/3, Par",
   "porQueFallaron": [
-    "Temas demasiado genéricos o poco diferenciados: los títulos de los videos con pocas vistas (p.ej., \"Sabías que un banco pagó 175 millones por clientes que no existían\" y \"Sabías que dos jóvenes genios de una lista famosa suman 40 años de cárcel\") no destacan u",
-    "Temas de nicho muy específicos sin contexto amplio: títulos como \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador\" o \"Sabías que una ola de melaza arrasó Boston\" carecen de una conexión inmediata con el público general, lo que se refleja en vistas de 6 y 5",
-    "Publicaciones en fechas con baja actividad: videos publicados el 2026-11-22 (p.ej., \"¿Qué oculta realmente el Mary Celeste?\", \"🌊 El Bloop: ¡5,000 km de misterio bajo el hielo!\") tienen muy pocas vistas, posiblemente debido a menor tráfico en esos días. Eviden",
-    "Formato de título inconsistente: algunos videos usan emojis y otros no, lo que puede afectar la percepción de profesionalismo y claridad. Evidencia: videos con emojis en títulos (p.ej., \"Sabías que nunca verás pingüino en un supermercado 🐧\") obtuvieron más vi",
-    "Series incompletas o no promocionadas: los videos que son parte de series numeradas pero no siguen una secuencia clara (p.ej., \"Sabías que mataron 2 millones de pingüinos... y no para comérselos\" sin conexión clara con la Parte 1/3) pueden confundir a la audie"
+    "El video con menor rendimiento (\"¿Por qué no comemos pingüino? La verdad detrás de la prohibición\") carece de la estructura de serie y su título no incluye la frase de intriga \"Sabías que\", lo que reduce la expectativa de curiosidad; la evidencia es que obtuvo",
+    "El video \"Los \"jóvenes genios\" que terminaron acusados de fraude: ¿estafadores o genios?\" tiene un título muy largo y ambiguo, y no sigue la fórmula de la serie, lo que se refleja en su bajo rendimiento (3 vistas).",
+    "Los videos con 14-28 vistas presentan títulos que son demasiado genéricos o no incluyen la frase de intriga; la evidencia es su bajo recuento de vistas y la ausencia de la palabra clave \"Sabías que\"."
   ],
-  "noSePuedeSaber": [
-    "La retención de los videos con pocas vistas, ya que solo se dispone de datos de retención para dos videos de la lista.",
-    "El número de suscriptores ganados o perdidos por cada video, salvo el dato de +0 suscriptores para los dos videos con retención reportada.",
-    "El algoritmo de recomendación que mostró cada video a la audiencia, lo que afecta la exposición inicial.",
-    "La calidad de la miniatura y la descripción de cada video, factores que influyen en la tasa de clics pero no se proporcionan."
-  ],
+  "noSePuedeSaber": [],
   "reglas": []
 }

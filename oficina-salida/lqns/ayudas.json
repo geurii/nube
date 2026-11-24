@@ -1,33 +1,33 @@
 {
   "plan": [
-    "Crear la serie de 12 minutos sobre el misterio del Mary Celeste: Mariana (Editor de guion): Generar al menos 5,000 vistas y 300 interacciones (likes + comentarios) antes del 13 de diciembre, con el objetivo de alcanzar 50,000 USD de ingreso",
-    "Desarrollar el mini-documental de 12 minutos sobre la muerte de 2 millones de pingüinos: Jules (Jefa de Producción): Alcanzar 10,000 vistas y 500 interacciones antes del 13 de diciembre, con la meta de monetizar 80,000 USD a través de patro",
-    "Lanzar la serie de 3 videos de 12 minutos sobre el caso del banco que pagó 175 millones: Carlos (Director de Contenido): Obtener 15,000 vistas y 700 interacciones antes del 13 de diciembre, apuntando a 120,000 USD de ingresos publicitarios "
+    "Crear y lanzar la serie de 3 videos sobre el caso del banco que pagó 175 millones por clientes que no existían: Jules: Generar al menos 500 000 vistas totales y monetizar 12 000 USD antes del 13 de diciembre",
+    "Desarrollar el mini-documental de 12 minutos sobre la misteriosa muerte de 2 millones de pingüinos: Mariana: Alcanzar 250 000 vistas y monetizar 6 000 USD antes del 13 de diciembre",
+    "Investigar y narrar el misterio del Mary Celeste en un formato de 12 minutos: Carlos: Obtener 150 000 vistas y monetizar 4 000 USD antes del 13 de diciembre"
   ],
   "ganchos": [
-    "¿Sabías que [TEMA] puede cambiar tu percepción del mundo? | Imagen de una silueta misteriosa frente a un horizonte nocturno",
-    "[CIFRA] segundos antes de que [TEMA] sucediera, algo inesperado ocurrió. | Imagen de un reloj con el tiempo detenido y una sombra al fondo",
-    "Cuando [TEMA] aparece, la historia se detiene por un instante. | Imagen de una puerta antigua con luz filtrándose entre las rendijas",
-    "El secreto de [TEMA] está escondido entre lo que ves y lo que no. | Imagen de un espejo roto reflejando un paisaje desconocido",
-    "Si [TEMA] fuera una pista, ¿cuál sería el siguiente paso? | Imagen de un mapa antiguo con marcas resaltadas y una brújula apuntando al centro"
+    "¿Sabías que [TEMA] apareció en [CIFRA] lugares diferentes? | Imagen: un mapa con puntos rojos dispersos",
+    "¿Te imaginas que [TEMA] se oculta en la rutina diaria? | Imagen: una cafetera con una sombra extraña",
+    "¿Qué pasa cuando [TEMA] se repite 3 veces seguidas? | Imagen: tres relojes marcando la misma hora",
+    "¿Existe un secreto detrás de cada [TEMA] que nadie menciona? | Imagen: una caja fuerte abierta revelando luces",
+    "¿Alguna vez has sentido que [TEMA] habla a través de los objetos? | Imagen: un espejo con reflejos distorsionados"
   ],
   "mejorasGuion": [
-    "1️⃣ Cambia el gancho a algo más impactante y específico, por ejemplo: \"¿Sabías que una isla oculta en la niebla de Mahone Bay guarda un tesoro que nadie ha encontrado?\" Esto crea curiosidad inmediata y evita la frase gen"
+    "1️⃣ **Gancho más impactante y específico**: comienza con una pregunta que despierte la curiosidad y aporte un dato sorprendente, por ejemplo: \"¿Sabías que en Taos, Nuevo México, un 2 % de la población escuchó un zumbido "
   ],
   "temas": [
-    "The Enigma of the Voynich Manuscript",
-    "The Mystery of the Oak Island Money Pit",
-    "The Phenomenon of the Bizarre White Rain in China",
-    "The Unexplained Disappearance of the Roanoke Colony's Settlers",
-    "The Enigmatic Sphinx of Giza's Hidden Chamber"
+    "The Voynich Manuscript",
+    "The Tunguska Event",
+    "The Oak Island Mystery",
+    "The Piri Reis Map (not listed)",
+    "The Sphinx of Giza (not listed)"
   ],
   "titulos": [
-    "Sabías que nunca verás <objeto>",
-    "Sabías que <número> <acción>",
-    "Sabías que <acción> <número> de <objeto>",
-    "¿Qué oculta realmente el <objeto>?"
+    "Sabías que <acción> <objeto> <número> <emocion> (Parte <X>/<Y>)",
+    "Sabías que <número> <objeto> <acción> <emocion> (Parte <X>/<Y>)",
+    "Sabías que <objeto> <acción> <número> <emocion> (Parte <X>/<Y>)",
+    "¿Qué <acción> realmente <objeto>? <emoji>"
   ],
-  "fecha": "2026-11-24T10:21:31.941Z",
+  "fecha": "2026-11-24T14:14:56.219Z",
   "iniciativas": [
     "Valentina (Directora de contenido): Definir una línea editorial clara y un documento de estilo que guíe a todo el equipo desde el primer video.",
     "Carolina (Coordinador de producción): Crear un tablero de tareas con fechas límite rígidas y alertas automáticas para cada entrega.",
