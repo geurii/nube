@@ -50,8 +50,8 @@ const colaCompleta = fs.readdirSync(RAIZ, {withFileTypes: true})
       .filter((x) => x.g && x.g.estado === 'aprobado' && !x.producidos.some((p) => claveTema(p) === claveTema(x.slug)))
       .filter((x) => {
         const palabras = (x.g.escenas ?? []).reduce((n, e) => n + String(e.texto ?? '').trim().split(/\s+/).filter(Boolean).length, 0);
-        const motivo = x.g.formato === 'largo' && (palabras < 1200 || palabras > 1800)
-          ? `Video largo fuera del rango de narración: ${palabras} palabras; se requieren entre 1200 y 1800 antes de renderizar.`
+        const motivo = x.g.formato === 'largo' && (palabras < 1200 || palabras > 1350)
+          ? `Video largo fuera del rango de narración: ${palabras} palabras; se requieren entre 1200 y 1350 antes de renderizar.`
           : x.g.formato === 'short' && palabras > 180
             ? `Short demasiado largo: ${palabras} palabras; máximo preventivo 180 antes de medir el MP4.`
             : '';
