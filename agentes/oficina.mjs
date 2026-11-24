@@ -415,7 +415,7 @@ const NORMAS = `NORMAS DE LA JEFA (no se negocian):
 5. Sin nombres de personas reales: di "el capitán", "un científico", "los investigadores". Sí puedes nombrar lugares, barcos, libros u objetos.
 6. Las dudas se dicen como dudas ("según la fuente", "no se sabe"). Si dos fuentes difieren, di las dos.
 7. La revelación ("Pero lo que no sabías:") debe caer IDEALMENTE entre el 65 % y el 72 % del total de palabras. El rango aceptado es 55 %–80 %, pero NO apuntes a sus bordes: deja margen de seguridad.
-8. No incluyas descargos meta como «recuerda que es ficción», «esto es ficción» ni advertencias similares cuando el tema sea un hecho real documentado. No rompas la narración para hablar del proceso de creación. Cierra con una pregunta relacionada directamente con el tema y una invitación natural a seguir el canal. No pidas compartir con un amigo ni uses frases genéricas fuera de contexto. Termina con una pregunta concreta y natural relacionada con el tema. La última frase debe ser exactamente: "${CTA}".
+8. PROHIBICIÓN ABSOLUTA: nunca escribas en la narración «recuerda que es ficción», «esto es ficción», «es un relato ficticio», «esto no es real» ni ninguna advertencia meta equivalente. No hables del proceso de creación. Cierra con una pregunta relacionada directamente con el tema y una invitación natural a seguir el canal. No pidas compartir con un amigo ni uses frases genéricas fuera de contexto. Termina con una pregunta concreta y natural relacionada con el tema. La última frase debe ser exactamente: "${CTA}".
 8b. TODO el texto se LEE EN VOZ ALTA por una voz en español: escríbelo en español puro, sin palabras en inglés (traduce: "estruendo", no "blast"), sin transliteraciones raras ni siglas sueltas, y los rangos con palabras ("entre 10 y 15", no "10-15").
 9. Escribe las cifras y los años con DÍGITOS, exactamente como aparecen en DATOS EXACTOS (por ejemplo 1609 o 1420 MHz). NUNCA conviertas un número a palabras ni lo cambies: un número mal copiado es un dato falso.
 11. GANCHO AUDITIVO (primeros 3 segundos, lo que se OYE): una pregunta imposible o una cifra dicha en voz alta, con frase corta y una pausa dramática justo antes de la respuesta. Nada de saludos ni introducciones.
@@ -530,6 +530,8 @@ const validarFondos = (propuesta, total, escenas) => {
 const palabrasDe = (e) => e.texto.split(/\s+/).filter(Boolean).length;
 const comprobar = (escenas) => {
   const p = [];
+  const textoCompleto = escenas.map((e) => String(e.texto ?? '')).join(' ');
+  if (/recuerda.{0,40}ficci[oó]n|esto es ficci[oó]n|es (?:un )?relato ficticio|no es real|contenido ficticio|historia inventada/i.test(textoCompleto)) p.push({frase: '(descargo meta)', motivo: 'PROHIBIDO: no mencionar ficción ni insertar advertencias meta en la narración.'});
   const gancho = validarGancho(escenas[0]?.texto, FORMATO);
   if (!String(escenas[0]?.texto ?? '').trim()) p.push({frase: '', motivo: 'Falta un gancho inicial claro.'});
   else if (!gancho.valido) p.push({frase: escenas[0].texto, motivo: `El gancho inicial debe tener ${gancho.maximo} palabras o menos para formato ${FORMATO}.`});
