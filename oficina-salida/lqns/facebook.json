@@ -1,6 +1,15 @@
 {
-  "total": 6,
+  "total": 7,
   "posts": [
+    {
+      "id": "lqns-sabias-que-el-crater-de-la-isla-de-pascua-oculta-una-camara-subterranea-nunca-explorada",
+      "titulo": "🌋 ¿Qué secreto ancestral esconde el cráter de la Isla de Pascua?",
+      "fecha": "2026-11-24T16:28:51.107Z",
+      "accion": "create_reel",
+      "alojamiento": "temporal-72h",
+      "video_url": "https://husked-skylight-42.beacon.host/lqns-sabias-que-el-crater-de-la-isla-de-pascua-oculta-una-camara-subterranea-nunca-explorada.mp4",
+      "respuesta": "{\"result\":\"Published Reel to Facebook Page 1414517028413600. Video id: 30171398602462818. Post id: 1414517028413600_122106170211552661.\"}\n"
+    },
     {
       "id": "lqns-mary-celeste",
       "titulo": "¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️",
