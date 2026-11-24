@@ -22,7 +22,7 @@ export const retencionEstimada = (votos, duracion) => {
   return Math.round((partes.reduce((a, b) => a + b, 0) / partes.length) * 100);
 };
 
-/** Regla de decisión: les gusta a 6 de 8 o más y al menos 4 de 8 pasan los 3 primeros segundos. Con garantía de publicación el voto solo aconseja. */
+/** Regla de decisión: les gusta a 3 de 8 o más y al menos 3 de 8 pasan los 3 primeros segundos. Con garantía de publicación el voto solo aconseja. */
 export const decidir = ({votos, garantia, duracion = 0}) => {
   const gustos = votos.filter((v) => v.leGusto).length;
   const pasan = votos.filter((v) => v.pasa3).length;
