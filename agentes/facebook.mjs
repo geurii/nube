@@ -13,15 +13,15 @@ import {publicarEnTikTok, textoTikTok} from './tiktok.mjs';
 const leer = (ruta, d) => { try { return JSON.parse(fs.readFileSync(ruta, 'utf8')); } catch { return d; } };
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
 const MAX_ARCHIVOS = 15; // en el repo de videos se conservan los últimos 15 (Facebook ya los descargó)
-const MAX_COMPLETO_MB = 60; // por encima de esto se sube la versión liviana
+const MAX_COMPLETO_MB = 60; // shorts: por encima se usa la copia liviana; largos TikTok admiten hasta 220 MB
 
 const quitarClaves = (texto, ...claves) => claves.filter(Boolean).reduce((t, k) => t.split(k).join('***'), String(texto ?? ''));
 
 /** Elige el MP4: el completo si pesa poco; si no, la versión liviana (540x960, el mínimo que acepta Facebook). */
-export const elegirArchivo = (id, carpeta = path.join('out', 'serie')) => {
+export const elegirArchivo = (id, carpeta = path.join('out', 'serie'), maxMb = MAX_COMPLETO_MB) => {
   const completo = path.join(carpeta, `${id}.mp4`);
   const liviano = path.join(carpeta, `${id}-subida.mp4`);
-  if (fs.existsSync(completo) && fs.statSync(completo).size <= MAX_COMPLETO_MB * 1024 * 1024) return completo;
+  if (fs.existsSync(completo) && fs.statSync(completo).size <= maxMb * 1024 * 1024) return completo;
   if (fs.existsSync(liviano)) return liviano;
   return null;
 };
@@ -227,7 +227,7 @@ export const principal = async () => {
   const guion = leer(path.join('guion', 'serie', `${ID}.json`), null);
   if (!guion) { console.log('Redes: no encuentro el guion del video. Se omite.'); return {omitido: 'sin guion'}; }
   const largo = guion.formato === 'largo';
-  if (largo) { console.log('Redes: los videos largos NO se publican en Facebook, Instagram ni TikTok (solo YouTube).'); return {omitido: 'largo'}; }
+  // Los largos se envían exclusivamente a TikTok por Buffer; Facebook/Instagram reciben solo Shorts/Reels.
   const dir = path.join('oficina-salida', CANAL);
   fs.mkdirSync(dir, {recursive: true});
   const texto = textoDePublicacion(guion);
@@ -236,6 +236,7 @@ export const principal = async () => {
   // qué destinos tienen cuenta configurada y todavía no tienen este video
   const pendientes = [];
   for (const d of destinos({largo, cfg: cfgCanal, env: process.env})) {
+    if (largo && d.nombre !== 'TikTok') { console.log(`${d.nombre}: se omite; este ciclo largo está destinado solo a TikTok.`); continue; }
     const registro = leer(path.join(dir, d.archivoRegistro), {total: 0, posts: [], archivos: []});
     if (d.tipo !== 'buffer' && !apiKey) { console.log(`${d.nombre}: se omite (falta WINDSOR_API_KEY).`); continue; }
     // TikTok: nunca se descarta por tener publicaciones programadas. Buffer añade cada video al siguiente espacio libre de la cola.
@@ -256,7 +257,7 @@ export const principal = async () => {
       fs.writeFileSync(rutaN, JSON.stringify(lista.slice(0, 80), null, 2));
     } catch { /* el aviso no debe fallar */ }
   };
-  let archivo = elegirArchivo(ID);
+  let archivo = elegirArchivo(ID, path.join('out', 'serie'), largo ? 220 : MAX_COMPLETO_MB);
   if (!archivo) { // no hay copia liviana: se crea una con ffmpeg a partir del MP4 completo
     const completo = path.join('out', 'serie', `${ID}.mp4`);
     if (fs.existsSync(completo)) {
@@ -271,7 +272,7 @@ export const principal = async () => {
   // GitHub rechaza archivos grandes ("file too large"): se reduce a ~20 MB (720x1280 sobra para Reels y TikTok)
   let notaVideo = '';
   try {
-    const MAX_MB = 20;
+    const MAX_MB = largo ? 220 : 20;
     if (fs.statSync(archivo).size > MAX_MB * 1024 * 1024) {
       const seg = Number(execFileSync('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'default=nw=1:nk=1', archivo], {encoding: 'utf8', timeout: 60000}).trim()) || 60;
       const kbps = Math.max(300, Math.floor((MAX_MB * 8192 * 0.85) / seg) - 96);
@@ -300,7 +301,7 @@ export const principal = async () => {
   for (const d of pendientes) {
     try { // un destino que falla no impide el otro
       const resp = d.tipo === 'buffer'
-        ? await publicarEnTikTok({apiKey: bufferKey, url: pub.url, texto: textoTikTok(guion), ia: cfgCanal.tiktok?.ia === true, canal: String(cfgCanal.tiktok?.canal ?? ''), modo: cfgCanal.tiktok?.modo === 'ahora' ? 'ahora' : 'cola'})
+        ? await publicarEnTikTok({apiKey: bufferKey, url: pub.url, texto: textoTikTok(guion), ia: cfgCanal.tiktok?.ia === true, canal: String(cfgCanal.tiktok?.canal ?? ''), modo: largo ? 'ahora' : (cfgCanal.tiktok?.modo === 'ahora' ? 'ahora' : 'cola')})
         : await publicarConWindsor({apiKey, conector: d.conector, cuenta: d.cuenta, accion: d.accion, params: d.params(pub.url, texto, titulo)});
       d.registro.posts.unshift({id: ID, titulo: titulo.slice(0, 140), fecha: new Date().toISOString(), accion: d.accion, programado: resp.programado, alojamiento: usaRepo ? 'repositorio' : 'temporal-72h', video_url: pub.url, respuesta: resp.texto.slice(0, 300)});
       d.registro.posts = d.registro.posts.slice(0, 200);
