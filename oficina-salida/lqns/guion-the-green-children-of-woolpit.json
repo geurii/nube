@@ -1,0 +1,65 @@
+{
+  "titulo": "🌿 Niños Verdes de Woolpit: ¿Realidad o Mito?",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-the-green-children-of-woolpit.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T17:10:04.411Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿¿Niños con piel verde en Inglaterra?",
+  "publicacion": {
+    "titulo": "🌿 Niños Verdes de Woolpit: ¿Realidad o Mito?",
+    "descripcion": "Descubre la leyenda de los niños verdes de Woolpit, un enigma que ha intrigado a Inglaterra desde el siglo XII. ¿Realidad o mito?\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://es.wikipedia.org/wiki/Ni%C3%B1os_Verdes_de_Woolpit\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#Woolpit #Misterio #Leyenda #Inglaterra #GreenChildrenOfWoolpit"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El gancho es descriptivo, no intrigante. La revelación llega tarde y falta ritmo en la historia. El título es largo y poco atractivo. Panel: 3 de 8 aprobaron el guion, 8 pasaron los primeros 3 segundos, 1 lo compartirían. Retención estimada: 84% (mínimo 55%)."
+  },
+  "retencionEstimada": 84,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Niños con piel verde en Inglaterra? Woolpit guarda un secreto.",
+      "fondo": [
+        "pixelmisterio",
+        "pixelcifra:4 MILLONES|DE CLIENTES|ORO"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En 1100, dos hermanos aparecieron cerca de un pozo. Hablaban un idioma desconocido.",
+      "fondo": [
+        "pixelcifra:2 HERMANOS|APARICION|AZUL",
+        "pixeldocs"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Solo comían verduras verdes. El niño murió, pero la niña se adaptó al pueblo.",
+      "fondo": [
+        "pixelcifra:1 NINO|MURIO|ROJO"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Ella reveló que en su mundo todos eran verdes. ¿De dónde venían?",
+      "fondo": [
+        "pixelcifra:1 MUNDO|VERDE|TEAL"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Crees que esta leyenda esconde una verdad olvidada? Sígueme para descubrir más misterios.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

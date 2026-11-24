@@ -1,5 +1,23 @@
 [
   {
+    "id": "mwuya0qrbpgw",
+    "fecha": "2026-11-24T17:10:04.611Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: The Green Children of Woolpit",
+    "texto": "El Verificador no aprobó \"The Green Children of Woolpit\" tras 3 intentos: No se generaron imágenes específicas para las escenas: Los pintores no generaron pixel art para las escenas: 0, 1, 2, 3, 4. No se sustituirán por fotos.. No se  Aprobados: 13. Rechazados: 73. Con error: 18. No se publica. Próximo ciclo en 8 h."
+  },
+  {
+    "id": "mwuy5lebmt13",
+    "fecha": "2026-11-24T17:06:38.099Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título que plantea una pregunta intrigante o una afirmación impactante + elemento de misterio o dato sorprendente + referencia a un caso/objeto específico El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (25718 vistas/hora)."
+  },
+  {
     "id": "mwuxi40wzp12",
     "fecha": "2026-11-24T16:48:22.496Z",
     "canal": "lqns",
@@ -687,23 +705,5 @@
     "tipo": "reporte",
     "titulo": "Fórmula del momento",
     "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante o afirmación impactante + elemento misterioso o inesperado + pista de contenido (ej. \"¿Por qué…?\", \"El secreto de…\", \"Lo que nadie te contó sobre…\") El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (27796 vistas/hora)."
-  },
-  {
-    "id": "mwu584cdu6za",
-    "fecha": "2026-11-24T03:36:47.101Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: London Underground",
-    "texto": "El Verificador no aprobó \"London Underground\" tras 4 intentos: No hay información en el material sobre un secreto escondido durante décadas en el primer metro del mundo. Aprobados: 11. Rechazados: 33. Con error: 9. No se publica. Próximo ciclo en 10 h."
-  },
-  {
-    "id": "mwu53ret4l2a",
-    "fecha": "2026-11-24T03:33:23.717Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: DynaTAC",
-    "texto": "El Verificador no aprobó \"DynaTAC\" tras 4 intentos: La revelación cae al 59 % (106 de 179 palabras antes de ella) y debe caer entre 65 % y 75 %: añade historia antes de la revelación o acórtala. Aprobados: 11. Rechazados: 32. Con error: 9. No se publica. Próximo ciclo en 10 h."
   }
 ]
