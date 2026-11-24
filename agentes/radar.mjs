@@ -190,7 +190,7 @@ const principal = async () => {
     console.log('Radar reciente (menos de 12 horas): no se repite para ahorrar minutos.');
     return;
   }
-  const radar = await construirRadar({consultas: config?.radar?.consultas ?? CONSULTAS_POR_DEFECTO, nota: (t) => { notas.push(t); console.log(t); }});
+  const radar = await construirRadar({consultas: config?.radar?.consultas ?? CONSULTAS_POR_DEFECTO, minVistas: 5000, maxSubs: 300000, limiteMs: 170000, nota: (t) => { notas.push(t); console.log(t); }});
   if (!radar.canales.length) {
     console.log('Radar sin resultados: se conserva el anterior.', notas.join(' '));
     return;
