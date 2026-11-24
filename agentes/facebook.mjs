@@ -103,18 +103,37 @@ const subirPorApi = async ({token, repo, archivo, nombre}) => {
 
 /** Sin token de GitHub: sube el MP4 a Litterbox (archivos temporales gratis, sin cuenta; se borra solo a las 24 h) y devuelve su enlace público directo. */
 export const subirATemporal = async ({archivo, nombre}) => {
+  // Primer respaldo: TempFile.org ofrece API pública sin clave, MP4 hasta 100 MB y enlaces directos de descarga.
+  // 48 h cubren la cola de Buffer; el enlace directo evita que Buffer reciba una página HTML.
+  try {
+    const fd = new FormData();
+    fd.append('expiryHours', '48');
+    fd.append('files', new Blob([fs.readFileSync(archivo)], {type: 'video/mp4'}), nombre);
+    const r = await fetch('https://tempfile.org/api/upload/local', {method: 'POST', body: fd, signal: AbortSignal.timeout(300000)});
+    const j = await r.json().catch(() => ({}));
+    const item = j.files?.[0];
+    if (!r.ok || !j.success || !item?.id) throw new Error(j.error || `TempFile.org respondió HTTP ${r.status}`);
+    const url = `https://tempfile.org/${item.id}/download`;
+    const h = await fetch(url, {method: 'HEAD', signal: AbortSignal.timeout(30000)});
+    if (!h.ok) throw new Error(`TempFile.org creó el archivo, pero el enlace directo respondió ${h.status}`);
+    console.log(`Redes: video alojado temporalmente en TempFile.org (${(Number(item.size || 0) / 1048576).toFixed(1)} MB, expira en 48 h).`);
+    return {url, ruta: null};
+  } catch (e) {
+    console.log('Redes: TempFile.org no respondió (' + String(e.message ?? e).slice(0, 140) + '); pruebo Litterbox.');
+  }
+  // Segundo respaldo anterior, por si TempFile.org está temporalmente caído.
   const fd = new FormData();
   fd.append('reqtype', 'fileupload');
-  fd.append('time', '72h'); // 72 h: Buffer descarga el video cuando llega la hora del calendario (hasta ~2 días después)
+  fd.append('time', '72h');
   fd.append('fileToUpload', new Blob([fs.readFileSync(archivo)], {type: 'video/mp4'}), nombre);
   const r = await fetch('https://litterbox.catbox.moe/resources/internals/api.php', {method: 'POST', body: fd, signal: AbortSignal.timeout(300000)});
   const url = (await r.text()).trim();
-  if (!r.ok || !/^https:\/\/litter\.catbox\.moe\/[\w.-]+\.mp4$/.test(url)) throw new Error(`el servicio de archivos temporales no devolvió un enlace válido (${r.status}): ${url.slice(0, 120)}`);
+  if (!r.ok || !/^https:\/\/litter\.catbox\.moe\/[\w.-]+\.mp4$/.test(url)) throw new Error(`los alojamientos temporales fallaron (Litterbox HTTP ${r.status}): ${url.slice(0, 120)}`);
   for (let i = 0; i < 10; i++) {
     try { const h = await fetch(url, {method: 'HEAD', signal: AbortSignal.timeout(15000)}); if (h.ok) return {url, ruta: null}; } catch { /* aún no */ }
     await dormir(3000);
   }
-  throw new Error('el video se subió pero su enlace no responde todavía');
+  throw new Error('el video se subió pero su enlace temporal no responde todavía');
 };
 
 /** Borra los archivos más viejos del repo de videos para que no crezca sin fin. Nunca lanza. */
