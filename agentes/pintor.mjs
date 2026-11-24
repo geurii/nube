@@ -85,7 +85,7 @@ export const validarEscena = (raw) => {
     return o;
   }).filter(Boolean).filter((c) => !esCajaVacia(c)); // sin barras rectangulares vacías
   if (!cielo || capas.length < 3) return null;
-  const objetosConcretos = new Set(['barco','pez','roca','hielo','faro','ovni','explosion','ciudad','bosque','arbol','edificio','central','pergamino','calendario','reloj','castillo','corona','libro','moneda','iglesia','caballo','duna','silueta']);
+  const objetosConcretos = new Set(['barco','pez','roca','hielo','faro','ovni','explosion','ciudad','bosque','arbol','edificio','central','pergamino','calendario','reloj','castillo','corona','libro','moneda','iglesia','caballo','duna','silueta','particulas','rayos']);
   if (!capas.some((c) => objetosConcretos.has(c.t))) return null; // rechaza escenas hechas solo de geometría/decoración
   const salida = {cielo, capas: capas.filter((c) => c.t !== 'foto')};
   if (typeof raw.escenario === 'string' && Object.hasOwn(ESCENARIOS, raw.escenario)) salida.escenario = raw.escenario;
@@ -160,7 +160,7 @@ const limpiar = (r, ids, slug, ya = {}, escenas = []) => {
     const textoEscena = escenas[i]?.texto ?? escenas[i]?.tipo ?? '';
     const sujetos = sujetosDelTexto(textoEscena);
     const planos = (Array.isArray(e.planos) ? e.planos : []).slice(0, 3).map(validarEscena).filter(Boolean).filter((plano) => {
-      const principales = plano.capas.filter((c) => ['barco','pez','roca','hielo','faro','ovni','explosion','ciudad','bosque','arbol','edificio','central','pergamino','calendario','reloj','castillo','corona','libro','moneda','iglesia','caballo','duna','silueta'].includes(c.t));
+      const principales = plano.capas.filter((c) => ['barco','pez','roca','hielo','faro','ovni','explosion','ciudad','bosque','arbol','edificio','central','pergamino','calendario','reloj','castillo','corona','libro','moneda','iglesia','caballo','duna','silueta','particulas','rayos'].includes(c.t));
       return principales.length > 0 && (process.env.MODO_PRUEBA === '1' || !sujetos.length || principales.some((c) => sujetos.includes(c.t)));
     });
     if (planos.length === 3 && new Set(planos.map((p) => JSON.stringify(p))).size === 3) salida[i] = planos;
