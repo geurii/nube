@@ -183,7 +183,11 @@ const groqDirecto = async (modelo, mensajes, maxTokens = FORMATO === 'largo' ? 4
       }
       if (r.status >= 500) { ultimo = `Groq ${r.status}`; await dormir(3000 * intento); continue; }
       if (r.status === 404 || r.status === 400) { ultimo = `modelo no disponible (${mod})`; if (mod !== modelo) { await dormir(1000); continue; } }
-      if (!r.ok) throw Object.assign(new Error(`Groq ${r.status}: ${(await r.text()).slice(0, 700)}`), {fatal: r.status !== 413, groq413: r.status === 413});
+      if (!r.ok) {
+        const cuerpo = (await r.text()).slice(0, 700);
+        const groqJson400 = r.status === 400 && /json_validate_failed|Failed to validate JSON/i.test(cuerpo);
+        throw Object.assign(new Error(`Groq ${r.status}: ${cuerpo}`), {fatal: r.status !== 413 && !groqJson400, groq413: r.status === 413, groqJson400});
+      }
       const j = await r.json();
       const eleccion = j.choices?.[0];
       const contenido = eleccion?.message?.content ?? '';
@@ -216,7 +220,9 @@ const groqUnaRonda = async (modelo, mensajes, maxTokens, json = false) => {
   }
   try { return await groqDirecto(modelo, mensajes, maxTokens, json); }
   catch (e) {
-    if (e.fatal && !e.groq413) throw e; if (e.groq413) console.warn('Groq 413: se deriva al proveedor alternativo.');
+    if (e.fatal && !e.groq413 && !e.groqJson400) throw e;
+    if (e.groq413) console.warn('Groq 413: se deriva al proveedor alternativo.');
+    if (e.groqJson400) console.warn('Groq rechazó el JSON (400): se deriva al proveedor alternativo.');
     const alt = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: Math.min(maxTokens ?? 2500, FORMATO === 'largo' ? 2200 : 1200), json});
     if (!alt) { e.message += ` Respaldos: ${[...new Set(diagnosticoRespaldo)].join('; ').slice(0, 450) || 'ninguno con llave'}.`; throw e; }
     console.log(`Groq no respondió: se usó ${alt.proveedor} (${alt.modelo}).`);
