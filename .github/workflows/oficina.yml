@@ -54,7 +54,15 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           if [ -f agentes/PAUSA ]; then echo "ok=no" >> "$GITHUB_OUTPUT"; echo "PRODUCCION EN PAUSA (existe agentes/PAUSA): este ciclo se salta."; exit 0; fi
-          if [ "${{ github.event_name }}" = "schedule" ] && ! node agentes/encadenar.mjs; then echo "ok=no" >> "$GITHUB_OUTPUT"; echo "Sin presupuesto o meta cumplida: este ciclo se salta."; fi
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            if [ -f agentes/secuencia-largo-short.json ] && node -e "const x=require('./agentes/secuencia-largo-short.json'); process.exit(x.activo ? 0 : 1)"; then
+              echo "ok=no" >> "$GITHUB_OUTPUT"
+              echo "Secuencia extraordinaria largo + Short en curso: se omite el horario automático hasta terminar ambos."
+            elif ! node agentes/encadenar.mjs; then
+              echo "ok=no" >> "$GITHUB_OUTPUT"
+              echo "Sin presupuesto o meta cumplida: este ciclo se salta."
+            fi
+          fi
           # tema elegido en el Estudio ("fecha|formato|Tema"): solo letras, números y signos simples
           if [ "${{ github.event_name }}" = "push" ] && [ -f agentes/oficina.disparo ]; then
             tema_d=$(cut -d'|' -f3 agentes/oficina.disparo | tr -d '\r\n' | sed 's/[^[:alnum:] .,()&:-]//g' | cut -c1-90)
