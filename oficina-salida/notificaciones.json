@@ -1,5 +1,23 @@
 [
   {
+    "id": "mwv5zkcqlb5m",
+    "fecha": "2026-11-24T20:45:53.738Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Guion aprobado: 1958 Lituya Bay earthquake and megatsunami",
+    "texto": "Short de \"1958 Lituya Bay earthquake and megatsunami\" aprobado en el intento 3. 76 palabras, 5 escenas. Editor: Puntaje: 8/10. El gancho es efectivo, pero la revelación repite información. La historia fluye bien, pero falta un cierre más impactante. Panel: 8 de 8 aprobaron el guion, 8 pasaron los primeros 3 seg Aprobados: 16. Rechazados: 77. Con error: 19. Próximo ciclo en 5 h."
+  },
+  {
+    "id": "mwv5pydqwnoi",
+    "fecha": "2026-11-24T20:38:25.358Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título con pregunta intrigante o afirmación impactante + elemento de misterio o dato sorprendente + referencia a un lugar/persona/objeto desconocido El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (25187 vistas/hora)."
+  },
+  {
     "id": "mwv5db34e8iy",
     "fecha": "2026-11-24T20:28:35.296Z",
     "canal": "lqns",
@@ -684,23 +702,5 @@
     "tipo": "alerta",
     "titulo": "Guion rechazado: Roswell incident",
     "texto": "El Verificador no aprobó \"Roswell incident\" tras 4 intentos: El gancho inicial debe tener 14 palabras o menos. Aprobados: 11. Rechazados: 44. Con error: 10. No se publica. Próximo ciclo en 8 h."
-  },
-  {
-    "id": "mwuav3xbanx8",
-    "fecha": "2026-11-24T06:14:37.727Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: USS Clemson (DD-186)",
-    "texto": "El Verificador no aprobó \"USS Clemson (DD-186)\" tras 4 intentos: La revelación cae al 64 % (74 de 115 palabras antes de ella) y debe caer entre 65 % y 75 %: añade historia antes de la revelación o acórtala. Aprobados: 11. Rechazados: 43. Con error: 10. No se publica. Próximo ciclo en 8 h."
-  },
-  {
-    "id": "mwuargf8hw2s",
-    "fecha": "2026-11-24T06:11:47.300Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante o afirmación impactante + elemento misterioso o prohibido + pista de revelación El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (27571 vistas/hora)."
   }
 ]

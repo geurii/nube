@@ -1,7 +1,38 @@
 {
-  "fecha": "2026-11-24T20:24:10.664Z",
+  "fecha": "2026-11-24T20:39:51.205Z",
   "tema": "1958 Lituya Bay earthquake and megatsunami",
-  "bloque": "INTERNET (datos de hoy; úsalos solo como apoyo para contrastar y aprender de lo que pega; no copies contenido ni inventes más allá de ellos): Lo que dicen otras páginas sobre \"1958 Lituya Bay earthquake and megatsunami\": (es) El tsunami de Bahía Lituya fue un devastador megatsunami que fue causado por un terremoto de magnitud 8,3 Mw que causó el derrumbe. Canales chicos que están explotando en el nicho: \"Camera Thrown Into Mel's Hole, What They See Terrifies The Whole World\" (899,862 vistas en 8 días, 124 veces lo normal del canal; canal de 2,350 suscriptores) | \"Reborn at 18, She'd Never Chose The Cold Lord Again, Unexpected He Insists Win Her Back... #drama",
+  "bloque": "INTERNET (datos de hoy; úsalos solo como apoyo para contrastar y aprender de lo que pega; no copies contenido ni inventes más allá de ellos): Lo que dicen otras páginas sobre \"1958 Lituya Bay earthquake and megatsunami\": (es) El tsunami de Bahía Lituya fue un devastador megatsunami que fue causado por un terremoto de magnitud 8,3 Mw que causó el derrumbe. Videos de YouTube con más vistas este mes sobre el tema: \"The 524-Meter Wave: The Tsunami That Climbed a Mountain (Alaska, 1958)\" (326,640 vistas) | \"What If a Tsunami Kept Getting Bigger and Couldn't Stop?\" (44,408 vistas) | \"Lituya Bay: The Terrifying Truth About The Largest Wave Ever Recorded\" (14,730 vistas) | \"ALASCA 1958: O maior tsunami já registrado atingiu a baía de Lituya | Documentário complet\" (8,657 vistas). Canales chicos que están explotando en el nicho: \"Camera Thrown Into Mel's Hole, What They See Terrifies The Whole World\" (899,862 vistas en 8 días, 124 veces lo norma",
   "resumenes": 1,
-  "titulos": []
+  "titulos": [
+    {
+      "titulo": "The 524-Meter Wave: The Tsunami That Climbed a Mountain (Alaska, 1958)",
+      "vistas": 326640,
+      "dias": 21,
+      "canal": "Global Archive"
+    },
+    {
+      "titulo": "What If a Tsunami Kept Getting Bigger and Couldn't Stop?",
+      "vistas": 44408,
+      "dias": 21,
+      "canal": "Edge of Scale"
+    },
+    {
+      "titulo": "Lituya Bay: The Terrifying Truth About The Largest Wave Ever Recorded",
+      "vistas": 14730,
+      "dias": 21,
+      "canal": "Earth in Hindsight"
+    },
+    {
+      "titulo": "ALASCA 1958: O maior tsunami já registrado atingiu a baía de Lituya | Documentário complet",
+      "vistas": 8657,
+      "dias": 8,
+      "canal": "Ponto Terra"
+    },
+    {
+      "titulo": "A Wave as Tall as a SKYSCRAPER: The Biggest Tsunami in History Hit Alaska",
+      "vistas": 8103,
+      "dias": 21,
+      "canal": "Earth Secrets"
+    }
+  ]
 }

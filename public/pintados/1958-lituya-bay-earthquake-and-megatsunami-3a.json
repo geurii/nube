@@ -1,0 +1,1 @@
+{"cielo":["#a0c8ff","#7fbfff","#5fa3ff"],"capas":[{"t":"montanas","y":0.78,"alto":0.22,"rampa":["#c0d8ff","#a0c8ff","#80b8ff"]},{"t":"agua","y":0.75,"rampa":["#1d4f86","#2a6bbf","#3a87e0"]},{"t":"tsunami","x":0.5,"y":0.86,"w":0.96,"h":0.58,"color":"#1e90ff","espuma":true},{"t":"deslizamiento","x":0.85,"y":1,"w":0.2,"h":0.12,"semilla":2,"color":"#4a4f5c"}]}

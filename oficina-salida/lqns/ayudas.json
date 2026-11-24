@@ -1,35 +1,35 @@
 {
   "plan": [
-    "Crear y lanzar una serie de 3 episodios (12 min cada uno) sobre el caso del London Beer Flood, con énfasis en la ingeniería fallida y la historia del incidente, para captar tráfico de curiosidades históricas y aumentar la retención del cana",
-    "Desarrollar un mini‑documental de 12 min sobre la misteriosa muerte de 2 millones de pingüinos, integrando datos científicos y testimonios de expertos, y promocionarlo en redes con teasers de 15 s para atraer a la audiencia de zoología y mi",
-    "Expandir el contenido sobre el Mary Celeste con un enfoque en la investigación documental y entrevistas a historiadores, creando un episodio de 12 min que incluya animaciones explicativas y un llamado a la acción para suscribirse.: Equipo d"
+    "1️⃣ Lanzar mini-documental de 12 min sobre el megatsunami de Bahía Lituya: responsable – Departamento de Investigación de Fenómenos Naturales; meta – generar 5 000 vistas y 200 suscriptores nuevos antes del 13 de diciembre.",
+    "2️⃣ Crear serie de 3 episodios (12 min cada uno) sobre la misteriosa muerte de 2 millones de pingüinos: responsable – Departamento de Investigación de Fauna y Ecosistemas; meta – alcanzar 4 000 vistas y 150 suscriptores antes del 13 de dici",
+    "3️⃣ Desarrollar video de 12 min sobre el caso del banco que pagó 175 millones por clientes inexistentes: responsable – Departamento de Investigación de Crónicas Financieras; meta – lograr 3 500 vistas y 120 suscriptores antes del 13 de dici"
   ],
   "ganchos": [
-    "¿Sabías que [TEMA] ocurrió en la noche más fría del siglo? | Imagen de un mapa antiguo con un punto rojo iluminado",
-    "En la ciudad donde los relojes nunca se detienen, un [TEMA] sacudió el mundo. | Imagen de un reloj de torre con una sombra que se alarga",
-    "El silencio del [TEMA] fue la señal que nadie escuchó. | Imagen de una sala vacía con una ventana abierta y luz tenue",
-    "Cuando el [TEMA] se desató, la gente no supo si era tragedia o truco. | Imagen de una escena de caos con destellos de luces y sombras",
-    "Un [TEMA] que dejó más preguntas que respuestas. | Imagen de una lupa enfocando una pista antigua"
+    "Sabías que [TEMA] llegó a [CIFRA] metros de altura | Imagen de una ola gigantesca sobre un glaciar",
+    "¿Qué ocurrió cuando [TEMA] golpeó la costa con [CIFRA] metros de fuerza? | Primer plano de la ola rompiendo contra rocas",
+    "En 1958, un terremoto de [CIFRA] Mw disparó un tsunami que alcanzó [TEMA] metros | Vista aérea del valle inundado",
+    "Descubre cómo un colapso de [TEMA] generó una ola que superó los [CIFRA] metros | Secuencia de la ola ascendiendo sobre un edificio",
+    "¿Te imaginas una ola que sube [CIFRA] metros y deja un rastro de [TEMA]? | Imágenes de la ola golpeando la costa y dejando marcas en la tierra"
   ],
   "mejorasGuion": [
-    "Añadir un gancho inicial más impactante y curioso, por ejemplo: “¿Te imaginas una ola de cerveza que arrasó calles y dejó muertos? Lo que pasó en Londres en 1814 supera cualquier fiesta”. Esto capta la atención en los pr",
-    "Reestructurar el ritmo con micro‑cliffhangers cada 15‑20 segundos: después de mencionar la ruptura de la cuba, insertar una pregunta breve como “¿Qué provocó que la presión fuera tan alta?” y luego revelar el fallo de la",
-    "Crear un cierre que invite a la acción y a la continuidad del canal: en lugar de un simple “Sígueme”, cerrar con una frase que prometa un próximo misterio relacionado, por ejemplo “Y si te dijera que este desastre inspir"
+    "1️⃣ Cambiar el gancho a algo más inesperado y específico, por ejemplo: \"¿Sabías que una ola de 524 metros subió por una montaña en Alaska? Descubre cómo y por qué ocurrió.\"",
+    "2️⃣ Añadir una pregunta retórica que aumente la curiosidad y el suspense, como: \"¿Qué pasaría si una ola tan gigantesca volviera a tocar la costa?\"",
+    "3️⃣ Concluir con una invitación clara y directa al espectador, por ejemplo: \"Acompáñame para explorar los secretos que aún rodean el terremoto de Lituya y su legado.\""
   ],
   "temas": [
-    "The Bloop",
-    "The Dyatlov Pass Incident",
     "The Voynich Manuscript",
     "The Nazca Lines",
-    "The Antikythera Mechanism"
+    "The Dyatlov Pass Incident",
+    "The Bloop",
+    "The Green Children of Woolpit"
   ],
   "titulos": [
-    "Sabías que <sustantivo> <verbo> <número> <emocion> (Parte <parte>/<total>)",
-    "Sabías que <sustantivo> <verbo> <número> <emocion>",
-    "¿Qué oculta realmente el <objeto/tema>?",
-    "⚡ <año>: El <profesión/rol> que <verbo> <objeto/tema>"
+    "Sabías que [acción] [número] [objeto] ([Parte X/Y])",
+    "Sabías que [acción] [número] [objeto]…",
+    "¿Qué oculta realmente el [objeto]?",
+    "⚡ [Año]: El [inventor/objeto] que [acción] con su [detalle]"
   ],
-  "fecha": "2026-11-24T20:17:48.322Z",
+  "fecha": "2026-11-24T20:45:54.105Z",
   "iniciativas": [
     "Valentina (Directora de contenido): Definir una línea editorial clara y un documento de estilo que guíe a todo el equipo desde el primer video.",
     "Carolina (Coordinador de producción): Crear un tablero de tareas con fechas límite rígidas y alertas automáticas para cada entrega.",

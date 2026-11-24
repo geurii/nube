@@ -6,33 +6,45 @@ Radar: 15 canales pequeños analizados (2026-11-24).
 Tema elegido del catálogo editorial verificado; se excluyen los temas ya tratados.
 Tema elegido por la oficina.
 
-Internet para todos los agentes: 1 fuente consultada y 0 videos virales de YouTube sobre el tema.
+Internet para todos los agentes: 1 fuente consultada y 5 videos virales de YouTube sobre el tema.
 ## Investigación (una sola fuente consultada)
 - Wikipedia (fuente única consultada): [Tsunami de bahía Lituya](https://es.wikipedia.org/wiki/Tsunami_de_bah%C3%ADa_Lituya)
 
+(GUION RECHAZADO: El Panel no pudo completar la evaluación: el panel devolvió 0 de 8 votos; evaluación incompleta, se requiere reintento. Se requiere una evaluación válida antes de producir.)
 ## Intento 1: RECHAZADO
-Editor (5/10): El gancho es débil y la revelación llega demasiado pronto; faltan giros constantes y la frase final es demasiado larga.
-- "A las 22:15 del 9 de julio de 1958, un terremoto de magnitud 8,3 Mw sacudió la bahía Lituya, al noreste del golfo de Alaska." → El material indica que la magnitud del terremoto fue de 7.8 (momento) y no 8.3 Mw.
-- "Los pescadores observaron la devastación desde la distancia." → No hay evidencia en el material de que pescadores observaran el evento.
-- "la ola arrasó árboles y dejó espuma a 2 kilómetros de profundidad." → El material no menciona destrucción de árboles ni espuma a 2 km de profundidad.
-- "(verificador)" → El Verificador no confirmó una aprobación explícita.
+Editor (7/10): El gancho es fuerte, pero la historia original era demasiado densa; falta ritmo sostenido y la revelación estaba fuera de rango.
+- "(panel)" → El Panel no pudo completar la evaluación: el panel devolvió 0 de 8 votos; evaluación incompleta, se requiere reintento. Se requiere una evaluación válida antes de producir.
 
 ## Intento 2: RECHAZADO
-Editor (6/10): El gancho es efectivo pero la revelación llega tarde. Falta ritmo en la historia y el veredicto no intriga lo suficiente.
-- "1. ¿Una ola de 524 metros en 1958? Descubre cómo ocurrió." → La fuente indica que la ola fue de 524 metros, pero no especifica que este dato sea universally aceptado o verificado en todas las fuentes. Sin embargo, no hay contradicción directa en el material proporcionado.
-- "2. El 9 de julio de 1958, un terremoto de 7.8 sacudió Bahía Lituya, Alaska." → La fuente menciona que el terremoto fue de magnitud 8.3 Mw, no 7.8.
-- "3. En minutos, 30 millones de metros cúbicos de roca cayeron del glaciar Lituya." → La fuente indica que fueron más de 30 millones de metros cúbicos de tierra y rocas, no solo roca.
-- "5. ¿Qué fuerza desató esta megatsunami? Sígueme para descubrir más misterios." → La fuente no menciona que el evento sea un misterio o que requiera más investigación para entender la fuerza que lo desató.
+Editor (6/10): El gancho es efectivo, pero la revelación repite datos ya mencionados. La historia carece de ritmo y emoción, con frases largas que pueden aburrir. El cierre es débil y no invita a seguir viendo.
+- "En 1958, un terremoto de 8.3 Mw sacudió Alaska." → El material consultado presenta un intervalo de magnitud entre 7.8 y 8.3 Mw, no una única cifra de 8.3 Mw.
+- "En minutos, 30 millones de metros cúbicos de hielo y roca se desprendieron." → El material menciona 'más de 30 millones de metros cúbicos de tierra y rocas', no especifica 'hielo y roca'.
+- "la ola no solo arrasó, sino que superó los 524 metros, un récord inimaginable." → El material indica que la ola alcanzó 524 metros, no que los superó.
 - "(verificador)" → El Verificador no confirmó una aprobación explícita.
 
-## Intento 3: RECHAZADO
-Editor (6/10): El gancho es efectivo pero la revelación llega tarde. Ritmo bueno, pero falta impacto en el cierre. El título es largo y poco atractivo.
-- "El 9 de julio de 1958, a las 22:15, un terremoto de 8.3 Mw sacudió la región." → La fuente indica que el terremoto fue de magnitud 7.8, no 8.3 Mw.
-- "(verificador)" → El Verificador no confirmó una aprobación explícita.
+Panel de 8 espectadores (guion, intento 3): 8 de 8 aprobaron el guion, 8 pasaron los primeros 3 segundos, 4 lo compartirían. Retención estimada: 100% (mínimo 55%). Mejora: Añadir una imagen impactante de la ola escalando la montaña en el momento clave para mantener el interés visual y reforzar la sorpresa.
+- Crítico: adolescente: le gustó · ¡Qué loco! No sabía que una ola podía hacer eso. Lo comparto con mis amigos.
+- Crítica: universitaria: le gustó · Me encantan estos datos raros. Lo comparto con mis amigas, les va a flipar.
+- Crítico: padre trabajador: le gustó · Interesante, aprendí algo nuevo en poco tiempo. No lo comparto, pero me gustó.
+- Crítico: escéptico: le gustó · No es clickbait, los datos son reales. Bien hecho, pero no lo comparto.
+- Crítica: fan del misterio: le gustó · Conocía la historia, pero el formato es atractivo. Lo comparto en mi grupo de misterios.
+- Crítica: ama de casa: le gustó · La voz y el ritmo son agradables. No lo comparto, pero me gustó la historia.
+- Crítico: joven dominicano: le gustó · ¡Qué bruto! No sabía que una ola podía hacer eso. Lo comparto, está chévere.
+- Crítico: abuelo: le gustó · Me gustó la historia, se entendió todo claro. No lo comparto, pero lo disfruté.
+## Intento 3: APROBADO
+Editor (8/10): El gancho es efectivo, pero la revelación repite información. La historia fluye bien, pero falta un cierre más impactante. Panel: 8 de 8 aprobaron el guion, 8 pasaron los primeros 3 segundos, 4 lo compartirían. Retención estimada: 100% (mínimo 55%).
 
-## Intento 4: RECHAZADO
-Editor (8/10): El gancho es efectivo pero podría ser más impactante. La revelación llega tarde y necesita más contexto. El ritmo es bueno, pero falta un giro final para mantener el interés.
-- "Un terremoto de 7.8 en Alaska desencadenó un derrumbe masivo." → La fuente indica que el terremoto fue de magnitud 8.3 Mw, no 7.8.
-- "(verificador)" → El Verificador no confirmó una aprobación explícita.
-
-Palabras: 54 · Escenas: 5
+(La Mesa de publicación no entregó algo válido: se usa lo del Guionista.)
+Pintor de luz y detalle objetó: Falta de objeto protagonista claro del megatsunami (solo "tsunami" genérico) | Iluminación inconsistente: no se indica fuente de luz única | Escenas carecen de movimiento específico más allá de la ola | No se respeta zona reservada para subtítulos (objetos demasiado bajos)
+Escenas 0: acuerdo en la ronda 2 (el de composición ajustó con las objeciones).
+Pintor de luz y detalle objetó: Falta objeto protagonista claro del terremoto (no hay sismómetro ni señal de sacudida). | Los planos no incluyen movimiento distintivo (solo rocas estáticas). | La luz parece venir de arriba‑izquierda pero no hay fuente visible ni contraste suficiente. | No se muestra la ola del megatsunami; el prot
+Escenas 1: acuerdo en la ronda 2 (el de composición ajustó con las objeciones).
+Pintor de luz y detalle objetó: Falta el objeto protagonista del megatsunami; la escena solo muestra rocas y deslizamiento. | La luz parece venir de varios lados; se necesita una única fuente de luz arriba‑izquierda. | Los planos no siguen claramente la regla de tres profundidades; el primer plano está vacío. | Algunas capas usan 
+Escenas 2: el de luz y detalle tuvo la última palabra tras discutir.
+Pintor de luz y detalle objetó: Falta de objeto protagonista claro: la ola del megatsunami no se destaca suficientemente frente a las rocas. | La luz provista es incoherente; se usan varios tonos sin una fuente única definida. | No hay movimiento evidente en cada plano; se necesita al menos un elemento animado (ej. espuma de ola).
+Escenas 3: el de luz y detalle tuvo la última palabra tras discutir.
+Pintor de luz y detalle objetó: Falta de elemento de movimiento claro en algunos planos (solo la ola). | La luz parece venir de arriba‑izquierda pero no hay indicio en capas superiores. | El reloj y el calendario compiten por protagonismo; solo uno debería ser el objeto narrativo principal. | En el plano 4 el calendario ocupa el c
+Escenas 4: acuerdo en la ronda 2 (el de composición ajustó con las objeciones).
+Pixel art original: 5/5 escenas dibujadas en cuatro cuadros distintos. Fotografías e imágenes reales: 0.
+Pintores: 5 de 5 escenas dibujadas.
+Palabras: 76 · Escenas: 5
