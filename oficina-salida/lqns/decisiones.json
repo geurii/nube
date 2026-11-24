@@ -1,6 +1,13 @@
 {
   "decisiones": [
     {
+      "id": "icgwc4m",
+      "texto": "[CIFRA] misterios que [TEMA] no explica, pero que sí sí cuentan | Imagen de una lupa enfocando un símbolo enigmático",
+      "categoria": "Gancho",
+      "decision": "si",
+      "fecha": "2026-11-24T22:50:15.966Z"
+    },
+    {
       "id": "i1wppzm9",
       "texto": "¿Sabías que [TEMA] ocurrió cuando [CIFRA] segundos pasaron sin que nadie lo notara? | Imagen de un reloj marcando 00:00:00 con un destello inesperado",
       "categoria": "Gancho",
