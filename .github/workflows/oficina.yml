@@ -1,6 +1,6 @@
 name: Oficina
 
-# Departamentos de guion: investiga en Wikipedia, escribe con Groq, el Editor lo critica, el Verificador comprueba cada dato
+# Departamentos: investiga en ocho fuentes institucionales independientes; Wikipedia es opcional. Groq escribe, el Editor critica y el Verificador contrasta los datos.
 # y el Escenógrafo elige los fondos. Resultado en oficina-salida/ (guion + informe + estado para la oficina 3D).
 on:
   schedule:
@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
     inputs:
       tema:
-        description: 'Opcional: titulo exacto de Wikipedia. Vacio = la oficina elige sola'
+        description: 'Opcional: tema libre. Vacio = la Oficina elige y documenta uno en fuentes institucionales'
         required: false
       formato:
         description: 'short o largo'
