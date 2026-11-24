@@ -1,12 +1,30 @@
 [
   {
-    "id": "mwv57pn5a38s",
-    "fecha": "2026-11-24T20:24:14.225Z",
+    "id": "mwv5a8btgb9w",
+    "fecha": "2026-11-24T20:26:11.753Z",
     "canal": "lqns",
     "canalNombre": "Lo Que No Sabías",
     "tipo": "alerta",
-    "titulo": "Falló la producción",
-    "texto": "No se pudo producir \"🍺 1 470 000 Litros: La Inundación que Cambió Londres para Siempre\". Revisa la corrida \"Produccion\" en GitHub (Actions)."
+    "titulo": "Guion rechazado: 1958 Lituya Bay earthquake and megatsunami",
+    "texto": "El Verificador no aprobó \"1958 Lituya Bay earthquake and megatsunami\" tras 4 intentos: La fuente indica que el terremoto fue de magnitud 8.3 Mw, no 7.8. Aprobados: 15. Rechazados: 76. Con error: 19. No se publica. Próximo ciclo en 5 h."
+  },
+  {
+    "id": "mwv572y8mzfo",
+    "fecha": "2026-11-24T20:23:44.816Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Lake Peigneur",
+    "texto": "El Verificador no aprobó \"Lake Peigneur\" tras 4 intentos: El guion salió demasiado corto: escribe al menos 5 escenas. Aprobados: 15. Rechazados: 75. Con error: 19. No se publica. Próximo ciclo en 5 h."
+  },
+  {
+    "id": "mwv56y4wq0hy",
+    "fecha": "2026-11-24T20:23:38.576Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Great Stink",
+    "texto": "El Verificador no aprobó \"Great Stink\" tras 4 intentos: El material menciona que un tren con pepinillos incurtidos se descarriló y causó un hedor, pero no especifica que fuera el 'peor' hedor en Stars Hollow. Aprobados: 15. Rechazados: 74. Con error: 19. No se publica. Próximo ciclo en 5 h."
   },
   {
     "id": "mwv4zf3euhc5",
@@ -684,23 +702,5 @@
     "tipo": "alerta",
     "titulo": "La oficina falló",
     "texto": "Groq 400: {\"error\":{\"message\":\"Failed to validate JSON. Please adjust your prompt. See 'failed_generation' for more details.\",\"type\":\"invalid_request_error\",\"co Aprobados: 11. Rechazados: 42. Con error: 10. Próximo ciclo en 9 h."
-  },
-  {
-    "id": "mwu7ae6yrze6",
-    "fecha": "2026-11-24T04:34:32.410Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título con pregunta intrigante o afirmación impactante + referencia a un misterio/evento desconocido + elemento de sorpresa o promesa de revelación El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (27819 vistas/hora)."
-  },
-  {
-    "id": "mwu78hc84xwm",
-    "fecha": "2026-11-24T04:33:03.176Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: DEATHS IN 2026",
-    "texto": "El Verificador no aprobó \"DEATHS IN 2026\" tras 0 intentos: Tema descartado (no se pudo cargar): DEATHS IN 2026 Aprobados: 11. Rechazados: 42. Con error: 9. No se publica. Próximo ciclo en 9 h."
   }
 ]

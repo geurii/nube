@@ -1,0 +1,63 @@
+{
+  "titulo": "🌊 1958: La ola de 524 metros que desafió la lógica",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-1958-lituya-bay-earthquake-and-megatsunami.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T20:26:11.549Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿¿Una ola de 524 metros?",
+  "publicacion": {
+    "titulo": "🌊 1958: La ola de 524 metros que desafió la lógica",
+    "descripcion": "Descubre el megatsunami de Bahía Lituya, causado por un terremoto en Alaska. Una ola gigante que rompió récords y dejó un misterio sin resolver.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://es.wikipedia.org/wiki/Tsunami_de_bah%C3%ADa_Lituya\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#megatsunami #bahialituya #terremoto #alaska #ola"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 8,
+    "critica": "El gancho es efectivo pero podría ser más impactante. La revelación llega tarde y necesita más contexto. El ritmo es bueno, pero falta un giro final para mantener el interés."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Una ola de 524 metros? En 1958, Bahía Lituya lo vivió.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Un terremoto de 7,8 en Alaska desencadenó un derrumbe masivo.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "30 millones de metros cúbicos de roca cayeron en el glaciar Lituya.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "La ola alcanzó 524 metros, el megatsunami más alto registrado.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Cómo la naturaleza creó esta monstruosidad? Sígueme para descubrir más misterios.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}
