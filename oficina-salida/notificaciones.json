@@ -1,5 +1,21 @@
 [
   {
+    "fecha": "2026-11-24T21:03:33.446Z",
+    "canal": "lqns",
+    "tipo": "reporte",
+    "titulo": "Revision aprobada: ⚡ La ola de 524 metros: El megatsunami que escaló una montaña en Alaska (1958)",
+    "texto": "Sin defectos graves detectados."
+  },
+  {
+    "id": "mwv6li2fjwvz",
+    "fecha": "2026-11-24T21:02:57.207Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "listo",
+    "titulo": "Video renderizado: ⚡ La ola de 524 metros: El megatsunami que escaló una montaña en Alaska (1958)",
+    "texto": "Se renderizó \"⚡ La ola de 524 metros: El megatsunami que escaló una montaña en Alaska (1958)\" para Lo Que No Sabías (220 MB). Sigue en cola de publicación; este aviso NO significa que ya esté publicado."
+  },
+  {
     "id": "mwv67odwtpwa",
     "fecha": "2026-11-24T20:52:12.212Z",
     "canal": "lqns",
@@ -681,23 +697,5 @@
     "tipo": "reporte",
     "titulo": "Fórmula del momento",
     "texto": "Lo que hoy funciona para Lo Que No Sabías: Título corto + pregunta intrigante o afirmación impactante + referencia a un misterio/evento desconocido El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (26972 vistas/hora)."
-  },
-  {
-    "id": "mwuinp6t05rc",
-    "fecha": "2026-11-24T09:52:48.965Z",
-    "canal": "lqns",
-    "canalNombre": "Vigilante",
-    "tipo": "alerta",
-    "titulo": "Llevan más de 36 horas sin publicar",
-    "texto": "El último video público salió hace 41 horas. La meta exige constancia."
-  },
-  {
-    "id": "mwub0poemucp",
-    "fecha": "2026-11-24T06:18:59.198Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: Great Sphinx of Giza",
-    "texto": "El Verificador no aprobó \"Great Sphinx of Giza\" tras 4 intentos: El gancho inicial debe tener 14 palabras o menos. Aprobados: 11. Rechazados: 45. Con error: 10. No se publica. Próximo ciclo en 8 h."
   }
 ]

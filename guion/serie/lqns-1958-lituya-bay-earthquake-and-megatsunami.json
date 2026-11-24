@@ -1,0 +1,79 @@
+{
+  "titulo": "⚡ La ola de 524 metros: El megatsunami que escaló una montaña en Alaska (1958)",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-1958-lituya-bay-earthquake-and-megatsunami.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T20:45:53.734Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿En 1958 una ola de 524 metros escaló una montaña en Alaska?",
+  "publicacion": {
+    "titulo": "⚡ La ola de 524 metros: El megatsunami que escaló una montaña en Alaska (1958)",
+    "descripcion": "Descubre cómo un terremoto en Bahía Lituya generó la ola más grande registrada en la historia. Un fenómeno que desafía la lógica y cambia nuestra visión de los tsunamis.\n\n\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://es.wikipedia.org/wiki/Tsunami_de_bah%C3%ADa_Lituya\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#Tsunami #Alaska #LituyaBay #Megatsunami #1958"
+  },
+  "estado": "aprobado",
+  "editor": {
+    "puntaje": 8,
+    "critica": "El gancho es efectivo, pero la revelación repite información. La historia fluye bien, pero falta un cierre más impactante. Panel: 8 de 8 aprobaron el guion, 8 pasaron los primeros 3 segundos, 4 lo compartirían. Retención estimada: 100% (mínimo 55%)."
+  },
+  "retencionEstimada": 100,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Sabías que en 1958 una ola de 524 metros escaló una montaña en Alaska?",
+      "fondo": [
+        "pintado:1958-lituya-bay-earthquake-and-megatsunami-0a",
+        "pintado:1958-lituya-bay-earthquake-and-megatsunami-0b",
+        "pintado:1958-lituya-bay-earthquake-and-megatsunami-0c",
+        "pintado:1958-lituya-bay-earthquake-and-megatsunami-0d"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El 9 de julio de 1958, un terremoto de 7,8 a 8,3 Mw sacudió Bahía Lituya, Alaska.",
+      "fondo": [
+        "pintado:1958-lituya-bay-earthquake-and-megatsunami-1a",
+        "pintado:1958-lituya-bay-earthquake-and-megatsunami-1b",
+        "pintado:1958-lituya-bay-earthquake-and-megatsunami-1c",
+        "pintado:1958-lituya-bay-earthquake-and-megatsunami-1d"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En menos de dos minutos, 30 millones de metros cúbicos de tierra y rocas se desprendieron del glaciar Lituya.",
+      "fondo": [
+        "pintado:1958-lituya-bay-earthquake-and-megatsunami-2a",
+        "pintado:1958-lituya-bay-earthquake-and-megatsunami-2b",
+        "pintado:1958-lituya-bay-earthquake-and-megatsunami-2c",
+        "pintado:1958-lituya-bay-earthquake-and-megatsunami-2d"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "El impacto generó una ola que subió 524 metros, la más alta registrada en la historia.",
+      "fondo": [
+        "pintado:1958-lituya-bay-earthquake-and-megatsunami-3a",
+        "pintado:1958-lituya-bay-earthquake-and-megatsunami-3b",
+        "pintado:1958-lituya-bay-earthquake-and-megatsunami-3c",
+        "pintado:1958-lituya-bay-earthquake-and-megatsunami-3d"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Podría repetirse este evento catastrófico? Sígueme para descubrir más misterios.",
+      "fondo": [
+        "pintado:1958-lituya-bay-earthquake-and-megatsunami-4a",
+        "pintado:1958-lituya-bay-earthquake-and-megatsunami-4b",
+        "pintado:1958-lituya-bay-earthquake-and-megatsunami-4c",
+        "pintado:1958-lituya-bay-earthquake-and-megatsunami-4d"
+      ]
+    }
+  ],
+  "orientacion": "vertical"
+}

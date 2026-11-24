@@ -1,14 +1,14 @@
 {
-  "fecha": "2026-11-24T20:51:17.865Z",
+  "fecha": "2026-11-24T21:02:57.586Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 1158,
-  "ganadasDesdeElUltimoCiclo": 0,
+  "total": 1159,
+  "ganadasDesdeElUltimoCiclo": 1,
   "videos": [
     {
       "id": "i0w6F46yv3o",
       "titulo": "🕰️ ¿297 años falsos? La teoría que borra a Carlomagno",
       "publicado": "2026-11-24T17:46:03+00:00",
-      "vistas": 1
+      "vistas": 2
     },
     {
       "id": "xE32CX_fsXM",
@@ -96,10 +96,6 @@
     }
   ],
   "historia": [
-    {
-      "fecha": "2026-11-22T03:26:54.721Z",
-      "total": 2775
-    },
     {
       "fecha": "2026-11-22T03:51:25.349Z",
       "total": 2659
@@ -335,6 +331,10 @@
     {
       "fecha": "2026-11-24T20:51:17.864Z",
       "total": 1158
+    },
+    {
+      "fecha": "2026-11-24T21:02:57.586Z",
+      "total": 1159
     }
   ]
 }

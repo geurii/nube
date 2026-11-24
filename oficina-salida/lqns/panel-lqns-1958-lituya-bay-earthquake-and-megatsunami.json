@@ -1,0 +1,36 @@
+{
+  "fecha": "2026-11-24T21:03:33.446Z",
+  "id": "lqns-1958-lituya-bay-earthquake-and-megatsunami",
+  "modo": "tecnico",
+  "aprobado": true,
+  "resumen": "Sin defectos graves detectados.",
+  "motivos": [],
+  "revision": {
+    "modelo": "NVIDIA nvidia/nemotron-3-nano-omni-30b-a3b-reasoning + Groq whisper-large-v3",
+    "gancho_3s": {
+      "nota": 10,
+      "comentario": "Revisión visual técnica; no es una valoración del gancho."
+    },
+    "audio": {
+      "nota": 8,
+      "comentario": "Groq Whisper transcribió el audio en español. Duración: 41 segundos. Transcripción: ¿Sabías que en 1958 una ola de 524 metros escaló una montaña en Alaska? El 9 de julio de 1958, un terremoto de 7.8 a 8.3 megavatios acudió Bahía Lituya, Alaska. En menos de dos minutos, 30 millones de metros cúbicos de tierra y roca se desprendieron del glaciar Lituya. El impacto generó una ola que subió 524 metros, la más alta registrada en la historia. ¿Podría repetirse este evento catastrófico? Sígueme para descubrir más misterios."
+    },
+    "subtitulos": {
+      "legibles": true,
+      "tapados_o_cortados": false,
+      "comentario": ""
+    },
+    "imagen": {
+      "nota": 10,
+      "defectos": []
+    },
+    "ritmo": {
+      "nota": 8,
+      "comentario": "No se utiliza el ritmo como motivo de rechazo técnico."
+    },
+    "defectos_graves": [],
+    "nota_general": 10,
+    "recomendacion": "subir",
+    "por_que": "No se detectaron fallas visuales graves y Groq pudo transcribir el audio."
+  }
+}
