@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-24T15:04:15.678Z",
+  "actualizado": "2026-11-24T15:04:26.159Z",
   "totales": {
     "aprobados": 12,
     "rechazados": 57,
@@ -204,9 +204,9 @@
       "tarea": "AYUDA: le echó una mano a (Editor de guion). Entregó: 3 mejoras al último guion"
     },
     "Publicador": {
-      "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Investigador de temas). Entregó: 5 temas candidatos"
+      "estado": "libre",
+      "actividad": "pensando",
+      "tarea": "Subió \"¿Qué oculta el zumbido de Taos que nadie puede explicar? 🌍\" y quedó PÚBLICO ahora mismo: https://youtu.be/85i8fzFF970"
     },
     "Crítico: padre trabajador": {
       "estado": "trabajando",
