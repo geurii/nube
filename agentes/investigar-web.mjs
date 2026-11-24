@@ -12,14 +12,14 @@ export const FUENTES_INSTITUCIONALES = [
   {id:'pubmed',nombre:'PubMed / NCBI',dominio:'pubmed.ncbi.nlm.nih.gov'},
   {id:'unesco',nombre:'UNESCO',dominio:'unesco.org'},
 ];
-const SIN_WIKI = /(^|\\.)(wikipedia|wikimedia|wikiwand|dbpedia|wikidata)\\./i;
+const SIN_WIKI = /(^|\.)(wikipedia|wikimedia|wikiwand|dbpedia|wikidata)\./i;
 const limpiar = (h) => String(h ?? '')
-  .replace(/<script[\\s\\S]*?<\\/script>|<style[\\s\\S]*?<\\/style>/gi,' ')
+  .replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/gi,' ')
   .replace(/<[^>]+>/g, ' ')
   .replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#x27;|&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&nbsp;/g, ' ')
-  .replace(/&#(\\d+);/g,(_,n)=>String.fromCodePoint(Number(n)))
-  .replace(/\\s+/g, ' ').trim();
-const hostDe = (url) => { try { return new URL(url).hostname.toLowerCase().replace(/^www\\./,''); } catch { return ''; } };
+  .replace(/&#(\d+);/g,(_,n)=>String.fromCodePoint(Number(n)))
+  .replace(/\s+/g, ' ').trim();
+const hostDe = (url) => { try { return new URL(url).hostname.toLowerCase().replace(/^www\./,''); } catch { return ''; } };
 const pertenece = (url, dominio) => { const h=hostDe(url); return h===dominio || h.endsWith('.'+dominio); };
 const destino = (href) => {
   try { const u = href.startsWith('//') ? 'https:' + href : href; const real = new URL(u).searchParams.get('uddg'); return real ? decodeURIComponent(real) : u; }
@@ -29,7 +29,7 @@ export const buscarEnLaWeb = async (consulta, max = 6) => {
   const r = await fetch(`https://html.duckduckgo.com/html/?q=${encodeURIComponent(consulta)}`, {headers: {'User-Agent': UA}, signal: AbortSignal.timeout(25000)});
   if (!r.ok) throw new Error('buscador ' + r.status);
   const html = await r.text(), salida = [];
-  const re = /class="result__a"[^>]*href="([^"]+)"[^>]*>([\\s\\S]*?)<\\/a>[\\s\\S]*?class="result__snippet"[^>]*>([\\s\\S]*?)<\\/a>/g;
+  const re = /class="result__a"[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>[\s\S]*?class="result__snippet"[^>]*>([\s\S]*?)<\/a>/g;
   for (const m of html.matchAll(re)) {
     const url=destino(m[1]); if (!url || !/^https?:/.test(url) || SIN_WIKI.test(hostDe(url))) continue;
     const texto=limpiar(m[3]); if(texto.length<40) continue;
@@ -39,10 +39,10 @@ export const buscarEnLaWeb = async (consulta, max = 6) => {
   return salida;
 };
 const extraerPagina = (html) => {
-  const title=/<title[^>]*>([\\s\\S]*?)<\\/title>/i.exec(html)?.[1] ?? '';
+  const title=/<title[^>]*>([\s\S]*?)<\/title>/i.exec(html)?.[1] ?? '';
   const desc=/<meta[^>]+(?:name|property)=["'](?:description|og:description)["'][^>]+content=["']([^"']+)/i.exec(html)?.[1] ?? '';
-  const parrafos=[...html.matchAll(/<p\\b[^>]*>([\\s\\S]*?)<\\/p>/gi)].map(m=>limpiar(m[1])).filter(x=>x.length>45);
-  const texto=[limpiar(desc),...parrafos].filter(Boolean).join(' ').replace(/\\s+/g,' ').trim();
+  const parrafos=[...html.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)].map(m=>limpiar(m[1])).filter(x=>x.length>45);
+  const texto=[limpiar(desc),...parrafos].filter(Boolean).join(' ').replace(/\s+/g,' ').trim();
   return {titulo:limpiar(title).slice(0,180),texto:texto.slice(0,5200)};
 };
 const leerFuente = async (resultado, institucion) => {
@@ -70,7 +70,7 @@ export const investigarEnLaWeb = async (tema,{maxPorFuente=2}={}) => {
 /** Descubre temas desde los ocho dominios oficiales, no desde Wikipedia. */
 export const descubrirTemasEnFuentes = async (consulta,max=16) => {
   const grupos=await Promise.all(FUENTES_INSTITUCIONALES.map(async inst=>{
-    try { return (await buscarEnLaWeb(`site:${inst.dominio} ${consulta}`,3)).filter(x=>pertenece(x.url,inst.dominio)).map(x=>x.titulo.replace(/ \\| .*$/,'').trim()).filter(Boolean); }
+    try { return (await buscarEnLaWeb(`site:${inst.dominio} ${consulta}`,3)).filter(x=>pertenece(x.url,inst.dominio)).map(x=>x.titulo.replace(/ \| .*$/,'').trim()).filter(Boolean); }
     catch { return []; }
   }));
   return [...new Set(grupos.flat())].slice(0,max);
