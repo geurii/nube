@@ -67,6 +67,9 @@ try {
   if (aprobadosHoy >= META_DIA) { console.log('Meta del día cumplida: se descansa hasta mañana.'); process.exit(1); }
 } catch (e) { console.log(`No pude contar los videos de hoy (${e.message}); se sigue con el presupuesto.`); }
 const restanteMes = Math.max(0, PRESUPUESTO - usadoMes);
+const presupuestoHoy = Math.floor(restanteMes / Math.max(1, diasQuedan));
 console.log(`Minutos usados este mes: ${usadoMes}. Presupuesto mensual restante: ${restanteMes}.`);
-if (usadoMes + CICLO <= PRESUPUESTO) { console.log('Hay presupuesto mensual: se lanza otro ciclo.'); process.exit(0); }
+console.log(`Presupuesto diario distribuido: ${presupuestoHoy} min; consumido hoy: ${usadoHoy} min; ciclo estimado: ${CICLO} min.`);
+if (usadoHoy + CICLO > presupuestoHoy) { console.log('Cuota diaria reservada/agotada: se deja presupuesto para los próximos días.'); process.exit(1); }
+if (usadoMes + CICLO <= PRESUPUESTO) { console.log('Hay presupuesto mensual y diario: se lanza otro ciclo.'); process.exit(0); }
 console.log('Presupuesto mensual agotado: se espera al siguiente mes.'); process.exit(1);
