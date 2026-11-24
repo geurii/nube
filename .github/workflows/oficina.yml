@@ -72,7 +72,11 @@ jobs:
           if [ "${{ github.event_name }}" = "push" ] && [ -f agentes/oficina.disparo ] && [ "$(cut -d'|' -f2 agentes/oficina.disparo | tr -d '[:space:]')" = "largo" ]; then echo "formato=largo" >> "$GITHUB_OUTPUT"; echo "Formato elegido en el boton: LARGO"; else echo "Formato: segun el horario o Short"; fi
       - name: Prueba de humo (simulada, no gasta Groq)
         if: always()
-        run: node agentes/probar-oficina.mjs
+        run: |
+          node --check agentes/reglas-guion.mjs
+          node --check agentes/oficina.mjs
+          node --check agentes/probar-oficina.mjs
+          node agentes/probar-oficina.mjs
       - name: Marcar inicio del video
         if: always() && steps.pres.outputs.ok != 'no'
         run: |
