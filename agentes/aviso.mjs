@@ -12,6 +12,8 @@ const CONFIG = {
 };
 
 export const avisarTelefono = (tipo, titulo, texto) => {
+  // Las pruebas simuladas jamás deben enviar mensajes al teléfono real.
+  if (process.env.MODO_PRUEBA === '1') { console.log(`[ntfy] Aviso simulado, no enviado: ${tipo} · ${String(titulo).slice(0, 60)}`); return true; }
   const topic = (process.env.NTFY_TOPIC || '').trim();
   const c = CONFIG[tipo];
   if (!topic) { console.error('[ntfy] No se envió el aviso: falta el secreto NTFY_TOPIC en GitHub.'); return false; }
