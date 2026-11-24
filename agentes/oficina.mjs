@@ -359,10 +359,30 @@ const elegirTema = async (modelo) => {
   const radar = leerJson(path.join(SALIDA, 'radar.json'), null);
   const resumenRadar = textoDeRadar(radar, 8);
   const bloqueRadar = resumenRadar
-    ? ` RADAR DE CANALES PEQUEÑOS: ${resumenRadar}. Usa tendencias solo como inspiración para hallar un HECHO REAL documentado; no copies títulos ni temas ya usados.`
+    ? ` RADAR PRIORITARIO DE VIDEOS QUE YA EXPLOTARON: ${resumenRadar}. Los ejemplos proceden de canales creados hace 90 días o menos y videos publicados en los últimos 90 días. Reproduce la ARQUITECTURA de retención (tipo de gancho, promesa, ritmo, giros, revelación y cierre), no copies el guion, frases, escenas, montaje, miniatura ni recursos protegidos. Adapta el concepto al español dominicano/neutro y al formato del canal; verifica los hechos de forma independiente.`
     : '';
-  if (resumenRadar) informe.push(`Radar: ${radar.canales.length} canales pequeños analizados (${String(radar.fecha).slice(0, 10)}).`);
-  // Primero se validan ideas propias guardadas por los agentes; después se pide una lista amplia y se reintenta con exclusiones actualizadas.
+  if (resumenRadar) informe.push(`Radar prioritario: ${radar.canales.length} canales nuevos con videos que superaron al menos 5x su rendimiento habitual (${String(radar.fecha).slice(0, 10)}).`);
+  // Primero adaptar ideas procedentes de videos virales recientes de canales nuevos; solo se pasa a ideas generales si no hay una fuente factual legible.
+  const videosRadar = (radar?.videosVirales ?? []).slice(0, 6);
+  for (const viral of videosRadar) {
+    if (!viral?.titulo || yaHecho(viral.titulo)) continue;
+    try {
+      const traducido = await pedirJson(modelo, [
+        {role:'system',content:'Eres editor de adaptación de tendencias internacionales. Devuelve solo JSON válido.'},
+        {role:'user',content:`Convierte este título de un video viral de otro idioma en el nombre claro, factual y natural del acontecimiento/curiosidad en español. No inventes detalles, no traduzcas literalmente si queda extraño y no copies el gancho. Título: "${viral.titulo}". Devuelve {"tema":"..."}.`}
+      ], 220);
+      const temaViral = String(traducido.tema ?? '').trim();
+      if (!temaViral || yaHecho(temaViral)) continue;
+      const fuentesViral = await investigarEnLaWeb(temaViral);
+      const fuenteViral = fuentesViral.find(x => String(x.texto ?? '').trim().length >= 220);
+      if (fuenteViral) {
+        informe.push(`Tema adaptado de video viral internacional: "${viral.titulo}" (${viral.vistas} vistas; canal de ${viral.diasCanal} días). Se verificó aparte en ${fuenteViral.dominio || fuenteViral.url}.`);
+        return temaViral;
+      }
+      informe.push(`Referencia viral descartada por falta de fuente factual independiente: "${viral.titulo}".`);
+    } catch (e) { informe.push(`No se pudo adaptar referencia viral "${viral.titulo}": ${String(e.message ?? e).slice(0,100)}.`); }
+  }
+  // Si el radar no aporta un caso verificable, se usan las ideas locales y el catálogo editorial.
   const candidatosLocales = [...temasAprobadosDelDueno(CANAL_ID), ...ideasEquipo, ...ideasEstrategia, ...ideasJules];
   for (const t of candidatosLocales) {
     if (typeof t !== 'string' || yaHecho(t)) continue;
