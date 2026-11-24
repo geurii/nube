@@ -148,17 +148,17 @@ export const pintarEscenas = async ({llamar, escenas, indices, slug, tema, nota 
   const dir = path.resolve('public', 'pintados');
   fs.mkdirSync(dir, {recursive: true});
   const finales = {};
-  const TAM = 3; // escenas por tanda (cada escena lleva 3 cuadros distintos)
+  const TAM = 1; // una escena por llamada: evita truncar el JSON de tres cuadros y permite reparar con contexto completo
   for (let b = 0; b < indices.length; b += TAM) {
     const ids = indices.slice(b, b + TAM);
     const encargo = `Tema del video: "${tema}". Para CADA escena dibuja TRES planos distintos (otra composición o ángulo, mismo mundo de color) que MUESTREN literalmente el objeto, lugar, fenómeno o acción mencionados en la narración. Traduce cada frase a una imagen concreta: si se menciona un zumbido, dibuja su fuente o el fenómeno acústico; si se menciona un barco, dibuja ese barco; si se menciona una explosión, dibuja la explosión y el entorno. No uses paisajes de relleno, fondos genéricos, símbolos abstractos ni objetos que no aparezcan en la frase. Si no puedes representar un detalle con precisión, representa el elemento real más cercano que sí esté respaldado por la frase, sin inventar contexto. Los tres planos deben ser reconocibles de inmediato, distintos entre sí y representar exactamente la misma frase desde composiciones diferentes.\n\n${MANUAL}\n\n${GUIA}\n\nESCENAS:\n${lote(escenas, ids)}\n\nDevuelve ${FORMA}`;
     let a = {};
-    for (let intento = 1; intento <= 3; intento++) {
+    for (let intento = 1; intento <= 5; intento++) {
       const pendientes = ids.filter((i) => !a[i]);
       if (!pendientes.length) break;
-      const encargoReintento = intento === 1 ? encargo : `REINTENTO ${intento}/3: faltan TRES cuadros válidos, completos y visualmente diferentes para estas escenas. No reutilices el mismo cuadro dos veces.\n${lote(escenas, pendientes)}\n\n${MANUAL}\n\n${GUIA}\n\nDevuelve ${FORMA}`;
+      const encargoReintento = intento === 1 ? encargo : `REPARACIÓN ${intento}/5. CONTEXTO ORIGINAL COMPLETO: tema del video: "${tema}". Completa únicamente estas escenas: ${lote(escenas, pendientes)}. Para cada una entrega exactamente TRES cuadros de pixel art completos, distintos entre sí y fieles a la frase. Mantén el mismo mundo visual, época, objetos y contexto narrativo del tema. No cambies la escena ni uses fondos genéricos.\n\n${MANUAL}\n\n${GUIA}\n\nDevuelve ${FORMA}`;
       try { const nueva = limpiar(await llamar([{role: 'system', content: `${SISTEMA_A} ${presionPintores()}`}, {role: 'user', content: encargoReintento}], 6500), pendientes, slug); Object.assign(a, nueva); }
-      catch (e) { nota(`Pintor A, intento ${intento}/3: ${String(e.message ?? e).slice(0, 120)}`); }
+      catch (e) { nota(`Pintor A, intento ${intento}/5: ${String(e.message ?? e).slice(0, 120)}`); }
     }
     if (ids.some((i) => !a[i])) { nota(`Faltan tres cuadros distintos para las escenas ${ids.filter((i) => !a[i]).join(', ')}; se aborta esta tanda, no se usarán fondos de relleno.`); continue; }
     let final = a;
