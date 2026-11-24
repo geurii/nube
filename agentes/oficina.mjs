@@ -883,7 +883,7 @@ try {
   if (!aprobado) console.log('El Verificador no aprobó el guion tras 4 intentos. Queda marcado para revisión.');
 } catch (e) {
   informe.push('## ERROR', String(e.message ?? e));
-  const temaMalo = Boolean(TEMA.trim()) && /No encontré el tema|No se encontró un tema nuevo|material suficiente|sin material/i.test(String(e.message ?? e));
+  const temaMalo = Boolean(TEMA.trim()) && /No encontré el tema|No se encontró un tema nuevo|material suficiente|investigación insuficiente|sin material/i.test(String(e.message ?? e));
   if (temaMalo) {
     // Un tema que no carga NO es un error de la oficina: se descarta y el ciclo prueba con otro.
     try { fs.writeFileSync(HISTORIAL, JSON.stringify([...new Set([...leerJson(HISTORIAL, []), TEMA])], null, 2)); } catch { /* sin historial */ }
