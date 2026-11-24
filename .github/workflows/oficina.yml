@@ -59,9 +59,17 @@ jobs:
             if [ -f agentes/secuencia-largo-short.json ]; then
               fase=$(node -e "try { const x=require('./agentes/secuencia-largo-short.json'); process.stdout.write(x.activo ? (x.fase || 'bloqueada') : ''); } catch { process.stdout.write('bloqueada'); }")
             fi
-            if [ "$fase" = "largo" ] || [ "$fase" = "bloqueada" ]; then
+            if [ "$fase" = "bloqueada" ]; then
               echo "ok=no" >> "$GITHUB_OUTPUT"
-              echo "Secuencia extraordinaria: se espera a publicar el largo antes de ejecutar otros horarios."
+              echo "El estado de la secuencia no se puede leer: se pausa de forma segura."
+            elif [ "$fase" = "largo" ]; then
+              if [ "${{ github.event.schedule }}" = '23 0,12 * * *' ]; then
+                echo "formato=largo" >> "$GITHUB_OUTPUT"
+                echo "Secuencia extraordinaria: este horario reintenta el video largo pendiente."
+              else
+                echo "ok=no" >> "$GITHUB_OUTPUT"
+                echo "Secuencia extraordinaria: se omiten los Shorts hasta publicar el largo."
+              fi
             elif [ "$fase" = "short-encolado" ]; then
               if [ "${{ github.event.schedule }}" = '23 1,4,7,10,13,16,19,22 * * *' ]; then
                 echo "formato=short" >> "$GITHUB_OUTPUT"
