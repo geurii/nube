@@ -106,6 +106,8 @@ jobs:
           node --check agentes/pintor.mjs
           node --check agentes/probar-oficina.mjs
           node --check agentes/encadenar.mjs
+          node --check agentes/radar.mjs
+          node --check agentes/cazador.mjs
           node --check agentes/producir.mjs
           node --check agentes/subir.mjs
           node --check agentes/facebook.mjs
