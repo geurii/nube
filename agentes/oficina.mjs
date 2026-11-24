@@ -218,7 +218,7 @@ const groqDirecto = async (modelo, mensajes, maxTokens = FORMATO === 'largo' ? 4
           model: mod,
           messages: mensajes,
           temperature: 0.4,
-          max_tokens: maxTokens > 3000 ? Math.min(maxTokens, 6500) : Math.min(maxTokens ?? (FORMATO === 'largo' ? 3600 : 1200), FORMATO === 'largo' ? 3600 : 1200),
+          max_tokens: maxTokens > 3000 ? Math.min(maxTokens, 3500) : Math.min(maxTokens ?? (FORMATO === 'largo' ? 3500 : 1200), FORMATO === 'largo' ? 3500 : 1200),
           ...(json ? {response_format: {type: 'json_object'}} : {}),
           // los modelos "gpt-oss" razonan antes de responder: poco razonamiento = más espacio para el texto
           ...(mod.includes('gpt-oss') ? {reasoning_effort: 'low'} : {}),
@@ -268,12 +268,12 @@ const groq = async (modelo, mensajes, maxTokens, json = false) => {
 };
 const groqUnaRonda = async (modelo, mensajes, maxTokens, json = false) => {
   if (!KEY && proveedoresConLlave().length) {
-    const alternativo = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: maxTokens > 3000 ? Math.min(maxTokens, 6500) : Math.min(maxTokens ?? (FORMATO === 'largo' ? 3600 : 1200), FORMATO === 'largo' ? 3600 : 1200), json});
+    const alternativo = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: maxTokens > 3000 ? Math.min(maxTokens, 3500) : Math.min(maxTokens ?? (FORMATO === 'largo' ? 3500 : 1200), FORMATO === 'largo' ? 3500 : 1200), json});
     if (alternativo) { console.log(`Groq sin clave: se usó ${alternativo.proveedor} (${alternativo.modelo}).`); return alternativo.texto; }
     throw new Error('Groq no tiene clave y ningún proveedor alternativo respondió.');
   }
   if (Date.now() < groqBloqueadoHasta && proveedoresConLlave().length) {
-    const rapido = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: maxTokens > 3000 ? Math.min(maxTokens, 6500) : Math.min(maxTokens ?? (FORMATO === 'largo' ? 3600 : 1200), FORMATO === 'largo' ? 3600 : 1200), json});
+    const rapido = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: maxTokens > 3000 ? Math.min(maxTokens, 3500) : Math.min(maxTokens ?? (FORMATO === 'largo' ? 3500 : 1200), FORMATO === 'largo' ? 3500 : 1200), json});
     if (rapido) { console.log(`Groq en límite: se usó ${rapido.proveedor} (${rapido.modelo}).`); return rapido.texto; }
   }
   try { return await groqDirecto(modelo, mensajes, maxTokens, json); }
@@ -281,7 +281,7 @@ const groqUnaRonda = async (modelo, mensajes, maxTokens, json = false) => {
     if (e.fatal && !e.groq413 && !e.groqJson400 && !proveedoresConLlave().length) throw e;
     if (e.groq413) console.warn('Groq 413: se deriva al proveedor alternativo.');
     if (e.groqJson400) console.warn('Groq rechazó el JSON (400): se deriva al proveedor alternativo.');
-    const alt = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: maxTokens > 3000 ? Math.min(maxTokens, 6500) : Math.min(maxTokens ?? (FORMATO === 'largo' ? 3600 : 1200), FORMATO === 'largo' ? 3600 : 1200), json});
+    const alt = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: maxTokens > 3000 ? Math.min(maxTokens, 3500) : Math.min(maxTokens ?? (FORMATO === 'largo' ? 3500 : 1200), FORMATO === 'largo' ? 3500 : 1200), json});
     if (!alt) { e.message += ` Respaldos: ${[...new Set(diagnosticoRespaldo)].join('; ').slice(0, 450) || 'ninguno con llave'}.`; throw e; }
     console.log(`Groq no respondió: se usó ${alt.proveedor} (${alt.modelo}).`);
     return alt.texto;
