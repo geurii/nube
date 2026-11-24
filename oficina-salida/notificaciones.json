@@ -1,5 +1,13 @@
 [
   {
+    "id": "mwuws8nm09q3",
+    "fecha": "2026-11-24T16:28:15.442Z",
+    "canal": "lqns",
+    "tipo": "reporte",
+    "titulo": "Video subido a YouTube",
+    "texto": "\"🌋 ¿Qué secreto ancestral esconde el cráter de la Isla de Pascua?\" quedó PÚBLICO ahora mismo: https://youtu.be/xE32CX_fsXM"
+  },
+  {
     "fecha": "2026-11-24T16:27:43.200Z",
     "canal": "lqns",
     "tipo": "reporte",
@@ -697,14 +705,5 @@
     "tipo": "reporte",
     "titulo": "Fórmula del momento",
     "texto": "Lo que hoy funciona para Lo Que No Sabías: Palabra clave impactante + pregunta intrigante o afirmación misteriosa + elemento de sorpresa o promesa de revelación El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (27947 vistas/hora)."
-  },
-  {
-    "id": "mwu30oyu953o",
-    "fecha": "2026-11-24T02:35:01.350Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "La oficina falló",
-    "texto": "Groq 413: {\"error\":{\"message\":\"Request too large for model `openai/gpt-oss-120b` in organization `org_01m7wfcteme16r5n0qkjem583r` service tier `on_demand` on to Aprobados: 11. Rechazados: 30. Con error: 9. Próximo ciclo en 11 h."
   }
 ]

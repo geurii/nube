@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-24T16:28:09.694Z",
+  "actualizado": "2026-11-24T16:28:15.379Z",
   "totales": {
     "aprobados": 13,
     "rechazados": 72,
@@ -204,9 +204,9 @@
       "tarea": "AYUDA: le echó una mano a (Editor de guion). Entregó: 1 mejoras al último guion SEGUNDA: Usar compresión H.(cifra sin respaldo) con bitrate medio y limitar la resolución a (cifra sin respaldo)p; exportar en 15 segundos por escena."
     },
     "Publicador": {
-      "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Investigador de temas). Entregó: 5 temas candidatos SEGUNDA: Comentario fijado: \"¡Gracias por ver! Si te gustó, comenta tu teoría sobre el Voynich. Nos vemos en el próximo video.\"; responder a los primeros 5 comentarios en (cifra sin respaldo) minutos."
+      "estado": "libre",
+      "actividad": "pensando",
+      "tarea": "Subió \"🌋 ¿Qué secreto ancestral esconde el cráter de la Isla de Pascua?\" y quedó PÚBLICO ahora mismo: https://youtu.be/xE32CX_fsXM"
     },
     "Crítico: padre trabajador": {
       "estado": "trabajando",
