@@ -1,4 +1,4 @@
-# Informe de la oficina · 1958 Lituya Bay earthquake and megatsunami (short)
+# Informe de la oficina · 1958 Lituya Bay earthquake and megatsunami (largo)
 
 Modelo usado en Groq: openai/gpt-oss-120b
 
@@ -10,41 +10,56 @@ Internet para todos los agentes: 1 fuente consultada y 5 videos virales de YouTu
 ## Investigación (una sola fuente consultada)
 - Wikipedia (fuente única consultada): [Tsunami de bahía Lituya](https://es.wikipedia.org/wiki/Tsunami_de_bah%C3%ADa_Lituya)
 
-(GUION RECHAZADO: El Panel no pudo completar la evaluación: el panel devolvió 0 de 8 votos; evaluación incompleta, se requiere reintento. Se requiere una evaluación válida antes de producir.)
 ## Intento 1: RECHAZADO
-Editor (7/10): El gancho es fuerte, pero la historia original era demasiado densa; falta ritmo sostenido y la revelación estaba fuera de rango.
-- "(panel)" → El Panel no pudo completar la evaluación: el panel devolvió 0 de 8 votos; evaluación incompleta, se requiere reintento. Se requiere una evaluación válida antes de producir.
-
-## Intento 2: RECHAZADO
-Editor (6/10): El gancho es efectivo, pero la revelación repite datos ya mencionados. La historia carece de ritmo y emoción, con frases largas que pueden aburrir. El cierre es débil y no invita a seguir viendo.
-- "En 1958, un terremoto de 8.3 Mw sacudió Alaska." → El material consultado presenta un intervalo de magnitud entre 7.8 y 8.3 Mw, no una única cifra de 8.3 Mw.
-- "En minutos, 30 millones de metros cúbicos de hielo y roca se desprendieron." → El material menciona 'más de 30 millones de metros cúbicos de tierra y rocas', no especifica 'hielo y roca'.
-- "la ola no solo arrasó, sino que superó los 524 metros, un récord inimaginable." → El material indica que la ola alcanzó 524 metros, no que los superó.
+Editor (4/10): El guion es excesivamente extenso y carece de ritmo; cada escena supera el límite de palabras y no mantiene la retención. No hay un giro claro antes del final y la estructura es repetitiva. Falta la revelación estratégica entre el 65 % y 72 % del total.
+- "" → No hay escena de revelación.
+- "Los residentes de la zona fueron evacuados tras el sismo, pero pocos escaparon a tiempo." → No hay evidencia en el material de que se haya realizado una evacuación.
+- "Los barcos de pesca que estaban en la bahía fueron los más afectados por la ola." → El material no menciona específicamente a los barcos de pesca ni su nivel de afectación.
+- "Algunos sobrevivientes relataron haber visto la ola subir como una columna de fuego." → No se encuentran testimonios de sobrevivientes describiendo la ola como una columna de fuego en el material.
+- "Los restos de los barcos quedaron esparcidos entre los escombros del glaciar colapsado." → El material no indica la ubicación de los restos de los barcos.
+- "La comunidad local participa activamente en la preservación del sitio histórico." → No hay información en el material sobre la participación de la comunidad local.
+- "Se han creado rutas de senderismo que permiten observar los restos sin dañarlos." → El material no menciona la existencia de rutas de senderismo.
+- "Los guías locales relatan la historia a los turistas, manteniendo viva la memoria colectiva." → No se menciona a guías locales en el material.
+- "Películas y documentales han retratado la ola gigantesca como símbolo del poder natural." → El material no habla de películas o documentales que retraten el evento.
+- "En la cultura popular, la ola de 524 metros se ha convertido en leyenda urbana." → No hay referencia a una leyenda urbana en el material.
+- "Pero lo que no sabías: la ola alcanzó 524 metros, pero la energía liberada equivalía a cientos de bombas nucleares." → El material no proporciona datos sobre la energía liberada ni su equivalencia con bombas nucleares.
+- "(calidad)" → El Editor puso 4/10 (mínimo 5). Reescribe si hay una mejora concreta: El guion es excesivamente extenso y carece de ritmo; cada escena supera el límite de palabras y no mantiene la retención. No hay un giro claro antes del final y la estructura es repetitiva. Falta la revelación estratégica entre el 65 % y 72 % del total.
 - "(verificador)" → El Verificador no confirmó una aprobación explícita.
 
-Panel de 8 espectadores (guion, intento 3): 8 de 8 aprobaron el guion, 8 pasaron los primeros 3 segundos, 4 lo compartirían. Retención estimada: 100% (mínimo 55%). Mejora: Añadir una imagen impactante de la ola escalando la montaña en el momento clave para mantener el interés visual y reforzar la sorpresa.
-- Crítico: adolescente: le gustó · ¡Qué loco! No sabía que una ola podía hacer eso. Lo comparto con mis amigos.
-- Crítica: universitaria: le gustó · Me encantan estos datos raros. Lo comparto con mis amigas, les va a flipar.
-- Crítico: padre trabajador: le gustó · Interesante, aprendí algo nuevo en poco tiempo. No lo comparto, pero me gustó.
-- Crítico: escéptico: le gustó · No es clickbait, los datos son reales. Bien hecho, pero no lo comparto.
-- Crítica: fan del misterio: le gustó · Conocía la historia, pero el formato es atractivo. Lo comparto en mi grupo de misterios.
-- Crítica: ama de casa: le gustó · La voz y el ritmo son agradables. No lo comparto, pero me gustó la historia.
-- Crítico: joven dominicano: le gustó · ¡Qué bruto! No sabía que una ola podía hacer eso. Lo comparto, está chévere.
-- Crítico: abuelo: le gustó · Me gustó la historia, se entendió todo claro. No lo comparto, pero lo disfruté.
-## Intento 3: APROBADO
-Editor (8/10): El gancho es efectivo, pero la revelación repite información. La historia fluye bien, pero falta un cierre más impactante. Panel: 8 de 8 aprobaron el guion, 8 pasaron los primeros 3 segundos, 4 lo compartirían. Retención estimada: 100% (mínimo 55%).
+## Intento 2: RECHAZADO
+Editor (4/10): Demasiado texto, ritmo arrastrado y falta de giros cada 8‑10 s. Repite datos y no mantiene la tensión.
+- "Pero lo que no sabías: la ola alcanzó exactamente 524 metros, la mayor altura jamás registrada en un tsunami." → La revelación cae al 96.4 % (1021 de 1059 palabras antes de ella) y debe caer entre 55 % y 80 %; apunta a 65 %–72 % contando todas las escenas, incluida la revelación y el cierre.
+- "3. Un terremoto de magnitud 8.3 Mw sacudió la zona, originado cerca de la cordillera Fairweather." → La fuente menciona que el terremoto fue de 7.8, no 8.3 Mw.
+- "18. El terremoto de 8.3 Mw liberó energía suficiente para desencadenar el deslizamiento." → La fuente menciona que el terremoto fue de 7.8, no 8.3 Mw.
+- "44. El terremoto de 8.3 Mw también se sintió en ciudades lejanas, demostrando su gran alcance." → La fuente menciona que el terremoto fue de 7.8, no 8.3 Mw.
+- "73. El terremoto de 8.3 Mw sigue siendo uno de los más poderosos registrados en Alaska." → La fuente menciona que el terremoto fue de 7.8, no 8.3 Mw.
+- "31. El desastre provocó la muerte de varios hombres que estaban en la bahía ese día." → La fuente no menciona muertes específicas.
+- "32. Los cuerpos fueron recuperados entre los escombros y la nieve que cubría la zona." → La fuente no menciona la recuperación de cuerpos.
+- "34. Las imágenes de la ola fueron capturadas por los pocos testigos que sobrevivieron." → La fuente no menciona que se capturaran imágenes de la ola.
+- "35. Estas fotos mostraron la magnitud real de la ola, confirmando los 524 metros reportados." → La fuente no menciona fotos que confirmen la altura de la ola.
+- "27. Los residentes de áreas cercanas escucharon el temblor, pero no hubo evacuación documentada." → La fuente no menciona específicamente que no hubiera evacuación.
+- "28. Algunas embarcaciones estaban en la bahía, pero el material no especifica su destino." → La fuente no menciona embarcaciones en la bahía.
+- "(calidad)" → El Editor puso 4/10 (mínimo 5). Reescribe si hay una mejora concreta: Demasiado texto, ritmo arrastrado y falta de giros cada 8‑10 s. Repite datos y no mantiene la tensión.
+- "(verificador)" → El Verificador no confirmó una aprobación explícita.
 
-(La Mesa de publicación no entregó algo válido: se usa lo del Guionista.)
-Pintor de luz y detalle objetó: Falta de objeto protagonista claro del megatsunami (solo "tsunami" genérico) | Iluminación inconsistente: no se indica fuente de luz única | Escenas carecen de movimiento específico más allá de la ola | No se respeta zona reservada para subtítulos (objetos demasiado bajos)
-Escenas 0: acuerdo en la ronda 2 (el de composición ajustó con las objeciones).
-Pintor de luz y detalle objetó: Falta objeto protagonista claro del terremoto (no hay sismómetro ni señal de sacudida). | Los planos no incluyen movimiento distintivo (solo rocas estáticas). | La luz parece venir de arriba‑izquierda pero no hay fuente visible ni contraste suficiente. | No se muestra la ola del megatsunami; el prot
-Escenas 1: acuerdo en la ronda 2 (el de composición ajustó con las objeciones).
-Pintor de luz y detalle objetó: Falta el objeto protagonista del megatsunami; la escena solo muestra rocas y deslizamiento. | La luz parece venir de varios lados; se necesita una única fuente de luz arriba‑izquierda. | Los planos no siguen claramente la regla de tres profundidades; el primer plano está vacío. | Algunas capas usan 
-Escenas 2: el de luz y detalle tuvo la última palabra tras discutir.
-Pintor de luz y detalle objetó: Falta de objeto protagonista claro: la ola del megatsunami no se destaca suficientemente frente a las rocas. | La luz provista es incoherente; se usan varios tonos sin una fuente única definida. | No hay movimiento evidente en cada plano; se necesita al menos un elemento animado (ej. espuma de ola).
-Escenas 3: el de luz y detalle tuvo la última palabra tras discutir.
-Pintor de luz y detalle objetó: Falta de elemento de movimiento claro en algunos planos (solo la ola). | La luz parece venir de arriba‑izquierda pero no hay indicio en capas superiores. | El reloj y el calendario compiten por protagonismo; solo uno debería ser el objeto narrativo principal. | En el plano 4 el calendario ocupa el c
-Escenas 4: acuerdo en la ronda 2 (el de composición ajustó con las objeciones).
-Pixel art original: 5/5 escenas dibujadas en cuatro cuadros distintos. Fotografías e imágenes reales: 0.
-Pintores: 5 de 5 escenas dibujadas.
-Palabras: 76 · Escenas: 5
+## Intento 3: RECHAZADO
+Editor (8/10): Buen gancho y ritmo, pero la revelación es predecible. La estructura es sólida, pero falta un giro final impactante.
+- "Pero lo que no sabías: la ola de 524 metros es la más alta registrada en la historia." → La revelación cae al 86.4 % (172 de 199 palabras antes de ella) y debe caer entre 55 % y 80 %; apunta a 65 %–72 % contando todas las escenas, incluida la revelación y el cierre.
+- "1. ¿Sabías que una ola de 524 metros escaló una montaña en Alaska en 1958?" → El MATERIAL no menciona que la ola 'escaló una montaña', solo indica que se generó una ola de 524 metros.
+- "2. El 9 de julio de 1958, un terremoto de magnitud 7.8 sacudió la bahía Lituya, Alaska." → El MATERIAL menciona que el terremoto fue de magnitud 8.3 Mw, no 7.8. Además, la fuente consultada en el MATERIAL indica que la magnitud de momento fue de 7.8, pero no se especifica la escala en el guion.
+- "9. Dos barcos estaban en la bahía; uno fue lanzado a un acantilado, el otro sobrevivió." → El MATERIAL no proporciona información sobre barcos en la bahía ni sus destinos.
+- "10. Los ocupantes del barco sobreviviente describieron la ola como un muro de agua." → El MATERIAL no menciona testimonios de ocupantes de barcos.
+- "11. La ola viajó a 160 km/h, pero su altura se midió por la devastación que dejó." → El MATERIAL no proporciona la velocidad de la ola ni cómo se midió su altura.
+- "(verificador)" → El Verificador no confirmó una aprobación explícita.
+
+## Intento 4: RECHAZADO
+Editor (6/10): El gancho es efectivo pero la narrativa es lenta y falta impacto emocional. La revelación llega tarde y no sorprende lo suficiente. El título es largo y poco atractivo.
+- "Pero lo que no sabías: la ola de 524 metros es la más alta registrada en la historia." → La revelación cae al 84.4 % (146 de 173 palabras antes de ella) y debe caer entre 55 % y 80 %; apunta a 65 %–72 % contando todas las escenas, incluida la revelación y el cierre.
+- "1. ¿Sabías que en 1958 una ola de 524 metros golpeó Alaska?" → El MATERIAL no menciona que la ola 'golpeó Alaska', sino que se generó en la bahía Lituya, al noreste del golfo de Alaska.
+- "2. El 9 de julio de 1958, un terremoto de magnitud 8.3 Mw sacudió la bahía Lituya." → El MATERIAL menciona que el terremoto fue de magnitud 8.3 Mw, pero en otra sección se menciona 7.8 sin escala. No se puede combinar o alternar estas cifras sin aclarar la fuente y la escala.
+- "6. El impacto generó una columna de agua que se elevó a una altura inimaginable." → El MATERIAL no especifica la altura de la columna de agua, solo menciona que se levantó una columna sin dar detalles numéricos.
+- "10. Los árboles fueron arrancados de raíz y la vegetación desapareció." → El MATERIAL no menciona que la vegetación desapareciera, solo que los árboles fueron arrancados de raíz.
+- "12. Pero lo que no sabías: la ola de 524 metros es la más alta registrada en la historia." → Aunque el MATERIAL menciona que la ola de 524 metros es la más grande registrada, la frase 'la más alta registrada en la historia' no está directamente respaldada por el MATERIAL en los términos exactos.
+- "(verificador)" → El Verificador no confirmó una aprobación explícita.
+
+Palabras: 173 · Escenas: 13
