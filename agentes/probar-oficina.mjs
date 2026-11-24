@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import {pathToFileURL, fileURLToPath} from 'node:url';
+import {parsearTranscripcion} from './analizar-videos.mjs';
 
 const aqui = path.dirname(fileURLToPath(import.meta.url));
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'oficina-prueba-'));
@@ -80,6 +81,8 @@ const largo1100 = [{texto: Array.from({length:1100},(_,i)=>`dato${i}`).join(' ')
 const largo1400 = [{texto: Array.from({length:1400},(_,i)=>`dato${i}`).join(' ')}];
 if (!validarLongitudGuion(largo1250).valido) throw new Error('Debe aprobar un guion largo de 1250 palabras.');
 if (validarLongitudGuion(largo1100).valido || validarLongitudGuion(largo1400).valido) throw new Error('Debe rechazar guiones largos fuera del rango 1200–1350 palabras.');
+const cuesReferencia = parsearTranscripcion('<transcript><text start="0" dur="2">The <b>first</b> mystery.</text><text start="17.5" dur="3">Then the reveal &amp; the twist.</text></transcript>');
+if (cuesReferencia.length !== 2 || cuesReferencia[0].tiempo !== '00:00' || cuesReferencia[1].tiempo !== '00:17' || !cuesReferencia[1].texto.includes('&')) throw new Error('La lectura de subtítulos públicos debe preservar texto y marcas de tiempo.');
 const CTA_DEMO = CTA_LQNS;
 const hacer = (cta) => [
   {tipo: 'hook', texto: 'El oceano registro un sonido imposible en 1997.'},
