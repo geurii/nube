@@ -327,9 +327,9 @@ export const principal = async () => {
       if (usaRepo) d.registro.archivos = archivosRepo;
       fs.writeFileSync(path.join(dir, d.archivoRegistro), JSON.stringify(d.registro, null, 2));
       const esBuffer = d.tipo === 'buffer';
-      const estadoPublicacion = esBuffer && resp.programado !== 'ahora' ? 'añadido a la cola de Buffer' : esBuffer ? 'enviado a Buffer para publicación inmediata' : 'publicado';
+      const estadoPublicacion = esBuffer && resp.estado === 'sent' ? 'publicado en TikTok' : esBuffer && resp.programado !== 'ahora' ? 'añadido a la cola de Buffer' : esBuffer ? 'enviado a Buffer para publicación inmediata' : 'publicado';
       console.log(`${d.nombre}: ${estadoPublicacion} en "${CANAL}" (${d.registro.total} en total).`);
-      try { avisarTelefono('subido', esBuffer ? (largo ? 'Largo enviado a TikTok' : 'Video enviado a Buffer') : `Video publicado en ${d.nombre}`, `"${titulo.slice(0, 100)}" ${estadoPublicacion}.`); } catch { /* el aviso no debe fallar */ }
+      try { avisarTelefono('subido', esBuffer ? (resp.estado === 'sent' ? 'Video publicado en TikTok' : largo ? 'Largo enviado a TikTok' : 'Video enviado a Buffer') : `Video publicado en ${d.nombre}`, `"${titulo.slice(0, 100)}" ${estadoPublicacion}.`); } catch { /* el aviso no debe fallar */ }
       resultados[d.nombre] = esBuffer ? (resp.programado === 'ahora' ? 'enviado-ahora' : 'encolado') : 'publicado';
     } catch (e) {
       const msg = quitarClaves(String(e.message ?? e), apiKey, token, bufferKey).slice(0, 300);
