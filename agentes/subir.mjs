@@ -4,6 +4,7 @@
 // Secretos: YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN. Variable: ID (por ejemplo oficina-bloop).
 import fs from 'node:fs';
 import path from 'node:path';
+import {spawnSync} from 'node:child_process';
 import {avisarTelefono} from './aviso.mjs';
 import {registrarSubida} from './subidos.mjs';
 import {proximoHorario} from './horarios.mjs';
@@ -49,6 +50,15 @@ if (!YT_CLIENT_ID || !YT_CLIENT_SECRET || !YT_REFRESH_TOKEN) {
 try {
   const guion = JSON.parse(fs.readFileSync(path.join('guion', 'serie', `${ID}.json`), 'utf8'));
   const archivo = path.join('out', 'serie', `${ID}.mp4`);
+  const probe = spawnSync('ffprobe', ['-v', 'error', '-show_entries', 'format=duration:stream=codec_type,width,height', '-of', 'json', archivo], {encoding: 'utf8'});
+  if (probe.status !== 0) throw new Error(`No pude verificar el MP4 antes de subirlo: ${probe.stderr || probe.error}`);
+  const meta = JSON.parse(probe.stdout);
+  const duracion = Number(meta.format?.duration);
+  const video = (meta.streams ?? []).find((x) => x.codec_type === 'video');
+  if (!video || !Number.isFinite(duracion)) throw new Error('El MP4 no contiene metadatos de video válidos.');
+  if (guion.formato === 'short' && (duracion > 60 || video.height <= video.width)) throw new Error(`SUBIDA BLOQUEADA: Short debe ser vertical 9:16 y durar máximo 60 s; detectado ${video.width}x${video.height}, ${duracion.toFixed(1)} s.`);
+  if (guion.formato === 'largo' && (duracion < 480 || video.width <= video.height)) throw new Error(`SUBIDA BLOQUEADA: largo debe ser horizontal 16:9 y durar mínimo 8 minutos; detectado ${video.width}x${video.height}, ${duracion.toFixed(1)} s.`);
+  if (!['short', 'largo'].includes(guion.formato)) throw new Error(`Formato desconocido: ${guion.formato}`);
   const bytes = fs.readFileSync(archivo);
   const programado = proximoHorario(guion.formato);
 
