@@ -98,6 +98,9 @@ jobs:
           node --check agentes/probar-oficina.mjs
           node --check agentes/encadenar.mjs
           node --check agentes/producir.mjs
+          node --check agentes/subir.mjs
+          node --check agentes/facebook.mjs
+          node --check agentes/tiktok.mjs
           node agentes/probar-oficina.mjs
       - name: Marcar inicio del video
         if: always() && steps.pres.outputs.ok != 'no'
