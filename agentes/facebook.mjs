@@ -223,10 +223,10 @@ export const principal = async () => {
   const cfgCanal = (leer(path.join('agentes', 'canales-propios.json'), {canales: []}).canales ?? []).find((c) => c.id === CANAL) ?? {};
   const repo = (process.env.FB_VIDEOS_REPO || cfgCanal.facebook?.repo || '').trim();
   if (!ID) { console.log('Redes: falta el id del video (ID). Se omite.'); return {omitido: 'sin id'}; }
-  if (!apiKey && !bufferKey) { console.log('Redes: se omite (faltan WINDSOR_API_KEY y BUFFER_API_KEY).'); return {omitido: 'sin configurar'}; }
   const guion = leer(path.join('guion', 'serie', `${ID}.json`), null);
   if (!guion) { console.log('Redes: no encuentro el guion del video. Se omite.'); return {omitido: 'sin guion'}; }
   const largo = guion.formato === 'largo';
+  if (!apiKey && !bufferKey) { console.log('Redes: faltan WINDSOR_API_KEY y BUFFER_API_KEY.'); if (largo) process.exitCode = 1; return {omitido: 'sin configurar'}; }
   if (largo && !bufferKey) { console.error('Falta BUFFER_API_KEY: no se puede enviar el largo a TikTok.'); process.exitCode = 1; return {omitido:'sin Buffer'}; }
   // Los largos se envían exclusivamente a TikTok por Buffer; Facebook/Instagram reciben solo Shorts/Reels.
   const dir = path.join('oficina-salida', CANAL);
