@@ -142,15 +142,30 @@ if (!KEY && !proveedoresConLlave().length) { try { registrar('error', 'Falta GRO
 
 /* ====================== Investigación web general; las fuentes institucionales son solo respaldo ====================== */
 const wikipedia = async (lang, titulo) => {
-  const url = `https://${lang}.wikipedia.org/w/api.php?action=query&prop=extracts%7Cinfo&inprop=url&explaintext=1&exsectionformat=plain&redirects=1&format=json&titles=${encodeURIComponent(titulo)}`;
-  for (let i = 1; i <= 3; i++) {
+  const base = `https://${lang}.wikipedia.org/w/api.php`;
+  const consultar = async (params) => {
+    const url = `${base}?${new URLSearchParams({format: 'json', redirects: '1', ...params})}`;
+    const r = await fetch(url, {headers: {'User-Agent': UA}, signal: AbortSignal.timeout(18000)});
+    if (!r.ok) throw new Error(`Wikipedia ${r.status}`);
+    return r.json();
+  };
+  for (let i = 1; i <= 2; i++) {
     try {
-      const r = await fetch(url, {headers: {'User-Agent': UA}, signal: AbortSignal.timeout(30000)});
-      if (!r.ok) { await dormir(2000 * i); continue; }
-      const pagina = Object.values((await r.json()).query?.pages ?? {})[0];
-      if (!pagina || pagina.missing !== undefined || !pagina.extract) return null;
+      let data = await consultar({action:'query', prop:'extracts|info', inprop:'url', explaintext:'1', exsectionformat:'plain', titles:titulo});
+      let pagina = Object.values(data.query?.pages ?? {})[0];
+      if (!pagina || pagina.missing !== undefined || !pagina.extract || pagina.extract.trim().length < 220) {
+        // Los títulos propuestos por un LLM no siempre coinciden con el nombre real del artículo.
+        data = await consultar({action:'query', list:'search', srsearch:titulo, srlimit:'3', srprop:'snippet'});
+        const candidatos = data.query?.search ?? [];
+        for (const candidato of candidatos) {
+          const exacta = await consultar({action:'query', prop:'extracts|info', inprop:'url', explaintext:'1', exsectionformat:'plain', exchars:'7000', titles:candidato.title});
+          const p = Object.values(exacta.query?.pages ?? {})[0];
+          if (p && p.missing === undefined && String(p.extract ?? '').trim().length >= 220) return p;
+        }
+        return null;
+      }
       return pagina;
-    } catch { await dormir(2000 * i); }
+    } catch (e) { if (i === 2) console.warn(`No se pudo consultar Wikipedia para "${titulo}": ${e.message}`); else await dormir(1200 * i); }
   }
   return null;
 };
@@ -339,7 +354,12 @@ const elegirTema = async (modelo) => {
   const candidatosLocales = [...temasAprobadosDelDueno(CANAL_ID), ...ideasEquipo, ...ideasEstrategia, ...ideasJules];
   for (const t of candidatosLocales) {
     if (typeof t !== 'string' || yaHecho(t)) continue;
-    return t;
+    const pagina = await wikipedia('en', t);
+    if (pagina?.extract && pagina.extract.trim().length >= 300) return pagina.title || t;
+    const web = await investigarEnLaWeb(t);
+    const fuente = web.find((x) => String(x.texto ?? '').trim().length >= 220);
+    if (fuente) return t;
+    informe.push(`Idea local descartada por falta de fuente consultable: "${t}".`);
   }
   // Catálogo curado de temas reales conocidos: se comprueba que exista una página con contenido antes de elegirlos.
   const reserva = ['The Green Children of Woolpit', 'The moving rocks of Death Valley', 'The disappearing lake of Cerknica', 'The phantom time hypothesis', 'The Antikythera mechanism', 'The Voynich manuscript', 'The Hessdalen lights', 'The Devil’s Footprints', 'The Mary Celeste', 'The Tunguska event', 'The Bloop', 'The Taos Hum', 'The Wow! signal', 'The dancing plague of 1518', 'The Great Moon Hoax'];
@@ -354,14 +374,24 @@ const elegirTema = async (modelo) => {
   for (let ronda = 1; ronda <= 3; ronda++) {
     const r = await pedirJson(modelo, [
       {role: 'system', content: `Eres Director/a de contenido del canal "${CONFIG.nombre}" (${CONFIG.nicho}). Respondes SOLO JSON válido.`},
-      {role: 'user', content: `Propón 20 temas NUEVOS y concretos sobre ${CONFIG.nicho}, distintos entre sí, atractivos para el nicho de curiosidades: misterios, fenómenos extraños, objetos insólitos, historias olvidadas, leyendas y datos sorprendentes. No exijas que todos tengan documentación institucional. No personas, biografías, política, violencia gráfica, películas, series, juegos ni chismes. PROHIBIDO repetir o proponer variantes de esta lista de temas ya usados, rechazados, producidos, publicados o reservados: ${inventario.join(' | ').slice(0, 9000) || 'ninguno'}. No devuelvas ningún título de esa lista aunque cambies "The", signos, idioma o redacción. Prioriza variedad, potencial de gancho y temas con información accesible en fuentes generales; no descartes un tema por no tener fuente institucional. ${bloqueRadar} Ronda ${ronda}/3: busca candidatos diferentes a los de una lista anterior. Formato: {"temas":["Título exacto 1","Título exacto 2"]}.`},
+      {role: 'user', content: `Propón 20 temas NUEVOS y concretos sobre ${CONFIG.nicho}, distintos entre sí, atractivos para el nicho de curiosidades: misterios, fenómenos extraños, objetos insólitos, historias olvidadas, leyendas y datos sorprendentes. Cada tema debe corresponder a un hecho real y a un artículo o página localizable; no inventes títulos de fenómenos. No empieces títulos ni ganchos con la fórmula "Sabías que". No exijas que todos tengan documentación institucional. No personas, biografías, política, violencia gráfica, películas, series, juegos ni chismes. PROHIBIDO repetir o proponer variantes de esta lista de temas ya usados, rechazados, producidos, publicados o reservados: ${inventario.join(' | ').slice(0, 9000) || 'ninguno'}. No devuelvas ningún título de esa lista aunque cambies "The", signos, idioma o redacción. Prioriza variedad, potencial de gancho y temas con información accesible en fuentes generales; no descartes un tema por no tener fuente institucional. ${bloqueRadar} Ronda ${ronda}/3: busca candidatos diferentes a los de una lista anterior. Formato: {"temas":["Título exacto 1","Título exacto 2"]}.`},
     ], 2600);
     const propuestas = Array.isArray(r.temas) ? r.temas : [];
     for (const t of propuestas) {
       if (typeof t !== 'string' || !t.trim() || yaHecho(t)) continue;
       if (yaHecho(t.trim())) continue;
-      informe.push(`Tema elegido por la Oficina en ronda ${ronda}; pasó el filtro de novedad y encaje editorial.`);
-      return t.trim();
+      const pagina = await wikipedia('en', t.trim());
+      if (pagina?.extract && pagina.extract.trim().length >= 300) {
+        informe.push(`Tema elegido en ronda ${ronda}; título resuelto a una página consultable de Wikipedia.`);
+        return pagina.title || t.trim();
+      }
+      const web = await investigarEnLaWeb(t.trim());
+      if (web.some((x) => String(x.texto ?? '').trim().length >= 220)) {
+        informe.push(`Tema elegido en ronda ${ronda}; pasó la consulta de una fuente web legible.`);
+        return t.trim();
+      }
+      informe.push(`Propuesta descartada antes de escribir por no tener fuente consultable: "${t.trim()}".`);
+    }
     }
     // Los títulos de esta ronda también se excluyen de las siguientes para no dar vueltas sobre lo mismo.
     for (const t of propuestas) {
