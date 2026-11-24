@@ -1,22 +1,14 @@
 {
-  "fecha": "2026-11-24T17:44:27.455Z",
-  "total": 1150,
+  "fecha": "2026-11-24T20:17:48.071Z",
+  "total": 1158,
   "promedio": 77,
-  "queFunciono": "Los videos con más vistas comparten títulos que combinan curiosidades históricas o misterios con emojis llamativos y un formato de serie (Parte 3/3, Parte 2/3). Además, se publicaron en fechas cercanas (20‑21 nov) y el contenido se centra en temas de gran interés público (pingüinos, bancos, Mary Cel",
+  "queFunciono": "Los videos con más vistas comparten títulos que combinan curiosidades históricas o de naturaleza con emojis llamativos y un formato de serie (Parte 3/3, Parte 2/3). Además, se publicaron en fechas recientes (20 nov) y su retención media es baja (≈21 %) pero el contenido parece generar curiosidad suf",
   "porQueFallaron": [
-    "El video con 172 vistas tiene un título que suena similar al de mayor éxito pero carece de emojis y la serie no está completa (solo Parte 2/3), lo que reduce la curiosidad; la retención media es ligeramente superior (23.2 %) pero la audiencia no se mantiene. E",
-    "El video de 158 vistas presenta un tema interesante (banco) pero el título es más largo y menos directo, y la retención media es 23.9 % (similar al de mayor éxito) pero la audiencia no se siente atraída; la ausencia de emojis y la falta de una serie pueden hab",
-    "Los videos con 50 vistas y menos presentan títulos con menos emojis y sin formato de serie, y la retención media no se reporta, lo que sugiere que la audiencia no se mantiene. Evidencia: 50 vistas, 38 vistas, 28 vistas, 23 vistas, 14 vistas, 13 vistas, 5 vista",
-    "Los videos con 1‑3 vistas tienen títulos muy largos o poco claros y carecen de emojis, lo que reduce la atracción inicial. Evidencia: 1‑3 vistas y ausencia de datos de retención."
+    "El contenido de los videos con pocas vistas presenta temas menos atractivos o demasiado específicos (por ejemplo, el Bloop, el cráter de Isla de Pascua) y carecen de emojis o de formato de serie que capte la atención; evidencia: vistas < 50. ",
+    "Los títulos de los videos con bajas vistas son más largos y menos claros (ej. “Sabías que una ola de melaza arrasó Boston?”) lo que puede confundir al espectador; evidencia: vistas < 20. ",
+    "La falta de retención media reportada para la mayoría de los videos con bajas vistas sugiere que no se midió o que el video fue demasiado corto/irrelevante; evidencia: no hay datos de retención para esos videos. ",
+    "Los videos con bajas vistas fueron publicados en fechas posteriores (22‑24 nov) cuando la audiencia puede haber estado menos activa; evidencia: fechas de publicación."
   ],
-  "noSePuedeSaber": [
-    "La retención media y la cantidad de suscriptores ganados para los videos con menos de 50 vistas.",
-    "El número de reproducciones en los primeros 24 h y la tasa de clics (CTR) de las miniaturas.",
-    "A quiénes se mostró cada video y la segmentación de audiencia."
-  ],
-  "reglas": [
-    "1. Usa emojis y un formato de serie (Parte X/3) en el título para aumentar la curiosidad y la retención inicial.",
-    "2. Mantén el título breve (<10 palabras) y directo, evitando títulos demasiado largos o ambiguos.",
-    "3. Publica los videos en fechas cercanas y con un patrón de publicación consistente para que la audiencia espere la siguiente entrega y aumente la retención."
-  ]
+  "noSePuedeSaber": [],
+  "reglas": []
 }

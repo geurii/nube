@@ -1,0 +1,1 @@
+{"cielo":["#a0c8ff","#c0e0ff","#e0f8ff"],"capas":[{"t":"barco","x":0.4,"y":0.65,"w":0.25,"color":"#6a4426","vela":"#e8dcc0"},{"t":"explosion","x":0.5,"y":0.5,"r":0.18},{"t":"agua","y":0.7,"rampa":["#1d4f86","#3a6f9a","#5a8fb6"]}],"escenario":"mar-noon"}

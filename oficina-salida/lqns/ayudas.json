@@ -1,31 +1,35 @@
 {
   "plan": [
-    "Crear y lanzar la serie de 3 videos sobre el misterio de la Mary Celeste: Equipo de investigación y guion: Generar al menos 500 vistas por episodio y alcanzar 1,500 vistas totales antes del 13 de diciembre para activar monetización",
-    "Desarrollar el mini-documental sobre la muerte masiva de 2 millones de pingüinos y su impacto ambiental: Equipo de producción y efectos visuales: Alcanzar 1,000 vistas en la primera entrega y 3,000 vistas combinadas antes del 13 de diciembr",
-    "Planificar y publicar la serie de 3 videos sobre el banco que pagó 175 millones por clientes inexistentes: Equipo de análisis de datos y guion: Obtener 800 vistas en cada episodio y 2,400 vistas totales antes del 13 de diciembre, con el obj"
+    "Crear y lanzar una serie de 3 episodios (12 min cada uno) sobre el caso del London Beer Flood, con énfasis en la ingeniería fallida y la historia del incidente, para captar tráfico de curiosidades históricas y aumentar la retención del cana",
+    "Desarrollar un mini‑documental de 12 min sobre la misteriosa muerte de 2 millones de pingüinos, integrando datos científicos y testimonios de expertos, y promocionarlo en redes con teasers de 15 s para atraer a la audiencia de zoología y mi",
+    "Expandir el contenido sobre el Mary Celeste con un enfoque en la investigación documental y entrevistas a historiadores, creando un episodio de 12 min que incluya animaciones explicativas y un llamado a la acción para suscribirse.: Equipo d"
   ],
   "ganchos": [
-    "[TEMA] y su secreto: solo [CIFRA] personas lo saben | Imagen: silueta de una figura oculta entre sombras"
+    "¿Sabías que [TEMA] ocurrió en la noche más fría del siglo? | Imagen de un mapa antiguo con un punto rojo iluminado",
+    "En la ciudad donde los relojes nunca se detienen, un [TEMA] sacudió el mundo. | Imagen de un reloj de torre con una sombra que se alarga",
+    "El silencio del [TEMA] fue la señal que nadie escuchó. | Imagen de una sala vacía con una ventana abierta y luz tenue",
+    "Cuando el [TEMA] se desató, la gente no supo si era tragedia o truco. | Imagen de una escena de caos con destellos de luces y sombras",
+    "Un [TEMA] que dejó más preguntas que respuestas. | Imagen de una lupa enfocando una pista antigua"
   ],
   "mejorasGuion": [
-    "Añadir un gancho visual y emotivo al inicio: “📚 ¿Un libro que nadie ha descifrado por 600 años? Descúbrelo aquí!” para captar la atención inmediata.",
-    "Reestructurar el ritmo con subtítulos narrativos: dividir el texto en secciones cortas (Historia, Misterio, Descubrimientos) y usar pausas dramáticas para mantener el suspense y la curiosidad a lo largo de los 12 minutos",
-    "Incorporar un cierre impactante y llamado a la acción: “Si crees que el secreto está más cerca de lo que piensas, suscríbete y activa las notificaciones; la próxima parte revelará pistas que cambiarán tu visión del pasad"
+    "Añadir un gancho inicial más impactante y curioso, por ejemplo: “¿Te imaginas una ola de cerveza que arrasó calles y dejó muertos? Lo que pasó en Londres en 1814 supera cualquier fiesta”. Esto capta la atención en los pr",
+    "Reestructurar el ritmo con micro‑cliffhangers cada 15‑20 segundos: después de mencionar la ruptura de la cuba, insertar una pregunta breve como “¿Qué provocó que la presión fuera tan alta?” y luego revelar el fallo de la",
+    "Crear un cierre que invite a la acción y a la continuidad del canal: en lugar de un simple “Sígueme”, cerrar con una frase que prometa un próximo misterio relacionado, por ejemplo “Y si te dijera que este desastre inspir"
   ],
   "temas": [
-    "The Voynich manuscript",
-    "The Taos Hum",
-    "The Green Children of Woolpit",
-    "The moving rocks of Death Valley",
-    "The disappearing lake of Cerknica"
+    "The Bloop",
+    "The Dyatlov Pass Incident",
+    "The Voynich Manuscript",
+    "The Nazca Lines",
+    "The Antikythera Mechanism"
   ],
   "titulos": [
-    "Sabías que [acción] [número] [objeto] … (Parte X/Y)",
-    "¿Qué oculta realmente el [objeto] ?",
-    "⚡ [año]: El [personaje] que [acción]",
-    "Sabías que [acción] [número] [objeto] … (Parte X/Y)"
+    "Sabías que <sustantivo> <verbo> <número> <emocion> (Parte <parte>/<total>)",
+    "Sabías que <sustantivo> <verbo> <número> <emocion>",
+    "¿Qué oculta realmente el <objeto/tema>?",
+    "⚡ <año>: El <profesión/rol> que <verbo> <objeto/tema>"
   ],
-  "fecha": "2026-11-24T17:45:02.734Z",
+  "fecha": "2026-11-24T20:17:48.322Z",
   "iniciativas": [
     "Valentina (Directora de contenido): Definir una línea editorial clara y un documento de estilo que guíe a todo el equipo desde el primer video.",
     "Carolina (Coordinador de producción): Crear un tablero de tareas con fechas límite rígidas y alertas automáticas para cada entrega.",

@@ -1,0 +1,1 @@
+{"cielo":["#a0c8ff","#c0e0ff","#e0f8ff"],"capas":[{"t":"edificio","x":0.5,"y":0.78,"w":0.6,"h":0.45,"color":"#7a6a5e","ventanas":true},{"t":"central","x":0.45,"y":0.65,"w":0.4,"h":0.5,"color":"#aab1b8","vapor":true},{"t":"particulas","x":0.45,"y":0.55,"n":30,"tipo":"burbujas"},{"t":"calendario","x":0.15,"y":0.4,"w":0.3,"h":0.3,"color":"#b58a52"}],"escenario":"industrial"}

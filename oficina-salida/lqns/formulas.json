@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-24T20:09:03.712Z",
+  "actualizado": "2026-11-24T20:10:33.086Z",
   "canalesLeidos": 9,
   "videosRevisados": 133,
   "mejores": [
@@ -8,24 +8,24 @@
       "idioma": "en",
       "titulo": "Why Is Antarctica Closed? The Operation Highjump Mystery",
       "publicado": "2026-11-20T01:00:08.000Z",
-      "vistas": 2909265,
-      "vistasPorHora": 25265
+      "vistas": 2908423,
+      "vistasPorHora": 25253
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "Always open your fan mail",
       "publicado": "2026-11-21T19:00:32.000Z",
-      "vistas": 1191212,
-      "vistasPorHora": 16286
+      "vistas": 1190628,
+      "vistasPorHora": 16273
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "How Skydiving Changed Will Smith's Life!",
       "publicado": "2026-11-17T17:00:07.000Z",
-      "vistas": 2236652,
-      "vistasPorHora": 13068
+      "vistas": 2236031,
+      "vistasPorHora": 13063
     },
     {
       "canal": "The Why Files",
@@ -33,7 +33,7 @@
       "titulo": "The Basement: Close Encounters Compilation | Abductions, Missing Time & Contact",
       "publicado": "2026-11-23T18:00:10.000Z",
       "vistas": 327864,
-      "vistasPorHora": 12539
+      "vistasPorHora": 12527
     },
     {
       "canal": "The Why Files",
@@ -41,19 +41,8 @@
       "titulo": "America Is Hiding Something Underground",
       "publicado": "2026-11-18T18:00:14.000Z",
       "vistas": 1395952,
-      "vistasPorHora": 9552
+      "vistasPorHora": 9550
     }
   ],
-  "formula": {
-    "formula": "Título con pregunta intrigante o afirmación impactante + elemento misterioso o inesperado + pista de contenido (ej.: \"¿Por qué…? El misterio de…\")",
-    "ganchos": [
-      "¿Qué pasaría si [evento inesperado] revelara [secreto sorprendente]?",
-      "Descubre el [fenómeno/objeto] que [acción impactante] y que nadie quiere que sepas",
-      "La verdad oculta detrás de [situación cotidiana] que cambiará tu forma de ver [tema]"
-    ],
-    "evitar": [
-      "Títulos demasiado genéricos sin una palabra clave de misterio (ej.: \"Historia de…\" sin gancho)",
-      "Uso excesivo de mayúsculas o símbolos que saturan el título y dificultan la lectura"
-    ]
-  }
+  "formula": null
 }

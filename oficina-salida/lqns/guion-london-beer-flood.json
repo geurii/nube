@@ -1,0 +1,84 @@
+{
+  "titulo": "🍺 1 470 000 Litros: La Inundación que Cambió Londres para Siempre",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-london-beer-flood.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T20:17:47.293Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿610 000 litros de cerveza causaron un desastre en Londres?",
+  "publicacion": {
+    "titulo": "🍺 1 470 000 Litros: La Inundación que Cambió Londres para Siempre",
+    "descripcion": "En 1814, una cuba de cerveza se rompió en la cervecería Meux & Co, liberando 1 470 000 litros que destruyeron casas, un pub y causaron 7 muertes. Descubre cómo un accidente así pudo ocurrir sin responsables.\n\n\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://es.wikipedia.org/wiki/Inundaci%C3%B3n_de_cerveza_de_Londres\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#Londres1814 #InundacionCerveza #DesastreHistorico #MeuxCo #MisteriosDelPasado",
+    "titulosAlternativos": [
+      "⚡ 610 000 Litros de Cerveza: El Desastre de Londres en 1814 🍻",
+      "💥 1814: La Ola de Cerveza que Arrasó con Todo en Londres 🌊",
+      "🍺 1 470 000 Litros: La Inundación que Cambió Londres para Siempre",
+      "🚨 Londres 1814: Cuando la Cerveza se Convirtió en un Desastre Mortal 🌪️"
+    ],
+    "comentarioFijado": "¿Sabías que una ola de cerveza pudo causar tanto daño? ¡Comenta tu teoría!",
+    "miniatura": {
+      "texto": "CERVEZA MORTAL",
+      "idea": "Una ola gigante de cerveza arrasando casas y un pub en una calle de Londres, con un reloj que marca las 12:00 del 17 de octubre de 1814."
+    }
+  },
+  "estado": "aprobado",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El gancho es efectivo pero la historia carece de ritmo; la revelación llega tarde y el veredicto es débil. Panel: 4 de 8 aprobaron el guion, 8 pasaron los primeros 3 segundos, 1 lo compartirían. Retención estimada: 88% (mínimo 55%)."
+  },
+  "retencionEstimada": 88,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Sabías que 610 000 litros de cerveza causaron un desastre en Londres?",
+      "fondo": [
+        "pintado:london-beer-flood-0a",
+        "pintado:london-beer-flood-0b",
+        "pintado:london-beer-flood-0c"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El 17 de octubre de 1814, en la parroquia de St Giles, una cuba de cerveza se rompió en la cervecería Meux y Co.",
+      "fondo": [
+        "pintado:london-beer-flood-1a",
+        "pintado:london-beer-flood-1b",
+        "pintado:london-beer-flood-1c"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Esto desencadenó un efecto dominó, liberando aproximadamente 1 470 000 litros en total.",
+      "fondo": [
+        "pintado:london-beer-flood-2a",
+        "pintado:london-beer-flood-2b",
+        "pintado:london-beer-flood-2c"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "La ola de cerveza destruyó dos casas, demolió un pub y causó la muerte de al menos siete personas.",
+      "fondo": [
+        "pintado:london-beer-flood-3a",
+        "pintado:london-beer-flood-3b",
+        "pintado:london-beer-flood-3c"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Cómo un accidente así pudo ocurrir sin responsables? Sígueme para descubrir más misterios.",
+      "fondo": [
+        "pintado:london-beer-flood-4a",
+        "pintado:london-beer-flood-4b",
+        "pintado:london-beer-flood-4c"
+      ]
+    }
+  ]
+}
