@@ -33,10 +33,10 @@ permissions:
   actions: write
   models: read
 
-# Un solo turno a la vez: si una corrida sigue en marcha, la siguiente espera (no se pisan).
+# Un solo turno a la vez: una nueva ejecución NO cancela la que ya está trabajando.
 concurrency:
   group: oficina
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 env:
   NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
