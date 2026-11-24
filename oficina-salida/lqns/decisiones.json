@@ -1,6 +1,20 @@
 {
   "decisiones": [
     {
+      "id": "iua9l7p",
+      "texto": "[TEMA] y la cifra [CIFRA] que nadie pudo prever | Imagen de un mapa antiguo con un punto rojo resaltado",
+      "categoria": "Gancho",
+      "decision": "si",
+      "fecha": "2026-11-24T22:51:36.740Z"
+    },
+    {
+      "id": "i19oac2w",
+      "texto": "¿Te imaginas que [TEMA] se reveló cuando [CIFRA] se volvió real? | Imagen de una puerta entreabierta con una luz brillante detrás",
+      "categoria": "Gancho",
+      "decision": "si",
+      "fecha": "2026-11-24T22:51:34.953Z"
+    },
+    {
       "id": "i62pdd8",
       "texto": "Sabías que <sustantivo> pagó <monto> por <objeto>",
       "categoria": "Título",
