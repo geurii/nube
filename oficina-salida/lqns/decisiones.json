@@ -1,6 +1,27 @@
 {
   "decisiones": [
     {
+      "id": "i1wppzm9",
+      "texto": "¿Sabías que [TEMA] ocurrió cuando [CIFRA] segundos pasaron sin que nadie lo notara? | Imagen de un reloj marcando 00:00:00 con un destello inesperado",
+      "categoria": "Gancho",
+      "decision": "si",
+      "fecha": "2026-11-24T22:50:14.160Z"
+    },
+    {
+      "id": "i1qttysh",
+      "texto": "[TEMA] y [CIFRA] te harán cuestionar todo lo que creías saber | Imagen de un horizonte nebuloso con un número flotante superpuesto",
+      "categoria": "Gancho",
+      "decision": "si",
+      "fecha": "2026-11-24T22:50:09.721Z"
+    },
+    {
+      "id": "imeqtib",
+      "texto": "The Moving Rocks of Death Valley",
+      "categoria": "Tema",
+      "decision": "si",
+      "fecha": "2026-11-24T22:50:04.802Z"
+    },
+    {
       "id": "i18od4r5",
       "texto": "The Dyatlov Pass Incident",
       "categoria": "Tema",
