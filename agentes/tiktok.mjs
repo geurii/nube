@@ -14,7 +14,9 @@ export const textoTikTok = (guion) => {
   const hashtags = [...new Set(desc.match(/#[\p{L}\p{N}_]+/gu) ?? [])].slice(0, 5);
   const primer = desc.split('\n').map((l) => l.trim()).find((l) => l && !l.startsWith('#') && !/^(Fuentes|Más historias)/i.test(l) && !/^https?:/i.test(l)) ?? '';
   const sinHashtags = primer.replace(/#[\p{L}\p{N}_]+/gu, '').trim();
-  return [titulo.slice(0, 150), sinHashtags.slice(0, 200), hashtags.join(' ')].filter(Boolean).join('\n\n').slice(0, 2200);
+  // Buffer limita el texto de TikTok a 150 caracteres; no enviar descripciones largas que provoquen rechazo.
+  const base = [titulo, sinHashtags, hashtags.join(' ')].filter(Boolean).join(' ').replace(/\s+/g, ' ').trim();
+  return base.slice(0, 150);
 };
 
 const graphql = async (apiKey, query, variables) => {
