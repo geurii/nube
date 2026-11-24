@@ -118,7 +118,7 @@ export const investigarEnLaWeb = async (tema,{maxPorFuente=2,minimoDominios=0}={
     paginas = (await Promise.all(resultados.map(leerFuenteGeneral))).filter(Boolean);
   } catch { /* se intenta el respaldo institucional */ }
 
-  const dominios = () => new Set(paginas.map(f => String(f.dominio || hostDe(f.url)).toLowerCase().replace(/^www\\./,'')));
+  const dominios = () => new Set(paginas.map(f => String(f.dominio || hostDe(f.url)).toLowerCase().replace(/^www\./,'')));
   // Si la búsqueda general no trae suficientes dominios independientes, completar con organismos oficiales.
   if (dominios().size < minimoDominios) {
     const grupos = await Promise.all(FUENTES_INSTITUCIONALES.map(async inst => {
@@ -130,7 +130,7 @@ export const investigarEnLaWeb = async (tema,{maxPorFuente=2,minimoDominios=0}={
     }));
     const vistos = dominios();
     for (const fuente of grupos.flat()) {
-      const dominio = String(fuente.dominio || hostDe(fuente.url)).toLowerCase().replace(/^www\\./,'');
+      const dominio = String(fuente.dominio || hostDe(fuente.url)).toLowerCase().replace(/^www\./,'');
       if (!dominio || vistos.has(dominio)) continue;
       paginas.push(fuente);
       vistos.add(dominio);
