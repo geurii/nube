@@ -48,7 +48,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Presupuesto (los ciclos programados no pasan del presupuesto de minutos ni de la meta diaria)
+      - name: Control operativo (sin límite mensual de minutos; solo evita bucles de publicaciones)
         id: pres
         env:
           GH_TOKEN: ${{ github.token }}
@@ -80,7 +80,7 @@ jobs:
               fi
             elif ! node agentes/encadenar.mjs; then
               echo "ok=no" >> "$GITHUB_OUTPUT"
-              echo "Sin presupuesto o meta cumplida: este ciclo se salta."
+              echo "Meta operativa diaria cumplida: este ciclo se salta."
             fi
           fi
           # tema elegido en el Estudio ("fecha|formato|Tema"): solo letras, números y signos simples
@@ -172,7 +172,7 @@ jobs:
       - name: Marcar progreso del guion
         if: always() && steps.pres.outputs.ok != 'no'
         run: |
-          if node agentes/ultimo-aprobado.mjs | grep -q 'oficina: aprobado'; then PROGRESO_DE=oficina node agentes/progreso.mjs 35 'Guion aprobado: preparando voz y video'; else PROGRESO_DE=oficina node agentes/progreso.mjs 0 'Sin guion aprobado en este ciclo (cuota de IA agotada o tema rechazado): se reintenta'; fi
+          if node agentes/ultimo-aprobado.mjs | grep -q 'oficina: aprobado'; then PROGRESO_DE=oficina node agentes/progreso.mjs 35 'Guion aprobado: preparando voz y video'; else PROGRESO_DE=oficina node agentes/progreso.mjs 0 'Sin guion aprobado en este ciclo (proveedores de IA temporalmente no disponibles o tema rechazado): se reintenta'; fi
       - name: Guardar el resultado en el repositorio
         if: always() && steps.pres.outputs.ok != 'no'
         run: |
