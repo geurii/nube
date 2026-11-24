@@ -1,5 +1,41 @@
 [
   {
+    "id": "mwuob5zeg19p",
+    "fecha": "2026-11-24T12:31:01.898Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: ",
+    "texto": "El Verificador no aprobó \"\" tras 0 intentos: Tema descartado (no se pudo cargar):  Aprobados: 11. Rechazados: 51. Con error: 10. No se publica. Próximo ciclo en 1 h."
+  },
+  {
+    "id": "mwuob4x5h6g7",
+    "fecha": "2026-11-24T12:31:00.521Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: ",
+    "texto": "El Verificador no aprobó \"\" tras 0 intentos: Tema descartado (no se pudo cargar):  Aprobados: 11. Rechazados: 50. Con error: 10. No se publica. Próximo ciclo en 1 h."
+  },
+  {
+    "id": "mwuoal7osnpi",
+    "fecha": "2026-11-24T12:30:34.980Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: ",
+    "texto": "El Verificador no aprobó \"\" tras 0 intentos: Tema descartado (no se pudo cargar):  Aprobados: 11. Rechazados: 49. Con error: 10. No se publica. Próximo ciclo en 1 h."
+  },
+  {
+    "id": "mwuoaj5uccty",
+    "fecha": "2026-11-24T12:30:32.322Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título corto + pregunta intrigante o afirmación impactante que sugiere un misterio o un descubrimiento inesperado El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (26545 vistas/hora)."
+  },
+  {
     "id": "mwujatnaja47",
     "fecha": "2026-11-24T10:10:47.830Z",
     "canal": "lqns",
@@ -658,40 +694,5 @@
     "tipo": "listo",
     "titulo": "Video listo: Sabías que la explosión de Chernóbil cambió todo 🌍",
     "texto": "Se renderizó \"Sabías que la explosión de Chernóbil cambió todo 🌍\" para Lo Que No Sabías (175 MB). Descárgalo en GitHub > Actions > Produccion > artefacto \"video-lqns-chernobyl-disaster\". Falta subirlo a YouTube."
-  },
-  {
-    "id": "mwryv2ufs2xz",
-    "fecha": "2026-11-22T15:03:08.583Z",
-    "canal": "lqns",
-    "tipo": "alerta",
-    "titulo": "Fallas graves de imagen o sonido: Sabías que la explosión de Chernóbil cambió todo 🌍",
-    "texto": "Gemini (gemini-4-hydrogen) lo vio y lo oyó: imagen 4/10, audio 8/10, FALLAS GRAVES: El texto principal de la portada aparece cortado e incompleto ('¿EL 26 ABRIL DE 1986 UNA EXPLOSIÓN CAMBIÓ LA?'), y en varias escenas (00:10-00:37 y 00:59-01:26) se muestran cajas gráficas vacías donde. No se sube."
-  },
-  {
-    "id": "mwryt3lb6sdt",
-    "fecha": "2026-11-22T15:01:36.239Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "listo",
-    "titulo": "Video listo: Sabías que la explosión de Chernóbil cambió todo 🌍",
-    "texto": "Se renderizó \"Sabías que la explosión de Chernóbil cambió todo 🌍\" para Lo Que No Sabías (146 MB). Descárgalo en GitHub > Actions > Produccion > artefacto \"video-lqns-chernobyl-disaster\". Falta subirlo a YouTube."
-  },
-  {
-    "id": "mwrxsoosmhk8",
-    "fecha": "2026-11-22T14:33:17.308Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Guion aprobado: Chernobyl disaster",
-    "texto": "Short de \"Chernobyl disaster\" aprobado en el intento 3. 129 palabras, 5 escenas. Editor: Puntaje: 5.2/10. El gancho es genérico y parece una lección escolar aburrida que cualquiera deslizaría al instante. Acumulaste bloques gigantescos de texto que destruyen por completo el ritmo de edici Aprobados: 10. Rechazados: 16. Con error: 8. Próximo ciclo en 11 h."
-  },
-  {
-    "id": "mwrxijx3njlg",
-    "fecha": "2026-11-22T14:25:24.567Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante o afirmación impactante + elemento misterioso/extraño + pista de revelación o consecuencia El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (36981 vistas/hora)."
   }
 ]
