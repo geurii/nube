@@ -104,6 +104,8 @@ jobs:
           node --check agentes/reglas-guion.mjs
           node --check agentes/llm.mjs
           node --check agentes/analizar-videos.mjs
+          node --check agentes/fuentes-guion.mjs
+          node agentes/probar-fuentes-guion.mjs
           node --check agentes/oficina.mjs
           node --check agentes/producir.mjs
           node --check agentes/pintor.mjs
