@@ -9,6 +9,7 @@ import os from 'node:os';
 import {execFileSync, spawnSync} from 'node:child_process';
 import {avisarTelefono} from './aviso.mjs';
 import {publicarEnTikTok, textoTikTok} from './tiktok.mjs';
+import {sinEnlaces} from './sin-enlaces.mjs';
 
 const leer = (ruta, d) => { try { return JSON.parse(fs.readFileSync(ruta, 'utf8')); } catch { return d; } };
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -29,7 +30,7 @@ export const elegirArchivo = (id, carpeta = path.join('out', 'serie'), maxMb = M
 /** Texto de la publicación: título + descripción del guion (ya trae fuentes y los 5 hashtags). */
 export const textoDePublicacion = (guion) => {
   const p = guion?.publicacion ?? {};
-  return `${p.titulo ?? guion?.titulo ?? ''}\n\n${p.descripcion ?? ''}`.trim().slice(0, 2000);
+  return sinEnlaces(`${p.titulo ?? guion?.titulo ?? ''}\n\n${p.descripcion ?? ''}`).slice(0, 2000);
 };
 
 const gh = async (token, metodo, ruta, cuerpo) => {
