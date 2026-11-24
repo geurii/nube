@@ -12,7 +12,7 @@ import {textoDeLecciones} from './lecciones.mjs';
 import {crearVisuales} from './visuales.mjs';
 import {investigarEnLaWeb, descubrirTemasEnFuentes} from './investigar-web.mjs';
 import {limpiarParaVoz} from './texto-voz.mjs';
-import {validarGancho} from './reglas-guion.mjs';
+import {validarGancho, medirRevelacion, validarRevelacion} from './reglas-guion.mjs';
 import {textoDeRadar} from './radar.mjs';
 import {completarHashtags} from './hashtags.mjs';
 import {ganchoDe} from './titular.mjs'; // titular gigante de los primeros segundos (nunca cortado a mitad de frase)
@@ -384,7 +384,7 @@ const NORMAS = `NORMAS DE LA JEFA (no se negocian):
 
 const REPARTO = FORMATO === 'largo'
   ? 'La revelación ("Pero lo que no sabías:") debe empezar cuando lleves entre el 65 % y el 75 % de las palabras del guion.'
-  : 'Reparto obligatorio para no fallar el porcentaje: apunta a 85–95 palabras ANTES de la revelación (gancho + historia con hechos del MATERIAL); revelación de 12–16 palabras; veredicto de 22–26 palabras e incluye la frase final exacta. La revelación debe quedar aproximadamente al 70 %–72 % del total. Si el guion queda corto, añade una escena breve de historia REAL antes de revelar; nunca rellenes ni inventes datos. Cuenta las palabras de todas las escenas antes de responder.';
+  : 'Reparto obligatorio: coloca la revelación cerca del 70 %–72 % del total (nunca fuera del 65 %–75 %). Para calcularlo, suma todas las palabras de todas las escenas, incluida la propia revelación y el veredicto/CTA; luego divide las palabras anteriores a la escena de revelación entre ese total. Ajusta historia y cierre para quedar en 70 %–72 %, sin inventar datos ni añadir relleno. En Shorts apunta a 85–95 palabras antes de revelar, una revelación de 12–16 palabras y un cierre de 22–26 palabras solo si el total resultante respeta el porcentaje.';
 const FORMATO_ESCENAS = 'Formato JSON de escenas: [{"tipo": "hook|historia|revelacion|veredicto", "texto": "una o dos frases"}]. La primera escena es "hook", la última "veredicto".';
 
 /** Fórmula del momento (la deja el Cazador de fórmulas): solo estructura, nunca temas ni contenido de otros canales. */
@@ -420,7 +420,7 @@ const guionista = (material, problemas) => [
   {role: 'user', content: `Escribe un guion de ${FORMATO === 'largo' ? 'video largo' : 'Short vertical de unos 55 segundos'} de unas ${PALABRAS} palabras sobre "${TEMA}". ${REPARTO}${formulaActual()}${aprendizajesDelPanel()}${ayudasDelEquipo()}\n\nDATOS EXACTOS (cualquier cifra o fecha que escribas debe ser EXACTAMENTE una de estas, dicha en palabras):\n${datosExactos(material)}${prohibidosTexto()}\n\nMATERIAL (única fuente permitida):\n${material}\n\n${problemas?.length ? `El Verificador o el Editor rechazaron la versión anterior. Corrige exactamente esto:\n${problemas.map((p) => `- "${p.frase}": ${p.motivo}`).join('\n')}\n\n` : ''}Formato JSON: {"titulo": "...(máx. 90 caracteres, con un emoji)", "descripcion": "...(2 frases)", "hashtags": ["#cinco", "#especificos", "#del", "#tema", "#sinviral"], "escenas": [...]}. Los hashtags son 5, específicos del tema; nunca #viral ni #fyp. ${FORMATO_ESCENAS}`},
 ];
 const editor = (titulo, escenas) => [
-  {role: 'system', content: `Eres el/la Editor/a crítico/a de guiones de un canal de YouTube. Eres implacable: tu trabajo es encontrar lo que haría que alguien deslice el video y arreglarlo. Evalúas gancho (¿se entiende en un segundo? ¿es una pregunta intrigante o un hecho increíble, de máximo ${FORMATO === 'short' ? 14 : 24} palabras, que saldrá como titular gigante en pantalla? Si cumple eso, merece 7 o más aunque no lleve cifra: solo baja de 7 si es descriptivo, largo o aburrido. Sé exigente pero JUSTO: no castigues lo que el material no permite), ritmo (frases cortas, nada de relleno), claridad para gente normal y fuerza del cierre. Reglas duras: NO agregues datos nuevos ni cifras; solo recorta, reordena y mejora la redacción de lo que ya está. En Shorts y videos largos usa una apertura natural, original y atractiva; nunca impongas una fórmula fija como "Sabías que". Mantén la frase final exacta "${CTA}" y coloca la revelación idealmente entre el 70 % y el 72 % del total (el Verificador acepta 65 %–75 %, pero no apuntes al límite). Si está por debajo, añade historia respaldada por el MATERIAL antes de la revelación; si está por encima, acorta la historia sin quitar datos esenciales. Cuenta las palabras de todas las escenas antes de devolver el JSON. Cada escena debe poder mostrarse con un cambio de imagen cada 3 segundos: frases de máximo 18 palabras. Responde SOLO con JSON.`},
+  {role: 'system', content: `Eres el/la Editor/a crítico/a de guiones de un canal de YouTube. Eres implacable: tu trabajo es encontrar lo que haría que alguien deslice el video y arreglarlo. Evalúas gancho (¿se entiende en un segundo? ¿es una pregunta intrigante o un hecho increíble, de máximo ${FORMATO === 'short' ? 14 : 24} palabras, que saldrá como titular gigante en pantalla? Si cumple eso, merece 7 o más aunque no lleve cifra: solo baja de 7 si es descriptivo, largo o aburrido. Sé exigente pero JUSTO: no castigues lo que el material no permite), ritmo (frases cortas, nada de relleno), claridad para gente normal y fuerza del cierre. Reglas duras: NO agregues datos nuevos ni cifras; solo recorta, reordena y mejora la redacción de lo que ya está. En Shorts y videos largos usa una apertura natural, original y atractiva; nunca impongas una fórmula fija como "Sabías que". Mantén la frase final exacta "${CTA}" y coloca la revelación entre el 70 % y el 72 % del total. Cuenta todas las palabras de todas las escenas, incluida la revelación y el veredicto/CTA. Si está por debajo, añade historia respaldada por el MATERIAL antes de la revelación; si está por encima, acorta o mueve contenido no esencial después de la revelación sin quitar datos esenciales. No inventes ni rellenes. Devuelve el JSON solo después de comprobar el porcentaje. Cada escena debe poder mostrarse con un cambio de imagen cada 3 segundos: frases de máximo 18 palabras. Responde SOLO con JSON.`},
   {role: 'user', content: `TÍTULO: ${titulo}\nGUION:\n${JSON.stringify(escenas)}\n\nDevuelve: {"puntaje": número del 0 al 10 del guion ORIGINAL, "critica": "máximo 3 frases, directas y duras", "titulo": "título mejorado, máx. 90 caracteres, con un emoji", "escenas": [versión mejorada, mismo formato]}.`},
 ];
 const verificador = (material, escenas) => [
@@ -493,14 +493,10 @@ const comprobar = (escenas) => {
   else if (!gancho.valido) p.push({frase: escenas[0].texto, motivo: `El gancho inicial debe tener ${gancho.maximo} palabras o menos para formato ${FORMATO}.`});
   const ultima = escenas[escenas.length - 1]?.texto ?? '';
   if (!ultima.includes(CTA)) p.push({frase: ultima, motivo: `Falta la frase de cierre exacta: "${CTA}"`});
-  const total = escenas.reduce((s, e) => s + palabrasDe(e), 0);
+  const medicion = medirRevelacion(escenas);
   const i = escenas.findIndex((e) => e.tipo === 'revelacion');
-  if (i < 0) p.push({frase: '', motivo: 'No hay escena de revelación.'});
-  else {
-    const antes = escenas.slice(0, i).reduce((s, e) => s + palabrasDe(e), 0);
-    const pct = Math.round((antes / total) * 100);
-    if (pct < 65 || pct > 75) p.push({frase: escenas[i].texto, motivo: `La revelación cae al ${pct} % (${antes} de ${total} palabras antes de ella) y debe caer entre 65 % y 75 %: añade historia antes de la revelación o acórtala.`});
-  }
+  if (!medicion.existe) p.push({frase: '', motivo: 'No hay escena de revelación.'});
+  else if (!validarRevelacion(escenas).valido) p.push({frase: escenas[i].texto, motivo: `La revelación cae al ${medicion.porcentaje.toFixed(1)} % (${medicion.antes} de ${medicion.total} palabras antes de ella) y debe caer entre 65 % y 75 %; apunta a 70 %–72 % contando todas las escenas, incluida la revelación y el cierre.`});
   return p;
 };
 /** Titular de los primeros segundos: la frase del hook sin "Sabías que", en pregunta corta (máx. ~9 palabras). */
