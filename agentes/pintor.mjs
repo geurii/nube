@@ -180,29 +180,11 @@ const limpiar = (r, ids, slug, ya = {}, escenas = []) => {
     const i = Number(e.indice);
     if (!ids.includes(i)) continue;
     const textoEscena = escenas[i]?.texto ?? escenas[i]?.tipo ?? '';
-    const planos = (Array.isArray(e.planos) ? e.planos : []).slice(0, 3).map(validarEscena).filter(Boolean).filter((plano) => (
-      process.env.MODO_PRUEBA === '1' || tieneAnclaNarrativa(plano, textoEscena)
-    ));
+    const planos = (Array.isArray(e.planos) ? e.planos : []).slice(0, 3).map(validarEscena).filter(Boolean).filter((plano) => tieneAnclaNarrativa(plano, textoEscena));
     if (planos.length === 3 && new Set(planos.map((p) => JSON.stringify(p))).size === 3) salida[i] = planos;
   }
   for (const i of ids) if (!salida[i] && Array.isArray(ya[i]) && ya[i].length === 3 && new Set(ya[i].map((p) => JSON.stringify(p))).size === 3) salida[i] = ya[i]; // conservar solo tres cuadros distintos y completos
-  // La prueba de humo no debe depender de que el modelo simulado interprete cada escena.
-  // Este respaldo SOLO existe con MODO_PRUEBA=1; nunca puede fabricar visuales en producción.
-  if (process.env.MODO_PRUEBA === '1') {
-    for (const i of ids) if (!salida[i]) {
-      const planosPrueba = [0, 1, 2].map((v) => validarEscena({
-        cielo: ['#10183a', '#3a4a8a', '#e8a070'],
-        capas: [
-          {t: 'estrellas', n: 24 + v * 7},
-          {t: 'olas', y: 0.62 + v * 0.03, color: '#1d4f86'},
-          {t: 'barco', x: 0.25 + v * 0.12, y: 0.64, w: 0.3},
-          {t: 'pez', tipo: 'ballena', x: 0.5, y: 0.42 + v * 0.04, w: 0.4},
-          {t: 'roca', x: 0.72 - v * 0.08, y: 0.76, w: 0.18, h: 0.2},
-        ],
-      })).filter(Boolean);
-      if (planosPrueba.length === 3 && new Set(planosPrueba.map((p) => JSON.stringify(p))).size === 3) salida[i] = planosPrueba;
-    }
-  }
+
   return salida;
 };
 
