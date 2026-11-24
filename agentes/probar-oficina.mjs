@@ -23,9 +23,16 @@ process.env.GROQ_API_KEY = 'prueba';
 process.env.FORMATO = 'short';
 
 const CTA_LQNS = base.cta;
-const {validarGancho} = await import(pathToFileURL(path.join(aqui, 'reglas-guion.mjs')).href);
+const {validarGancho, validarRevelacion} = await import(pathToFileURL(path.join(aqui, 'reglas-guion.mjs')).href);
 const hook16 = 'El barco desapareció y nadie pudo explicar qué ocurrió aquella noche en medio del océano Atlántico.';
 if (validarGancho(hook16, 'short').valido || !validarGancho(hook16, 'largo').valido) throw new Error('La regla del gancho debe permitir 24 palabras en largo y mantener 14 en short.');
+const escena = (tipo, texto, n) => ({tipo, texto: Array.from({length:n}, (_,i)=>`palabra${i}`).join(' ')});
+const ratio72 = [escena('hook','',20), escena('historia','',50), escena('revelacion','',15), escena('veredicto','',15)];
+const ratio79 = [escena('hook','',40), escena('historia','',39), escena('revelacion','',10), escena('veredicto','',11)];
+const ratio751 = [escena('hook','',60), escena('revelacion','',1), escena('veredicto','',19)];
+if (!validarRevelacion(ratio72).valido) throw new Error('Debe aprobar una revelación ubicada al 70 %.');
+if (validarRevelacion(ratio79).valido) throw new Error('Debe rechazar una revelación ubicada al 79 %.');
+if (validarRevelacion(ratio751).valido) throw new Error('Debe rechazar 75.1 % aunque redondee a 75 %.');
 const CTA_DEMO = 'Suscríbete y cuéntale a un amigo.';
 const hacer = (cta) => [
   {tipo: 'hook', texto: 'El oceano registro un sonido imposible en 1997.'},
