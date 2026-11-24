@@ -60,7 +60,14 @@ const temaYaRegistrado = (tema) => {
   const k = claveTema(tema);
   // Bloop ya fue producido: exclusión editorial permanente, incluso si el historial local se perdió.
   if (k === 'bloop' && process.env.MODO_PRUEBA !== '1') return true;
-  return k.length >= 4 && vistos.some((v) => v === k || (k.length >= 6 && v.length >= 6 && (v.includes(k) || k.includes(v))));
+  const coincide = (v) => v === k || (k.length >= 6 && v.length >= 6 && (v.includes(k) || k.includes(v));
+  const guionesMismoTema = fs.readdirSync(SALIDA).filter((f) => /^guion-.+\\.json$/.test(f)).map((f) => {
+    const ruta = path.join(SALIDA, f);
+    return {clave: claveTema(f.replace(/^guion-|\\.json$/g, '')), guion: leerJson(ruta, null)};
+  }).filter((x) => coincide(x.clave));
+  // Permitir una versión larga de un tema que solo existía como Short; bloquear duplicados de largos.
+  if (FORMATO === 'largo' && guionesMismoTema.length && guionesMismoTema.every((x) => x.guion?.formato === 'short')) return false;
+  return k.length >= 4 && vistos.some(coincide);
 };
 /** Próximo ciclo automático: Short diario a la 01:23 UTC y video largo los domingos a las 00:23 UTC. */
 const horasParaProximoCiclo = () => {
