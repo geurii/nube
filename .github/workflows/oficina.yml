@@ -144,6 +144,23 @@ jobs:
             sleep 5
           done
           if [ -n "$(git log origin/main..HEAD --oneline 2>/dev/null)" ]; then echo "ERROR: no se pudo subir el resultado al repositorio"; exit 1; fi
+      - name: Encadenar el Short extraordinario después del largo (solo esta vez)
+        if: success() && github.event_name == 'push' && steps.pres.outputs.formato == 'largo' && hashFiles('agentes/oficina-secuencia-short') != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl --fail-with-body -sS -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/workflows/oficina.yml/dispatches \
+            -d '{"ref":"main","inputs":{"formato":"short"}}'
+          rm -f agentes/oficina-secuencia-short
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A agentes/oficina-secuencia-short
+          git diff --cached --quiet || git commit -m "Oficina: consumir secuencia extraordinaria"
+          git pull --rebase --autostash -X theirs origin main
+          git push
       - name: Esperar al siguiente horario programado
         if: always()
         run: echo Ciclos ejecutados segun horario programado
