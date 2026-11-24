@@ -731,12 +731,12 @@ try {
       informe.push(`Pintores: ${CTX.pintadas} de ${escenas.length} escenas dibujadas.`);
     } catch (e) { aprobado = false; problemas.push({frase: '(visuales)', motivo: 'No se generaron imágenes específicas para las escenas: ' + String(e.message ?? e).slice(0, 220) + '. No se permite sustituirlas por fondos genéricos ni publicar el video sin visuales.'}); informe.push('(GUION BLOQUEADO: no se generaron visuales específicos; no se publicará con fondos genéricos.)'); }
   }
-  const sinImagen = aprobado ? fondos.filter((f) => !Array.isArray(f) || f.length !== 3 || f.some((x) => !String(x).startsWith('pintado:'))).length : 0;
+  const sinImagen = aprobado ? fondos.filter((f) => !Array.isArray(f) || f.length !== 4 || f.some((x) => !String(x).startsWith('pintado:'))).length : 0;
   CTX.sinImagen = sinImagen;
   if (aprobado && sinImagen > 0) {
     aprobado = false;
-    problemas.push({frase: '(visuales)', motivo: `${sinImagen} escenas no tienen exactamente tres cuadros originales de pixel art; se bloquea la publicación.`});
-    informe.push(`GUION BLOQUEADO: ${sinImagen}/${escenas.length} escenas no tienen tres cuadros originales; no se usan fondos neutros ni imágenes repetidas.`);
+    problemas.push({frase: '(visuales)', motivo: `${sinImagen} escenas no tienen exactamente cuatro cuadros originales de pixel art; se bloquea la publicación.`});
+    informe.push(`GUION BLOQUEADO: ${sinImagen}/${escenas.length} escenas no tienen cuatro cuadros originales; no se usan fondos neutros ni imágenes repetidas.`);
   }
   const palabras = escenas.reduce((s, e) => s + palabrasDe(e), 0);
   informe.push(`Palabras: ${palabras} · Escenas: ${escenas.length}`);
