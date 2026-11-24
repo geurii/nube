@@ -74,7 +74,7 @@ globalThis.fetch = async (url, opciones) => {
   const u = String(url);
   if (u.includes('html.duckduckgo.com/html/')) {
     const consulta = new URL(u).searchParams.get('q') || '';
-    const dominio = /site:([^\s]+)/.exec(consulta)?.[1] || 'si.edu';
+    const dominio = /site:([^\s]+)/.exec(consulta)?.[1] || 'historia.test';
     const snippet = 'Artículo web con contexto histórico, descripción del fenómeno y datos concretos consultables para verificar este tema.';
     return new Response(`<div class="result"><h2><a href="https://${dominio}/bloop" class="result__a">Bloop research article</a></h2><div class="result__snippet">${snippet}</div></div>`, {status: 200});
   }
