@@ -51,8 +51,8 @@ if (!YT_CLIENT_ID || !YT_CLIENT_SECRET || !YT_REFRESH_TOKEN) {
 try {
   const guion = JSON.parse(fs.readFileSync(path.join('guion', 'serie', `${ID}.json`), 'utf8'));
   const claveEditorial = (x) => String(x ?? '').toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').replace(/[^a-z0-9]+/g, '');
-  if (process.env.MODO_PRUEBA !== '1' && [ID, guion.titulo, guion.publicacion?.titulo].some((x) => claveEditorial(x).includes('bloop'))) {
-    throw new Error('SUBIDA BLOQUEADA: Bloop/The Bloop está excluido permanentemente; no se puede publicar ni repetir con otro título.');
+  if (process.env.MODO_PRUEBA !== '1' && [ID, guion.titulo, guion.publicacion?.titulo].some((x) => /(bloop|lituya)/.test(claveEditorial(x)))) {
+    throw new Error('SUBIDA BLOQUEADA: Bloop/The Bloop y Lituya Bay están excluidos permanentemente; no se pueden repetir con otro título.');
   }
   const archivo = path.join('out', 'serie', `${ID}.mp4`);
   const probe = spawnSync('ffprobe', ['-v', 'error', '-show_entries', 'format=duration:stream=codec_type,width,height', '-of', 'json', archivo], {encoding: 'utf8'});
