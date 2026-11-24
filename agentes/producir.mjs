@@ -114,8 +114,8 @@ const formatoInvalido = !Number.isFinite(duracion) || duracion <= 0
   ? 'No se pudo medir la duración real del MP4.'
   : g.formato === 'short' && duracion > 65.5
     ? `Short excede 65 segundos: ${duracion.toFixed(1)} s.`
-    : g.formato === 'largo' && (duracion < 480 || duracion > 720)
-      ? `Video largo dura ${duracion.toFixed(1)} s; debe durar entre 480 y 720 s (8–12 minutos).`
+    : g.formato === 'largo' && (duracion < 480 || duracion > 600)
+      ? `Video largo dura ${duracion.toFixed(1)} s; debe durar entre 480 y 600 s (8–10 minutos, compatible con TikTok y YouTube).`
       : '';
 if (formatoInvalido) {
   g.estado = 'rechazado-necesita-revision';
