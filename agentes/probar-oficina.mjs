@@ -32,7 +32,7 @@ const ratio79 = [escena('hook','',40), escena('historia','',39), escena('revelac
 const ratio751 = [escena('hook','',61), escena('revelacion','',1), escena('veredicto','',19)];
 if (!validarRevelacion(ratio72).valido) throw new Error('Debe aprobar una revelación ubicada al 70 %.');
 if (validarRevelacion(ratio79).valido) throw new Error('Debe rechazar una revelación ubicada al 79 %.');
-if (validarRevelacion(ratio751).valido) throw new Error('Debe rechazar 75.1 % aunque redondee a 75 %.');
+if (validarRevelacion(ratio751).valido) throw new Error('Debe rechazar 75.3 % aunque redondee a 75 %.');
 const CTA_DEMO = 'Suscríbete y cuéntale a un amigo.';
 const hacer = (cta) => [
   {tipo: 'hook', texto: 'El oceano registro un sonido imposible en 1997.'},
