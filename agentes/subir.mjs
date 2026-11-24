@@ -54,9 +54,9 @@ try {
   if (probe.status !== 0) throw new Error(`No pude verificar el MP4 antes de subirlo: ${probe.stderr || probe.error}`);
   const meta = JSON.parse(probe.stdout);
   const duracion = Number(meta.format?.duration);
-  const video = (meta.streams ?? []).find((x) => x.codec_type === 'video');
-  if (!video || !Number.isFinite(duracion)) throw new Error('El MP4 no contiene metadatos de video válidos.');
-  if (guion.formato === 'short' && (duracion > 60 || Math.abs(video.width / video.height - 9 / 16) > 0.01)) throw new Error(`SUBIDA BLOQUEADA: Short debe ser 9:16 vertical y durar máximo 60 s; detectado ${video.width}x${video.height}, ${duracion.toFixed(1)} s.`);
+  const videoStream = (meta.streams ?? []).find((x) => x.codec_type === 'video');
+  if (!videoStream || !Number.isFinite(duracion)) throw new Error('El MP4 no contiene metadatos de video válidos.');
+  if (guion.formato === 'short' && (duracion > 60 || Math.abs(videoStream.width / videoStream.height - 9 / 16) > 0.01)) throw new Error(`SUBIDA BLOQUEADA: Short debe ser 9:16 vertical y durar máximo 60 s; detectado ${videoStream.width}x${videoStream.height}, ${duracion.toFixed(1)} s.`);
   if (guion.formato === 'largo' && (duracion < 480 || Math.abs(video.width / video.height - 16 / 9) > 0.01)) throw new Error(`SUBIDA BLOQUEADA: largo debe ser 16:9 horizontal y durar mínimo 8 minutos; detectado ${video.width}x${video.height}, ${duracion.toFixed(1)} s.`);
   if (!['short', 'largo'].includes(guion.formato)) throw new Error(`Formato desconocido: ${guion.formato}`);
   const bytes = fs.readFileSync(archivo);
