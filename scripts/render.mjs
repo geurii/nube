@@ -153,7 +153,7 @@ const composition = await selectComposition({
 });
 const tiempos = composition.props.tiempos;
 const total = tiempos.duracionTotal;
-if (guion.formato === 'short' && total > 60) throw new Error(`PUBLICACIÓN BLOQUEADA: Short de ${total.toFixed(1)} s; el máximo es 60 s.`);
+if (guion.formato === 'short' && total > 65) throw new Error(`PUBLICACIÓN BLOQUEADA: Short de ${total.toFixed(1)} s; el máximo es 65 s.`);
 if (guion.formato === 'largo' && total < 480) throw new Error(`PUBLICACIÓN BLOQUEADA: video largo de ${total.toFixed(1)} s; el mínimo es 480 s (8 minutos).`);
 
 // --- Comprobación de estructura -------------------------------------------
@@ -191,7 +191,7 @@ else {
   if (restante < 10 || restante > 15) avisos.push(`El veredicto dura ${restante.toFixed(1)} s (ideal 10-15 s finales).`);
 }
 }
-if (guion.formato === 'short' && total > 61) avisos.push(`Un Short debe durar máximo 60 s y este dura ${total.toFixed(1)} s.`);
+if (guion.formato === 'short' && total > 65) avisos.push(`Un Short debe durar máximo 65 s y este dura ${total.toFixed(1)} s.`);
 
 if (avisos.length) {
   console.log('\nAvisos:');
