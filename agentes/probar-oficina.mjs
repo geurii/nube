@@ -66,8 +66,9 @@ let llamadas = 0;
 let vioLecciones = false; // ¿llegaron las lecciones aprendidas al contexto de los agentes?
 const original = globalThis.fetch;
 const logOriginal = console.log;
+const informesCapturados = [];
 console.log = (...args) => {
-  if (args.length && String(args[0]).startsWith('# Informe de la oficina')) return;
+  if (args.length && String(args[0]).startsWith('# Informe de la oficina')) { informesCapturados.push(String(args[0])); return; }
   logOriginal(...args);
 };
 globalThis.fetch = async (url, opciones) => {
@@ -167,5 +168,5 @@ if (notis.some((x) => !x.id || !x.fecha || !x.texto)) fallos.push('una notificac
   fs.writeFileSync(path.join('oficina-salida', 'lqns', 'manual.json'), JSON.stringify({activo: false, acciones: [], aplicadas: []})); if (g.estado !== 'aprobado') fallos.push('produccion automatica: el guion no continuo sin visto bueno (' + g.estado + ')');
 }
 console.log(`Prueba simulada: ${llamadas} llamadas a Groq · canales: lqns y demo · notificaciones: ${notis.length}. No comprueba conectividad externa ni fuentes reales.`);
-if (fallos.length) { console.error('FALLÓ:', fallos.join('; ')); process.exit(1); }
+if (fallos.length) { console.error('FALLÓ:', fallos.join('; ')); console.error('DIAGNÓSTICO DE GUIONES:', informesCapturados.map((x) => x.split('## Intento').slice(1).map((y) => '## Intento'+y.split('Palabras:')[0]).join('\n')).join('\n--- CANAL ---\n')); process.exit(1); }
 console.log('PRUEBA SIMULADA OK: dos canales, carpetas, voces y reportes. La búsqueda real requiere validación en ejecución.');
