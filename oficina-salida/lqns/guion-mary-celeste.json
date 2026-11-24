@@ -1,71 +1,126 @@
 {
-  "titulo": "¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️",
-  "formato": "short",
+  "titulo": "¿Qué oculta el Mary Celeste que nadie logró explicar? 🕵️‍♂️",
+  "formato": "largo",
+  "orientacion": "horizontal",
   "plataforma": "youtube",
   "canal": "lqns",
-  "voz": "es-DO-EmilioNeural",
+  "voz": "es-MX-JorgeNeural",
   "vozGemini": "Sadaltager",
   "audio": "audio/lqns-mary-celeste.wav",
   "musica": "musica/firma-canal.mp3",
   "personaje": {
-    "esquina": "arriba-derecha",
-    "visible": true
+    "visible": false
   },
+  "creado": "2026-11-24T04:32:03.036Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿¿Cómo puede un barco cruzar el Atlántico y aparecer vacío…?",
   "publicacion": {
-    "titulo": "¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️",
-    "descripcion": "Un misterio del siglo XIX que aún intriga. Descubre el dato que pocos conocen.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://es.wikipedia.org/wiki/Mary_Celeste · https://en.wikipedia.org/wiki/Mary_Celeste\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#MaryCeleste #misterio"
+    "titulo": "¿Qué oculta el Mary Celeste que nadie logró explicar? 🕵️‍♂️",
+    "descripcion": "Descubre los hechos reales del bergantín que fue encontrado a la deriva sin tripulación. Analizamos cada pista y la sorprendente verdad que quedó fuera de los juicios.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://es.wikipedia.org/wiki/Mary_Celeste · https://en.wikipedia.org/wiki/Mary_Celeste\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#MaryCeleste #NaveDesierta #HistoriaReal #Enigma #Celeste"
   },
-  "estado": "aprobado",
+  "estado": "rechazado-necesita-revision",
   "editor": {
-    "puntaje": 5,
-    "critica": "El gancho es demasiado largo y confuso. La historia se extiende sin ritmo y el cierre suena forzado. Falta una revelación impactante en el momento adecuado."
+    "puntaje": 6,
+    "critica": "El gancho es bueno pero falta impacto en la revelación. El ritmo es correcto, pero la historia se alarga en detalles técnicos. El cierre es débil, no invita a la acción."
   },
+  "retencionEstimada": null,
   "escenas": [
     {
       "tipo": "hook",
-      "texto": "Sabías que el bergantín encontrado a la deriva el 4 de diciembre de 1872 llevaba el nombre Mary Celeste?",
+      "texto": "¿Cómo puede un barco cruzar el Atlántico y aparecer vacío, con la comida intacta?",
       "fondo": [
-        "pixelmisterio",
-        "pixelcifra:1872|ANO|AZUL"
+        "pixelmisterio"
       ]
     },
     {
       "tipo": "historia",
-      "texto": "El barco había zarpado de Nueva York el 7 de noviembre rumbo a Génova, con abundantes provisiones y su cargamento de alcohol casi intacto.",
+      "texto": "El bergantín fue construido en Spencer Island, Nueva Escocia, y botado como Amazon el 18 de mayo de 1861.",
       "fondo": [
-        "pixelbodega",
-        "pixelcifra:7 NOVIEMBRE|SALIDA|TEAL"
+        "pixelmisterio"
       ]
     },
     {
       "tipo": "historia",
-      "texto": "La última entrada del cuaderno de bitácora data de diez días antes. Cuando el Dei Gratia lo avistó, las velas estaban parcialmente desplegadas y faltaba el bote salvavidas.",
+      "texto": "Su registro británico se realizó el 10 de junio de 1861, describiendo una eslora de 99,3 pies y una capacidad de 198,42 toneladas.",
       "fondo": [
-        "pixeldocs",
-        "pixelcifra:10 DIAS|BITACORA|ROJO"
+        "pixelmisterio"
       ]
     },
     {
       "tipo": "historia",
-      "texto": "Sin embargo, la tripulación había desaparecido sin dejar rastro, dejando el misterio sin resolver.",
+      "texto": "El primer capitán murió antes del viaje inaugural, y el barco volvió a su puerto de origen.",
       "fondo": [
-        "pintado:mary-celeste-3a",
-        "pintado:mary-celeste-3b"
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En 1868 la nave pasó a manos estadounidenses y recibió el nombre de Mary Celeste.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El 7 de noviembre de 1872 zarpó de Nueva York con destino a Génova, cargada de alcohol desnaturalizado y provisiones abundantes.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Cuatro días después, el 4 de diciembre, el bergantín canadiense Dei Gratia la avistó a la deriva frente a las Azores.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Las velas estaban parcialmente desplegadas, el timón intacto y la carga de alcohol casi sin tocar.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Faltaban los botes salvavidas y la última entrada del cuaderno de bitácora estaba fechada diez días antes.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Los objetos personales del capitán y la tripulación permanecían en su sitio, sin señales de lucha ni desorden.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En las audiencias de rescate en Gibraltar, los oficiales consideraron motín, piratería y fraude de seguro, pero no hallaron pruebas concluyentes.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Con el paso del tiempo, surgieron teorías sobre vapores de alcohol, terremotos submarinos, trombas marinas, calamares gigantes y fenómenos paranormales.",
+      "fondo": [
+        "pixelmisterio"
       ]
     },
     {
       "tipo": "revelacion",
-      "texto": "Pero lo que no sabías: en 1885 el capitán hundió cerca de Haití para estafar a la aseguradora.",
+      "texto": "Pero lo que no sabías: después del hallazgo, el Mary Celeste siguió en servicio y, en 1885, su capitán la destrozó deliberadamente cerca de la costa de Haití en un intento de fraude al seguro.",
       "fondo": [
-        "pixelcifra:1885|HUNDIMIENTO|ORO"
+        "pixelmisterio"
       ]
     },
     {
       "tipo": "veredicto",
-      "texto": "El misterio del Mary Celeste quedó sin explicación, intrigando a investigadores. ¿Te atreves a descubrir más? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "texto": "¿Crees que alguna de las teorías antiguas podría explicar el abandono de 1872? Comparte este video con un amigo que haría lo mismo, sígueme.",
       "fondo": [
-        "pintado:mary-celeste-5a",
-        "pintado:mary-celeste-5b"
+        "pixelmisterio"
       ]
     }
   ]

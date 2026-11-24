@@ -1,5 +1,41 @@
 [
   {
+    "id": "mwu77711loc3",
+    "fecha": "2026-11-24T04:32:03.157Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Mary Celeste",
+    "texto": "El Verificador no aprobó \"Mary Celeste\" tras 4 intentos: La revelación cae al 79 % (222 de 281 palabras antes de ella) y debe caer entre 65 % y 75 %: añade historia antes de la revelación o acórtala. Aprobados: 11. Rechazados: 39. Con error: 9. No se publica. Próximo ciclo en 9 h."
+  },
+  {
+    "id": "mwu74y8o113r",
+    "fecha": "2026-11-24T04:30:18.456Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Mary Celeste",
+    "texto": "El Verificador no aprobó \"Mary Celeste\" tras 4 intentos: El gancho inicial debe tener 14 palabras o menos. Aprobados: 11. Rechazados: 38. Con error: 9. No se publica. Próximo ciclo en 9 h."
+  },
+  {
+    "id": "mwu72wk8mxij",
+    "fecha": "2026-11-24T04:28:42.968Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Mary Celeste",
+    "texto": "El Verificador no aprobó \"Mary Celeste\" tras 4 intentos: El gancho inicial debe tener 14 palabras o menos. Aprobados: 11. Rechazados: 37. Con error: 9. No se publica. Próximo ciclo en 10 h."
+  },
+  {
+    "id": "mwu70turtw7a",
+    "fecha": "2026-11-24T04:27:06.147Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título con pregunta intrigante o afirmación impactante + elemento misterioso o inesperado + referencia a un caso/objeto concreto El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (27812 vistas/hora)."
+  },
+  {
     "id": "mwu6yg3q59em",
     "fecha": "2026-11-24T04:25:15.014Z",
     "canal": "lqns",
@@ -654,38 +690,5 @@
     "tipo": "reporte",
     "titulo": "Fórmula del momento",
     "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante o afirmación impactante + elemento misterioso/inesperado + pista de revelación o consecuencia El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (39779 vistas/hora)."
-  },
-  {
-    "id": "mwrbzss6b8gy",
-    "fecha": "2026-11-22T04:22:57.654Z",
-    "canal": "lqns",
-    "tipo": "reporte",
-    "titulo": "Video subido a YouTube",
-    "texto": "\"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\" quedó PÚBLICO ahora mismo: https://youtu.be/HHnlDcvo_vU"
-  },
-  {
-    "id": "mwrbw4iqqcix",
-    "fecha": "2026-11-22T04:20:06.243Z",
-    "canal": "lqns",
-    "tipo": "reporte",
-    "titulo": "El panel aprobó: 🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩",
-    "texto": "6 de 8 aprobaron, 6 pasaron los primeros 3 segundos, 3 lo compartirían. Mejora sugerida: Empieza con una frase ultra‑impactante en los primeros 2 segundos, por ejemplo: “¡Un artefacto de bronce bajo el mar es el primer ordenador del mundo!”"
-  },
-  {
-    "id": "mwrbw2xxnbng",
-    "fecha": "2026-11-22T04:20:04.197Z",
-    "canal": "lqns",
-    "tipo": "alerta",
-    "titulo": "Gemini no pudo mirar el video",
-    "texto": "ningún modelo respondió. gemini-4-hydrogen: 503 {\"error\":{\"message\":\"gemini-4-hydrogen is currently experiencing high demand, spikes in demand are usually temporary. Please try again later | gemini-3.8-flash: The operati El panel juzgó solo el guion."
-  },
-  {
-    "id": "mwrbpjinshcj",
-    "fecha": "2026-11-22T04:14:59.087Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "listo",
-    "titulo": "Video listo: 🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩",
-    "texto": "Se renderizó \"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\" para Lo Que No Sabías (39 MB). Descárgalo en GitHub > Actions > Produccion > artefacto \"video-lqns-the-antikythera-mechanism\". Falta subirlo a YouTube."
   }
 ]
