@@ -25,7 +25,7 @@ process.env.FORMATO = 'short';
 const CTA_LQNS = base.cta;
 const CTA_DEMO = 'Suscríbete y cuéntale a un amigo.';
 const hacer = (cta) => [
-  {tipo: 'hook', texto: 'Sabías que en mil novecientos noventa y siete un sonido enorme se grabó en el océano Pacífico y lo llamaron Bloop.'},
+  {tipo: 'hook', texto: 'El oceano registro un sonido imposible en 1997.'},
   {tipo: 'historia', texto: 'Lo registraron micrófonos submarinos que la agencia de los océanos de Estados Unidos tenía repartidos por el mar para escuchar el fondo del agua, y duró un buen rato.'},
   {tipo: 'historia', texto: 'El sonido era tan fuerte que se oyó en sensores separados por miles de kilómetros, y por eso pareció venir de algo gigante que se movía muy lejos de cualquier barco.'},
   {tipo: 'historia', texto: 'Mucha gente pensó en un animal desconocido, y la idea se hizo famosa durante años en internet, en programas de televisión y en conversaciones sobre monstruos marinos antiguos.'},

@@ -148,7 +148,7 @@ const ORDEN_JULES = leerJson(path.join(SALIDA, 'ordenes.json'), [])[0];
 const ALTERNOS = process.env.GROQ_API_KEY ? (await modelosDisponibles(process.env.GROQ_API_KEY)).filter((m) => m !== 'openai/gpt-oss-120b') : []; // modelos de Groq con cuota separada que SÍ existen en la cuenta
 let groqBloqueadoHasta = 0; // mientras Groq esté en 429, se usan primero los demás proveedores
 let WEB_BLOQUE = [leerPreferencias(CANAL_ID), textoDeLecciones(CANAL_ID)].filter(Boolean).join(' '); // arranca con lo que el dueño aprobó y rechazó; después se le suma lo que dice internet // lo que dice internet HOY sobre el tema: se les da a TODOS los agentes (se llena después de investigar)
-const groqDirecto = async (modelo, mensajes, maxTokens = FORMATO === 'largo' ? 4500 : 2500) => {
+const groqDirecto = async (modelo, mensajes, maxTokens = FORMATO === 'largo' ? 4500 : 2500, json = false) => {
   mensajes = mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + (ORDEN_JULES ? ` ORDEN VIGENTE DE JULES (nivel ${ORDEN_JULES.nivel}/5, la dio el dueño): ${ORDEN_JULES.orden}` : '') + '\n\n' + m.content} : m));
   let ultimo = 'sin respuesta';
   const maxIntentos = proveedoresConLlave().length ? 4 : 8; // con respaldo disponible no se pierde tiempo esperando a Groq
@@ -165,6 +165,7 @@ const groqDirecto = async (modelo, mensajes, maxTokens = FORMATO === 'largo' ? 4
           messages: mensajes,
           temperature: 0.4,
           max_tokens: maxTokens,
+          ...(json ? {response_format: {type: 'json_object'}} : {}),
           // los modelos "gpt-oss" razonan antes de responder: poco razonamiento = más espacio para el texto
           ...(mod.includes('gpt-oss') ? {reasoning_effort: 'low'} : {}),
         }),
@@ -212,7 +213,7 @@ const groqUnaRonda = async (modelo, mensajes, maxTokens, json = false) => {
     const rapido = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: maxTokens ?? 2500, json});
     if (rapido) { console.log(`Groq en límite: se usó ${rapido.proveedor} (${rapido.modelo}).`); return rapido.texto; }
   }
-  try { return await groqDirecto(modelo, mensajes, maxTokens); }
+  try { return await groqDirecto(modelo, mensajes, maxTokens, json); }
   catch (e) {
     if (e.fatal) throw e;
     const alt = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: maxTokens ?? 2500, json});
@@ -498,9 +499,10 @@ try {
     problemas = [...propios, ...(revision.problemas ?? []), ...(nombres.length ? [{frase: nombres.join(', '), motivo: 'El guion nombra a personas reales. Usa su papel ("el líder", "un científico", "el capitán"), aunque el material traiga el nombre.'}] : [])];
     // PUERTA DE CALIDAD: el Editor manda. Mínimo 7/10 (6/10 solo en el último intento); si no, se reescribe con su crítica.
     const GARANTIA = enGarantia(CANAL_ID);
-    const umbral = GARANTIA ? (intento >= 2 ? 0 : 5) : intento >= 3 ? 5 : 6; // el gusto del público lo juzga el panel de 8 espectadores (paso 2); el Editor solo exige un mínimo para que la fábrica no se quede sin video // con garantía, desde el 2.º intento la nota del Editor solo aconseja (0 = no bloquea) // con garantía de publicación el estilo se relaja; la verdad nunca
+    const umbral = intento >= 4 ? 6 : 7; // el gusto del público lo juzga el panel de 8 espectadores (paso 2); el Editor solo exige un mínimo para que la fábrica no se quede sin video // con garantía, desde el 2.º intento la nota del Editor solo aconseja (0 = no bloquea) // con garantía de publicación el estilo se relaja; la verdad nunca
     if (puntaje !== null && puntaje < umbral) problemas.push({frase: '(calidad)', motivo: `El Editor puso ${puntaje}/10 (mínimo ${umbral}). Reescribe arreglando esto: ${critica}`});
-    aprobado = problemas.length === 0 && revision.aprobado !== false;
+    if (revision.aprobado !== true) problemas.push({frase: "(verificador)", motivo: "El Verificador no confirmó una aprobación explícita."});
+    aprobado = problemas.length === 0 && revision.aprobado === true;
     // PASO 2: el PANEL de 8 espectadores juzga el guion ANTES de hacer la voz y el video, así un rechazo no gasta render. Si lo rechazan, se reescribe con sus críticas.
     CTX.panelGuion = null;
     if (aprobado) {
@@ -517,7 +519,7 @@ try {
             fs.writeFileSync(rutaApr, JSON.stringify([{fecha: new Date().toISOString(), video: titulo, mejora: pv.mejora, quejas: pv.votos.filter((v) => !v.leGusto).map((v) => v.comentario).slice(0, 3)}, ...leerJson(rutaApr, [])].slice(0, 12), null, 2));
           } catch { /* sin aprendizajes */ }
         } else { critica = `${critica} Panel: ${pv.resumen}`.trim(); }
-      } catch (e) { informe.push(`(El panel no pudo evaluar el guion: ${String(e.message ?? e).slice(0, 120)}. Pasa sin su voto.)`); }
+      } catch (e) { const motivo = `El Panel no pudo completar la evaluación: ${String(e.message ?? e).slice(0, 120)}. Se requiere una evaluación válida antes de producir.`; problemas.push({frase: '(panel)', motivo}); aprobado = false; informe.push(`(GUION RECHAZADO: ${motivo})`); }
     }
     informe.push(`## Intento ${intento}: ${aprobado ? 'APROBADO' : 'RECHAZADO'}`, critica ? `Editor (${puntaje ?? '?'}/10): ${critica}` : '', ...problemas.map((p) => `- "${p.frase}" → ${p.motivo}`), '');
   }
