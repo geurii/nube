@@ -29,7 +29,7 @@ const elegirModelos = async (p, key) => {
   if (modelos.has(p.nombre)) return modelos.get(p.nombre);
   const lista = [];
   try {
-    const r = await fetch(p.catalogo ?? `${p.base}/models`, {headers: {...(key ? {Authorization: `Bearer ${key}`} : {}), ...(p.cabeceras ?? {})}, signal: AbortSignal.timeout(20000)});
+    const r = await fetch(p.catalogo ?? `${p.base}/models`, {headers: {...(key ? {Authorization: `Bearer ${key}`} : {}), ...(p.cabeceras ?? {})}, signal: AbortSignal.timeout(8000)});
     if (r.ok) {
       const j = await r.json();
       const ids = (Array.isArray(j) ? j : (j.data ?? [])).map((x) => String(x.id ?? x.name ?? '').replace(/^models\//, '')).filter((x) => x && !(p.descarta?.test(x)));
@@ -56,7 +56,9 @@ const descansar = (nombre, r) => {
   bloqueadoHasta.set(nombre, Date.now() + Math.min(Math.max(espera, 45), 1800) * 1000);
 };
 export const chatAlternativo = async (mensajes, {maxTokens = 2500, temperatura = 0.4, json = false} = {}) => {
+  const limite = Date.now() + 180_000; // no permitir que el respaldo consuma toda la ventana de producción
   for (const p of ordenados()) {
+    if (Date.now() >= limite) { nota('Respaldo: se agotó la ventana de 3 minutos; se evita bloquear el ciclo.'); break; }
     const key = (process.env[p.clave] || '').trim();
     if ((!key && !p.sinLlave) || p.nombre === 'Cloudflare') continue; // los marcados sinLlave (Pollinations, OVHcloud) contestan sin ninguna llave: respaldo gratis automático
     const lista = await elegirModelos(p, key);
@@ -66,7 +68,7 @@ export const chatAlternativo = async (mensajes, {maxTokens = 2500, temperatura =
       if (fallos >= 2) { descansar(p.nombre, {}); break; } // proveedor lento o caído: se pasa al siguiente sin perder minutos
       try {
         const r = await fetch(`${p.base}/chat/completions`, {
-          method: 'POST', headers: {...(key ? {Authorization: `Bearer ${key}`} : {}), 'Content-Type': 'application/json', ...(p.cabeceras ?? {})}, signal: AbortSignal.timeout(50000),
+          method: 'POST', headers: {...(key ? {Authorization: `Bearer ${key}`} : {}), 'Content-Type': 'application/json', ...(p.cabeceras ?? {})}, signal: AbortSignal.timeout(Math.min(18000, Math.max(1000, limite - Date.now()))),
           body: JSON.stringify({model: modelo, messages: mensajes, temperature: temperatura, max_tokens: json ? Math.round(maxTokens * 1.8) : maxTokens, ...(json ? {response_format: {type: 'json_object'}} : {}), ...(/gpt-oss/i.test(modelo) && p.nombre === 'Cerebras' ? {reasoning_effort: 'low'} : {})}),
         });
         if (!r.ok) { nota(`${p.nombre}/${modelo}: ${r.status}`); if (r.status === 429) { descansar(p.nombre, r); break; } fallos++; continue; }
