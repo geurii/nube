@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-24T21:42:16.656Z",
+  "actualizado": "2026-11-24T22:42:56.506Z",
   "canalesLeidos": 9,
   "videosRevisados": 133,
   "mejores": [
@@ -8,52 +8,52 @@
       "idioma": "en",
       "titulo": "Why Is Antarctica Closed? The Operation Highjump Mystery",
       "publicado": "2026-11-20T01:00:08.000Z",
-      "vistas": 2922634,
-      "vistasPorHora": 25044
+      "vistas": 2930553,
+      "vistasPorHora": 24896
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "Always open your fan mail",
       "publicado": "2026-11-21T19:00:32.000Z",
-      "vistas": 1206422,
-      "vistasPorHora": 16151
+      "vistas": 1213514,
+      "vistasPorHora": 16029
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "How Skydiving Changed Will Smith's Life!",
       "publicado": "2026-11-17T17:00:07.000Z",
-      "vistas": 2248167,
-      "vistasPorHora": 13018
+      "vistas": 2253114,
+      "vistasPorHora": 12970
     },
     {
       "canal": "The Why Files",
       "idioma": "en",
       "titulo": "The Basement: Close Encounters Compilation | Abductions, Missing Time & Contact",
       "publicado": "2026-11-23T18:00:10.000Z",
-      "vistas": 335269,
-      "vistasPorHora": 12103
+      "vistas": 339067,
+      "vistasPorHora": 11809
     },
     {
       "canal": "The Why Files",
       "idioma": "en",
       "titulo": "America Is Hiding Something Underground",
       "publicado": "2026-11-18T18:00:14.000Z",
-      "vistas": 1399063,
-      "vistasPorHora": 9472
+      "vistas": 1400899,
+      "vistasPorHora": 9420
     }
   ],
   "formula": {
-    "formula": "Pregunta intrigante o afirmación impactante + elemento misterioso o prohibido + pista de revelación",
+    "formula": "Pregunta intrigante + elemento misterioso o inesperado + pista de revelación impactante",
     "ganchos": [
-      "¿Qué [evento/objeto] está ocultando [entidad/país] y por qué nadie habla de ello?",
-      "Descubre el [fenómeno] que [persona famosa] nunca quiso que vieras",
-      "La verdad detrás de [situación] que cambiará todo lo que creías saber"
+      "¿Qué [evento/objeto] está ocultando [entidad/ubicación] y por qué nadie lo cuenta?",
+      "Descubre el [secreto/plan] que [persona o grupo] nunca quiso que supieras",
+      "La verdad detrás de [situación] que cambiará tu visión de [tema]"
     ],
     "evitar": [
       "Títulos demasiado genéricos sin una promesa clara de misterio",
-      "Uso excesivo de palabras de relleno que diluyen el gancho principal"
+      "Uso excesivo de palabras de relleno que diluyen la tensión inicial"
     ]
   }
 }

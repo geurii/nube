@@ -1,11 +1,35 @@
 {
-  "actualizado": "2026-11-24T22:44:40.591Z",
+  "actualizado": "2026-11-24T22:49:56.825Z",
   "totales": {
     "aprobados": 16,
-    "rechazados": 86,
+    "rechazados": 89,
     "errores": 20
   },
   "historial": [
+    {
+      "fecha": "2026-11-24T22:49:56.823Z",
+      "tema": "1958 Lituya Bay earthquake and megatsunami",
+      "formato": "largo",
+      "resultado": "rechazado",
+      "intentos": 4,
+      "detalle": "El MATERIAL menciona que el terremoto fue de 7.8 en la escala de momento, no 8.3 Mw."
+    },
+    {
+      "fecha": "2026-11-24T22:47:10.427Z",
+      "tema": "1958 Lituya Bay earthquake and megatsunami",
+      "formato": "largo",
+      "resultado": "rechazado",
+      "intentos": 4,
+      "detalle": "El MATERIAL menciona que la ola alcanzó 524 metros, pero no especifica que 'escaló una montaña'."
+    },
+    {
+      "fecha": "2026-11-24T22:44:54.764Z",
+      "tema": "1958 Lituya Bay earthquake and megatsunami",
+      "formato": "largo",
+      "resultado": "rechazado",
+      "intentos": 4,
+      "detalle": "El MATERIAL menciona que el terremoto tuvo una magnitud de 8.3 Mw, no 7.8. Además, la fuente indica que la magnitud de 7.8 se refiere a la magnitud de momento ("
+    },
     {
       "fecha": "2026-11-24T22:36:17.098Z",
       "tema": "1958 Lituya Bay earthquake and megatsunami",
@@ -141,37 +165,13 @@
       "resultado": "error",
       "intentos": 0,
       "detalle": "No se encontró un tema nuevo tras agotar las propuestas editoriales."
-    },
-    {
-      "fecha": "2026-11-24T17:33:57.302Z",
-      "tema": "The phantom time hypothesis",
-      "formato": "short",
-      "resultado": "aprobado",
-      "intentos": 3,
-      "detalle": "60 palabras, 5 escenas."
-    },
-    {
-      "fecha": "2026-11-24T17:10:04.413Z",
-      "tema": "The Green Children of Woolpit",
-      "formato": "short",
-      "resultado": "rechazado",
-      "intentos": 3,
-      "detalle": "No se generaron imágenes específicas para las escenas: Los pintores no generaron pixel art para las escenas: 0, 1, 2, 3, 4. No se sustituirán por fotos.. No se "
-    },
-    {
-      "fecha": "2026-11-24T16:48:25.247Z",
-      "tema": "Sabías que el cráter de la Laguna de los Cráteres en México oculta una extraña capa de gases que se encienden sin chispa",
-      "formato": "short",
-      "resultado": "error",
-      "intentos": 0,
-      "detalle": "No se recuperó una fuente consultable para \"Sabías que el cráter de la Laguna de los Cráteres en México oculta una extraña capa de gases que se encienden sin ch"
     }
   ],
   "agentes": {
     "Directora de contenido": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "PLAN DEL CICLO: Crear y lanzar la serie de 3 videos sobre el megatsunami de Lituya Bay 1958, con títulos tipo ‘X cosas que…’ y revelación entre 65‑75 %: Equipo de guion y edición: Alcanzar 200 000 vistas acumuladas y generar 1 000 USD de ingresos publicita · Desarrollar miniaturas A/B con colores contrastantes y te"
+      "actividad": "pensando",
+      "tarea": "Necesita revisión: el guion de \"1958 Lituya Bay earthquake and megatsunami\" no pasó la verificación. Aprobados: 16. Rechazados: 89. Con error: 20. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. JEFA: Un guion rechazado no se publica. Tienen 3 h para entregar algo que pase."
     },
     "Investigador de temas": {
       "estado": "trabajando",
@@ -185,8 +185,8 @@
     },
     "Verificador de datos": {
       "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Investigador de temas). Entregó: 5 temas candidatos"
+      "actividad": "leyendo",
+      "tarea": "Rechazó \"1958 Lituya Bay earthquake and megatsunami\": El MATERIAL menciona que el terremoto fue de 7.8 en la escala de momento, no 8.3 Mw. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Editor de guion": {
       "estado": "trabajando",
@@ -261,12 +261,12 @@
     "Jefa de calidad": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Frenó \"1958 Lituya Bay earthquake and megatsunami\": La revelación cae al 84.4 % (146 de 173 palabras antes de ella) y debe caer entre 55 % y 80 %; apunta a 65 %–72 % contando todas las escenas, incluida la revelación y el cierre. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "Frenó \"1958 Lituya Bay earthquake and megatsunami\": El MATERIAL menciona que el terremoto fue de 7.8 en la escala de momento, no 8.3 Mw. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Cazador de fórmulas": {
       "estado": "libre",
       "actividad": "leyendo",
-      "tarea": "Revisó 133 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (25044 vistas/hora). Fórmula: Pregunta intrigante o afirmación impactante + elemento misterioso o prohibido + pista de revelación ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 20 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "Revisó 133 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (24896 vistas/hora). Fórmula: Pregunta intrigante + elemento misterioso o inesperado + pista de revelación impactante ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 20 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Vigía de tendencias": {
       "estado": "libre",
@@ -296,7 +296,7 @@
     "Auditor de normas": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Encontró incumplimientos: La revelación cae al 84.4 % (146 de 173 palabras antes de ella) y debe caer entre 55 % y 80 %; apunta a 65 %–72 % contando todas las escenas, incluida la revelación y el cierre. | El MATERIAL no menciona que la ola 'golpeó Alaska', sino que se generó en la bahía Lituya, al noreste del golfo de Alaska. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "tarea": "Encontró incumplimientos: El MATERIAL menciona que el terremoto fue de 7.8 en la escala de momento, no 8.3 Mw. | El MATERIAL no menciona testimonios de testigos sobre el estruendo o la pared de agua. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Revisor de nombres": {
       "estado": "libre",
@@ -320,7 +320,7 @@
     }
   },
   "jefa": {
-    "mensaje": "Necesita revisión: el guion de \"1958 Lituya Bay earthquake and megatsunami\" no pasó la verificación. Aprobados: 16. Rechazados: 86. Con error: 20. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. JEFA: Un guion rechazado no se publica. Tienen 3 h para entregar algo que pase.",
+    "mensaje": "Necesita revisión: el guion de \"1958 Lituya Bay earthquake and megatsunami\" no pasó la verificación. Aprobados: 16. Rechazados: 89. Con error: 20. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. JEFA: Un guion rechazado no se publica. Tienen 3 h para entregar algo que pase.",
     "horasParaProximoCiclo": 3
   }
 }
