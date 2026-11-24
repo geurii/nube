@@ -1,5 +1,41 @@
 [
   {
+    "id": "mwuvz3fv4ija",
+    "fecha": "2026-11-24T16:05:35.659Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: ¿Qué oculta el misterioso “Círculo de los Cuatro” de piedra en el desierto de Gobi?",
+    "texto": "El Verificador no aprobó \"¿Qué oculta el misterioso “Círculo de los Cuatro” de piedra en el desierto de Gobi?\" tras 4 intentos: El panel de 8 espectadores lo rechazó (3 de 8 aprobaron el guion, 8 pasaron los primeros 3 segundos, 1 lo compartirían. Retención estimada: 87% (mínimo 55%).).  Aprobados: 12. Rechazados: 66. Con error: 14. No se publica. Próximo ciclo en 10 h."
+  },
+  {
+    "id": "mwuvwsobeuoe",
+    "fecha": "2026-11-24T16:03:48.395Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Sabías que la ciudad subterránea de Derinkuyu ocultó a 20 000 personas durante la guerra?",
+    "texto": "El Verificador no aprobó \"Sabías que la ciudad subterránea de Derinkuyu ocultó a 20 000 personas durante la guerra?\" tras 4 intentos: Atribuye hechos y lugares al mundo real sin aclarar que es ficción. Aprobados: 12. Rechazados: 65. Con error: 14. No se publica. Próximo ciclo en 10 h."
+  },
+  {
+    "id": "mwuvugv9aux3",
+    "fecha": "2026-11-24T16:01:59.781Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: ¿Por qué el lago Natron se vuelve rojo y mata a los animales que se acercan?",
+    "texto": "El Verificador no aprobó \"¿Por qué el lago Natron se vuelve rojo y mata a los animales que se acercan?\" tras 4 intentos: El gancho inicial debe tener 14 palabras o menos para formato short. Aprobados: 12. Rechazados: 64. Con error: 14. No se publica. Próximo ciclo en 10 h."
+  },
+  {
+    "id": "mwuvsbs5lpo4",
+    "fecha": "2026-11-24T16:00:19.877Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título que plantea una pregunta intrigante o una afirmación impactante + elemento de misterio o dato sorprendente + referencia a un caso/objeto específico El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (25909 vistas/hora)."
+  },
+  {
     "id": "mwuuwu3a9umj",
     "fecha": "2026-11-24T15:35:50.614Z",
     "canal": "lqns",
@@ -675,41 +711,5 @@
     "tipo": "alerta",
     "titulo": "Guion rechazado: The Voynich manuscript",
     "texto": "El Verificador no aprobó \"The Voynich manuscript\" tras 4 intentos: El material indica que el manuscrito tiene 'alrededor de 240 páginas', no exactamente 240, y no especifica que el texto esté en un 'idioma', sino en un 'script  Aprobados: 11. Rechazados: 24. Con error: 8. No se publica. Próximo ciclo en 10 h."
-  },
-  {
-    "id": "mwspulryfqv3",
-    "fecha": "2026-11-23T03:38:36.094Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: The Voynich manuscript",
-    "texto": "El Verificador no aprobó \"The Voynich manuscript\" tras 4 intentos: El número exacto de páginas no es 240, sino alrededor de 240, y el período de 600 años no está respaldado por las fechas proporcionadas en el material (1404-143 Aprobados: 11. Rechazados: 23. Con error: 8. No se publica. Próximo ciclo en 10 h."
-  },
-  {
-    "id": "mwspsq5h60mh",
-    "fecha": "2026-11-23T03:37:08.453Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante o afirmación impactante + elemento misterioso/extraño + pista de revelación o consecuencia El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (32767 vistas/hora)."
-  },
-  {
-    "id": "mwspa3jeg2ap",
-    "fecha": "2026-11-23T03:22:39.338Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: Great Fire of London",
-    "texto": "El Verificador no aprobó \"Great Fire of London\" tras 4 intentos: La revelación cae al 58 % (133 de 230 palabras antes de ella) y debe caer entre 65 % y 75 %: añade historia antes de la revelación o acórtala. Aprobados: 11. Rechazados: 22. Con error: 8. No se publica. Próximo ciclo en 11 h."
-  },
-  {
-    "id": "mwsp6usypppp",
-    "fecha": "2026-11-23T03:20:08.050Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: Sea of Azov",
-    "texto": "El Verificador no aprobó \"Sea of Azov\" tras 4 intentos: La primera frase debe empezar con \"Sabías que\". Aprobados: 11. Rechazados: 21. Con error: 8. No se publica. Próximo ciclo en 11 h."
   }
 ]

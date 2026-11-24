@@ -1,0 +1,63 @@
+{
+  "titulo": "🕳️ Derinkuyu: ¿Cómo 20.000 personas sobrevivieron bajo tierra?",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-sabias-que-la-ciudad-subterranea-de-derinkuyu-oculto-a-20-000-personas-durante-la-guerra.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T16:03:48.341Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿¿Cómo caben 20.000 personas bajo tierra sin ser…?",
+  "publicacion": {
+    "titulo": "🕳️ Derinkuyu: ¿Cómo 20.000 personas sobrevivieron bajo tierra?",
+    "descripcion": "Sumérgete en un relato ficticio sobre una ciudad bajo tierra. ¿Podría haber albergado a miles en una guerra imaginaria?\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: \n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#Derinkuyu #Misterio #Refugio #Subterranea #Personas"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 4,
+    "critica": "El gancho es confuso y no relaciona el tema. La historia carece de datos reales y ritmo. La revelación llega tarde y sin impacto."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Cómo caben 20000 personas bajo tierra sin ser descubiertas?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Derinkuyu, una ciudad subterránea de 18 pisos, fue un refugio real en Capadocia, Turquía.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Con túneles, habitaciones y hasta establos, ¿cómo se ventilaba y alimentaba a tantos?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Sistemas de ventilación verticales y bodegas de alimentos permitieron su supervivencia durante siglos.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Cómo lo lograron sin tecnología moderna? Sígueme para descubrir más misterios.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}
