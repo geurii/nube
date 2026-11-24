@@ -29,7 +29,7 @@ if (validarGancho(hook16, 'short').valido || !validarGancho(hook16, 'largo').val
 const escena = (tipo, texto, n) => ({tipo, texto: Array.from({length:n}, (_,i)=>`palabra${i}`).join(' ')});
 const ratio72 = [escena('hook','',20), escena('historia','',50), escena('revelacion','',15), escena('veredicto','',15)];
 const ratio79 = [escena('hook','',40), escena('historia','',39), escena('revelacion','',10), escena('veredicto','',11)];
-const ratio751 = [escena('hook','',60), escena('revelacion','',1), escena('veredicto','',19)];
+const ratio751 = [escena('hook','',61), escena('revelacion','',1), escena('veredicto','',19)];
 if (!validarRevelacion(ratio72).valido) throw new Error('Debe aprobar una revelación ubicada al 70 %.');
 if (validarRevelacion(ratio79).valido) throw new Error('Debe rechazar una revelación ubicada al 79 %.');
 if (validarRevelacion(ratio751).valido) throw new Error('Debe rechazar 75.1 % aunque redondee a 75 %.');
