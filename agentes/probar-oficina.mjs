@@ -22,7 +22,7 @@ for (const c of ['lqns', 'demo']) {
 process.env.GROQ_API_KEY = 'prueba';
 process.env.FORMATO = 'short';
 
-const CTA_LQNS = base.cta;
+const CTA_LQNS = '¿Qué explicación te convence sobre "Bloop"? Sígueme para descubrir más misterios.';
 const {validarGancho, validarRevelacion} = await import(pathToFileURL(path.join(aqui, 'reglas-guion.mjs')).href);
 const hook16 = 'El barco desapareció y nadie pudo explicar qué ocurrió aquella noche en medio del océano Atlántico.';
 if (validarGancho(hook16, 'short').valido || !validarGancho(hook16, 'largo').valido) throw new Error('La regla del gancho debe permitir 24 palabras en largo y mantener 14 en short.');
@@ -33,7 +33,7 @@ const ratio751 = [escena('hook','',61), escena('revelacion','',1), escena('vered
 if (!validarRevelacion(ratio72).valido) throw new Error('Debe aprobar una revelación ubicada al 70 %.');
 if (validarRevelacion(ratio79).valido) throw new Error('Debe rechazar una revelación ubicada al 79 %.');
 if (validarRevelacion(ratio751).valido) throw new Error('Debe rechazar 75.3 % aunque redondee a 75 %.');
-const CTA_DEMO = 'Suscríbete y cuéntale a un amigo.';
+const CTA_DEMO = CTA_LQNS;
 const hacer = (cta) => [
   {tipo: 'hook', texto: 'El oceano registro un sonido imposible en 1997.'},
   {tipo: 'historia', texto: 'Lo registraron micrófonos submarinos que la agencia de los océanos de Estados Unidos tenía repartidos por el mar para escuchar el fondo del agua, y duró un buen rato.'},
