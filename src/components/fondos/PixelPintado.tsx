@@ -36,9 +36,15 @@ const Lienzo: React.FC<{id: string}> = ({id}) => {
         if (!j || !Array.isArray(j.capas) || j.capas.length < 3) throw new Error('Cuadro pixel art inválido: ' + id);
         const esc = j as EscenaPintada;
         const capaSinObjeto = esc.capas.some((cap) => CAPAS_PROHIBIDAS.has(String(cap?.t ?? '')));
-        const protagonista = esc.capas.some((cap) => OBJETOS_NARRATIVOS.has(String(cap?.t ?? '')));
+        const protagonista = esc.capas.some((cap) => {
+          const tipo = String(cap?.t ?? '');
+          if (!OBJETOS_NARRATIVOS.has(tipo)) return false;
+          if (tipo === 'bosque') return Number(cap?.n ?? 0) >= 6;
+          const medidas = ['w','h','r','alto'].map((k) => Number(cap?.[k])).filter(Number.isFinite);
+          return Math.max(0, ...medidas) >= 0.08;
+        });
         if (capaSinObjeto || !protagonista) {
-          throw new Error('Cuadro rechazado: contiene geometría suelta o no tiene un objeto protagonista reconocible: ' + id);
+          throw new Error('Cuadro rechazado: contiene geometría suelta o no tiene un objeto protagonista reconocible y visible: ' + id);
         }
         // fotos de referencia: se cargan y se leen como píxeles antes de dibujar (si una falla, la escena se pinta sin ella)
         const pedidas: {clave: string; ruta: string}[] = [];
