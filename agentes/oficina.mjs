@@ -198,7 +198,7 @@ const investigar = async () => {
     if (p) fuentes.push({idioma: lang, titulo: p.title, url: p.fullurl, texto: limpiarMaterial(p.extract).slice(0, FORMATO === 'largo' ? 3500 : 4500)});
   }
   // La web general aporta el material de verificación; Wikipedia queda solo como contexto y nunca como prueba
-  const web = await investigarEnLaWeb(TEMA, {maxPorFuente: FORMATO === 'largo' ? 3 : 2});
+  const web = await investigarEnLaWeb(TEMA, {maxPorFuente: FORMATO === 'largo' ? 3 : 2, minimoDominios: FORMATO === 'largo' ? 3 : 0});
   return [...web, ...fuentes.map((f) => ({...f, apoyo: true, tipo: 'enciclopedia_opcional'}))];
 };
 
