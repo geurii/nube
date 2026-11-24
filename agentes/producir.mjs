@@ -88,4 +88,5 @@ marcar(canal, {
 notificar(canal, 'listo', `Video renderizado: ${g.titulo}`, `Se renderizó "${g.titulo}" para ${nombreDe(canal)} (${mb} MB). Sigue en cola de publicación; este aviso NO significa que ya esté publicado.`);
 salida('id', id);
 salida('canal', canal);
+salida('formato', g.formato);
 console.log(`Producción terminada: ${mp4} (${mb} MB)`);
