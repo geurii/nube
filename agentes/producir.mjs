@@ -37,7 +37,8 @@ if (fs.existsSync(path.join('agentes', 'PAUSA'))) {
 }
 /** "the-bloop" y "bloop" son el mismo tema: no se produce dos veces. */
 const claveTema = (x) => String(x).toLowerCase().replace(/^the[-_ ]+/, '').replace(/[^a-z0-9]+/g, '');
-const pendientes = fs.readdirSync(RAIZ, {withFileTypes: true})
+const secuencia = leer(path.join('agentes', 'secuencia-largo-short.json'), {activo: false});
+const colaCompleta = fs.readdirSync(RAIZ, {withFileTypes: true})
   .filter((d) => d.isDirectory() && d.name !== 'pedidos')
   .flatMap((d) => {
     const producidos = leer(path.join(RAIZ, d.name, 'producidos.json'), []);
@@ -46,8 +47,15 @@ const pendientes = fs.readdirSync(RAIZ, {withFileTypes: true})
       .map((f) => ({canal: d.name, slug: f.replace(/^guion-|\.json$/g, ''), g: leer(path.join(RAIZ, d.name, f), null), t: fs.statSync(path.join(RAIZ, d.name, f)).mtimeMs, producidos}))
       .filter((x) => x.g && x.g.estado === 'aprobado' && !x.producidos.some((p) => claveTema(p) === claveTema(x.slug)));
   })
-  // por fecha de creación del guion (en GitHub Actions la fecha del archivo es la del checkout y no sirve para ordenar)
   .sort((a, b) => (Date.parse(a.g.creado) || a.t) - (Date.parse(b.g.creado) || b.t));
+let pendientes = colaCompleta;
+if (secuencia.activo && secuencia.fase === 'largo') {
+  pendientes = colaCompleta.filter((x) => x.g.formato === 'largo').sort((a, b) => (Date.parse(b.g.creado) || b.t) - (Date.parse(a.g.creado) || a.t));
+} else if (secuencia.activo && secuencia.fase === 'short-encolado') {
+  const desde = Date.parse(secuencia.fechaLargoPublicado) || 0;
+  pendientes = colaCompleta.filter((x) => x.g.formato === 'short' && (Date.parse(x.g.creado) || x.t) >= desde)
+    .sort((a, b) => (Date.parse(b.g.creado) || b.t) - (Date.parse(a.g.creado) || a.t));
+}
 
 if (!pendientes.length) {
   console.log('No hay guiones aprobados sin producir. Nada que hacer.');
