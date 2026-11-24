@@ -238,11 +238,7 @@ export const principal = async () => {
   for (const d of destinos({largo, cfg: cfgCanal, env: process.env})) {
     const registro = leer(path.join(dir, d.archivoRegistro), {total: 0, posts: [], archivos: []});
     if (d.tipo !== 'buffer' && !apiKey) { console.log(`${d.nombre}: se omite (falta WINDSOR_API_KEY).`); continue; }
-    if (d.tipo === 'buffer' && d.cuenta) { // TikTok: cada video llena un día (un video por día en el calendario de Buffer)
-      const porDia = Math.max(1, Number(process.env.TIKTOK_POR_DIA || cfgCanal.tiktok?.porDia || 1));
-      const recientes = registro.posts.filter((p) => Date.now() - Date.parse(p.fecha) < 22 * 3600 * 1000).length;
-      if (recientes >= porDia) { console.log(`TikTok: ya hay ${recientes} video(s) en el calendario de las últimas 22 horas (un video por día). Este no se envía a TikTok.`); continue; }
-    }
+    // TikTok: nunca se descarta por tener publicaciones programadas. Buffer añade cada video al siguiente espacio libre de la cola.
     if (!d.cuenta) { console.log(`${d.nombre}: se omite (no hay cuenta conectada en la configuración).`); continue; }
     if (registro.posts.some((p) => p.id === ID)) { console.log(`${d.nombre}: este video ya se publicó. No se repite.`); continue; }
     pendientes.push({...d, registro});
