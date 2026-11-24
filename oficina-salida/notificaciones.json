@@ -1,5 +1,41 @@
 [
   {
+    "id": "mwuw86z0e0yv",
+    "fecha": "2026-11-24T16:12:40.140Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Tema descartado: The Great Moon Hoax",
+    "texto": "Tema descartado: The Great Moon Hoax. No se pudo recuperar material suficiente en esta ronda. No se afirma que el tema sea falso; esta ronda no recuperó material consultable suficiente. Aprobados: 13. Rechazados: 69. Con error: 14. No se publica. Próximo ciclo en 9 h."
+  },
+  {
+    "id": "mwuw866lhrj5",
+    "fecha": "2026-11-24T16:12:39.117Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Tema descartado: The Great Moon Hoax",
+    "texto": "Tema descartado: The Great Moon Hoax. No se pudo recuperar material suficiente en esta ronda. No se afirma que el tema sea falso; esta ronda no recuperó material consultable suficiente. Aprobados: 13. Rechazados: 68. Con error: 14. No se publica. Próximo ciclo en 9 h."
+  },
+  {
+    "id": "mwuw85ebatvj",
+    "fecha": "2026-11-24T16:12:38.099Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Tema descartado: The Great Moon Hoax",
+    "texto": "Tema descartado: The Great Moon Hoax. No se pudo recuperar material suficiente en esta ronda. No se afirma que el tema sea falso; esta ronda no recuperó material consultable suficiente. Aprobados: 13. Rechazados: 67. Con error: 14. No se publica. Próximo ciclo en 9 h."
+  },
+  {
+    "id": "mwuw84hk0du9",
+    "fecha": "2026-11-24T16:12:36.920Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título con pregunta intrigante o afirmación impactante + elemento misterioso o inesperado + pista de contenido (ej. número, lugar, objeto) que genera curiosidad inmediata El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (25864 vistas/hora)."
+  },
+  {
     "id": "mwuw65q0bhx3",
     "fecha": "2026-11-24T16:11:05.208Z",
     "canal": "lqns",
@@ -675,41 +711,5 @@
     "tipo": "reporte",
     "titulo": "Fórmula del momento",
     "texto": "Lo que hoy funciona para Lo Que No Sabías: Título con pregunta intrigante o afirmación impactante + referencia a un misterio/evento desconocido + elemento de sorpresa o promesa de revelación El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (28111 vistas/hora)."
-  },
-  {
-    "id": "mwtx7o6h9e7q",
-    "fecha": "2026-11-23T23:52:29.225Z",
-    "canal": "lqns",
-    "canalNombre": "Vigilante",
-    "tipo": "alerta",
-    "titulo": "Falló \"Oficina\" en GitHub",
-    "texto": "2 corrida(s) fallida(s) en 24 h; la última: https://github.com/geurii/nube/actions/runs/45285190570"
-  },
-  {
-    "id": "mwtx7o6fnie6",
-    "fecha": "2026-11-23T23:52:29.223Z",
-    "canal": "lqns",
-    "canalNombre": "Vigilante",
-    "tipo": "reporte",
-    "titulo": "Resumen del día",
-    "texto": "Últimas 24 h: 0 video(s) en YouTube, 0 en Facebook, 0 en Instagram, 0 en TikTok. Minutos de GitHub: 1292 de 2000. Pendiente: Falló \"Oficina\" en GitHub"
-  },
-  {
-    "id": "mwsqp6uhe4nw",
-    "fecha": "2026-11-23T04:02:23.081Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: Uruguayan Air Force Flight 571",
-    "texto": "El Verificador no aprobó \"Uruguayan Air Force Flight 571\" tras 4 intentos: La primera frase debe empezar con \"Sabías que\". Aprobados: 11. Rechazados: 27. Con error: 8. No se publica. Próximo ciclo en 10 h."
-  },
-  {
-    "id": "mwsqml4fvfos",
-    "fecha": "2026-11-23T04:00:21.615Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: Telstar",
-    "texto": "El Verificador no aprobó \"Telstar\" tras 4 intentos: La primera frase debe empezar con \"Sabías que\". Aprobados: 11. Rechazados: 26. Con error: 8. No se publica. Próximo ciclo en 10 h."
   }
 ]

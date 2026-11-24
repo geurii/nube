@@ -1,7 +1,20 @@
 {
-  "fecha": "2026-11-24T16:08:15.950Z",
-  "tema": "Sabías que el cráter de la Isla de Pascua oculta una cámara subterránea nunca explorada?",
-  "bloque": "INTERNET (datos de hoy; úsalos solo como apoyo para contrastar y aprender de lo que pega; no copies contenido ni inventes más allá de ellos): Canales chicos que están explotando en el nicho: \"Camera Thrown Into Mel's Hole, What They See Terrifies The Whole World\" (899,862 vistas en 8 días, 124 veces lo normal del canal; canal de 2,350 suscriptores) | \"Reborn at 18, She'd Never Chose The Cold Lord Again, Unexpected He Insists Win Her Back... #drama",
+  "fecha": "2026-11-24T16:12:40.136Z",
+  "tema": "The Great Moon Hoax",
+  "bloque": "INTERNET (datos de hoy; úsalos solo como apoyo para contrastar y aprender de lo que pega; no copies contenido ni inventes más allá de ellos): Videos de YouTube con más vistas este mes sobre el tema: \"The Newspaper That Fooled America Into Believing in Moon People\" (10,921 vistas) | \"10 Strange Historical Events That Sound Fake: From a Dead Pope to Bat-Men on the Moon\" (5,120 vistas). Canales chicos que están explotando en el nicho: \"Camera Thrown Into Mel's Hole, What They See Terrifies The Whole World\" (899,862 vistas en 8 días, 124 veces lo normal del canal; canal de 2,350 suscriptores) | \"Reborn at 18, She'd Never Chose The Cold Lord Again, Unexpected He Insists Win Her Back... #drama",
   "resumenes": 0,
-  "titulos": []
+  "titulos": [
+    {
+      "titulo": "The Newspaper That Fooled America Into Believing in Moon People",
+      "vistas": 10921,
+      "dias": 14,
+      "canal": "History Decoded in 60 seconds"
+    },
+    {
+      "titulo": "10 Strange Historical Events That Sound Fake: From a Dead Pope to Bat-Men on the Moon",
+      "vistas": 5120,
+      "dias": 14,
+      "canal": "Mr.Ravenhurst"
+    }
+  ]
 }
