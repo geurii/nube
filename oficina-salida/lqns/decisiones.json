@@ -1,6 +1,13 @@
 {
   "decisiones": [
     {
+      "id": "i62pdd8",
+      "texto": "Sabías que <sustantivo> pagó <monto> por <objeto>",
+      "categoria": "Título",
+      "decision": "si",
+      "fecha": "2026-11-24T22:51:23.967Z"
+    },
+    {
       "id": "ikhnvkc",
       "texto": "¿Qué <verbo> realmente <sustantivo>?",
       "categoria": "Título",
