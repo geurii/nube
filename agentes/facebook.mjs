@@ -227,6 +227,7 @@ export const principal = async () => {
   const guion = leer(path.join('guion', 'serie', `${ID}.json`), null);
   if (!guion) { console.log('Redes: no encuentro el guion del video. Se omite.'); return {omitido: 'sin guion'}; }
   const largo = guion.formato === 'largo';
+  if (largo && !bufferKey) { console.error('Falta BUFFER_API_KEY: no se puede enviar el largo a TikTok.'); process.exitCode = 1; return {omitido:'sin Buffer'}; }
   // Los largos se envían exclusivamente a TikTok por Buffer; Facebook/Instagram reciben solo Shorts/Reels.
   const dir = path.join('oficina-salida', CANAL);
   fs.mkdirSync(dir, {recursive: true});
@@ -244,7 +245,7 @@ export const principal = async () => {
     if (registro.posts.some((p) => p.id === ID)) { console.log(`${d.nombre}: este video ya se publicó. No se repite.`); continue; }
     pendientes.push({...d, registro});
   }
-  if (!pendientes.length) return {omitido: 'nada pendiente'};
+  if (!pendientes.length) { if (largo) { console.error('No hay canal TikTok conectado en Buffer o el video ya fue enviado.'); process.exitCode = 1; } return {omitido: 'nada pendiente'}; }
 
   // cualquier fallo ANTES de publicar (sin MP4, no se pudo comprimir o subir la copia pública) avisa al teléfono: antes se omitía en silencio
   const alertar = (msg) => {
@@ -264,7 +265,7 @@ export const principal = async () => {
       try {
         const liviano = path.join('out', 'serie', `${ID}-subida.mp4`);
         execFileSync('ffmpeg', ['-y', '-i', completo, '-vf', 'scale=-2:1280:force_original_aspect_ratio=decrease,scale=trunc(iw/2)*2:trunc(ih/2)*2', '-c:v', 'libx264', '-crf', '27', '-preset', 'veryfast', '-c:a', 'aac', '-b:a', '128k', '-movflags', '+faststart', liviano], {stdio: 'ignore', timeout: 900000});
-        archivo = elegirArchivo(ID);
+        archivo = elegirArchivo(ID, path.join('out', 'serie'), largo ? 220 : MAX_COMPLETO_MB);
       } catch (e) { alertar(`no pude crear la copia liviana del video (${String(e.message ?? e).slice(0, 100)}).`); return {omitido: 'sin copia liviana'}; }
     }
   }
@@ -296,6 +297,7 @@ export const principal = async () => {
       if (fs.existsSync(reducido) && fs.statSync(reducido).size < fs.statSync(archivo).size) { console.log(`Redes: video reducido a ${(fs.statSync(reducido).size / 1048576).toFixed(1)} MB.`); archivo = reducido; }
     }
   } catch (e) { notaVideo = ' [no pude reducirlo: ' + String(e.message ?? e).slice(0, 80) + ']'; console.log('Redes: no pude reducir el video' + notaVideo + '; se intenta con el original.'); }
+  if (largo && fs.statSync(archivo).size > 220 * 1024 * 1024) { alertar('el MP4 largo supera 220 MB y no se pudo comprimir al tamaño seguro para el alojamiento temporal de Buffer.'); return {omitido:'largo demasiado pesado'}; }
   // con token de GitHub y repo público: se guarda ahí (permanente, últimos 15); si no, archivo temporal de 72 h sin ninguna clave
   let usaRepo = Boolean(token && repo);
   let pub;
