@@ -1,5 +1,13 @@
 [
   {
+    "id": "mwuwhi8xtd78",
+    "fecha": "2026-11-24T16:19:54.657Z",
+    "canal": "lqns",
+    "tipo": "alerta",
+    "titulo": "No se pudo publicar en las redes",
+    "texto": "\"🌋 ¿Qué secreto ancestral esconde el cráter de la Isla de Pascua?\": el repositorio público \"geurii/oficina-videos-legal\" no aceptó el video: no pude subir el video al repositorio público (401): { \"message\": \"Bad credentials\", \"documentation_url\": \"https://docs.github.com/rest\", \"s; y el "
+  },
+  {
     "fecha": "2026-11-24T16:19:34.148Z",
     "canal": "lqns",
     "tipo": "reporte",
@@ -700,14 +708,5 @@
     "tipo": "alerta",
     "titulo": "Guion rechazado: Antarctic Treaty System",
     "texto": "El Verificador no aprobó \"Antarctic Treaty System\" tras 4 intentos: El gancho inicial debe tener 14 palabras o menos. Aprobados: 11. Rechazados: 30. Con error: 8. No se publica. Próximo ciclo en 12 h."
-  },
-  {
-    "id": "mwu2iy1q00qf",
-    "fecha": "2026-11-24T02:21:13.310Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: Titanic",
-    "texto": "El Verificador no aprobó \"Titanic\" tras 4 intentos: El gancho inicial debe tener 14 palabras o menos. Aprobados: 11. Rechazados: 29. Con error: 8. No se publica. Próximo ciclo en 12 h."
   }
 ]
