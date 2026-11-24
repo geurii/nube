@@ -1,0 +1,106 @@
+{
+  "titulo": "🌫️ La Gran Niebla de Londres: ¿Un Asesino Invisible?",
+  "formato": "largo",
+  "orientacion": "horizontal",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-great-smog-of-london.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T10:10:45.042Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿En 1952 una niebla mató a miles en Londres?",
+  "publicacion": {
+    "titulo": "🌫️ La Gran Niebla de Londres: ¿Un Asesino Invisible?",
+    "descripcion": "Descubre cómo una niebla tóxica se convirtió en el peor desastre ambiental de Reino Unido. Un evento que cambió leyes y concientizó al mundo sobre la contaminación.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Great_Smog_of_London\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#GranNieblaLondres #Historia #DesastreAmbiental #CleanAirAct #GreatSmogOfLondon"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El gancho es prometedor pero la revelación llega tarde y no sorprende lo suficiente. Ritmo irregular: detalles técnicos abrumadores en la mitad. El cierre es débil, no invita a compartir."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Sabías que en 1952 una niebla mató a miles en Londres? Una ciudad entera paralizada por un enemigo invisible.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Del 5 al 9 de diciembre de 1952, Londres se sumió en una oscuridad tóxica. Una combinación de frío extremo, un anticiclón y ausencia de viento creó una trampa mortal.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El smog, más denso que nunca, penetró hogares y pulmones. Llamado 'pea-souper', pero este era diferente: un cóctel letal de carbón, ácido y metales.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "1000 toneladas diarias de partículas de humo, 370 toneladas de dióxido de azufre... Las centrales eléctricas y el carbón doméstico eran los principales culpables.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "La visibilidad se desplomó. Trenes detenidos, teatros cerrados. Hasta los cines cancelaron funciones porque la pantalla era invisible.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Los hospitales se saturaron. 100000 personas enfermaron. Los médicos reportaron 4000 muertos, pero las cifras reales eran peores.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Investigaciones posteriores revelaron entre 10000 y 12000 víctimas. Un desastre que superaba cualquier 'pea-souper' anterior.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: Este evento no fue solo una tragedia, fue un punto de inflexión. Nació el Clean Air Act de 1956, cambiando cómo el mundo ve la contaminación.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Desde el siglo XIII Londres sufría smog, pero esto fue un despertar brutal. El diarista John Evelyn ya advertía en 1661 sobre el 'inconveniente del aire y el humo'.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "La Gran Niebla expuso la fragilidad humana ante la industria. ¿Podríamos ignorar las señales de nuevo?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Crees que hemos aprendido la lección? Comparte este video con un amigo que se preocupa por el planeta, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}
