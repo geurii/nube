@@ -23,10 +23,11 @@ const Lienzo: React.FC<{id: string}> = ({id}) => {
   useEffect(() => {
     document.fonts.load(`16px ${FUENTE_PIXEL}`).catch(() => undefined).then(() => setFuente(true));
     fetch(staticFile(`pintados/${id.replace(/[^a-z0-9-]/gi, '')}.json`))
-      .then((r) => (r.ok ? r.json() : VACIA))
-      .catch(() => VACIA)
+      .then((r) => { if (!r.ok) throw new Error('No existe el cuadro pixel art ' + id + ': HTTP ' + r.status); return r.json(); })
+      .catch((e) => { console.error('Fallo al cargar cuadro pixel art:', e); throw e; })
       .then(async (j) => {
-        const esc = j && Array.isArray(j.capas) ? (j as EscenaPintada) : VACIA;
+        if (!j || !Array.isArray(j.capas) || j.capas.length < 3) throw new Error('Cuadro pixel art inválido: ' + id);
+        const esc = j as EscenaPintada;
         // fotos de referencia: se cargan y se leen como píxeles antes de dibujar (si una falla, la escena se pinta sin ella)
         const pedidas: {clave: string; ruta: string}[] = [];
         for (const cap of esc.capas) {
