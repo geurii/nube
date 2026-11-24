@@ -134,9 +134,9 @@ const limpiar = (r, ids, slug, ya = {}) => {
     const i = Number(e.indice);
     if (!ids.includes(i)) continue;
     const planos = (Array.isArray(e.planos) ? e.planos : []).slice(0, 2).map(validarEscena).filter(Boolean);
-    if (planos.length) salida[i] = planos;
+    if (planos.length === 2 && JSON.stringify(planos[0]) !== JSON.stringify(planos[1])) salida[i] = planos;
   }
-  for (const i of ids) if (!salida[i] && ya[i]) salida[i] = ya[i]; // lo que el otro pintor no rehízo se conserva
+  for (const i of ids) if (!salida[i] && Array.isArray(ya[i]) && ya[i].length === 2 && JSON.stringify(ya[i][0]) !== JSON.stringify(ya[i][1])) salida[i] = ya[i]; // conservar solo dos cuadros distintos y completos
   return salida;
 };
 
