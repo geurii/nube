@@ -1,11 +1,19 @@
 {
-  "actualizado": "2026-11-24T13:25:19.102Z",
+  "actualizado": "2026-11-24T13:35:17.428Z",
   "totales": {
     "aprobados": 11,
     "rechazados": 56,
-    "errores": 12
+    "errores": 13
   },
   "historial": [
+    {
+      "fecha": "2026-11-24T13:35:17.210Z",
+      "tema": "(sin tema)",
+      "formato": "largo",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "No se encontraron dos fuentes institucionales independientes con contenido consultable para un tema nuevo. Se reintentará en otro ciclo."
+    },
     {
       "fecha": "2026-11-24T13:25:19.023Z",
       "tema": "(sin tema)",
@@ -157,14 +165,6 @@
       "resultado": "rechazado",
       "intentos": 0,
       "detalle": "Tema descartado (no se pudo cargar): DEATHS IN 2026"
-    },
-    {
-      "fecha": "2026-11-24T04:32:48.861Z",
-      "tema": "DEATHS IN 2026",
-      "formato": "largo",
-      "resultado": "rechazado",
-      "intentos": 0,
-      "detalle": "Tema descartado (no se pudo cargar): DEATHS IN 2026"
     }
   ],
   "agentes": {
@@ -266,7 +266,7 @@
     "Cazador de fórmulas": {
       "estado": "libre",
       "actividad": "leyendo",
-      "tarea": "Revisó 133 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (26407 vistas/hora). Fórmula: Título con pregunta intrigante o afirmación impactante + elemento misterioso o inesperado + pista de contenido ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "Revisó 133 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (26370 vistas/hora). Sin análisis de IA esta vez. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Vigía de tendencias": {
       "estado": "libre",

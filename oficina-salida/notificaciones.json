@@ -1,5 +1,14 @@
 [
   {
+    "id": "mwuqlsxftj4t",
+    "fecha": "2026-11-24T13:35:17.427Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "La oficina falló",
+    "texto": "No se encontraron dos fuentes institucionales independientes con contenido consultable para un tema nuevo. Se reintentará en otro ciclo. Aprobados: 11. Rechazados: 56. Con error: 13. Próximo ciclo en 1 h."
+  },
+  {
     "id": "mwuq8z993doj",
     "fecha": "2026-11-24T13:25:19.101Z",
     "canal": "lqns",
@@ -695,13 +704,5 @@
     "tipo": "alerta",
     "titulo": "No se pudo publicar en las redes",
     "texto": "\"⚡ 1884: El inventor que encendió Niágara con su motor AC\": sin repositorio público; y el servicio temporal bloqueó a GitHub (el servicio de archivos temporales no devolvió un enlace válido (500): 500)."
-  },
-  {
-    "id": "mws3wvdkque6",
-    "fecha": "2026-11-22T17:24:30.296Z",
-    "canal": "lqns",
-    "tipo": "alerta",
-    "titulo": "No se pudo publicar en las redes",
-    "texto": "\"🔊 El enigma del Bloop: el rugido del hielo\": no pude alojar el video para que las redes lo descarguen: el servicio de archivos temporales no devolvió un enlace válido (403): <!doctype html><html lang=\"en\"><meta charset=\"UTF-8\"><meta content=\"nofollow,noarchive,no"
   }
 ]

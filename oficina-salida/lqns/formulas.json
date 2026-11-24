@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-24T13:17:10.497Z",
+  "actualizado": "2026-11-24T13:28:31.032Z",
   "canalesLeidos": 9,
   "videosRevisados": 133,
   "mejores": [
@@ -8,52 +8,41 @@
       "idioma": "en",
       "titulo": "Why Is Antarctica Closed? The Operation Highjump Mystery",
       "publicado": "2026-11-20T01:00:08.000Z",
-      "vistas": 2859495,
-      "vistasPorHora": 26407
+      "vistas": 2860473,
+      "vistasPorHora": 26370
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "Always open your fan mail",
       "publicado": "2026-11-21T19:00:32.000Z",
-      "vistas": 1133163,
-      "vistasPorHora": 17097
+      "vistas": 1134705,
+      "vistasPorHora": 17072
     },
     {
       "canal": "The Why Files",
       "idioma": "en",
       "titulo": "The Basement: Close Encounters Compilation | Abductions, Missing Time & Contact",
       "publicado": "2026-11-23T18:00:10.000Z",
-      "vistas": 290378,
-      "vistasPorHora": 15059
+      "vistas": 291259,
+      "vistasPorHora": 14958
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "How Skydiving Changed Will Smith's Life!",
       "publicado": "2026-11-17T17:00:07.000Z",
-      "vistas": 2179955,
-      "vistasPorHora": 13269
+      "vistas": 2181348,
+      "vistasPorHora": 13263
     },
     {
       "canal": "The Why Files",
       "idioma": "en",
       "titulo": "America Is Hiding Something Underground",
       "publicado": "2026-11-18T18:00:14.000Z",
-      "vistas": 1383777,
-      "vistasPorHora": 9935
+      "vistas": 1383997,
+      "vistasPorHora": 9923
     }
   ],
-  "formula": {
-    "formula": "Título con pregunta intrigante o afirmación impactante + elemento misterioso o inesperado + pista de contenido (ej.: \"¿Por qué…? El misterio de…\")",
-    "ganchos": [
-      "¿Qué oculta [tema] que nadie se atreve a revelar?",
-      "Descubre el secreto detrás de [evento/objeto] que cambiará tu visión",
-      "La verdad prohibida sobre [situación] que los expertos no quieren que sepas"
-    ],
-    "evitar": [
-      "Títulos demasiado genéricos sin elemento de misterio o sorpresa",
-      "Uso excesivo de mayúsculas o emojis que distraen del gancho principal"
-    ]
-  }
+  "formula": null
 }
