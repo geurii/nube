@@ -49,6 +49,7 @@ const HISTORIAL = path.join(SALIDA, 'historial.json');
 const leerJson = (ruta, porDefecto) => { try { return JSON.parse(fs.readFileSync(ruta, 'utf8')); } catch { return porDefecto; } };
 // Normaliza variantes como "Bloop" y "The Bloop" para impedir que un tema ya tratado vuelva a entrar.
 const claveTema = (x) => String(x ?? '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/^the[\s_-]+/, '').replace(/[^a-z0-9]+/g, '');
+const esTemaBloop = (tema) => claveTema(tema).includes('bloop');
 const temaYaRegistrado = (tema) => {
   const tituloDe = (x) => typeof x === 'string' ? x : (x?.tema ?? x?.titulo ?? x?.title ?? x?.nombre ?? '');
   const vistos = [
@@ -59,7 +60,7 @@ const temaYaRegistrado = (tema) => {
   ].map(tituloDe).map(claveTema).filter((x) => x.length >= 4);
   const k = claveTema(tema);
   // Bloop ya fue producido: exclusión editorial permanente, incluso si el historial local se perdió.
-  if (k === 'bloop' && process.env.MODO_PRUEBA !== '1') return true;
+  if (esTemaBloop(tema) && process.env.MODO_PRUEBA !== '1') return true;
   const coincide = (v) => v === k || (k.length >= 6 && v.length >= 6 && (v.includes(k) || k.includes(v)));
   const guionesMismoTema = fs.readdirSync(SALIDA).filter((f) => /^guion-.+\.json$/.test(f)).map((f) => {
     const ruta = path.join(SALIDA, f);
@@ -352,7 +353,7 @@ const elegirTema = async (modelo) => {
   const yaHecho = (x) => {
     if (fueRechazada(x, CANAL_ID)) return true;
     // No volver a gastar ciclos ni avisos con Bloop/The Bloop: ya está producido.
-    if (claveTema(x) === 'bloop' && process.env.MODO_PRUEBA !== '1') return true;
+    if (esTemaBloop(x) && process.env.MODO_PRUEBA !== '1') return true;
     const k = clave(x);
     return k.length >= 4 && vistos.some((v) => v === k || (k.length >= 6 && v.length >= 6 && (v.includes(k) || k.includes(v))));
   };
@@ -697,6 +698,12 @@ try {
     const borrador = await pedirJson(modelo, guionista(material, problemas));
     let esc = normalizar(borrador.escenas);
     titulo = borrador.titulo ?? titulo;
+    if (process.env.MODO_PRUEBA !== '1' && (esTemaBloop(TEMA) || esTemaBloop(titulo))) {
+      problemas = [{frase: titulo, motivo: 'TEMA BLOQUEADO: Bloop/The Bloop ya fue producido. Se prohíbe regenerarlo, aprobarlo o publicarlo, incluso con títulos variantes.'}];
+      aprobado = false;
+      informe.push(`## Intento ${intento}: RECHAZADO`, '- Bloqueo editorial permanente de Bloop/The Bloop.', '');
+      continue;
+    }
     descripcion = borrador.descripcion ?? descripcion;
     hashtags = (Array.isArray(borrador.hashtags) ? borrador.hashtags : []).map((h) => String(h).replace(/\s+/g, '')).filter((h) => /^#\w+$/u.test(h) && !/^#(viral|fyp)$/i.test(h)).slice(0, 5);
     if (esc.length < 3) { problemas = [{frase: '', motivo: 'El guion salió demasiado corto: escribe al menos 5 escenas.'}]; informe.push(`## Intento ${intento}: RECHAZADO`, '- Guion demasiado corto.', ''); continue; }
@@ -762,6 +769,10 @@ try {
       if (mesa) { CTX.mesa = mesa; titulo = mesa.titulo; descripcion = mesa.descripcion; hashtags = mesa.hashtags; }
       else informe.push('(La Mesa de publicación no entregó algo válido: se usa lo del Guionista.)');
     } catch (e) { informe.push('(La Mesa de publicación falló: ' + e.message + '. Se usa lo del Guionista.)'); }
+  }
+  if (process.env.MODO_PRUEBA !== '1' && (esTemaBloop(TEMA) || esTemaBloop(titulo))) {
+    aprobado = false;
+    problemas.push({frase: titulo, motivo: 'BLOQUEO FINAL: Bloop/The Bloop está en la lista editorial de exclusión permanente.'});
   }
   // IMÁGENES DE CERO: fotos reales de internet por escena (pixeladas a pantalla completa) + los dos pintores añadiendo ambiente (agentes/visuales.mjs)
   if (aprobado && escenas.length) {
