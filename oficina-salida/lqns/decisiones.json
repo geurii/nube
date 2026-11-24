@@ -1,6 +1,20 @@
 {
   "decisiones": [
     {
+      "id": "ikhnvkc",
+      "texto": "¿Qué <verbo> realmente <sustantivo>?",
+      "categoria": "Título",
+      "decision": "si",
+      "fecha": "2026-11-24T22:51:20.918Z"
+    },
+    {
+      "id": "i1s90yl2",
+      "texto": "⚡ <año>: El <profesión> que <verbo> <objeto>",
+      "categoria": "Título",
+      "decision": "no",
+      "fecha": "2026-11-24T22:51:14.106Z"
+    },
+    {
       "id": "i1wfin0n",
       "texto": "1️⃣ Cambia el título a formato numérico y misterioso: por ejemplo, \"5 casos de zumbidos que nadie puede explicar (Parte 1/3)\" para cumplir con la regla de títulos con número y generar curiosidad inmediata. 2️⃣ Añade un",
       "categoria": "Mejora de guion",
