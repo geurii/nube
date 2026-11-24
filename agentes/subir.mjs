@@ -56,8 +56,8 @@ try {
   const duracion = Number(meta.format?.duration);
   const video = (meta.streams ?? []).find((x) => x.codec_type === 'video');
   if (!video || !Number.isFinite(duracion)) throw new Error('El MP4 no contiene metadatos de video válidos.');
-  if (guion.formato === 'short' && (duracion > 60 || video.height <= video.width)) throw new Error(`SUBIDA BLOQUEADA: Short debe ser vertical 9:16 y durar máximo 60 s; detectado ${video.width}x${video.height}, ${duracion.toFixed(1)} s.`);
-  if (guion.formato === 'largo' && (duracion < 480 || video.width <= video.height)) throw new Error(`SUBIDA BLOQUEADA: largo debe ser horizontal 16:9 y durar mínimo 8 minutos; detectado ${video.width}x${video.height}, ${duracion.toFixed(1)} s.`);
+  if (guion.formato === 'short' && (duracion > 60 || Math.abs(video.width / video.height - 9 / 16) > 0.01)) throw new Error(`SUBIDA BLOQUEADA: Short debe ser 9:16 vertical y durar máximo 60 s; detectado ${video.width}x${video.height}, ${duracion.toFixed(1)} s.`);
+  if (guion.formato === 'largo' && (duracion < 480 || Math.abs(video.width / video.height - 16 / 9) > 0.01)) throw new Error(`SUBIDA BLOQUEADA: largo debe ser 16:9 horizontal y durar mínimo 8 minutos; detectado ${video.width}x${video.height}, ${duracion.toFixed(1)} s.`);
   if (!['short', 'largo'].includes(guion.formato)) throw new Error(`Formato desconocido: ${guion.formato}`);
   const bytes = fs.readFileSync(archivo);
   const programado = proximoHorario(guion.formato);
