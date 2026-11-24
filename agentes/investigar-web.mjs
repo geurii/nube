@@ -54,7 +54,7 @@ const buscarDuckDuckGo = async (consulta, max = 6) => {
 // Buscador alternativo: DuckDuckGo puede limitar IPs de GitHub Actions (429/403).
 // Bing se consulta de forma independiente para que una caída del primero no agote la selección editorial.
 const buscarBing = async (consulta, max = 6) => {
-  const r = await fetch(\`https://www.bing.com/search?q=\${encodeURIComponent(consulta)}&count=10&setlang=es\`, {
+  const r = await fetch(`https://www.bing.com/search?q=${encodeURIComponent(consulta)}&count=10&setlang=es`, {
     headers: {'User-Agent': UA, 'Accept-Language': 'es,en;q=0.8'},
     signal: AbortSignal.timeout(25000),
   });
@@ -81,7 +81,7 @@ export const buscarEnLaWeb = async (consulta, max = 6) => {
       errores.push('sin resultados');
     } catch (e) { errores.push(String(e.message ?? e)); }
   }
-  throw new Error(\`Buscadores no disponibles: \${errores.join('; ')}\`);
+  throw new Error(`Buscadores no disponibles: ${errores.join('; ')}`);
 };
 
 const extraerPagina = (html) => {
