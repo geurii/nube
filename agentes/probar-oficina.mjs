@@ -24,6 +24,30 @@ process.env.FORMATO = 'short';
 
 const CTA_LQNS = '¿Qué explicación te convence sobre "Bloop"? Sígueme para descubrir más misterios.';
 const {validarGancho, validarRevelacion} = await import(pathToFileURL(path.join(aqui, 'reglas-guion.mjs')).href);
+const {validarEscena, tieneAnclaNarrativa} = await import(pathToFileURL(path.join(aqui, 'pintor.mjs')).href + '?anclas');
+const capa = (t, extra = {}) => ({t, ...extra});
+const cuadroSoloAdornos = validarEscena({cielo:['#101820','#26384a'],capas:[
+  capa('estrellas',{n:30}), capa('particulas',{n:50}), capa('rayos'), capa('niebla'),
+]});
+if (cuadroSoloAdornos !== null) throw new Error('El pintor aceptó efectos decorativos sin un objeto protagonista.');
+const cuadroBarco = validarEscena({cielo:['#101820','#26384a'],capas:[
+  capa('estrellas',{n:30}), capa('olas'), capa('barco',{x:0.5,y:0.6,w:0.4}),
+]});
+if (!cuadroBarco || tieneAnclaNarrativa(cuadroBarco, 'El sonido submarino sorprendió a los sensores')) {
+  throw new Error('El pintor debe rechazar un barco cuando la frase trata de un sonido submarino.');
+}
+const cuadroHidrofono = validarEscena({cielo:['#101820','#26384a'],capas:[
+  capa('estrellas',{n:30}), capa('particulas',{n:20}), capa('hidrofono',{x:0.5,y:0.6,w:0.2}),
+]});
+if (!cuadroHidrofono || !tieneAnclaNarrativa(cuadroHidrofono, 'El sonido submarino fue captado por un hidrofono'))) {
+  throw new Error('El pintor debe aprobar un hidrófono para una escena de sonido submarino.');
+}
+const cuadroVolcan = validarEscena({cielo:['#101820','#26384a'],capas:[
+  capa('estrellas',{n:30}), capa('niebla'), capa('volcan',{x:0.5,y:0.7,w:0.7}),
+]});
+if (!cuadroVolcan || !tieneAnclaNarrativa(cuadroVolcan, 'La erupcion del volcan cubrio el crater de lava'))) {
+  throw new Error('El pintor debe reconocer un volcán cuando la narración habla de una erupción.');
+}
 const hook16 = 'El barco desapareció y nadie pudo explicar qué ocurrió aquella noche en medio del océano Atlántico.';
 if (validarGancho(hook16, 'short').valido || !validarGancho(hook16, 'largo').valido) throw new Error('La regla del gancho debe permitir 24 palabras en largo y mantener 14 en short.');
 const escena = (tipo, texto, n) => ({tipo, texto: Array.from({length:n}, (_,i)=>`palabra${i}`).join(' ')});
