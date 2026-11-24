@@ -1,5 +1,14 @@
 [
   {
+    "id": "mwv4o735ug8w",
+    "fecha": "2026-11-24T20:09:03.713Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título con pregunta intrigante o afirmación impactante + elemento misterioso o inesperado + pista de contenido (ej.: \"¿Por qué…? El misterio de…\") El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (25265 vistas/hora)."
+  },
+  {
     "id": "mwv41g3ife6x",
     "fecha": "2026-11-24T19:51:22.302Z",
     "canal": "lqns",
@@ -693,14 +702,5 @@
     "tipo": "alerta",
     "titulo": "Guion rechazado: DEATHS IN 2026",
     "texto": "El Verificador no aprobó \"DEATHS IN 2026\" tras 0 intentos: Tema descartado (no se pudo cargar): DEATHS IN 2026 Aprobados: 11. Rechazados: 40. Con error: 9. No se publica. Próximo ciclo en 9 h."
-  },
-  {
-    "id": "mwu785mfbbxz",
-    "fecha": "2026-11-24T04:32:47.991Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante o afirmación impactante + elemento misterioso/extraño + pista de revelación o consecuencia El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (27809 vistas/hora)."
   }
 ]
