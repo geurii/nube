@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-23T03:15:50.886Z",
+  "fecha": "2026-11-24T02:17:17.519Z",
   "consultas": [
     "unsolved mystery explained",
     "true story shocking history",
@@ -10,233 +10,233 @@
     "lost ancient technology mystery",
     "weird history facts"
   ],
-  "canalesRevisados": 116,
-  "explotaron": 21,
+  "canalesRevisados": 117,
+  "explotaron": 25,
   "canales": [
+    {
+      "id": "UCDSFDAIei9m6J44qIDAZi4w",
+      "nombre": "Titan Discovery",
+      "suscriptores": 2280,
+      "videosDelCanal": 36,
+      "veces": 135,
+      "mejor": {
+        "id": "rW-eMVqecT8",
+        "titulo": "Camera Thrown Into Mel's Hole, What They See Terrifies The Whole World",
+        "vistas": 871373,
+        "hace": 7,
+        "url": "https://youtube.com/watch?v=rW-eMVqecT8"
+      },
+      "puntaje": 87.9
+    },
     {
       "id": "UC0dNXhS0VfG4-T0ehqGoXEg",
       "nombre": "Moon Romance Hub",
-      "suscriptores": 3010,
-      "videosDelCanal": 19,
-      "veces": 222,
+      "suscriptores": 3050,
+      "videosDelCanal": 20,
+      "veces": 226,
       "mejor": {
         "id": "zYzck48B4OI",
         "titulo": "Reborn at 18, She'd Never Chose The Cold Lord Again, Unexpected He Insists Win Her Back... #drama",
-        "vistas": 381933,
-        "hace": 21,
+        "vistas": 391850,
+        "hace": 22,
         "url": "https://youtube.com/watch?v=zYzck48B4OI"
       },
-      "puntaje": 41.62
-    },
-    {
-      "id": "UC5OMFzatX4soWmBQurT5e6g",
-      "nombre": "TomSmith",
-      "suscriptores": 8170,
-      "videosDelCanal": 12,
-      "veces": 32,
-      "mejor": {
-        "id": "gkE9m-l5Yl0",
-        "titulo": "Nikola Tesla Said He Knew How To Speak To God — And Revealed The Exact Method",
-        "vistas": 1146963,
-        "hace": 17,
-        "url": "https://youtube.com/watch?v=gkE9m-l5Yl0"
-      },
-      "puntaje": 31.89
+      "puntaje": 41.12
     },
     {
       "id": "UCGcVuScYBs4oP0MTU6oLWSQ",
       "nombre": "Ballen Of File",
-      "suscriptores": 1130,
-      "videosDelCanal": 17,
+      "suscriptores": 1300,
+      "videosDelCanal": 19,
       "veces": 24,
       "mejor": {
         "id": "GUnx_FTNgRw",
         "titulo": "Cops CAN’T Explain His 911 Call… The Mystery Gets DARKER!",
-        "vistas": 125870,
-        "hace": 6,
+        "vistas": 144335,
+        "hace": 7,
         "url": "https://youtube.com/watch?v=GUnx_FTNgRw"
       },
-      "puntaje": 23.91
+      "puntaje": 23.4
     },
     {
       "id": "UCH7SuUyule2C8Y1ZVWXvj0g",
       "nombre": "NavinVerse",
       "suscriptores": 5520,
       "videosDelCanal": 214,
-      "veces": 154,
+      "veces": 153,
       "mejor": {
         "id": "aBVjB0xXbQo",
         "titulo": "The TRUTH About Oggy's Mystery Man Explained!",
-        "vistas": 358539,
-        "hace": 28,
+        "vistas": 362086,
+        "hace": 29,
         "url": "https://youtube.com/watch?v=aBVjB0xXbQo"
       },
-      "puntaje": 17.35
+      "puntaje": 17
+    },
+    {
+      "id": "UCC0k9nV5wiab_gpjW8JbEzQ",
+      "nombre": "Unobserved Mystery",
+      "suscriptores": 126,
+      "videosDelCanal": 16,
+      "veces": 196,
+      "mejor": {
+        "id": "a6shWXxft9A",
+        "titulo": "The Loch Ness Monster Mystery Was Finally Solved — So Why Are People Still Seeing It?",
+        "vistas": 46048,
+        "hace": 22,
+        "url": "https://youtube.com/watch?v=a6shWXxft9A"
+      },
+      "puntaje": 14.45
+    },
+    {
+      "id": "UC5OMFzatX4soWmBQurT5e6g",
+      "nombre": "TomSmith",
+      "suscriptores": 8690,
+      "videosDelCanal": 12,
+      "veces": 15,
+      "mejor": {
+        "id": "gkE9m-l5Yl0",
+        "titulo": "Nikola Tesla Said He Knew How To Speak To God — And Revealed The Exact Method",
+        "vistas": 1165095,
+        "hace": 18,
+        "url": "https://youtube.com/watch?v=gkE9m-l5Yl0"
+      },
+      "puntaje": 13.96
     },
     {
       "id": "UCD9YwRZaBLiy4KmyD8gFQ0w",
       "nombre": "Sleepless Nations",
-      "suscriptores": 268,
+      "suscriptores": 285,
       "videosDelCanal": 14,
       "veces": 51,
       "mejor": {
         "id": "cIwVBQMA_yM",
         "titulo": "30 Bizarre Historical Events That Sound 100% Fake (But Actually Happened)",
-        "vistas": 37608,
-        "hace": 20,
+        "vistas": 39321,
+        "hace": 21,
         "url": "https://youtube.com/watch?v=cIwVBQMA_yM"
       },
-      "puntaje": 12.67
-    },
-    {
-      "id": "UCC0k9nV5wiab_gpjW8JbEzQ",
-      "nombre": "Unobserved Mystery",
-      "suscriptores": 111,
-      "videosDelCanal": 16,
-      "veces": 163,
-      "mejor": {
-        "id": "a6shWXxft9A",
-        "titulo": "The Loch Ness Monster Mystery Was Finally Solved — So Why Are People Still Seeing It?",
-        "vistas": 38404,
-        "hace": 21,
-        "url": "https://youtube.com/watch?v=a6shWXxft9A"
-      },
-      "puntaje": 12.35
+      "puntaje": 12.93
     },
     {
       "id": "UCeDySuAl0T72lGHoE4WqfHw",
       "nombre": "ECHOES OF OHIO",
-      "suscriptores": 705,
+      "suscriptores": 712,
       "videosDelCanal": 7,
-      "veces": 17,
+      "veces": 18,
       "mejor": {
         "id": "lgESmMh3ZPo",
         "titulo": "12 Creepiest Places in Ohio: The Real History vs. The Ghost Stories",
-        "vistas": 91601,
-        "hace": 14,
+        "vistas": 93739,
+        "hace": 15,
         "url": "https://youtube.com/watch?v=lgESmMh3ZPo"
       },
-      "puntaje": 12.05
+      "puntaje": 12.79
     },
     {
       "id": "UCHfuIMtVzhMxtPFvlnmYNzw",
       "nombre": "Story Cinema TV",
-      "suscriptores": 13700,
-      "videosDelCanal": 61,
-      "veces": 43,
+      "suscriptores": 13800,
+      "videosDelCanal": 62,
+      "veces": 41,
       "mejor": {
         "id": "kzELCL1NwqU",
         "titulo": "😨 This SHOCKING MOVIE Will Stay With You Forever! | BASED ON A TRUE STORY | Full English Movie",
-        "vistas": 431820,
-        "hace": 7,
+        "vistas": 448559,
+        "hace": 8,
         "url": "https://youtube.com/watch?v=kzELCL1NwqU"
       },
-      "puntaje": 11.87
+      "puntaje": 11.46
     },
     {
       "id": "UCdQx7-YvvW5oFQgb7ityDiQ",
       "nombre": "Nobody Believes This",
-      "suscriptores": 2590,
+      "suscriptores": 2710,
       "videosDelCanal": 21,
       "veces": 13,
       "mejor": {
         "id": "KqJsbgsUuWA",
         "titulo": "30 Incredible Stories You Won't Believe",
-        "vistas": 183614,
-        "hace": 19,
+        "vistas": 191829,
+        "hace": 20,
         "url": "https://youtube.com/watch?v=KqJsbgsUuWA"
       },
-      "puntaje": 6.25
+      "puntaje": 6.09
     },
     {
       "id": "UCnMI99vl9vROH4ao3-0dQEQ",
       "nombre": "Morbid’s Dark Stories ",
       "suscriptores": 1290,
-      "videosDelCanal": 37,
+      "videosDelCanal": 38,
       "veces": 23,
       "mejor": {
         "id": "tMcGgC5HerA",
         "titulo": "One Hour of SCARY & TWISTED Morbid Facts You’ll Wish You Never Knew",
-        "vistas": 44116,
-        "hace": 27,
+        "vistas": 44130,
+        "hace": 28,
         "url": "https://youtube.com/watch?v=tMcGgC5HerA"
-      },
-      "puntaje": 4.27
-    },
-    {
-      "id": "UCUx4KdpL0NP0D9nGdmWRmIQ",
-      "nombre": "MORBID NYX",
-      "suscriptores": 4070,
-      "videosDelCanal": 21,
-      "veces": 13,
-      "mejor": {
-        "id": "juUksPykF_E",
-        "titulo": "40+ Minutes of MORBID FACTS You Were Never Supposed to Discover : Nothing Stays Hidden ❗❗ | V.11",
-        "vistas": 175025,
-        "hace": 15,
-        "url": "https://youtube.com/watch?v=juUksPykF_E"
       },
       "puntaje": 4.15
     },
     {
+      "id": "UCUx4KdpL0NP0D9nGdmWRmIQ",
+      "nombre": "MORBID NYX",
+      "suscriptores": 4090,
+      "videosDelCanal": 22,
+      "veces": 13,
+      "mejor": {
+        "id": "juUksPykF_E",
+        "titulo": "40+ Minutes of MORBID FACTS You Were Never Supposed to Discover : Nothing Stays Hidden ❗❗ | V.11",
+        "vistas": 175925,
+        "hace": 16,
+        "url": "https://youtube.com/watch?v=juUksPykF_E"
+      },
+      "puntaje": 4.07
+    },
+    {
       "id": "UCwOy9ngY_SGGf_g0fIhu6xw",
       "nombre": "Ballen's Mystery Stories",
-      "suscriptores": 1290,
-      "videosDelCanal": 29,
+      "suscriptores": 1340,
+      "videosDelCanal": 30,
       "veces": 16,
       "mejor": {
         "id": "QKeuawxShzs",
         "titulo": "BETRAYAL: 6 Tragic Mysteries & when a lover's promise turns deadly - MrBallen",
-        "vistas": 35606,
-        "hace": 11,
+        "vistas": 36921,
+        "hace": 12,
         "url": "https://youtube.com/watch?v=QKeuawxShzs"
       },
-      "puntaje": 3.6
+      "puntaje": 3.52
+    },
+    {
+      "id": "UCQMwDGUtwTWBobh9PwPQasQ",
+      "nombre": "Rosewood Cinema",
+      "suscriptores": 54100,
+      "videosDelCanal": 117,
+      "veces": 39,
+      "mejor": {
+        "id": "4PN5w8RzIPw",
+        "titulo": "👉 I Highly Recommend This Movie! The Laurie Samuels Story | Drama, Mystery",
+        "vistas": 361348,
+        "hace": 11,
+        "url": "https://youtube.com/watch?v=4PN5w8RzIPw"
+      },
+      "puntaje": 2.11
     },
     {
       "id": "UCtggghgcffr7-OSjiRXRM3Q",
       "nombre": "BAFTA",
       "suscriptores": 240000,
       "videosDelCanal": null,
-      "veces": 246,
+      "veces": 174,
       "mejor": {
         "id": "FiCcdbPJPO0",
         "titulo": "Pedro Pascal is Moved as he Watches Scenes That Mean the World to Him | BAFTA",
-        "vistas": 1032602,
-        "hace": 4,
+        "vistas": 1040452,
+        "hace": 5,
         "url": "https://youtube.com/watch?v=FiCcdbPJPO0"
       },
-      "puntaje": 1.99
-    },
-    {
-      "id": "UCTgM_Z6LX9upwutrJveOPSA",
-      "nombre": "Károly Póka",
-      "suscriptores": 20300,
-      "videosDelCanal": 182,
-      "veces": 76,
-      "mejor": {
-        "id": "09UBrc4CYxM",
-        "titulo": "What He Found Inside the Great Sphinx | Robert Temple - Ancient Technology Podcast",
-        "vistas": 132915,
-        "hace": 26,
-        "url": "https://youtube.com/watch?v=09UBrc4CYxM"
-      },
-      "puntaje": 1.83
-    },
-    {
-      "id": "UCznoFuOZJ7sUoaHmo2rYqqA",
-      "nombre": "Dark Curiosities ",
-      "suscriptores": 6440,
-      "videosDelCanal": 207,
-      "veces": 13,
-      "mejor": {
-        "id": "g-saGc_MxZU",
-        "titulo": "37 Minutes of Morbid Facts That Only Get Worse | Stay If You Dare",
-        "vistas": 89167,
-        "hace": 10,
-        "url": "https://youtube.com/watch?v=g-saGc_MxZU"
-      },
-      "puntaje": 1.49
+      "puntaje": 1.97
     }
   ]
 }

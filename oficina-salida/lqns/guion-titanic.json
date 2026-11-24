@@ -1,0 +1,78 @@
+{
+  "titulo": "¿Qué oculta el Titanic que cambió la historia marítima? 🌊",
+  "formato": "largo",
+  "orientacion": "horizontal",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-titanic.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T02:21:13.222Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿El Titanic llevaba botes para solo 1178 personas?",
+  "publicacion": {
+    "titulo": "¿Qué oculta el Titanic que cambió la historia marítima? 🌊",
+    "descripcion": "Descubre los secretos detrás del naufragio más famoso de la historia. Un viaje de lujo, tecnología y tragedia que reveló verdades ocultas.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://es.wikipedia.org/wiki/RMS_Titanic · https://en.wikipedia.org/wiki/Titanic\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#Titanic #Naufragio #WhiteStarLine #HistoriaOculta #MisteriosSinResolver"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El gancho es débil y no intriga lo suficiente. La revelación llega tarde y no impacta como debería. El ritmo es bueno, pero falta un cierre más fuerte."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Sabías que el Titanic llevaba botes para solo 1178 personas? Pausa. Menos de la mitad de los pasajeros a bordo.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El RMS Titanic, el barco más grande y lujoso de su tiempo, zarpó de Southampton el 10 de abril de 1912. Con gimnasio, piscina y restaurantes de lujo, se creía insumergible.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Tras escalas en Cherburgo y Queenstown, el 14 de abril chocó contra un iceberg a 600 kilómetros de Terranova. La colisión abrió el casco, inundando cinco compartimentos estancos.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Durante dos horas y media, el barco se hundió gradualmente. El protocolo 'Mujeres y niños primero' dejó a muchos hombres sin plaza en los botes salvavidas.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "A las 2 y 17 del 15 de abril, el Titanic se partió en dos y se hundió. 712 supervivientes fueron rescatados por el RMS Carpathia, pero 1500 personas murieron.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: el Titanic fue diseñado principalmente como barco de inmigración, con capacidad para 1000 pasajeros de tercera clase. Los botes salvavidas eran insuficientes no solo por la normativa, sino porque se confiaba en la insumergibilidad del barco.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "El naufragio del Titanic cambió las normas marítimas para siempre. ¿Crees que las lecciones aprendidas entonces son suficientes hoy? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

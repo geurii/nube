@@ -1,0 +1,106 @@
+{
+  "titulo": "¿Qué oculta el Tratado Antártico que la historia nunca quiso revelar? 🧊",
+  "formato": "largo",
+  "orientacion": "horizontal",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-antarctic-treaty-system.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T02:23:41.664Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿Un acuerdo firmado en 1959 mantiene la Antártida libre…?",
+  "publicacion": {
+    "titulo": "¿Qué oculta el Tratado Antártico que la historia nunca quiso revelar? 🧊",
+    "descripcion": "Descubre los secretos del Sistema del Tratado Antártico, desde sus orígenes hasta su impacto actual. Una revelación que cambiará tu visión de la política global.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Antarctic_Treaty_System\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#CienciaSinFronteras #AntarcticTreatySystem #Antarctic #HistoriaOculta #MisteriosSinResolver"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El guion es denso y se arrastra; falta ritmo rápido y sorpresas cada 8‑10 s. El hook no atrapa al instante y la revelación llega demasiado tarde."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Sabías que un acuerdo firmado en 1959 mantiene la Antártida libre de conflictos armados hasta hoy?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El 1 de diciembre de 1959 se abrió la firma del Tratado Antártico, y el 23 de junio de 1961 entró en vigor, estableciendo la Antártida como una zona de investigación científica sin presencia militar.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Los doce firmantes originales, activos durante el Año Geofísico Internacional de 1957‑58, incluían a Argentina, Australia, Bélgica, Chile, Francia, Japón, Nueva Zelanda, Noruega, Sudáfrica, la Unión Soviética, el Reino Unido y los Estados Unidos.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En esa época, esas naciones ya habían creado más de 55 estaciones de investigación para el IGY, demostrando una cooperación operativa y científica sin precedentes.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Tras la Segunda Guerra Mundial, EE. UU. lanzó la Operación Highjump (del 26 de agosto de 1946 al inicio de 1947), enviando 13 barcos, 4 700 hombres y numerosos aviones, bajo la premisa de entrenar al personal y probar equipos en condiciones extremas.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En agosto de 1948, EE. UU. propuso que la Antártida quedara bajo la tutela de la ONU, administrada por siete países, pero la propuesta fue rechazada por Argentina, Australia, Chile, Francia y Noruega.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El 28 de agosto de 1948, EE. UU. volvió a presentar una idea de internacionalización, esta vez con el apoyo del Reino Unido, aunque sin lograr consenso entre los reclamantes.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En 1950, la intención estadounidense de mantener a la Unión Soviética alejada de la Antártida fracasó cuando los soviéticos declararon que no aceptarían ningún acuerdo sin su representación.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Un incidente notable ocurrió el 1 de febrero de 1952 en Hope Bay, donde la milicia argentina disparó advertencias a un grupo de británicos, provocando la respuesta del Reino Unido con el envío de un buque de guerra.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: el tratado fue la primera herramienta de control de armas creada durante la Guerra Fría, y su éxito radica en que, al prohibir cualquier actividad militar y al asegurar la investigación científica libre, evitó que las superpotencias compitieran por recursos estratégicos, manteniendo la Antártida libre de conflictos armados hasta la actualidad.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Crees que este modelo de cooperación podría aplicarse a otras regiones del planeta? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

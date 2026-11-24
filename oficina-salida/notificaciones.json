@@ -1,5 +1,41 @@
 [
   {
+    "id": "mwu2m4laqbrz",
+    "fecha": "2026-11-24T02:23:41.758Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Antarctic Treaty System",
+    "texto": "El Verificador no aprobó \"Antarctic Treaty System\" tras 4 intentos: El gancho inicial debe tener 14 palabras o menos. Aprobados: 11. Rechazados: 30. Con error: 8. No se publica. Próximo ciclo en 12 h."
+  },
+  {
+    "id": "mwu2iy1q00qf",
+    "fecha": "2026-11-24T02:21:13.310Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Titanic",
+    "texto": "El Verificador no aprobó \"Titanic\" tras 4 intentos: El gancho inicial debe tener 14 palabras o menos. Aprobados: 11. Rechazados: 29. Con error: 8. No se publica. Próximo ciclo en 12 h."
+  },
+  {
+    "id": "mwu2g0zctwpw",
+    "fecha": "2026-11-24T02:18:57.144Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Loch Ness Monster",
+    "texto": "El Verificador no aprobó \"Loch Ness Monster\" tras 4 intentos: El gancho inicial debe tener 14 palabras o menos. Aprobados: 11. Rechazados: 28. Con error: 8. No se publica. Próximo ciclo en 12 h."
+  },
+  {
+    "id": "mwu2c8n1skkh",
+    "fecha": "2026-11-24T02:16:00.445Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título con pregunta intrigante o afirmación impactante + referencia a un misterio/evento desconocido + elemento de sorpresa o promesa de revelación El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (28111 vistas/hora)."
+  },
+  {
     "id": "mwtx7o6h9e7q",
     "fecha": "2026-11-23T23:52:29.225Z",
     "canal": "lqns",
@@ -645,41 +681,5 @@
     "tipo": "alerta",
     "titulo": "El panel rechazó: Sabías que el Mar de Sargazo oculta un misterio milenario 🌊",
     "texto": "[Garantía de publicación activa] Gemini (gemini-3.8-flash) lo vio: 5.5/10, no subir. 4 de 8 aprobaron, 7 pasaron los primeros 3 segundos, 2 lo compartirían. No se sube. Mejora principal: Incluir imágenes o video real del Mar de los Sargazos y de anguilas para acompañar la narración; el visual impactante retendrá a todos."
-  },
-  {
-    "id": "mwr5tsjxvyca",
-    "fecha": "2026-11-22T01:30:19.725Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "listo",
-    "titulo": "Video listo: Sabías que el Mar de Sargazo oculta un misterio milenario 🌊",
-    "texto": "Se renderizó \"Sabías que el Mar de Sargazo oculta un misterio milenario 🌊\" para Lo Que No Sabías (50 MB). Descárgalo en GitHub > Actions > Produccion > artefacto \"video-lqns-the-sargasso-sea\". Falta subirlo a YouTube."
-  },
-  {
-    "id": "mwr4webf11el",
-    "fecha": "2026-11-22T01:04:21.627Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Guion aprobado: Tunguska event",
-    "texto": "Short de \"Tunguska event\" aprobado en el intento 4. 112 palabras, 5 escenas. Editor: Puntaje: 6/10. El hook es confuso, la historia está sobrecargada y la revelación llega demasiado pronto. Aprobados: 5. Rechazados: 7. Con error: 8. Próximo ciclo en 1 h."
-  },
-  {
-    "id": "mwr4qoidkw0z",
-    "fecha": "2026-11-22T00:59:54.901Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: The Somerton Man",
-    "texto": "El Verificador no aprobó \"The Somerton Man\" tras 4 intentos: El material menciona que la luz de la calle se encendió, pero no indica que parpadeara. La palabra 'parpadeaba' no está respaldada por el texto fuente. Aprobados: 4. Rechazados: 7. Con error: 8. No se publica. Próximo ciclo en 1 h."
-  },
-  {
-    "id": "mwr4azmc62q9",
-    "fecha": "2026-11-22T00:47:42.804Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Guion aprobado: The Sargasso Sea",
-    "texto": "Short de \"The Sargasso Sea\" aprobado en el intento 4. 101 palabras, 6 escenas. Editor: Puntaje: 6/10. El gancho es confuso, el ritmo se arrastra y la revelación llega demasiado pronto. Aprobados: 4. Rechazados: 6. Con error: 8. Próximo ciclo en 1 h."
   }
 ]

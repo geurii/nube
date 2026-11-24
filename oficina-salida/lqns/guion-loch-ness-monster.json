@@ -1,0 +1,85 @@
+{
+  "titulo": "¿Qué oculta el lago Ness que la historia nunca quiso que supieras? 🌊",
+  "formato": "largo",
+  "orientacion": "horizontal",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-loch-ness-monster.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T02:18:57.049Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿En el siglo VI un monje detuvo a una bestia acuática…?",
+  "publicacion": {
+    "titulo": "¿Qué oculta el lago Ness que la historia nunca quiso que supieras? 🌊",
+    "descripcion": "Descubre los secretos detrás de la leyenda del monstruo del lago Ness. Desde antiguos relatos hasta avistamientos modernos, explora la verdad detrás de una de las criaturas más enigmáticas del mundo.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Loch_Ness_Monster\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#LochNess #Nessie #Monstruo #Misterio #Escocia"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El gancho es intrigante pero muy largo y descriptivo. El ritmo es bueno, pero falta un giro impactante en la revelación. El cierre es efectivo, pero la estructura podría ser más dinámica."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Sabías que en el siglo VI un monje detuvo a una bestia acuática con una señal de la cruz?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En el corazón de Escocia, el lago Ness guarda un secreto que ha fascinado al mundo durante siglos. La leyenda del monstruo del lago Ness, conocido como Nessie, tiene raíces profundas en la historia y el folclore.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El primer relato conocido data del siglo VI, cuando un monje llamado Columba intervino para salvar a un nadador de una 'bestia de agua' en el río Ness. Este evento, registrado en el siglo VII por Adomnán, es considerado por algunos como la primera mención de la criatura.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Sin embargo, no fue hasta 1933 que el monstruo del lago Ness saltó a la fama mundial. En agosto de ese año, el periódico *The Courier* publicó el avistamiento de George Spicer, quien describió una criatura similar a un 'pez monstruo', una 'serpiente marina' o un 'dragón'.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Este artículo desató una oleada de cartas y testimonios, y el nombre 'Loch Ness Monster' se consolidó. Desde entonces, Nessie se convirtió en un fenómeno cultural, atrayendo a investigadores, escépticos y curiosos por igual.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "A lo largo de los años, se han reportado numerosos avistamientos, fotografías y lecturas de sonar. Algunos creen que estas pruebas confirman la existencia de una criatura gigante, mientras que otros las atribuyen a fraudes, ilusiones ópticas o animales conocidos.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: a pesar de décadas de investigaciones y el interés global, no existe evidencia científica concluyente que pruebe la existencia de Nessie. La comunidad científica explica los avistamientos como fenómenos naturales, errores de identificación o engaños.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Crees que Nessie existe o es solo una leyenda? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}
