@@ -34,7 +34,7 @@ permissions:
 # Un solo turno a la vez: si una corrida sigue en marcha, la siguiente espera (no se pisan).
 concurrency:
   group: oficina
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 env:
   NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
