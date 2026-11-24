@@ -100,7 +100,7 @@ const cuadro = (v = 0, sujeto = 'sonar') => {
   ]};
 };
 const sujetoDeTexto = (texto) => {
-  const t = String(texto).toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g, '');
+  const t = String(texto).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   if (/hielo|iceberg|criosismo/.test(t)) return 'hielo';
   if (/hidrofono|microfono|submarino/.test(t)) return 'hidrofono';
   if (/sonido|ruido|zumbido|sensor|frecuencia/.test(t)) return 'sonar';
@@ -110,8 +110,24 @@ const sujetoDeTexto = (texto) => {
   const ancla = sujetosDelTexto(t).find((x) => ['sonar','hidrofono','microfono','hielo','pez','silueta','barco','lago','avion','tren','submarino','volcan','fuego'].includes(x));
   return ancla || 'sonar';
 };
-const indicesDe = (txt) => [...new Set([...Array.from({length: 6}, (_, i) => i), ...[...txt.matchAll(/^(\\d+)\\. \\[/gm)].map((m) => Number(m[1])), ...[...txt.matchAll(/"indice":(\\d+)/g)].map((m) => Number(m[1]))])];
-const textoEscena = (txt, i) => new RegExp('^' + i + '\\\\. \\\\[[^\\\\]]+\\\\] (.+)
+const indicesDe = () => [0, 1, 2, 3, 4, 5];
+const textoEscena = (txt, i) => {
+  const prefijo = String(i) + '. [';
+  const linea = String(txt).split('\n').find((x) => x.startsWith(prefijo));
+  if (!linea) return '';
+  const cierre = linea.indexOf('] ');
+  return cierre >= 0 ? linea.slice(cierre + 2) : '';
+};
+const respuestaPintor = (sistema, usuario) => {
+  const ids = indicesDe(usuario);
+  const escenasP = ids.map((i) => {
+    const texto = textoEscena(usuario, i);
+    const sujeto = sujetoDeTexto(texto);
+    return {indice: i, planos: [cuadro(0, sujeto), cuadro(1, sujeto), cuadro(2, sujeto)]};
+  });
+  if (sistema.includes('Eres el Pintor de luz y detalle')) { rondaB++; return {acuerdo: rondaB > 1, objeciones: rondaB > 1 ? [] : ['Falta un primer plano oscuro', 'Añade rayos de luz'], escenas: escenasP}; }
+  return {acuerdo: true, escenas: escenasP};
+};
 let cta = CTA_LQNS;
 let llamadas = 0;
 let vioLecciones = false; // ¿llegaron las lecciones aprendidas al contexto de los agentes?
