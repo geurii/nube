@@ -1,0 +1,77 @@
+{
+  "titulo": "¿Qué oculta la tela que desconcierta a la ciencia? 🕵️‍♂️",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-shroud-of-turin.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T12:38:41.509Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿¿Qué oculta la tela que ha desconcertado a científicos…?",
+  "publicacion": {
+    "titulo": "¿Qué oculta la tela que desconcierta a la ciencia? 🕵️‍♂️",
+    "descripcion": "Una historia milenaria que sigue generando debate. Descubre el dato que cambió la forma de verla.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Shroud_of_Turin\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#Shroud #Historia #Misterio #Radiocarbono #Negativo"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El gancho es débil, la revelación llega demasiado tarde y el ritmo es monótono."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Qué oculta la tela que ha desconcertado a científicos durante más de un siglo?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En 1354 la tela apareció en la iglesia de Lirey, Francia, y pronto despertó sospechas.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El obispo de Troyes la denunció como falsificación en 1389, y en 1453 la Casa de Saboya la adquirió.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Tras un incendio en 1532, la tela se trasladó a Turín en 1578, donde permanece hasta hoy.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En 1988, pruebas de radiocarbono fijaron su origen entre 1260 y 1390, alimentando el debate.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: la imagen se vuelve clara en negativo blanco y negro, descubierto en 1898.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "Así que la tela sigue siendo un enigma y religioso. ¿Crees que se revelará su origen? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}
