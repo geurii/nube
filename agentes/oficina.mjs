@@ -492,7 +492,7 @@ const comprobar = (escenas) => {
   if (!String(escenas[0]?.texto ?? '').trim()) p.push({frase: '', motivo: 'Falta un gancho inicial claro.'});
   else if (!gancho.valido) p.push({frase: escenas[0].texto, motivo: `El gancho inicial debe tener ${gancho.maximo} palabras o menos para formato ${FORMATO}.`});
   const ultima = escenas[escenas.length - 1]?.texto ?? '';
-  if (!ultima.includes(CTA())) p.push({frase: ultima, motivo: `Falta la frase de cierre exacta: "${CTA}"`});
+  if (!ultima.trim().endsWith(CTA)) p.push({frase: ultima, motivo: `El cierre debe terminar exactamente con "${CTA}" y llevar antes una pregunta relacionada con el tema.`});
   const medicion = medirRevelacion(escenas);
   const i = escenas.findIndex((e) => e.tipo === 'revelacion');
   if (!medicion.existe) p.push({frase: '', motivo: 'No hay escena de revelación.'});
