@@ -320,6 +320,93 @@ export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: n
       poli(g,[[cx-w*0.5,cy],[cx-w*0.62,cy-h*0.24],[cx-w*0.62,cy+h*0.24]],r[1]?[r[1],r[2],r[3]]:r);
       break;
     }
+    case 'barril': {
+      const cx=X(e.x,0.5), base=Y(e.y,0.82), w=num(e.w,0.27,0.12,0.5)*lw, h=num(e.h,0.38,0.2,0.62)*lh;
+      const r=rampaDeE(e,'#89522d',5), top=base-h, x0=cx-w*0.36, x1=cx+w*0.36;
+      poli(g,[[x0,top+h*0.08],[x1,top+h*0.08],[cx+w*0.43,base-h*0.08],[cx+w*0.34,base],[cx-w*0.34,base],[cx-w*0.43,base-h*0.08]],r,'izq');
+      g.ellO(cx,top+h*0.08,w*0.36,h*0.09,[r[1],r[2],r[3]]);
+      g.ellO(cx,base-h*0.08,w*0.34,h*0.085,[r[0],r[1],r[2]]);
+      for(const q of [0.25,0.7]){
+        const yy=top+h*q;
+        g.line(cx-w*0.405,yy,cx+w*0.405,yy,[53,62,68],Math.max(3,u*3));
+        g.line(cx-w*0.39,yy-2,cx+w*0.39,yy-2,[157,166,171],Math.max(1,u));
+      }
+      for(const dx of [-0.2,-0.07,0.08,0.21]) g.line(cx+w*dx,top+h*0.14,cx+w*dx*1.1,base-h*0.12,[91,52,29],Math.max(1,u));
+      g.ellO(cx+w*0.12,top+h*0.08,w*0.045,h*0.018,[[78,45,27]]);
+      break;
+    }
+    case 'cerveza': {
+      const cx=X(e.x,0.5), base=Y(e.y,0.86), w=num(e.w,0.94,0.58,1)*lw, h=num(e.h,0.38,0.18,0.68)*lh;
+      const r=rampaDeE(e,'#c58a32',5), x0=cx-w/2, x1=cx+w/2, crest=[];
+      for(let i=0;i<=22;i++){
+        const q=i/22, x=x0+q*w;
+        const wave=Math.sin(q*Math.PI*3+t*1.15)*h*0.1+Math.sin(q*Math.PI*6-t*0.7)*h*0.035;
+        const crestY=base-h*(0.7+0.16*Math.sin(q*Math.PI*2+t*0.8))+wave;
+        crest.push([x,crestY] as Pt);
+      }
+      const pts:Pt[]=[...crest,[x1,base],[x0,base]];
+      poli(g,pts,r,'izq',true);
+      for(let i=0;i<14;i++){
+        const q=(i+0.5)/14, x=x0+q*w, y=base-h*(0.7+0.16*Math.sin(q*Math.PI*2+t*0.8))+Math.sin(q*Math.PI*3+t*1.15)*h*0.1;
+        g.ellA(x,y-h*0.025,Math.max(2,w*0.018),Math.max(2,h*0.025),[255,239,188],0.8);
+        if(i%3===0) g.ellA(x+Math.sin(t+i)*w*0.012,y-h*0.11,Math.max(2,u*2),Math.max(2,u*2),[255,246,218],0.75);
+      }
+      for(let k=0;k<7;k++) g.ellA(cx+(hs(k,41)-0.5)*w*0.72,base-h*(0.86+hs(k,42)*0.27),w*0.022,h*0.035,[255,240,203],0.65);
+      break;
+    }
+    case 'tsunami': {
+      const cx=X(e.x,0.5), base=Y(e.y,0.86), w=num(e.w,0.96,0.6,1)*lw, h=num(e.h,0.58,0.3,0.78)*lh;
+      const r=rampaDeE(e,'#286d98',5), x0=cx-w/2, x1=cx+w/2, crest:Pt[]=[];
+      for(let i=0;i<=24;i++){
+        const q=i/24, x=x0+q*w;
+        const swell=Math.sin(q*Math.PI*2.4+t*0.75)*h*0.07;
+        const curl=Math.exp(-Math.pow((q-0.7)*5,2))*h*0.25;
+        crest.push([x,base-h*(0.62+0.18*Math.sin(q*Math.PI*2+t*0.4))-swell-curl]);
+      }
+      poli(g,[...crest,[x1,base],[x0,base]],r,'izq',true);
+      const foamY=crest[Math.floor(crest.length*0.7)][1];
+      for(let k=0;k<18;k++){
+        const q=0.55+hs(k,61)*0.36, x=x0+q*w;
+        const y=base-h*(0.62+0.18*Math.sin(q*Math.PI*2+t*0.4))-Math.sin(q*Math.PI*2.4+t*0.75)*h*0.07;
+        g.ellA(x,y-h*(0.035+hs(k,62)*0.02),w*(0.012+hs(k,63)*0.012),h*0.025,[226,244,250],0.82);
+      }
+      for(let k=0;k<9;k++) g.ellA(x0+w*(0.57+hs(k,64)*0.35),foamY-h*(0.07+hs(k,65)*0.16),w*0.018,h*0.025,[218,239,249],0.6);
+      break;
+    }
+    case 'cerveceria': {
+      const cx=X(e.x,0.5), base=Y(e.y,0.84), w=num(e.w,0.7,0.42,0.9)*lw, h=num(e.h,0.52,0.32,0.72)*lh;
+      const brick=rampaDeE(e,'#8a5944',5), roof=rampaDe([65,49,43],5);
+      g.rect(cx-w*0.48,base-h*0.7,w*0.96,h*0.7,brick[2]);
+      poli(g,[[cx-w*0.54,base-h*0.7],[cx,base-h],[cx+w*0.54,base-h*0.7]],roof,'izq');
+      g.rect(cx-w*0.47,base-h*0.72,w*0.94,h*0.06,brick[4]);
+      for(let k=0;k<5;k++) g.rect(cx-w*0.42+k*w*0.19,base-h*0.56,w*0.1,h*0.14,[39,42,52]);
+      g.rect(cx-w*0.08,base-h*0.34,w*0.16,h*0.34,[39,31,28]);
+      // Tinas de cobre y tubería de la fábrica de cerveza.
+      for(let k=0;k<3;k++){
+        const x=cx-w*0.33+k*w*0.31, bw=w*0.18, bh=h*0.3, y=base-h*0.68;
+        g.rect(x-bw/2,y,bw,bh,[119,87,50]);
+        g.ellO(x,y,bw/2,bh*0.12,[[171,126,65],[202,161,83],[224,188,110]]);
+        g.ellO(x,y+bh,bw/2,bh*0.12,[[87,56,35],[137,91,49],[176,120,63]]);
+      }
+      g.rect(cx+w*0.28,base-h*1.22,w*0.11,h*0.54,[95,65,48]);
+      g.rect(cx+w*0.26,base-h*1.24,w*0.15,h*0.06,[57,48,43]);
+      g.line(cx+w*0.3,base-h*0.4,cx+w*0.47,base-h*0.4,[103,75,48],Math.max(2,u*3));
+      break;
+    }
+    case 'deslizamiento': {
+      const cx=X(e.x,0.56), base=Y(e.y,0.9), w=num(e.w,0.72,0.42,0.92)*lw, h=num(e.h,0.56,0.3,0.78)*lh;
+      const rock=rampaDeE(e,'#675f58',5);
+      poli(g,[[cx-w*0.55,base],[cx-w*0.5,base-h*0.78],[cx-w*0.28,base-h],[cx-w*0.06,base-h*0.72],[cx+w*0.12,base-h*0.58],[cx+w*0.55,base]],rock,'izq');
+      for(let k=0;k<8;k++){
+        const q=(k+1)/9, x=cx-w*0.32+q*w*0.78+Math.sin(t*1.3+k)*w*0.018;
+        const y=base-h*(0.78-q*0.58)+Math.sin(t*1.5+k)*h*0.025;
+        const rr=w*(0.026+hs(k,71)*0.032);
+        g.ellO(x,y,rr,rr*(0.66+hs(k,72)*0.2),rock);
+        g.ellA(x-rr*0.2,y-rr*0.35,rr*0.2,rr*0.18,rock[rock.length-1],0.7);
+      }
+      for(let k=0;k<5;k++) g.ellA(cx+w*(0.12+hs(k,73)*0.3),base-h*(0.16+hs(k,74)*0.25),w*0.035,h*0.035,[185,177,166],0.25);
+      break;
+    }
     case 'barco': {
       const cx = X(e.x, 0.5), cy = Y(e.y, 0.72) + Math.sin(t * 1.3) * 2, w = num(e.w, 0.3, 0.08, 0.7) * lw, a = Math.sin(t * 1.1) * 0.04;
       const casco = rampaDeE({t: 'x', color: e.color}, '#5a3a22'), vela = rampaDe(col(e.vela, '#e8dcc0'));
@@ -538,4 +625,4 @@ export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: n
   return false;
 }
 
-export const TIPOS_PRO = ['poligono', 'linea', 'nubes', 'olas', 'particulas', 'rayos', 'barco', 'pez', 'roca', 'hielo', 'duna', 'algas', 'sargazo', 'faro', 'silueta', 'ovni', 'explosion', 'ciudad', 'bosque', 'hidrofono', 'sonar', 'microfono', 'volcan', 'fuego', 'lago', 'avion', 'tren', 'submarino'];
+export const TIPOS_PRO = ['poligono', 'linea', 'nubes', 'olas', 'particulas', 'rayos', 'barco', 'pez', 'roca', 'hielo', 'duna', 'algas', 'sargazo', 'faro', 'silueta', 'ovni', 'explosion', 'ciudad', 'bosque', 'hidrofono', 'sonar', 'microfono', 'volcan', 'fuego', 'lago', 'avion', 'tren', 'submarino', 'barril', 'cerveza', 'cerveceria', 'tsunami', 'deslizamiento'];
