@@ -1,5 +1,41 @@
 [
   {
+    "id": "mwu584cdu6za",
+    "fecha": "2026-11-24T03:36:47.101Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: London Underground",
+    "texto": "El Verificador no aprobó \"London Underground\" tras 4 intentos: No hay información en el material sobre un secreto escondido durante décadas en el primer metro del mundo. Aprobados: 11. Rechazados: 33. Con error: 9. No se publica. Próximo ciclo en 10 h."
+  },
+  {
+    "id": "mwu53ret4l2a",
+    "fecha": "2026-11-24T03:33:23.717Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: DynaTAC",
+    "texto": "El Verificador no aprobó \"DynaTAC\" tras 4 intentos: La revelación cae al 59 % (106 de 179 palabras antes de ella) y debe caer entre 65 % y 75 %: añade historia antes de la revelación o acórtala. Aprobados: 11. Rechazados: 32. Con error: 9. No se publica. Próximo ciclo en 10 h."
+  },
+  {
+    "id": "mwu51p7sjhmu",
+    "fecha": "2026-11-24T03:31:47.560Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Area 51",
+    "texto": "El Verificador no aprobó \"Area 51\" tras 4 intentos: El material indica que USAF y CIA adquirieron el sitio en 1955, pero no menciona una compra por parte de la CIA ni el propósito específico. Aprobados: 11. Rechazados: 31. Con error: 9. No se publica. Próximo ciclo en 10 h."
+  },
+  {
+    "id": "mwu4zjwzqaug",
+    "fecha": "2026-11-24T03:30:07.379Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Palabra clave impactante + pregunta intrigante o afirmación misteriosa + elemento de sorpresa o promesa de revelación El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (27947 vistas/hora)."
+  },
+  {
     "id": "mwu30oyu953o",
     "fecha": "2026-11-24T02:35:01.350Z",
     "canal": "lqns",
@@ -648,39 +684,5 @@
     "tipo": "listo",
     "titulo": "Video listo: Sabías que una ola de melaza arrasó Boston? 🍯",
     "texto": "Se renderizó \"Sabías que una ola de melaza arrasó Boston? 🍯\" para Lo Que No Sabías (53 MB). Descárgalo en GitHub > Actions > Produccion > artefacto \"video-lqns-the-great-molasses-flood\". Falta subirlo a YouTube."
-  },
-  {
-    "id": "mwra6kcvmwte",
-    "fecha": "2026-11-22T03:32:14.095Z",
-    "canal": "lqns",
-    "tipo": "reporte",
-    "titulo": "Video subido a YouTube",
-    "texto": "\"¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️\" quedó PÚBLICO ahora mismo: https://youtu.be/8YRV5me-3uM"
-  },
-  {
-    "id": "mwra05q186nh",
-    "fecha": "2026-11-22T03:27:15.193Z",
-    "canal": "lqns",
-    "tipo": "reporte",
-    "titulo": "El panel aprobó: ¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️",
-    "texto": "[Garantía de publicación activa] Gemini (gemini-4-hydrogen) lo vio: 6/10, subir. 5 de 8 aprobaron, 5 pasaron los primeros 3 segundos, 2 lo compartirían. Mejora sugerida: Mejorar el gancho visual y auditivo en los primeros 3 s con una imagen impactante y una frase más intrigante, y usar gráficos más profesionales (incluyendo la ñ correcta) para evitar que la audiencia abandone al instante."
-  },
-  {
-    "id": "mwr9zppzn8cw",
-    "fecha": "2026-11-22T03:26:54.455Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "listo",
-    "titulo": "Video listo: ¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️",
-    "texto": "Se renderizó \"¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️\" para Lo Que No Sabías (47 MB). Descárgalo en GitHub > Actions > Produccion > artefacto \"video-lqns-mary-celeste\". Falta subirlo a YouTube."
-  },
-  {
-    "id": "mwr9bf2ncabj",
-    "fecha": "2026-11-22T03:08:00.911Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Guion aprobado: The Great Molasses Flood",
-    "texto": "Short de \"The Great Molasses Flood\" aprobado en el intento 2. 133 palabras, 5 escenas. Editor: Puntaje: 6/10. El gancho es débil, la historia se alarga y el cierre suena forzado. Aprobados: 7. Rechazados: 7. Con error: 8. Próximo ciclo en 11 h."
   }
 ]

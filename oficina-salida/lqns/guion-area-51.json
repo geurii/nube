@@ -1,0 +1,78 @@
+{
+  "titulo": "Área 51: ¿Aviones secretos o vida extraterrestre? 🛸",
+  "formato": "largo",
+  "orientacion": "horizontal",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-area-51.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T03:31:47.501Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿En 1955, la CIA compró un lugar en Nevada?",
+  "publicacion": {
+    "titulo": "Área 51: ¿Aviones secretos o vida extraterrestre? 🛸",
+    "descripcion": "Descubre los secretos detrás de la instalación militar más enigmática del mundo. Un viaje a través de teorías, hechos y revelaciones sorprendentes.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://es.wikipedia.org/wiki/%C3%81rea_51 · https://en.wikipedia.org/wiki/Area_51\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#Area51 #SecretosMilitares #Nevada #OVNI #Conspiracion"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El gancho es descriptivo, no intriga. Ritmo lento en escenas históricas. Revelación llega tarde y no sorprende."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "En 1955, la CIA compró un lugar en Nevada. ¿Para qué?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Área 51: 133 kilómetros de Las Vegas. Base aislada, espacio aéreo prohibido.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Confirmada en 2013, pero activa desde 1950. ¿Qué ocultan décadas de silencio?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Pruebas de armas y aviones experimentales. ¿O algo más?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Teorías de OVNIs y extraterrestres. ¿Coincidencia o encubrimiento?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "En 2013, la CIA admitió: pruebas del U-2 en 1955. ¿Es todo?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Crees que hay más? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

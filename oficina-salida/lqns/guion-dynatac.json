@@ -1,0 +1,99 @@
+{
+  "titulo": "¿Qué oculta el primer teléfono móvil? 📱",
+  "formato": "largo",
+  "orientacion": "horizontal",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-dynatac.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T03:33:23.651Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿En 1983 un dispositivo revolucionó la comunicación…?",
+  "publicacion": {
+    "titulo": "¿Qué oculta el primer teléfono móvil? 📱",
+    "descripcion": "Descubre el secreto detrás del DynaTAC, el primer teléfono móvil comercial. Un dispositivo que cambió la comunicación para siempre, pero con un misterio en su historia.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/DynaTAC\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#DynaTAC #Motorola #Telefonia #Historia #Tecnologia"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El gancho es descriptivo, no intriga. La revelación llega tarde y no sorprende lo suficiente. El ritmo es bueno, pero falta un cierre más impactante."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Sabías que en 1983 un dispositivo revolucionó la comunicación para siempre?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Presentado el 6 de marzo de 1983, el DynaTAC de Motorola fue el primer teléfono móvil comercial.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Con un peso de 1,4 kilogramos y un precio de 3995 dólares en 1984, era un lujo inalcanzable para la mayoría.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Su batería tardaba 10 horas en cargar para solo 30 minutos de conversación.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El DynaTAC 8000X, aprobado por la FCC en 1983, marcó el inicio de la era móvil.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Pero su desarrollo no fue rápido. Motorola lo anunció en 1973, prometiendo un lanzamiento en 3 años.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Sin embargo, problemas técnicos y regulatorios retrasaron su llegada hasta 1983.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: Motorola predijo en 1973 que el costo mensual del DynaTAC sería de 10 a 12 dólares en 20 años, una visión que no se cumplió en ese plazo.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El DynaTAC fue reemplazado por modelos más pequeños y asequibles, como el MicroTAC en 1989.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Crees que el DynaTAC fue un paso necesario para los teléfonos que usamos hoy? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

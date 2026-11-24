@@ -1,0 +1,78 @@
+{
+  "titulo": "El secreto del primer metro del mundo que nadie te contó 🚇",
+  "formato": "largo",
+  "orientacion": "horizontal",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-london-underground.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T03:36:47.043Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿El primer metro del mundo escondió un secreto durante…?",
+  "publicacion": {
+    "titulo": "El secreto del primer metro del mundo que nadie te contó 🚇",
+    "descripcion": "Descubre cómo el London Underground, inaugurado en 1863, revolucionó el transporte y escondió un detalle que cambió su futuro. Un viaje bajo tierra lleno de sorpresas.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://es.wikipedia.org/wiki/Metro_de_Londres · https://en.wikipedia.org/wiki/London_Underground\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#LondonUnderground #MetroLondres #HistoriaTransporte #SecretosDelTube #Underground"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El gancho es fuerte pero la revelación llega tarde y no es lo suficientemente impactante. El ritmo es bueno, pero falta un giro inesperado antes del final. El título es largo y poco intrigante."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Sabías que el primer metro del mundo escondió un secreto durante décadas?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El 10 de enero de 1863, 40000 personas inauguraron el London Underground, el primer sistema ferroviario subterráneo de pasajeros.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Construido con la técnica cut-and-cover, sus túneles iniciales estaban a pocos metros bajo tierra. Pero, ¿sabías que solo el 45 por ciento de la red está soterrada?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En 1890, la línea Northern introdujo la primera locomotora eléctrica, y en 1933, las líneas privadas se unificaron bajo la marca Underground.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El plano esquemático de 1931 y la tipografía de 1916 se convirtieron en iconos globales, pero su evolución no paró ahí.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "En 2014, el Tube introdujo pagos sin contacto, siendo el primer gran sistema de transporte en hacerlo, revolucionando la experiencia de millones.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Te imaginas un mundo sin metros? El London Underground no solo conectó ciudades, sino que también inspiró innovaciones globales. Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}
