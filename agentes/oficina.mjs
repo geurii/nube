@@ -300,7 +300,7 @@ const elegirTema = async (modelo) => {
   const bloqueRadar = resumenRadar
     ? ` RADAR DE CANALES PEQUEÑOS: ${resumenRadar}. Usa tendencias solo como inspiración para hallar un HECHO REAL documentado; no copies títulos ni temas ya usados.`
     : '';
-  if (resumenRadar) informe.push(`Radar: ${radar.canales.length} canales pequeños analizados (${String(radar.fecha).slice(0, 10}).`);
+  if (resumenRadar) informe.push(`Radar: ${radar.canales.length} canales pequeños analizados (${String(radar.fecha).slice(0, 10)}).`);
   // Primero se validan ideas propias guardadas por los agentes; después se pide una lista amplia y se reintenta con exclusiones actualizadas.
   const candidatosLocales = [...temasAprobadosDelDueno(CANAL_ID), ...ideasEquipo, ...ideasEstrategia, ...ideasJules];
   for (const t of candidatosLocales) {
