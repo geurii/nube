@@ -66,7 +66,8 @@ const colaCompleta = fs.readdirSync(RAIZ, {withFileTypes: true})
       });
   })
   .sort((a, b) => (Date.parse(a.g.creado) || a.t) - (Date.parse(b.g.creado) || b.t));
-let pendientes = colaCompleta;
+const formatoObjetivo = leer(path.join('agentes', 'publicacion.json'), {}).formato;
+let pendientes = ['short', 'largo'].includes(formatoObjetivo) ? colaCompleta.filter((x) => x.g.formato === formatoObjetivo) : colaCompleta;
 if (secuencia.activo && secuencia.fase === 'largo') {
   pendientes = colaCompleta.filter((x) => x.g.formato === 'largo').sort((a, b) => (Date.parse(b.g.creado) || b.t) - (Date.parse(a.g.creado) || a.t));
 } else if (secuencia.activo && secuencia.fase === 'short-encolado') {
