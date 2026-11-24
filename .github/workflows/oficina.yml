@@ -50,6 +50,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Prueba de notificación al teléfono
+        continue-on-error: true
+        run: |
+          node --input-type=module -e 'import {avisarTelefono} from "./agentes/aviso.mjs"; const ok=avisarTelefono("info","Oficina reactivada","La Oficina está activa. Esta es una prueba de entrega de notificaciones."); if (!ok) console.error("No se confirmó el envío del aviso al servicio ntfy.");'
       - name: Control operativo (sin límite mensual de minutos; solo evita bucles de publicaciones)
         id: pres
         env:
