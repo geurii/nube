@@ -1,10 +1,36 @@
 {
-  "fecha": "2026-11-24T14:48:02.540Z",
+  "fecha": "2026-11-24T15:04:05.671Z",
   "id": "lqns-the-taos-hum",
-  "aprobado": false,
-  "resumen": "Revision fallida: parts is not defined",
-  "motivos": [
-    "Revision fallida: parts is not defined"
-  ],
-  "revision": null
+  "modo": "tecnico",
+  "aprobado": true,
+  "resumen": "Sin defectos graves detectados.",
+  "motivos": [],
+  "revision": {
+    "modelo": "Gemini (fotogramas de respaldo) + Groq whisper-large-v3",
+    "gancho_3s": {
+      "nota": 8.5,
+      "comentario": "Revisión visual técnica; no es una valoración del gancho."
+    },
+    "audio": {
+      "nota": 8,
+      "comentario": "Groq Whisper transcribió el audio en español. Duración: 91 segundos. Transcripción: ¿Has escuchado hablar del zumbido de Taos? Un sonido misterioso que solo algunos pueden oír. En los años 90, en Taos, Nuevo México, se reportó un zumbido persistente que afectaba al 2% de la población. Este sonido, entre 32 y 80 Hz, modulado de 0.5 a 2 Hz, era más común en climas frescos con brisa ligera y por las mañanas. El área afectada era de unos 48 kilómetros de diámetro, y quienes lo escuchaban podían alejarse de la fuente. No es el único caso, en Windsor, Ontario, un zumbido similar en 2011 generó 22 mil quejas en una noche. En Auckland, Nueva Zelanda, se grabó un zumbido de 56 hertz en 2006, y en Darmstadt, Alemania, se identificaron fuentes como aires acondicionados defectuosos en 2021. Casos recientes se han reportado en Omag, Irlanda del Norte 2023, y Viteorce, Canadá 2025. Pero lo que no sabías, el zumbido de Taos afecta más a personas de mediana edad, sin diferencia significativa entre géneros, y ha sido vinculado a causas como plantas industriales o incluso tinnitus. ¿Crees que el zumbido de Taos tiene una explicación científica o es un misterio sin resolver. Comparte este video con un amigo que haría lo mismo, sígueme."
+    },
+    "subtitulos": {
+      "legibles": true,
+      "tapados_o_cortados": false,
+      "comentario": "Los subtítulos son claros, legibles y están bien posicionados en los fotogramas."
+    },
+    "imagen": {
+      "nota": 8.5,
+      "defectos": []
+    },
+    "ritmo": {
+      "nota": 8,
+      "comentario": "No se utiliza el ritmo como motivo de rechazo técnico."
+    },
+    "defectos_graves": [],
+    "nota_general": 8.5,
+    "recomendacion": "subir",
+    "por_que": "No se detectaron fallas visuales graves y Groq pudo transcribir el audio."
+  }
 }

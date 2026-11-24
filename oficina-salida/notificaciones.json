@@ -1,5 +1,21 @@
 [
   {
+    "fecha": "2026-11-24T15:04:05.671Z",
+    "canal": "lqns",
+    "tipo": "reporte",
+    "titulo": "Revision aprobada: ¿Qué oculta el zumbido de Taos que nadie puede explicar? 🌍",
+    "texto": "Sin defectos graves detectados."
+  },
+  {
+    "id": "mwutok3l7dat",
+    "fecha": "2026-11-24T15:01:24.801Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "listo",
+    "titulo": "Video renderizado: ¿Qué oculta el zumbido de Taos que nadie puede explicar? 🌍",
+    "texto": "Se renderizó \"¿Qué oculta el zumbido de Taos que nadie puede explicar? 🌍\" para Lo Que No Sabías (122 MB). Sigue en cola de publicación; este aviso NO significa que ya esté publicado."
+  },
+  {
     "fecha": "2026-11-24T14:48:02.974Z",
     "canal": "lqns",
     "tipo": "alerta",
@@ -693,21 +709,5 @@
     "tipo": "reporte",
     "titulo": "Resumen del día",
     "texto": "Últimas 24 h: 5 video(s) en YouTube, 4 en Facebook, 4 en Instagram, 4 en TikTok. Minutos de GitHub: 1077 de 2000. Todo en orden."
-  },
-  {
-    "id": "mws811wyi6yr",
-    "fecha": "2026-11-22T19:19:43.858Z",
-    "canal": "lqns",
-    "tipo": "alerta",
-    "titulo": "No se pudo publicar en las redes",
-    "texto": "\"¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️\": el repositorio público \"geurii/oficina-videos-legal\" no aceptó el video: no pude subir el video al repositorio público (422): {\"message\":\"Sorry, the file is too large to be processed. Consider creating/updating th; y el "
-  },
-  {
-    "id": "mws80sbfneyo",
-    "fecha": "2026-11-22T19:19:31.419Z",
-    "canal": "lqns",
-    "tipo": "alerta",
-    "titulo": "No se pudo publicar en las redes",
-    "texto": "\"Sabías que una ola de melaza arrasó Boston? 🍯\": el repositorio público \"geurii/oficina-videos-legal\" no aceptó el video: no pude subir el video al repositorio público (422): {\"message\":\"Sorry, the file is too large to be processed. Consider creating/updating th; y el "
   }
 ]

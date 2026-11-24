@@ -1,33 +1,35 @@
 {
   "plan": [
-    "Crear y publicar un mini-documental de 12 minutos sobre el misterio del Mary Celeste: Jules (Productora de contenido): Generar al menos 10,000 vistas y 200 suscriptores nuevos antes del 13 de diciembre, con monetización vía anuncios y patro",
-    "Desarrollar una serie de 3 episodios (12 minutos cada uno) sobre la muerte masiva de 2 millones de pingüinos y su impacto ambiental: Mariana (Guionista): Alcanzar 30,000 vistas totales y 500 interacciones (likes, comentarios) antes del 13 d",
-    "Planificar y lanzar un video de 12 minutos sobre el caso del banco que pagó 175 millones por clientes inexistentes, incluyendo análisis financiero y testimonios ficticios: Carlos (Analista de datos): Obtener 15,000 vistas y 250 suscriptores"
+    "Producir y lanzar la serie de 3 videos de 12 minutos sobre el caso del banco que pagó 175 millones por clientes inexistentes: María (Productora Ejecutiva): Antes del 13 de diciembre",
+    "Crear el mini‑documental de 12 minutos sobre los pingüinos y la misteriosa muerte de 2 millones, vinculándolo a los videos de la parte 1 y 2 para maximizar retención: Carlos (Director de Contenido): Antes del 13 de diciembre",
+    "Investigar y publicar el video de 12 minutos sobre el misterio del Mary Celeste, optimizando SEO y thumbnails para superar 5 000 vistas en la primera semana: Ana (Investigadora y Guionista): Antes del 13 de diciembre"
   ],
   "ganchos": [
-    "¿Sabías que [TEMA] tiene un secreto que nadie explicó? | Imagen: un objeto misterioso iluminado con luces parpadeantes",
-    "[TEMA] apareció en la historia y nadie lo explicó. ¿Qué pasó? | Imagen: una foto antigua con sombras inquietantes",
-    "[TEMA] se esconde detrás de una leyenda urbana. Descúbrelo ahora | Imagen: un mapa con una ruta marcada en rojo",
-    "[TEMA] se convirtió en un mito sin pruebas. ¿La verdad? | Imagen: una escena de un lugar remoto con niebla",
-    "[TEMA] nunca se explicó en los archivos. ¿Por qué? | Imagen: un archivo abierto con una lupa sobre un documento"
+    "¿Sabías que [TEMA] aparece en [CIFRA] lugares secretos? | Imagen de un mapa antiguo con puntos marcados",
+    "Un [TEMA] que se oculta en la sombra de [CIFRA] objetos cotidianos. | Primer plano de un objeto misterioso con una luz tenue",
+    "[CIFRA] veces se ha visto un [TEMA] sin explicación. ¿Te atreves a descubrirlo? | Imagen de una escena nocturna con un brillo inusual",
+    "¿Alguna vez has sentido un [TEMA] en tu propio [CIFRA]? Descúbrelo ahora. | Fotografía de una habitación con un objeto inexplicable en el centro",
+    "[TEMA] revelado: la verdad detrás de los [CIFRA] datos que nadie comparte. | Imagen de una pila de documentos con un sello de “confidencial”"
   ],
   "mejorasGuion": [
-    "1️⃣ Cambiar el gancho a algo más intrigante y específico, por ejemplo: \"Sabías que una explosión en Siberia en 1908 dejó un rastro de fuego que se extendió por 12 000 000 km²\", evitando la frase genérica y añadiendo un d"
+    "Reescribir el gancho inicial para generar curiosidad inmediata, por ejemplo: “¿Sabías que una colonia entera desapareció sin dejar rastro y dejó solo una palabra tallada en una cerca?” – esto combina sorpresa y pregunta,",
+    "Ajustar el ritmo insertando micro‑cliffhangers cada 20‑30 segundos: después de mencionar la evacuación del primer puesto, lanzar una frase breve como “¿Por qué abandonaron tan pronto?”; luego, tras la llegada de los colo",
+    "Optimizar el cierre con una llamada a la acción más persuasiva y vinculada al misterio: en lugar de “Comparte este video…”, preguntar “¿Cuál crees que fue el destino de los colonos? Deja tu teoría en los comentarios y su"
   ],
   "temas": [
     "The Voynich Manuscript",
+    "The Hum (sound phenomenon)",
+    "The Sargasso Sea",
     "The Tunguska Event",
-    "The Oak Island Money Pit",
-    "The Green Children of Woolpit",
-    "The Mystery of the Sphinx's Eye"
+    "The Bermuda Triangle"
   ],
   "titulos": [
-    "Sabías que [acción] [objeto] [emoji] (Parte X/Y)",
-    "Sabías que [número] [verbo] [objeto] … (Parte X/Y)",
-    "Sabías que [acción] [objeto] … (Parte X/Y)",
-    "¿Qué oculta realmente el [objeto]?"
+    "Sabías que [acción sorprendente] (Parte [X]/[Y])",
+    "Sabías que [número] [objeto]… y no [acción esperada]",
+    "¿Qué oculta realmente el [objeto misterioso]?",
+    "Sabías que [número] [acción] en [situación] (Parte [X]/[Y])"
   ],
-  "fecha": "2026-11-24T14:48:03.189Z",
+  "fecha": "2026-11-24T15:04:05.821Z",
   "iniciativas": [
     "Valentina (Directora de contenido): Definir una línea editorial clara y un documento de estilo que guíe a todo el equipo desde el primer video.",
     "Carolina (Coordinador de producción): Crear un tablero de tareas con fechas límite rígidas y alertas automáticas para cada entrega.",
