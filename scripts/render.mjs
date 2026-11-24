@@ -154,7 +154,7 @@ const composition = await selectComposition({
 const tiempos = composition.props.tiempos;
 const total = tiempos.duracionTotal;
 if (guion.formato === 'short' && total > 65) throw new Error(`PUBLICACIÓN BLOQUEADA: Short de ${total.toFixed(1)} s; el máximo es 65 s.`);
-if (guion.formato === 'largo' && (total < 480 || total > 720)) throw new Error(`PUBLICACIÓN BLOQUEADA: video largo de ${total.toFixed(1)} s; debe durar entre 480 y 720 s (8–12 minutos).`);
+if (guion.formato === 'largo' && (total < 480 || total > 600)) throw new Error(`PUBLICACIÓN BLOQUEADA: video largo de ${total.toFixed(1)} s; debe durar entre 480 y 600 s (8–10 minutos, límite común para TikTok y YouTube).`);
 
 // --- Comprobación de estructura -------------------------------------------
 const pct = (s) => `${Math.round((s / total) * 100)}%`;
