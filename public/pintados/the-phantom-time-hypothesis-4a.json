@@ -1,0 +1,1 @@
+{"cielo":["#1b2b44","#2c3e5a","#3d5270"],"capas":[{"t":"nubes","y":0.18,"n":4,"color":"#5a6b8c"},{"t":"particulas","n":30,"tipo":"polvo"},{"t":"poligono","color":"#6a5d4b","luz":"izq","pts":[[0.45,0.55],[0.55,0.55],[0.58,0.68],[0.42,0.68],[0.4,0.6],[0.48,0.5]]}],"escenario":"industrial"}

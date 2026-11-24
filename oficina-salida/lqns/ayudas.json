@@ -1,33 +1,29 @@
 {
   "plan": [
-    "Crear y lanzar la serie completa de 3 partes sobre el misterio de los pingüinos y la muerte de 2 millones, con un enfoque documental y narrativo atractivo: Equipo de Guion y Producción: Asegurar 10,000 vistas en total y generar al menos 2,0",
-    "Desarrollar un mini-documental de 12 minutos sobre el caso del banco que pagó 175 millones por clientes inexistentes, optimizando SEO y títulos de curiosidad: Equipo de Investigación y SEO: Alcanzar 8,000 vistas y monetizar con al menos 1,5",
-    "Revisar y actualizar el guion del episodio sobre el Mary Celeste, incorporando nuevas fuentes y datos históricos para aumentar la credibilidad y la retención de la audiencia: Editor de Guion y Equipo de Contenido: Lograr 5,000 vistas y 1,00"
+    "Crear y lanzar la serie de 3 episodios sobre el caso del banco que pagó 175 millones por clientes ficticios: Equipo de investigación de casos financieros: Generar al menos 30,000 vistas combinadas y monetizar 12,000 USD antes del 13 de dici",
+    "Desarrollar el mini-documental de 12 minutos sobre el misterio del Mary Celeste con enfoque documental y análisis de pruebas: Equipo de guion y producción de contenido histórico: Alcanzar 20,000 vistas y monetizar 8,000 USD antes del 13 de ",
+    "Expandir el contenido de pingüinos: publicar la parte 4 de la serie (3 episodios) y lanzar un episodio adicional sobre la muerte masiva de 2 millones de pingüinos: Equipo de investigación de fenómenos naturales: Obtener 25,000 vistas y mone"
   ],
   "ganchos": [
-    "[TEMA] en 3 segundos: descubre el secreto que nadie quiere que sepas | Imagen: una sombra que se alarga sobre un mapa antiguo",
-    "¿Sabías que [CIFRA] segundos antes de que sucediera, algo cambió? | Imagen: un reloj de arena con la arena detenida",
-    "En el corazón de [TEMA] se esconde algo que no se ve a simple vista | Imagen: una lupa enfocando una huella misteriosa",
-    "La verdad sobre [TEMA] está oculta entre líneas que nadie lee | Imagen: un libro abierto con páginas que se desvanecen",
-    "¿Qué pasa cuando [CIFRA] personas se reúnen en un lugar secreto? | Imagen: una silueta entre sombras con luces intermitentes"
+    "[TEMA] y [CIFRA] años de misterio: la verdad que nadie quiere revelar | Imagen de una puerta cerrada con luces parpadeantes"
   ],
   "mejorasGuion": [
-    "1️⃣ Cambia el gancho a algo más sorprendente y específico, por ejemplo: \"¿Sabías que un libro de 240 páginas, escrito en un idioma jamás descifrado, ha desconcertado a los mejores criptógrafos durante 600 años?\" Esto des"
+    "1️⃣ Gancho más específico y llamativo: sustituir “¿Y si 297 años de nuestra historia nunca existieron?” por algo como “¿Qué pasaría si descubrieras que 297 años de la Alta Edad Media son una invención?” para captar curio"
   ],
   "temas": [
     "The Voynich Manuscript",
-    "The Dyatlov Pass Incident",
-    "The Bimini Road",
-    "The Sinking of the MV RMS Lusitania",
-    "The Mystery of the Antikythera Mechanism"
+    "The Taos Hum",
+    "The Bloop",
+    "The Green Man Statue of St. Saviour",
+    "The Bizarre Case of the Sinking of the SS Jupiter"
   ],
   "titulos": [
-    "Sabías que [verbo] [sustantivo] (Parte [X]/[Y])",
-    "Sabías que [verbo] [sustantivo] [emoji] (Parte [X]/[Y])",
-    "Sabías que [sustantivo] [verbo] [emoji] (Parte [X]/[Y])",
-    "¿Qué oculta realmente [sustantivo]?"
+    "Sabías que <acción> <objeto> <detalle>",
+    "Sabías que <evento> <resultado>",
+    "¿Qué oculta realmente el <objeto> ?",
+    "⚡ <año>: El <profesión> que <acción>"
   ],
-  "fecha": "2026-11-24T16:27:43.410Z",
+  "fecha": "2026-11-24T17:33:58.458Z",
   "iniciativas": [
     "Valentina (Directora de contenido): Definir una línea editorial clara y un documento de estilo que guíe a todo el equipo desde el primer video.",
     "Carolina (Coordinador de producción): Crear un tablero de tareas con fechas límite rígidas y alertas automáticas para cada entrega.",

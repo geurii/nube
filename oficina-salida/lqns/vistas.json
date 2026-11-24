@@ -1,8 +1,8 @@
 {
-  "fecha": "2026-11-24T17:17:00.762Z",
+  "fecha": "2026-11-24T17:25:08.405Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 1150,
-  "ganadasDesdeElUltimoCiclo": 1,
+  "total": 1149,
+  "ganadasDesdeElUltimoCiclo": 0,
   "videos": [
     {
       "id": "xE32CX_fsXM",
@@ -14,7 +14,7 @@
       "id": "85i8fzFF970",
       "titulo": "¿Qué oculta el zumbido de Taos que nadie puede explicar? 🌍",
       "publicado": "2026-11-24T15:05:06+00:00",
-      "vistas": 2
+      "vistas": 1
     },
     {
       "id": "hVawPPY5K_Y",
@@ -96,10 +96,6 @@
     }
   ],
   "historia": [
-    {
-      "fecha": "2026-11-22T00:11:13.877Z",
-      "total": 2554
-    },
     {
       "fecha": "2026-11-22T00:18:48.720Z",
       "total": 2556
@@ -335,6 +331,10 @@
     {
       "fecha": "2026-11-24T17:17:00.762Z",
       "total": 1150
+    },
+    {
+      "fecha": "2026-11-24T17:25:08.405Z",
+      "total": 1149
     }
   ]
 }

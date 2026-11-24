@@ -1,0 +1,85 @@
+{
+  "titulo": "🕰️ ¿297 años falsos? La teoría que borra a Carlomagno",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-the-phantom-time-hypothesis.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T17:33:57.300Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿¿Y si 297 años de nuestra historia nunca existieron?",
+  "publicacion": {
+    "titulo": "🕰️ ¿297 años falsos? La teoría que borra a Carlomagno",
+    "descripcion": "¿Y si 297 años de nuestra historia fueran una invención? La hipótesis del tiempo fantasma cuestiona la Alta Edad Media, incluido Carlomagno. Descubre cómo esta teoría podría cambiar lo que sabes sobre el pasado.\n\n\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://es.wikipedia.org/wiki/Hip%C3%B3tesis_del_tiempo_fantasma\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#TiempoFantasma #HistoriaOculta #Carlomagno #EdadMedia #Misterio",
+    "titulosAlternativos": [
+      "🕰️ ¿297 años falsos? La teoría que borra a Carlomagno",
+      "📜 ¿Historia inventada? 297 años que nunca existieron",
+      "🔍 ¿Manipulación medieval? 297 años en duda",
+      "🤯 ¿Carlomagno fue real? 297 años cuestionados",
+      "📚 ¿Alta Edad Media falsa? 297 años bajo sospecha"
+    ],
+    "comentarioFijado": "¿Crees que la historia podría estar equivocada?",
+    "miniatura": {
+      "texto": "297 AÑOS FALSOS",
+      "idea": "Un calendario antiguo con 297 años tachados en rojo, sobre un fondo de pergamino medieval."
+    }
+  },
+  "estado": "aprobado",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El gancho es intrigante pero falta impacto en la revelación. Ritmo adecuado, aunque la historia podría ser más concisa. El cierre es efectivo. Panel: 4 de 8 aprobaron el guion, 8 pasaron los primeros 3 segundos, 1 lo compartirían. Retención estimada: 75% (mínimo 55%)."
+  },
+  "retencionEstimada": 75,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Y si 297 años de nuestra historia nunca existieron?",
+      "fondo": [
+        "pintado:the-phantom-time-hypothesis-0a",
+        "pintado:the-phantom-time-hypothesis-0b",
+        "pintado:the-phantom-time-hypothesis-0c"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "La hipótesis del tiempo fantasma afirma que un período de la Alta Edad Media fue inventado.",
+      "fondo": [
+        "pintado:the-phantom-time-hypothesis-1a",
+        "pintado:the-phantom-time-hypothesis-1b",
+        "pintado:the-phantom-time-hypothesis-1c"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Se cree que el sistema Anno Domini fue manipulado para legitimar un reclamo imperial.",
+      "fondo": [
+        "pintado:the-phantom-time-hypothesis-2a",
+        "pintado:the-phantom-time-hypothesis-2b",
+        "pintado:the-phantom-time-hypothesis-2c"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Lo impactante: el período carolingio, incluido Carlomagno, podría ser una fabricación.",
+      "fondo": [
+        "pintado:the-phantom-time-hypothesis-3a",
+        "pintado:the-phantom-time-hypothesis-3b",
+        "pintado:the-phantom-time-hypothesis-3c"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Podría la historia estar equivocada? Sígueme para descubrir más misterios.",
+      "fondo": [
+        "pintado:the-phantom-time-hypothesis-4a",
+        "pintado:the-phantom-time-hypothesis-4b",
+        "pintado:the-phantom-time-hypothesis-4c"
+      ]
+    }
+  ]
+}

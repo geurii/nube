@@ -1,13 +1,12 @@
 {
-  "fecha": "2026-11-24T16:11:06.127Z",
-  "total": 2223,
-  "promedio": 148,
-  "queFunciono": "Los videos con más vistas comparten títulos que incluyen emojis llamativos y palabras clave de curiosidad (\"Sabías que\", \"Parte 1/3\", emojis como 🐧, 🥚, 😳) y se publicaron en la misma fecha (2026-11-20), lo que sugiere que la combinación de formato de serie y contenido de curiosidad genera mayor i",
+  "fecha": "2026-11-24T17:33:58.207Z",
+  "total": 1149,
+  "promedio": 77,
+  "queFunciono": "Los videos con más vistas comparten títulos que incluyen elementos de curiosidad extrema y números impactantes (por ejemplo, \"3 huevos de pingüino\", \"2 millones de pingüinos\", \"175 millones\") y están publicados en fechas recientes (20-21 de noviembre).",
   "porQueFallaron": [
-    "El video con 626 vistas tiene una retención media de 20.9 % y solo 9 s de duración media, lo que indica que el contenido no mantiene la atención; además, no generó suscriptores, lo que sugiere falta de llamada a la acción clara.",
-    "El video con 172 vistas tiene retención de 23.2 % y 11 s de duración media, similar a la anterior, mostrando que la baja retención es un factor clave; tampoco añadió suscriptores.",
-    "El video con 158 vistas tiene retención de 23.9 % y 13 s de duración media, lo que indica que el contenido no capturó suficiente interés; tampoco generó suscriptores.",
-    "Los videos con 50, 38, 28, 23, 14, 13, 5, 3, 3 y 1 vistas presentan retenciones muy bajas (entre 0 % y 53 %) y duraciones medias muy cortas (1‑33 s), lo que sugiere que el contenido fue demasiado breve o poco atractivo; además, ninguno añadió suscriptores, lo "
+    "El video con 172 vistas tiene un título que menciona \"2 millones de pingüinos\", pero la retención media es solo 23.2 % (11 s), indicando que el contenido no mantiene el interés; la evidencia es la baja retención y la ausencia de suscriptores. ",
+    "El video con 158 vistas sobre un banco y clientes inexistentes tiene una retención media de 23.9 % (13 s), lo que sugiere que el tema, aunque interesante, no captó la atención de la audiencia; la evidencia es la retención media baja y la falta de suscriptores.",
+    "Los videos con 50, 38, 28, 23, 14, 13, 5, 3, 3, 1 y 1 vistas presentan títulos muy específicos o con palabras menos comunes (por ejemplo, \"El Bloop\", \"El Secreto del Primer Ordenador\", \"cráter de la Isla de Pascua\"). La evidencia de su bajo rendimiento es la c"
   ],
   "noSePuedeSaber": [],
   "reglas": []
