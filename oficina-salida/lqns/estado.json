@@ -1,11 +1,35 @@
 {
-  "actualizado": "2026-11-24T15:12:44.164Z",
+  "actualizado": "2026-11-24T15:35:50.615Z",
   "totales": {
     "aprobados": 12,
-    "rechazados": 60,
+    "rechazados": 63,
     "errores": 14
   },
   "historial": [
+    {
+      "fecha": "2026-11-24T15:35:50.554Z",
+      "tema": "Qué oculta el zumbido de Taos que nadie puede explicar",
+      "formato": "short",
+      "resultado": "rechazado",
+      "intentos": 4,
+      "detalle": "Falta la frase de cierre exacta: \"¿Qué explicación te convence sobre \"Qué oculta el zumbido de Taos que nadie puede explicar\"? Sígueme para descubrir más mister"
+    },
+    {
+      "fecha": "2026-11-24T15:33:57.175Z",
+      "tema": "Qué oculta el zumbido de Taos que nadie puede explicar",
+      "formato": "short",
+      "resultado": "rechazado",
+      "intentos": 4,
+      "detalle": "Falta la frase de cierre exacta: \"¿Qué explicación te convence sobre \"Qué oculta el zumbido de Taos que nadie puede explicar\"? Sígueme para descubrir más mister"
+    },
+    {
+      "fecha": "2026-11-24T15:31:54.982Z",
+      "tema": "Qué oculta el zumbido de Taos que nadie puede explicar",
+      "formato": "short",
+      "resultado": "rechazado",
+      "intentos": 4,
+      "detalle": "Falta la frase de cierre exacta: \"¿Qué explicación te convence sobre \"Qué oculta el zumbido de Taos que nadie puede explicar\"? Sígueme para descubrir más mister"
+    },
     {
       "fecha": "2026-11-24T15:12:43.937Z",
       "tema": "¿Por qué el lago Hillier cambia de color cada verano?",
@@ -141,52 +165,28 @@
       "resultado": "rechazado",
       "intentos": 0,
       "detalle": "Tema descartado (no se pudo cargar): "
-    },
-    {
-      "fecha": "2026-11-24T10:10:47.769Z",
-      "tema": "(sin tema)",
-      "formato": "largo",
-      "resultado": "rechazado",
-      "intentos": 0,
-      "detalle": "Tema descartado (no se pudo cargar): "
-    },
-    {
-      "fecha": "2026-11-24T10:10:46.429Z",
-      "tema": "(sin tema)",
-      "formato": "largo",
-      "resultado": "rechazado",
-      "intentos": 0,
-      "detalle": "Tema descartado (no se pudo cargar): "
-    },
-    {
-      "fecha": "2026-11-24T10:10:45.044Z",
-      "tema": "Great Smog of London",
-      "formato": "largo",
-      "resultado": "rechazado",
-      "intentos": 4,
-      "detalle": "El gancho inicial debe tener 14 palabras o menos."
     }
   ],
   "agentes": {
     "Directora de contenido": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "Necesita revisión: el guion de \"¿Por qué el lago Hillier cambia de color cada verano?\" no pasó la verificación. Aprobados: 12. Rechazados: 60. Con error: 14. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. JEFA: Un guion rechazado no se publica. Tienen 11 h para entregar algo que pase."
+      "tarea": "Necesita revisión: el guion de \"Qué oculta el zumbido de Taos que nadie puede explicar\" no pasó la verificación. Aprobados: 12. Rechazados: 63. Con error: 14. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. JEFA: Un guion rechazado no se publica. Tienen 10 h para entregar algo que pase."
     },
     "Investigador de temas": {
       "estado": "libre",
       "actividad": "leyendo",
-      "tarea": "Dejó material consultable sobre \"¿Por qué el lago Hillier cambia de color cada verano?\". ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 20 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "Dejó material consultable sobre \"Qué oculta el zumbido de Taos que nadie puede explicar\". ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 20 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Guionista": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Intentó 4 veces escribir \"¿Por qué el lago Hillier cambia de color cada verano?\" sin que el Verificador lo aprobara. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. JEFA: 4 intentos y nada aprobado. Esto es inaceptable. Estudien la fuente antes de escribir."
+      "tarea": "Intentó 4 veces escribir \"Qué oculta el zumbido de Taos que nadie puede explicar\" sin que el Verificador lo aprobara. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. JEFA: 4 intentos y nada aprobado. Esto es inaceptable. Estudien la fuente antes de escribir."
     },
     "Verificador de datos": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Rechazó \"¿Por qué el lago Hillier cambia de color cada verano?\": Falta la frase de cierre exacta: \"Comparte este video con un amigo que haría lo mismo, sígueme.\" ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
+      "tarea": "Rechazó \"Qué oculta el zumbido de Taos que nadie puede explicar\": Falta la frase de cierre exacta: \"¿Qué explicación te convence sobre \"Qué oculta el zumbido de Taos que nadie puede explicar\"? Sígueme para descubrir más mister ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
     },
     "Editor de guion": {
       "estado": "trabajando",
@@ -261,12 +261,12 @@
     "Jefa de calidad": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Frenó \"¿Por qué el lago Hillier cambia de color cada verano?\": Falta la frase de cierre exacta: \"Comparte este video con un amigo que haría lo mismo, sígueme.\" ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
+      "tarea": "Frenó \"Qué oculta el zumbido de Taos que nadie puede explicar\": Falta la frase de cierre exacta: \"¿Qué explicación te convence sobre \"Qué oculta el zumbido de Taos que nadie puede explicar\"? Sígueme para descubrir más misterios.\" ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
     },
     "Cazador de fórmulas": {
       "estado": "libre",
       "actividad": "leyendo",
-      "tarea": "Revisó 133 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (26076 vistas/hora). Fórmula: Título con pregunta intrigante o afirmación impactante + elemento misterioso o inesperado + referencia a un lu ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "tarea": "Revisó 133 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (25997 vistas/hora). Fórmula: Pregunta intrigante o afirmación impactante + elemento misterioso/extraño + pista de revelación o consecuencia ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Vigía de tendencias": {
       "estado": "libre",
@@ -296,7 +296,7 @@
     "Auditor de normas": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Encontró incumplimientos: Falta la frase de cierre exacta: \"Comparte este video con un amigo que haría lo mismo, sígueme.\" | La revelación cae al 58.5 % (55 de 94 palabras antes de ella) y debe caer entre 65 % y 75 %; apunta a 70 %–72 % contando todas las escenas, incluida la revelación y el cierre. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "Encontró incumplimientos: Falta la frase de cierre exacta: \"¿Qué explicación te convence sobre \"Qué oculta el zumbido de Taos que nadie puede explicar\"? Sígueme para descubrir más misterios.\" | La revelación cae al 63.4 % (64 de 101 palabras antes de ella) y debe caer entre 65 % y 75 %; apunta a 70 %–72 % contando todas las escenas, incluida la revelación y el cierre. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Revisor de nombres": {
       "estado": "libre",
@@ -320,7 +320,7 @@
     }
   },
   "jefa": {
-    "mensaje": "Necesita revisión: el guion de \"¿Por qué el lago Hillier cambia de color cada verano?\" no pasó la verificación. Aprobados: 12. Rechazados: 60. Con error: 14. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. JEFA: Un guion rechazado no se publica. Tienen 11 h para entregar algo que pase.",
-    "horasParaProximoCiclo": 11
+    "mensaje": "Necesita revisión: el guion de \"Qué oculta el zumbido de Taos que nadie puede explicar\" no pasó la verificación. Aprobados: 12. Rechazados: 63. Con error: 14. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. JEFA: Un guion rechazado no se publica. Tienen 10 h para entregar algo que pase.",
+    "horasParaProximoCiclo": 10
   }
 }

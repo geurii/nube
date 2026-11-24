@@ -1,5 +1,41 @@
 [
   {
+    "id": "mwuuwu3a9umj",
+    "fecha": "2026-11-24T15:35:50.614Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Qué oculta el zumbido de Taos que nadie puede explicar",
+    "texto": "El Verificador no aprobó \"Qué oculta el zumbido de Taos que nadie puede explicar\" tras 4 intentos: Falta la frase de cierre exacta: \"¿Qué explicación te convence sobre \"Qué oculta el zumbido de Taos que nadie puede explicar\"? Sígueme para descubrir más mister Aprobados: 12. Rechazados: 63. Con error: 14. No se publica. Próximo ciclo en 10 h."
+  },
+  {
+    "id": "mwuuueud7786",
+    "fecha": "2026-11-24T15:33:57.542Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Qué oculta el zumbido de Taos que nadie puede explicar",
+    "texto": "El Verificador no aprobó \"Qué oculta el zumbido de Taos que nadie puede explicar\" tras 4 intentos: Falta la frase de cierre exacta: \"¿Qué explicación te convence sobre \"Qué oculta el zumbido de Taos que nadie puede explicar\"? Sígueme para descubrir más mister Aprobados: 12. Rechazados: 62. Con error: 14. No se publica. Próximo ciclo en 10 h."
+  },
+  {
+    "id": "mwuursrqz2yp",
+    "fecha": "2026-11-24T15:31:55.622Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Qué oculta el zumbido de Taos que nadie puede explicar",
+    "texto": "El Verificador no aprobó \"Qué oculta el zumbido de Taos que nadie puede explicar\" tras 4 intentos: Falta la frase de cierre exacta: \"¿Qué explicación te convence sobre \"Qué oculta el zumbido de Taos que nadie puede explicar\"? Sígueme para descubrir más mister Aprobados: 12. Rechazados: 61. Con error: 14. No se publica. Próximo ciclo en 10 h."
+  },
+  {
+    "id": "mwuupcgf6aeh",
+    "fecha": "2026-11-24T15:30:01.167Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante o afirmación impactante + elemento misterioso/extraño + pista de revelación o consecuencia El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (25997 vistas/hora)."
+  },
+  {
     "id": "mwuu34aswowz",
     "fecha": "2026-11-24T15:12:44.164Z",
     "canal": "lqns",
@@ -675,41 +711,5 @@
     "tipo": "alerta",
     "titulo": "Guion rechazado: Sea of Azov",
     "texto": "El Verificador no aprobó \"Sea of Azov\" tras 4 intentos: La primera frase debe empezar con \"Sabías que\". Aprobados: 11. Rechazados: 21. Con error: 8. No se publica. Próximo ciclo en 11 h."
-  },
-  {
-    "id": "mwsp3imtq78i",
-    "fecha": "2026-11-23T03:17:32.309Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: Enigma machine",
-    "texto": "El Verificador no aprobó \"Enigma machine\" tras 4 intentos: No se especifica que la Enigma protegiera 'los secretos más críticos del siglo XX', solo que fue usada para proteger comunicaciones comerciales, diplomáticas y  Aprobados: 11. Rechazados: 20. Con error: 8. No se publica. Próximo ciclo en 11 h."
-  },
-  {
-    "id": "mwsoznsbkbdq",
-    "fecha": "2026-11-23T03:14:32.363Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante o afirmación impactante + elemento misterioso/extraño + pista de revelación o consecuencia El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (32895 vistas/hora)."
-  },
-  {
-    "id": "mwsitgjvrza2",
-    "fecha": "2026-11-23T00:21:45.355Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: Wardenclyffe Tower",
-    "texto": "El Verificador no aprobó \"Wardenclyffe Tower\" tras 4 intentos: El material menciona transmisión de mensajes, telefonía y facsimile, pero no afirma que la torre prometía transmitir energía. Aprobados: 11. Rechazados: 19. Con error: 8. No se publica. Próximo ciclo en 2 h."
-  },
-  {
-    "id": "mwsir8t0ppiv",
-    "fecha": "2026-11-23T00:20:02.004Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: ",
-    "texto": "El Verificador no aprobó \"\" tras 0 intentos: Tema descartado (no se pudo cargar):  Aprobados: 11. Rechazados: 18. Con error: 8. No se publica. Próximo ciclo en 2 h."
   }
 ]

@@ -1,0 +1,63 @@
+{
+  "titulo": "🌌 ¿Qué oculta el zumbido de Taos? Un misterio sin resolver",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-que-oculta-el-zumbido-de-taos-que-nadie-puede-explicar.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T15:35:50.552Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿¿Has oído el zumbido que solo algunos perciben?",
+  "publicacion": {
+    "titulo": "🌌 ¿Qué oculta el zumbido de Taos? Un misterio sin resolver",
+    "descripcion": "Sumérgete en el enigma del zumbido de Taos, un fenómeno auditivo que desafía toda explicación. Un relato ficticio que te mantendrá al borde de tu asiento.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: \n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#zumbidotaos #misterio #fenomeno #ficcion #intriga"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 4,
+    "critica": "El gancho es débil y no genera curiosidad inmediata. La historia carece de ritmo y detalles concretos. La revelación no sorprende y el cierre es genérico."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Has oído el zumbido que solo algunos perciben? Un sonido que desafía toda lógica.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En un lugar imaginario, un grupo de personas reporta un zumbido constante. Lo extraño: no todos lo oyen. Este relato ficticio explora un fenómeno que intriga y confunde.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Teoría tras teoría surge, pero ninguna explica por qué solo algunos lo escuchan. ¿Es un fenómeno natural, una ilusión, o algo más?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: en esta ficción, el zumbido sigue siendo un enigma, sin explicación clara.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Qué explicación te convence sobre 'Qué oculta el zumbido de Taos que nadie puede explicar'? Sígueme para descubrir más misterios.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}
