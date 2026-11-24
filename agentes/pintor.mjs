@@ -23,7 +23,7 @@ export const ESCENARIOS = {
 export const TIPOS = new Set([
   'estrellas', 'astro', 'resplandor', 'montanas', 'suelo', 'agua', 'niebla', 'arbol', 'edificio', 'central', 'pergamino',
   'nubes', 'olas', 'particulas', 'rayos', 'barco', 'pez', 'roca', 'hielo', 'duna', 'algas', 'sargazo', 'faro', 'silueta', 'ovni', 'explosion', 'ciudad', 'bosque', 'calendario', 'reloj', 'castillo', 'corona', 'libro', 'moneda', 'iglesia', 'caballo',
-  'hidrofono', 'sonar', 'microfono', 'volcan', 'fuego', 'lago', 'avion', 'tren', 'submarino',
+  'hidrofono', 'sonar', 'microfono', 'volcan', 'fuego', 'lago', 'avion', 'tren', 'submarino', 'barril', 'cerveza', 'cerveceria', 'tsunami', 'deslizamiento',
 ]);
 
 /** Una "caja vacía": barra o rectángulo ancho y bajo sin forma de objeto (parece un cuadro de texto sin texto). Gemini la marca como falla grave. */
@@ -64,6 +64,11 @@ export const sujetosDelTexto = (texto = '') => {
     [/\b(avion|aeronave|vuelo|piloto|aeroplano)\b/, ['avion']],
     [/\b(tren|ferrocarril|locomotora|vagon|via ferroviaria)\b/, ['tren']],
     [/\b(montana|montanas|cordillera|cumbre|acantilado)\b/, ['montanas']],
+    [/\b(cerveza|cerveceria|barril|barriles|tonel|toneles|cuba|brewery|beer)\b/, ['barril','cerveza','cerveceria']],
+    [/\b(inundacion|riada|avenida|oleada)\b/, ['cerveza','tsunami']],
+    [/\b(tsunami|megatsunami|maremoto|ola gigante)\b/, ['tsunami','agua','hielo']],
+    [/\b(terremoto|seismo|temblor|falla geologica|fallas tectonicas)\b/, ['deslizamiento','tsunami','montanas']],
+    [/\b(deslizamiento|derrumbe|avalancha|rocas cayeron|desprendimiento)\b/, ['deslizamiento','roca','montanas']],
     [/\b(faro|torre de luz)\b/, ['faro']],
   ];
   return [...new Set(reglas.filter(([re]) => re.test(t)).flatMap(([, tipos]) => tipos))];
@@ -73,6 +78,7 @@ export const OBJETOS_NARRATIVOS = new Set([
   'barco','pez','hielo','faro','ovni','explosion','ciudad','bosque','arbol','edificio','central',
   'pergamino','calendario','reloj','castillo','corona','libro','moneda','iglesia','caballo','silueta','astro','duna',
   'montanas','hidrofono','sonar','microfono','volcan','fuego','lago','avion','tren','submarino',
+  'barril','cerveza','cerveceria','tsunami','deslizamiento',
 ]);
 
 /** Un cuadro solo sirve si contiene un objeto implementado y este coincide con la frase narrada. */
