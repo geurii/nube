@@ -11,8 +11,14 @@ const F = 2;
 const VACIA: EscenaPintada = {cielo: ['#0a0c24', '#1c2a5e', '#6b4a7a'], capas: [{t: 'estrellas', n: 60}]};
 
 const Lienzo: React.FC<{id: string}> = ({id}) => {
-  const {width, height, fps} = useVideoConfig();
+  const {width, height, fps, durationInFrames} = useVideoConfig();
   const frame = useCurrentFrame();
+  // Movimiento de cámara continuo también en escenas pixel art: evita que el plano parezca una imagen fija.
+  const progreso = Math.min(1, Math.max(0, frame / Math.max(1, durationInFrames)));
+  const direccion = (id.length % 2 === 0) ? 1 : -1;
+  const escala = 1.035 + progreso * 0.055;
+  const moverX = Math.sin(progreso * Math.PI) * 1.15 * direccion;
+  const moverY = Math.sin(progreso * Math.PI * 1.4) * -0.7;
   const ref = useRef<HTMLCanvasElement>(null);
   const lw = Math.round(width / F);
   const lh = Math.round(height / F);
@@ -79,7 +85,7 @@ const Lienzo: React.FC<{id: string}> = ({id}) => {
   }, [frame, spec, fuente]);
   return (
     <AbsoluteFill style={{background: '#000'}}>
-      <canvas ref={ref} width={lw} height={lh} style={{width: '100%', height: '100%', imageRendering: 'pixelated'}} />
+      <canvas ref={ref} width={lw} height={lh} style={{width: '100%', height: '100%', imageRendering: 'pixelated', transform: `scale(${escala}) translate(${moverX}%, ${moverY}%)`, transformOrigin: 'center center'}} />
     </AbsoluteFill>
   );
 };
