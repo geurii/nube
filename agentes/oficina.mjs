@@ -369,9 +369,16 @@ const elegirTema = async (modelo) => {
   const reserva = ['The Green Children of Woolpit', 'The moving rocks of Death Valley', 'The disappearing lake of Cerknica', 'The phantom time hypothesis', 'The Antikythera mechanism', 'The Voynich manuscript', 'The Hessdalen lights', 'The Devil’s Footprints', 'The Mary Celeste', 'The Tunguska event', 'The Bloop', 'The Taos Hum', 'The Wow! signal', 'The dancing plague of 1518', 'The Great Moon Hoax'];
   for (const t of reserva) {
     if (yaHecho(t)) continue;
-    const pagina = await wikipedia('en', t);
+    let pagina = null;
+    try { pagina = await wikipedia('en', t); } catch (e) { console.warn(`Wikipedia no disponible para "${t}": ${e.message}`); }
     if (pagina?.extract && pagina.extract.trim().length >= 300) {
       informe.push('Tema elegido del catálogo editorial verificado y con página consultable; se excluyen los temas ya tratados.');
+      return pagina.title || t;
+    }
+    const webReserva = await investigarEnLaWeb(t);
+    const fuenteReserva = webReserva.find((x) => String(x.texto ?? '').trim().length >= 220);
+    if (fuenteReserva) {
+      informe.push(`Tema elegido del catálogo editorial mediante fuente web alternativa: ${fuenteReserva.dominio || fuenteReserva.url}.`);
       return t;
     }
   }
@@ -431,15 +438,17 @@ const elegirTema = async (modelo) => {
     'Moberly-Jourdain incident',
     'Cahokia'
   ]; */
+  // Último recurso: consultar las ideas del catálogo mediante buscadores web, aunque Wikipedia siga en 429.
   for (const t of reserva) {
     if (typeof t !== 'string' || yaHecho(t)) continue;
-    const pagina = await wikipedia('en', t);
-    if (pagina?.extract && pagina.extract.trim().length >= 300) {
-      informe.push('Tema elegido desde el respaldo editorial y validado con una página consultable.');
-      return pagina.title || t;
+    const paginas = await investigarEnLaWeb(t);
+    const fuente = paginas.find((x) => String(x.texto ?? '').trim().length >= 220);
+    if (fuente) {
+      informe.push(`Tema elegido desde respaldo editorial con fuente web consultable: ${fuente.dominio || fuente.url}.`);
+      return t;
     }
   }
-  throw new Error('No se encontró un tema nuevo tras agotar las propuestas editoriales.');
+  throw new Error('No se encontró un tema nuevo tras consultar Wikipedia y los buscadores web alternativos.');
 };
 
 /* ====================== Normas de la jefa (las cumplen todos) ====================== */
