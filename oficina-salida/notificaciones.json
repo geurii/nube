@@ -1,5 +1,14 @@
 [
   {
+    "id": "mwuwpqhnxhts",
+    "fecha": "2026-11-24T16:26:18.587Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título que combina una pregunta intrigante o afirmación impactante + un elemento de misterio o dato sorprendente, a menudo con palabras clave como “Why”, “How”, “What”, “Secret”, “Mystery”, “Unexplainable”, “Hidden”, seguidas de un detalle concreto que genera  El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (25825 vistas/hora)."
+  },
+  {
     "id": "mwuwo0v6imh8",
     "fecha": "2026-11-24T16:24:58.722Z",
     "canal": "lqns",
@@ -699,14 +708,5 @@
     "tipo": "alerta",
     "titulo": "Guion rechazado: London Underground",
     "texto": "El Verificador no aprobó \"London Underground\" tras 4 intentos: No hay información en el material sobre un secreto escondido durante décadas en el primer metro del mundo. Aprobados: 11. Rechazados: 33. Con error: 9. No se publica. Próximo ciclo en 10 h."
-  },
-  {
-    "id": "mwu53ret4l2a",
-    "fecha": "2026-11-24T03:33:23.717Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: DynaTAC",
-    "texto": "El Verificador no aprobó \"DynaTAC\" tras 4 intentos: La revelación cae al 59 % (106 de 179 palabras antes de ella) y debe caer entre 65 % y 75 %: añade historia antes de la revelación o acórtala. Aprobados: 11. Rechazados: 32. Con error: 9. No se publica. Próximo ciclo en 10 h."
   }
 ]

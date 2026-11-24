@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-24T16:24:58.720Z",
+  "actualizado": "2026-11-24T16:26:18.585Z",
   "canalesLeidos": 9,
   "videosRevisados": 133,
   "mejores": [
@@ -8,8 +8,8 @@
       "idioma": "en",
       "titulo": "Why Is Antarctica Closed? The Operation Highjump Mystery",
       "publicado": "2026-11-20T01:00:08.000Z",
-      "vistas": 2878458,
-      "vistasPorHora": 25836
+      "vistas": 2877785,
+      "vistasPorHora": 25825
     },
     {
       "canal": "MrBallen",
@@ -17,43 +17,43 @@
       "titulo": "Always open your fan mail",
       "publicado": "2026-11-21T19:00:32.000Z",
       "vistas": 1154107,
-      "vistasPorHora": 16628
+      "vistasPorHora": 16623
     },
     {
       "canal": "The Why Files",
       "idioma": "en",
       "titulo": "The Basement: Close Encounters Compilation | Abductions, Missing Time & Contact",
       "publicado": "2026-11-23T18:00:10.000Z",
-      "vistas": 303668,
-      "vistasPorHora": 13549
+      "vistas": 302929,
+      "vistasPorHora": 13502
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "How Skydiving Changed Will Smith's Life!",
       "publicado": "2026-11-17T17:00:07.000Z",
-      "vistas": 2203985,
-      "vistasPorHora": 13165
+      "vistas": 2204537,
+      "vistasPorHora": 13166
     },
     {
       "canal": "The Why Files",
       "idioma": "en",
       "titulo": "America Is Hiding Something Underground",
       "publicado": "2026-11-18T18:00:14.000Z",
-      "vistas": 1388162,
-      "vistasPorHora": 9747
+      "vistas": 1387982,
+      "vistasPorHora": 9745
     }
   ],
   "formula": {
-    "formula": "Título con pregunta intrigante o afirmación impactante + elemento misterioso o inesperado + referencia a un caso/tema concreto",
+    "formula": "Título que combina una pregunta intrigante o afirmación impactante + un elemento de misterio o dato sorprendente, a menudo con palabras clave como “Why”, “How”, “What”, “Secret”, “Mystery”, “Unexplainable”, “Hidden”, seguidas de un detalle concreto que genera curiosidad.",
     "ganchos": [
-      "¿Qué oculta [lugar/objeto] que nadie quiere que descubras?",
-      "La verdad detrás de [evento] que cambiará lo que creías saber",
-      "Descubre el secreto de [fenómeno] que ha dejado perplejos a los expertos"
+      "¿Qué [evento/objeto] está [ocultando/oculto] y por qué nadie lo explica?",
+      "Descubre el [misterio/secret] detrás de [situación/ubicación] que cambiará lo que sabes.",
+      "La verdad sobre [fenómeno] que [autoridad/experto] no quiere que veas."
     ],
     "evitar": [
-      "Títulos demasiado genéricos sin un gancho específico (ej. \"Historia de…\")",
-      "Uso excesivo de palabras de relleno que diluyen la promesa del misterio (ej. \"muy interesante\", \"increíblemente\" sin aportar información)"
+      "Títulos demasiado genéricos sin un gancho concreto (ej. “Historia de X” sin elemento de misterio).",
+      "Uso excesivo de mayúsculas o símbolos que distraen y reducen la claridad del mensaje."
     ]
   }
 }
