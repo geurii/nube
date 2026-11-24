@@ -44,7 +44,7 @@ env:
 jobs:
   oficina:
     runs-on: ubuntu-24.04
-    timeout-minutes: 70
+    timeout-minutes: 360
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -54,6 +54,8 @@ jobs:
         id: pres
         env:
           GH_TOKEN: ${{ github.token }}
+          FORMATO_ACTUAL: ${{ inputs.formato || steps.pres.outputs.formato || (github.event.schedule == '0 16 * * *' && 'largo' || 'short') }}
+          CANAL_PENDIENTE: ${{ inputs.canal }}
         run: |
           if [ -f agentes/PAUSA ]; then echo "ok=no" >> "$GITHUB_OUTPUT"; echo "PRODUCCION EN PAUSA (existe agentes/PAUSA): este ciclo se salta."; exit 0; fi
           if [ "${{ github.event_name }}" = "schedule" ]; then
@@ -141,35 +143,57 @@ jobs:
           PALABRAS: ${{ inputs.palabras }}
         run: |
           canales=$(node agentes/canales-activos.mjs)
+          if [ -n "$CANAL_PEDIDO" ]; then canales="$CANAL_PEDIDO"; fi
           echo "Canales de este ciclo: $canales"
-          fallo=0
+          # GitHub limita cada trabajo a 6 horas; se encadenan ventanas para continuar.
+          limite=$((SECONDS + 330 * 60))
+          canal_pendiente=""
           for c in $canales; do
             echo "=== $c ==="
             CANAL=$c timeout 120 node agentes/vistas.mjs || true
             CANAL=$c timeout 120 node agentes/analytics.mjs || true
             CANAL=$c timeout 120 node agentes/cazador.mjs || true
             CANAL=$c timeout 200 node agentes/radar.mjs || true
-            for intento in 1 2 3; do
+            intento=0
+            espera=30
+            while [ "$SECONDS" -lt "$limite" ]; do
+              intento=$((intento + 1))
+              echo "Intento continuo $intento para $c (sin límite de rechazos)."
               if [ "$intento" -eq 1 ]; then
-                CANAL=$c timeout 900 node agentes/oficina.mjs || fallo=1
+                CANAL=$c timeout 900 node agentes/oficina.mjs || true
               else
-                echo "Reintento $intento: se limpia el tema anterior para que la Oficina elija uno distinto."
-                env -u TEMA CANAL=$c timeout 900 node agentes/oficina.mjs || fallo=1
+                env -u TEMA CANAL=$c timeout 900 node agentes/oficina.mjs || true
               fi
-              CANAL=$c node agentes/ultimo-aprobado.mjs && break
-              echo "No salió un guion aprobado (intento $intento de 3): pruebo con otro tema."
+              if CANAL=$c node agentes/ultimo-aprobado.mjs; then
+                echo "Guion aprobado para $c en el intento $intento."
+                break
+              fi
+              echo "No hay guion aprobado. Se cambia de tema/proveedor y se reintenta en ${espera}s."
+              sleep "$espera"
+              espera=$((espera < 300 ? espera * 2 : 300))
             done
-            if CANAL=$c node agentes/ultimo-aprobado.mjs | grep -q aprobado; then
-              CANAL=$c timeout 120 node agentes/autopsia.mjs || true
-              CANAL=$c timeout 120 node agentes/ayuda.mjs || true
-              CANAL=$c timeout 120 node agentes/funciones.mjs || true
-              CANAL=$c timeout 120 node agentes/conciencia.mjs || true
-            else
-              echo "No hubo guion aprobado para $c tras 3 intentos; no se activa Produccion."
-              fallo=1
+            if ! CANAL=$c node agentes/ultimo-aprobado.mjs; then
+              canal_pendiente="$c"
+              echo "Ventana agotada para $c; se continuará automáticamente en otra ejecución."
+              break
             fi
+            CANAL=$c timeout 120 node agentes/autopsia.mjs || true
+            CANAL=$c timeout 120 node agentes/ayuda.mjs || true
+            CANAL=$c timeout 120 node agentes/funciones.mjs || true
+            CANAL=$c timeout 120 node agentes/conciencia.mjs || true
           done
-          if [ "$fallo" -ne 0 ]; then echo "::warning::Uno o más canales no obtuvieron guion aprobado; el flujo continúa para que Producción recoja cualquier guion aprobado pendiente."; fi
+          if [ -n "$canal_pendiente" ]; then
+            echo "Encadenando otra ejecución para continuar buscando un guion aprobado."
+            payload=$(node -e 'console.log(JSON.stringify({ref:"main",inputs:{formato:process.env.FORMATO_ACTUAL || "short",canal:process.env.CANAL_PENDIENTE}}))')
+            curl --fail-with-body --silent --show-error --retry 3 --retry-delay 5 \
+              -X POST \
+              -H "Authorization: Bearer $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              https://api.github.com/repos/geurii/nube/actions/workflows/oficina.yml/dispatches \
+              -d "$payload"
+            echo "Continuación solicitada para $canal_pendiente."
+          fi
           exit 0
       - name: Marcar progreso del guion
         if: always() && steps.pres.outputs.ok != 'no'
