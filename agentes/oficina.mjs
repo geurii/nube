@@ -226,7 +226,7 @@ const groqUnaRonda = async (modelo, mensajes, maxTokens, json = false) => {
   }
   try { return await groqDirecto(modelo, mensajes, maxTokens, json); }
   catch (e) {
-    if (e.fatal && !e.groq413 && !e.groqJson400) throw e;
+    if (e.fatal && !e.groq413 && !e.groqJson400 && !proveedoresConLlave().length) throw e;
     if (e.groq413) console.warn('Groq 413: se deriva al proveedor alternativo.');
     if (e.groqJson400) console.warn('Groq rechazó el JSON (400): se deriva al proveedor alternativo.');
     const alt = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: Math.min(maxTokens ?? 2500, FORMATO === 'largo' ? 2200 : 1200), json});
@@ -266,7 +266,7 @@ const elegirModelo = async () => {
   for (let i = 1; i <= 4; i++) {
     try {
       const r = await fetch('https://api.groq.com/openai/v1/models', {headers: {Authorization: `Bearer ${KEY}`}, signal: AbortSignal.timeout(30000)});
-      if (r.status === 401) throw Object.assign(new Error('La clave de Groq no es válida (401). Crea otra y guárdala como GROQ_API_KEY.'), {fatal: true});
+      if (r.status === 401) { if (proveedoresConLlave().length) { console.warn('Groq 401: se continúa con los proveedores alternativos.'); return 'openai/gpt-oss-120b'; } throw Object.assign(new Error('La clave de Groq no es válida (401). Crea otra y guárdala como GROQ_API_KEY.'), {fatal: true}); }
       if (!r.ok) { await dormir(2000 * i); continue; }
       const ids = (await r.json()).data.map((m) => m.id);
       const preferidos = ['openai/gpt-oss-120b', 'llama-3.3-70b-versatile', 'openai/gpt-oss-20b', 'llama-3.1-8b-instant'];
