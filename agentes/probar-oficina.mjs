@@ -1,4 +1,4 @@
-// Prueba la oficina SIN gastar Groq: simula las respuestas de la IA y simula las ocho fuentes institucionales y deja Wikipedia opcional.
+// Prueba la oficina SIN gastar Groq: simula respuestas de IA y resultados web. No valida la búsqueda real.
 // node agentes/probar-oficina.mjs → corre en una carpeta temporal con DOS canales y revisa guion, informe, estado y notificaciones de cada uno.
 import fs from 'node:fs';
 import os from 'node:os';
