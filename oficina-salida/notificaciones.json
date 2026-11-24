@@ -1,5 +1,14 @@
 [
   {
+    "id": "mwv9i8lf79r6",
+    "fecha": "2026-11-24T22:24:23.811Z",
+    "canal": "lqns",
+    "canalNombre": "Vigilante",
+    "tipo": "reporte",
+    "titulo": "Resumen del día",
+    "texto": "Últimas 24 h: 5 video(s) en YouTube, 4 en Facebook, 4 en Instagram, 3 en TikTok. Todo en orden."
+  },
+  {
     "id": "mwv755y9b4lz",
     "fecha": "2026-11-24T21:18:14.625Z",
     "canal": "lqns",
@@ -687,14 +696,5 @@
     "tipo": "reporte",
     "titulo": "Fórmula del momento",
     "texto": "Lo que hoy funciona para Lo Que No Sabías: Título corto + pregunta intrigante o afirmación impactante que sugiere un misterio o un descubrimiento inesperado El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (26545 vistas/hora)."
-  },
-  {
-    "id": "mwujatnaja47",
-    "fecha": "2026-11-24T10:10:47.830Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: ",
-    "texto": "El Verificador no aprobó \"\" tras 0 intentos: Tema descartado (no se pudo cargar):  Aprobados: 11. Rechazados: 48. Con error: 10. No se publica. Próximo ciclo en 4 h."
   }
 ]

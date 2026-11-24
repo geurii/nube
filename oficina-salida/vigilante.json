@@ -1,8 +1,6 @@
 {
-  "alertas": {
-    "sin-publicar": "2026-11-24T09:52:48.964Z"
-  },
-  "fecha": "2026-11-24T09:52:49.150Z",
+  "alertas": {},
+  "fecha": "2026-11-24T22:24:23.813Z",
   "ok": [
     "YouTube conectado",
     "analítica autorizada",
@@ -10,10 +8,8 @@
     "Gemini responde",
     "Windsor responde",
     "Buffer responde",
-    "minutos de GitHub: 1374 de 2000"
+    "hay publicaciones recientes"
   ],
-  "problemas": [
-    "Llevan más de 36 horas sin publicar"
-  ],
-  "resumenDia": "2026-11-23"
+  "problemas": [],
+  "resumenDia": "2026-11-24"
 }
