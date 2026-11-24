@@ -156,7 +156,8 @@ jobs:
               fallo=1
             fi
           done
-          exit $fallo
+          if [ "$fallo" -ne 0 ]; then echo "::warning::Uno o más canales no obtuvieron guion aprobado; el flujo continúa para que Producción recoja cualquier guion aprobado pendiente."; fi
+          exit 0
       - name: Marcar progreso del guion
         if: always() && steps.pres.outputs.ok != 'no'
         run: |
