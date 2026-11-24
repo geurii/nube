@@ -74,7 +74,9 @@ const horasParaProximoCiclo = () => {
 /** Reporte para la campana de la oficina 3D. tipo: reporte | alerta | listo. */
 const notificar = (tipo, titulo, texto) => {
   const lista = leerJson(NOTIFICACIONES, []);
-  const repetida = lista.some((n) => n.canal === CANAL_ID && n.tipo === tipo && n.titulo === titulo
+  const avisoDeTema = tipo === 'reporte' && titulo.startsWith('Tema descartado:');
+  const repetida = lista.some((n) => n.canal === CANAL_ID && n.tipo === tipo
+    && (n.titulo === titulo || (avisoDeTema && String(n.titulo ?? '').startsWith('Tema descartado:')))
     && Date.now() - Date.parse(n.fecha) < 12 * 60 * 60 * 1000);
   if (repetida) {
     console.log(`Aviso duplicado suprimido (12 h): ${titulo}`);
@@ -357,8 +359,16 @@ const elegirTema = async (modelo) => {
       if (k.length >= 4 && !vistos.includes(k)) { vistos.push(k); inventario.push(String(t).trim()); }
     }
   }
-  // Respaldo editorial: temas curiosos conocidos; se excluyen los ya usados o rechazados.
-  const reserva = ['The Bloop', 'The Taos Hum', 'The Wow! signal', 'The dancing plague of 1518', 'The Great Moon Hoax', 'The Green Children of Woolpit', 'The Devil’s Footprints', 'The Mary Celeste', 'The Tunguska event', 'The phantom time hypothesis', 'The Antikythera mechanism', 'The Voynich manuscript', 'The upside-down river phenomenon', 'The moving rocks of Death Valley', 'The Hessdalen lights', 'The disappearing lake of Cerknica'];
+  // Catálogo curado de temas reales conocidos: se comprueba que exista una página con contenido antes de elegirlos.
+  const reserva = ['The Green Children of Woolpit', 'The moving rocks of Death Valley', 'The disappearing lake of Cerknica', 'The phantom time hypothesis', 'The Antikythera mechanism', 'The Voynich manuscript', 'The Hessdalen lights', 'The Devil’s Footprints', 'The Mary Celeste', 'The Tunguska event', 'The Bloop', 'The Taos Hum', 'The Wow! signal', 'The dancing plague of 1518', 'The Great Moon Hoax'];
+  for (const t of reserva) {
+    if (yaHecho(t)) continue;
+    const pagina = await wikipedia('en', t);
+    if (pagina?.extract && pagina.extract.trim().length >= 300) {
+      informe.push('Tema elegido del catálogo editorial verificado y con página consultable; se excluyen los temas ya tratados.');
+      return t;
+    }
+  }
   /* Lista histórica conservada como referencia editorial, nunca como prueba documental.
   const reservaAnterior = [
     'Green Children of Woolpit',
@@ -554,19 +564,23 @@ try {
     informe[0] = `# Informe de la oficina · ${TEMA} (${FORMATO})`;
   }
   slug = slugDe(TEMA);
-  const fuentes = await investigar();
-  // INTERNET PARA TODOS: una vez por ciclo se reúne lo que dice la web de hoy y se les da a todos los agentes (Guionista, Editor, Verificador, Titulista, panel, pintores...)
+  const fuentesEncontradas = await investigar();
+  // Una sola fuente consultable: primero una página web legible; si falla el buscador, una entrada enciclopédica con contenido.
+  const fuenteUnica = fuentesEncontradas.find((f) => !f.apoyo && String(f.texto ?? '').trim().length >= 220)
+    ?? fuentesEncontradas.find((f) => String(f.texto ?? '').trim().length >= 220);
+  const fuentes = fuenteUnica ? [{...fuenteUnica, fuenteSecundaria: Boolean(fuenteUnica.apoyo), apoyo: false}] : [];
+  // La fuente única elegida es la base factual de todos los agentes.
   try {
     const tit = await Promise.race([titulosVirales(TEMA), new Promise((r) => setTimeout(() => r([]), 25000))]);
-    const resumenes = fuentes.filter((x) => !x.apoyo).map((x) => ({host: x.institucion || x.dominio, texto: x.texto}));
+    const resumenes = fuentes.map((x) => ({host: x.institucion || x.dominio || x.idioma, texto: x.texto}));
     const bloqueWeb = armarBloqueWeb({tema: TEMA, resumenes, titulos: tit, radarTexto: textoDeRadar(leerJson(path.join(SALIDA, 'radar.json'), null), 2)});
     guardarWeb(CANAL_ID, {tema: TEMA, bloque: bloqueWeb, resumenes: resumenes.length, titulos: tit});
     WEB_BLOQUE = [bloqueWeb, leerPreferencias(CANAL_ID), textoDeLecciones(CANAL_ID)].filter(Boolean).join(' ');
-    if (bloqueWeb) informe.push(`Internet para todos los agentes: ${resumenes.length} resúmenes web y ${tit.length} videos virales de YouTube sobre el tema.`);
+    if (bloqueWeb) informe.push(`Internet para todos los agentes: ${resumenes.length} fuente consultada y ${tit.length} videos virales de YouTube sobre el tema.`);
   } catch { /* sin internet extra */ }
-  informe.push('## Investigación web (fuentes consultadas; no se exige que sean institucionales)', ...fuentes.map((f) => `- ${f.apoyo ? 'Wikipedia (opcional; no cuenta como prueba)' : `${f.institucion || f.idioma} (${f.dominio || 'fuente consultada'})`}: [${f.titulo}](${f.url})`), '');
-  const materialRecuperado = fuentes.filter((f) => !f.apoyo).map((f) => `### FUENTE CONSULTADA ${f.url}\n${f.texto}`).join('\n\n');
-  if (!materialRecuperado.trim()) throw new Error(`No se recuperó material suficiente y consultable para "${TEMA}". Se descarta el tema; no se inventa contenido.`);
+  informe.push('## Investigación (una sola fuente consultada)', ...fuentes.map((f) => `- ${f.fuenteSecundaria ? 'Wikipedia (fuente única consultada)' : `${f.institucion || f.idioma} (${f.dominio || 'fuente consultada'})`}: [${f.titulo}](${f.url})`), '');
+  const materialRecuperado = fuentes.map((f) => `### FUENTE CONSULTADA ${f.url}\\n${f.texto}`).join('\\n\\n');
+  if (!materialRecuperado.trim()) throw new Error(`No se recuperó una fuente consultable para "${TEMA}". Se descarta el tema; no se inventa contenido.`);
   const material = materialRecuperado;
 
   const GARANTIA = enGarantia(CANAL_ID);
