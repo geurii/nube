@@ -165,9 +165,13 @@ jobs:
           canal_pendiente=""
           for c in $canales; do
             echo "=== $c ==="
-            CANAL=$c timeout 120 node agentes/vistas.mjs || true
-            CANAL=$c timeout 120 node agentes/analytics.mjs || true
-            CANAL=$c timeout 120 node agentes/cazador.mjs || true
+            if [ "$FORMATO_ACTUAL" = "largo" ]; then
+              echo "LARGO: se prioriza la búsqueda de documentales de 8+ minutos; se omiten análisis auxiliares de Shorts."
+            else
+              CANAL=$c timeout 120 node agentes/vistas.mjs || true
+              CANAL=$c timeout 120 node agentes/analytics.mjs || true
+              CANAL=$c timeout 120 node agentes/cazador.mjs || true
+            fi
             CANAL=$c timeout 300 node agentes/radar.mjs || true
             intento=0
             espera=30
