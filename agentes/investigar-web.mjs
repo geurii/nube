@@ -1,48 +1,77 @@
-// Segunda fuente de investigación que NO es Wikipedia: DuckDuckGo (gratis, sin llave ni cuenta).
-// Trae los resúmenes de los primeros resultados de la web para contrastar fechas y cifras con Wikipedia.
-// Nunca tumba el ciclo: si falla, devuelve [] y la oficina sigue solo con Wikipedia.
-const UA = 'Mozilla/5.0 (compatible; FabricaDeVideos/1.0)';
-const SIN_WIKI = /(^|\.)(wikipedia|wikimedia|wikiwand|dbpedia|wikidata)\./i;
-
+// Investigación institucional multifuente. Wikipedia es opcional y nunca es requisito de aprobación.
+// Ocho catálogos/organismos: Smithsonian, NASA, National Archives, Library of Congress,
+// NOAA, USGS, PubMed y UNESCO. Se recupera contenido de la página real, no solo el snippet del buscador.
+const UA = 'Mozilla/5.0 (compatible; FabricaDeVideos/2.0; educational research)';
+export const FUENTES_INSTITUCIONALES = [
+  {id:'smithsonian',nombre:'Smithsonian Institution',dominio:'si.edu'},
+  {id:'nasa',nombre:'NASA',dominio:'nasa.gov'},
+  {id:'national-archives',nombre:'US National Archives',dominio:'archives.gov'},
+  {id:'library-of-congress',nombre:'Library of Congress',dominio:'loc.gov'},
+  {id:'noaa',nombre:'NOAA',dominio:'noaa.gov'},
+  {id:'usgs',nombre:'US Geological Survey',dominio:'usgs.gov'},
+  {id:'pubmed',nombre:'PubMed / NCBI',dominio:'pubmed.ncbi.nlm.nih.gov'},
+  {id:'unesco',nombre:'UNESCO',dominio:'unesco.org'},
+];
+const SIN_WIKI = /(^|\\.)(wikipedia|wikimedia|wikiwand|dbpedia|wikidata)\\./i;
 const limpiar = (h) => String(h ?? '')
-  .replace(/<[^>]+>/g, '')
+  .replace(/<script[\\s\\S]*?<\\/script>|<style[\\s\\S]*?<\\/style>/gi,' ')
+  .replace(/<[^>]+>/g, ' ')
   .replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#x27;|&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&nbsp;/g, ' ')
-  .replace(/\s+/g, ' ').trim();
-
-/** Convierte el enlace de redirección de DuckDuckGo en la dirección real. */
+  .replace(/&#(\\d+);/g,(_,n)=>String.fromCodePoint(Number(n)))
+  .replace(/\\s+/g, ' ').trim();
+const hostDe = (url) => { try { return new URL(url).hostname.toLowerCase().replace(/^www\\./,''); } catch { return ''; } };
+const pertenece = (url, dominio) => { const h=hostDe(url); return h===dominio || h.endsWith('.'+dominio); };
 const destino = (href) => {
-  try {
-    const u = href.startsWith('//') ? 'https:' + href : href;
-    const real = new URL(u).searchParams.get('uddg');
-    return real ? decodeURIComponent(real) : u;
-  } catch { return null; }
+  try { const u = href.startsWith('//') ? 'https:' + href : href; const real = new URL(u).searchParams.get('uddg'); return real ? decodeURIComponent(real) : u; }
+  catch { return null; }
 };
-
-/** Devuelve {resultados: [{titulo, url, texto}]} (hasta `max`) para la consulta. */
 export const buscarEnLaWeb = async (consulta, max = 6) => {
   const r = await fetch(`https://html.duckduckgo.com/html/?q=${encodeURIComponent(consulta)}`, {headers: {'User-Agent': UA}, signal: AbortSignal.timeout(25000)});
   if (!r.ok) throw new Error('buscador ' + r.status);
-  const html = await r.text();
-  const salida = [];
-  const re = /class="result__a"[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>[\s\S]*?class="result__snippet"[^>]*>([\s\S]*?)<\/a>/g;
+  const html = await r.text(), salida = [];
+  const re = /class="result__a"[^>]*href="([^"]+)"[^>]*>([\\s\\S]*?)<\\/a>[\\s\\S]*?class="result__snippet"[^>]*>([\\s\\S]*?)<\\/a>/g;
   for (const m of html.matchAll(re)) {
-    const url = destino(m[1]);
-    if (!url || !/^https?:/.test(url)) continue;
-    let host = '';
-    try { host = new URL(url).hostname; } catch { continue; }
-    if (SIN_WIKI.test(host)) continue;
-    const texto = limpiar(m[3]);
-    if (texto.length < 60) continue;
-    salida.push({titulo: limpiar(m[2]).slice(0, 120), url, texto: texto.slice(0, 380), host: host.replace(/^www\./, '')});
-    if (salida.length >= max) break;
+    const url=destino(m[1]); if (!url || !/^https?:/.test(url) || SIN_WIKI.test(hostDe(url))) continue;
+    const texto=limpiar(m[3]); if(texto.length<40) continue;
+    salida.push({titulo:limpiar(m[2]).slice(0,160),url,texto:texto.slice(0,500),host:hostDe(url)});
+    if(salida.length>=max) break;
   }
   return salida;
 };
-
-/** Fuentes de apoyo con el mismo formato que las de Wikipedia, marcadas con `apoyo: true`. */
-export const investigarEnLaWeb = async (tema, {max = 5} = {}) => {
+const extraerPagina = (html) => {
+  const title=/<title[^>]*>([\\s\\S]*?)<\\/title>/i.exec(html)?.[1] ?? '';
+  const desc=/<meta[^>]+(?:name|property)=["'](?:description|og:description)["'][^>]+content=["']([^"']+)/i.exec(html)?.[1] ?? '';
+  const parrafos=[...html.matchAll(/<p\\b[^>]*>([\\s\\S]*?)<\\/p>/gi)].map(m=>limpiar(m[1])).filter(x=>x.length>45);
+  const texto=[limpiar(desc),...parrafos].filter(Boolean).join(' ').replace(/\\s+/g,' ').trim();
+  return {titulo:limpiar(title).slice(0,180),texto:texto.slice(0,5200)};
+};
+const leerFuente = async (resultado, institucion) => {
   try {
-    const r = await buscarEnLaWeb(`${tema}`, max);
-    return r.map((x) => ({idioma: 'web', titulo: `${x.host}: ${x.titulo}`, url: x.url, texto: x.texto, apoyo: true}));
-  } catch { return []; }
+    const r=await fetch(resultado.url,{headers:{'User-Agent':UA},signal:AbortSignal.timeout(18000),redirect:'follow'});
+    if(!r.ok) return null;
+    const html=await r.text(), pagina=extraerPagina(html);
+    if(pagina.texto.length<220) return null;
+    return {idioma:'institucional',tipo:'fuente_primaria_o_institucional',institucion:institucion.nombre,dominio:institucion.dominio,titulo:pagina.titulo||resultado.titulo,url:resultado.url,texto:pagina.texto,apoyo:false};
+  } catch { return null; }
+};
+/** Busca en las ocho instituciones en paralelo y extrae la página original. Devuelve fuentes únicas y comprobables. */
+export const investigarEnLaWeb = async (tema,{maxPorFuente=2}={}) => {
+  const grupos=await Promise.all(FUENTES_INSTITUCIONALES.map(async inst=>{
+    try {
+      const resultados=await buscarEnLaWeb(`site:${inst.dominio} ${tema}`,maxPorFuente);
+      const validos=resultados.filter(x=>pertenece(x.url,inst.dominio)).slice(0,maxPorFuente);
+      const paginas=await Promise.all(validos.map(x=>leerFuente(x,inst)));
+      return paginas.filter(Boolean);
+    } catch { return []; }
+  }));
+  const vistos=new Set();
+  return grupos.flat().filter(f=>{const k=f.url.split('#')[0];if(vistos.has(k))return false;vistos.add(k);return true;});
+};
+/** Descubre temas desde los ocho dominios oficiales, no desde Wikipedia. */
+export const descubrirTemasEnFuentes = async (consulta,max=16) => {
+  const grupos=await Promise.all(FUENTES_INSTITUCIONALES.map(async inst=>{
+    try { return (await buscarEnLaWeb(`site:${inst.dominio} ${consulta}`,3)).filter(x=>pertenece(x.url,inst.dominio)).map(x=>x.titulo.replace(/ \\| .*$/,'').trim()).filter(Boolean); }
+    catch { return []; }
+  }));
+  return [...new Set(grupos.flat())].slice(0,max);
 };
