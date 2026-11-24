@@ -60,7 +60,7 @@ const enteroEnLetras = (valor) => {
       const grupo = Math.floor(valor / base);
       const resto = valor % base;
       const nombre = singular === 'mil millones' ? singular : (grupo === 1 ? singular : plural);
-      const cantidad = grupo === 1 && singular !== 'mil millones' ? 'un' : enteroEnLetras(grupo);
+      const cantidad = singular === 'mil millones' ? (grupo === 1 ? '' : enteroEnLetras(grupo)) : (grupo === 1 ? 'un' : enteroEnLetras(grupo));
       return cantidad + ' ' + nombre + (resto ? ' ' + enteroEnLetras(resto) : '');
     }
   }
