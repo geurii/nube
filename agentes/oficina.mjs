@@ -273,7 +273,7 @@ const elegirModelo = async () => {
 };
 
 /* ====================== Dirección: elige el tema sola ====================== */
-const MIN_FUENTES_INDEPENDIENTES = 2;
+const MIN_FUENTES_INDEPENDIENTES = 1; // el dueño pidió una sola fuente institucional consultable
 const tieneDocumentacionInstitucional = async (tema) => new Set((await investigarEnLaWeb(tema)).map((f) => f.dominio)).size >= MIN_FUENTES_INDEPENDIENTES;
 const elegirTema = async (modelo) => {
   // El historial real contiene registros {fecha, tema, formato, resultado...}, no solo cadenas.
@@ -311,7 +311,7 @@ const elegirTema = async (modelo) => {
   for (let ronda = 1; ronda <= 3; ronda++) {
     const r = await pedirJson(modelo, [
       {role: 'system', content: `Eres Director/a de contenido del canal "${CONFIG.nombre}" (${CONFIG.nicho}). Respondes SOLO JSON válido.`},
-      {role: 'user', content: `Propón 20 temas NUEVOS y concretos sobre ${CONFIG.nicho}, distintos entre sí, documentables en archivos, organismos científicos, museos o publicaciones académicas. No dependas de Wikipedia. No personas, biografías, política, violencia gráfica, películas, series, juegos ni chismes. PROHIBIDO repetir o proponer variantes de esta lista de temas ya usados, rechazados, producidos, publicados o reservados: ${inventario.join(' | ').slice(0, 9000) || 'ninguno'}. No devuelvas ningún título de esa lista aunque cambies "The", signos, idioma o redacción. Prioriza variedad y temas que puedan confirmarse con al menos ${MIN_FUENTES_INDEPENDIENTES} fuentes institucionales independientes. ${bloqueRadar} Ronda ${ronda}/3: busca candidatos diferentes a los de una lista anterior. Formato: {"temas":["Título exacto 1","Título exacto 2"]}.`},
+      {role: 'user', content: `Propón 20 temas NUEVOS y concretos sobre ${CONFIG.nicho}, distintos entre sí, documentables en archivos, organismos científicos, museos o publicaciones académicas. No dependas de Wikipedia. No personas, biografías, política, violencia gráfica, películas, series, juegos ni chismes. PROHIBIDO repetir o proponer variantes de esta lista de temas ya usados, rechazados, producidos, publicados o reservados: ${inventario.join(' | ').slice(0, 9000) || 'ninguno'}. No devuelvas ningún título de esa lista aunque cambies "The", signos, idioma o redacción. Prioriza variedad y temas que puedan confirmarse con al menos ${MIN_FUENTES_INDEPENDIENTES} fuente institucional consultable. ${bloqueRadar} Ronda ${ronda}/3: busca candidatos diferentes a los de una lista anterior. Formato: {"temas":["Título exacto 1","Título exacto 2"]}.`},
     ], 2600);
     const propuestas = Array.isArray(r.temas) ? r.temas : [];
     for (const t of propuestas) {
@@ -359,10 +359,10 @@ const elegirTema = async (modelo) => {
   for (const t of reserva) {
     if (typeof t !== 'string' || yaHecho(t)) continue;
     if (!(await tieneDocumentacionInstitucional(t))) continue;
-    informe.push('Tema descubierto en dominios institucionales y respaldado por al menos dos fuentes independientes.');
+    informe.push('Tema descubierto y respaldado por una fuente institucional consultable.');
     return t;
   }
-  throw new Error('No se encontraron dos fuentes institucionales independientes con contenido consultable para un tema nuevo. Se reintentará en otro ciclo.');
+  throw new Error('No se encontró una fuente institucional con contenido consultable para un tema nuevo. Se reintentará en otro ciclo.');
 };
 
 /* ====================== Normas de la jefa (las cumplen todos) ====================== */
@@ -522,7 +522,7 @@ try {
   slug = slugDe(TEMA);
   const fuentes = await investigar();
   const fuentesInstitucionales = fuentes.filter((f) => !f.apoyo && f.tipo === 'fuente_primaria_o_institucional');
-  if (new Set(fuentesInstitucionales.map((f) => f.dominio)).size < MIN_FUENTES_INDEPENDIENTES) throw new Error(`El tema "${TEMA}" no reunió ${MIN_FUENTES_INDEPENDIENTES} fuentes institucionales independientes con contenido consultable. Wikipedia no cuenta como prueba.`);
+  if (new Set(fuentesInstitucionales.map((f) => f.dominio)).size < MIN_FUENTES_INDEPENDIENTES) throw new Error(`El tema "${TEMA}" no reunió una fuente institucional con contenido consultable. Wikipedia no cuenta como prueba.`);
   // INTERNET PARA TODOS: una vez por ciclo se reúne lo que dice la web de hoy y se les da a todos los agentes (Guionista, Editor, Verificador, Titulista, panel, pintores...)
   try {
     const tit = await Promise.race([titulosVirales(TEMA), new Promise((r) => setTimeout(() => r([]), 25000))]);
@@ -658,12 +658,12 @@ try {
   if (!aprobado) console.log('El Verificador no aprobó el guion tras 4 intentos. Queda marcado para revisión.');
 } catch (e) {
   informe.push('## ERROR', String(e.message ?? e));
-  const temaMalo = Boolean(TEMA.trim()) && /No encontré el tema|no reunió 2 fuentes institucionales|No se encontraron dos fuentes institucionales|material suficiente|sin material/i.test(String(e.message ?? e));
+  const temaMalo = Boolean(TEMA.trim()) && /No encontré el tema|no reunió una fuente institucional|no reunió 2 fuentes institucionales|No se encontraron dos fuentes institucionales|No se encontró una fuente institucional|material suficiente|sin material/i.test(String(e.message ?? e));
   if (temaMalo) {
     // Un tema que no carga NO es un error de la oficina: se descarta y el ciclo prueba con otro.
     try { fs.writeFileSync(HISTORIAL, JSON.stringify([...new Set([...leerJson(HISTORIAL, []), TEMA])], null, 2)); } catch { /* sin historial */ }
-    const sinFuentes = /no reunió 2 fuentes institucionales|No se encontraron dos fuentes institucionales/i.test(String(e.message ?? e));
-    const motivo = sinFuentes ? `Tema descartado: ${TEMA}. No se recuperaron dos fuentes institucionales independientes en esta ronda.` : `Tema descartado: ${TEMA}. No se pudo recuperar material documental suficiente en esta ronda.`;
+    const sinFuentes = /no reunió una fuente institucional|No se encontró una fuente institucional|no reunió 2 fuentes institucionales|No se encontraron dos fuentes institucionales/i.test(String(e.message ?? e));
+    const motivo = sinFuentes ? `Tema descartado: ${TEMA}. No se recuperó una fuente institucional con contenido consultable en esta ronda.` : `Tema descartado: ${TEMA}. No se pudo recuperar material documental suficiente en esta ronda.`;
     try { registrar('rechazado', motivo, 0); } catch { /* sin estado */ }
     try { fs.writeFileSync(path.join(SALIDA, `informe-${slug}.md`), informe.join('\n')); } catch { /* sin informe */ }
     console.log(`Tema descartado: ${TEMA}. Se prueba con otro.`);
