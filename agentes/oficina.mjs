@@ -138,7 +138,7 @@ const investigar = async () => {
     const p = await wikipedia(lang, TEMA);
     if (p) fuentes.push({idioma: lang, titulo: p.title, url: p.fullurl, texto: limpiarMaterial(p.extract).slice(0, FORMATO === 'largo' ? 3500 : 4500)});
   }
-  // segunda fuente que no es Wikipedia (DuckDuckGo, gratis y sin llave): solo apoyo para contrastar fechas y cifras
+  // La web general aporta el material de verificación; Wikipedia queda solo como contexto y nunca como prueba
   const web = await investigarEnLaWeb(TEMA);
   return [...web, ...fuentes.map((f) => ({...f, apoyo: true, tipo: 'enciclopedia_opcional'}))];
 };
