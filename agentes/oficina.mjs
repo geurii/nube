@@ -30,8 +30,8 @@ if (!CONFIG) { console.error(`ERROR: el canal "${CANAL_ID}" no existe en agentes
 let TEMA = (process.env.TEMA ?? '').trim();
 const FORMATO = process.env.FORMATO === 'largo' ? 'largo' : 'short';
 const IDIOMAS = (process.env.IDIOMAS ? process.env.IDIOMAS.split(',') : CONFIG.idiomasFuente ?? ['es', 'en']).map((x) => x.trim()).filter(Boolean);
-const PALABRAS = FORMATO === 'largo' ? Number(process.env.PALABRAS) || 900 : 110;
-const CTA = CONFIG.cta ?? 'Comparte este video con un amigo que haría lo mismo, sígueme.';
+const PALABRAS = FORMATO === 'largo' ? Math.max(1200, Number(process.env.PALABRAS) || 1300) : 110;
+const CTA = '¿Qué opinas de este caso? Sígueme para descubrir más misterios.';
 const UA = 'OficinaVideos/1.0 (proyecto educativo)';
 const SALIDA = path.resolve('oficina-salida', CANAL_ID);
 const MANUAL = {...leerManual(CANAL_ID), activo: false}; // aprobacion personal desactivada; validaciones tecnicas conservadas
