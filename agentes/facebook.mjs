@@ -269,7 +269,22 @@ export const principal = async () => {
     }
   }
   if (!archivo) { alertar(`no encuentro el MP4 del video (${ID}) en out/serie.`); return {omitido: 'sin mp4'}; }
-  // GitHub rechaza archivos grandes ("file too large"): se reduce a ~20 MB (720x1280 sobra para Reels y TikTok)
+  // Buffer admite TikTok de 3 s a 10 min, 1 GB y 23-60 fps. Los largos de esta ruta deben durar al menos 8 min.
+  if (largo) {
+    const p = spawnSync('ffprobe', ['-v','error','-show_entries','format=duration:stream=codec_type,width,height,avg_frame_rate','-of','json',archivo], {encoding:'utf8',timeout:60000});
+    if (p.status !== 0) { alertar('no pude verificar los metadatos del largo antes de enviarlo a TikTok.'); return {omitido:'metadatos inválidos'}; }
+    const m = JSON.parse(p.stdout);
+    const v = (m.streams ?? []).find(x => x.codec_type === 'video');
+    const seg = Number(m.format?.duration);
+    const fpsPartes = String(v?.avg_frame_rate ?? '0/1').split('/').map(Number);
+    const fps = fpsPartes[1] ? fpsPartes[0] / fpsPartes[1] : fpsPartes[0];
+    const bytes = fs.statSync(archivo).size;
+    if (!v || !Number.isFinite(seg) || seg < 480 || seg > 600 || v.width < 360 || v.height < 360 || !Number.isFinite(fps) || fps < 23 || fps > 60 || bytes > 1024 * 1024 * 1024) {
+      alertar(`TikTok rechazará el largo por sus límites: duración ${Number.isFinite(seg) ? seg.toFixed(1) : 'desconocida'} s (480–600), resolución ${v?.width ?? '?'}x${v?.height ?? '?'}, ${fps.toFixed(1)} fps, ${(bytes/1048576).toFixed(1)} MB.`);
+      return {omitido:'fuera de especificación TikTok'};
+    }
+  }
+  // Shorts: se comprimen a ~20 MB. Los largos se conservan con calidad hasta 220 MB para alojarlos y enviarlos a Buffer.
   let notaVideo = '';
   try {
     const MAX_MB = largo ? 220 : 20;
@@ -326,9 +341,19 @@ export const principal = async () => {
       resultados[d.nombre] = 'error: ' + msg.slice(0, 120);
     }
   }
-  return {publicado: Object.values(resultados).some((x) => x === 'publicado'), resultados};
+  if (largo && resultados.TikTok === 'enviado-ahora') {
+    // El tema ya fue enviado a Buffer; evita que Producción vuelva a elegir este mismo guion para el segundo largo.
+    try {
+      const rutaProducidos = path.join(dir, 'producidos.json');
+      const lista = leer(rutaProducidos, []);
+      const slug = ID.replace(new RegExp('^' + CANAL + '-'), '');
+      if (!lista.some((x) => String(x).toLowerCase() === slug.toLowerCase())) fs.writeFileSync(rutaProducidos, JSON.stringify([...lista, slug], null, 2));
+    } catch (e) { console.log('TikTok aceptó el largo, pero no pude marcar el tema como enviado: ' + String(e.message ?? e).slice(0,120)); }
+  }
+  if (largo && resultados.TikTok !== 'enviado-ahora') { console.error('El largo no fue aceptado por Buffer para publicación inmediata en TikTok.'); process.exitCode = 1; }
+  return {publicado: Object.values(resultados).some((x) => ['publicado','enviado-ahora'].includes(x)), resultados};
 };
 
 if (path.basename(String(process.argv[1] ?? '')) === 'facebook.mjs') {
-  principal().catch((e) => { console.log('Facebook no se pudo publicar:', quitarClaves(String(e.message ?? e), process.env.WINDSOR_API_KEY, process.env.FB_VIDEOS_TOKEN, process.env.BUFFER_API_KEY).slice(0, 300)); }).finally(() => process.exit(0));
+  principal().catch((e) => { console.log('Publicación en redes falló:', quitarClaves(String(e.message ?? e), process.env.WINDSOR_API_KEY, process.env.FB_VIDEOS_TOKEN, process.env.BUFFER_API_KEY).slice(0, 300)); process.exitCode = 1; });
 }
