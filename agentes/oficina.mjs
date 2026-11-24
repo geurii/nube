@@ -23,6 +23,7 @@ import {enGarantia} from './garantia.mjs';
 import {chatAlternativo, proveedoresConLlave, modelosDisponibles, diagnosticoRespaldo} from './llm.mjs';
 import {sinEnlaces} from './sin-enlaces.mjs';
 import {datosDeVideo, mensajesDeDesglose} from './analizar-videos.mjs';
+import {seleccionarFuentesParaGuion, materialDesdeFuentes} from './fuentes-guion.mjs';
 
 const KEY = process.env.GROQ_API_KEY;
 const CANAL_ID = (process.env.CANAL || 'lqns').trim();
@@ -197,7 +198,7 @@ const investigar = async () => {
     if (p) fuentes.push({idioma: lang, titulo: p.title, url: p.fullurl, texto: limpiarMaterial(p.extract).slice(0, FORMATO === 'largo' ? 3500 : 4500)});
   }
   // La web general aporta el material de verificación; Wikipedia queda solo como contexto y nunca como prueba
-  const web = await investigarEnLaWeb(TEMA);
+  const web = await investigarEnLaWeb(TEMA, {maxPorFuente: FORMATO === 'largo' ? 3 : 2});
   return [...web, ...fuentes.map((f) => ({...f, apoyo: true, tipo: 'enciclopedia_opcional'}))];
 };
 
@@ -549,11 +550,11 @@ const elegirTema = async (modelo) => {
 /* ====================== Normas de la jefa (las cumplen todos) ====================== */
 const NORMAS = `NORMAS DE LA JEFA (no se negocian):
 1. Solo puedes usar datos que estén en el MATERIAL. Si un dato no está en el material, no existe. Prohibido inventar.
-2. Si el material no alcanza para lo que se pide, dilo y escribe menos. Un guion corto y verdadero vale más que uno largo con relleno.
+2. SHORT: si el material no alcanza, escribe menos y no inventes. VIDEO LARGO: solo se escribe cuando la investigación aporta al menos 3 dominios web independientes y 8.500 caracteres de contenido consultado; si no, descarta el tema y busca otro. Nunca conviertas un material breve en un largo ni rellenes.
 3. SHORT: la primera frase es un gancho natural, original y contundente de MÁXIMO 14 palabras; NO tiene que empezar con "Sabías que". VIDEO LARGO: la primera frase puede abrir con una pregunta intrigante o un hecho sorprendente, sin obligación de usar "Sabías que". En ambos formatos debe ser un GANCHO REAL: una pregunta intrigante o un hecho increíble (con un número o una cifra concreta SOLO si el material la trae; nunca inventes una), que se entienda en un segundo y deje la duda abierta (que el dedo se frene). Esa frase saldrá además como titular gigante en pantalla.
 4. ${CONFIG.tono ?? 'Tono de misterio, no de miedo.'} Lenguaje claro para gente normal. Sin tecnicismos.
 5. Sin nombres de personas reales: di "el capitán", "un científico", "los investigadores". Sí puedes nombrar lugares, barcos, libros u objetos.
-6. Las dudas se dicen como dudas ("según la fuente", "no se sabe"). Si la fuente única ofrece un intervalo o varias estimaciones, conserva el intervalo completo: nunca elijas un extremo como si fuera una cifra única. Si hay escalas o unidades distintas, nómbralas y no las mezcles.
+6. Las dudas se dicen como dudas ("según las fuentes", "no se sabe"). Si las fuentes difieren, conserva la discrepancia, la fecha, la escala y la unidad de cada dato; nunca mezcles cifras ni elijas un extremo como si fuera una cifra única.
 7. La revelación ("Pero lo que no sabías:") debe caer IDEALMENTE entre el 65 % y el 72 % del total de palabras. El rango aceptado es 55 %–80 %, pero NO apuntes a sus bordes: deja margen de seguridad.
 8. PROHIBICIÓN ABSOLUTA: nunca escribas en la narración «recuerda que es ficción», «esto es ficción», «es un relato ficticio», «esto no es real» ni ninguna advertencia meta equivalente. No hables del proceso de creación. Cierra con una pregunta relacionada directamente con el tema y una invitación natural a seguir el canal. No pidas compartir con un amigo ni uses frases genéricas fuera de contexto. Termina con una pregunta concreta y natural relacionada con el tema. La última frase debe ser exactamente: "${CTA}".
 8b. TODO el texto se LEE EN VOZ ALTA por una voz en español: escríbelo en español puro, sin palabras en inglés (traduce: "estruendo", no "blast"), sin transliteraciones raras ni siglas sueltas. Los números van con dígitos; los intervalos se expresan completos ("entre 7.8 y 8.3") y se conserva su unidad o escala.
@@ -722,11 +723,8 @@ try {
   }
   slug = slugDe(TEMA);
   const fuentesEncontradas = await investigar();
-  // Una sola fuente consultable: primero una página web legible; si falla el buscador, una entrada enciclopédica con contenido.
-  const fuenteUnica = fuentesEncontradas.find((f) => !f.apoyo && String(f.texto ?? '').trim().length >= 220)
-    ?? fuentesEncontradas.find((f) => String(f.texto ?? '').trim().length >= 220);
-  const fuentes = fuenteUnica ? [{...fuenteUnica, fuenteSecundaria: Boolean(fuenteUnica.apoyo), apoyo: false}] : [];
-  // La fuente única elegida es la base factual de todos los agentes.
+  // Un largo se apoya en varias páginas web independientes; Wikipedia es solo contexto opcional.
+  const fuentes = seleccionarFuentesParaGuion(fuentesEncontradas, FORMATO);
   try {
     const tit = await Promise.race([titulosVirales(TEMA), new Promise((r) => setTimeout(() => r([]), 25000))]);
     const resumenes = fuentes.map((x) => ({host: x.institucion || x.dominio || x.idioma, texto: x.texto}));
@@ -735,10 +733,9 @@ try {
     WEB_BLOQUE = [bloqueWeb, leerPreferencias(CANAL_ID), textoDeLecciones(CANAL_ID)].filter(Boolean).join(' ');
     if (bloqueWeb) informe.push(`Internet para todos los agentes: ${resumenes.length} fuente consultada y ${tit.length} videos virales de YouTube sobre el tema.`);
   } catch { /* sin internet extra */ }
-  informe.push('## Investigación (una sola fuente consultada)', ...fuentes.map((f) => `- ${f.fuenteSecundaria ? 'Wikipedia (fuente única consultada)' : `${f.institucion || f.idioma} (${f.dominio || 'fuente consultada'})`}: [${f.titulo}](${f.url})`), '');
-  const materialRecuperado = fuentes.map((f) => `### FUENTE CONSULTADA ${f.url}\\n${f.texto}`).join('\\n\\n');
-  if (!materialRecuperado.trim()) throw new Error(`No se recuperó una fuente consultable para "${TEMA}". Se descarta el tema; no se inventa contenido.`);
-  const material = materialRecuperado;
+  informe.push(`## Investigación (${fuentes.length} fuente(s) web)`, ...fuentes.map((f, i) => `- Fuente ${i+1}: ${f.institucion || f.dominio || 'web'} — [${f.titulo}](${f.url})`), '');
+  const material = materialDesdeFuentes(fuentes);
+  if (!material.trim()) throw new Error(`No se recuperó material consultable para "${TEMA}". Se descarta el tema; no se inventa contenido.`);
 
   const GARANTIA = enGarantia(CANAL_ID);
   let retencionPanel = null;
