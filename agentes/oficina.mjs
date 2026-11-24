@@ -279,9 +279,9 @@ const existeEnWikipedia = async (titulo) => {
 const elegirTema = async (modelo) => {
   const hechos = leerJson(HISTORIAL, []).filter(Boolean);
   // Inventario único de TODO lo que ya se intentó, guionizó, produjo o publicó.
-  const clave = (x) => String(x ?? '').toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').replace(/^the[-_ ]+/, '').replace(/[^a-z0-9]+/g, '');
+  const clave = (x) => String(x ?? '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/^the[-_ ]+/, '').replace(/[^a-z0-9]+/g, '');
   let guiones = [];
-  try { guiones = fs.readdirSync(SALIDA).filter((f) => /^guion-.+\\.json$/.test(f)).map((f) => f.replace(/^guion-|\\.json$/g, '')); } catch { /* sin carpeta */ }
+  try { guiones = fs.readdirSync(SALIDA).filter((f) => /^guion-.+\.json$/.test(f)).map((f) => f.replace(/^guion-|\.json$/g, '')); } catch { /* sin carpeta */ }
   const subidosTitulos = (leerJson(path.join(SALIDA, 'subidos.json'), {}).videos ?? []).map((v) => v.titulo);
   const producidos = leerJson(path.join(SALIDA, 'producidos.json'), []);
   const ideasJules = leerJson(path.join(SALIDA, 'ideas-jules.json'), []).map((x) => x.tema).filter(Boolean);
