@@ -1,0 +1,99 @@
+{
+  "titulo": "¿Qué oculta el mapa de 1513 que desafía la historia? 🗺️",
+  "formato": "largo",
+  "orientacion": "horizontal",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-piri-reis-map.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T13:12:19.351Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿Un mapa de 1513 muestra tierras que no deberían existir…?",
+  "publicacion": {
+    "titulo": "¿Qué oculta el mapa de 1513 que desafía la historia? 🗺️",
+    "descripcion": "Un mapa creado en 1513 por un almirante otomano contiene detalles que desafían la comprensión histórica. Descubre las teorías y misterios que rodean este enigma cartográfico.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Piri_Reis_map\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#MapaPiriReis #Cartografia #Historia #Misterios #Descubrimientos"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El gancho es débil y no genera suficiente intriga. La revelación llega tarde y no impacta. El ritmo es lento en la primera mitad."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Sabías que un mapa de 1513 muestra tierras que no deberían existir en esa época?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En 1513, un almirante y cartógrafo otomano creó un mapa del mundo que ha intrigado a historiadores y expertos durante siglos. Aproximadamente un tercio de este mapa sobrevive, guardado en el Topkapı Palace en Estambul.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El mapa, presentado al líder otomano en 1517, desapareció de la historia hasta su redescubrimiento en 1929. Su reaparición causó sensación internacional, ya que incluye una copia parcial de un mapa perdido de un famoso explorador español.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Este mapa es una carta portulana, con rosas de los vientos y una red de vientos para la navegación, en lugar de líneas de longitud y latitud. Contiene notas extensas en turco otomano y una representación detallada de Sudamérica para su época.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "La costa noroeste combina características de Centroamérica y Cuba en una sola masa de tierra. Los estudiosos atribuyen esta peculiaridad a un mapa perdido que fusionaba Cuba con el continente asiático y Hispaniola con la descripción de Japón de Marco Polo.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El creador del mapa navegó como pirata bereber con su tío hasta que este recibió un puesto oficial en la marina otomana en 1495. En una batalla naval, capturaron a un español que había participado en los viajes del explorador, quien probablemente poseía un mapa temprano de las Américas.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Tras la muerte de su tío, el cartógrafo regresó temporalmente a Gallipoli y comenzó a componer su primer mapa mundial en 1511. El manuscrito finalizado fue fechado en el mes de Muharram del año islámico 919, equivalente a 1513 d.C.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: el mapa incluye similitudes visuales con partes de las Américas no oficialmente descubiertas en 1513, aunque no hay evidencia textual o histórica que confirme que representa tierras al sur de Cananéia.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Una hipótesis del siglo XX, ya refutada, identificaba la masa de tierra del sur con una costa antártica libre de hielo. El mapa también se distingue visualmente de las cartas portulanas europeas, influenciado por la tradición de las miniaturas islámicas.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Podría este mapa desafiar todo lo que sabemos sobre los descubrimientos geográficos? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

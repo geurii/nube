@@ -1,5 +1,23 @@
 [
   {
+    "id": "mwups9rdwoe1",
+    "fecha": "2026-11-24T13:12:19.561Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Piri Reis map",
+    "texto": "El Verificador no aprobó \"Piri Reis map\" tras 4 intentos: No hay evidencia en el material que respalde la afirmación de que el mapa muestra tierras que 'no deberían existir' en 1513. Aprobados: 11. Rechazados: 56. Con error: 11. No se publica. Próximo ciclo en 1 h."
+  },
+  {
+    "id": "mwupjx9fe97r",
+    "fecha": "2026-11-24T13:05:50.115Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título corto + pregunta intrigante o afirmación impactante + referencia a un misterio/evento desconocido El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (26438 vistas/hora)."
+  },
+  {
     "id": "mwupitp9v4ym",
     "fecha": "2026-11-24T13:04:58.845Z",
     "canal": "lqns",
@@ -683,21 +701,5 @@
     "tipo": "alerta",
     "titulo": "No se pudo publicar en las redes",
     "texto": "\"Sabías que una ola de melaza arrasó Boston? 🍯\": no pude alojar el video para que las redes lo descarguen: el servicio de archivos temporales no devolvió un enlace válido (403): <!doctype html><html lang=\"en\"><meta charset=\"UTF-8\"><meta content=\"nofollow,noarchive,no"
-  },
-  {
-    "id": "mws3whgrf5oh",
-    "fecha": "2026-11-22T17:24:12.267Z",
-    "canal": "lqns",
-    "tipo": "alerta",
-    "titulo": "No se pudo publicar en las redes",
-    "texto": "\"🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩\": no pude alojar el video para que las redes lo descarguen: el servicio de archivos temporales no devolvió un enlace válido (403): <!doctype html><html lang=\"en\"><meta charset=\"UTF-8\"><meta content=\"nofollow,noarchive,no"
-  },
-  {
-    "id": "mws3wd13vs1o",
-    "fecha": "2026-11-22T17:24:06.519Z",
-    "canal": "lqns",
-    "tipo": "alerta",
-    "titulo": "No se pudo publicar en las redes",
-    "texto": "\"Sabías que la explosión de Chernóbil cambió todo 🌍\": no pude alojar el video para que las redes lo descarguen: el servicio de archivos temporales no devolvió un enlace válido (412): Invalid uploader"
   }
 ]
