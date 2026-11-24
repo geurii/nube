@@ -20,7 +20,7 @@ export const Video: React.FC<VideoProps> = ({guion, musica, tiempos}) => {
   const SOLAPE = Math.round(fps / 3); // fundido entre fondos (~0,33 s)
   const personajeVisible = guion.personaje?.visible !== false;
   const gancho = guion.estilo === 'gancho'; // edición de gancho: cortes más rápidos, glitch, escaneo y titular
-  const maxPorFondo = gancho ? 1.8 : MAX_SEGUNDOS_POR_FONDO;
+  const maxPorFondo = MAX_SEGUNDOS_POR_FONDO;
 
   // Cada escena se parte en tramos; cada tramo usa un fondo de la lista (en ciclo).
   const tramos = tiempos.escenas.flatMap((e) => {
