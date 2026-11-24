@@ -124,7 +124,7 @@ const SISTEMA_A = `Eres el Pintor de composición y color de una oficina de vide
 const SISTEMA_B = `Eres el Pintor de luz y detalle de una oficina de videos de misterio: un maestro del pixel art dibujado desde cero. Dominas la luz, el volumen, los contornos, el detalle y la animación. Prohibidas fotografías, imágenes reales, capturas, rostros o identidades reconocibles. Las personas, si son imprescindibles, solo pueden ser siluetas anónimas de espaldas. Revisa y corrige con rigor el trabajo de tu compañero. Responde SOLO con JSON.`;
 
 const lote = (escenas, ids) => ids.map((i) => `${i}. [${escenas[i].tipo}] ${escenas[i].texto}`).join('\n');
-const FORMA = '{"escenas": [{"indice": N, "planos": [ESCENA_A, ESCENA_B, ESCENA_C]}, ...]}' con el mismo orden y el mismo número de escenas.';
+const FORMA = '{"escenas": [{"indice": N, "planos": [ESCENA_A, ESCENA_B, ESCENA_C]}, ...]} con el mismo orden y el mismo número de escenas.';
 
 
 
