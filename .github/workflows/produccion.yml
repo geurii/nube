@@ -156,6 +156,7 @@ jobs:
           FB_VIDEOS_TOKEN: ${{ secrets.FB_VIDEOS_TOKEN }}
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
         run: |
+          set -e
           node agentes/facebook.mjs
           git config user.name "github-actions"
           git config user.email "actions@users.noreply.github.com"
@@ -169,7 +170,7 @@ jobs:
           elif [ "${{ steps.panel.outputs.aprobado }}" = "false" ]; then node agentes/progreso.mjs 0 'La revision tecnica detecto defectos graves o datos incompletos: no se publico' || true
           elif [ "${{ steps.destino.outputs.valor }}" = "tiktok" ] && [ "${{ steps.redes.outcome }}" = "success" ]; then node agentes/progreso.mjs 100 'Largo aceptado por Buffer para publicacion inmediata en TikTok' || true
           elif [ "${{ steps.destino.outputs.valor }}" = "youtube" ] && [ "${{ steps.subir.outputs.subido }}" = "true" ]; then node agentes/progreso.mjs 100 'Largo subido a YouTube y confirmado por la API' || true
-          elif [ "${{ steps.destino.outputs.valor }}" = "ambos" ] && [ "${{ steps.subir.outputs.subido }}" = "true" ]; then node agentes/progreso.mjs 100 'Video subido a YouTube y enviado a redes' || true
+          elif [ "${{ steps.destino.outputs.valor }}" = "ambos" ] && [ "${{ steps.subir.outputs.subido }}" = "true" ] && [ "${{ steps.redes.outcome }}" = "success" ]; then node agentes/progreso.mjs 100 'Video confirmado en YouTube y TikTok' || true
           else node agentes/progreso.mjs 85 'Video renderizado, pero el destino no confirmó la recepción. Sigue pendiente para reintento.' || true; echo 'ERROR: la publicacion no fue confirmada; el video permanece pendiente.'; exit 1; fi
           git config user.name "github-actions"
           git config user.email "actions@users.noreply.github.com"
