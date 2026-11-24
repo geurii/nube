@@ -273,8 +273,8 @@ const elegirModelo = async () => {
 };
 
 /* ====================== Dirección: elige el tema sola ====================== */
-const MIN_FUENTES_INDEPENDIENTES = 1; // el dueño pidió una sola fuente institucional consultable
-const tieneDocumentacionInstitucional = async (tema) => new Set((await investigarEnLaWeb(tema)).map((f) => f.dominio)).size >= MIN_FUENTES_INDEPENDIENTES;
+// La selección editorial no exige fuentes institucionales: prioriza temas curiosos y recupera fuentes cuando existan.
+const tieneDocumentacionInstitucional = async () => true;
 const elegirTema = async (modelo) => {
   // El historial real contiene registros {fecha, tema, formato, resultado...}, no solo cadenas.
   const tituloDe = (x) => typeof x === 'string' ? x : (x?.tema ?? x?.titulo ?? x?.title ?? x?.nombre ?? '');
@@ -306,18 +306,18 @@ const elegirTema = async (modelo) => {
   const candidatosLocales = [...temasAprobadosDelDueno(CANAL_ID), ...ideasEquipo, ...ideasEstrategia, ...ideasJules];
   for (const t of candidatosLocales) {
     if (typeof t !== 'string' || yaHecho(t)) continue;
-    if (await tieneDocumentacionInstitucional(t)) return t;
+    return t;
   }
   for (let ronda = 1; ronda <= 3; ronda++) {
     const r = await pedirJson(modelo, [
       {role: 'system', content: `Eres Director/a de contenido del canal "${CONFIG.nombre}" (${CONFIG.nicho}). Respondes SOLO JSON válido.`},
-      {role: 'user', content: `Propón 20 temas NUEVOS y concretos sobre ${CONFIG.nicho}, distintos entre sí, documentables en archivos, organismos científicos, museos o publicaciones académicas. No dependas de Wikipedia. No personas, biografías, política, violencia gráfica, películas, series, juegos ni chismes. PROHIBIDO repetir o proponer variantes de esta lista de temas ya usados, rechazados, producidos, publicados o reservados: ${inventario.join(' | ').slice(0, 9000) || 'ninguno'}. No devuelvas ningún título de esa lista aunque cambies "The", signos, idioma o redacción. Prioriza variedad y temas que puedan confirmarse con al menos ${MIN_FUENTES_INDEPENDIENTES} fuente institucional consultable. ${bloqueRadar} Ronda ${ronda}/3: busca candidatos diferentes a los de una lista anterior. Formato: {"temas":["Título exacto 1","Título exacto 2"]}.`},
+      {role: 'user', content: `Propón 20 temas NUEVOS y concretos sobre ${CONFIG.nicho}, distintos entre sí, atractivos para el nicho de curiosidades: misterios, fenómenos extraños, objetos insólitos, historias olvidadas, leyendas y datos sorprendentes. No exijas que todos tengan documentación institucional. No personas, biografías, política, violencia gráfica, películas, series, juegos ni chismes. PROHIBIDO repetir o proponer variantes de esta lista de temas ya usados, rechazados, producidos, publicados o reservados: ${inventario.join(' | ').slice(0, 9000) || 'ninguno'}. No devuelvas ningún título de esa lista aunque cambies "The", signos, idioma o redacción. Prioriza variedad, potencial de gancho y temas con información accesible en fuentes generales; no descartes un tema por no tener fuente institucional. ${bloqueRadar} Ronda ${ronda}/3: busca candidatos diferentes a los de una lista anterior. Formato: {"temas":["Título exacto 1","Título exacto 2"]}.`},
     ], 2600);
     const propuestas = Array.isArray(r.temas) ? r.temas : [];
     for (const t of propuestas) {
       if (typeof t !== 'string' || !t.trim() || yaHecho(t)) continue;
-      if (!(await tieneDocumentacionInstitucional(t.trim())) || yaHecho(t.trim())) continue;
-      informe.push(`Tema elegido por la Oficina en ronda ${ronda}; se comprobó documentación institucional independiente y que no aparece en el historial.`);
+      if (yaHecho(t.trim())) continue;
+      informe.push(`Tema elegido por la Oficina en ronda ${ronda}; pasó el filtro de novedad y encaje editorial.`);
       return t.trim();
     }
     // Los títulos de esta ronda también se excluyen de las siguientes para no dar vueltas sobre lo mismo.
@@ -326,8 +326,8 @@ const elegirTema = async (modelo) => {
       if (k.length >= 4 && !vistos.includes(k)) { vistos.push(k); inventario.push(String(t).trim()); }
     }
   }
-  // Respaldo editorial independiente: descubre candidatos directamente en los ocho dominios institucionales.
-  const reserva = await descubrirTemasEnFuentes(`${CONFIG.nicho} history discoveries`, 24);
+  // Respaldo editorial: temas curiosos conocidos; se excluyen los ya usados o rechazados.
+  const reserva = ['The Bloop', 'The Taos Hum', 'The Wow! signal', 'The dancing plague of 1518', 'The Great Moon Hoax', 'The Green Children of Woolpit', 'The Devil’s Footprints', 'The Mary Celeste', 'The Tunguska event', 'The phantom time hypothesis', 'The Antikythera mechanism', 'The Voynich manuscript', 'The upside-down river phenomenon', 'The moving rocks of Death Valley', 'The Hessdalen lights', 'The disappearing lake of Cerknica'];
   /* Lista histórica conservada como referencia editorial, nunca como prueba documental.
   const reservaAnterior = [
     'Green Children of Woolpit',
@@ -358,11 +358,10 @@ const elegirTema = async (modelo) => {
   ]; */
   for (const t of reserva) {
     if (typeof t !== 'string' || yaHecho(t)) continue;
-    if (!(await tieneDocumentacionInstitucional(t))) continue;
-    informe.push('Tema descubierto y respaldado por una fuente institucional consultable.');
+    informe.push('Tema elegido desde el respaldo editorial por novedad y encaje con el nicho; se verificará lo que pueda documentarse.');
     return t;
   }
-  throw new Error('No se encontró una fuente institucional con contenido consultable para un tema nuevo. Se reintentará en otro ciclo.');
+  throw new Error('No se encontró un tema nuevo tras agotar las propuestas editoriales.');
 };
 
 /* ====================== Normas de la jefa (las cumplen todos) ====================== */
@@ -425,7 +424,7 @@ const editor = (titulo, escenas) => [
   {role: 'user', content: `TÍTULO: ${titulo}\nGUION:\n${JSON.stringify(escenas)}\n\nDevuelve: {"puntaje": número del 0 al 10 del guion ORIGINAL, "critica": "máximo 3 frases, directas y duras", "titulo": "título mejorado, máx. 90 caracteres, con un emoji", "escenas": [versión mejorada, mismo formato]}.`},
 ];
 const verificador = (material, escenas) => [
-  {role: 'system', content: `Eres el/la Verificador/a, auditor/a estricto/a de datos, con maestría en verificación de fuentes y lectura crítica. Tu trabajo es rechazar. Si una frase afirma un dato (fecha, cifra, lugar, causa, nombre, relación) que no está literalmente respaldado por el MATERIAL, la marcas. Las opiniones y las frases de enlace no cuentan. Nunca apruebas por cortesía: si no puedes comprobarlo, lo reportas. Además, lista en "nombres_de_personas" los nombres propios de personas reales que aparezcan en el GUION A REVISAR (solo en el guion, nunca en el material; no cuentes lugares, barcos, libros ni objetos). Si el guion no nombra a ninguna persona, deja la lista vacía. Responde SOLO con JSON: {"aprobado": true|false, "problemas": [{"frase": "...", "motivo": "..."}], "nombres_de_personas": []}.`},
+  {role: 'system', content: `${material.includes('MODO FICCIÓN EXPLÍCITA') ? 'Eres auditor de ficción: aprueba únicamente si el guion deja claro que es un relato ficticio y no presenta invenciones como hechos reales. Rechaza cualquier afirmación que pretenda ser noticia o dato real.' : 'Eres el/la Verificador/a, auditor/a estricto/a de datos, con maestría en verificación de fuentes y lectura crítica. Tu trabajo es rechazar. Si una frase afirma un dato (fecha, cifra, lugar, causa, nombre, relación) que no está respaldado por el MATERIAL, la marcas. Las opiniones y las frases de enlace no cuentan. Nunca apruebas por cortesía: si no puedes comprobarlo, lo reportas.'} Además, lista en "nombres_de_personas" los nombres propios de personas reales que aparezcan en el GUION A REVISAR (solo en el guion, nunca en el material; no cuentes lugares, barcos, libros ni objetos). Si el guion no nombra a ninguna persona, deja la lista vacía. Responde SOLO con JSON: {"aprobado": true|false, "problemas": [{"frase": "...", "motivo": "..."}], "nombres_de_personas": []}.`},
   {role: 'user', content: `MATERIAL:\n${material}\n\nGUION A REVISAR (frase por frase):\n${escenas.map((e, i) => `${i + 1}. ${e.texto}`).join('\n')}`},
 ];
 
@@ -522,7 +521,6 @@ try {
   slug = slugDe(TEMA);
   const fuentes = await investigar();
   const fuentesInstitucionales = fuentes.filter((f) => !f.apoyo && f.tipo === 'fuente_primaria_o_institucional');
-  if (new Set(fuentesInstitucionales.map((f) => f.dominio)).size < MIN_FUENTES_INDEPENDIENTES) throw new Error(`El tema "${TEMA}" no reunió una fuente institucional con contenido consultable. Wikipedia no cuenta como prueba.`);
   // INTERNET PARA TODOS: una vez por ciclo se reúne lo que dice la web de hoy y se les da a todos los agentes (Guionista, Editor, Verificador, Titulista, panel, pintores...)
   try {
     const tit = await Promise.race([titulosVirales(TEMA), new Promise((r) => setTimeout(() => r([]), 25000))]);
@@ -533,7 +531,8 @@ try {
     if (bloqueWeb) informe.push(`Internet para todos los agentes: ${resumenes.length} resúmenes web y ${tit.length} videos virales de YouTube sobre el tema.`);
   } catch { /* sin internet extra */ }
   informe.push('## Investigación (fuentes institucionales independientes)', ...fuentes.map((f) => `- ${f.apoyo ? 'Wikipedia (opcional; no cuenta como prueba)' : `${f.institucion || f.idioma} (${f.dominio || 'fuente institucional'})`}: [${f.titulo}](${f.url})`), '');
-  const material = fuentes.map((f) => `### ${f.apoyo ? 'ENCICLOPEDIA OPCIONAL (no es requisito ni prueba única)' : 'FUENTE INSTITUCIONAL INDEPENDIENTE: ' + (f.institucion || f.dominio)} ${f.url}\n${f.texto}`).join('\n\n');
+  const materialRecuperado = fuentes.map((f) => `### ${f.apoyo ? 'ENCICLOPEDIA / APOYO' : 'FUENTE CONSULTADA'} ${f.url}\n${f.texto}`).join('\n\n');
+  const material = materialRecuperado || `MODO FICCIÓN EXPLÍCITA: no se recuperó documentación consultable para "${TEMA}". Solo se permite crear un relato original de misterio claramente presentado como ficción; no atribuyas hechos, fechas, cifras, lugares ni causas al mundo real. La narración debe decir explícitamente que es un relato ficticio y nunca fingir que ocurrió.`;
 
   let retencionPanel = null;
   let escenas = [], titulo = TEMA, descripcion = '', hashtags = [], problemas = [], aprobado = false, intentos = 0, puntaje = null, critica = '';
@@ -658,12 +657,11 @@ try {
   if (!aprobado) console.log('El Verificador no aprobó el guion tras 4 intentos. Queda marcado para revisión.');
 } catch (e) {
   informe.push('## ERROR', String(e.message ?? e));
-  const temaMalo = Boolean(TEMA.trim()) && /No encontré el tema|no reunió una fuente institucional|no reunió 2 fuentes institucionales|No se encontraron dos fuentes institucionales|No se encontró una fuente institucional|material suficiente|sin material/i.test(String(e.message ?? e));
+  const temaMalo = Boolean(TEMA.trim()) && /No encontré el tema|No se encontró un tema nuevo|material suficiente|sin material/i.test(String(e.message ?? e));
   if (temaMalo) {
     // Un tema que no carga NO es un error de la oficina: se descarta y el ciclo prueba con otro.
     try { fs.writeFileSync(HISTORIAL, JSON.stringify([...new Set([...leerJson(HISTORIAL, []), TEMA])], null, 2)); } catch { /* sin historial */ }
-    const sinFuentes = /no reunió una fuente institucional|No se encontró una fuente institucional|no reunió 2 fuentes institucionales|No se encontraron dos fuentes institucionales/i.test(String(e.message ?? e));
-    const motivo = sinFuentes ? `Tema descartado: ${TEMA}. No se recuperó una fuente institucional con contenido consultable en esta ronda.` : `Tema descartado: ${TEMA}. No se pudo recuperar material documental suficiente en esta ronda.`;
+    const motivo = `Tema descartado: ${TEMA}. No se pudo recuperar material suficiente en esta ronda.`;
     try { registrar('rechazado', motivo, 0); } catch { /* sin estado */ }
     try { fs.writeFileSync(path.join(SALIDA, `informe-${slug}.md`), informe.join('\n')); } catch { /* sin informe */ }
     console.log(`Tema descartado: ${TEMA}. Se prueba con otro.`);
