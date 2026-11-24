@@ -341,6 +341,16 @@ const elegirTema = async (modelo) => {
     if (typeof t !== 'string' || yaHecho(t)) continue;
     return t;
   }
+  // Catálogo curado de temas reales conocidos: se comprueba que exista una página con contenido antes de elegirlos.
+  const reserva = ['The Green Children of Woolpit', 'The moving rocks of Death Valley', 'The disappearing lake of Cerknica', 'The phantom time hypothesis', 'The Antikythera mechanism', 'The Voynich manuscript', 'The Hessdalen lights', 'The Devil’s Footprints', 'The Mary Celeste', 'The Tunguska event', 'The Bloop', 'The Taos Hum', 'The Wow! signal', 'The dancing plague of 1518', 'The Great Moon Hoax'];
+  for (const t of reserva) {
+    if (yaHecho(t)) continue;
+    const pagina = await wikipedia('en', t);
+    if (pagina?.extract && pagina.extract.trim().length >= 300) {
+      informe.push('Tema elegido del catálogo editorial verificado y con página consultable; se excluyen los temas ya tratados.');
+      return t;
+    }
+  }
   for (let ronda = 1; ronda <= 3; ronda++) {
     const r = await pedirJson(modelo, [
       {role: 'system', content: `Eres Director/a de contenido del canal "${CONFIG.nombre}" (${CONFIG.nicho}). Respondes SOLO JSON válido.`},
@@ -359,16 +369,7 @@ const elegirTema = async (modelo) => {
       if (k.length >= 4 && !vistos.includes(k)) { vistos.push(k); inventario.push(String(t).trim()); }
     }
   }
-  // Catálogo curado de temas reales conocidos: se comprueba que exista una página con contenido antes de elegirlos.
-  const reserva = ['The Green Children of Woolpit', 'The moving rocks of Death Valley', 'The disappearing lake of Cerknica', 'The phantom time hypothesis', 'The Antikythera mechanism', 'The Voynich manuscript', 'The Hessdalen lights', 'The Devil’s Footprints', 'The Mary Celeste', 'The Tunguska event', 'The Bloop', 'The Taos Hum', 'The Wow! signal', 'The dancing plague of 1518', 'The Great Moon Hoax'];
-  for (const t of reserva) {
-    if (yaHecho(t)) continue;
-    const pagina = await wikipedia('en', t);
-    if (pagina?.extract && pagina.extract.trim().length >= 300) {
-      informe.push('Tema elegido del catálogo editorial verificado y con página consultable; se excluyen los temas ya tratados.');
-      return t;
-    }
-  }
+
   /* Lista histórica conservada como referencia editorial, nunca como prueba documental.
   const reservaAnterior = [
     'Green Children of Woolpit',
