@@ -330,7 +330,43 @@ const elegirTema = async (modelo) => {
       if (k.length >= 4 && !vistos.includes(k)) { vistos.push(k); inventario.push(String(t).trim()); }
     }
   }
-  throw new Error('La Directora no encontró un tema nuevo y verificable tras 3 rondas. No se permite reutilizar temas antiguos.');
+  // Respaldo editorial independiente del proveedor de IA: evita que una cuota agotada deje la fábrica sin tema.
+  // Cada candidato se consulta en Wikipedia y pasa por las MISMAS exclusiones y el mismo mínimo documental.
+  const reserva = [
+    'Green Children of Woolpit',
+    'Dancing plague of 1518',
+    'Ourang Medan',
+    'The Devil\'s Footprints',
+    'Piri Reis map',
+    'Kensington Runestone',
+    'Baghdad Battery',
+    'London Hammer',
+    'Black Knight satellite',
+    'Lake Nyos disaster',
+    'Great Moon Hoax',
+    'Enfield Poltergeist',
+    'Bell Witch',
+    'Brown Lady of Raynham Hall',
+    'Mad Gasser of Mattoon',
+    'Mary King\'s Close',
+    'Great Amherst Mystery',
+    'Lead Masks Case',
+    'Max Headroom signal hijacking',
+    'Hinterkaifeck murders',
+    'Flannan Isles Lighthouse',
+    'Dighton Rock',
+    'Dancing mania',
+    'Moberly-Jourdain incident',
+    'Cahokia'
+  ];
+  for (const t of reserva) {
+    if (yaHecho(t)) continue;
+    const p = await wikipedia('en', t);
+    if (!p || (p.extract ?? '').trim().length < minimoMaterialTema || yaHecho(p.title)) continue;
+    informe.push('Tema elegido desde la reserva editorial verificada; se comprobó Wikipedia y se respetó el historial.');
+    return p.title;
+  }
+  throw new Error('La Directora agotó 3 rondas y la reserva editorial; no encontró tema nuevo y verificable. No se reutilizaron temas.');
 };
 
 /* ====================== Normas de la jefa (las cumplen todos) ====================== */
