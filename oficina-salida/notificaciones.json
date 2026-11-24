@@ -1,5 +1,23 @@
 [
   {
+    "id": "mwu7aip0vn4f",
+    "fecha": "2026-11-24T04:34:38.244Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "La oficina falló",
+    "texto": "Groq 400: {\"error\":{\"message\":\"Failed to validate JSON. Please adjust your prompt. See 'failed_generation' for more details.\",\"type\":\"invalid_request_error\",\"co Aprobados: 11. Rechazados: 42. Con error: 10. Próximo ciclo en 9 h."
+  },
+  {
+    "id": "mwu7ae6yrze6",
+    "fecha": "2026-11-24T04:34:32.410Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título con pregunta intrigante o afirmación impactante + referencia a un misterio/evento desconocido + elemento de sorpresa o promesa de revelación El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (27819 vistas/hora)."
+  },
+  {
     "id": "mwu78hc84xwm",
     "fecha": "2026-11-24T04:33:03.176Z",
     "canal": "lqns",
@@ -674,22 +692,5 @@
     "tipo": "alerta",
     "titulo": "El panel rechazó: 🌌 El misterio explosivo de Tunguska 1908",
     "texto": "Gemini (gemini-4-hydrogen) lo vio: 3/10, no subir. 0 de 8 aprobaron, 2 pasaron los primeros 3 segundos, 0 lo compartirían. No se sube. Mejora principal: Reemplaza la voz sintética y los fondos genéricos por una narración humana clara y visuales reales del desastre de Tunguska; un gancho impactante y sin errores aumentará drásticamente la retención."
-  },
-  {
-    "id": "mwrjp5tgdfmc",
-    "fecha": "2026-11-22T07:58:38.260Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "listo",
-    "titulo": "Video listo: 🌌 El misterio explosivo de Tunguska 1908",
-    "texto": "Se renderizó \"🌌 El misterio explosivo de Tunguska 1908\" para Lo Que No Sabías (32 MB). Descárgalo en GitHub > Actions > Produccion > artefacto \"video-lqns-tunguska-event\". Falta subirlo a YouTube."
-  },
-  {
-    "id": "mwrj2d0ix14t",
-    "fecha": "2026-11-22T07:40:54.498Z",
-    "canal": "lqns",
-    "tipo": "reporte",
-    "titulo": "Video subido a YouTube",
-    "texto": "\"🌊 El Bloop: ¡5,000 km de misterio bajo el hielo!\" quedó PÚBLICO ahora mismo: https://youtu.be/9CKxsZ7hmUg"
   }
 ]

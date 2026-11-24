@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-24T04:32:47.990Z",
+  "actualizado": "2026-11-24T04:34:32.409Z",
   "canalesLeidos": 9,
   "videosRevisados": 133,
   "mejores": [
@@ -8,8 +8,8 @@
       "idioma": "en",
       "titulo": "Why Is Antarctica Closed? The Operation Highjump Mystery",
       "publicado": "2026-11-20T01:00:08.000Z",
-      "vistas": 2768188,
-      "vistasPorHora": 27809
+      "vistas": 2770005,
+      "vistasPorHora": 27819
     },
     {
       "canal": "MrBallen",
@@ -17,15 +17,15 @@
       "titulo": "Always open your fan mail",
       "publicado": "2026-11-21T19:00:32.000Z",
       "vistas": 1065763,
-      "vistasPorHora": 18523
+      "vistasPorHora": 18514
     },
     {
       "canal": "The Why Files",
       "idioma": "en",
       "titulo": "The Basement: Close Encounters Compilation | Abductions, Missing Time & Contact",
       "publicado": "2026-11-23T18:00:10.000Z",
-      "vistas": 179193,
-      "vistasPorHora": 16995
+      "vistas": 180984,
+      "vistasPorHora": 17118
     },
     {
       "canal": "MrBallen",
@@ -33,7 +33,7 @@
       "titulo": "How Skydiving Changed Will Smith's Life!",
       "publicado": "2026-11-17T17:00:07.000Z",
       "vistas": 2129610,
-      "vistasPorHora": 13691
+      "vistasPorHora": 13689
     },
     {
       "canal": "The Why Files",
@@ -41,18 +41,18 @@
       "titulo": "America Is Hiding Something Underground",
       "publicado": "2026-11-18T18:00:14.000Z",
       "vistas": 1356437,
-      "vistasPorHora": 10391
+      "vistasPorHora": 10388
     }
   ],
   "formula": {
-    "formula": "Pregunta intrigante o afirmación impactante + elemento misterioso/extraño + pista de revelación o consecuencia",
+    "formula": "Título con pregunta intrigante o afirmación impactante + referencia a un misterio/evento desconocido + elemento de sorpresa o promesa de revelación",
     "ganchos": [
-      "¿Qué oculta [lugar/objeto] que nadie quiere que descubras?",
-      "La verdad detrás de [evento] que cambiará todo lo que sabes",
-      "Descubre el secreto de [fenómeno] antes de que sea demasiado tarde"
+      "¿Qué oculta [lugar/objeto] que la historia nunca quiso revelar?",
+      "Descubre el [evento] que cambió la vida de [persona famosa] y que nadie te contó",
+      "La verdad detrás de [fenómeno] que ha dejado sin palabras a los expertos"
     ],
     "evitar": [
-      "Títulos demasiado genéricos sin un gancho claro (ej. \"Always open your fan mail\")",
+      "Títulos demasiado genéricos sin una pista clara del misterio (ej.: \"Historia extraña\")",
       "Uso excesivo de mayúsculas o símbolos que distraen del mensaje principal"
     ]
   }
