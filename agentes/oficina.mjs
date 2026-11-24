@@ -102,6 +102,7 @@ const registrar = (resultado, detalle, intentos, extra = {}) => {
   e.jefa = {mensaje: ag['Directora de contenido']?.tarea ?? '', horasParaProximoCiclo: h};
   const edit = extra.editor ? ` Editor: ${extra.editor}` : '';
   if (resultado === 'aprobado') notificar('reporte', `Guion aprobado: ${TEMA}`, `${FORMATO === 'largo' ? 'Video largo' : 'Short'} de "${TEMA}" aprobado en el intento ${intentos}. ${detalle}${edit} ${resumen} Próximo ciclo en ${h} h.`);
+  else if (resultado === 'rechazado' && String(detalle).startsWith('Tema descartado:')) notificar('reporte', `Tema descartado: ${TEMA}`, `${detalle} No se afirma que el tema sea falso; esta ronda no reunió documentación institucional suficiente. ${resumen} No se publica. Próximo ciclo en ${h} h.`);
   else if (resultado === 'rechazado') notificar('alerta', `Guion rechazado: ${TEMA}`, `El Verificador no aprobó "${TEMA}" tras ${intentos} intentos: ${detalle} ${resumen} No se publica. Próximo ciclo en ${h} h.`);
   else notificar('alerta', 'La oficina falló', `${detalle} ${resumen} Próximo ciclo en ${h} h.`);
   e.agentes = ag;
@@ -661,7 +662,9 @@ try {
   if (temaMalo) {
     // Un tema que no carga NO es un error de la oficina: se descarta y el ciclo prueba con otro.
     try { fs.writeFileSync(HISTORIAL, JSON.stringify([...new Set([...leerJson(HISTORIAL, []), TEMA])], null, 2)); } catch { /* sin historial */ }
-    try { registrar('rechazado', `Tema descartado (no se pudo cargar): ${TEMA}`, 0); } catch { /* sin estado */ }
+    const sinFuentes = /no reunió 2 fuentes institucionales|No se encontraron dos fuentes institucionales/i.test(String(e.message ?? e));
+    const motivo = sinFuentes ? `Tema descartado: ${TEMA}. No se recuperaron dos fuentes institucionales independientes en esta ronda.` : `Tema descartado: ${TEMA}. No se pudo recuperar material documental suficiente en esta ronda.`;
+    try { registrar('rechazado', motivo, 0); } catch { /* sin estado */ }
     try { fs.writeFileSync(path.join(SALIDA, `informe-${slug}.md`), informe.join('\n')); } catch { /* sin informe */ }
     console.log(`Tema descartado: ${TEMA}. Se prueba con otro.`);
     process.exit(0);
