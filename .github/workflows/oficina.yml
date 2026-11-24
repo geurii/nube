@@ -144,7 +144,12 @@ jobs:
             CANAL=$c timeout 120 node agentes/cazador.mjs || true
             CANAL=$c timeout 200 node agentes/radar.mjs || true
             for intento in 1 2 3; do
-              CANAL=$c timeout 900 node agentes/oficina.mjs || fallo=1
+              if [ "$intento" -eq 1 ]; then
+                CANAL=$c timeout 900 node agentes/oficina.mjs || fallo=1
+              else
+                echo "Reintento $intento: se limpia el tema anterior para que la Oficina elija uno distinto."
+                env -u TEMA CANAL=$c timeout 900 node agentes/oficina.mjs || fallo=1
+              fi
               CANAL=$c node agentes/ultimo-aprobado.mjs && break
               echo "No salió un guion aprobado (intento $intento de 3): pruebo con otro tema."
             done
