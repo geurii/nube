@@ -517,8 +517,8 @@ const datosExactos = (material) => {
 /** Evita que los modelos conviertan extremos de un intervalo de la misma fuente en cifras contradictorias. */
 const notaDeIntervalosFuente = (material) => {
   const texto = String(material ?? '').toLowerCase();
-  if (/lituya/.test(texto) && texto.includes('7.8') && texto.includes('8.3')) {
-    return 'ACLARACIÓN OBLIGATORIA DE LA FUENTE: para Lituya Bay, el material consultado contiene ambas estimaciones 7.8 y 8.3 Mw. Preséntalas como un intervalo completo: "entre 7.8 y 8.3 Mw". No afirmes solo 7.8 ni solo 8.3 como magnitud única, no alternes los extremos entre intentos y no mezcles Mw con ML, Ms o la escala Richter. El Verificador debe aceptar el intervalo íntegro cuando coincida con el material.';
+  if (/lituya/.test(texto)) {
+    return 'ACLARACIÓN OBLIGATORIA DE MAGNITUD PARA LITUYA BAY: no combines 7.8, 7.9 y 8.3 en un intervalo. Son cifras publicadas con criterios/escalas distintos en registros distintos, no un rango de una única medición. Usa EXCLUSIVAMENTE el valor que aparece literalmente en el MATERIAL consultado y conserva su escala/unidad exacta: si dice 8.3 Mw, escribe 8.3 Mw; si dice 7.8 sin escala, escribe 7.8 sin añadir Mw; si dice 7.9 ML, escribe 7.9 ML. No sustituyas la cifra por conocimiento externo ni la alternes entre intentos. El Verificador debe comparar contra el MATERIAL de esta ejecución y no contra recuerdos o fuentes externas.';
   }
   return '';
 };
