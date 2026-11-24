@@ -281,7 +281,7 @@ const revisarImagenGemini = async (ruta, contexto, transcripcion) => {
       try {
         const r=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${modelo}:generateContent`,{
           method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':key},
-          body:JSON.stringify({contents:[{role:'user',parts}],generationConfig:{temperature:0.1,maxOutputTokens:1200,responseMimeType:'application/json'}}),
+          body:JSON.stringify({contents:[{role:'user',parts:partes}],generationConfig:{temperature:0.1,maxOutputTokens:1200,responseMimeType:'application/json'}}),
           signal:AbortSignal.timeout(120000)
         });
         const cuerpo=await r.text();
