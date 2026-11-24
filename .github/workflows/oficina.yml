@@ -24,7 +24,7 @@ on:
       palabras:
         description: 'Solo para largo: palabras aproximadas (ej: 900)'
         required: false
-        default: '900'
+        default: '1400'
 
 permissions:
   contents: write
