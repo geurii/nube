@@ -272,21 +272,24 @@ const elegirModelo = async () => {
 };
 
 /* ====================== Dirección: elige el tema sola ====================== */
+const minimoMaterialTema = FORMATO === 'largo' ? 3000 : 1600;
 const existeEnWikipedia = async (titulo) => {
   const p = await wikipedia('en', titulo);
-  return !!p && (p.extract ?? '').length > 3000;
+  return !!p && (p.extract ?? '').trim().length >= minimoMaterialTema;
 };
 const elegirTema = async (modelo) => {
-  const hechos = leerJson(HISTORIAL, []).filter(Boolean);
+  // El historial real contiene registros {fecha, tema, formato, resultado...}, no solo cadenas.
+  const tituloDe = (x) => typeof x === 'string' ? x : (x?.tema ?? x?.titulo ?? x?.title ?? x?.nombre ?? '');
+  const hechos = (Array.isArray(leerJson(HISTORIAL, [])) ? leerJson(HISTORIAL, []) : []).map(tituloDe).filter(Boolean);
   // Inventario único de TODO lo que ya se intentó, guionizó, produjo o publicó.
   const clave = (x) => String(x ?? '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/^the[-_ ]+/, '').replace(/[^a-z0-9]+/g, '');
   let guiones = [];
   try { guiones = fs.readdirSync(SALIDA).filter((f) => /^guion-.+\.json$/.test(f)).map((f) => f.replace(/^guion-|\.json$/g, '')); } catch { /* sin carpeta */ }
-  const subidosTitulos = (leerJson(path.join(SALIDA, 'subidos.json'), {}).videos ?? []).map((v) => v.titulo);
-  const producidos = leerJson(path.join(SALIDA, 'producidos.json'), []);
-  const ideasJules = leerJson(path.join(SALIDA, 'ideas-jules.json'), []).map((x) => x.tema).filter(Boolean);
+  const subidosTitulos = (leerJson(path.join(SALIDA, 'subidos.json'), {}).videos ?? []).map(tituloDe).filter(Boolean);
+  const producidos = (Array.isArray(leerJson(path.join(SALIDA, 'producidos.json'), [])) ? leerJson(path.join(SALIDA, 'producidos.json'), []) : []).map(tituloDe).filter(Boolean);
+  const ideasJules = (leerJson(path.join(SALIDA, 'ideas-jules.json'), []) ?? []).map(tituloDe).filter(Boolean);
   const estrategia = leerJson(path.join(SALIDA, 'estrategia.json'), {});
-  const ideasEstrategia = (estrategia.ideas ?? []).map((x) => x.temaWikipedia).filter(Boolean);
+  const ideasEstrategia = (estrategia.ideas ?? []).map((x) => x.temaWikipedia ?? x.tema ?? x.titulo).filter(Boolean);
   const ideasEquipo = filtrarTemas(leerJson(path.join(SALIDA, 'ayudas.json'), {}).temas ?? [], CANAL_ID);
   const inventario = [...new Set([...hechos, ...guiones, ...producidos, ...subidosTitulos, ...ideasJules, ...ideasEstrategia].map((x) => String(x ?? '').trim()).filter(Boolean))];
   const vistos = inventario.map(clave).filter((k) => k.length >= 4);
@@ -306,18 +309,18 @@ const elegirTema = async (modelo) => {
   for (const t of candidatosLocales) {
     if (typeof t !== 'string' || yaHecho(t)) continue;
     const p = await wikipedia('en', t);
-    if (p && (p.extract ?? '').length > 3000 && !yaHecho(p.title)) return p.title;
+    if (p && (p.extract ?? '').trim().length >= minimoMaterialTema && !yaHecho(p.title)) return p.title;
   }
   for (let ronda = 1; ronda <= 3; ronda++) {
     const r = await pedirJson(modelo, [
       {role: 'system', content: `Eres Director/a de contenido del canal "${CONFIG.nombre}" (${CONFIG.nicho}). Respondes SOLO JSON válido.`},
-      {role: 'user', content: `Propón 40 títulos EXACTOS de artículos de Wikipedia en inglés, distintos entre sí, sobre ${CONFIG.nicho}. Deben ser temas NUEVOS para este canal, con abundante documentación y hechos concretos (lugares, objetos, eventos o descubrimientos). No personas, biografías, política, violencia gráfica, películas, series, juegos ni chismes. PROHIBIDO repetir o proponer variantes de esta lista de temas ya usados, rechazados, producidos, publicados o reservados: ${inventario.join(' | ').slice(0, 9000) || 'ninguno'}. No devuelvas ningún título de esa lista aunque cambies "The", signos, idioma o redacción. Prioriza variedad temática y artículos con más de 3.000 caracteres de contenido. ${bloqueRadar} Ronda ${ronda}/3: busca candidatos diferentes a los de una lista anterior. Formato: {"temas":["Título exacto 1","Título exacto 2"]}.`},
+      {role: 'user', content: `Propón 40 títulos EXACTOS de artículos de Wikipedia en inglés, distintos entre sí, sobre ${CONFIG.nicho}. Deben ser temas NUEVOS para este canal, con abundante documentación y hechos concretos (lugares, objetos, eventos o descubrimientos). No personas, biografías, política, violencia gráfica, películas, series, juegos ni chismes. PROHIBIDO repetir o proponer variantes de esta lista de temas ya usados, rechazados, producidos, publicados o reservados: ${inventario.join(' | ').slice(0, 9000) || 'ninguno'}. No devuelvas ningún título de esa lista aunque cambies "The", signos, idioma o redacción. Prioriza variedad temática y artículos con documentación suficiente: mínimo ${minimoMaterialTema} caracteres de contenido para este formato. ${bloqueRadar} Ronda ${ronda}/3: busca candidatos diferentes a los de una lista anterior. Formato: {"temas":["Título exacto 1","Título exacto 2"]}.`},
     ], 2600);
     const propuestas = Array.isArray(r.temas) ? r.temas : [];
     for (const t of propuestas) {
       if (typeof t !== 'string' || !t.trim() || yaHecho(t)) continue;
       const p = await wikipedia('en', t.trim());
-      if (!p || (p.extract ?? '').length <= 3000 || yaHecho(p.title)) continue;
+      if (!p || (p.extract ?? '').trim().length < minimoMaterialTema || yaHecho(p.title)) continue;
       informe.push(`Tema elegido por la Oficina en ronda ${ronda}; se comprobó que no aparece en el historial.`);
       return p.title;
     }
