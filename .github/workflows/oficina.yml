@@ -102,7 +102,9 @@ jobs:
         if: always()
         run: |
           node --check agentes/reglas-guion.mjs
+          node --check agentes/llm.mjs
           node --check agentes/oficina.mjs
+          node --check agentes/producir.mjs
           node --check agentes/pintor.mjs
           node --check agentes/probar-oficina.mjs
           node --check agentes/encadenar.mjs
