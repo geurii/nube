@@ -75,12 +75,12 @@ globalThis.fetch = async (url, opciones) => {
   if (u.includes('html.duckduckgo.com/html/')) {
     const consulta = new URL(u).searchParams.get('q') || '';
     const dominio = /site:([^\s]+)/.exec(consulta)?.[1] || 'si.edu';
-    const snippet = 'Registro institucional con fechas, contexto histórico, descripción documental y datos concretos consultables para verificar este tema.';
-    return new Response(`<div class="result"><h2><a href="https://${dominio}/bloop" class="result__a">Bloop institutional record</a></h2><div class="result__snippet">${snippet}</div></div>`, {status: 200});
+    const snippet = 'Artículo web con contexto histórico, descripción del fenómeno y datos concretos consultables para verificar este tema.';
+    return new Response(`<div class="result"><h2><a href="https://${dominio}/bloop" class="result__a">Bloop research article</a></h2><div class="result__snippet">${snippet}</div></div>`, {status: 200});
   }
   if (/^https:\/\/[^/]+\/bloop$/.test(u)) {
-    const texto = 'The institutional record documents the Bloop acoustic event, the hydrophone observations, the recorded date, the geographic context and the scientific explanation. This page provides a primary institutional account and enough descriptive detail for the research test. '.repeat(2);
-    return new Response(`<html><head><title>Institutional Bloop Record</title><meta name="description" content="${texto}"></head><body><p>${texto}</p><p>${texto}</p></body></html>`, {status: 200});
+    const texto = 'The article describes the Bloop acoustic event, the hydrophone observations, the recorded date, the geographic context and the scientific explanations. This page provides enough descriptive detail for the research test. '.repeat(2);
+    return new Response(`<html><head><title>Bloop Research Article</title><meta name="description" content="${texto}"></head><body><p>${texto}</p><p>${texto}</p></body></html>`, {status: 200});
   }
   if (u.includes('.wikipedia.org/w/api.php')) return new Response(JSON.stringify({query:{pages:{'-1':{missing:''}}}}), {status:200});
   if (u.includes('api.groq.com/openai/v1/models')) return new Response(JSON.stringify({data: [{id: 'openai/gpt-oss-120b'}]}), {status: 200});
