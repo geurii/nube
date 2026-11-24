@@ -1,8 +1,8 @@
 {
-  "fecha": "2026-11-24T18:04:50.839Z",
+  "fecha": "2026-11-24T19:51:19.819Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 1148,
-  "ganadasDesdeElUltimoCiclo": 0,
+  "total": 1158,
+  "ganadasDesdeElUltimoCiclo": 10,
   "videos": [
     {
       "id": "i0w6F46yv3o",
@@ -14,7 +14,7 @@
       "id": "xE32CX_fsXM",
       "titulo": "🌋 ¿Qué secreto ancestral esconde el cráter de la Isla de Pascua?",
       "publicado": "2026-11-24T16:28:54+00:00",
-      "vistas": 1
+      "vistas": 11
     },
     {
       "id": "85i8fzFF970",
@@ -96,10 +96,6 @@
     }
   ],
   "historia": [
-    {
-      "fecha": "2026-11-22T00:32:04.662Z",
-      "total": 2602
-    },
     {
       "fecha": "2026-11-22T00:39:41.726Z",
       "total": 2607
@@ -335,6 +331,10 @@
     {
       "fecha": "2026-11-24T18:04:50.839Z",
       "total": 1148
+    },
+    {
+      "fecha": "2026-11-24T19:51:19.819Z",
+      "total": 1158
     }
   ]
 }
