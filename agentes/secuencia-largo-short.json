@@ -1,5 +1,7 @@
 {
   "activo": true,
-  "fase": "largo",
-  "descripcion": "Secuencia extraordinaria de una sola vez: publicar un video largo, luego un Short y reanudar los horarios automáticos solo cuando ambos estén publicados."
+  "fase": "short-encolado",
+  "descripcion": "Secuencia extraordinaria de una sola vez: publicar un video largo, luego un Short y reanudar los horarios automáticos solo cuando ambos estén publicados.",
+  "videoLargoId": "lqns-the-taos-hum",
+  "fechaLargoPublicado": "2026-11-24T15:04:30.622Z"
 }
