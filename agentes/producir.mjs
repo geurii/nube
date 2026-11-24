@@ -77,6 +77,25 @@ if (secuencia.activo && secuencia.fase === 'largo') {
     .sort((a, b) => (Date.parse(b.g.creado) || b.t) - (Date.parse(a.g.creado) || a.t));
 }
 
+// En el disparo automático, producir EXCLUSIVAMENTE el guion aprobado por esa ejecución de la Oficina.
+// Evita que workflow_run rescate por accidente un guion viejo (o un Bloop de una prueba anterior).
+const oficinaRunId = String(process.env.OFICINA_RUN_ID ?? '').trim();
+if (oficinaRunId) {
+  const manifiesto = leer(path.join('oficina-salida', 'produccion-pendiente.json'), []);
+  const encargo = (Array.isArray(manifiesto) ? manifiesto : []).find((x) => String(x.runId) === oficinaRunId);
+  if (!encargo) {
+    console.log('No hay un guion aprobado por la ejecución de Oficina ' + oficinaRunId + '; no se rescata ningún guion anterior.');
+    salida('id', ''); salida('canal', '');
+    process.exit(0);
+  }
+  pendientes = pendientes.filter((x) => x.canal === encargo.canal && x.slug === encargo.slug && x.g.formato === encargo.formato);
+  if (!pendientes.length) {
+    console.log('El guion del manifiesto ya no está aprobado o no supera las validaciones; no se produce.');
+    salida('id', ''); salida('canal', '');
+    process.exit(0);
+  }
+}
+
 if (!pendientes.length) {
   console.log('No hay guiones aprobados sin producir. Nada que hacer.');
   salida('id', '');
