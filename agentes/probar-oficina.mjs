@@ -127,7 +127,7 @@ for (const canal of ['lqns', 'demo']) {
   if (guion.canal !== canal) fallos.push(`${canal}: el guion no dice a qué canal pertenece`);
   if (!guion.audio.startsWith(`audio/${canal}-`)) fallos.push(`${canal}: el audio no lleva el nombre del canal (${guion.audio})`);
   if (guion.escenas.some((e) => e.fondo.includes('pixelinventado'))) fallos.push(`${canal}: dejó pasar un fondo inventado`);
-  if (!guion.escenas.every((e) => e.fondo.length === 2 && e.fondo.every((x) => x.startsWith('pintado:')))) fallos.push(`${canal}: los dos pintores no dibujaron los 2 planos de cada escena`);
+  if (!guion.escenas.every((e) => e.fondo.length === 3 && e.fondo.every((x) => x.startsWith('pintado:')))) fallos.push(`${canal}: los dos pintores no dibujaron los 3 cuadros distintos de cada escena`);
   { const inf = fs.readFileSync(path.join(dir, 'informe-bloop.md'), 'utf8'); if (!/acuerdo/.test(inf)) fallos.push(`${canal}: no quedó el diálogo entre los dos pintores en el informe`); if (!/historia\.test/.test(inf)) fallos.push(`${canal}: no se usó una fuente web general sin exigir dominio institucional`); }
   for (const e of guion.escenas) for (const x of e.fondo) if (!fs.existsSync(path.join('public', 'pintados', x.replace('pintado:', '') + '.json'))) fallos.push(`${canal}: falta el archivo del cuadro ${x}`);
   if (!guion.publicacion.comentarioFijado) fallos.push(canal + ': la Mesa de publicación no dejó comentario fijado');
