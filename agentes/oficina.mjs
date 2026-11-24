@@ -392,7 +392,6 @@ const elegirTema = async (modelo) => {
       }
       informe.push(`Propuesta descartada antes de escribir por no tener fuente consultable: "${t.trim()}".`);
     }
-    }
     // Los títulos de esta ronda también se excluyen de las siguientes para no dar vueltas sobre lo mismo.
     for (const t of propuestas) {
       const k = clave(t);
@@ -430,8 +429,11 @@ const elegirTema = async (modelo) => {
   ]; */
   for (const t of reserva) {
     if (typeof t !== 'string' || yaHecho(t)) continue;
-    informe.push('Tema elegido desde el respaldo editorial por novedad y encaje con el nicho; se verificará lo que pueda documentarse.');
-    return t;
+    const pagina = await wikipedia('en', t);
+    if (pagina?.extract && pagina.extract.trim().length >= 300) {
+      informe.push('Tema elegido desde el respaldo editorial y validado con una página consultable.');
+      return pagina.title || t;
+    }
   }
   throw new Error('No se encontró un tema nuevo tras agotar las propuestas editoriales.');
 };
