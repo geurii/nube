@@ -185,16 +185,16 @@ const FORMA = '{"escenas": [{"indice": N, "planos": [ESCENA_A, ESCENA_B, ESCENA_
 
 
 
-const limpiar = (r, ids, slug, ya = {}, escenas = []) => {
+const limpiar = (r, ids, slug, ya = {}, escenas = [], tema = '') => {
   const salida = {};
   for (const e of Array.isArray(r?.escenas) ? r.escenas : []) {
     const i = Number(e.indice);
     if (!ids.includes(i)) continue;
-    const textoEscena = escenas[i]?.texto ?? escenas[i]?.tipo ?? '';
+    const textoEscena = `${escenas[i]?.texto ?? escenas[i]?.tipo ?? ''} ${tema}`;
     const planos = (Array.isArray(e.planos) ? e.planos : []).slice(0, 4).map(validarEscena).filter(Boolean).filter((plano) => tieneAnclaNarrativa(plano, textoEscena));
     if (planos.length === 4 && new Set(planos.map((p) => JSON.stringify(p))).size === 4) salida[i] = planos;
   }
-  for (const i of ids) if (!salida[i] && Array.isArray(ya[i]) && ya[i].length === 4 && new Set(ya[i].map((p) => JSON.stringify(p))).size === 4) salida[i] = ya[i]; // conservar solo tres cuadros distintos y completos
+  for (const i of ids) if (!salida[i] && Array.isArray(ya[i]) && ya[i].length === 4 && new Set(ya[i].map((p) => JSON.stringify(p))).size === 4) salida[i] = ya[i]; // conservar solo cuatro cuadros distintos y completos
 
   return salida;
 };
@@ -210,13 +210,13 @@ export const pintarEscenas = async ({llamar, escenas, indices, slug, tema, nota 
   const TAM = 1; // una escena por llamada: evita truncar el JSON de cuatro cuadros y permite reparar con contexto completo
   for (let b = 0; b < indices.length; b += TAM) {
     const ids = indices.slice(b, b + TAM);
-    const encargo = `Tema del video: "${tema}". Para CADA escena dibuja CUATRO planos distintos (otra composición o ángulo, mismo mundo de color) que MUESTREN literalmente el objeto, lugar, fenómeno o acción mencionados en la narración. Traduce cada frase a una imagen concreta: si se menciona un zumbido, dibuja su fuente o el fenómeno acústico; si se menciona un barco, dibuja ese barco; si se menciona una explosión, dibuja la explosión y el entorno. No uses paisajes de relleno, fondos genéricos, símbolos abstractos ni objetos que no aparezcan en la frase. PROHIBIDO que el sujeto principal sea una combinación de círculos, triángulos, rectángulos o polígonos decorativos. Cada uno de los CUATRO planos debe incluir un OBJETO PROTAGONISTA semántico reconocible y dibujado con detalle; efectos como partículas, rayos, niebla, estrellas, burbujas, olas o montañas de fondo NUNCA cuentan como protagonista. Si la frase habla de sonido, muestra un micrófono, hidrófono o consola de sonar; si habla de un volcán, dibuja un volcán; de hielo, un iceberg; de una ciudad, edificios; de un barco, el barco; no sustituyas el objeto por puntos, líneas o formas decorativas. Las figuras geométricas solo pueden servir como piezas internas del objeto, nunca como composición final. Si no puedes dibujar el objeto reconocible, devuelve menos escenas para que el sistema las rechace y vuelva a intentarlo; jamás rellenes con geometría. Si no puedes representar un detalle con precisión, representa el elemento real más cercano que sí esté respaldado por la frase, sin inventar contexto. Los tres planos deben ser reconocibles de inmediato, distintos entre sí y representar exactamente la misma frase desde composiciones diferentes.\n\n${MANUAL}\n\n${GUIA}\n\nESCENAS:\n${lote(escenas, ids)}\n\nDevuelve ${FORMA}`;
+    const encargo = `Tema del video: "${tema}". Para CADA escena dibuja CUATRO planos distintos (otra composición o ángulo, mismo mundo de color) que MUESTREN literalmente el objeto, lugar, fenómeno o acción mencionados en la narración. Traduce cada frase a una imagen concreta: si se menciona un zumbido, dibuja su fuente o el fenómeno acústico; si se menciona un barco, dibuja ese barco; si se menciona una explosión, dibuja la explosión y el entorno. No uses paisajes de relleno, fondos genéricos, símbolos abstractos ni objetos que no aparezcan en la frase. PROHIBIDO que el sujeto principal sea una combinación de círculos, triángulos, rectángulos o polígonos decorativos. Cada uno de los CUATRO planos debe incluir un OBJETO PROTAGONISTA semántico reconocible y dibujado con detalle; efectos como partículas, rayos, niebla, estrellas, burbujas, olas o montañas de fondo NUNCA cuentan como protagonista. Si la frase habla de sonido, muestra un micrófono, hidrófono o consola de sonar; si habla de un volcán, dibuja un volcán; de hielo, un iceberg; de una ciudad, edificios; de un barco, el barco; no sustituyas el objeto por puntos, líneas o formas decorativas. Las figuras geométricas solo pueden servir como piezas internas del objeto, nunca como composición final. Si no puedes dibujar el objeto reconocible, devuelve menos escenas para que el sistema las rechace y vuelva a intentarlo; jamás rellenes con geometría. Si no puedes representar un detalle con precisión, representa el elemento real más cercano que sí esté respaldado por la frase, sin inventar contexto. Los cuatro planos deben ser reconocibles de inmediato, distintos entre sí y representar exactamente la misma frase desde composiciones diferentes.\n\n${MANUAL}\n\n${GUIA}\n\nESCENAS:\n${lote(escenas, ids)}\n\nDevuelve ${FORMA}`;
     let a = {};
     for (let intento = 1; intento <= 5; intento++) {
       const pendientes = ids.filter((i) => !a[i]);
       if (!pendientes.length) break;
       const encargoReintento = intento === 1 ? encargo : `REPARACIÓN ${intento}/5. CONTEXTO ORIGINAL COMPLETO: tema del video: "${tema}". Completa únicamente estas escenas: ${lote(escenas, pendientes)}. Para cada una entrega exactamente CUATRO cuadros de pixel art completos, distintos entre sí y fieles a la frase. Mantén el mismo mundo visual, época, objetos y contexto narrativo del tema. No cambies la escena ni uses fondos genéricos.\n\n${MANUAL}\n\n${GUIA}\n\nDevuelve ${FORMA}`;
-      try { const nueva = limpiar(await llamar([{role: 'system', content: `${SISTEMA_A} ${presionPintores()}`}, {role: 'user', content: encargoReintento}], 6500), pendientes, slug, {}, escenas); Object.assign(a, nueva); }
+      try { const nueva = limpiar(await llamar([{role: 'system', content: `${SISTEMA_A} ${presionPintores()}`}, {role: 'user', content: encargoReintento}], 6500), pendientes, slug, {}, escenas, tema); Object.assign(a, nueva); }
       catch (e) { nota(`Pintor A, intento ${intento}/5: ${String(e.message ?? e).slice(0, 120)}`); }
     }
     if (ids.some((i) => !a[i])) { nota(`Faltan cuatro cuadros distintos para las escenas ${ids.filter((i) => !a[i]).join(', ')}; se aborta esta tanda, no se usarán fondos de relleno.`); continue; }
@@ -225,7 +225,7 @@ export const pintarEscenas = async ({llamar, escenas, indices, slug, tema, nota 
     try {
       const revision = `Tema: "${tema}". Tu compañero propuso estos cuadros para las escenas:\n${lote(escenas, ids)}\n\nSUS CUADROS:\n${JSON.stringify({escenas: ids.filter((i) => a[i]).map((i) => ({indice: i, planos: a[i]}))})}\n\n${MANUAL}\n\n${GUIA}\n\nRevisa cada cuadro como un profesional: ¿muestra lo que dice la frase?, ¿luz coherente?, ¿profundidad en 3 planos?, ¿sujeto legible y fuera de las zonas reservadas?, ¿hay movimiento?, ¿los cuatro planos de cada escena son distintos? CORRIGE lo que no esté a nivel profesional (añade detalle, luz, primer plano, movimiento).\nDevuelve {"acuerdo": true|false (¿el cuadro ORIGINAL de tu compañero ya era impecable?), "objeciones": ["máx. 4 frases cortas"], "escenas": ${FORMA.replace('{"escenas": ', '').replace(/ con el mismo.*$/, '')} con TUS cuadros corregidos}`;
       const rb = await llamar([{role: 'system', content: `${SISTEMA_B} ${presionPintores()}`}, {role: 'user', content: revision}], 6500);
-      const mejorB = limpiar(rb, ids, slug, a, escenas);
+      const mejorB = limpiar(rb, ids, slug, a, escenas, tema);
       const objeciones = (Array.isArray(rb?.objeciones) ? rb.objeciones : []).map(String).slice(0, 4);
       if (rb?.acuerdo === true) { final = Object.keys(mejorB).length ? mejorB : a; acuerdo = 'acuerdo en la ronda 1'; }
       else {
@@ -233,7 +233,7 @@ export const pintarEscenas = async ({llamar, escenas, indices, slug, tema, nota 
         try {
           const respuesta = `Tu compañero (Pintor de luz y detalle) revisó tus cuadros y puso estas objeciones: ${objeciones.join(' | ') || 'mejorar luz y detalle'}.\nEsta es SU versión corregida:\n${JSON.stringify({escenas: ids.filter((i) => mejorB[i]).map((i) => ({indice: i, planos: mejorB[i]}))})}\n\nSi su versión es mejor, acéptala; si ves algo que empeora, ajústalo. Entrega la versión FINAL que firmarían los dos.\nDevuelve {"acuerdo": true|false, "escenas": [...]} con ${FORMA.replace('{"escenas": ', '').replace(/ con el mismo.*$/, '')}`;
           const ra = await llamar([{role: 'system', content: `${SISTEMA_A} ${presionPintores()}`}, {role: 'user', content: respuesta}], 6500);
-          const trasA = limpiar(ra, ids, slug, mejorB, escenas);
+          const trasA = limpiar(ra, ids, slug, mejorB, escenas, tema);
           if (ra?.acuerdo === true) { final = trasA; acuerdo = 'acuerdo en la ronda 2 (el de composición ajustó con las objeciones)'; }
           else { final = mejorB; acuerdo = 'el de luz y detalle tuvo la última palabra tras discutir'; }
         } catch { final = mejorB; acuerdo = 'el de luz y detalle tuvo la última palabra'; }
