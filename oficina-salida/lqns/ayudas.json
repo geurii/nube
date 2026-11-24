@@ -1,29 +1,31 @@
 {
   "plan": [
-    "Crear y lanzar la serie de 3 episodios sobre el caso del banco que pagó 175 millones por clientes ficticios: Equipo de investigación de casos financieros: Generar al menos 30,000 vistas combinadas y monetizar 12,000 USD antes del 13 de dici",
-    "Desarrollar el mini-documental de 12 minutos sobre el misterio del Mary Celeste con enfoque documental y análisis de pruebas: Equipo de guion y producción de contenido histórico: Alcanzar 20,000 vistas y monetizar 8,000 USD antes del 13 de ",
-    "Expandir el contenido de pingüinos: publicar la parte 4 de la serie (3 episodios) y lanzar un episodio adicional sobre la muerte masiva de 2 millones de pingüinos: Equipo de investigación de fenómenos naturales: Obtener 25,000 vistas y mone"
+    "Crear y lanzar la serie de 3 videos sobre el misterio de la Mary Celeste: Equipo de investigación y guion: Generar al menos 500 vistas por episodio y alcanzar 1,500 vistas totales antes del 13 de diciembre para activar monetización",
+    "Desarrollar el mini-documental sobre la muerte masiva de 2 millones de pingüinos y su impacto ambiental: Equipo de producción y efectos visuales: Alcanzar 1,000 vistas en la primera entrega y 3,000 vistas combinadas antes del 13 de diciembr",
+    "Planificar y publicar la serie de 3 videos sobre el banco que pagó 175 millones por clientes inexistentes: Equipo de análisis de datos y guion: Obtener 800 vistas en cada episodio y 2,400 vistas totales antes del 13 de diciembre, con el obj"
   ],
   "ganchos": [
-    "[TEMA] y [CIFRA] años de misterio: la verdad que nadie quiere revelar | Imagen de una puerta cerrada con luces parpadeantes"
+    "[TEMA] y su secreto: solo [CIFRA] personas lo saben | Imagen: silueta de una figura oculta entre sombras"
   ],
   "mejorasGuion": [
-    "1️⃣ Gancho más específico y llamativo: sustituir “¿Y si 297 años de nuestra historia nunca existieron?” por algo como “¿Qué pasaría si descubrieras que 297 años de la Alta Edad Media son una invención?” para captar curio"
+    "Añadir un gancho visual y emotivo al inicio: “📚 ¿Un libro que nadie ha descifrado por 600 años? Descúbrelo aquí!” para captar la atención inmediata.",
+    "Reestructurar el ritmo con subtítulos narrativos: dividir el texto en secciones cortas (Historia, Misterio, Descubrimientos) y usar pausas dramáticas para mantener el suspense y la curiosidad a lo largo de los 12 minutos",
+    "Incorporar un cierre impactante y llamado a la acción: “Si crees que el secreto está más cerca de lo que piensas, suscríbete y activa las notificaciones; la próxima parte revelará pistas que cambiarán tu visión del pasad"
   ],
   "temas": [
-    "The Voynich Manuscript",
+    "The Voynich manuscript",
     "The Taos Hum",
-    "The Bloop",
-    "The Green Man Statue of St. Saviour",
-    "The Bizarre Case of the Sinking of the SS Jupiter"
+    "The Green Children of Woolpit",
+    "The moving rocks of Death Valley",
+    "The disappearing lake of Cerknica"
   ],
   "titulos": [
-    "Sabías que <acción> <objeto> <detalle>",
-    "Sabías que <evento> <resultado>",
-    "¿Qué oculta realmente el <objeto> ?",
-    "⚡ <año>: El <profesión> que <acción>"
+    "Sabías que [acción] [número] [objeto] … (Parte X/Y)",
+    "¿Qué oculta realmente el [objeto] ?",
+    "⚡ [año]: El [personaje] que [acción]",
+    "Sabías que [acción] [número] [objeto] … (Parte X/Y)"
   ],
-  "fecha": "2026-11-24T17:33:58.458Z",
+  "fecha": "2026-11-24T17:45:02.734Z",
   "iniciativas": [
     "Valentina (Directora de contenido): Definir una línea editorial clara y un documento de estilo que guíe a todo el equipo desde el primer video.",
     "Carolina (Coordinador de producción): Crear un tablero de tareas con fechas límite rígidas y alertas automáticas para cada entrega.",

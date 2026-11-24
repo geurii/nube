@@ -1,5 +1,21 @@
 [
   {
+    "fecha": "2026-11-24T17:45:02.434Z",
+    "canal": "lqns",
+    "tipo": "reporte",
+    "titulo": "Revision aprobada: 🕰️ ¿297 años falsos? La teoría que borra a Carlomagno",
+    "texto": "Sin defectos graves detectados."
+  },
+  {
+    "id": "mwuzi7adqkpn",
+    "fecha": "2026-11-24T17:44:25.957Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "listo",
+    "titulo": "Video renderizado: 🕰️ ¿297 años falsos? La teoría que borra a Carlomagno",
+    "texto": "Se renderizó \"🕰️ ¿297 años falsos? La teoría que borra a Carlomagno\" para Lo Que No Sabías (35 MB). Sigue en cola de publicación; este aviso NO significa que ya esté publicado."
+  },
+  {
     "id": "mwuz4q7tmoj3",
     "fecha": "2026-11-24T17:33:57.305Z",
     "canal": "lqns",
@@ -687,23 +703,5 @@
     "tipo": "alerta",
     "titulo": "Guion rechazado: Mary Celeste",
     "texto": "El Verificador no aprobó \"Mary Celeste\" tras 4 intentos: El gancho inicial debe tener 14 palabras o menos. Aprobados: 11. Rechazados: 37. Con error: 9. No se publica. Próximo ciclo en 10 h."
-  },
-  {
-    "id": "mwu70turtw7a",
-    "fecha": "2026-11-24T04:27:06.147Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título con pregunta intrigante o afirmación impactante + elemento misterioso o inesperado + referencia a un caso/objeto concreto El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (27812 vistas/hora)."
-  },
-  {
-    "id": "mwu6yg3q59em",
-    "fecha": "2026-11-24T04:25:15.014Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: DATOS GENERALES de GTA VI",
-    "texto": "El Verificador no aprobó \"DATOS GENERALES de GTA VI\" tras 0 intentos: Tema descartado (no se pudo cargar): DATOS GENERALES de GTA VI Aprobados: 11. Rechazados: 36. Con error: 9. No se publica. Próximo ciclo en 10 h."
   }
 ]

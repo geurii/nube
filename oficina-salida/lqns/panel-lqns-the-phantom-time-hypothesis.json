@@ -1,0 +1,36 @@
+{
+  "fecha": "2026-11-24T17:45:02.433Z",
+  "id": "lqns-the-phantom-time-hypothesis",
+  "modo": "tecnico",
+  "aprobado": true,
+  "resumen": "Sin defectos graves detectados.",
+  "motivos": [],
+  "revision": {
+    "modelo": "NVIDIA nvidia/nemotron-3-nano-omni-30b-a3b-reasoning + Groq whisper-large-v3",
+    "gancho_3s": {
+      "nota": 10,
+      "comentario": "Revisión visual técnica; no es una valoración del gancho."
+    },
+    "audio": {
+      "nota": 8,
+      "comentario": "Groq Whisper transcribió el audio en español. Duración: 32 segundos. Transcripción: ¿Y si 297 años de nuestra historia nunca existieron? La hipótesis del tiempo fantasma afirma que un periodo de la Alta Edad Media fue inventado. Se cree que el sistema Anno Domini fue manipulado para legitimar un reclamo imperial. Lo impactante, el periodo carolingio, incluido Carlo Magno, podría ser una fabricación. ¿Podría la historia estar equivocada? Sígueme para descubrir más misterios."
+    },
+    "subtitulos": {
+      "legibles": true,
+      "tapados_o_cortados": false,
+      "comentario": ""
+    },
+    "imagen": {
+      "nota": 10,
+      "defectos": []
+    },
+    "ritmo": {
+      "nota": 8,
+      "comentario": "No se utiliza el ritmo como motivo de rechazo técnico."
+    },
+    "defectos_graves": [],
+    "nota_general": 10,
+    "recomendacion": "subir",
+    "por_que": "No se detectaron fallas visuales graves y Groq pudo transcribir el audio."
+  }
+}
