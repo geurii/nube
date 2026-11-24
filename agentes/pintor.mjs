@@ -23,6 +23,7 @@ export const ESCENARIOS = {
 export const TIPOS = new Set([
   'estrellas', 'astro', 'resplandor', 'montanas', 'suelo', 'agua', 'niebla', 'arbol', 'edificio', 'central', 'pergamino',
   'nubes', 'olas', 'particulas', 'rayos', 'barco', 'pez', 'roca', 'hielo', 'duna', 'algas', 'sargazo', 'faro', 'silueta', 'ovni', 'explosion', 'ciudad', 'bosque', 'calendario', 'reloj', 'castillo', 'corona', 'libro', 'moneda', 'iglesia', 'caballo',
+  'hidrofono', 'sonar', 'microfono', 'volcan', 'fuego', 'lago', 'avion', 'tren', 'submarino',
 ]);
 
 /** Una "caja vacía": barra o rectángulo ancho y bajo sin forma de objeto (parece un cuadro de texto sin texto). Gemini la marca como falla grave. */
@@ -39,27 +40,47 @@ export const esCajaVacia = (e) => {
   return false;
 };
 
-const sujetosDelTexto = (texto = '') => {
-  const t = String(texto).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+export const sujetosDelTexto = (texto = '') => {
+  const t = String(texto).toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g, '');
   const reglas = [
-    [/\b(calendario|fecha|año|anos|siglo|cronologia|tiempo|reloj|hora|horas)\b/, ['calendario','reloj','pergamino']],
-    [/\b(castillo|medieval|reino|rey|reina|corona|monarquia|moneda|iglesia|caballero|caballo)\b/, ['castillo','corona','moneda','iglesia','caballo','pergamino']],
-    [/\b(barco|nave|embarcacion|marinero|naufragio|hundido|velero)\b/, ['barco','faro','agua','olas','roca']],
-    [/\b(ballena|tiburon|anguila|calamar|pez|animal|criatura|pulpo)\b/, ['pez','agua','algas','sargazo']],
-    [/\b(hielo|glaciar|iceberg|congelado)\b/, ['hielo','agua','roca','montanas']],
-    [/\b(volcan|erupcion|lava|crater|magma)\b/, ['roca','montanas','explosion','suelo']],
-    [/\b(bosque|arbol|arboles|pino|selva)\b/, ['bosque','arbol','suelo']],
-    [/\b(ciudad|edificio|casa|pueblo|vivienda|calle)\b/, ['ciudad','edificio','silueta']],
-    [/\b(fabrica|central|reactor|nuclear|chimenea|energia)\b/, ['central','edificio']],
-    [/\b(desierto|duna|arena)\b/, ['duna','roca','montanas']],
-    [/\b(ovni|extraterrestre|nave espacial|espacio|planeta|luna|asteroide)\b/, ['ovni','astro','estrellas']],
-    [/\b(nino|nina|ninos|ninas|persona|hombre|mujer|habitante|poblacion)\b/, ['silueta','edificio']],
-    [/\b(libro|manuscrito|documento|texto|pergamino|escrito|archivo)\b/, ['libro','pergamino']],
-    [/\b(explosion|estallido|incendio|fuego|llama)\b/, ['explosion','particulas','rayos']],
-    [/\b(zumbido|sonido|ruido|frecuencia|vibracion|eco)\b/, ['particulas','rayos','edificio','montanas']],
-    [/\b(ola|olas|tsunami|marea|mar|oceano|agua|lago|rio)\b/, ['agua','olas','barco','pez','roca','faro']],
+    [/\\b(calendario|fecha|año|anos|siglo|cronologia|tiempo|reloj|hora|horas)\\b/, ['calendario','reloj','pergamino']],
+    [/\\b(castillo|medieval|reino|rey|reina|corona|monarquia|moneda|iglesia|caballero|caballo)\\b/, ['castillo','corona','moneda','iglesia','caballo','pergamino']],
+    [/\\b(barco|nave|embarcacion|marinero|naufragio|hundido|velero|naufragar)\\b/, ['barco','submarino','faro']],
+    [/\\b(submarino|submarinos|hidrofono|hidrofonos|microfono|microfonos|sonar|sensor|sensores)\\b/, ['hidrofono','sonar','microfono','submarino']],
+    [/\\b(ballena|tiburon|anguila|calamar|pez|animal|criatura|pulpo|fauna|cetaceo)\\b/, ['pez']],
+    [/\\b(hielo|glaciar|iceberg|congelado|criosismo|crujido de hielo)\\b/, ['hielo']],
+    [/\\b(volcan|erupcion|lava|crater|magma)\\b/, ['volcan']],
+    [/\\b(bosque|arbol|arboles|pino|selva)\\b/, ['bosque','arbol']],
+    [/\\b(ciudad|edificio|casa|pueblo|vivienda|calle|barrio)\\b/, ['ciudad','edificio']],
+    [/\\b(fabrica|central|reactor|nuclear|chimenea|energia|planta industrial)\\b/, ['central']],
+    [/\\b(desierto|duna|arena)\\b/, ['duna']],
+    [/\\b(ovni|extraterrestre|nave espacial|espacio|planeta|luna|asteroide)\\b/, ['ovni','astro']],
+    [/\\b(nino|nina|ninos|ninas|persona|hombre|mujer|habitante|poblacion|multitud)\\b/, ['silueta']],
+    [/\\b(libro|manuscrito|documento|texto|pergamino|escrito|archivo|mapa|carta)\\b/, ['libro','pergamino']],
+    [/\\b(explosion|estallido)\\b/, ['explosion']],
+    [/\\b(incendio|fuego|llama|ardiendo|quemado|hoguera)\\b/, ['fuego']],
+    [/\\b(zumbido|sonido|ruido|frecuencia|vibracion|eco|silbido|tono)\\b/, ['microfono','hidrofono','sonar']],
+    [/\\b(ola|olas|tsunami|marea|mar|oceano|lago|laguna|rio|embalse)\\b/, ['lago','barco','pez','faro','submarino']],
+    [/\\b(avion|aeronave|vuelo|piloto|aeroplano)\\b/, ['avion']],
+    [/\\b(tren|ferrocarril|locomotora|vagon|via ferroviaria)\\b/, ['tren']],
+    [/\\b(montana|montanas|cordillera|cumbre|acantilado)\\b/, ['montanas']],
+    [/\\b(faro|torre de luz)\\b/, ['faro']],
   ];
   return [...new Set(reglas.filter(([re]) => re.test(t)).flatMap(([, tipos]) => tipos))];
+};
+
+export const OBJETOS_NARRATIVOS = new Set([
+  'barco','pez','hielo','faro','ovni','explosion','ciudad','bosque','arbol','edificio','central',
+  'pergamino','calendario','reloj','castillo','corona','libro','moneda','iglesia','caballo','silueta',
+  'montanas','hidrofono','sonar','microfono','volcan','fuego','lago','avion','tren','submarino',
+]);
+
+/** Un cuadro solo sirve si contiene un objeto implementado y este coincide con la frase narrada. */
+export const tieneAnclaNarrativa = (plano, texto = '') => {
+  if (!plano || !Array.isArray(plano.capas)) return false;
+  const esperados = sujetosDelTexto(texto);
+  if (!esperados.length) return false;
+  return plano.capas.some((c) => OBJETOS_NARRATIVOS.has(c.t) && esperados.includes(c.t));
 };
 
 /** Limpia una escena: solo tipos y rangos permitidos. Devuelve null si no sirve. */
@@ -85,8 +106,7 @@ export const validarEscena = (raw) => {
     return o;
   }).filter(Boolean).filter((c) => !esCajaVacia(c)); // sin barras rectangulares vacías
   if (!cielo || capas.length < 3) return null;
-  const objetosConcretos = new Set(['barco','pez','roca','hielo','faro','ovni','explosion','ciudad','bosque','arbol','edificio','central','pergamino','calendario','reloj','castillo','corona','libro','moneda','iglesia','caballo','duna','silueta','particulas','rayos']);
-  if (!capas.some((c) => objetosConcretos.has(c.t))) return null; // rechaza escenas hechas solo de geometría/decoración
+  if (!capas.some((c) => OBJETOS_NARRATIVOS.has(c.t))) return null; // efectos, paisaje y geometría nunca cuentan como protagonista
   const salida = {cielo, capas: capas.filter((c) => c.t !== 'foto')};
   if (typeof raw.escenario === 'string' && Object.hasOwn(ESCENARIOS, raw.escenario)) salida.escenario = raw.escenario;
   return salida;
@@ -158,11 +178,9 @@ const limpiar = (r, ids, slug, ya = {}, escenas = []) => {
     const i = Number(e.indice);
     if (!ids.includes(i)) continue;
     const textoEscena = escenas[i]?.texto ?? escenas[i]?.tipo ?? '';
-    const sujetos = sujetosDelTexto(textoEscena);
-    const planos = (Array.isArray(e.planos) ? e.planos : []).slice(0, 3).map(validarEscena).filter(Boolean).filter((plano) => {
-      const principales = plano.capas.filter((c) => ['barco','pez','roca','hielo','faro','ovni','explosion','ciudad','bosque','arbol','edificio','central','pergamino','calendario','reloj','castillo','corona','libro','moneda','iglesia','caballo','duna','silueta','particulas','rayos'].includes(c.t));
-      return principales.length > 0 && (process.env.MODO_PRUEBA === '1' || !sujetos.length || principales.some((c) => sujetos.includes(c.t)));
-    });
+    const planos = (Array.isArray(e.planos) ? e.planos : []).slice(0, 3).map(validarEscena).filter(Boolean).filter((plano) => (
+      process.env.MODO_PRUEBA === '1' || tieneAnclaNarrativa(plano, textoEscena)
+    ));
     if (planos.length === 3 && new Set(planos.map((p) => JSON.stringify(p))).size === 3) salida[i] = planos;
   }
   for (const i of ids) if (!salida[i] && Array.isArray(ya[i]) && ya[i].length === 3 && new Set(ya[i].map((p) => JSON.stringify(p))).size === 3) salida[i] = ya[i]; // conservar solo tres cuadros distintos y completos
@@ -197,7 +215,7 @@ export const pintarEscenas = async ({llamar, escenas, indices, slug, tema, nota 
   const TAM = 1; // una escena por llamada: evita truncar el JSON de tres cuadros y permite reparar con contexto completo
   for (let b = 0; b < indices.length; b += TAM) {
     const ids = indices.slice(b, b + TAM);
-    const encargo = `Tema del video: "${tema}". Para CADA escena dibuja TRES planos distintos (otra composición o ángulo, mismo mundo de color) que MUESTREN literalmente el objeto, lugar, fenómeno o acción mencionados en la narración. Traduce cada frase a una imagen concreta: si se menciona un zumbido, dibuja su fuente o el fenómeno acústico; si se menciona un barco, dibuja ese barco; si se menciona una explosión, dibuja la explosión y el entorno. No uses paisajes de relleno, fondos genéricos, símbolos abstractos ni objetos que no aparezcan en la frase. PROHIBIDO que el sujeto principal sea una combinación de círculos, triángulos, rectángulos o polígonos decorativos. Cada uno de los TRES planos debe incluir un objeto semántico reconocible y dibujado con detalle (por ejemplo calendario, reloj, castillo, corona, libro, moneda, iglesia, barco, animal o edificio según la frase). Las figuras geométricas solo pueden servir como piezas internas del objeto, nunca como composición final. Si no puedes dibujar el objeto reconocible, devuelve menos escenas para que el sistema las rechace y vuelva a intentarlo; jamás rellenes con geometría. Si no puedes representar un detalle con precisión, representa el elemento real más cercano que sí esté respaldado por la frase, sin inventar contexto. Los tres planos deben ser reconocibles de inmediato, distintos entre sí y representar exactamente la misma frase desde composiciones diferentes.\n\n${MANUAL}\n\n${GUIA}\n\nESCENAS:\n${lote(escenas, ids)}\n\nDevuelve ${FORMA}`;
+    const encargo = `Tema del video: "${tema}". Para CADA escena dibuja TRES planos distintos (otra composición o ángulo, mismo mundo de color) que MUESTREN literalmente el objeto, lugar, fenómeno o acción mencionados en la narración. Traduce cada frase a una imagen concreta: si se menciona un zumbido, dibuja su fuente o el fenómeno acústico; si se menciona un barco, dibuja ese barco; si se menciona una explosión, dibuja la explosión y el entorno. No uses paisajes de relleno, fondos genéricos, símbolos abstractos ni objetos que no aparezcan en la frase. PROHIBIDO que el sujeto principal sea una combinación de círculos, triángulos, rectángulos o polígonos decorativos. Cada uno de los TRES planos debe incluir un OBJETO PROTAGONISTA semántico reconocible y dibujado con detalle; efectos como partículas, rayos, niebla, estrellas, burbujas, olas o montañas de fondo NUNCA cuentan como protagonista. Si la frase habla de sonido, muestra un micrófono, hidrófono o consola de sonar; si habla de un volcán, dibuja un volcán; de hielo, un iceberg; de una ciudad, edificios; de un barco, el barco; no sustituyas el objeto por puntos, líneas o formas decorativas. Las figuras geométricas solo pueden servir como piezas internas del objeto, nunca como composición final. Si no puedes dibujar el objeto reconocible, devuelve menos escenas para que el sistema las rechace y vuelva a intentarlo; jamás rellenes con geometría. Si no puedes representar un detalle con precisión, representa el elemento real más cercano que sí esté respaldado por la frase, sin inventar contexto. Los tres planos deben ser reconocibles de inmediato, distintos entre sí y representar exactamente la misma frase desde composiciones diferentes.\n\n${MANUAL}\n\n${GUIA}\n\nESCENAS:\n${lote(escenas, ids)}\n\nDevuelve ${FORMA}`;
     let a = {};
     for (let intento = 1; intento <= 5; intento++) {
       const pendientes = ids.filter((i) => !a[i]);
