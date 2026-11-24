@@ -1,0 +1,5 @@
+{
+  "activo": true,
+  "fase": "largo",
+  "descripcion": "Secuencia extraordinaria de una sola vez: publicar un video largo y luego encolar un Short. Se desactiva automáticamente al encolar el Short."
+}
