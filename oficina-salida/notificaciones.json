@@ -1,5 +1,23 @@
 [
   {
+    "id": "mwu30oyu953o",
+    "fecha": "2026-11-24T02:35:01.350Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "La oficina falló",
+    "texto": "Groq 413: {\"error\":{\"message\":\"Request too large for model `openai/gpt-oss-120b` in organization `org_01m7wfcteme16r5n0qkjem583r` service tier `on_demand` on to Aprobados: 11. Rechazados: 30. Con error: 9. Próximo ciclo en 11 h."
+  },
+  {
+    "id": "mwu2xyd3omrb",
+    "fecha": "2026-11-24T02:32:53.559Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante o afirmación impactante + elemento misterioso/extraño + pista de revelación o consecuencia El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (28066 vistas/hora)."
+  },
+  {
     "id": "mwu2m4laqbrz",
     "fecha": "2026-11-24T02:23:41.758Z",
     "canal": "lqns",
@@ -664,22 +682,5 @@
     "tipo": "reporte",
     "titulo": "Guion aprobado: The Great Molasses Flood",
     "texto": "Short de \"The Great Molasses Flood\" aprobado en el intento 2. 133 palabras, 5 escenas. Editor: Puntaje: 6/10. El gancho es débil, la historia se alarga y el cierre suena forzado. Aprobados: 7. Rechazados: 7. Con error: 8. Próximo ciclo en 11 h."
-  },
-  {
-    "id": "mwr98g9xuz8r",
-    "fecha": "2026-11-22T03:05:42.501Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante o afirmación impactante + elemento misterioso/inhóspito + pista de revelación o consecuencia inesperada El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (40860 vistas/hora)."
-  },
-  {
-    "id": "mwr5vytub5j1",
-    "fecha": "2026-11-22T01:32:01.170Z",
-    "canal": "lqns",
-    "tipo": "alerta",
-    "titulo": "El panel rechazó: Sabías que el Mar de Sargazo oculta un misterio milenario 🌊",
-    "texto": "[Garantía de publicación activa] Gemini (gemini-3.8-flash) lo vio: 5.5/10, no subir. 4 de 8 aprobaron, 7 pasaron los primeros 3 segundos, 2 lo compartirían. No se sube. Mejora principal: Incluir imágenes o video real del Mar de los Sargazos y de anguilas para acompañar la narración; el visual impactante retendrá a todos."
   }
 ]
