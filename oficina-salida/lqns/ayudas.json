@@ -1,35 +1,35 @@
 {
   "plan": [
-    "1️⃣ Lanzar mini-documental de 12 min sobre el megatsunami de Bahía Lituya: responsable – Departamento de Investigación de Fenómenos Naturales; meta – generar 5 000 vistas y 200 suscriptores nuevos antes del 13 de diciembre.",
-    "2️⃣ Crear serie de 3 episodios (12 min cada uno) sobre la misteriosa muerte de 2 millones de pingüinos: responsable – Departamento de Investigación de Fauna y Ecosistemas; meta – alcanzar 4 000 vistas y 150 suscriptores antes del 13 de dici",
-    "3️⃣ Desarrollar video de 12 min sobre el caso del banco que pagó 175 millones por clientes inexistentes: responsable – Departamento de Investigación de Crónicas Financieras; meta – lograr 3 500 vistas y 120 suscriptores antes del 13 de dici"
+    "Crear y lanzar el mini‑documental de 12 minutos sobre el misterio del Mary Celeste, enfocándonos en la documentación inédita y la teoría de los objetos en la cubierta.: Mariana (Editor de guion): Generar al menos 500 vistas y 2 menciones en",
+    "Desarrollar la serie de 3 episodios de 12 minutos sobre la muerte masiva de 2 millones de pingüinos, con datos científicos y testimonios de expertos, culminando con la revelación del motivo real.: Jules (Jefa de Producción): Alcanzar 1 mil ",
+    "Producir el video “Sabías que un banco pagó 175 millones por clientes que no existían” con análisis financiero y entrevistas a analistas, manteniendo el tono misterioso y sin nombres reales.: Carlos (Guionista técnico): Obtener 800 vistas y"
   ],
   "ganchos": [
-    "Sabías que [TEMA] llegó a [CIFRA] metros de altura | Imagen de una ola gigantesca sobre un glaciar",
-    "¿Qué ocurrió cuando [TEMA] golpeó la costa con [CIFRA] metros de fuerza? | Primer plano de la ola rompiendo contra rocas",
-    "En 1958, un terremoto de [CIFRA] Mw disparó un tsunami que alcanzó [TEMA] metros | Vista aérea del valle inundado",
-    "Descubre cómo un colapso de [TEMA] generó una ola que superó los [CIFRA] metros | Secuencia de la ola ascendiendo sobre un edificio",
-    "¿Te imaginas una ola que sube [CIFRA] metros y deja un rastro de [TEMA]? | Imágenes de la ola golpeando la costa y dejando marcas en la tierra"
+    "¿Sabías que [TEMA] ocurrió en un instante de [CIFRA] segundos? | Imagen de un reloj marcando 00:00:01 con un fondo de niebla",
+    "En el momento exacto de [CIFRA] minutos, [TEMA] cambió el mundo | Imagen de un mapa antiguo con una línea roja que cruza un punto crítico",
+    "Un hecho que nadie esperaba: [TEMA] en solo [CIFRA] segundos | Imagen de un destello de luz sobre una escena misteriosa",
+    "[TEMA] se reveló en un lapso de [CIFRA] segundos, y la historia cambió para siempre | Imagen de un reloj de arena con la arena cayendo rápidamente",
+    "En solo [CIFRA] segundos, [TEMA] dejó su huella indeleble | Imagen de un objeto antiguo emergiendo de la oscuridad"
   ],
   "mejorasGuion": [
-    "1️⃣ Cambiar el gancho a algo más inesperado y específico, por ejemplo: \"¿Sabías que una ola de 524 metros subió por una montaña en Alaska? Descubre cómo y por qué ocurrió.\"",
-    "2️⃣ Añadir una pregunta retórica que aumente la curiosidad y el suspense, como: \"¿Qué pasaría si una ola tan gigantesca volviera a tocar la costa?\"",
-    "3️⃣ Concluir con una invitación clara y directa al espectador, por ejemplo: \"Acompáñame para explorar los secretos que aún rodean el terremoto de Lituya y su legado.\""
+    "1️⃣ Cambia el gancho a algo más inesperado y visual: por ejemplo, “¿Sabías que un satélite del tamaño de una maleta sigue viajando por el espacio, enviando secretos de la era pre‑digital?” Esto despierta curiosidad y sue",
+    "2️⃣ Añade ritmo y pausas dramáticas con preguntas retóricas y datos impactantes: después de mencionar el tamaño y peso, inserta “¿Te imaginas una esfera de 88 cm que, con solo 14 watts, podía enviar la primera señal de T",
+    "3️⃣ Refuerza el cierre con una revelación más fuerte y una llamada a la acción orientada a la comunidad: termina con “Hoy, las piezas de Telstar siguen girando, como un eco de la primera chispa digital. ¿Qué legado crees"
   ],
   "temas": [
     "The Voynich Manuscript",
-    "The Nazca Lines",
-    "The Dyatlov Pass Incident",
     "The Bloop",
-    "The Green Children of Woolpit"
+    "The Sargasso Sea",
+    "The Mystery of the Somerton Man",
+    "The Kelp Forests of the Pacific"
   ],
   "titulos": [
-    "Sabías que [acción] [número] [objeto] ([Parte X/Y])",
-    "Sabías que [acción] [número] [objeto]…",
-    "¿Qué oculta realmente el [objeto]?",
-    "⚡ [Año]: El [inventor/objeto] que [acción] con su [detalle]"
+    "Sabías que <acción> <objeto> <detalles>",
+    "Sabías que <número> <animales> <acción> <motivo>",
+    "¿Qué oculta realmente el <objeto/tema>?",
+    "⚡ <año>: El <profesión/tema> que <acción> <resultado>"
   ],
-  "fecha": "2026-11-24T20:45:54.105Z",
+  "fecha": "2026-11-24T20:51:43.762Z",
   "iniciativas": [
     "Valentina (Directora de contenido): Definir una línea editorial clara y un documento de estilo que guíe a todo el equipo desde el primer video.",
     "Carolina (Coordinador de producción): Crear un tablero de tareas con fechas límite rígidas y alertas automáticas para cada entrega.",

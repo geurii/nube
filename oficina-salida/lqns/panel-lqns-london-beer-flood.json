@@ -1,0 +1,36 @@
+{
+  "fecha": "2026-11-24T20:51:43.602Z",
+  "id": "lqns-london-beer-flood",
+  "modo": "tecnico",
+  "aprobado": true,
+  "resumen": "Sin defectos graves detectados.",
+  "motivos": [],
+  "revision": {
+    "modelo": "NVIDIA nvidia/nemotron-3-nano-omni-30b-a3b-reasoning + Groq whisper-large-v3",
+    "gancho_3s": {
+      "nota": 0,
+      "comentario": "Revisión visual técnica; no es una valoración del gancho."
+    },
+    "audio": {
+      "nota": 8,
+      "comentario": "Groq Whisper transcribió el audio en español. Duración: 41 segundos. Transcripción: ¿Sabías que 610 000 litros de cerveza causaron un desastre en Londres? El 17 de octubre de 1814, en la parroquia de St. Jaus, una cuba de cerveza se rompió en la cervecería Mexico. Esto desencadenó un efecto dominó, liberando aproximadamente 1 470 000 litros en total. La ola de cerveza destruyó dos casas, demolió un pub y causó la muerte de al menos siete personas. ¿Cómo un accidente así pudo ocurrir sin responsables? Sígueme para descubrir más misterios."
+    },
+    "subtitulos": {
+      "legibles": true,
+      "tapados_o_cortados": false,
+      "comentario": "Subtítulos son completamente legibles y no están tapados ni cortados."
+    },
+    "imagen": {
+      "nota": 0,
+      "defectos": []
+    },
+    "ritmo": {
+      "nota": 8,
+      "comentario": "No se utiliza el ritmo como motivo de rechazo técnico."
+    },
+    "defectos_graves": [],
+    "nota_general": 0,
+    "recomendacion": "subir",
+    "por_que": "No se detectaron fallas visuales graves y Groq pudo transcribir el audio."
+  }
+}
