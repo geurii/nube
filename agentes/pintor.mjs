@@ -41,30 +41,30 @@ export const esCajaVacia = (e) => {
 };
 
 export const sujetosDelTexto = (texto = '') => {
-  const t = String(texto).toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g, '');
+  const t = String(texto).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   const reglas = [
-    [/\\b(calendario|fecha|año|anos|siglo|cronologia|tiempo|reloj|hora|horas)\\b/, ['calendario','reloj','pergamino']],
-    [/\\b(castillo|medieval|reino|rey|reina|corona|monarquia|moneda|iglesia|caballero|caballo)\\b/, ['castillo','corona','moneda','iglesia','caballo','pergamino']],
-    [/\\b(barco|nave|embarcacion|marinero|naufragio|hundido|velero|naufragar)\\b/, ['barco','submarino','faro']],
-    [/\\b(submarino|submarinos|hidrofono|hidrofonos|microfono|microfonos|sonar|sensor|sensores)\\b/, ['hidrofono','sonar','microfono','submarino']],
-    [/\\b(ballena|tiburon|anguila|calamar|pez|animal|criatura|pulpo|fauna|cetaceo)\\b/, ['pez']],
-    [/\\b(hielo|glaciar|iceberg|congelado|criosismo|crujido de hielo)\\b/, ['hielo']],
-    [/\\b(volcan|erupcion|lava|crater|magma)\\b/, ['volcan']],
-    [/\\b(bosque|arbol|arboles|pino|selva)\\b/, ['bosque','arbol']],
-    [/\\b(ciudad|edificio|casa|pueblo|vivienda|calle|barrio)\\b/, ['ciudad','edificio']],
-    [/\\b(fabrica|central|reactor|nuclear|chimenea|energia|planta industrial)\\b/, ['central']],
-    [/\\b(desierto|duna|arena)\\b/, ['duna']],
-    [/\\b(ovni|extraterrestre|nave espacial|espacio|planeta|luna|asteroide)\\b/, ['ovni','astro']],
-    [/\\b(nino|nina|ninos|ninas|persona|hombre|mujer|habitante|poblacion|multitud)\\b/, ['silueta']],
-    [/\\b(libro|manuscrito|documento|texto|pergamino|escrito|archivo|mapa|carta)\\b/, ['libro','pergamino']],
-    [/\\b(explosion|estallido)\\b/, ['explosion']],
-    [/\\b(incendio|fuego|llama|ardiendo|quemado|hoguera)\\b/, ['fuego']],
-    [/\\b(zumbido|sonido|ruido|frecuencia|vibracion|eco|silbido|tono)\\b/, ['microfono','hidrofono','sonar']],
-    [/\\b(ola|olas|tsunami|marea|mar|oceano|lago|laguna|rio|embalse)\\b/, ['lago','barco','pez','faro','submarino']],
-    [/\\b(avion|aeronave|vuelo|piloto|aeroplano)\\b/, ['avion']],
-    [/\\b(tren|ferrocarril|locomotora|vagon|via ferroviaria)\\b/, ['tren']],
-    [/\\b(montana|montanas|cordillera|cumbre|acantilado)\\b/, ['montanas']],
-    [/\\b(faro|torre de luz)\\b/, ['faro']],
+    [/\b(calendario|fecha|año|anos|siglo|cronologia|tiempo|reloj|hora|horas)\b/, ['calendario','reloj','pergamino']],
+    [/\b(castillo|medieval|reino|rey|reina|corona|monarquia|moneda|iglesia|caballero|caballo)\b/, ['castillo','corona','moneda','iglesia','caballo','pergamino']],
+    [/\b(barco|nave|embarcacion|marinero|naufragio|hundido|velero|naufragar)\b/, ['barco','submarino','faro']],
+    [/\b(submarino|submarinos|hidrofono|hidrofonos|microfono|microfonos|sonar|sensor|sensores)\b/, ['hidrofono','sonar','microfono','submarino']],
+    [/\b(ballena|tiburon|anguila|calamar|pez|animal|criatura|pulpo|fauna|cetaceo)\b/, ['pez']],
+    [/\b(hielo|glaciar|iceberg|congelado|criosismo|crujido de hielo)\b/, ['hielo']],
+    [/\b(volcan|erupcion|lava|crater|magma)\b/, ['volcan']],
+    [/\b(bosque|arbol|arboles|pino|selva)\b/, ['bosque','arbol']],
+    [/\b(ciudad|edificio|casa|pueblo|vivienda|calle|barrio)\b/, ['ciudad','edificio']],
+    [/\b(fabrica|central|reactor|nuclear|chimenea|energia|planta industrial)\b/, ['central']],
+    [/\b(desierto|duna|arena)\b/, ['duna']],
+    [/\b(ovni|extraterrestre|nave espacial|espacio|planeta|luna|asteroide)\b/, ['ovni','astro']],
+    [/\b(nino|nina|ninos|ninas|persona|hombre|mujer|habitante|poblacion|multitud)\b/, ['silueta']],
+    [/\b(libro|manuscrito|documento|texto|pergamino|escrito|archivo|mapa|carta)\b/, ['libro','pergamino']],
+    [/\b(explosion|estallido)\b/, ['explosion']],
+    [/\b(incendio|fuego|llama|ardiendo|quemado|hoguera)\b/, ['fuego']],
+    [/\b(zumbido|sonido|ruido|frecuencia|vibracion|eco|silbido|tono)\b/, ['microfono','hidrofono','sonar']],
+    [/\b(ola|olas|tsunami|marea|mar|oceano|lago|laguna|rio|embalse)\b/, ['lago','barco','pez','faro','submarino']],
+    [/\b(avion|aeronave|vuelo|piloto|aeroplano)\b/, ['avion']],
+    [/\b(tren|ferrocarril|locomotora|vagon|via ferroviaria)\b/, ['tren']],
+    [/\b(montana|montanas|cordillera|cumbre|acantilado)\b/, ['montanas']],
+    [/\b(faro|torre de luz)\b/, ['faro']],
   ];
   return [...new Set(reglas.filter(([re]) => re.test(t)).flatMap(([, tipos]) => tipos))];
 };
