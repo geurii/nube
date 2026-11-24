@@ -1,5 +1,41 @@
 [
   {
+    "id": "mwuu34aswowz",
+    "fecha": "2026-11-24T15:12:44.164Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: ¿Por qué el lago Hillier cambia de color cada verano?",
+    "texto": "El Verificador no aprobó \"¿Por qué el lago Hillier cambia de color cada verano?\" tras 4 intentos: Falta la frase de cierre exacta: \"Comparte este video con un amigo que haría lo mismo, sígueme.\" Aprobados: 12. Rechazados: 60. Con error: 14. No se publica. Próximo ciclo en 11 h."
+  },
+  {
+    "id": "mwuu096bljz1",
+    "fecha": "2026-11-24T15:10:30.515Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Sabías que el lago de Karachay‑Khan es el más tóxico del planeta?",
+    "texto": "El Verificador no aprobó \"Sabías que el lago de Karachay‑Khan es el más tóxico del planeta?\" tras 4 intentos: La revelación cae al 61.4 % (54 de 88 palabras antes de ella) y debe caer entre 65 % y 75 %; apunta a 70 %–72 % contando todas las escenas, incluida la revelaci Aprobados: 12. Rechazados: 59. Con error: 14. No se publica. Próximo ciclo en 11 h."
+  },
+  {
+    "id": "mwutxxlowcu1",
+    "fecha": "2026-11-24T15:08:42.204Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: ¿Qué oculta la extraña luz verde del Monte St. Helens tras su erupción?",
+    "texto": "El Verificador no aprobó \"¿Qué oculta la extraña luz verde del Monte St. Helens tras su erupción?\" tras 4 intentos: El gancho inicial debe tener 14 palabras o menos para formato short. Aprobados: 12. Rechazados: 58. Con error: 14. No se publica. Próximo ciclo en 11 h."
+  },
+  {
+    "id": "mwuttjhk10sw",
+    "fecha": "2026-11-24T15:05:17.288Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título con pregunta intrigante o afirmación impactante + elemento misterioso o inesperado + referencia a un lugar/persona/objeto concreto El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (26076 vistas/hora)."
+  },
+  {
     "id": "mwutsg8jgq4p",
     "fecha": "2026-11-24T15:04:26.419Z",
     "canal": "lqns",
@@ -675,38 +711,5 @@
     "tipo": "alerta",
     "titulo": "Guion rechazado: ",
     "texto": "El Verificador no aprobó \"\" tras 0 intentos: Tema descartado (no se pudo cargar):  Aprobados: 11. Rechazados: 18. Con error: 8. No se publica. Próximo ciclo en 2 h."
-  },
-  {
-    "id": "mwsiq97mm5f5",
-    "fecha": "2026-11-23T00:19:15.874Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título que plantea una pregunta intrigante o una afirmación impactante + elemento misterioso/extraño + pista de revelación o consecuencia El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (33475 vistas/hora)."
-  },
-  {
-    "id": "mwse974bjrc2",
-    "fecha": "2026-11-22T22:14:01.547Z",
-    "canal": "lqns",
-    "tipo": "reporte",
-    "titulo": "Aviso de prueba",
-    "texto": "Salió al celular con tu tema guardado. Si no lo ves en la app ntfy, revisa que estés suscrito al mismo tema."
-  },
-  {
-    "id": "mwsb5cxnahip",
-    "fecha": "2026-11-22T20:47:03.611Z",
-    "canal": "lqns",
-    "tipo": "alerta",
-    "titulo": "No se pudo publicar en las redes",
-    "texto": "\"¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️\": el repositorio público \"geurii/oficina-videos-legal\" no aceptó el video: no pude subir el video al repositorio público (422): {\"message\":\"Sorry, the file is too large to be processed. Consider creating/updating th; y el "
-  },
-  {
-    "id": "mwsb52pujqb9",
-    "fecha": "2026-11-22T20:46:50.370Z",
-    "canal": "lqns",
-    "tipo": "alerta",
-    "titulo": "No se pudo publicar en las redes",
-    "texto": "\"Sabías que una ola de melaza arrasó Boston? 🍯\": el repositorio público \"geurii/oficina-videos-legal\" no aceptó el video: no pude subir el video al repositorio público (422): {\"message\":\"Sorry, the file is too large to be processed. Consider creating/updating th; y el "
   }
 ]

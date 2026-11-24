@@ -1,0 +1,63 @@
+{
+  "titulo": "🌋 ¿Qué oculta la luz verde del Monte St. Helens?",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-que-oculta-la-extrana-luz-verde-del-monte-st-helens-tras-su-erupcion.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T15:08:41.957Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿¿Qué secretos oculta la extraña luz verde que apareció tras…?",
+  "publicacion": {
+    "titulo": "🌋 ¿Qué oculta la luz verde del Monte St. Helens?",
+    "descripcion": "Un relato ficticio sobre una luz misteriosa que apareció tras la erupción del Monte St. Helens. ¿Qué secretos esconde?\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: \n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#MonteStHelens #LuzVerde #Misterio #RelatoFicticio #Enigma"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 5,
+    "critica": "El gancho es intrigante pero la historia carece de ritmo y detalles concretos. La revelación es vaga y no resuelve nada. El cierre es débil y no invita a compartir."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Qué secretos oculta la extraña luz verde que apareció tras la erupción del Monte St. Helens?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En este relato ficticio, una luz verde brillante surgió de las cenizas, atrayendo a curiosos y científicos por igual.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Algunos dijeron que era un fenómeno natural, pero otros creyeron que escondía algo más profundo.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero en este relato, la luz verde es solo el comienzo de un enigma que nadie ha logrado resolver, y que podría cambiar todo lo que creemos saber.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Te atreves a imaginar qué podría ocultar? Comparte tu teoría con un amigo y sígueme para más misterios.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

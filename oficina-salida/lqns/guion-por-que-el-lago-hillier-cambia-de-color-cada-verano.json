@@ -1,0 +1,63 @@
+{
+  "titulo": "🌸 El lago rosa que cambia de color: ¿ficción o realidad?",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-por-que-el-lago-hillier-cambia-de-color-cada-verano.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T15:12:43.935Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿Existe un lago rosa que cambia de color cada verano?",
+  "publicacion": {
+    "titulo": "🌸 El lago rosa que cambia de color: ¿ficción o realidad?",
+    "descripcion": "Sumérgete en el misterio del lago Hillier, donde la ficción crea un fenómeno único. Descubre la historia imaginaria detrás de su color cambiante.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: \n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#lagohillier #misterio #ficcion #naturaleza #colores"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 4,
+    "critica": "El gancho es débil, la historia carece de ritmo y la revelación no sorprende. El cierre es poco atractivo y no invita a la acción."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Sabías que existe un lago rosa que cambia de color cada verano?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En un relato ficticio, este lago se transforma en un espectáculo visual. Su agua, de un rosa intenso, se vuelve más clara con el calor.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "La historia imaginaria cuenta que bacterias ficticias, al interactuar con el hierro del suelo, crean este efecto único.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: en esta ficción, el cambio de color es causado por una reacción química imaginaria, no por magia.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Te gustaría visitar este lugar ficticio? Comparte este video con un amigo que ame los misterios, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

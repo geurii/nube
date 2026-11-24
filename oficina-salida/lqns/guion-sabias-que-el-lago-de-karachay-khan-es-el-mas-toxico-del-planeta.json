@@ -1,0 +1,70 @@
+{
+  "titulo": "¿Sabías que el lago Karachay-Khan esconde un secreto mortal? 🌊",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-sabias-que-el-lago-de-karachay-khan-es-el-mas-toxico-del-planeta.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T15:10:30.287Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿¿Qué oculta el lago Karachay-Khan?",
+  "publicacion": {
+    "titulo": "¿Sabías que el lago Karachay-Khan esconde un secreto mortal? 🌊",
+    "descripcion": "Sumérgete en el misterio de un lago ficticio que oculta una sustancia letal. Un relato de ficción que te dejará intrigado.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: \n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#lago #misterio #secreto #mortal #KarachayKhan"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 4,
+    "critica": "El gancho es débil y no intriga lo suficiente. La historia carece de ritmo y detalles concretos. La revelación llega tarde y no impacta."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Qué oculta el lago Karachay-Khan? Un relato ficticio revela un secreto mortal.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En un rincón olvidado del mundo, existe un lago de aguas tranquilas. Pero su belleza es engañosa.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Se dice que quien se acerca, nunca regresa. ¿Qué misterio encierran sus profundidades?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Los locales susurran leyendas de una sustancia creada en un laboratorio secreto.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: en este relato, el lago contiene una toxina ficticia letal al tacto.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Te atreverías a explorar sus aguas? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}
