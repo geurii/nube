@@ -54,19 +54,19 @@ const buscarDuckDuckGo = async (consulta, max = 6) => {
 // Buscador alternativo: DuckDuckGo puede limitar IPs de GitHub Actions (429/403).
 // Bing se consulta de forma independiente para que una caída del primero no agote la selección editorial.
 const buscarBing = async (consulta, max = 6) => {
-  const r = await fetch(`https://www.bing.com/search?q=${encodeURIComponent(consulta)}&count=10&setlang=es`, {
+  const r = await fetch(\`https://www.bing.com/search?q=\${encodeURIComponent(consulta)}&count=10&setlang=es\`, {
     headers: {'User-Agent': UA, 'Accept-Language': 'es,en;q=0.8'},
     signal: AbortSignal.timeout(25000),
   });
   if (!r.ok) throw new Error('Bing ' + r.status);
   const html = await r.text();
   const salida = [];
-  for (const m of html.matchAll(/<li[^>]*class=["'][^"']*b_algo[^"']*["'][^>]*>([\\s\\S]*?)<\\/li>/gi)) {
+  for (const m of html.matchAll(/<li[^>]*class=["'][^"']*b_algo[^"']*["'][^>]*>([\s\S]*?)<\/li>/gi)) {
     const bloque = m[1];
-    const href = /<h2[^>]*>\\s*<a[^>]*href=["']([^"']+)["']/i.exec(bloque)?.[1];
-    const titulo = limpiar(/<h2[^>]*>([\\s\\S]*?)<\\/h2>/i.exec(bloque)?.[1] ?? '');
-    const texto = limpiar(/<p[^>]*>([\\s\\S]*?)<\\/p>/i.exec(bloque)?.[1] ?? '');
-    if (!href || !/^https?:\\/\\//i.test(href) || SIN_WIKI.test(hostDe(href)) || !titulo) continue;
+    const href = /<h2[^>]*>\s*<a[^>]*href=["']([^"']+)["']/i.exec(bloque)?.[1];
+    const titulo = limpiar(/<h2[^>]*>([\s\S]*?)<\/h2>/i.exec(bloque)?.[1] ?? '');
+    const texto = limpiar(/<p[^>]*>([\s\S]*?)<\/p>/i.exec(bloque)?.[1] ?? '');
+    if (!href || !/^https?:\/\//i.test(href) || SIN_WIKI.test(hostDe(href)) || !titulo) continue;
     salida.push({titulo:titulo.slice(0,160),url:href,texto:texto.slice(0,500),host:hostDe(href)});
     if (salida.length >= max) break;
   }
@@ -81,7 +81,7 @@ export const buscarEnLaWeb = async (consulta, max = 6) => {
       errores.push('sin resultados');
     } catch (e) { errores.push(String(e.message ?? e)); }
   }
-  throw new Error(`Buscadores no disponibles: ${errores.join('; ')}`);
+  throw new Error(\`Buscadores no disponibles: \${errores.join('; ')}\`);
 };
 
 const extraerPagina = (html) => {
