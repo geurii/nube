@@ -4,9 +4,9 @@
  * Wikipedia/contexto se conserva como apoyo para Shorts, nunca cuenta como fuente independiente del largo.
  */
 const dominioDe = (fuente) => {
-  const valor = String(fuente?.dominio ?? '').trim().toLowerCase().replace(/^www\\./, '');
+  const valor = String(fuente?.dominio ?? '').trim().toLowerCase().replace(/^www\./, '');
   if (valor) return valor;
-  try { return new URL(String(fuente?.url ?? '')).hostname.toLowerCase().replace(/^www\\./, ''); }
+  try { return new URL(String(fuente?.url ?? '')).hostname.toLowerCase().replace(/^www\./, ''); }
   catch { return ''; }
 };
 
