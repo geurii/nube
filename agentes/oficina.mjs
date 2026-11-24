@@ -46,6 +46,19 @@ let slug = 'sin-tema';
 const ESTADO = path.join(SALIDA, 'estado.json');
 const HISTORIAL = path.join(SALIDA, 'historial.json');
 const leerJson = (ruta, porDefecto) => { try { return JSON.parse(fs.readFileSync(ruta, 'utf8')); } catch { return porDefecto; } };
+// Normaliza variantes como "Bloop" y "The Bloop" para impedir que un tema ya tratado vuelva a entrar.
+const claveTema = (x) => String(x ?? '').toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').replace(/^the[\\s_-]+/, '').replace(/[^a-z0-9]+/g, '');
+const temaYaRegistrado = (tema) => {
+  const tituloDe = (x) => typeof x === 'string' ? x : (x?.tema ?? x?.titulo ?? x?.title ?? x?.nombre ?? '');
+  const vistos = [
+    ...(Array.isArray(leerJson(HISTORIAL, [])) ? leerJson(HISTORIAL, []) : []),
+    ...fs.readdirSync(SALIDA).filter((f) => /^guion-.+\\.json$/.test(f)).map((f) => f.replace(/^guion-|\\.json$/g, '')),
+    ...(leerJson(path.join(SALIDA, 'subidos.json'), {}).videos ?? []),
+    ...(Array.isArray(leerJson(path.join(SALIDA, 'producidos.json'), [])) ? leerJson(path.join(SALIDA, 'producidos.json'), []) : []),
+  ].map(tituloDe).map(claveTema).filter((x) => x.length >= 4);
+  const k = claveTema(tema);
+  return k.length >= 4 && vistos.some((v) => v === k || (k.length >= 6 && v.length >= 6 && (v.includes(k) || k.includes(v))));
+};
 /** Próximo ciclo automático: Short diario a la 01:23 UTC y video largo los domingos a las 00:23 UTC. */
 const horasParaProximoCiclo = () => {
   const ahora = new Date();
@@ -60,8 +73,14 @@ const horasParaProximoCiclo = () => {
 };
 /** Reporte para la campana de la oficina 3D. tipo: reporte | alerta | listo. */
 const notificar = (tipo, titulo, texto) => {
-  avisarTelefono(tipo, titulo, texto);
   const lista = leerJson(NOTIFICACIONES, []);
+  const repetida = lista.some((n) => n.canal === CANAL_ID && n.tipo === tipo && n.titulo === titulo
+    && Date.now() - Date.parse(n.fecha) < 12 * 60 * 60 * 1000);
+  if (repetida) {
+    console.log(`Aviso duplicado suprimido (12 h): ${titulo}`);
+    return;
+  }
+  avisarTelefono(tipo, titulo, texto);
   lista.unshift({id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), fecha: new Date().toISOString(), canal: CANAL_ID, canalNombre: CONFIG.nombre, tipo, titulo, texto});
   fs.mkdirSync(path.dirname(NOTIFICACIONES), {recursive: true});
   fs.writeFileSync(NOTIFICACIONES, JSON.stringify(lista.slice(0, 80), null, 2));
@@ -528,6 +547,12 @@ try {
   informe.push(`Modelo usado en Groq: ${modelo}`, '');
   if (!TEMA) { TEMA = await elegirTema(modelo); informe[0] = `# Informe de la oficina · ${TEMA} (${FORMATO})`; informe.push('Tema elegido por la oficina.', ''); }
   if (!TEMA.trim()) throw new Error('La Oficina no puede investigar ni escribir sin un tema seleccionado.');
+  if (process.env.TEMA && temaYaRegistrado(TEMA)) {
+    console.log(`Tema solicitado ya tratado anteriormente: "${TEMA}". Se sustituye por uno nuevo.`);
+    informe.push(`Tema repetido bloqueado: "${TEMA}". Se selecciona un tema nuevo del inventario.`);
+    TEMA = await elegirTema(modelo);
+    informe[0] = `# Informe de la oficina · ${TEMA} (${FORMATO})`;
+  }
   slug = slugDe(TEMA);
   const fuentes = await investigar();
   // INTERNET PARA TODOS: una vez por ciclo se reúne lo que dice la web de hoy y se les da a todos los agentes (Guionista, Editor, Verificador, Titulista, panel, pintores...)
