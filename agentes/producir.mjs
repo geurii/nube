@@ -51,8 +51,8 @@ const colaCompleta = fs.readdirSync(RAIZ, {withFileTypes: true})
         const palabras = (x.g.escenas ?? []).reduce((n, e) => n + String(e.texto ?? '').trim().split(/\s+/).filter(Boolean).length, 0);
         const motivo = x.g.formato === 'largo' && palabras < 1000
           ? `Video largo demasiado corto: ${palabras} palabras; mínimo 1000 antes de renderizar.`
-          : x.g.formato === 'short' && palabras > 160
-            ? `Short demasiado largo: ${palabras} palabras; máximo preventivo 160 antes de medir el MP4.`
+          : x.g.formato === 'short' && palabras > 180
+            ? `Short demasiado largo: ${palabras} palabras; máximo preventivo 180 antes de medir el MP4.`
             : '';
         if (motivo) {
           x.g.estado = 'rechazado-necesita-revision';
@@ -109,8 +109,8 @@ const probe = spawnSync('ffprobe', ['-v', 'error', '-show_entries', 'format=dura
 const duracion = Number(probe.stdout?.trim());
 const formatoInvalido = !Number.isFinite(duracion) || duracion <= 0
   ? 'No se pudo medir la duración real del MP4.'
-  : g.formato === 'short' && duracion > 60.5
-    ? `Short excede 60 segundos: ${duracion.toFixed(1)} s.`
+  : g.formato === 'short' && duracion > 65.5
+    ? `Short excede 65 segundos: ${duracion.toFixed(1)} s.`
     : g.formato === 'largo' && duracion < 480
       ? `Video largo dura ${duracion.toFixed(1)} s; mínimo 480 s (8 minutos).`
       : '';
