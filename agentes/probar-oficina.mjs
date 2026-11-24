@@ -77,10 +77,12 @@ if (!validarRevelacion(ratio72).valido) throw new Error('Debe aprobar una revela
 if (!validarRevelacion(ratio79).valido) throw new Error('Debe tolerar una revelación ubicada al 79 %.');
 if (validarRevelacion(ratio82).valido) throw new Error('Debe rechazar una revelación ubicada al 82 %.');
 const largo1250 = [{texto: Array.from({length:1250},(_,i)=>`dato${i}`).join(' ')}];
-const largo1100 = [{texto: Array.from({length:1100},(_,i)=>`dato${i}`).join(' ')}];
-const largo1400 = [{texto: Array.from({length:1400},(_,i)=>`dato${i}`).join(' ')}];
-if (!validarLongitudGuion(largo1250).valido) throw new Error('Debe aprobar un guion largo de 1250 palabras.');
-if (validarLongitudGuion(largo1100).valido || validarLongitudGuion(largo1400).valido) throw new Error('Debe rechazar guiones largos fuera del rango 1200–1350 palabras.');
+const largo1200 = [{texto: Array.from({length:1200},(_,i)=>`dato${i}`).join(' ')}];
+const largo1350 = [{texto: Array.from({length:1350},(_,i)=>`dato${i}`).join(' ')}];
+const largo1199 = [{texto: Array.from({length:1199},(_,i)=>`dato${i}`).join(' ')}];
+const largo1351 = [{texto: Array.from({length:1351},(_,i)=>`dato${i}`).join(' ')}];
+if (![largo1250, largo1200, largo1350].every((g) => validarLongitudGuion(g).valido)) throw new Error('Debe aprobar los límites inclusivos de 1200 a 1350 palabras.');
+if ([largo1199, largo1351].some((g) => validarLongitudGuion(g).valido)) throw new Error('Debe rechazar cualquier guion por debajo de 1200 o por encima de 1350 palabras.');
 const cuesReferencia = parsearTranscripcion('<transcript><text start="0" dur="2">The <b>first</b> mystery.</text><text start="17.5" dur="3">Then the reveal &amp; the twist.</text></transcript>');
 if (cuesReferencia.length !== 2 || cuesReferencia[0].tiempo !== '00:00' || cuesReferencia[1].tiempo !== '00:17' || !cuesReferencia[1].texto.includes('&')) throw new Error('La lectura de subtítulos públicos debe preservar texto y marcas de tiempo.');
 const encargoReferencia = mensajesDeDesglose({titulo: 'Referencia', segundos: 540, transcripcion: '[00:00] Gancho.\\n[00:18] Contexto.'}, 'largo');
