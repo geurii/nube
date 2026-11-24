@@ -21,8 +21,8 @@ export const ESCENARIOS = {
   'desierto-rocoso': 'desierto rocoso con montañas lejanas, cielo claro',
 };
 export const TIPOS = new Set([
-  'estrellas', 'astro', 'resplandor', 'montanas', 'suelo', 'agua', 'niebla', 'arbol', 'edificio', 'central', 'circulo', 'rect', 'pergamino',
-  'poligono', 'linea', 'nubes', 'olas', 'particulas', 'rayos', 'barco', 'pez', 'roca', 'hielo', 'duna', 'algas', 'sargazo', 'faro', 'silueta', 'ovni', 'explosion', 'ciudad', 'bosque', 'calendario', 'reloj', 'castillo', 'corona', 'libro', 'moneda', 'iglesia', 'caballo',
+  'estrellas', 'astro', 'resplandor', 'montanas', 'suelo', 'agua', 'niebla', 'arbol', 'edificio', 'central', 'pergamino',
+  'nubes', 'olas', 'particulas', 'rayos', 'barco', 'pez', 'roca', 'hielo', 'duna', 'algas', 'sargazo', 'faro', 'silueta', 'ovni', 'explosion', 'ciudad', 'bosque', 'calendario', 'reloj', 'castillo', 'corona', 'libro', 'moneda', 'iglesia', 'caballo',
 ]);
 
 /** Una "caja vacía": barra o rectángulo ancho y bajo sin forma de objeto (parece un cuadro de texto sin texto). Gemini la marca como falla grave. */
@@ -110,7 +110,7 @@ FORMAS CLÁSICAS:
 - {"t":"resplandor","x":0.5,"y":0.5,"r":0.4,"color":"#ffb347","fuerza":1}   {"t":"niebla","y":0.7,"alto":0.2,"color":"#cfd8ee","alpha":0.25}
 - {"t":"montanas","y":0.8,"alto":0.28,"rampa":["#a","#b","#c"],"semilla":3,"picos":3}   {"t":"suelo","y":0.85,"rampa":[...]}   {"t":"agua","y":0.75,"rampa":[...]}
 - {"t":"arbol","x":0.2,"y":0.95,"h":0.22,"rampa":[...]}   {"t":"edificio","x":0.5,"w":0.2,"h":0.4,"y":0.85,"color":"#1d2140","ventanas":true} (SOLO edificios de apartamentos u oficinas: NUNCA para un reactor, una fábrica o una planta)
-- {"t":"circulo","x":0.5,"y":0.5,"r":0.08,"rampa":[...]} (esfera sombreada)   {"t":"rect","x":0.3,"y":0.5,"w":0.2,"h":0.1,"color":"#5a4a3a"}
+
 - {"t":"pergamino","x":0.12,"y":0.2,"w":0.76,"h":0.5,"lineas":14,"simbolos":true}
 - OBJETOS HISTÓRICOS (usa estos tipos cuando el guion trate de historia, fechas o civilizaciones; son objetos reconocibles, no abstracciones): {"t":"calendario","x":0.5,"y":0.55,"w":0.48,"h":0.48,"color":"#b58a52"} (hoja de calendario con cuadrícula y fecha marcada); {"t":"reloj","x":0.5,"y":0.48,"r":0.18,"color":"#d9b66f"} (reloj circular con agujas); {"t":"castillo","x":0.5,"y":0.86,"w":0.65,"h":0.5,"color":"#827b78"} (castillo medieval con torres y almenas); {"t":"corona","x":0.5,"y":0.5,"w":0.3,"h":0.2,"color":"#d9b33d"}; {"t":"libro","x":0.5,"y":0.6,"w":0.38,"h":0.32,"color":"#7a3f32"}; {"t":"moneda","x":0.5,"y":0.5,"r":0.1,"color":"#d9b33d"}; {"t":"iglesia","x":0.5,"y":0.85,"w":0.42,"h":0.42,"color":"#b7a58c"}; {"t":"caballo","x":0.5,"y":0.65,"w":0.38,"color":"#79513a"}. En historia medieval muestra documentos, calendarios, castillos, coronas, monedas o iglesias según la frase; nunca sustituyas esos objetos por círculos, triángulos o polígonos abstractos.\nFORMAS PROFESIONALES (con sombreado, contorno y movimiento propios; "color" = el tono base, el motor hace la rampa):
 - {"t":"nubes","y":0.2,"n":4,"color":"#7a6aa8"}   {"t":"olas","y":0.62,"alto":0.38,"color":"#1d4f86","espuma":true} (mar animado con espuma)
@@ -125,11 +125,10 @@ FORMAS CLÁSICAS:
 - {"t":"particulas","tipo":"polvo"|"burbujas"|"nieve"|"brasas","n":50}   {"t":"rayos","x":0.1,"color":"#ffd9a0","alpha":0.1} (rayos de luz)
 ESCENARIOS YA HECHOS (pixel art libre): en el JSON de cada plano puedes añadir "escenario": "<id>" y ese fondo se dibuja a pantalla completa DEBAJO de tus capas (úsalo cuando el tema sea mar, bosque, montañas, ciudad industrial o desierto; si no encaja con la frase, NO lo pongas y dibuja tú el fondo). Disponibles: ${Object.entries(ESCENARIOS).map(([k, v]) => `"${k}" = ${v}`).join('; ')}. Con escenario, tus capas de cielo/montañas/agua se pueden omitir y te concentras en el sujeto, la luz y el primer plano.
 RITMO Y EDICIÓN DE GANCHO (copiado de los reels que frenan el dedo; el estilo pixel del canal NO cambia): cada plano dura ~1,5 a 2 s, así que cada cuadro debe leerse en un segundo: UN solo sujeto grande y claro, nada de escenas cargadas. Mantén UN solo mundo de color por video (por ejemplo rojos y negros para misterio oscuro, azules y ámbar para mar e historia) con alto contraste y un foco de luz (resplandor o rayos) sobre el sujeto. En la escena 0 (el gancho) un titular gigante ocupará el centro (y 0.33 a 0.5) los primeros 3 segundos: pon el sujeto más abajo (y 0.5 a 0.65) y deja el centro limpio.
-NUNCA dibujes rectángulos ni barras anchas y bajas (con "rect" o con un "poligono" de 4 puntos): parecen cajas de texto vacías y se marcan como falla grave. Los subtítulos van encima y NO necesitan caja. Todo "poligono" debe ser un OBJETO reconocible (torre, casco, bidón, barco...) con 6 o más puntos y silueta irregular.
+NUNCA dibujes rectángulos ni barras anchas y bajas (con "rect" o con un "poligono" de 4 puntos): parecen cajas de texto vacías y se marcan como falla grave. Los subtítulos van encima y NO necesitan caja. No se admiten capas geométricas sueltas ni polígonos como sustitutos del sujeto narrativo.
 REGLA DE ORO: el cuadro debe mostrar EL OBJETO O EL HECHO que dice la frase, nunca un sustituto. NO escribas texto en el cuadro (los subtítulos ya lo hacen). Si el objeto o fenómeno no tiene una forma implementada que lo represente de manera reconocible, NO lo sustituyas por polígonos, círculos, triángulos, rectángulos ni símbolos abstractos. Devuelve la escena incompleta para que sea rechazada y se vuelva a generar. Nunca inventes objetos fuera del contexto narrado.
 FORMAS LIBRES para lo que no esté arriba (una botella, una casa, una torre, un cofre, un barco hundido, una ola de líquido espeso):
-- {"t":"poligono","pts":[[0.4,0.5],[0.6,0.5],[0.62,0.7],[0.38,0.7]],"color":"#5a4a3a","luz":"izq"} (relleno sombreado con contorno; usa 4 a 14 puntos)
-- {"t":"linea","pts":[[0.2,0.5],[0.4,0.45],[0.6,0.5]],"grosor":0.006,"color":"#2a2a2a"} (cables, mástiles, grietas)
+
 ZONAS RESERVADAS (encima va el personaje, el título y los subtítulos): NO pongas nada importante en la esquina superior derecha (x>0.55 e y<0.3: ahí va el personaje) ni en la franja y entre 0.66 y 0.8 (subtítulos). El sujeto principal va entre y=0.30 y y=0.62, a la izquierda o al centro. Deja la parte de abajo (y>0.7) poco cargada.`;
 
 /** Presión real sobre los dos pintores: el sueldo depende de las vistas y Gemini rechaza el video si las escenas no muestran lo que se dice. */
