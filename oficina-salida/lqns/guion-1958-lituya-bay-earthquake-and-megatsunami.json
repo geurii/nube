@@ -1,7 +1,6 @@
 {
-  "titulo": "🌊 La Ola que Escaló una Montaña: El Megatsunami de 1958 en Bahía Lituya",
-  "formato": "largo",
-  "orientacion": "horizontal",
+  "titulo": "🌊 La ola que escaló una montaña: El megatsunami de Bahía Lituya (1958)",
+  "formato": "short",
   "plataforma": "youtube",
   "canal": "lqns",
   "voz": "es-MX-JorgeNeural",
@@ -11,86 +10,51 @@
   "personaje": {
     "visible": false
   },
-  "creado": "2026-11-24T22:49:56.821Z",
+  "creado": "2026-11-24T23:00:48.007Z",
   "estilo": "gancho",
-  "ganchoTexto": "¿¿Una ola de 524 metros escalando una montaña?",
+  "ganchoTexto": "¿¿Una ola de 524 metros escaló una montaña en 1958?",
   "publicacion": {
-    "titulo": "🌊 La Ola que Escaló una Montaña: El Megatsunami de 1958 en Bahía Lituya",
-    "descripcion": "Descubre la historia del megatsunami más grande registrado, causado por un terremoto en Alaska en 1958. Una ola de 524 metros que desafió la lógica.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\n#Megatsunami #Alaska1958 #OlaGigante #Terremoto #1958LituyaBayEarthquakeAndMegatsunami"
+    "titulo": "🌊 La ola que escaló una montaña: El megatsunami de Bahía Lituya (1958)",
+    "descripcion": "Descubre la historia del megatsunami más grande registrado en la historia, causado por un terremoto en Bahía Lituya, Alaska, en 1958. Una ola de 524 metros que desafió la lógica.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\n#megatsunami #bahialituya #terremoto #ola #alaska"
   },
   "estado": "rechazado-necesita-revision",
   "editor": {
     "puntaje": 6,
-    "critica": "El gancho es efectivo pero la revelación llega tarde y no sorprende lo suficiente. Ritmo bueno, pero falta un giro final impactante."
+    "critica": "El gancho es efectivo pero la revelación llega tarde y el veredicto es débil. Falta ritmo en la historia."
   },
   "retencionEstimada": null,
   "escenas": [
     {
       "tipo": "hook",
-      "texto": "¿Una ola de quinientos veinticuatro metros escalando una montaña? Sucedió en mil novecientos cincuenta y ocho.",
+      "texto": "¿Una ola de quinientos veinticuatro metros escaló una montaña en mil novecientos cincuenta y ocho?",
       "fondo": [
         "pixelmisterio"
       ]
     },
     {
       "tipo": "historia",
-      "texto": "El nueve de julio de mil novecientos cincuenta y ocho, un terremoto de ocho coma tres Mw sacudió Bahía Lituya, Alaska.",
+      "texto": "El nueve de julio, un terremoto ocho coma tres Mw sacudió Bahía Lituya, Alaska.",
       "fondo": [
         "pixelmisterio"
       ]
     },
     {
       "tipo": "historia",
-      "texto": "El epicentro, a veintiuno kilómetros de la bahía, desató un derrumbe masivo del glaciar Lituya.",
-      "fondo": [
-        "pixelmisterio"
-      ]
-    },
-    {
-      "tipo": "historia",
-      "texto": "En minutos, treinta millones de m³ de roca cayeron, generando una ola monstruosa.",
-      "fondo": [
-        "pixelmisterio"
-      ]
-    },
-    {
-      "tipo": "historia",
-      "texto": "La ola alcanzó quinientos veinticuatro metros, arrasando bosques y dejando marcas en las montañas.",
-      "fondo": [
-        "pixelmisterio"
-      ]
-    },
-    {
-      "tipo": "historia",
-      "texto": "Testigos hablaron de un estruendo infernal y una pared de agua que tocaba las nubes.",
+      "texto": "En minutos, treinta millones de m³ de roca cayeron del Glaciar Lituya.",
       "fondo": [
         "pixelmisterio"
       ]
     },
     {
       "tipo": "revelacion",
-      "texto": "Pero lo que no sabías: este megatsunami es un fenómeno único, aún sin explicación completa.",
-      "fondo": [
-        "pixelmisterio"
-      ]
-    },
-    {
-      "tipo": "historia",
-      "texto": "La combinación del derrumbe y la forma de la bahía amplificó la ola de forma extrema.",
-      "fondo": [
-        "pixelmisterio"
-      ]
-    },
-    {
-      "tipo": "historia",
-      "texto": "Científicos siguen estudiando cómo un terremoto pudo crear tal catástrofe en una bahía cerrada.",
+      "texto": "El derrumbe generó la ola más alta registrada: quinientos veinticuatro metros.",
       "fondo": [
         "pixelmisterio"
       ]
     },
     {
       "tipo": "veredicto",
-      "texto": "¿Podría repetirse? Sígueme para descubrir más misterios.",
+      "texto": "¿Cómo una ola alcanza esa altura? Sígueme para descubrir más misterios.",
       "fondo": [
         "pixelmisterio"
       ]
