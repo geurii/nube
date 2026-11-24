@@ -39,6 +39,29 @@ export const esCajaVacia = (e) => {
   return false;
 };
 
+const sujetosDelTexto = (texto = '') => {
+  const t = String(texto).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const reglas = [
+    [/\b(calendario|fecha|año|anos|siglo|cronologia|tiempo|reloj|hora|horas)\b/, ['calendario','reloj','pergamino']],
+    [/\b(castillo|medieval|reino|rey|reina|corona|monarquia|moneda|iglesia|caballero|caballo)\b/, ['castillo','corona','moneda','iglesia','caballo','pergamino']],
+    [/\b(barco|nave|embarcacion|marinero|naufragio|hundido|velero)\b/, ['barco','faro','agua','olas','roca']],
+    [/\b(ballena|tiburon|anguila|calamar|pez|animal|criatura|pulpo)\b/, ['pez','agua','algas','sargazo']],
+    [/\b(hielo|glaciar|iceberg|congelado)\b/, ['hielo','agua','roca','montanas']],
+    [/\b(volcan|erupcion|lava|crater|magma)\b/, ['roca','montanas','explosion','suelo']],
+    [/\b(bosque|arbol|arboles|pino|selva)\b/, ['bosque','arbol','suelo']],
+    [/\b(ciudad|edificio|casa|pueblo|vivienda|calle)\b/, ['ciudad','edificio','silueta']],
+    [/\b(fabrica|central|reactor|nuclear|chimenea|energia)\b/, ['central','edificio']],
+    [/\b(desierto|duna|arena)\b/, ['duna','roca','montanas']],
+    [/\b(ovni|extraterrestre|nave espacial|espacio|planeta|luna|asteroide)\b/, ['ovni','astro','estrellas']],
+    [/\b(nino|nina|ninos|ninas|persona|hombre|mujer|habitante|poblacion)\b/, ['silueta','edificio']],
+    [/\b(libro|manuscrito|documento|texto|pergamino|escrito|archivo)\b/, ['libro','pergamino']],
+    [/\b(explosion|estallido|incendio|fuego|llama)\b/, ['explosion','particulas','rayos']],
+    [/\b(zumbido|sonido|ruido|frecuencia|vibracion|eco)\b/, ['particulas','rayos','edificio','montanas']],
+    [/\b(ola|olas|tsunami|marea|mar|oceano|agua|lago|rio)\b/, ['agua','olas','barco','pez','roca','faro']],
+  ];
+  return [...new Set(reglas.filter(([re]) => re.test(t)).flatMap(([, tipos]) => tipos))];
+};
+
 /** Limpia una escena: solo tipos y rangos permitidos. Devuelve null si no sirve. */
 export const validarEscena = (raw) => {
   if (!raw || typeof raw !== 'object') return null;
@@ -103,7 +126,7 @@ FORMAS CLÁSICAS:
 ESCENARIOS YA HECHOS (pixel art libre): en el JSON de cada plano puedes añadir "escenario": "<id>" y ese fondo se dibuja a pantalla completa DEBAJO de tus capas (úsalo cuando el tema sea mar, bosque, montañas, ciudad industrial o desierto; si no encaja con la frase, NO lo pongas y dibuja tú el fondo). Disponibles: ${Object.entries(ESCENARIOS).map(([k, v]) => `"${k}" = ${v}`).join('; ')}. Con escenario, tus capas de cielo/montañas/agua se pueden omitir y te concentras en el sujeto, la luz y el primer plano.
 RITMO Y EDICIÓN DE GANCHO (copiado de los reels que frenan el dedo; el estilo pixel del canal NO cambia): cada plano dura ~1,5 a 2 s, así que cada cuadro debe leerse en un segundo: UN solo sujeto grande y claro, nada de escenas cargadas. Mantén UN solo mundo de color por video (por ejemplo rojos y negros para misterio oscuro, azules y ámbar para mar e historia) con alto contraste y un foco de luz (resplandor o rayos) sobre el sujeto. En la escena 0 (el gancho) un titular gigante ocupará el centro (y 0.33 a 0.5) los primeros 3 segundos: pon el sujeto más abajo (y 0.5 a 0.65) y deja el centro limpio.
 NUNCA dibujes rectángulos ni barras anchas y bajas (con "rect" o con un "poligono" de 4 puntos): parecen cajas de texto vacías y se marcan como falla grave. Los subtítulos van encima y NO necesitan caja. Todo "poligono" debe ser un OBJETO reconocible (torre, casco, bidón, barco...) con 6 o más puntos y silueta irregular.
-REGLA DE ORO: el cuadro debe mostrar EL OBJETO O EL HECHO que dice la frase, nunca un sustituto. NO escribas texto en el cuadro (los subtítulos ya lo hacen). Si lo que se dice no está en la lista de formas, DIBÚJALO con "poligono" y "linea" (varios polígonos juntos): por ejemplo una ola de melaza = una masa marrón oscura (#3b2314 a #7a4a22) de cresta curva y alta, con 8 a 14 puntos, avanzando sobre edificios; un tanque = rectángulo alto gris con remaches (líneas); un mecanismo de bronce = varios círculos dentados verdosos (#6b8f71) superpuestos.
+REGLA DE ORO: el cuadro debe mostrar EL OBJETO O EL HECHO que dice la frase, nunca un sustituto. NO escribas texto en el cuadro (los subtítulos ya lo hacen). Si el objeto o fenómeno no tiene una forma implementada que lo represente de manera reconocible, NO lo sustituyas por polígonos, círculos, triángulos, rectángulos ni símbolos abstractos. Devuelve la escena incompleta para que sea rechazada y se vuelva a generar. Nunca inventes objetos fuera del contexto narrado.
 FORMAS LIBRES para lo que no esté arriba (una botella, una casa, una torre, un cofre, un barco hundido, una ola de líquido espeso):
 - {"t":"poligono","pts":[[0.4,0.5],[0.6,0.5],[0.62,0.7],[0.38,0.7]],"color":"#5a4a3a","luz":"izq"} (relleno sombreado con contorno; usa 4 a 14 puntos)
 - {"t":"linea","pts":[[0.2,0.5],[0.4,0.45],[0.6,0.5]],"grosor":0.006,"color":"#2a2a2a"} (cables, mástiles, grietas)
@@ -130,12 +153,17 @@ const FORMA = '{"escenas": [{"indice": N, "planos": [ESCENA_A, ESCENA_B, ESCENA_
 
 
 
-const limpiar = (r, ids, slug, ya = {}) => {
+const limpiar = (r, ids, slug, ya = {}, escenas = []) => {
   const salida = {};
   for (const e of Array.isArray(r?.escenas) ? r.escenas : []) {
     const i = Number(e.indice);
     if (!ids.includes(i)) continue;
-    const planos = (Array.isArray(e.planos) ? e.planos : []).slice(0, 3).map(validarEscena).filter(Boolean);
+    const textoEscena = escenas[i]?.texto ?? escenas[i]?.tipo ?? '';
+    const sujetos = sujetosDelTexto(textoEscena);
+    const planos = (Array.isArray(e.planos) ? e.planos : []).slice(0, 3).map(validarEscena).filter(Boolean).filter((plano) => {
+      const principales = plano.capas.filter((c) => ['barco','pez','roca','hielo','faro','ovni','explosion','ciudad','bosque','arbol','edificio','central','pergamino','calendario','reloj','castillo','corona','libro','moneda','iglesia','caballo','duna'].includes(c.t));
+      return principales.length > 0 && (!sujetos.length || principales.some((c) => sujetos.includes(c.t)));
+    });
     if (planos.length === 3 && new Set(planos.map((p) => JSON.stringify(p))).size === 3) salida[i] = planos;
   }
   for (const i of ids) if (!salida[i] && Array.isArray(ya[i]) && ya[i].length === 3 && new Set(ya[i].map((p) => JSON.stringify(p))).size === 3) salida[i] = ya[i]; // conservar solo tres cuadros distintos y completos
