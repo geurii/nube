@@ -72,13 +72,13 @@ const registrar = (resultado, detalle, intentos, extra = {}) => {
   const ag = e.agentes ?? {};
   if (resultado === 'aprobado') {
     ag['Directora de contenido'] = {estado: 'libre', actividad: 'hablando', tarea: `Último guion aprobado: "${TEMA}" (${FORMATO}). ${resumen}`};
-    ag['Investigador de temas'] = {estado: 'libre', actividad: 'leyendo', tarea: `Dejó el material de "${TEMA}" con sus fuentes institucionales independientes.`};
+    ag['Investigador de temas'] = {estado: 'libre', actividad: 'leyendo', tarea: `Dejó material consultable sobre "${TEMA}".`};
     ag['Guionista'] = {estado: 'libre', actividad: 'escribiendo', tarea: `Entregó el guion de "${TEMA}". ${detalle}`};
     ag['Editor de guion'] = {estado: 'libre', actividad: 'pensando', tarea: `Pulió el guion y eligió los fondos de cada escena. ${extra.editor ?? ''}`.trim()};
     ag['Verificador de datos'] = {estado: 'libre', actividad: 'leyendo', tarea: `Aprobó "${TEMA}" en el intento ${intentos}.`};
   } else if (resultado === 'rechazado') {
     ag['Directora de contenido'] = {estado: 'trabajando', actividad: 'pensando', tarea: `Necesita revisión: el guion de "${TEMA}" no pasó la verificación. ${resumen}`};
-    ag['Investigador de temas'] = {estado: 'libre', actividad: 'leyendo', tarea: `Dejó el material de "${TEMA}" con fuentes institucionales independientes.`};
+    ag['Investigador de temas'] = {estado: 'libre', actividad: 'leyendo', tarea: `Dejó material consultable sobre "${TEMA}".`};
     ag['Guionista'] = {estado: 'trabajando', actividad: 'escribiendo', tarea: `Intentó ${intentos} veces escribir "${TEMA}" sin que el Verificador lo aprobara.`};
     ag['Verificador de datos'] = {estado: 'trabajando', actividad: 'leyendo', tarea: `Rechazó "${TEMA}": ${detalle}`};
   } else {
@@ -102,7 +102,7 @@ const registrar = (resultado, detalle, intentos, extra = {}) => {
   e.jefa = {mensaje: ag['Directora de contenido']?.tarea ?? '', horasParaProximoCiclo: h};
   const edit = extra.editor ? ` Editor: ${extra.editor}` : '';
   if (resultado === 'aprobado') notificar('reporte', `Guion aprobado: ${TEMA}`, `${FORMATO === 'largo' ? 'Video largo' : 'Short'} de "${TEMA}" aprobado en el intento ${intentos}. ${detalle}${edit} ${resumen} Próximo ciclo en ${h} h.`);
-  else if (resultado === 'rechazado' && String(detalle).startsWith('Tema descartado:')) notificar('reporte', `Tema descartado: ${TEMA}`, `${detalle} No se afirma que el tema sea falso; esta ronda no reunió documentación institucional suficiente. ${resumen} No se publica. Próximo ciclo en ${h} h.`);
+  else if (resultado === 'rechazado' && String(detalle).startsWith('Tema descartado:')) notificar('reporte', `Tema descartado: ${TEMA}`, `${detalle} No se afirma que el tema sea falso; esta ronda no recuperó material consultable suficiente. ${resumen} No se publica. Próximo ciclo en ${h} h.`);
   else if (resultado === 'rechazado') notificar('alerta', `Guion rechazado: ${TEMA}`, `El Verificador no aprobó "${TEMA}" tras ${intentos} intentos: ${detalle} ${resumen} No se publica. Próximo ciclo en ${h} h.`);
   else notificar('alerta', 'La oficina falló', `${detalle} ${resumen} Próximo ciclo en ${h} h.`);
   e.agentes = ag;
@@ -113,7 +113,7 @@ const registrar = (resultado, detalle, intentos, extra = {}) => {
 const fallar = (m) => { console.error('ERROR:', m); process.exit(1); };
 if (!KEY) { try { registrar('error', 'Falta el secreto GROQ_API_KEY.', 0); } catch { /* sin estado */ } fallar('Falta el secreto GROQ_API_KEY.'); }
 
-/* ====================== Investigación: ocho fuentes institucionales; Wikipedia opcional ====================== */
+/* ====================== Investigación web general; las fuentes institucionales son solo respaldo ====================== */
 const wikipedia = async (lang, titulo) => {
   const url = `https://${lang}.wikipedia.org/w/api.php?action=query&prop=extracts%7Cinfo&inprop=url&explaintext=1&exsectionformat=plain&redirects=1&format=json&titles=${encodeURIComponent(titulo)}`;
   for (let i = 1; i <= 3; i++) {
@@ -526,7 +526,7 @@ try {
     WEB_BLOQUE = [bloqueWeb, leerPreferencias(CANAL_ID), textoDeLecciones(CANAL_ID)].filter(Boolean).join(' ');
     if (bloqueWeb) informe.push(`Internet para todos los agentes: ${resumenes.length} resúmenes web y ${tit.length} videos virales de YouTube sobre el tema.`);
   } catch { /* sin internet extra */ }
-  informe.push('## Investigación (fuentes institucionales independientes)', ...fuentes.map((f) => `- ${f.apoyo ? 'Wikipedia (opcional; no cuenta como prueba)' : `${f.institucion || f.idioma} (${f.dominio || 'fuente institucional'})`}: [${f.titulo}](${f.url})`), '');
+  informe.push('## Investigación web (fuentes consultadas; no se exige que sean institucionales)', ...fuentes.map((f) => `- ${f.apoyo ? 'Wikipedia (opcional; no cuenta como prueba)' : `${f.institucion || f.idioma} (${f.dominio || 'fuente institucional'})`}: [${f.titulo}](${f.url})`), '');
   const materialRecuperado = fuentes.map((f) => `### ${f.apoyo ? 'ENCICLOPEDIA / APOYO' : 'FUENTE CONSULTADA'} ${f.url}\n${f.texto}`).join('\n\n');
   const material = materialRecuperado || `MODO FICCIÓN EXPLÍCITA: no se recuperó documentación consultable para "${TEMA}". Solo se permite crear un relato original de misterio claramente presentado como ficción; no atribuyas hechos, fechas, cifras, lugares ni causas al mundo real. La narración debe decir explícitamente que es un relato ficticio y nunca fingir que ocurrió.`;
 
