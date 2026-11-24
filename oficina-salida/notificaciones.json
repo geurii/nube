@@ -1,57 +1,19 @@
 [
   {
-    "id": "mwuwpqhnxhts",
-    "fecha": "2026-11-24T16:26:18.587Z",
+    "fecha": "2026-11-24T16:27:43.200Z",
     "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
     "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título que combina una pregunta intrigante o afirmación impactante + un elemento de misterio o dato sorprendente, a menudo con palabras clave como “Why”, “How”, “What”, “Secret”, “Mystery”, “Unexplainable”, “Hidden”, seguidas de un detalle concreto que genera  El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (25825 vistas/hora)."
+    "titulo": "Revision aprobada: 🌋 ¿Qué secreto ancestral esconde el cráter de la Isla de Pascua?",
+    "texto": "Sin defectos graves detectados."
   },
   {
-    "id": "mwuwo0v6imh8",
-    "fecha": "2026-11-24T16:24:58.722Z",
+    "id": "mwuwqzfuxew3",
+    "fecha": "2026-11-24T16:27:16.842Z",
     "canal": "lqns",
     "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título con pregunta intrigante o afirmación impactante + elemento misterioso o inesperado + referencia a un caso/tema concreto El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (25836 vistas/hora)."
-  },
-  {
-    "id": "mwuwlthr029h",
-    "fecha": "2026-11-24T16:23:15.855Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Tema descartado: ¿Qué oculta la extraña vibración del lago Baikal bajo la nieve?",
-    "texto": "Tema descartado: ¿Qué oculta la extraña vibración del lago Baikal bajo la nieve?. No se pudo recuperar material suficiente en esta ronda. No se afirma que el tema sea falso; esta ronda no recuperó material consultable suficiente. Aprobados: 13. Rechazados: 72. Con error: 14. No se publica. Próximo ciclo en 9 h."
-  },
-  {
-    "id": "mwuwls200o3p",
-    "fecha": "2026-11-24T16:23:13.992Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Tema descartado: Sabías que una ciudad subterránea bajo el desierto de Atacama guarda misteriosos túneles de 30 km?",
-    "texto": "Tema descartado: Sabías que una ciudad subterránea bajo el desierto de Atacama guarda misteriosos túneles de 30 km?. No se pudo recuperar material suficiente en esta ronda. No se afirma que el tema sea falso; esta ronda no recuperó material consultable suficiente. Aprobados: 13. Rechazados: 71. Con error: 14. No se publica. Próximo ciclo en 9 h."
-  },
-  {
-    "id": "mwuwlqdsouti",
-    "fecha": "2026-11-24T16:23:11.824Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Tema descartado: Sabías que el lago de la Luna Azul en Argentina desaparece cada 7 años?",
-    "texto": "Tema descartado: Sabías que el lago de la Luna Azul en Argentina desaparece cada 7 años?. No se pudo recuperar material suficiente en esta ronda. No se afirma que el tema sea falso; esta ronda no recuperó material consultable suficiente. Aprobados: 13. Rechazados: 70. Con error: 14. No se publica. Próximo ciclo en 9 h."
-  },
-  {
-    "id": "mwuwloq35ayk",
-    "fecha": "2026-11-24T16:23:09.675Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título con pregunta intrigante o afirmación impactante + elemento de misterio o dato sorprendente + referencia a un caso/tema específico El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (25833 vistas/hora)."
+    "tipo": "listo",
+    "titulo": "Video renderizado: 🌋 ¿Qué secreto ancestral esconde el cráter de la Isla de Pascua?",
+    "texto": "Se renderizó \"🌋 ¿Qué secreto ancestral esconde el cráter de la Isla de Pascua?\" para Lo Que No Sabías (14 MB). Sigue en cola de publicación; este aviso NO significa que ya esté publicado."
   },
   {
     "id": "mwuwhi8xtd78",
@@ -708,5 +670,41 @@
     "tipo": "alerta",
     "titulo": "Guion rechazado: London Underground",
     "texto": "El Verificador no aprobó \"London Underground\" tras 4 intentos: No hay información en el material sobre un secreto escondido durante décadas en el primer metro del mundo. Aprobados: 11. Rechazados: 33. Con error: 9. No se publica. Próximo ciclo en 10 h."
+  },
+  {
+    "id": "mwu53ret4l2a",
+    "fecha": "2026-11-24T03:33:23.717Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: DynaTAC",
+    "texto": "El Verificador no aprobó \"DynaTAC\" tras 4 intentos: La revelación cae al 59 % (106 de 179 palabras antes de ella) y debe caer entre 65 % y 75 %: añade historia antes de la revelación o acórtala. Aprobados: 11. Rechazados: 32. Con error: 9. No se publica. Próximo ciclo en 10 h."
+  },
+  {
+    "id": "mwu51p7sjhmu",
+    "fecha": "2026-11-24T03:31:47.560Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Area 51",
+    "texto": "El Verificador no aprobó \"Area 51\" tras 4 intentos: El material indica que USAF y CIA adquirieron el sitio en 1955, pero no menciona una compra por parte de la CIA ni el propósito específico. Aprobados: 11. Rechazados: 31. Con error: 9. No se publica. Próximo ciclo en 10 h."
+  },
+  {
+    "id": "mwu4zjwzqaug",
+    "fecha": "2026-11-24T03:30:07.379Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Palabra clave impactante + pregunta intrigante o afirmación misteriosa + elemento de sorpresa o promesa de revelación El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (27947 vistas/hora)."
+  },
+  {
+    "id": "mwu30oyu953o",
+    "fecha": "2026-11-24T02:35:01.350Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "La oficina falló",
+    "texto": "Groq 413: {\"error\":{\"message\":\"Request too large for model `openai/gpt-oss-120b` in organization `org_01m7wfcteme16r5n0qkjem583r` service tier `on_demand` on to Aprobados: 11. Rechazados: 30. Con error: 9. Próximo ciclo en 11 h."
   }
 ]

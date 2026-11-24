@@ -1,35 +1,33 @@
 {
   "plan": [
-    "Crear y lanzar una serie de 3 videos de 12 minutos sobre el caso del banco que pagó 175 millones por clientes inexistentes: Jules: Alcanzar 10,000 vistas por video y generar $2,500 en ingresos publicitarios antes del 13 de diciembre",
-    "Desarrollar un mini-documental de 12 minutos sobre la misteriosa muerte de 2 millones de pingüinos, con énfasis en datos científicos y testimonios documentados: Equipo de investigación: Lograr 5,000 vistas y monetizar $1,800 a través de pat",
-    "Investigar y narrar el misterio del Mary Celeste en un formato de 12 minutos, combinando curiosidad y sorpresa sin usar nombres reales: Equipo de guion y edición: Obtener 3,000 vistas y generar $1,200 en ingresos publicitarios antes del 13 "
+    "Crear y lanzar la serie completa de 3 partes sobre el misterio de los pingüinos y la muerte de 2 millones, con un enfoque documental y narrativo atractivo: Equipo de Guion y Producción: Asegurar 10,000 vistas en total y generar al menos 2,0",
+    "Desarrollar un mini-documental de 12 minutos sobre el caso del banco que pagó 175 millones por clientes inexistentes, optimizando SEO y títulos de curiosidad: Equipo de Investigación y SEO: Alcanzar 8,000 vistas y monetizar con al menos 1,5",
+    "Revisar y actualizar el guion del episodio sobre el Mary Celeste, incorporando nuevas fuentes y datos históricos para aumentar la credibilidad y la retención de la audiencia: Editor de Guion y Equipo de Contenido: Lograr 5,000 vistas y 1,00"
   ],
   "ganchos": [
-    "¿Sabías que [TEMA] ocurrió en un solo día? | Imagen de un reloj de arena con la hora marcando 12:00",
-    "¿Qué pasaría si [CIFRA] personas descubrieran un secreto en la noche? | Imagen de un mapa antiguo iluminado por una linterna",
-    "¿Te imaginas que un objeto de [TEMA] se perdió sin dejar rastro? | Imagen de un cofre cerrado con una luz tenue en el fondo",
-    "¿Cuántas veces se ha visto [TEMA] sin explicación? | Imagen de un horizonte nebuloso con una silueta misteriosa",
-    "¿Qué tiene en común [CIFRA] casos que nadie explicó? | Imagen de una serie de huellas digitales sobre un lienzo negro"
+    "[TEMA] en 3 segundos: descubre el secreto que nadie quiere que sepas | Imagen: una sombra que se alarga sobre un mapa antiguo",
+    "¿Sabías que [CIFRA] segundos antes de que sucediera, algo cambió? | Imagen: un reloj de arena con la arena detenida",
+    "En el corazón de [TEMA] se esconde algo que no se ve a simple vista | Imagen: una lupa enfocando una huella misteriosa",
+    "La verdad sobre [TEMA] está oculta entre líneas que nadie lee | Imagen: un libro abierto con páginas que se desvanecen",
+    "¿Qué pasa cuando [CIFRA] personas se reúnen en un lugar secreto? | Imagen: una silueta entre sombras con luces intermitentes"
   ],
   "mejorasGuion": [
-    "1️⃣ Cambia el gancho a algo más intrigante y específico, por ejemplo: \"Sabías que una tela encontrada en 1354 podría cambiar la historia de la religión\". Este título combina curiosidad y sorpresa y sigue la pauta de la a",
-    "2️⃣ Añade ritmo visual con pausas y énfasis: interrumpe la narración con preguntas retóricas y datos impactantes (ej. “¿Y si la imagen se vuelve clara solo en negativo?”) y utiliza subtítulos breves para resaltar fechas ",
-    "3️⃣ Cierra con un llamado a la acción más fuerte y alineado al canal: “Si te intriga este misterio, deja tu teoría en los comentarios y no olvides suscribirte para descubrir la respuesta en el próximo episodio”. El cierr"
+    "1️⃣ Cambia el gancho a algo más sorprendente y específico, por ejemplo: \"¿Sabías que un libro de 240 páginas, escrito en un idioma jamás descifrado, ha desconcertado a los mejores criptógrafos durante 600 años?\" Esto des"
   ],
   "temas": [
     "The Voynich Manuscript",
     "The Dyatlov Pass Incident",
-    "The Green Children of Woolpit",
-    "The Antikythera Mechanism",
-    "The Mothman Prophecies"
+    "The Bimini Road",
+    "The Sinking of the MV RMS Lusitania",
+    "The Mystery of the Antikythera Mechanism"
   ],
   "titulos": [
-    "Sabías que nunca verás [objeto/animal] en [lugar] 🐧 (Parte X/Y)",
-    "Sabías que tres [número] [personas/objetos] caminaron en plena noche polar por [número] [objetos] 🥚 (Parte X/Y)",
-    "Sabías que mataron 2 millones de [objeto/animal]… y no para comérselos 😳 (Parte X/Y)",
-    "Sabías que un [institución] pagó 175 millones por [objetos/servicios] 👻🏦"
+    "Sabías que [verbo] [sustantivo] (Parte [X]/[Y])",
+    "Sabías que [verbo] [sustantivo] [emoji] (Parte [X]/[Y])",
+    "Sabías que [sustantivo] [verbo] [emoji] (Parte [X]/[Y])",
+    "¿Qué oculta realmente [sustantivo]?"
   ],
-  "fecha": "2026-11-24T16:19:34.356Z",
+  "fecha": "2026-11-24T16:27:43.410Z",
   "iniciativas": [
     "Valentina (Directora de contenido): Definir una línea editorial clara y un documento de estilo que guíe a todo el equipo desde el primer video.",
     "Carolina (Coordinador de producción): Crear un tablero de tareas con fechas límite rígidas y alertas automáticas para cada entrega.",
