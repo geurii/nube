@@ -39,13 +39,13 @@ if (!cuadroBarco || tieneAnclaNarrativa(cuadroBarco, 'El sonido submarino sorpre
 const cuadroHidrofono = validarEscena({cielo:['#101820','#26384a'],capas:[
   capa('estrellas',{n:30}), capa('particulas',{n:20}), capa('hidrofono',{x:0.5,y:0.6,w:0.2}),
 ]});
-if (!cuadroHidrofono || !tieneAnclaNarrativa(cuadroHidrofono, 'El sonido submarino fue captado por un hidrofono'))) {
+if (!cuadroHidrofono || !tieneAnclaNarrativa(cuadroHidrofono, 'El sonido submarino fue captado por un hidrofono')) {
   throw new Error('El pintor debe aprobar un hidrófono para una escena de sonido submarino.');
 }
 const cuadroVolcan = validarEscena({cielo:['#101820','#26384a'],capas:[
   capa('estrellas',{n:30}), capa('niebla'), capa('volcan',{x:0.5,y:0.7,w:0.7}),
 ]});
-if (!cuadroVolcan || !tieneAnclaNarrativa(cuadroVolcan, 'La erupcion del volcan cubrio el crater de lava'))) {
+if (!cuadroVolcan || !tieneAnclaNarrativa(cuadroVolcan, 'La erupcion del volcan cubrio el crater de lava')) {
   throw new Error('El pintor debe reconocer un volcán cuando la narración habla de una erupción.');
 }
 const hook16 = 'El barco desapareció y nadie pudo explicar qué ocurrió aquella noche en medio del océano Atlántico.';
