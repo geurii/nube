@@ -531,6 +531,7 @@ try {
   const materialRecuperado = fuentes.filter((f) => !f.apoyo).map((f) => `### FUENTE CONSULTADA ${f.url}\n${f.texto}`).join('\n\n');
   const material = materialRecuperado || `MODO FICCIÓN EXPLÍCITA: no se recuperó documentación consultable para "${TEMA}". Solo se permite crear un relato original de misterio claramente presentado como ficción; no atribuyas hechos, fechas, cifras, lugares ni causas al mundo real. La narración debe decir explícitamente que es un relato ficticio y nunca fingir que ocurrió.`;
 
+  const GARANTIA = enGarantia(CANAL_ID);
   let retencionPanel = null;
   let escenas = [], titulo = TEMA, descripcion = '', hashtags = [], problemas = [], aprobado = false, intentos = 0, puntaje = null, critica = '';
   for (let intento = 1; intento <= 4 && !aprobado; intento++) {
