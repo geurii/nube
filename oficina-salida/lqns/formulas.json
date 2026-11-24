@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-24T23:02:56.674Z",
+  "actualizado": "2026-11-24T23:05:02.280Z",
   "canalesLeidos": 9,
   "videosRevisados": 133,
   "mejores": [
@@ -8,24 +8,24 @@
       "idioma": "en",
       "titulo": "Why Is Antarctica Closed? The Operation Highjump Mystery",
       "publicado": "2026-11-20T01:00:08.000Z",
-      "vistas": 2934337,
-      "vistasPorHora": 24857
+      "vistas": 2935519,
+      "vistasPorHora": 24860
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "Always open your fan mail",
       "publicado": "2026-11-21T19:00:32.000Z",
-      "vistas": 1217909,
-      "vistasPorHora": 16017
+      "vistas": 1216860,
+      "vistasPorHora": 15996
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "How Skydiving Changed Will Smith's Life!",
       "publicado": "2026-11-17T17:00:07.000Z",
-      "vistas": 2256695,
-      "vistasPorHora": 12966
+      "vistas": 2255741,
+      "vistasPorHora": 12958
     },
     {
       "canal": "The Why Files",
@@ -33,7 +33,7 @@
       "titulo": "The Basement: Close Encounters Compilation | Abductions, Missing Time & Contact",
       "publicado": "2026-11-23T18:00:10.000Z",
       "vistas": 341059,
-      "vistasPorHora": 11742
+      "vistasPorHora": 11728
     },
     {
       "canal": "The Why Files",
@@ -41,8 +41,19 @@
       "titulo": "America Is Hiding Something Underground",
       "publicado": "2026-11-18T18:00:14.000Z",
       "vistas": 1401649,
-      "vistasPorHora": 9404
+      "vistasPorHora": 9402
     }
   ],
-  "formula": null
+  "formula": {
+    "formula": "Pregunta intrigante + elemento misterioso o prohibido + pista de revelación impactante",
+    "ganchos": [
+      "¿Qué oculta [lugar/objeto] que nadie se atreve a investigar?",
+      "Descubre la verdad detrás de [evento] que cambió todo",
+      "El secreto de [tema] que la mayoría quiere mantener en silencio"
+    ],
+    "evitar": [
+      "Títulos demasiado genéricos sin una promesa clara de misterio",
+      "Uso excesivo de palabras de relleno que diluyen la tensión inicial"
+    ]
+  }
 }

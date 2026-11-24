@@ -1,0 +1,113 @@
+{
+  "titulo": "🌋 El lago que explotó y mató a 1746 personas en una noche",
+  "formato": "largo",
+  "orientacion": "horizontal",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-lake-nyos-disaster.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T23:06:33.494Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿¿Qué oculta un lago tranquilo que en una noche mató a 1746…?",
+  "publicacion": {
+    "titulo": "🌋 El lago que explotó y mató a 1746 personas en una noche",
+    "descripcion": "Descubre la verdad detrás de la catástrofe del Lago Nyos en Camerún, donde una erupción límnica liberó una nube mortal de dióxido de carbono, asfixiando a todo en 25 kilómetros a la redonda.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\n#LagoNyos #LakeNyosDisaster #Disaster #HistoriaOculta #MisteriosSinResolver"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El gancho es efectivo pero la historia se alarga en detalles técnicos. La revelación llega tarde y el cierre es débil. Falta un giro impactante antes del 70% para sostener el interés."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Qué oculta un lago tranquilo que en una noche mató a mil setecientos cuarenta y seis personas y tres mil quinientos animales?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El veintiuno de agosto de mil novecientos ochenta y seis, el Lago Nyos en Camerún se convirtió en un escenario de muerte.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Una erupción límnica liberó entre cien mil y trescientos mil toneladas de dióxido de carbono.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "La nube de gas se elevó a cien kilómetros por hora y luego descendió sobre los pueblos cercanos.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El gas, más pesado que el aire, asfixió a todo ser vivo en un radio de veinticinco kilómetros.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "La causa exacta de la liberación de gas sigue siendo un misterio para los científicos.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Algunos geólogos sospechan un derrumbe en el lecho del lago como posible desencadenante.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Otros teorizan sobre una pequeña erupción volcánica bajo el agua.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Una tercera hipótesis apunta a la lluvia fría cayendo sobre un lado del lago.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Incluso se ha sugerido un pequeño terremoto, aunque no hay testimonios que lo confirmen.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: se ha instalado un sistema de desgasificación para prevenir futuras erupciones.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Podría ocurrir algo así en otros lagos del mundo? Sígueme para descubrir más misterios.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

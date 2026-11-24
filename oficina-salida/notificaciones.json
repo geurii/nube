@@ -1,5 +1,23 @@
 [
   {
+    "id": "mwvb0gjpzf7k",
+    "fecha": "2026-11-24T23:06:33.541Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Lake Nyos disaster",
+    "texto": "El Verificador no aprobó \"Lake Nyos disaster\" tras 4 intentos: El video largo necesita entre 1200 y 1350 palabras narradas para durar 8–10 minutos. Ahora tiene 177. Amplía o recorta con hechos del MATERIAL; no rellenes ni i Aprobados: 16. Rechazados: 93. Con error: 20. No se publica. Próximo ciclo en 2 h."
+  },
+  {
+    "id": "mwvayi904rlv",
+    "fecha": "2026-11-24T23:05:02.436Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante + elemento misterioso o prohibido + pista de revelación impactante El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (24860 vistas/hora)."
+  },
+  {
     "id": "mwvamx48uamv",
     "fecha": "2026-11-24T22:56:01.832Z",
     "canal": "lqns",
@@ -678,23 +696,5 @@
     "tipo": "alerta",
     "titulo": "Guion rechazado: Shroud of Turin",
     "texto": "El Verificador no aprobó \"Shroud of Turin\" tras 4 intentos: La revelación cae al 64 % (80 de 125 palabras antes de ella) y debe caer entre 65 % y 75 %: añade historia antes de la revelación o acórtala. Aprobados: 11. Rechazados: 52. Con error: 10. No se publica. Próximo ciclo en 1 h."
-  },
-  {
-    "id": "mwuohflmc4ev",
-    "fecha": "2026-11-24T12:35:54.298Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título con pregunta intrigante o afirmación impactante + elemento de misterio o dato sorprendente + referencia a un caso/objeto concreto El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (26523 vistas/hora)."
-  },
-  {
-    "id": "mwuob5zeg19p",
-    "fecha": "2026-11-24T12:31:01.898Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: ",
-    "texto": "El Verificador no aprobó \"\" tras 0 intentos: Tema descartado (no se pudo cargar):  Aprobados: 11. Rechazados: 51. Con error: 10. No se publica. Próximo ciclo en 1 h."
   }
 ]
