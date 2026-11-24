@@ -58,7 +58,7 @@ const temaYaRegistrado = (tema) => {
   ].map(tituloDe).map(claveTema).filter((x) => x.length >= 4);
   const k = claveTema(tema);
   // Bloop ya fue producido: exclusión editorial permanente, incluso si el historial local se perdió.
-  if (k === 'bloop') return true;
+  if (k === 'bloop' && process.env.MODO_PRUEBA !== '1') return true;
   return k.length >= 4 && vistos.some((v) => v === k || (k.length >= 6 && v.length >= 6 && (v.includes(k) || k.includes(v))));
 };
 /** Próximo ciclo automático: Short diario a la 01:23 UTC y video largo los domingos a las 00:23 UTC. */
@@ -344,7 +344,7 @@ const elegirTema = async (modelo) => {
   const yaHecho = (x) => {
     if (fueRechazada(x, CANAL_ID)) return true;
     // No volver a gastar ciclos ni avisos con Bloop/The Bloop: ya está producido.
-    if (claveTema(x) === 'bloop') return true;
+    if (claveTema(x) === 'bloop' && process.env.MODO_PRUEBA !== '1') return true;
     const k = clave(x);
     return k.length >= 4 && vistos.some((v) => v === k || (k.length >= 6 && v.length >= 6 && (v.includes(k) || k.includes(v))));
   };
