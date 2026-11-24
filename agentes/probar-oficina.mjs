@@ -23,7 +23,7 @@ process.env.GROQ_API_KEY = 'prueba';
 process.env.FORMATO = 'short';
 
 const CTA_LQNS = '¿Qué explicación te convence sobre "Bloop"? Sígueme para descubrir más misterios.';
-const {validarGancho, validarRevelacion} = await import(pathToFileURL(path.join(aqui, 'reglas-guion.mjs')).href);
+const {validarGancho, validarRevelacion, validarLongitudGuion} = await import(pathToFileURL(path.join(aqui, 'reglas-guion.mjs')).href);
 const {validarEscena, tieneAnclaNarrativa, sujetosDelTexto} = await import(pathToFileURL(path.join(aqui, 'pintor.mjs')).href + '?anclas');
 const capa = (t, extra = {}) => ({t, ...extra});
 const cuadroSoloAdornos = validarEscena({cielo:['#101820','#26384a'],capas:[
@@ -75,6 +75,11 @@ const ratio82 = [escena('hook','',66), escena('revelacion','',1), escena('veredi
 if (!validarRevelacion(ratio72).valido) throw new Error('Debe aprobar una revelación ubicada al 70 %.');
 if (!validarRevelacion(ratio79).valido) throw new Error('Debe tolerar una revelación ubicada al 79 %.');
 if (validarRevelacion(ratio82).valido) throw new Error('Debe rechazar una revelación ubicada al 82 %.');
+const largo1250 = [{texto: Array.from({length:1250},(_,i)=>`dato${i}`).join(' ')}];
+const largo1100 = [{texto: Array.from({length:1100},(_,i)=>`dato${i}`).join(' ')}];
+const largo1400 = [{texto: Array.from({length:1400},(_,i)=>`dato${i}`).join(' ')}];
+if (!validarLongitudGuion(largo1250).valido) throw new Error('Debe aprobar un guion largo de 1250 palabras.');
+if (validarLongitudGuion(largo1100).valido || validarLongitudGuion(largo1400).valido) throw new Error('Debe rechazar guiones largos fuera del rango 1200–1350 palabras.');
 const CTA_DEMO = CTA_LQNS;
 const hacer = (cta) => [
   {tipo: 'hook', texto: 'El oceano registro un sonido imposible en 1997.'},
