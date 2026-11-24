@@ -1,6 +1,6 @@
 name: Oficina
 
-# Departamentos: investiga en ocho fuentes institucionales independientes; Wikipedia es opcional. Groq escribe, el Editor critica y el Verificador contrasta los datos.
+# Departamentos: los largos buscan documentales de 8+ minutos en canales establecidos y exigen 3 dominios web independientes; Wikipedia solo aporta contexto.
 # y el Escenógrafo elige los fondos. Resultado en oficina-salida/ (guion + informe + estado para la oficina 3D).
 on:
   schedule:
@@ -24,7 +24,7 @@ on:
         description: 'Opcional: solo este canal (ej: lqns). Vacio = todos los activos'
         required: false
       palabras:
-        description: 'Solo para largo: palabras aproximadas (ej: 900)'
+        description: 'Solo para largo: 1200–1350 palabras para 8–10 minutos'
         required: false
         default: '1250'
 
