@@ -291,7 +291,7 @@ const elegirTema = async (modelo) => {
   const estrategia = leerJson(path.join(SALIDA, 'estrategia.json'), {});
   const ideasEstrategia = (estrategia.ideas ?? []).map((x) => x.temaWikipedia ?? x.tema ?? x.titulo).filter(Boolean);
   const ideasEquipo = filtrarTemas(leerJson(path.join(SALIDA, 'ayudas.json'), {}).temas ?? [], CANAL_ID);
-  const inventario = [...new Set([...hechos, ...guiones, ...producidos, ...subidosTitulos, ...ideasJules, ...ideasEstrategia].map((x) => String(x ?? '').trim()).filter(Boolean))];
+  const inventario = [...new Set([...hechos, ...guiones, ...producidos, ...subidosTitulos, ...ideasJules, ...ideasEstrategia, ...ideasEquipo].map((x) => String(x ?? '').trim()).filter(Boolean))];
   const vistos = inventario.map(clave).filter((k) => k.length >= 4);
   const yaHecho = (x) => {
     if (fueRechazada(x, CANAL_ID)) return true;
