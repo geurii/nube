@@ -13,7 +13,7 @@ import {crearVisuales} from './visuales.mjs';
 import {investigarEnLaWeb} from './investigar-web.mjs';
 import {limpiarParaVoz} from './texto-voz.mjs';
 import {validarGancho, medirRevelacion, validarRevelacion, validarLongitudGuion} from './reglas-guion.mjs';
-import {textoDeRadar} from './radar.mjs';
+import {textoDeRadar, buscarReferenciasLargas} from './radar.mjs';
 import {completarHashtags} from './hashtags.mjs';
 import {ganchoDe} from './titular.mjs'; // titular gigante de los primeros segundos (nunca cortado a mitad de frase)
 import {evaluarGuionConPanel} from './panel-guion.mjs';
@@ -23,7 +23,6 @@ import {enGarantia} from './garantia.mjs';
 import {chatAlternativo, proveedoresConLlave, modelosDisponibles, diagnosticoRespaldo} from './llm.mjs';
 import {sinEnlaces} from './sin-enlaces.mjs';
 import {datosDeVideo, mensajesDeDesglose} from './analizar-videos.mjs';
-import {buscarReferenciasLargas} from './radar.mjs';
 import {seleccionarFuentesParaGuion, materialDesdeFuentes} from './fuentes-guion.mjs';
 
 const KEY = process.env.GROQ_API_KEY;
@@ -377,7 +376,7 @@ const elegirTema = async (modelo) => {
   let videosRadar = (FORMATO === 'largo' ? (radar?.referenciasLargas ?? []) : (radar?.videosVirales ?? [])).slice(0, 24);
   if (FORMATO === 'largo' && !videosRadar.length) {
     informe.push('El radar no dejó referencias largas guardadas; se buscan directamente en canales establecidos y consultas del nicho.');
-    videosRadar = await buscarReferenciasLargas({nicho: CONFIG.nicho, canales: CONFIG.vigilar ?? [], maxResultados: 14, limiteMs: 110000, nota: (t) => informe.push(t)});
+    videosRadar = await buscarReferenciasLargas({nicho: CONFIG.nicho, canales: CONFIG.vigilar ?? [], maxResultados: 14, limiteMs: 150000, nota: (t) => informe.push(t)});
   }
   let referenciasEvaluadas = 0;
   for (const viral of videosRadar) {
