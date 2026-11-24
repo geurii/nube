@@ -337,7 +337,7 @@ export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: n
     }
     case 'cerveza': {
       const cx=X(e.x,0.5), base=Y(e.y,0.86), w=num(e.w,0.94,0.58,1)*lw, h=num(e.h,0.38,0.18,0.68)*lh;
-      const r=rampaDeE(e,'#c58a32',5), x0=cx-w/2, x1=cx+w/2, crest=[];
+      const r=rampaDeE(e,'#c58a32',5), x0=cx-w/2, x1=cx+w/2, crest:Pt[]=[];
       for(let i=0;i<=22;i++){
         const q=i/22, x=x0+q*w;
         const wave=Math.sin(q*Math.PI*3+t*1.15)*h*0.1+Math.sin(q*Math.PI*6-t*0.7)*h*0.035;
