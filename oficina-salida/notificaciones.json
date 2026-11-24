@@ -1,5 +1,14 @@
 [
   {
+    "id": "mwuinp6t05rc",
+    "fecha": "2026-11-24T09:52:48.965Z",
+    "canal": "lqns",
+    "canalNombre": "Vigilante",
+    "tipo": "alerta",
+    "titulo": "Llevan más de 36 horas sin publicar",
+    "texto": "El último video público salió hace 41 horas. La meta exige constancia."
+  },
+  {
     "id": "mwub0poemucp",
     "fecha": "2026-11-24T06:18:59.198Z",
     "canal": "lqns",
@@ -684,14 +693,5 @@
     "tipo": "reporte",
     "titulo": "Fórmula del momento",
     "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante + elemento misterioso o prohibido + pista de revelación El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (37976 vistas/hora)."
-  },
-  {
-    "id": "mwrl930ct8iw",
-    "fecha": "2026-11-22T08:42:07.356Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: Stonehenge",
-    "texto": "El Verificador no aprobó \"Stonehenge\" tras 4 intentos: El Editor puso 5/10 (mínimo 6). Reescribe arreglando esto: El hook es débil y demasiado genérico. El ritmo es lento y hay frases largas. Falta un cierre contund Aprobados: 9. Rechazados: 13. Con error: 8. No se publica. Próximo ciclo en 5 h."
   }
 ]

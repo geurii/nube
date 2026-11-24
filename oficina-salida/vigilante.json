@@ -1,8 +1,8 @@
 {
   "alertas": {
-    "corrida-Oficina": "2026-11-23T23:52:29.224Z"
+    "sin-publicar": "2026-11-24T09:52:48.964Z"
   },
-  "fecha": "2026-11-23T23:52:29.409Z",
+  "fecha": "2026-11-24T09:52:49.150Z",
   "ok": [
     "YouTube conectado",
     "analítica autorizada",
@@ -10,11 +10,10 @@
     "Gemini responde",
     "Windsor responde",
     "Buffer responde",
-    "minutos de GitHub: 1292 de 2000",
-    "hay publicaciones recientes"
+    "minutos de GitHub: 1374 de 2000"
   ],
   "problemas": [
-    "Falló \"Oficina\" en GitHub"
+    "Llevan más de 36 horas sin publicar"
   ],
   "resumenDia": "2026-11-23"
 }
