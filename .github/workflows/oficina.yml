@@ -26,7 +26,7 @@ on:
       palabras:
         description: 'Solo para largo: palabras aproximadas (ej: 900)'
         required: false
-        default: '1400'
+        default: '1250'
 
 permissions:
   contents: write
@@ -210,7 +210,7 @@ jobs:
       - name: Marcar progreso del guion
         if: always() && steps.pres.outputs.ok != 'no'
         run: |
-          if node agentes/ultimo-aprobado.mjs | grep -q 'oficina: aprobado'; then PROGRESO_DE=oficina node agentes/progreso.mjs 35 'Guion aprobado: preparando voz y video'; else PROGRESO_DE=oficina node agentes/progreso.mjs 0 'Sin guion aprobado en este ciclo (proveedores de IA temporalmente no disponibles o tema rechazado): se reintenta'; fi
+          if node agentes/ultimo-aprobado.mjs; then PROGRESO_DE=oficina node agentes/progreso.mjs 35 'Guion aprobado: preparando voz y video'; else PROGRESO_DE=oficina node agentes/progreso.mjs 0 'Sin guion aprobado en este ciclo (proveedores de IA temporalmente no disponibles o tema rechazado): se reintenta'; fi
       - name: Guardar el resultado en el repositorio
         if: always() && steps.pres.outputs.ok != 'no'
         run: |
