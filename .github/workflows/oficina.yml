@@ -4,8 +4,8 @@ name: Oficina
 # y el Escenógrafo elige los fondos. Resultado en oficina-salida/ (guion + informe + estado para la oficina 3D).
 on:
   schedule:
-    - cron: '23 1,4,7,10,13,16,19,22 * * *'   # Shorts: cada 3 horas (UTC)
-    - cron: '23 0,12 * * *'   # videos largos: cada 12 horas (UTC)
+    - cron: '23 1 * * *'     # Un Short diario (UTC)
+    - cron: '23 0 * * 0'     # Un video largo semanal, domingo (UTC)
   push:
     paths:
       - 'agentes/oficina.disparo'
@@ -63,7 +63,7 @@ jobs:
               echo "ok=no" >> "$GITHUB_OUTPUT"
               echo "El estado de la secuencia no se puede leer: se pausa de forma segura."
             elif [ "$fase" = "largo" ]; then
-              if [ "${{ github.event.schedule }}" = '23 0,12 * * *' ]; then
+              if [ "${{ github.event.schedule }}" = '23 0 * * 0' ]; then
                 echo "formato=largo" >> "$GITHUB_OUTPUT"
                 echo "Secuencia extraordinaria: este horario reintenta el video largo pendiente."
               else
@@ -71,7 +71,7 @@ jobs:
                 echo "Secuencia extraordinaria: se omiten los Shorts hasta publicar el largo."
               fi
             elif [ "$fase" = "short-encolado" ]; then
-              if [ "${{ github.event.schedule }}" = '23 1,4,7,10,13,16,19,22 * * *' ]; then
+              if [ "${{ github.event.schedule }}" = '23 1 * * *' ]; then
                 echo "formato=short" >> "$GITHUB_OUTPUT"
                 echo "Secuencia extraordinaria: este horario reintenta el Short pendiente."
               else
