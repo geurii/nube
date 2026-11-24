@@ -12,7 +12,7 @@ import {textoDeLecciones} from './lecciones.mjs';
 import {crearVisuales} from './visuales.mjs';
 import {investigarEnLaWeb} from './investigar-web.mjs';
 import {limpiarParaVoz} from './texto-voz.mjs';
-import {validarGancho, medirRevelacion, validarRevelacion} from './reglas-guion.mjs';
+import {validarGancho, medirRevelacion, validarRevelacion, validarLongitudGuion} from './reglas-guion.mjs';
 import {textoDeRadar} from './radar.mjs';
 import {completarHashtags} from './hashtags.mjs';
 import {ganchoDe} from './titular.mjs'; // titular gigante de los primeros segundos (nunca cortado a mitad de frase)
@@ -31,7 +31,7 @@ if (!CONFIG) { console.error(`ERROR: el canal "${CANAL_ID}" no existe en agentes
 let TEMA = (process.env.TEMA ?? '').trim();
 const FORMATO = process.env.FORMATO === 'largo' ? 'largo' : 'short';
 const IDIOMAS = (process.env.IDIOMAS ? process.env.IDIOMAS.split(',') : CONFIG.idiomasFuente ?? ['es', 'en']).map((x) => x.trim()).filter(Boolean);
-const PALABRAS = FORMATO === 'largo' ? Math.max(1200, Number(process.env.PALABRAS) || 1400) : 140;
+const PALABRAS = FORMATO === 'largo' ? Math.max(1200, Math.min(1350, Number(process.env.PALABRAS) || 1250)) : 140;
 const CTA = 'Sígueme para descubrir más misterios.';
 const UA = 'OficinaVideos/1.0 (proyecto educativo)';
 const SALIDA = path.resolve('oficina-salida', CANAL_ID);
@@ -218,7 +218,7 @@ const groqDirecto = async (modelo, mensajes, maxTokens = FORMATO === 'largo' ? 4
           model: mod,
           messages: mensajes,
           temperature: 0.4,
-          max_tokens: maxTokens > 3000 ? Math.min(maxTokens, 6500) : Math.min(maxTokens ?? 2500, FORMATO === 'largo' ? 2200 : 1200),
+          max_tokens: maxTokens > 3000 ? Math.min(maxTokens, 6500) : Math.min(maxTokens ?? (FORMATO === 'largo' ? 3600 : 1200), FORMATO === 'largo' ? 3600 : 1200),
           ...(json ? {response_format: {type: 'json_object'}} : {}),
           // los modelos "gpt-oss" razonan antes de responder: poco razonamiento = más espacio para el texto
           ...(mod.includes('gpt-oss') ? {reasoning_effort: 'low'} : {}),
@@ -268,12 +268,12 @@ const groq = async (modelo, mensajes, maxTokens, json = false) => {
 };
 const groqUnaRonda = async (modelo, mensajes, maxTokens, json = false) => {
   if (!KEY && proveedoresConLlave().length) {
-    const alternativo = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: maxTokens > 3000 ? Math.min(maxTokens, 6500) : Math.min(maxTokens ?? 2500, FORMATO === 'largo' ? 2200 : 1200), json});
+    const alternativo = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: maxTokens > 3000 ? Math.min(maxTokens, 6500) : Math.min(maxTokens ?? (FORMATO === 'largo' ? 3600 : 1200), FORMATO === 'largo' ? 3600 : 1200), json});
     if (alternativo) { console.log(`Groq sin clave: se usó ${alternativo.proveedor} (${alternativo.modelo}).`); return alternativo.texto; }
     throw new Error('Groq no tiene clave y ningún proveedor alternativo respondió.');
   }
   if (Date.now() < groqBloqueadoHasta && proveedoresConLlave().length) {
-    const rapido = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: maxTokens > 3000 ? Math.min(maxTokens, 6500) : Math.min(maxTokens ?? 2500, FORMATO === 'largo' ? 2200 : 1200), json});
+    const rapido = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: maxTokens > 3000 ? Math.min(maxTokens, 6500) : Math.min(maxTokens ?? (FORMATO === 'largo' ? 3600 : 1200), FORMATO === 'largo' ? 3600 : 1200), json});
     if (rapido) { console.log(`Groq en límite: se usó ${rapido.proveedor} (${rapido.modelo}).`); return rapido.texto; }
   }
   try { return await groqDirecto(modelo, mensajes, maxTokens, json); }
@@ -281,7 +281,7 @@ const groqUnaRonda = async (modelo, mensajes, maxTokens, json = false) => {
     if (e.fatal && !e.groq413 && !e.groqJson400 && !proveedoresConLlave().length) throw e;
     if (e.groq413) console.warn('Groq 413: se deriva al proveedor alternativo.');
     if (e.groqJson400) console.warn('Groq rechazó el JSON (400): se deriva al proveedor alternativo.');
-    const alt = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: maxTokens > 3000 ? Math.min(maxTokens, 6500) : Math.min(maxTokens ?? 2500, FORMATO === 'largo' ? 2200 : 1200), json});
+    const alt = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: maxTokens > 3000 ? Math.min(maxTokens, 6500) : Math.min(maxTokens ?? (FORMATO === 'largo' ? 3600 : 1200), FORMATO === 'largo' ? 3600 : 1200), json});
     if (!alt) { e.message += ` Respaldos: ${[...new Set(diagnosticoRespaldo)].join('; ').slice(0, 450) || 'ninguno con llave'}.`; throw e; }
     console.log(`Groq no respondió: se usó ${alt.proveedor} (${alt.modelo}).`);
     return alt.texto;
@@ -628,6 +628,10 @@ const palabrasDe = (e) => e.texto.split(/\s+/).filter(Boolean).length;
 const comprobar = (escenas) => {
   const p = [];
   const textoCompleto = escenas.map((e) => String(e.texto ?? '')).join(' ');
+  if (FORMATO === 'largo') {
+    const longitud = validarLongitudGuion(escenas);
+    if (!longitud.valido) p.push({frase: `Guion largo de ${longitud.palabras} palabras`, motivo: `El video largo necesita entre ${longitud.minimo} y ${longitud.maximo} palabras narradas para durar 8–10 minutos. Ahora tiene ${longitud.palabras}. Amplía o recorta con hechos del MATERIAL; no rellenes ni inventes.`});
+  }
   if (FORMATO === 'largo') escenas.forEach((e, n) => { const cuenta = palabrasDe(e); if (cuenta > 22) p.push({frase: e.texto, motivo: `La escena ${n + 1} tiene ${cuenta} palabras. Divídela en escenas separadas de máximo 22 palabras para que las imágenes cambien cada 3 segundos.`}); });
   if (/recuerda.{0,40}ficci[oó]n|esto es ficci[oó]n|es (?:un )?relato ficticio|no es real|contenido ficticio|historia inventada/i.test(textoCompleto)) p.push({frase: '(descargo meta)', motivo: 'PROHIBIDO: no mencionar ficción ni insertar advertencias meta en la narración.'});
   const gancho = validarGancho(escenas[0]?.texto, FORMATO);
