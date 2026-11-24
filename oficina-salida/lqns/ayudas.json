@@ -1,35 +1,33 @@
 {
   "plan": [
-    "Crear y lanzar la serie de 3 videos sobre el caso del banco que pagó 175 millones por clientes inexistentes: Equipo de Investigación y Guion: Generar al menos 10,000 vistas combinadas y monetizar $1,200 en ingresos publicitarios antes del 1",
-    "Desarrollar el mini-documental de 12 minutos sobre el misterio del Mary Celeste, con enfoque narrativo y datos históricos verificados: Equipo de Producción y Postproducción: Alcanzar 5,000 vistas y monetizar $800 en ingresos publicitarios a",
-    "Planificar y ejecutar la campaña de promoción para los videos sobre los pingüinos (3 partes) y el caso del banco, incluyendo teasers y colaboraciones con canales nicho: Departamento de Marketing y Relaciones Públicas: Incrementar el total d"
+    "Crear la serie de 12 minutos sobre el misterio del Mary Celeste: Mariana (Editor de guion): Generar al menos 5,000 vistas y 300 interacciones (likes + comentarios) antes del 13 de diciembre, con el objetivo de alcanzar 50,000 USD de ingreso",
+    "Desarrollar el mini-documental de 12 minutos sobre la muerte de 2 millones de pingüinos: Jules (Jefa de Producción): Alcanzar 10,000 vistas y 500 interacciones antes del 13 de diciembre, con la meta de monetizar 80,000 USD a través de patro",
+    "Lanzar la serie de 3 videos de 12 minutos sobre el caso del banco que pagó 175 millones: Carlos (Director de Contenido): Obtener 15,000 vistas y 700 interacciones antes del 13 de diciembre, apuntando a 120,000 USD de ingresos publicitarios "
   ],
   "ganchos": [
-    "¿Sabías que [TEMA] apareció en la escena de un [CIFRA] años atrás? | Imagen de un viejo mapa o foto antigua con un punto rojo resaltado",
-    "[CIFRA] segundos antes de que [TEMA] desapareciera, se escuchó un susurro que nadie captó. | Imagen de un reloj de arena con la arena casi agotada",
-    "En la noche más oscura, [TEMA] se iluminó por [CIFRA] segundos. ¿Qué pasó? | Imagen de un cielo nocturno con una luz puntual y una sombra misteriosa",
-    "[TEMA] dejó una pista que solo se puede ver con [CIFRA] filtros especiales. | Imagen de una foto en blanco y negro con un filtro de color brillante resaltando un detalle",
-    "[TEMA] se perdió en el tiempo, pero el registro de [CIFRA] años lo revive. | Imagen de una cinta de video antigua con un número de reel visible"
+    "¿Sabías que [TEMA] puede cambiar tu percepción del mundo? | Imagen de una silueta misteriosa frente a un horizonte nocturno",
+    "[CIFRA] segundos antes de que [TEMA] sucediera, algo inesperado ocurrió. | Imagen de un reloj con el tiempo detenido y una sombra al fondo",
+    "Cuando [TEMA] aparece, la historia se detiene por un instante. | Imagen de una puerta antigua con luz filtrándose entre las rendijas",
+    "El secreto de [TEMA] está escondido entre lo que ves y lo que no. | Imagen de un espejo roto reflejando un paisaje desconocido",
+    "Si [TEMA] fuera una pista, ¿cuál sería el siguiente paso? | Imagen de un mapa antiguo con marcas resaltadas y una brújula apuntando al centro"
   ],
   "mejorasGuion": [
-    "Reformular el gancho inicial para que combine curiosidad y sorpresa, por ejemplo: “¿Sabías que en un pequeño pueblo de Nuevo México un zumbido invisible ahuyenta a sus habitantes?” – esto capta la atención en los primero",
-    "Ajustar el ritmo introduciendo micro‑cliffhangers cada 15‑20 segundos: presentar primero el dato del 2 % de residentes, luego, justo antes del minuto 1, lanzar la anécdota del residente que escuchó el hum a 48 km, y desp",
-    "Crear un cierre más contundente y llamativo que invite a la interacción: en lugar de “¿Qué opinas? Comparte…”, usar una pregunta abierta que incite a comentar teorías y prometer un próximo video que explore otro “hum” fa"
+    "1️⃣ Cambia el gancho a algo más impactante y específico, por ejemplo: \"¿Sabías que una isla oculta en la niebla de Mahone Bay guarda un tesoro que nadie ha encontrado?\" Esto crea curiosidad inmediata y evita la frase gen"
   ],
   "temas": [
-    "The Lost City of Petra",
-    "The Mystery of the Voynich Manuscript",
-    "The Bermuda Triangle",
-    "The Strange Case of the Dancing Plague of 1518",
-    "The Sphinx of Giza"
+    "The Enigma of the Voynich Manuscript",
+    "The Mystery of the Oak Island Money Pit",
+    "The Phenomenon of the Bizarre White Rain in China",
+    "The Unexplained Disappearance of the Roanoke Colony's Settlers",
+    "The Enigmatic Sphinx of Giza's Hidden Chamber"
   ],
   "titulos": [
-    "Sabías que <acción> <objeto> <adjetivo> (<Parte X/3>)",
-    "Sabías que <número> <objeto> <acción> (<Parte X/3>)",
-    "Sabías que <objeto> <verbo> <número> <adjetivo> (<Parte X/3>)",
-    "Sabías que <objeto> <verbo> <número> <adjetivo> (<Parte X/3>)"
+    "Sabías que nunca verás <objeto>",
+    "Sabías que <número> <acción>",
+    "Sabías que <acción> <número> de <objeto>",
+    "¿Qué oculta realmente el <objeto>?"
   ],
-  "fecha": "2026-11-24T04:13:42.045Z",
+  "fecha": "2026-11-24T10:21:31.941Z",
   "iniciativas": [
     "Valentina (Directora de contenido): Definir una línea editorial clara y un documento de estilo que guíe a todo el equipo desde el primer video.",
     "Carolina (Coordinador de producción): Crear un tablero de tareas con fechas límite rígidas y alertas automáticas para cada entrega.",
