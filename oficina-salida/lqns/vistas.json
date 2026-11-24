@@ -1,14 +1,14 @@
 {
-  "fecha": "2026-11-23T08:06:21.721Z",
+  "fecha": "2026-11-24T00:16:21.155Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 2237,
-  "ganadasDesdeElUltimoCiclo": 0,
+  "total": 2243,
+  "ganadasDesdeElUltimoCiclo": 6,
   "videos": [
     {
       "id": "hVawPPY5K_Y",
       "titulo": "⚡ 1884: El inventor que encendió Niágara con su motor AC",
       "publicado": "2026-11-22T16:44:58+00:00",
-      "vistas": 34
+      "vistas": 38
     },
     {
       "id": "FEwqFlpnAe4",
@@ -20,7 +20,7 @@
       "id": "9CKxsZ7hmUg",
       "titulo": "🌊 El Bloop: ¡5,000 km de misterio bajo el hielo!",
       "publicado": "2026-11-22T07:41:49+00:00",
-      "vistas": 26
+      "vistas": 27
     },
     {
       "id": "HHnlDcvo_vU",
@@ -50,7 +50,7 @@
       "id": "yp4bUZPqnS4",
       "titulo": "Sabías que dos jóvenes genios de una lista famosa suman 40 años de cárcel ⚖️",
       "publicado": "2026-11-21T04:00:38+00:00",
-      "vistas": 22
+      "vistas": 23
     },
     {
       "id": "YXozgtk50pI",
@@ -247,6 +247,10 @@
     {
       "fecha": "2026-11-23T08:06:21.721Z",
       "total": 2237
+    },
+    {
+      "fecha": "2026-11-24T00:16:21.155Z",
+      "total": 2243
     }
   ]
 }
