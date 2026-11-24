@@ -1,0 +1,70 @@
+{
+  "titulo": "Australia declaró guerra a los emúes en 1932... y perdió 🦩",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-emu-war.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T12:55:13.382Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿Australia declaró guerra a los emúes en 1932?",
+  "publicacion": {
+    "titulo": "Australia declaró guerra a los emúes en 1932... y perdió 🦩",
+    "descripcion": "Descubre la historia real detrás de la 'Guerra de los Emúes', un intento fallido del ejército australiano por controlar una plaga de aves. Un enfrentamiento inesperado con un giro sorprendente.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Emu_War\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#EmuWar #Australia #HistoriaCuriosa #Animales #Batallas"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El gancho es bueno pero repetitivo con el título. La revelación llega tarde y falta impacto en el cierre. Ritmo aceptable pero sin giros que sostengan el interés."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Sabías que Australia declaró guerra a los emúes en 1932?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Veteranos de la Primera Guerra Mundial recibieron tierras en Western Australia. La Gran Depresión los forzó a cultivar más trigo.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Pero 20000 emúes invadieron los campos, destruyendo cosechas y cercas. Los agricultores exigieron ayuda militar.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El ejército se desplegó con ametralladoras Lewis y 10000 balas. Los emúes, comparados a 'tanques', se dividieron en grupos pequeños.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Tras dos intentos fallidos, el gobierno canceló la operación. Los emúes sobrevivieron y el ejército quedó en ridículo.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Crees que subestimaron a estas aves? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

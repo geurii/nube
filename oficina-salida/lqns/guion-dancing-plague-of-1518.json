@@ -1,0 +1,56 @@
+{
+  "titulo": "💃 La plaga de baile de 1518: ¿histeria o algo más?",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-dancing-plague-of-1518.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T12:53:04.745Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿¿Por qué cientos bailaron hasta morir en 1518?",
+  "publicacion": {
+    "titulo": "💃 La plaga de baile de 1518: ¿histeria o algo más?",
+    "descripcion": "Una ola de danza incontrolable arrasó una ciudad del Sacro Imperio. Descubre qué ocurrió y por qué sigue sin resolverse.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Dancing_plague_of_1518\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#DanzaMisteriosa #Estrasburgo1518 #PlagaDeBaile #HistoriaOscura #Misterios"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El gancho es bueno pero la revelación llega muy tarde. La historia es clara pero falta impacto emocional. El título es largo y poco atractivo."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Por qué cientos bailaron hasta morir en 1518?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En julio de 1518, una mujer comenzó a bailar en Estrasburgo. En días, 30 vecinos la imitaron. Para agosto, entre 50 y 400 giraban sin parar. Las autoridades los obligaron a seguir, pero colapsaban, sudaban y sangraban. La fiebre duró hasta septiembre.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Documentos revelan: hasta 15 muertos por día en el pico.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Histeria colectiva o algo más oscuro? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

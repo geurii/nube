@@ -1,0 +1,70 @@
+{
+  "titulo": "¿Qué misterio dejaron las huellas del diablo en 1855? 👹",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-devil-s-footprints.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T13:04:58.572Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿¿Qué misterio dejaron las huellas del diablo en 1855?",
+  "publicacion": {
+    "titulo": "¿Qué misterio dejaron las huellas del diablo en 1855? 👹",
+    "descripcion": "En 1855, extrañas huellas aparecieron en la nieve de Devon, Inglaterra. Descubre las teorías detrás de este enigma.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Devil%27s_Footprints\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#HuellasDelDiablo #Misterio1855 #Devon #DevilSFootprints #DevilS"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El gancho es intrigante pero falta impacto en la revelación. Ritmo bueno, pero la historia necesita más desarrollo para sostener el interés. El cierre es débil, no invita a la acción."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Qué misterio dejaron las huellas del diablo en 1855?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En febrero de 1855, tras una nevada en Devon, Inglaterra, aparecieron huellas extrañas en la nieve. Medían unos 10 centímetros de largo y 7,6 centímetros de ancho, separadas entre 20 y 41 centímetros.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Cubrieron entre 60 y 160 kilómetros, cruzando tejados, muros y hasta tuberías. Se reportaron en más de 30 lugares, desde Exmouth hasta Dorset.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "La gente especulaba: ¿eran marcas de Satanás? El pánico se extendió, y hasta los púlpitos hablaron del tema.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: un investigador concluyó que algunas eran falsas, otras de animales como burros, y unas pocas, de ratones.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Crees que fue un fenómeno natural o algo más? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}
