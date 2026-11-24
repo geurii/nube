@@ -15,7 +15,7 @@ export const avisarTelefono = (tipo, titulo, texto) => {
   const topic = (process.env.NTFY_TOPIC || '').trim();
   const c = CONFIG[tipo];
   if (!topic) { console.error('[ntfy] No se envió el aviso: falta el secreto NTFY_TOPIC en GitHub.'); return false; }
-  if (!/^[\\w-]{6,64}$/.test(topic)) { console.error('[ntfy] No se envió el aviso: NTFY_TOPIC tiene un formato no válido.'); return false; }
+  if (!/^[\w-]{6,64}$/.test(topic)) { console.error('[ntfy] No se envió el aviso: NTFY_TOPIC tiene un formato no válido.'); return false; }
   if (!c) { console.error(`[ntfy] Tipo de aviso desconocido: ${tipo}`); return false; }
   const cuerpo = JSON.stringify({topic, title: `${c.prefijo}: ${String(titulo).slice(0, 80)}`, message: String(texto).slice(0, 900), priority: c.prioridad, tags: c.tags});
   for (let intento = 1; intento <= 3; intento++) {
