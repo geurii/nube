@@ -111,7 +111,7 @@ const registrar = (resultado, detalle, intentos, extra = {}) => {
 };
 
 const fallar = (m) => { console.error('ERROR:', m); process.exit(1); };
-if (!KEY) { try { registrar('error', 'Falta el secreto GROQ_API_KEY.', 0); } catch { /* sin estado */ } fallar('Falta el secreto GROQ_API_KEY.'); }
+if (!KEY && !proveedoresConLlave().length) { try { registrar('error', 'Falta GROQ_API_KEY y no hay proveedores alternativos configurados.', 0); } catch { /* sin estado */ } fallar('Falta GROQ_API_KEY y no hay proveedores alternativos configurados.'); }
 
 /* ====================== Investigación web general; las fuentes institucionales son solo respaldo ====================== */
 const wikipedia = async (lang, titulo) => {
@@ -215,6 +215,11 @@ const groq = async (modelo, mensajes, maxTokens, json = false) => {
   }
 };
 const groqUnaRonda = async (modelo, mensajes, maxTokens, json = false) => {
+  if (!KEY && proveedoresConLlave().length) {
+    const alternativo = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: Math.min(maxTokens ?? 2500, FORMATO === 'largo' ? 2200 : 1200), json});
+    if (alternativo) { console.log(`Groq sin clave: se usó ${alternativo.proveedor} (${alternativo.modelo}).`); return alternativo.texto; }
+    throw new Error('Groq no tiene clave y ningún proveedor alternativo respondió.');
+  }
   if (Date.now() < groqBloqueadoHasta && proveedoresConLlave().length) {
     const rapido = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: Math.min(maxTokens ?? 2500, FORMATO === 'largo' ? 2200 : 1200), json});
     if (rapido) { console.log(`Groq en límite: se usó ${rapido.proveedor} (${rapido.modelo}).`); return rapido.texto; }
@@ -257,6 +262,7 @@ const pedirJson = async (modelo, mensajes, maxTokens) => {
   throw new Error('El modelo no devolvió un JSON válido tras 3 intentos.');
 };
 const elegirModelo = async () => {
+  if (!KEY && proveedoresConLlave().length) return 'openai/gpt-oss-120b';
   for (let i = 1; i <= 4; i++) {
     try {
       const r = await fetch('https://api.groq.com/openai/v1/models', {headers: {Authorization: `Bearer ${KEY}`}, signal: AbortSignal.timeout(30000)});
