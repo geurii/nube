@@ -167,12 +167,12 @@ export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: n
       const cx=X(e.x,0.5),cy=Y(e.y,0.48),rad=num(e.r,0.18,0.06,0.35)*S*1.8,r=rampaDeE(e,'#d9b66f',5);
       g.ellO(cx,cy,rad,rad,r);g.ellO(cx,cy,rad*0.82,rad*0.82,[r[0],r[1],r[2]]);
       for(let k=0;k<12;k++){const a=k*Math.PI/6-Math.PI/2;g.set(cx+Math.cos(a)*rad*0.68,cy+Math.sin(a)*rad*0.68,r[4]);}
-      g.line(cx,cy,cx+rad*0.48,cy-rad*0.2,[45,32,22],Math.max(2,Math.round(u*2)));g.line(cx,cy,cx-rad*0.08,cy-rad*0.5,[45,32,22],Math.max(2,Math.round(u*2)));g.ellA(cx,cy,3,3,[35,25,20]);
+      g.line(cx,cy,cx+rad*0.48,cy-rad*0.2,[45,32,22],Math.max(2,Math.round(u*2)));g.line(cx,cy,cx-rad*0.08,cy-rad*0.5,[45,32,22],Math.max(2,Math.round(u*2)));g.ellA(cx,cy,3,3,[35,25,20],1);
       break;
     }
     case 'castillo': {
       const cx=X(e.x,0.5),base=Y(e.y,0.86),w=num(e.w,0.65,0.3,0.9)*lw,h=num(e.h,0.5,0.25,0.8)*lh,r=rampaDeE(e,'#827b78',5);
-      const block=(x,y,bw,bh)=>{g.rect(x-2,y-2,bw+4,bh+2,[25,25,34]);g.rect(x,y,bw,bh,r[2]);g.rect(x,y,bw*0.18,bh,r[3]);for(let wy=y+bh*0.28;wy<base-5;wy+=Math.max(10,bh*0.25))g.rect(x+bw*0.42,wy,Math.max(3,bw*0.12),Math.max(5,bh*0.1),[30,30,40]);};
+      const block=(x: number,y: number,bw: number,bh: number)=>{g.rect(x-2,y-2,bw+4,bh+2,[25,25,34]);g.rect(x,y,bw,bh,r[2]);g.rect(x,y,bw*0.18,bh,r[3]);for(let wy=y+bh*0.28;wy<base-5;wy+=Math.max(10,bh*0.25))g.rect(x+bw*0.42,wy,Math.max(3,bw*0.12),Math.max(5,bh*0.1),[30,30,40]);};
       block(cx-w*0.32,base-h*0.58,w*0.64,h*0.58);block(cx-w*0.48,base-h*0.9,w*0.22,h*0.9);block(cx+w*0.26,base-h*0.9,w*0.22,h*0.9);
       for(const tx of [cx-w*0.48,cx+w*0.26]){for(let k=0;k<4;k++)g.rect(tx+k*w*0.055,base-h*0.96,w*0.035,h*0.08,r[3]);}
       g.rect(cx-w*0.07,base-h*0.28,w*0.14,h*0.28,[34,26,24]);break;
@@ -298,7 +298,7 @@ export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: n
       poli(g,[[cx-w*0.52,cy],[cx-w*0.18,cy-w*0.035],[cx-w*0.08,cy-w*0.12],[cx+w*0.25,cy-w*0.1],[cx+w*0.43,cy-w*0.025],[cx+w*0.52,cy],[cx+w*0.4,cy+w*0.03],[cx-w*0.45,cy+w*0.03]],r);
       poli(g,[[cx-w*0.08,cy],[cx-w*0.25,cy+w*0.28],[cx+w*0.05,cy+w*0.18],[cx+w*0.2,cy+w*0.02]],r,'izq');
       poli(g,[[cx-w*0.34,cy],[cx-w*0.48,cy+w*0.15],[cx-w*0.27,cy+w*0.1]],r,'izq');
-      g.ellO(cx+w*0.12,cy, w*0.04,w*0.014,[45,55,70]);
+      g.ellO(cx+w*0.12,cy, w*0.04,w*0.014,[[45,55,70]]);
       break;
     }
     case 'tren': {
@@ -307,7 +307,7 @@ export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: n
       g.rect(cx-w*0.28,base-h*0.94,w*0.24,h*0.28,r[3]);
       g.rect(cx+w*0.12,base-h*0.45,w*0.22,h*0.32,r[1]);
       g.rect(cx-w*0.38,base-h*0.16,w*0.67,h*0.1,r[0]);
-      for(const dx of [-0.28,-0.08,0.18]){g.ellO(cx+w*dx,base,w*0.075,w*0.075,[30,34,42]);g.ellA(cx+w*dx,base,w*0.035,w*0.035,[165,170,178]);}
+      for(const dx of [-0.28,-0.08,0.18]){g.ellO(cx+w*dx,base,w*0.075,w*0.075,[[30,34,42]]);g.ellA(cx+w*dx,base,w*0.035,w*0.035,[165,170,178],1);}
       g.ellA(cx-w*0.16,base-h*0.96, w*0.06,h*0.05,[95,100,105],0.45);
       break;
     }
@@ -316,7 +316,7 @@ export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: n
       poli(g,[[cx-w*0.5,cy],[cx-w*0.38,cy-h*0.42],[cx+w*0.34,cy-h*0.42],[cx+w*0.5,cy],[cx+w*0.34,cy+h*0.42],[cx-w*0.38,cy+h*0.42]],r);
       g.rect(cx-w*0.08,cy-h*0.66,w*0.22,h*0.25,r[2]);
       g.rect(cx-w*0.02,cy-h*0.82,w*0.08,h*0.18,r[3]);
-      for(let k=0;k<4;k++) g.ellO(cx-w*0.24+k*w*0.14,cy,w*0.025,h*0.09,[220,225,180]);
+      for(let k=0;k<4;k++) g.ellO(cx-w*0.24+k*w*0.14,cy,w*0.025,h*0.09,[[220,225,180]]);
       poli(g,[[cx-w*0.5,cy],[cx-w*0.62,cy-h*0.24],[cx-w*0.62,cy+h*0.24]],r[1]?[r[1],r[2],r[3]]:r);
       break;
     }
@@ -535,6 +535,7 @@ export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: n
     default:
       return false;
   }
+  return false;
 }
 
 export const TIPOS_PRO = ['poligono', 'linea', 'nubes', 'olas', 'particulas', 'rayos', 'barco', 'pez', 'roca', 'hielo', 'duna', 'algas', 'sargazo', 'faro', 'silueta', 'ovni', 'explosion', 'ciudad', 'bosque', 'hidrofono', 'sonar', 'microfono', 'volcan', 'fuego', 'lago', 'avion', 'tren', 'submarino'];
