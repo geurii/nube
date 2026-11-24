@@ -21,6 +21,7 @@ import {titulosVirales, armarBloqueWeb, guardarWeb} from './web.mjs';
 import {filtrarTemas, sinRechazadas, leerPreferencias, fueRechazada, temasAprobadosDelDueno} from './ideas.mjs';
 import {enGarantia} from './garantia.mjs';
 import {chatAlternativo, proveedoresConLlave, modelosDisponibles, diagnosticoRespaldo} from './llm.mjs';
+import {sinEnlaces} from './sin-enlaces.mjs';
 
 const KEY = process.env.GROQ_API_KEY;
 const CANAL_ID = (process.env.CANAL || 'lqns').trim();
@@ -764,7 +765,7 @@ try {
     creado: new Date().toISOString(),
     estilo: 'gancho', // edición de gancho: titular gigante, cortes rápidos con glitch y escaneo (copia el ritmo de los reels que frenan el dedo, sin cambiar el pixel del canal)
     ganchoTexto: ganchoDe(escenas[0]?.texto),
-    publicacion: {titulo, descripcion: `${descripcion}\n\n${CONFIG.ctaEscrito ?? ''}\n\nFuentes: ${fuentes.filter((f) => !f.apoyo).map((f) => f.url).join(' · ')}${CONFIG.enlaceCanal ? `\n\nMás historias en el canal: ${CONFIG.enlaceCanal}` : ''}${hashtags.length ? `\n\n${hashtags.join(' ')}` : ''}`},
+    publicacion: {titulo, descripcion: sinEnlaces(`${descripcion}\n\n${CONFIG.ctaEscrito ?? ''}${hashtags.length ? `\n\n${hashtags.join(' ')}` : ''}`)},
     estado: aprobado ? (MANUAL.activo ? ESTADO_ESPERA : 'aprobado') : 'rechazado-necesita-revision',
     editor: {puntaje, critica},
     retencionEstimada: retencionPanel,
