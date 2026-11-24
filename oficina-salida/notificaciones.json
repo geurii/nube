@@ -1,5 +1,14 @@
 [
   {
+    "id": "mwv08iepwad6",
+    "fecha": "2026-11-24T18:04:53.425Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título con pregunta intrigante o afirmación impactante + referencia a un misterio/evento desconocido + elemento de sorpresa o número El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (25554 vistas/hora)."
+  },
+  {
     "id": "mwuzj79lj7pn",
     "fecha": "2026-11-24T17:45:12.585Z",
     "canal": "lqns",
@@ -693,14 +702,5 @@
     "tipo": "alerta",
     "titulo": "Guion rechazado: Mary Celeste",
     "texto": "El Verificador no aprobó \"Mary Celeste\" tras 4 intentos: La revelación cae al 79 % (222 de 281 palabras antes de ella) y debe caer entre 65 % y 75 %: añade historia antes de la revelación o acórtala. Aprobados: 11. Rechazados: 39. Con error: 9. No se publica. Próximo ciclo en 9 h."
-  },
-  {
-    "id": "mwu74y8o113r",
-    "fecha": "2026-11-24T04:30:18.456Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: Mary Celeste",
-    "texto": "El Verificador no aprobó \"Mary Celeste\" tras 4 intentos: El gancho inicial debe tener 14 palabras o menos. Aprobados: 11. Rechazados: 38. Con error: 9. No se publica. Próximo ciclo en 9 h."
   }
 ]

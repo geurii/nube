@@ -1,9 +1,15 @@
 {
-  "fecha": "2026-11-24T17:44:26.358Z",
+  "fecha": "2026-11-24T18:04:50.839Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 1150,
-  "ganadasDesdeElUltimoCiclo": 1,
+  "total": 1148,
+  "ganadasDesdeElUltimoCiclo": 0,
   "videos": [
+    {
+      "id": "i0w6F46yv3o",
+      "titulo": "🕰️ ¿297 años falsos? La teoría que borra a Carlomagno",
+      "publicado": "2026-11-24T17:46:03+00:00",
+      "vistas": 1
+    },
     {
       "id": "xE32CX_fsXM",
       "titulo": "🌋 ¿Qué secreto ancestral esconde el cráter de la Isla de Pascua?",
@@ -87,19 +93,9 @@
       "titulo": "Sabías que mataron 2 millones de pingüinos... y no para comérselos 😳 (Parte 2/3)",
       "publicado": "2026-11-20T16:30:10+00:00",
       "vistas": 172
-    },
-    {
-      "id": "Wj-zpd2iorA",
-      "titulo": "¿Por qué no comemos pingüino? La verdad detrás de la prohibición",
-      "publicado": "2026-11-20T15:30:22+00:00",
-      "vistas": 3
     }
   ],
   "historia": [
-    {
-      "fecha": "2026-11-22T00:25:16.489Z",
-      "total": 2555
-    },
     {
       "fecha": "2026-11-22T00:32:04.662Z",
       "total": 2602
@@ -335,6 +331,10 @@
     {
       "fecha": "2026-11-24T17:44:26.358Z",
       "total": 1150
+    },
+    {
+      "fecha": "2026-11-24T18:04:50.839Z",
+      "total": 1148
     }
   ]
 }
