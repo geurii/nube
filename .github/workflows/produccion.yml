@@ -192,13 +192,13 @@ jobs:
         env:
           REDES_OK: ${{ steps.redes.outcome }}
         run: |
-          node --input-type=module -e 'import fs from "node:fs"; const p="agentes/publicacion.json"; let x={modo:"ahora",destino:"ambos"}; try{x=JSON.parse(fs.readFileSync(p,"utf8"));}catch{}; if(process.env.REDES_OK==="success"){x.destino="youtube"; fs.writeFileSync("agentes/oficina.disparo",new Date().toISOString()+"|largo|\n"); console.log("TikTok aceptó el primer largo; se prepara el segundo largo exclusivamente para YouTube.");}else{x.destino="ambos"; console.log("TikTok no confirmó el envío; se restaura la publicación automática normal y no se encadena otro largo.");} fs.writeFileSync(p,JSON.stringify(x,null,2)+"\n");'
+          node --input-type=module -e 'import fs from "node:fs"; const p="agentes/publicacion.json"; let x={modo:"ahora",destino:"ambos"}; try{x=JSON.parse(fs.readFileSync(p,"utf8"));}catch{}; if(process.env.REDES_OK==="success"){x.destino="youtube"; x.formato="largo"; fs.writeFileSync("agentes/oficina.disparo",new Date().toISOString()+"|largo|\n"); console.log("TikTok aceptó el primer largo; se prepara el segundo largo exclusivamente para YouTube.");}else{x.destino="ambos"; delete x.formato; console.log("TikTok no confirmó el envío; se restaura la publicación automática normal y no se encadena otro largo.");} fs.writeFileSync(p,JSON.stringify(x,null,2)+"\n");'
           git add agentes/publicacion.json agentes/oficina.disparo
           if git diff --cached --quiet; then echo "Sin cambios de destino."; else git config user.name "github-actions"; git config user.email "actions@users.noreply.github.com"; git commit -m "Secuencia: preparar segundo largo para YouTube o restaurar destino"; git pull --rebase --autostash -X theirs origin main; git push; fi
       - name: Restaurar destinos automáticos después del largo de YouTube
         if: ${{ always() && steps.destino.outputs.valor == 'youtube' }}
         run: |
-          node --input-type=module -e 'import fs from "node:fs"; const p="agentes/publicacion.json"; let x={modo:"ahora",destino:"ambos"}; try{x=JSON.parse(fs.readFileSync(p,"utf8"));}catch{}; if(x.destino!=="ambos"){x.destino="ambos";fs.writeFileSync(p,JSON.stringify(x,null,2)+"\n");}'
+          node --input-type=module -e 'import fs from "node:fs"; const p="agentes/publicacion.json"; let x={modo:"ahora",destino:"ambos"}; try{x=JSON.parse(fs.readFileSync(p,"utf8"));}catch{}; if(x.destino!=="ambos" || x.formato){x.destino="ambos";delete x.formato;fs.writeFileSync(p,JSON.stringify(x,null,2)+"\n");}'
           git add agentes/publicacion.json
           if git diff --cached --quiet; then echo "Los destinos automáticos ya estaban restaurados."; else git config user.name "github-actions"; git config user.email "actions@users.noreply.github.com"; git commit -m "Restaurar publicación automática a todos los destinos"; git pull --rebase --autostash -X theirs origin main; git push; fi
       - name: Encolar un Short único después del largo publicado
