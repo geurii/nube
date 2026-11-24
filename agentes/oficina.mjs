@@ -147,7 +147,7 @@ const CULTURA = 'EMPRESA: ' + (CONFIG.nombre ?? 'el canal') + '. RETENCIÓN (reg
 const ORDEN_JULES = leerJson(path.join(SALIDA, 'ordenes.json'), [])[0];
 const ALTERNOS = process.env.GROQ_API_KEY ? (await modelosDisponibles(process.env.GROQ_API_KEY)).filter((m) => m !== 'openai/gpt-oss-120b') : []; // modelos de Groq con cuota separada que SÍ existen en la cuenta
 let groqBloqueadoHasta = 0; // mientras Groq esté en 429, se usan primero los demás proveedores
-let WEB_BLOQUE = [leerPreferencias(CANAL_ID), textoDeLecciones(CANAL_ID)].filter(Boolean).join(' '); // arranca con lo que el dueño aprobó y rechazó; después se le suma lo que dice internet // lo que dice internet HOY sobre el tema: se les da a TODOS los agentes (se llena después de investigar)
+let WEB_BLOQUE = [leerPreferencias(CANAL_ID), textoDeLecciones(CANAL_ID)].filter(Boolean).join(' ').slice(0, 1800); // arranca con lo que el dueño aprobó y rechazó; después se le suma lo que dice internet // lo que dice internet HOY sobre el tema: se les da a TODOS los agentes (se llena después de investigar)
 const groqDirecto = async (modelo, mensajes, maxTokens = FORMATO === 'largo' ? 4500 : 2500, json = false) => {
   mensajes = mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + (ORDEN_JULES ? ` ORDEN VIGENTE DE JULES (nivel ${ORDEN_JULES.nivel}/5, la dio el dueño): ${ORDEN_JULES.orden}` : '') + '\n\n' + m.content} : m));
   let ultimo = 'sin respuesta';
@@ -164,7 +164,7 @@ const groqDirecto = async (modelo, mensajes, maxTokens = FORMATO === 'largo' ? 4
           model: mod,
           messages: mensajes,
           temperature: 0.4,
-          max_tokens: maxTokens,
+          max_tokens: Math.min(maxTokens ?? 2500, FORMATO === 'largo' ? 2200 : 1200),
           ...(json ? {response_format: {type: 'json_object'}} : {}),
           // los modelos "gpt-oss" razonan antes de responder: poco razonamiento = más espacio para el texto
           ...(mod.includes('gpt-oss') ? {reasoning_effort: 'low'} : {}),
@@ -182,14 +182,14 @@ const groqDirecto = async (modelo, mensajes, maxTokens = FORMATO === 'largo' ? 4
       }
       if (r.status >= 500) { ultimo = `Groq ${r.status}`; await dormir(3000 * intento); continue; }
       if (r.status === 404 || r.status === 400) { ultimo = `modelo no disponible (${mod})`; if (mod !== modelo) { await dormir(1000); continue; } }
-      if (!r.ok) throw Object.assign(new Error(`Groq ${r.status}: ${(await r.text()).slice(0, 300)}`), {fatal: true});
+      if (!r.ok) throw Object.assign(new Error(`Groq ${r.status}: ${(await r.text()).slice(0, 700)}`), {fatal: r.status !== 413, groq413: r.status === 413});
       const j = await r.json();
       const eleccion = j.choices?.[0];
       const contenido = eleccion?.message?.content ?? '';
       if (!contenido.trim()) { ultimo = `respuesta vacía (${eleccion?.finish_reason ?? '?'})`; continue; }
       return contenido;
     } catch (e) {
-      if (e.fatal) throw e;
+      if (e.fatal || e.groq413) throw e;
       ultimo = String(e.message ?? e);
       await dormir(3000 * intento);
     }
@@ -202,7 +202,7 @@ const groq = async (modelo, mensajes, maxTokens, json = false) => {
   for (let ronda = 1; ; ronda++) {
     try { return await groqUnaRonda(modelo, mensajes, maxTokens, json); }
     catch (e) {
-      if (e.fatal || ronda >= 3 || esperaTotal >= 480 || !/429|Respaldos/.test(String(e.message))) throw e;
+      if (e.fatal || e.groq413 || ronda >= 3 || esperaTotal >= 480 || !/429|Respaldos/.test(String(e.message))) throw e;
       console.log(`Todos los proveedores en límite: espero 70 s a que se libere la cuota (ronda ${ronda}/3).`);
       esperaTotal += 70; await dormir(70_000);
     }
@@ -210,13 +210,13 @@ const groq = async (modelo, mensajes, maxTokens, json = false) => {
 };
 const groqUnaRonda = async (modelo, mensajes, maxTokens, json = false) => {
   if (Date.now() < groqBloqueadoHasta && proveedoresConLlave().length) {
-    const rapido = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: maxTokens ?? 2500, json});
+    const rapido = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: Math.min(maxTokens ?? 2500, FORMATO === 'largo' ? 2200 : 1200), json});
     if (rapido) { console.log(`Groq en límite: se usó ${rapido.proveedor} (${rapido.modelo}).`); return rapido.texto; }
   }
   try { return await groqDirecto(modelo, mensajes, maxTokens, json); }
   catch (e) {
-    if (e.fatal) throw e;
-    const alt = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: maxTokens ?? 2500, json});
+    if (e.fatal && !e.groq413) throw e; if (e.groq413) console.warn('Groq 413: se deriva al proveedor alternativo.');
+    const alt = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: Math.min(maxTokens ?? 2500, FORMATO === 'largo' ? 2200 : 1200), json});
     if (!alt) { e.message += ` Respaldos: ${[...new Set(diagnosticoRespaldo)].join('; ').slice(0, 450) || 'ninguno con llave'}.`; throw e; }
     console.log(`Groq no respondió: se usó ${alt.proveedor} (${alt.modelo}).`);
     return alt.texto;
