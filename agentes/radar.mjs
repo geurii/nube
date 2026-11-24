@@ -4,6 +4,7 @@
 // Nunca lanza: si YouTube bloquea o falla, conserva el radar anterior. Variables: CANAL (por defecto lqns).
 import fs from 'node:fs';
 import path from 'node:path';
+import {datosDeVideo} from './analizar-videos.mjs';
 
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36';
 const CABECERAS = {'User-Agent': UA, 'Accept-Language': 'en-US,en;q=0.9', Cookie: 'CONSENT=YES+1; SOCS=CAI', Connection: 'close'};
@@ -110,6 +111,77 @@ export const feedDeCanal = async (canalId) => {
   }).filter((v) => v.id && Number.isFinite(v.vistas));
 };
 
+
+/**
+ * Referencias de formato largo para estudiar la estructura de documentales del nicho.
+ * No depende del radar de canales nuevos: incluye creadores establecidos y búsquedas de todo el historial.
+ */
+export const CONSULTAS_LARGAS_POR_DEFECTO = [
+  'misterios sin resolver documental completo',
+  'fenómenos inexplicables investigación documental historia real',
+  'misterios históricos documental investigación completa',
+  'casos extraños reales narración documental',
+  'misterios del mundo explicación documental',
+  'Expressy misterios documental',
+  'XpressTV misterios documental',
+];
+
+export const esReferenciaLarga = (video) => {
+  const segundos = Number(video?.segundos);
+  return Number.isFinite(segundos) && segundos >= 480 && segundos <= 3600;
+};
+
+export const buscarReferenciasLargas = async ({
+  nicho = '',
+  canales = [],
+  maxResultados = 14,
+  limiteMs = 110000,
+  nota = () => {},
+} = {}) => {
+  const consultas = [
+    ...CONSULTAS_LARGAS_POR_DEFECTO,
+    ...(nicho ? [`${nicho} documental`, `${nicho} investigación completa`] : []),
+    ...(Array.isArray(canales) ? canales.slice(0, 8).map((c) => `${c.nombre ?? ''} ${nicho || 'misterios documental'}`.trim()).filter(Boolean) : []),
+  ];
+  const hasta = Date.now() + limiteMs;
+  const resultados = await Promise.allSettled(consultas.map((q) => buscarVideos(q, 0, false)));
+  const candidatos = new Map();
+  for (const r of resultados) {
+    if (r.status !== 'fulfilled') { nota(`Búsqueda de referencia larga falló: ${String(r.reason?.message ?? r.reason).slice(0, 80)}`); continue; }
+    for (const v of r.value) {
+      if (!v?.id || !esReferenciaLarga(v)) continue; // 280 s, Shorts y videos menores de 8 min quedan fuera
+      const previo = candidatos.get(v.id);
+      if (!previo || Number(v.vistas ?? 0) > Number(previo.vistas ?? 0)) candidatos.set(v.id, v);
+    }
+  }
+  const lista = [...candidatos.values()].sort((a, b) => Number(b.vistas ?? 0) - Number(a.vistas ?? 0)).slice(0, Math.max(12, maxResultados * 2));
+  const detalles = [];
+  let i = 0;
+  await Promise.all(Array.from({length: 4}, async () => {
+    while (i < lista.length && Date.now() < hasta) {
+      const video = lista[i++];
+      try {
+        const d = await datosDeVideo(video.id);
+        if (!esReferenciaLarga(d) || String(d.transcripcion ?? '').trim().length < 1800) continue;
+        detalles.push({
+          ...video,
+          ...d,
+          id: video.id,
+          url: d.url || `https://www.youtube.com/watch?v=${video.id}`,
+          titulo: d.titulo || video.titulo,
+          canal: d.canal || video.canal,
+          vistas: d.vistas ?? video.vistas,
+          segundos: d.segundos ?? video.segundos,
+          caracteresTranscripcion: String(d.transcripcion).length,
+        });
+      } catch (e) { nota(`No se pudo leer la referencia ${video.id}: ${String(e.message ?? e).slice(0, 80)}`); }
+    }
+  }));
+  return detalles
+    .sort((a, b) => Number(b.vistas ?? 0) - Number(a.vistas ?? 0))
+    .slice(0, maxResultados);
+};
+
 const mediana = (xs) => { const s = [...xs].sort((a, b) => a - b); return s.length ? s[Math.floor(s.length / 2)] : 0; };
 
 /** ¿Este canal tiene un video que EXPLOTÓ? Devuelve el video y cuánto se salió de lo normal del canal, o null. */
@@ -186,13 +258,15 @@ const principal = async () => {
   const ruta = path.join(dir, 'radar.json');
   const notas = [];
   const previo = leer(ruta, null);
-  if (previo?.fecha && Date.now() - Date.parse(previo.fecha) < 12 * 3600 * 1000 && !process.env.RADAR_FORZAR) {
+  if (previo?.fecha && Array.isArray(previo.referenciasLargas) && previo.referenciasLargas.length > 0 && Date.now() - Date.parse(previo.fecha) < 12 * 3600 * 1000 && !process.env.RADAR_FORZAR) {
     console.log('Radar reciente (menos de 12 horas): no se repite para ahorrar minutos.');
     return;
   }
   const radar = await construirRadar({consultas: config?.radar?.consultas ?? CONSULTAS_POR_DEFECTO, minVistas: 5000, maxSubs: 300000, limiteMs: 170000, nota: (t) => { notas.push(t); console.log(t); }});
-  if (!radar.canales.length) {
-    console.log('Radar sin resultados: se conserva el anterior.', notas.join(' '));
+  const referenciasLargas = await buscarReferenciasLargas({nicho: config?.nicho ?? '', canales: config?.vigilar ?? [], maxResultados: 14, limiteMs: 105000, nota: (t) => { notas.push(t); console.log(t); }});
+  radar.referenciasLargas = referenciasLargas.map(({id, url, titulo, canal, vistas, segundos, caracteresTranscripcion, idiomaTranscripcion}) => ({id, url, titulo, canal, vistas, segundos, caracteresTranscripcion, idiomaTranscripcion}));
+  if (!radar.canales.length && !radar.referenciasLargas.length) {
+    console.log('Radar sin canales nuevos ni referencias largas con subtítulos suficientes; se conserva el anterior.', notas.join(' '));
     return;
   }
   fs.writeFileSync(ruta, JSON.stringify(radar, null, 2));
