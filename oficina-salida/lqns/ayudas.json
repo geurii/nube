@@ -1,33 +1,33 @@
 {
   "plan": [
-    "Crear y lanzar la Parte 1/3 del mini-documental sobre el megatsunami de la Bahía Lituya, con título optimizado y miniatura A/B para maximizar CTR: Equipo de Guion y Producción: Generar al menos 300,000 vistas y 15,000 suscriptores antes del",
-    "Desarrollar la serie de 3 videos sobre el caso del banco que pagó 175 millones, incluyendo investigación profunda y formato de revelación progresiva: Equipo de Investigación y Edición: Alcanzar 200,000 vistas combinadas y 10,000 suscriptore",
-    "Planificar y producir el próximo video sobre la misteriosa muerte de 2 millones de pingüinos, con enfoque en datos verificables y gancho de curiosidad: Equipo de Contenido y Diseño Gráfico: Obtener 150,000 vistas y 8,000 suscriptores antes "
+    "Crear y lanzar la serie de 3 videos sobre el megatsunami de Lituya Bay 1958, con títulos tipo ‘X cosas que…’ y revelación entre 65‑75 %: Equipo de guion y edición: Alcanzar 200 000 vistas acumuladas y generar 1 000 USD de ingresos publicita",
+    "Desarrollar miniaturas A/B con colores contrastantes y textos legibles para la serie sobre Lituya Bay, optimizando CTR en el 5 %: Diseñador gráfico y analista de datos: Incrementar el CTR medio de la serie en al menos 3 % y monetizar 500 US",
+    "Programar publicación de los tres episodios con intervalos de 1‑2 días y promocionar en redes y foros de misterio para impulsar suscripciones: Community manager y estratega de contenidos: Aumentar la tasa de suscripción en 10 % y generar 50"
   ],
   "ganchos": [
-    "[TEMA] y su secreto revelado en solo [CIFRA] segundos | Imagen: una sombra misteriosa sobre un mapa antiguo",
-    "¿Sabías que [TEMA] puede cambiar tu vida en [CIFRA] pasos? | Imagen: un camino de luz que se bifurca",
-    "[TEMA] ha sidoconde su verdad durante [CIFRA] años | Imagen: una caja de madera antigua con un candado oxidado",
-    "Descubre por qué [TEMA] se convirtió en leyenda en [CIFRA] minutos | Imagen: un reloj de arena con arena que se detiene",
-    "¿Qué hace que [TEMA] sea tan fascinante? Solo [CIFRA] pistas lo explican | Imagen: un rompecabezas con piezas que se alinean"
+    "[TEMA] y [CIFRA] te harán cuestionar todo lo que creías saber | Imagen de un horizonte nebuloso con un número flotante superpuesto",
+    "¿Sabías que [TEMA] ocurrió cuando [CIFRA] segundos pasaron sin que nadie lo notara? | Imagen de un reloj marcando 00:00:00 con un destello inesperado",
+    "[CIFRA] misterios que [TEMA] no explica, pero que sí sí cuentan | Imagen de una lupa enfocando un símbolo enigmático",
+    "[TEMA] y la cifra [CIFRA] que nadie pudo prever | Imagen de un mapa antiguo con un punto rojo resaltado",
+    "¿Te imaginas que [TEMA] se reveló cuando [CIFRA] se volvió real? | Imagen de una puerta entreabierta con una luz brillante detrás"
   ],
   "mejorasGuion": [
-    "1️⃣ Cambia el título a un formato con número y sorpresa, por ejemplo: \"3 secretos que el lago Natron oculta (Parte 1/3)\" para alinearlo con el patrón de títulos que genera más vistas.\n2️⃣ Añade un gancho visual y narrati"
+    "1️⃣ Cambia el título a formato numérico y misterioso: por ejemplo, \"5 casos de zumbidos que nadie puede explicar (Parte 1/3)\" para cumplir con la regla de títulos con número y generar curiosidad inmediata.\n\n2️⃣ Añade un "
   ],
   "temas": [
     "The Voynich Manuscript",
-    "The Phaistos Disc",
-    "The Taos Hum",
-    "The Mystery of the Somerton Man",
-    "The Bimini Road"
+    "The Dyatlov Pass Incident",
+    "The Bloop",
+    "The Green Children of Woolpit",
+    "The Moving Rocks of Death Valley"
   ],
   "titulos": [
-    "X cosas que… (Parte Y/Z)",
-    "Y millones de… (Parte Y/Z)",
-    "Sabías que… (Parte Y/Z)",
-    "¿Qué oculta realmente el X? (Parte Y/Z)"
+    "Sabías que <cantidad> <acción> por <objeto> (Parte <n>/<total>)",
+    "Sabías que <sustantivo> pagó <monto> por <objeto>",
+    "¿Qué <verbo> realmente <sustantivo>?",
+    "⚡ <año>: El <profesión> que <verbo> <objeto>"
   ],
-  "fecha": "2026-11-24T21:03:33.665Z",
+  "fecha": "2026-11-24T22:43:17.713Z",
   "iniciativas": [
     "Valentina (Directora de contenido): Definir una línea editorial clara y un documento de estilo que guíe a todo el equipo desde el primer video.",
     "Carolina (Coordinador de producción): Crear un tablero de tareas con fechas límite rígidas y alertas automáticas para cada entrega.",
