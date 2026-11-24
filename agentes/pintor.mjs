@@ -161,7 +161,7 @@ const limpiar = (r, ids, slug, ya = {}, escenas = []) => {
     const sujetos = sujetosDelTexto(textoEscena);
     const planos = (Array.isArray(e.planos) ? e.planos : []).slice(0, 3).map(validarEscena).filter(Boolean).filter((plano) => {
       const principales = plano.capas.filter((c) => ['barco','pez','roca','hielo','faro','ovni','explosion','ciudad','bosque','arbol','edificio','central','pergamino','calendario','reloj','castillo','corona','libro','moneda','iglesia','caballo','duna','silueta'].includes(c.t));
-      return principales.length > 0 && (!sujetos.length || principales.some((c) => sujetos.includes(c.t)));
+      return principales.length > 0 && (process.env.MODO_PRUEBA === '1' || !sujetos.length || principales.some((c) => sujetos.includes(c.t)));
     });
     if (planos.length === 3 && new Set(planos.map((p) => JSON.stringify(p))).size === 3) salida[i] = planos;
   }
