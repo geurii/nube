@@ -1,5 +1,13 @@
 [
   {
+    "id": "mwv6mtae5qn1",
+    "fecha": "2026-11-24T21:03:58.406Z",
+    "canal": "lqns",
+    "tipo": "reporte",
+    "titulo": "Video subido a YouTube",
+    "texto": "\"⚡ La ola de 524 metros: El megatsunami que escaló una montaña en Alaska (1958)\" quedó PÚBLICO ahora mismo: https://youtu.be/ju9-ibZWM5s"
+  },
+  {
     "fecha": "2026-11-24T21:03:33.446Z",
     "canal": "lqns",
     "tipo": "reporte",
@@ -688,14 +696,5 @@
     "tipo": "alerta",
     "titulo": "Guion rechazado: Great Smog of London",
     "texto": "El Verificador no aprobó \"Great Smog of London\" tras 4 intentos: El gancho inicial debe tener 14 palabras o menos. Aprobados: 11. Rechazados: 46. Con error: 10. No se publica. Próximo ciclo en 4 h."
-  },
-  {
-    "id": "mwuj86q9ampc",
-    "fecha": "2026-11-24T10:08:44.817Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título corto + pregunta intrigante o afirmación impactante + referencia a un misterio/evento desconocido El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (26972 vistas/hora)."
   }
 ]

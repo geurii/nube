@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-24T21:03:35.776Z",
+  "actualizado": "2026-11-24T21:03:58.182Z",
   "totales": {
     "aprobados": 16,
     "rechazados": 77,
@@ -204,9 +204,9 @@
       "tarea": "AYUDA: le echó una mano a (Editor de guion). Entregó: 1 mejoras al último guion"
     },
     "Publicador": {
-      "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Investigador de temas). Entregó: 5 temas candidatos"
+      "estado": "libre",
+      "actividad": "pensando",
+      "tarea": "Subió \"⚡ La ola de 524 metros: El megatsunami que escaló una montaña en Alaska (1958)\" y quedó PÚBLICO ahora mismo: https://youtu.be/ju9-ibZWM5s"
     },
     "Crítico: padre trabajador": {
       "estado": "trabajando",
