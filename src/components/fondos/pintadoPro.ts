@@ -221,6 +221,105 @@ export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: n
       }
       return true;
     }
+    case 'microfono': {
+      const cx=X(e.x,0.5), cy=Y(e.y,0.56), w=num(e.w,0.2,0.1,0.34)*lw, h=num(e.h,0.44,0.28,0.62)*lh;
+      const r=rampaDeE(e,'#8b98a8',5), cabezaY=cy-h*0.3, cabezaW=w*0.42, cabezaH=h*0.29;
+      g.ellO(cx,cabezaY,cabezaW,cabezaH,r);
+      for(let k=-2;k<=2;k++) g.line(cx-cabezaW*0.65,cabezaY+k*cabezaH*0.22,cx+cabezaW*0.65,cabezaY+k*cabezaH*0.22,r[0],Math.max(1,u*1.2));
+      g.rect(cx-w*0.1,cabezaY+cabezaH*0.78,w*0.2,h*0.34,r[2]);
+      g.rect(cx-w*0.055,cy+h*0.02,w*0.11,h*0.19,r[1]);
+      g.line(cx-w*0.28,cy+h*0.2,cx+w*0.28,cy+h*0.2,r[0],Math.max(2,u*2));
+      g.ellO(cx,cy+h*0.22,w*0.3,h*0.035,[r[0],r[1],r[2]]);
+      break;
+    }
+    case 'hidrofono': {
+      const cx=X(e.x,0.5), cy=Y(e.y,0.58), w=num(e.w,0.17,0.1,0.28)*lw, h=num(e.h,0.52,0.32,0.68)*lh;
+      const r=rampaDeE(e,'#7895a8',5), top=cy-h*0.38, bottom=cy+h*0.36;
+      g.line(cx,top-h*0.34,cx,top-h*0.02,[80,91,105],Math.max(2,u*3));
+      g.ellO(cx,top,w*0.22,h*0.08,r);
+      g.rect(cx-w*0.22,top,w*0.44,bottom-top,r[2]);
+      g.rect(cx-w*0.14,top,w*0.08,bottom-top,r[3]);
+      g.ellO(cx,bottom,w*0.22,h*0.08,r);
+      g.rect(cx-w*0.28,bottom-h*0.02,w*0.56,h*0.1,[45,61,76]);
+      for(let k=0;k<4;k++) g.line(cx-w*0.17,top+h*(0.13+k*0.1),cx+w*0.17,top+h*(0.13+k*0.1),r[0],Math.max(1,u));
+      g.line(cx,top-h*0.34,cx+w*0.28,top-h*0.52,[65,75,88],Math.max(1,u*2));
+      for(let k=0;k<3;k++) g.ring(cx+w*(0.48+k*0.13),cy-h*(0.08+k*0.03),h*(0.055+k*0.018),Math.max(1,u),[135,205,231]);
+      break;
+    }
+    case 'sonar': {
+      const cx=X(e.x,0.5), cy=Y(e.y,0.58), w=num(e.w,0.58,0.34,0.82)*lw, h=num(e.h,0.48,0.3,0.7)*lh;
+      const x=cx-w/2, y=cy-h/2, r=rampaDeE(e,'#557b8b',5);
+      g.rect(x-5,y-5,w+10,h+10,[19,27,39]);
+      g.rect(x,y,w,h,[52,67,76]);
+      const sx=x+w*0.12, sy=y+h*0.1, sw=w*0.76, sh=h*0.66, mx=sx+sw/2, my=sy+sh/2, rad=Math.min(sw,sh)*0.44;
+      g.rect(sx,sy,sw,sh,[8,27,39]);
+      g.ellO(mx,my,rad,rad,[r[1],r[2],r[3]]);
+      g.ellO(mx,my,rad*0.66,rad*0.66,[r[1],r[2]]);
+      g.ellO(mx,my,rad*0.32,rad*0.32,[r[1],r[2]]);
+      const ang=t*1.8, ex=mx+Math.cos(ang)*rad, ey=my+Math.sin(ang)*rad;
+      g.line(mx,my,ex,ey,[140,255,190],Math.max(2,u*2));
+      g.ellA(mx+Math.cos(ang+0.8)*rad*0.62,my+Math.sin(ang+0.8)*rad*0.62,Math.max(2,u*2),Math.max(2,u*2),[255,225,110],0.95);
+      for(let k=0;k<4;k++) g.rect(x+w*(0.18+k*0.2),y+h*0.84,w*0.1,h*0.055,k===1?[115,205,155]:r[1]);
+      break;
+    }
+    case 'volcan': {
+      const cx=X(e.x,0.5), base=Y(e.y,0.86), w=num(e.w,0.68,0.42,0.9)*lw, h=num(e.h,0.56,0.32,0.75)*lh;
+      const r=rampaDeE(e,'#765448',5), craterY=base-h*0.78;
+      poli(g,[[cx-w*0.52,base],[cx-w*0.32,base-h*0.42],[cx-w*0.13,base-h*0.76],[cx-w*0.04,craterY],[cx+w*0.08,craterY],[cx+w*0.2,base-h*0.72],[cx+w*0.36,base-h*0.4],[cx+w*0.52,base]],r,'izq');
+      g.line(cx-w*0.13,craterY,cx+w*0.13,craterY,[255,174,66],Math.max(3,u*3));
+      poli(g,[[cx-w*0.05,craterY],[cx-w*0.18,craterY-h*0.12],[cx-w*0.13,craterY-h*0.25],[cx,craterY-h*0.37],[cx+w*0.14,craterY-h*0.2],[cx+w*0.19,craterY-h*0.1],[cx+w*0.05,craterY]],rampaDe([104,99,99],5),'arriba',false);
+      poli(g,[[cx-w*0.1,craterY],[cx-w*0.03,base-h*0.34],[cx+w*0.01,base-h*0.28],[cx+w*0.11,craterY]],rampaDe([245,88,36],4),'der',false);
+      for(let k=0;k<8;k++) g.ellA(cx+(hs(k,17)-0.5)*w*0.2,craterY-h*(0.16+hs(k,18)*0.3)-Math.sin(t*1.4+k)*4,w*0.035,h*0.035,[75,70,78],0.45);
+      break;
+    }
+    case 'fuego': {
+      const cx=X(e.x,0.5), base=Y(e.y,0.78), w=num(e.w,0.34,0.18,0.62)*lw, h=num(e.h,0.43,0.25,0.65)*lh;
+      const r=rampaDeE(e,'#e66a24',5);
+      for(let k=0;k<3;k++){
+        const shift=(k-1)*w*0.22, flick=Math.sin(t*4+k*1.7)*h*0.035, ww=w*(0.24+k*0.025);
+        poli(g,[[cx+shift-ww/2,base],[cx+shift-ww*0.48,base-h*0.34],[cx+shift-ww*0.12,base-h*0.67-flick],[cx+shift+ww*0.04,base-h],[cx+shift+ww*0.28,base-h*0.62-flick],[cx+shift+ww/2,base]],r,'izq');
+        poli(g,[[cx+shift-ww*0.24,base],[cx+shift-ww*0.13,base-h*0.3],[cx+shift+ww*0.04,base-h*0.58-flick],[cx+shift+ww*0.24,base]],rampaDe([255,213,101],4),'izq',false);
+      }
+      break;
+    }
+    case 'lago': {
+      const cx=X(e.x,0.5), cy=Y(e.y,0.7), w=num(e.w,0.76,0.44,0.92)*lw, h=num(e.h,0.3,0.16,0.48)*lh;
+      const orilla=rampaDeE(e,'#75664c',4), agua=rampaDe([39,112,145],5);
+      g.ellO(cx,cy,w/2,h/2,orilla);
+      g.ellO(cx,cy-h*0.04,w*0.43,h*0.34,agua);
+      for(let k=0;k<10;k++){
+        const xx=cx-w*0.3+(k/9)*w*0.6, yy=cy-h*0.08+Math.sin(t*1.2+k)*h*0.06;
+        g.line(xx,yy,xx+w*0.035,yy,[190,230,235],Math.max(1,u));
+      }
+      break;
+    }
+    case 'avion': {
+      const cx=X(e.x,0.5), cy=Y(e.y,0.5)+Math.sin(t*1.1)*lh*0.008, w=num(e.w,0.62,0.36,0.84)*lw, r=rampaDeE(e,'#aab8c7',5);
+      poli(g,[[cx-w*0.52,cy],[cx-w*0.18,cy-w*0.035],[cx-w*0.08,cy-w*0.12],[cx+w*0.25,cy-w*0.1],[cx+w*0.43,cy-w*0.025],[cx+w*0.52,cy],[cx+w*0.4,cy+w*0.03],[cx-w*0.45,cy+w*0.03]],r);
+      poli(g,[[cx-w*0.08,cy],[cx-w*0.25,cy+w*0.28],[cx+w*0.05,cy+w*0.18],[cx+w*0.2,cy+w*0.02]],r,'izq');
+      poli(g,[[cx-w*0.34,cy],[cx-w*0.48,cy+w*0.15],[cx-w*0.27,cy+w*0.1]],r,'izq');
+      g.ellO(cx+w*0.12,cy, w*0.04,w*0.014,[45,55,70]);
+      break;
+    }
+    case 'tren': {
+      const cx=X(e.x,0.5), base=Y(e.y,0.78), w=num(e.w,0.58,0.38,0.82)*lw, h=num(e.h,0.42,0.25,0.65)*lh, r=rampaDeE(e,'#4d5968',5);
+      g.rect(cx-w*0.42,base-h*0.68,w*0.62,h*0.58,r[2]);
+      g.rect(cx-w*0.28,base-h*0.94,w*0.24,h*0.28,r[3]);
+      g.rect(cx+w*0.12,base-h*0.45,w*0.22,h*0.32,r[1]);
+      g.rect(cx-w*0.38,base-h*0.16,w*0.67,h*0.1,r[0]);
+      for(const dx of [-0.28,-0.08,0.18]){g.ellO(cx+w*dx,base,w*0.075,w*0.075,[30,34,42]);g.ellA(cx+w*dx,base,w*0.035,w*0.035,[165,170,178]);}
+      g.ellA(cx-w*0.16,base-h*0.96, w*0.06,h*0.05,[95,100,105],0.45);
+      break;
+    }
+    case 'submarino': {
+      const cx=X(e.x,0.5),cy=Y(e.y,0.58)+Math.sin(t*1.3)*lh*0.006,w=num(e.w,0.58,0.34,0.82)*lw,h=num(e.h,0.24,0.16,0.42)*lh,r=rampaDeE(e,'#b0a66f',5);
+      poli(g,[[cx-w*0.5,cy],[cx-w*0.38,cy-h*0.42],[cx+w*0.34,cy-h*0.42],[cx+w*0.5,cy],[cx+w*0.34,cy+h*0.42],[cx-w*0.38,cy+h*0.42]],r);
+      g.rect(cx-w*0.08,cy-h*0.66,w*0.22,h*0.25,r[2]);
+      g.rect(cx-w*0.02,cy-h*0.82,w*0.08,h*0.18,r[3]);
+      for(let k=0;k<4;k++) g.ellO(cx-w*0.24+k*w*0.14,cy,w*0.025,h*0.09,[220,225,180]);
+      poli(g,[[cx-w*0.5,cy],[cx-w*0.62,cy-h*0.24],[cx-w*0.62,cy+h*0.24]],r[1]?[r[1],r[2],r[3]]:r);
+      break;
+    }
     case 'barco': {
       const cx = X(e.x, 0.5), cy = Y(e.y, 0.72) + Math.sin(t * 1.3) * 2, w = num(e.w, 0.3, 0.08, 0.7) * lw, a = Math.sin(t * 1.1) * 0.04;
       const casco = rampaDeE({t: 'x', color: e.color}, '#5a3a22'), vela = rampaDe(col(e.vela, '#e8dcc0'));
@@ -438,4 +537,4 @@ export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: n
   }
 }
 
-export const TIPOS_PRO = ['poligono', 'linea', 'nubes', 'olas', 'particulas', 'rayos', 'barco', 'pez', 'roca', 'hielo', 'duna', 'algas', 'sargazo', 'faro', 'silueta', 'ovni', 'explosion', 'ciudad', 'bosque'];
+export const TIPOS_PRO = ['poligono', 'linea', 'nubes', 'olas', 'particulas', 'rayos', 'barco', 'pez', 'roca', 'hielo', 'duna', 'algas', 'sargazo', 'faro', 'silueta', 'ovni', 'explosion', 'ciudad', 'bosque', 'hidrofono', 'sonar', 'microfono', 'volcan', 'fuego', 'lago', 'avion', 'tren', 'submarino'];
