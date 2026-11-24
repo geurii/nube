@@ -60,6 +60,14 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: node agentes/producir.mjs
+      - name: Seleccionar destino de publicación
+        id: destino
+        if: ${{ steps.producir.outputs.id != '' }}
+        run: |
+          destino=$(node -e "try { const x=require('./agentes/publicacion.json'); process.stdout.write(x.destino || 'ambos'); } catch { process.stdout.write('ambos'); }")
+          case "$destino" in tiktok|youtube|ambos) ;; *) echo "Destino inválido: $destino"; exit 1;; esac
+          echo "valor=$destino" >> "$GITHUB_OUTPUT"
+          echo "Destino de este video: $destino"
       - name: Autopsia (por quÃ© los videos anteriores no cogieron vistas)
         if: ${{ hashFiles('agentes/PAUSA') == '' && steps.producir.outputs.id != '' }}
         continue-on-error: true
@@ -114,7 +122,7 @@ jobs:
           retention-days: 14
       - name: Subir a YouTube (publicaciÃ³n automÃ¡tica si hay credenciales)
         id: subir
-        if: ${{ hashFiles('agentes/PAUSA') == '' && steps.producir.outputs.id != '' && steps.panel.outputs.aprobado == 'true' }}
+        if: ${{ hashFiles('agentes/PAUSA') == '' && steps.producir.outputs.id != '' && steps.panel.outputs.aprobado == 'true' && steps.destino.outputs.valor != 'tiktok' }}
         continue-on-error: true
         env:
           ID: ${{ steps.producir.outputs.id }}
@@ -129,7 +137,8 @@ jobs:
           git diff --cached --quiet || git commit -m "Publicador: resultado de la subida"
           git pull --rebase --autostash -X theirs origin main && git push || true
       - name: Publicar en Facebook, Instagram y TikTok (Windsor y Buffer; solo si hay claves; nunca falla el ciclo)
-        if: ${{ steps.producir.outputs.id != '' && steps.panel.outputs.aprobado == 'true' }}
+        id: redes
+        if: ${{ steps.producir.outputs.id != '' && steps.panel.outputs.aprobado == 'true' && steps.destino.outputs.valor != 'youtube' }}
         continue-on-error: true
         env:
           ID: ${{ steps.producir.outputs.id }}
@@ -149,8 +158,10 @@ jobs:
         run: |
           if [ -z "${{ steps.producir.outputs.id }}" ]; then node agentes/progreso.mjs 0 'Ciclo sin video: no habia guion aprobado' || true
           elif [ "${{ steps.panel.outputs.aprobado }}" = "false" ]; then node agentes/progreso.mjs 0 'La revision tecnica detecto defectos graves o datos incompletos: no se publico' || true
-          elif [ "${{ steps.subir.outputs.subido }}" = "true" ]; then node agentes/progreso.mjs 100 'Video subido a YouTube y confirmado por la API' || true
-          else node agentes/progreso.mjs 85 'Video renderizado, pero NO publicado. Sigue pendiente para reintento; revisar el motivo en el registro.' || true; echo 'ERROR: la publicaciÃ³n no fue confirmada; el video permanece en cola para reintento.'; exit 1; fi
+          elif [ "${{ steps.destino.outputs.valor }}" = "tiktok" ] && [ "${{ steps.redes.outcome }}" = "success" ]; then node agentes/progreso.mjs 100 'Largo aceptado por Buffer para publicacion inmediata en TikTok' || true
+          elif [ "${{ steps.destino.outputs.valor }}" = "youtube" ] && [ "${{ steps.subir.outputs.subido }}" = "true" ]; then node agentes/progreso.mjs 100 'Largo subido a YouTube y confirmado por la API' || true
+          elif [ "${{ steps.destino.outputs.valor }}" = "ambos" ] && [ "${{ steps.subir.outputs.subido }}" = "true" ]; then node agentes/progreso.mjs 100 'Video subido a YouTube y enviado a redes' || true
+          else node agentes/progreso.mjs 85 'Video renderizado, pero el destino no confirmó la recepción. Sigue pendiente para reintento.' || true; echo 'ERROR: la publicacion no fue confirmada; el video permanece pendiente.'; exit 1; fi
           git config user.name "github-actions"
           git config user.email "actions@users.noreply.github.com"
           git add oficina-salida || true
@@ -158,7 +169,7 @@ jobs:
           for i in 1 2 3; do git pull --rebase --autostash -X theirs origin main && git push && break; sleep 4; done
 
       - name: Cerrar secuencia única después de publicar el Short
-        if: ${{ success() && hashFiles('agentes/PAUSA') == '' && steps.producir.outputs.id != '' && steps.producir.outputs.formato == 'short' && steps.panel.outputs.aprobado == 'true' && steps.subir.outputs.subido == 'true' }}
+        if: ${{ success() && hashFiles('agentes/PAUSA') == '' && steps.producir.outputs.id != '' && steps.producir.outputs.formato == 'short' && steps.destino.outputs.valor != 'tiktok' && steps.panel.outputs.aprobado == 'true' && steps.subir.outputs.subido == 'true' }}
         env:
           ID: ${{ steps.producir.outputs.id }}
         run: |
@@ -170,7 +181,7 @@ jobs:
           git push
 
       - name: Encolar un Short único después del largo publicado
-        if: ${{ success() && hashFiles('agentes/PAUSA') == '' && steps.producir.outputs.id != '' && steps.producir.outputs.formato == 'largo' && steps.panel.outputs.aprobado == 'true' && steps.subir.outputs.subido == 'true' }}
+        if: ${{ success() && hashFiles('agentes/PAUSA') == '' && steps.producir.outputs.id != '' && steps.producir.outputs.formato == 'largo' && steps.destino.outputs.valor != 'tiktok' && steps.panel.outputs.aprobado == 'true' && steps.subir.outputs.subido == 'true' }}
         env:
           ID: ${{ steps.producir.outputs.id }}
           GH_TOKEN: ${{ github.token }}
