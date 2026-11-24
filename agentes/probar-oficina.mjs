@@ -36,6 +36,12 @@ const cuadroBarco = validarEscena({cielo:['#101820','#26384a'],capas:[
 if (!cuadroBarco || tieneAnclaNarrativa(cuadroBarco, 'El sonido submarino sorprendió a los sensores')) {
   throw new Error('El pintor debe rechazar un barco cuando la frase trata de un sonido submarino.');
 }
+const cuadroMini = validarEscena({cielo:['#101820','#26384a'],capas:[
+  capa('estrellas',{n:30}), capa('olas'), capa('barco',{x:0.5,y:0.6,w:0.02}),
+]});
+if (!cuadroMini || tieneAnclaNarrativa(cuadroMini, 'El barco desaparecio en medio del oceano')) {
+  throw new Error('El pintor no debe aceptar un objeto protagonista demasiado pequeño para reconocerse.');
+}
 const cuadroHidrofono = validarEscena({cielo:['#101820','#26384a'],capas:[
   capa('estrellas',{n:30}), capa('particulas',{n:20}), capa('hidrofono',{x:0.5,y:0.6,w:0.2}),
 ]});
