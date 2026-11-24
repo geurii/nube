@@ -22,6 +22,6 @@ export const crearVisuales = async ({llamar, escenas, slug, tema, nota = () => {
   const completas = Object.keys(fondos).length;
   const faltantes = indices.filter((i) => !fondos[i]);
   if (faltantes.length) throw new Error(`Los pintores no generaron pixel art para las escenas: ${faltantes.join(', ')}. No se sustituirán por fotos.`);
-  nota(`Pixel art original: ${completas}/${indices.length} escenas dibujadas en tres cuadros distintos. Fotografías e imágenes reales: 0.`);
+  nota(`Pixel art original: ${completas}/${indices.length} escenas dibujadas en cuatro cuadros distintos. Fotografías e imágenes reales: 0.`);
   return {fondos, creditos: [], cobertura: {conFoto: 0, total: indices.length, pixelArt: completas}};
 };
