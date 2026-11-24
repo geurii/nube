@@ -50,8 +50,8 @@ const colaCompleta = fs.readdirSync(RAIZ, {withFileTypes: true})
       .filter((x) => x.g && x.g.estado === 'aprobado' && !x.producidos.some((p) => claveTema(p) === claveTema(x.slug)))
       .filter((x) => {
         const palabras = (x.g.escenas ?? []).reduce((n, e) => n + String(e.texto ?? '').trim().split(/\s+/).filter(Boolean).length, 0);
-        const motivo = x.g.formato === 'largo' && palabras < 1000
-          ? `Video largo demasiado corto: ${palabras} palabras; mínimo 1000 antes de renderizar.`
+        const motivo = x.g.formato === 'largo' && (palabras < 1200 || palabras > 1800)
+          ? `Video largo fuera del rango de narración: ${palabras} palabras; se requieren entre 1200 y 1800 antes de renderizar.`
           : x.g.formato === 'short' && palabras > 180
             ? `Short demasiado largo: ${palabras} palabras; máximo preventivo 180 antes de medir el MP4.`
             : '';
@@ -114,8 +114,8 @@ const formatoInvalido = !Number.isFinite(duracion) || duracion <= 0
   ? 'No se pudo medir la duración real del MP4.'
   : g.formato === 'short' && duracion > 65.5
     ? `Short excede 65 segundos: ${duracion.toFixed(1)} s.`
-    : g.formato === 'largo' && duracion < 480
-      ? `Video largo dura ${duracion.toFixed(1)} s; mínimo 480 s (8 minutos).`
+    : g.formato === 'largo' && (duracion < 480 || duracion > 720)
+      ? `Video largo dura ${duracion.toFixed(1)} s; debe durar entre 480 y 720 s (8–12 minutos).`
       : '';
 if (formatoInvalido) {
   g.estado = 'rechazado-necesita-revision';
@@ -131,6 +131,22 @@ if (formatoInvalido) {
   console.error(formatoInvalido);
   process.exit(0);
 }
+const dimensiones = spawnSync('ffprobe', ['-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height', '-of', 'csv=s=x:p=0', mp4], {encoding: 'utf8', timeout: 60000});
+const [anchoReal, altoReal] = (dimensiones.stdout ?? '').trim().split('x').map(Number);
+const anchoEsperado = g.formato === 'largo' ? 1920 : 1080;
+const altoEsperado = g.formato === 'largo' ? 1080 : 1920;
+if (anchoReal !== anchoEsperado || altoReal !== altoEsperado) {
+  const motivo = `Resolución incorrecta: ${anchoReal}x${altoReal}; se exige ${anchoEsperado}x${altoEsperado} para ${g.formato} HD.`;
+  g.estado = 'rechazado-necesita-revision';
+  g.errorFormato = motivo;
+  fs.writeFileSync(path.join(RAIZ, canal, `guion-${slug}.json`), JSON.stringify(g, null, 2));
+  notificar(canal, 'alerta', 'Video apartado por resolución incorrecta', motivo);
+  salida('id', '');
+  salida('canal', '');
+  console.error(motivo);
+  process.exit(0);
+}
+console.log(`Resolución verificada: ${anchoReal}x${altoReal}.`);
 const mb = (fs.statSync(mp4).size / 1024 / 1024).toFixed(0);
 // NO marcar como producido aquí: renderizar no equivale a publicar.
 // subir.mjs registra el slug únicamente después de que YouTube confirme la subida.
