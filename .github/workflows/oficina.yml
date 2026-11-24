@@ -170,11 +170,9 @@ jobs:
               echo "Intento continuo $intento para $c (sin límite de rechazos)."
               echo "::notice::Inicio del intento $intento para $c a $(date -u +'%Y-%m-%dT%H:%M:%SZ')."
               if [ "$intento" -eq 1 ]; then
-                CANAL=$c timeout 900 node agentes/oficina.mjs
-                rc=$?
+                if CANAL=$c timeout 900 node agentes/oficina.mjs; then rc=0; else rc=$?; fi
               else
-                env -u TEMA CANAL=$c timeout 900 node agentes/oficina.mjs
-                rc=$?
+                if env -u TEMA CANAL=$c timeout 900 node agentes/oficina.mjs; then rc=0; else rc=$?; fi
               fi
               echo "::notice::Fin del intento $intento para $c; código de salida=$rc; duración acumulada=$((SECONDS))s."
               if [ "$rc" -eq 124 ]; then echo "::warning::La generación agotó su límite individual de 15 minutos; se intentará en la siguiente ventana."; fi
