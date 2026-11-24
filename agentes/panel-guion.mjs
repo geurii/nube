@@ -27,7 +27,7 @@ export const decidir = ({votos, garantia, duracion = 0}) => {
   const gustos = votos.filter((v) => v.leGusto).length;
   const pasan = votos.filter((v) => v.pasa3).length;
   const retencion = duracion ? retencionEstimada(votos, duracion) : 100; // sin duración (uso antiguo) no se aplica el piso
-  const porGusto = garantia ? true : gustos >= Math.ceil(votos.length * 0.5) && pasan >= Math.ceil(votos.length * 0.375);
+  const porGusto = garantia ? true : gustos >= Math.ceil(votos.length * 0.375) && pasan >= Math.ceil(votos.length * 0.375);
   const aprobado = porGusto && retencion >= RETENCION_MINIMA;
   return {aprobado, gustos, pasan, retencion, rechazoPorRetencion: porGusto && retencion < RETENCION_MINIMA};
 };
