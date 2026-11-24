@@ -1,5 +1,13 @@
 [
   {
+    "id": "mwv67odwtpwa",
+    "fecha": "2026-11-24T20:52:12.212Z",
+    "canal": "lqns",
+    "tipo": "reporte",
+    "titulo": "Video subido a YouTube",
+    "texto": "\"🍺 1 470 000 Litros: La Inundación que Cambió Londres para Siempre\" quedó PÚBLICO ahora mismo: https://youtu.be/xTBSFcp84Qs"
+  },
+  {
     "fecha": "2026-11-24T20:51:43.603Z",
     "canal": "lqns",
     "tipo": "reporte",
@@ -691,14 +699,5 @@
     "tipo": "alerta",
     "titulo": "Guion rechazado: Great Sphinx of Giza",
     "texto": "El Verificador no aprobó \"Great Sphinx of Giza\" tras 4 intentos: El gancho inicial debe tener 14 palabras o menos. Aprobados: 11. Rechazados: 45. Con error: 10. No se publica. Próximo ciclo en 8 h."
-  },
-  {
-    "id": "mwuaxz3gjfw8",
-    "fecha": "2026-11-24T06:16:51.436Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: Roswell incident",
-    "texto": "El Verificador no aprobó \"Roswell incident\" tras 4 intentos: El gancho inicial debe tener 14 palabras o menos. Aprobados: 11. Rechazados: 44. Con error: 10. No se publica. Próximo ciclo en 8 h."
   }
 ]
