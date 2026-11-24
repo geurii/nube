@@ -1,9 +1,15 @@
 {
-  "fecha": "2026-11-24T21:02:57.586Z",
+  "fecha": "2026-11-24T21:16:49.506Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 1159,
-  "ganadasDesdeElUltimoCiclo": 1,
+  "total": 990,
+  "ganadasDesdeElUltimoCiclo": 0,
   "videos": [
+    {
+      "id": "ju9-ibZWM5s",
+      "titulo": "⚡ La ola de 524 metros: El megatsunami que escaló una montaña en Alaska (1958)",
+      "publicado": "2026-11-24T21:05:01+00:00",
+      "vistas": 3
+    },
     {
       "id": "i0w6F46yv3o",
       "titulo": "🕰️ ¿297 años falsos? La teoría que borra a Carlomagno",
@@ -87,19 +93,9 @@
       "titulo": "Sabías que tres hombres caminaron en plena noche polar por 3 huevos de pingüino 🥚 (Parte 3/3)",
       "publicado": "2026-11-20T17:30:34+00:00",
       "vistas": 626
-    },
-    {
-      "id": "KURWolBJszo",
-      "titulo": "Sabías que mataron 2 millones de pingüinos... y no para comérselos 😳 (Parte 2/3)",
-      "publicado": "2026-11-20T16:30:10+00:00",
-      "vistas": 172
     }
   ],
   "historia": [
-    {
-      "fecha": "2026-11-22T03:51:25.349Z",
-      "total": 2659
-    },
     {
       "fecha": "2026-11-22T04:14:59.368Z",
       "total": 2735
@@ -335,6 +331,10 @@
     {
       "fecha": "2026-11-24T21:02:57.586Z",
       "total": 1159
+    },
+    {
+      "fecha": "2026-11-24T21:16:49.506Z",
+      "total": 990
     }
   ]
 }

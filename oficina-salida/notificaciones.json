@@ -1,5 +1,14 @@
 [
   {
+    "id": "mwv73dm91kmx",
+    "fecha": "2026-11-24T21:16:51.249Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título que plantea una pregunta intrigante o una afirmación impactante + elemento de misterio o dato sorprendente + referencia a un caso/tema específico El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (25083 vistas/hora)."
+  },
+  {
     "id": "mwv6mtae5qn1",
     "fecha": "2026-11-24T21:03:58.406Z",
     "canal": "lqns",
@@ -687,14 +696,5 @@
     "tipo": "alerta",
     "titulo": "Guion rechazado: ",
     "texto": "El Verificador no aprobó \"\" tras 0 intentos: Tema descartado (no se pudo cargar):  Aprobados: 11. Rechazados: 47. Con error: 10. No se publica. Próximo ciclo en 4 h."
-  },
-  {
-    "id": "mwujarlvknm9",
-    "fecha": "2026-11-24T10:10:45.187Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: Great Smog of London",
-    "texto": "El Verificador no aprobó \"Great Smog of London\" tras 4 intentos: El gancho inicial debe tener 14 palabras o menos. Aprobados: 11. Rechazados: 46. Con error: 10. No se publica. Próximo ciclo en 4 h."
   }
 ]
