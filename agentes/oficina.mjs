@@ -415,7 +415,7 @@ const NORMAS = `NORMAS DE LA JEFA (no se negocian):
 5. Sin nombres de personas reales: di "el capitán", "un científico", "los investigadores". Sí puedes nombrar lugares, barcos, libros u objetos.
 6. Las dudas se dicen como dudas ("según la fuente", "no se sabe"). Si dos fuentes difieren, di las dos.
 7. La revelación ("Pero lo que no sabías:") debe caer IDEALMENTE entre el 65 % y el 72 % del total de palabras. El rango aceptado es 55 %–80 %, pero NO apuntes a sus bordes: deja margen de seguridad.
-8. Cierra con una pregunta relacionada directamente con el tema y una invitación natural a seguir el canal. No pidas compartir con un amigo ni uses frases genéricas fuera de contexto. Termina con una pregunta concreta y natural relacionada con el tema. La última frase debe ser exactamente: "${CTA}".
+8. No incluyas descargos meta como «recuerda que es ficción», «esto es ficción» ni advertencias similares cuando el tema sea un hecho real documentado. No rompas la narración para hablar del proceso de creación. Cierra con una pregunta relacionada directamente con el tema y una invitación natural a seguir el canal. No pidas compartir con un amigo ni uses frases genéricas fuera de contexto. Termina con una pregunta concreta y natural relacionada con el tema. La última frase debe ser exactamente: "${CTA}".
 8b. TODO el texto se LEE EN VOZ ALTA por una voz en español: escríbelo en español puro, sin palabras en inglés (traduce: "estruendo", no "blast"), sin transliteraciones raras ni siglas sueltas, y los rangos con palabras ("entre 10 y 15", no "10-15").
 9. Escribe las cifras y los años con DÍGITOS, exactamente como aparecen en DATOS EXACTOS (por ejemplo 1609 o 1420 MHz). NUNCA conviertas un número a palabras ni lo cambies: un número mal copiado es un dato falso.
 11. GANCHO AUDITIVO (primeros 3 segundos, lo que se OYE): una pregunta imposible o una cifra dicha en voz alta, con frase corta y una pausa dramática justo antes de la respuesta. Nada de saludos ni introducciones.
@@ -667,7 +667,7 @@ try {
       if (v.creditos) descripcion = `${descripcion}\n\n${v.creditos}`;
       CTX.fotos = v.cobertura;
       informe.push(`Pintores: ${CTX.pintadas} de ${escenas.length} escenas dibujadas.`);
-    } catch (e) { informe.push('(Las imágenes no se pudieron generar: ' + e.message + '. Se usa el fondo del catálogo.)'); }
+    } catch (e) { aprobado = false; problemas.push({frase: '(visuales)', motivo: 'No se generaron imágenes específicas para las escenas: ' + String(e.message ?? e).slice(0, 220) + '. No se permite sustituirlas por fondos genéricos ni publicar el video sin visuales.'}); informe.push('(GUION BLOQUEADO: no se generaron visuales específicos; no se publicará con fondos genéricos.)'); }
   }
   const sinImagen = aprobado ? fondos.filter((f) => f.every((x) => x === 'pixelmisterio')).length : 0;
   CTX.sinImagen = sinImagen;
