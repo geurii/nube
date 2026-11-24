@@ -1,6 +1,20 @@
 {
   "decisiones": [
     {
+      "id": "iw3xks2",
+      "texto": "The Disappearance of the Roanoke Colony",
+      "categoria": "Tema",
+      "decision": "si",
+      "fecha": "2026-11-24T02:36:16.956Z"
+    },
+    {
+      "id": "i1tqkkre",
+      "texto": "The Sinking of the MV Princess Alice",
+      "categoria": "Tema",
+      "decision": "si",
+      "fecha": "2026-11-24T02:36:15.946Z"
+    },
+    {
       "id": "i18xt411",
       "texto": "Desarrollar y publicar un video de 12 minutos sobre el caso del banco que pagó 175 millones por clientes ficticios, optimizando SEO y promoción en redes sociales: Equipo de Investigación y Producción de Documentales: Alcanzar 2,000 vistas y",
       "categoria": "Plan",
