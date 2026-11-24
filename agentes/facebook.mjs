@@ -251,10 +251,10 @@ export const principal = async () => {
   const alertar = (msg) => {
     console.log('Redes: ' + msg);
     try {
-      avisarTelefono('alerta', 'No se pudo publicar en Facebook, Instagram ni TikTok', `"${titulo.slice(0, 40)}": ${msg.slice(0, 260)}`);
+      avisarTelefono('alerta', largo ? 'No se pudo enviar el largo a TikTok' : 'No se pudo publicar en Facebook, Instagram ni TikTok', `"${titulo.slice(0, 40)}": ${msg.slice(0, 260)}`);
       const rutaN = path.join('oficina-salida', 'notificaciones.json');
       const lista = leer(rutaN, []);
-      lista.unshift({id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), fecha: new Date().toISOString(), canal: CANAL, tipo: 'alerta', titulo: 'No se pudo publicar en las redes', texto: `"${titulo.slice(0, 80)}": ${msg.slice(0, 220)}`});
+      lista.unshift({id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), fecha: new Date().toISOString(), canal: CANAL, tipo: 'alerta', titulo: largo ? 'No se pudo enviar el largo a TikTok' : 'No se pudo publicar en las redes', texto: `"${titulo.slice(0, 80)}": ${msg.slice(0, 220)}`});
       fs.writeFileSync(rutaN, JSON.stringify(lista.slice(0, 80), null, 2));
     } catch { /* el aviso no debe fallar */ }
   };
@@ -326,9 +326,11 @@ export const principal = async () => {
       if (usaRepo && archivosRepo === null) archivosRepo = await limpiarViejos({token, repo, archivos: [...(d.registro.archivos ?? []), pub.ruta]});
       if (usaRepo) d.registro.archivos = archivosRepo;
       fs.writeFileSync(path.join(dir, d.archivoRegistro), JSON.stringify(d.registro, null, 2));
-      console.log(`${d.nombre}: ${d.accion === 'create_reel' || d.conector === 'instagram' ? 'Reel' : 'video'} publicado en "${CANAL}" (${d.registro.total} en total).`);
-      try { avisarTelefono('subido', `Video publicado en ${d.nombre}`, `"${titulo.slice(0, 100)}" ya está en tu ${d.nombre} (Windsor).`); } catch { /* el aviso no debe fallar */ }
-      resultados[d.nombre] = 'publicado';
+      const esBuffer = d.tipo === 'buffer';
+      const estadoPublicacion = esBuffer && resp.programado !== 'ahora' ? 'añadido a la cola de Buffer' : esBuffer ? 'enviado a Buffer para publicación inmediata' : 'publicado';
+      console.log(`${d.nombre}: ${estadoPublicacion} en "${CANAL}" (${d.registro.total} en total).`);
+      try { avisarTelefono('subido', esBuffer ? (largo ? 'Largo enviado a TikTok' : 'Video enviado a Buffer') : `Video publicado en ${d.nombre}`, `"${titulo.slice(0, 100)}" ${estadoPublicacion}.`); } catch { /* el aviso no debe fallar */ }
+      resultados[d.nombre] = esBuffer ? (resp.programado === 'ahora' ? 'enviado-ahora' : 'encolado') : 'publicado';
     } catch (e) {
       const msg = quitarClaves(String(e.message ?? e), apiKey, token, bufferKey).slice(0, 300);
       console.log(`${d.nombre}: no se pudo publicar: ${msg}`);
