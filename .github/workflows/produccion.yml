@@ -14,7 +14,7 @@ on:
 
 permissions:
   contents: write
-  actions: read
+  actions: write
 
 concurrency:
   group: produccion
@@ -168,9 +168,12 @@ jobs:
         if: ${{ success() && hashFiles('agentes/PAUSA') == '' && steps.producir.outputs.id != '' && steps.producir.outputs.formato == 'largo' && steps.panel.outputs.aprobado == 'true' && steps.subir.outputs.subido == 'true' }}
         env:
           ID: ${{ steps.producir.outputs.id }}
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
         run: |
           node --input-type=module -e 'import fs from "node:fs"; const p="agentes/secuencia-largo-short.json"; if (!fs.existsSync(p)) process.exit(0); const x=JSON.parse(fs.readFileSync(p,"utf8")); if (!x.activo || x.fase !== "largo") process.exit(0); x.fase="short-encolado"; x.videoLargoId=process.env.ID; x.fechaLargoPublicado=new Date().toISOString(); fs.writeFileSync(p, JSON.stringify(x,null,2)+"\n"); fs.writeFileSync("agentes/oficina.disparo", new Date().toISOString()+"|short\n");'
           git add agentes/secuencia-largo-short.json agentes/oficina.disparo
           git commit -m "Encolar el Short único después de publicar el largo"
           git pull --rebase --autostash -X theirs origin main
           git push
+          gh workflow run oficina.yml --ref main -f formato=short
