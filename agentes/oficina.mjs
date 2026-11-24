@@ -358,28 +358,43 @@ const elegirTema = async (modelo) => {
   const candidatosLocales = [...temasAprobadosDelDueno(CANAL_ID), ...ideasEquipo, ...ideasEstrategia, ...ideasJules];
   for (const t of candidatosLocales) {
     if (typeof t !== 'string' || yaHecho(t)) continue;
-    const pagina = await wikipedia('en', t);
-    if (pagina?.extract && pagina.extract.trim().length >= 300) return pagina.title || t;
+    // Priorizar búsqueda web independiente: Wikipedia puede devolver 429 desde GitHub Actions.
     const web = await investigarEnLaWeb(t);
     const fuente = web.find((x) => String(x.texto ?? '').trim().length >= 220);
     if (fuente) return t;
+    const pagina = await wikipedia('en', t);
+    if (pagina?.extract && pagina.extract.trim().length >= 300) return pagina.title || t;
     informe.push(`Idea local descartada por falta de fuente consultable: "${t}".`);
   }
   // Catálogo curado de temas reales conocidos: se comprueba que exista una página con contenido antes de elegirlos.
-  const reserva = ['The Green Children of Woolpit', 'The moving rocks of Death Valley', 'The disappearing lake of Cerknica', 'The phantom time hypothesis', 'The Antikythera mechanism', 'The Voynich manuscript', 'The Hessdalen lights', 'The Devil’s Footprints', 'The Mary Celeste', 'The Tunguska event', 'The Bloop', 'The Taos Hum', 'The Wow! signal', 'The dancing plague of 1518', 'The Great Moon Hoax'];
+  const reserva = [
+    'The London Beer Flood', 'The Great Stink of 1858', 'Lake Peigneur disaster',
+    'Lituya Bay megatsunami', 'Lake Nyos disaster', 'The Year Without a Summer',
+    'The Great Frost of 1709', 'Laki eruption', 'The 1904 Olympic marathon',
+    'The Great Stork Derby', 'The Dancing Forest of Kaliningrad',
+    'Shag Harbour UFO incident', 'The 1977 Southern Television broadcast interruption',
+    'The 1961 Lake Monoun disaster', 'The Donora smog', 'The Great Blizzard of 1888',
+    'The Peshtigo fire', 'The Cadaver Synod', 'The Great Hedge of India',
+    'The 1912 Villisca axe murders', 'The 1918 molasses flood', 'The Great Sheep Panic of 1888',
+    'The 1958 Lituya Bay megatsunami', 'The 1902 eruption of Mount Pelée',
+    'The 1965 New York City blackout', 'The 1974 Xenia tornado',
+    'The 1937 Hindenburg disaster', 'The 1948 Donora smog',
+    'The 1925 serum run to Nome', 'The 1906 San Francisco earthquake'
+  ];
   for (const t of reserva) {
     if (yaHecho(t)) continue;
-    let pagina = null;
-    try { pagina = await wikipedia('en', t); } catch (e) { console.warn(`Wikipedia no disponible para "${t}": ${e.message}`); }
-    if (pagina?.extract && pagina.extract.trim().length >= 300) {
-      informe.push('Tema elegido del catálogo editorial verificado y con página consultable; se excluyen los temas ya tratados.');
-      return pagina.title || t;
-    }
+    // Una sola fuente web legible basta; no se exige Wikipedia ni dos fuentes institucionales.
     const webReserva = await investigarEnLaWeb(t);
     const fuenteReserva = webReserva.find((x) => String(x.texto ?? '').trim().length >= 220);
     if (fuenteReserva) {
-      informe.push(`Tema elegido del catálogo editorial mediante fuente web alternativa: ${fuenteReserva.dominio || fuenteReserva.url}.`);
+      informe.push(`Tema elegido del catálogo editorial mediante fuente web consultable: ${fuenteReserva.dominio || fuenteReserva.url}.`);
       return t;
+    }
+    let pagina = null;
+    try { pagina = await wikipedia('en', t); } catch (e) { console.warn(`Wikipedia no disponible para "${t}": ${e.message}`); }
+    if (pagina?.extract && pagina.extract.trim().length >= 300) {
+      informe.push('Tema elegido del catálogo editorial verificado; se excluyen los temas ya tratados.');
+      return pagina.title || t;
     }
   }
   for (let ronda = 1; ronda <= 3; ronda++) {
@@ -391,15 +406,15 @@ const elegirTema = async (modelo) => {
     for (const t of propuestas) {
       if (typeof t !== 'string' || !t.trim() || yaHecho(t)) continue;
       if (yaHecho(t.trim())) continue;
-      const pagina = await wikipedia('en', t.trim());
-      if (pagina?.extract && pagina.extract.trim().length >= 300) {
-        informe.push(`Tema elegido en ronda ${ronda}; título resuelto a una página consultable de Wikipedia.`);
-        return pagina.title || t.trim();
-      }
       const web = await investigarEnLaWeb(t.trim());
       if (web.some((x) => String(x.texto ?? '').trim().length >= 220)) {
         informe.push(`Tema elegido en ronda ${ronda}; pasó la consulta de una fuente web legible.`);
         return t.trim();
+      }
+      const pagina = await wikipedia('en', t.trim());
+      if (pagina?.extract && pagina.extract.trim().length >= 300) {
+        informe.push(`Tema elegido en ronda ${ronda}; título resuelto a una página consultable de Wikipedia.`);
+        return pagina.title || t.trim();
       }
       informe.push(`Propuesta descartada antes de escribir por no tener fuente consultable: "${t.trim()}".`);
     }
