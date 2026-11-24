@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import {pathToFileURL, fileURLToPath} from 'node:url';
-import {parsearTranscripcion} from './analizar-videos.mjs';
+import {parsearTranscripcion, mensajesDeDesglose} from './analizar-videos.mjs';
 
 const aqui = path.dirname(fileURLToPath(import.meta.url));
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'oficina-prueba-'));
@@ -83,6 +83,8 @@ if (!validarLongitudGuion(largo1250).valido) throw new Error('Debe aprobar un gu
 if (validarLongitudGuion(largo1100).valido || validarLongitudGuion(largo1400).valido) throw new Error('Debe rechazar guiones largos fuera del rango 1200–1350 palabras.');
 const cuesReferencia = parsearTranscripcion('<transcript><text start="0" dur="2">The <b>first</b> mystery.</text><text start="17.5" dur="3">Then the reveal &amp; the twist.</text></transcript>');
 if (cuesReferencia.length !== 2 || cuesReferencia[0].tiempo !== '00:00' || cuesReferencia[1].tiempo !== '00:17' || !cuesReferencia[1].texto.includes('&')) throw new Error('La lectura de subtítulos públicos debe preservar texto y marcas de tiempo.');
+const encargoReferencia = mensajesDeDesglose({titulo: 'Referencia', segundos: 540, transcripcion: '[00:00] Gancho.\\n[00:18] Contexto.'}, 'largo');
+if (!encargoReferencia[1].content.includes('TRANSCRIPCIÓN CON TIEMPOS') || !encargoReferencia[1].content.includes('formula_abstracta') || !encargoReferencia[0].content.includes('Nunca copies frases')) throw new Error('La autopsia de referencia debe analizar tiempos y extraer solo la estructura, sin copiar contenido.');
 const CTA_DEMO = CTA_LQNS;
 const hacer = (cta) => [
   {tipo: 'hook', texto: 'El oceano registro un sonido imposible en 1997.'},
