@@ -154,7 +154,7 @@ const composition = await selectComposition({
 const tiempos = composition.props.tiempos;
 const total = tiempos.duracionTotal;
 if (guion.formato === 'short' && total > 65) throw new Error(`PUBLICACIÓN BLOQUEADA: Short de ${total.toFixed(1)} s; el máximo es 65 s.`);
-if (guion.formato === 'largo' && total < 480) throw new Error(`PUBLICACIÓN BLOQUEADA: video largo de ${total.toFixed(1)} s; el mínimo es 480 s (8 minutos).`);
+if (guion.formato === 'largo' && (total < 480 || total > 720)) throw new Error(`PUBLICACIÓN BLOQUEADA: video largo de ${total.toFixed(1)} s; debe durar entre 480 y 720 s (8–12 minutos).`);
 
 // --- Comprobación de estructura -------------------------------------------
 const pct = (s) => `${Math.round((s / total) * 100)}%`;
@@ -201,9 +201,9 @@ if (avisos.length) {
 // --- Render ----------------------------------------------------------------
 // Con poca RAM (menos de 8 GB) usamos una sola pestaña de Chrome: más lento pero estable.
 // Se puede forzar con: npm run render -- --concurrencia 4
-// Calidad: se renderiza a la MITAD de resolución (540x960 o 960x540) y se amplía 2x sin suavizar:
+// Calidad: render nativo a resolución completa (1080x1920 o 1920x1080); sin ampliación artificial.
 // pixel real pero con el doble de nitidez que antes (antes era 1/4). Se puede cambiar: --escala 1
-const ESCALA_PIXEL = Number(opcion('escala') ?? 0.5);
+const ESCALA_PIXEL = Number(opcion('escala') ?? 1);
 const bajo = path.join(path.dirname(salida), '.bajo-res.mp4');
 const ramGb = os.totalmem() / 1024 ** 3;
 const concurrency = opcion('concurrencia') ? Number(opcion('concurrencia')) : ramGb < 8 ? 1 : null;
@@ -216,9 +216,7 @@ await renderMedia({
   // Calidad alta: fotogramas JPEG al 100 %, color estándar de video (bt709, limitado)
   // y compresión casi sin pérdida. El valor anterior (JPEG 80, crf 18, rango completo)
   // era lo que hacía ver la imagen blanda y distorsionada.
-  // PIXEL REAL: se renderiza a 1/4 de resolución (270x480) y después se amplía 4x sin
-  // suavizar (vecino más cercano) a 1080x1920. Así TODO (fondos, personaje, subtítulos)
-  // queda en pixeles de verdad. Además renderiza mucho más rápido.
+  // PIXEL ART HD: se renderiza a escala 1 para conservar el detalle original de todos los fondos y subtítulos.
   scale: ESCALA_PIXEL,
   imageFormat: 'png',
   pixelFormat: 'yuv420p',
