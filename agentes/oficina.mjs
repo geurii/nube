@@ -1,8 +1,8 @@
 // Oficina de videos de "Lo Que No Sabías" · corre en GitHub Actions, sin que Claude participe.
-// Departamentos: Dirección (elige tema) → Investigación (Wikipedia, con fuente) → Guionista (Groq)
+// Departamentos: Dirección (elige tema) → Investigación institucional multifuente (Wikipedia opcional) → Guionista (Groq)
 //   → Editor crítico (retención y ritmo) → Verificador (rechaza lo que no esté en la fuente) → Escenógrafo (fondos de cada escena).
 // Salida en oficina-salida/: guion-<tema>.json (formato del render), informe-<tema>.md, estado.json (lo que ve la oficina 3D), historial.json.
-// Variables: GROQ_API_KEY (secreto), TEMA (opcional: título en Wikipedia), FORMATO (short|largo), IDIOMAS (por defecto "es,en"), PALABRAS (largo).
+// Variables: GROQ_API_KEY (secreto), TEMA (opcional: tema libre), FORMATO (short|largo), IDIOMAS (por defecto "es,en"), PALABRAS (largo).
 import fs from 'node:fs';
 import path from 'node:path';
 import {puestosDeLaOficina, mesaDePublicacion} from './puestos.mjs';
@@ -78,7 +78,7 @@ const registrar = (resultado, detalle, intentos, extra = {}) => {
     ag['Verificador de datos'] = {estado: 'libre', actividad: 'leyendo', tarea: `Aprobó "${TEMA}" en el intento ${intentos}.`};
   } else if (resultado === 'rechazado') {
     ag['Directora de contenido'] = {estado: 'trabajando', actividad: 'pensando', tarea: `Necesita revisión: el guion de "${TEMA}" no pasó la verificación. ${resumen}`};
-    ag['Investigador de temas'] = {estado: 'libre', actividad: 'leyendo', tarea: `Dejó el material de "${TEMA}" con su fuente en Wikipedia.`};
+    ag['Investigador de temas'] = {estado: 'libre', actividad: 'leyendo', tarea: `Dejó el material de "${TEMA}" con fuentes institucionales independientes.`};
     ag['Guionista'] = {estado: 'trabajando', actividad: 'escribiendo', tarea: `Intentó ${intentos} veces escribir "${TEMA}" sin que el Verificador lo aprobara.`};
     ag['Verificador de datos'] = {estado: 'trabajando', actividad: 'leyendo', tarea: `Rechazó "${TEMA}": ${detalle}`};
   } else {
@@ -657,7 +657,7 @@ try {
   if (!aprobado) console.log('El Verificador no aprobó el guion tras 4 intentos. Queda marcado para revisión.');
 } catch (e) {
   informe.push('## ERROR', String(e.message ?? e));
-  const temaMalo = Boolean(TEMA.trim()) && /No encontré el tema|material suficiente|sin material/i.test(String(e.message ?? e));
+  const temaMalo = Boolean(TEMA.trim()) && /No encontré el tema|no reunió 2 fuentes institucionales|No se encontraron dos fuentes institucionales|material suficiente|sin material/i.test(String(e.message ?? e));
   if (temaMalo) {
     // Un tema que no carga NO es un error de la oficina: se descarta y el ciclo prueba con otro.
     try { fs.writeFileSync(HISTORIAL, JSON.stringify([...new Set([...leerJson(HISTORIAL, []), TEMA])], null, 2)); } catch { /* sin historial */ }
