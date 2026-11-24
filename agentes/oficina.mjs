@@ -23,6 +23,7 @@ import {enGarantia} from './garantia.mjs';
 import {chatAlternativo, proveedoresConLlave, modelosDisponibles, diagnosticoRespaldo} from './llm.mjs';
 import {sinEnlaces} from './sin-enlaces.mjs';
 import {datosDeVideo, mensajesDeDesglose} from './analizar-videos.mjs';
+import {buscarReferenciasLargas} from './radar.mjs';
 import {seleccionarFuentesParaGuion, materialDesdeFuentes} from './fuentes-guion.mjs';
 
 const KEY = process.env.GROQ_API_KEY;
@@ -209,7 +210,8 @@ const ORDEN_JULES = leerJson(path.join(SALIDA, 'ordenes.json'), [])[0];
 const ALTERNOS = process.env.GROQ_API_KEY ? (await modelosDisponibles(process.env.GROQ_API_KEY)).filter((m) => m !== 'openai/gpt-oss-120b') : []; // modelos de Groq con cuota separada que SÍ existen en la cuenta
 let groqBloqueadoHasta = 0; // mientras Groq esté en 429, se usan primero los demás proveedores
 let WEB_BLOQUE = [leerPreferencias(CANAL_ID), textoDeLecciones(CANAL_ID)].filter(Boolean).join(' ').slice(0, 1800); // arranca con lo que el dueño aprobó y rechazó; después se le suma lo que dice internet // lo que dice internet HOY sobre el tema: se les da a TODOS los agentes (se llena después de investigar)
-const groqDirecto = async (modelo, mensajes, maxTokens = FORMATO === 'largo' ? 4500 : 2500, json = false) => {
+const tokensDeSalida = (n) => Math.min(Number(n) || (FORMATO === 'largo' ? 6000 : 2500), FORMATO === 'largo' ? 6500 : 3500);
+const groqDirecto = async (modelo, mensajes, maxTokens = FORMATO === 'largo' ? 6000 : 2500, json = false) => {
   mensajes = mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + (ORDEN_JULES ? ` ORDEN VIGENTE DE JULES (nivel ${ORDEN_JULES.nivel}/5, la dio el dueño): ${ORDEN_JULES.orden}` : '') + '\n\n' + m.content} : m));
   let ultimo = 'sin respuesta';
   const maxIntentos = proveedoresConLlave().length ? 4 : 8; // con respaldo disponible no se pierde tiempo esperando a Groq
@@ -225,7 +227,7 @@ const groqDirecto = async (modelo, mensajes, maxTokens = FORMATO === 'largo' ? 4
           model: mod,
           messages: mensajes,
           temperature: 0.4,
-          max_tokens: maxTokens > 3000 ? Math.min(maxTokens, 3500) : Math.min(maxTokens ?? (FORMATO === 'largo' ? 3500 : 1200), FORMATO === 'largo' ? 3500 : 1200),
+          max_tokens: tokensDeSalida(maxTokens),
           ...(json ? {response_format: {type: 'json_object'}} : {}),
           // los modelos "gpt-oss" razonan antes de responder: poco razonamiento = más espacio para el texto
           ...(mod.includes('gpt-oss') ? {reasoning_effort: 'low'} : {}),
@@ -251,6 +253,7 @@ const groqDirecto = async (modelo, mensajes, maxTokens = FORMATO === 'largo' ? 4
       const j = await r.json();
       const eleccion = j.choices?.[0];
       const contenido = eleccion?.message?.content ?? '';
+      if (eleccion?.finish_reason === 'length') { throw Object.assign(new Error('respuesta truncada al alcanzar el límite de tokens solicitado'), {groqTruncado: true}); }
       if (!contenido.trim()) { ultimo = `respuesta vacía (${eleccion?.finish_reason ?? '?'})`; continue; }
       return contenido;
     } catch (e) {
@@ -275,12 +278,12 @@ const groq = async (modelo, mensajes, maxTokens, json = false) => {
 };
 const groqUnaRonda = async (modelo, mensajes, maxTokens, json = false) => {
   if (!KEY && proveedoresConLlave().length) {
-    const alternativo = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: maxTokens > 3000 ? Math.min(maxTokens, 3500) : Math.min(maxTokens ?? (FORMATO === 'largo' ? 3500 : 1200), FORMATO === 'largo' ? 3500 : 1200), json});
+    const alternativo = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: tokensDeSalida(maxTokens), json});
     if (alternativo) { console.log(`Groq sin clave: se usó ${alternativo.proveedor} (${alternativo.modelo}).`); return alternativo.texto; }
     throw new Error('Groq no tiene clave y ningún proveedor alternativo respondió.');
   }
   if (Date.now() < groqBloqueadoHasta && proveedoresConLlave().length) {
-    const rapido = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: maxTokens > 3000 ? Math.min(maxTokens, 3500) : Math.min(maxTokens ?? (FORMATO === 'largo' ? 3500 : 1200), FORMATO === 'largo' ? 3500 : 1200), json});
+    const rapido = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: tokensDeSalida(maxTokens), json});
     if (rapido) { console.log(`Groq en límite: se usó ${rapido.proveedor} (${rapido.modelo}).`); return rapido.texto; }
   }
   try { return await groqDirecto(modelo, mensajes, maxTokens, json); }
@@ -288,7 +291,7 @@ const groqUnaRonda = async (modelo, mensajes, maxTokens, json = false) => {
     if (e.fatal && !e.groq413 && !e.groqJson400 && !proveedoresConLlave().length) throw e;
     if (e.groq413) console.warn('Groq 413: se deriva al proveedor alternativo.');
     if (e.groqJson400) console.warn('Groq rechazó el JSON (400): se deriva al proveedor alternativo.');
-    const alt = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: maxTokens > 3000 ? Math.min(maxTokens, 3500) : Math.min(maxTokens ?? (FORMATO === 'largo' ? 3500 : 1200), FORMATO === 'largo' ? 3500 : 1200), json});
+    const alt = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: tokensDeSalida(maxTokens), json});
     if (!alt) { e.message += ` Respaldos: ${[...new Set(diagnosticoRespaldo)].join('; ').slice(0, 450) || 'ninguno con llave'}.`; throw e; }
     console.log(`Groq no respondió: se usó ${alt.proveedor} (${alt.modelo}).`);
     return alt.texto;
@@ -371,20 +374,24 @@ const elegirTema = async (modelo) => {
   if (resumenRadar) informe.push(`Radar prioritario: ${radar.canales.length} canales nuevos con videos que superaron al menos 5x su rendimiento habitual (${String(radar.fecha).slice(0, 10)}).`);
   // Desmontar referencias reales de YouTube: exige duración compatible y subtítulos públicos.
   // Solo se extrae la estructura narrativa; nunca se descarga ni reutiliza el video, su audio o sus escenas.
-  const videosRadar = (radar?.videosVirales ?? []).slice(0, 18);
+  let videosRadar = (FORMATO === 'largo' ? (radar?.referenciasLargas ?? []) : (radar?.videosVirales ?? [])).slice(0, 24);
+  if (FORMATO === 'largo' && !videosRadar.length) {
+    informe.push('El radar no dejó referencias largas guardadas; se buscan directamente en canales establecidos y consultas del nicho.');
+    videosRadar = await buscarReferenciasLargas({nicho: CONFIG.nicho, canales: CONFIG.vigilar ?? [], maxResultados: 14, limiteMs: 110000, nota: (t) => informe.push(t)});
+  }
   let referenciasEvaluadas = 0;
   for (const viral of videosRadar) {
     if (!viral?.titulo || yaHecho(viral.titulo)) continue;
     try {
       const id = String(viral.id ?? /[?&]v=([\w-]{11})/.exec(viral.url ?? '')?.[1] ?? '');
       if (!/^[\w-]{11}$/.test(id)) continue;
-      const referencia = await datosDeVideo(id);
-      if (!referencia.transcripcion || referencia.transcripcion.length < 350) {
+      const referencia = viral.transcripcion ? viral : await datosDeVideo(id);
+      if (!referencia.transcripcion || referencia.transcripcion.length < (FORMATO === 'largo' ? 1800 : 350)) {
         informe.push('Referencia descartada para autopsia: no ofreció subtítulos públicos legibles (' + viral.titulo + ').');
         continue;
       }
       if (!Number.isFinite(referencia.segundos)
-        || (FORMATO === 'largo' && referencia.segundos < 480)
+        || (FORMATO === 'largo' && (referencia.segundos < 480 || referencia.segundos > 3600))
         || (FORMATO === 'short' && referencia.segundos > 180)) {
         informe.push('Referencia descartada por duración incompatible con el formato ' + FORMATO + ': ' + viral.titulo + '.');
         continue;
@@ -401,8 +408,8 @@ const elegirTema = async (modelo) => {
       ], 220);
       const temaViral = String(traducido.tema ?? '').trim();
       if (!temaViral || yaHecho(temaViral)) continue;
-      const fuentesViral = await investigarEnLaWeb(temaViral);
-      const fuenteViral = fuentesViral.find((x) => String(x.texto ?? '').trim().length >= 220);
+      const fuentesViral = seleccionarFuentesParaGuion(await investigarEnLaWeb(temaViral, {maxPorFuente: 3, minimoDominios: 3}), 'largo');
+      const fuenteViral = fuentesViral[0];
       if (!fuenteViral) {
         informe.push('Referencia viral descartada: el tema no pudo verificarse independientemente (' + viral.titulo + ').');
         continue;
@@ -427,7 +434,7 @@ const elegirTema = async (modelo) => {
         confianza: autopsia.confianza,
       }).slice(0, 5200);
       informe.push('AUTOPSIA REAL DE YOUTUBE: "' + referenciaMeta.titulo + '" · ' + referenciaMeta.duracionSegundos + ' s · subtítulos ' + referenciaMeta.idiomaTranscripcion + ' · ' + autopsia.desglose.length + ' bloques temporales analizados · confianza ' + (autopsia.confianza ?? 'sin especificar') + '. Se adapta únicamente la arquitectura; los hechos del guion proceden de investigación independiente.');
-      informe.push('Tema tomado de la referencia y verificado por separado en ' + (fuenteViral.dominio || fuenteViral.url) + '.');
+      informe.push('Tema tomado de la referencia y verificado de forma independiente en ' + fuentesViral.length + ' fuentes y dominios distintos; primera fuente: ' + (fuenteViral.dominio || fuenteViral.url) + '.');
       return temaViral;
     } catch (e) {
       informe.push('No se pudo desmontar la referencia "' + viral.titulo + '": ' + String(e.message ?? e).slice(0, 100) + '.');
@@ -555,7 +562,7 @@ const elegirTema = async (modelo) => {
 /* ====================== Normas de la jefa (las cumplen todos) ====================== */
 const NORMAS = `NORMAS DE LA JEFA (no se negocian):
 1. Solo puedes usar datos que estén en el MATERIAL. Si un dato no está en el material, no existe. Prohibido inventar.
-2. SHORT: si el material no alcanza, escribe menos y no inventes. VIDEO LARGO: solo se escribe cuando la investigación aporta al menos 3 dominios web independientes y 8.500 caracteres de contenido consultado; si no, descarta el tema y busca otro. Nunca conviertas un material breve en un largo ni rellenes.
+2. SHORT: si el material no alcanza, escribe menos y no inventes. VIDEO LARGO: solo se escribe cuando la investigación aporta al menos 3 dominios web independientes y 8.500 caracteres de contenido consultado; si no, descarta el tema y busca otro. Nunca conviertas un material breve en un largo ni rellenes. El largo debe contener entre 1.200 y 1.350 palabras narradas; no entregues sinopsis, resumen ni un guion de 200–300 palabras.
 3. SHORT: la primera frase es un gancho natural, original y contundente de MÁXIMO 14 palabras; NO tiene que empezar con "Sabías que". VIDEO LARGO: la primera frase puede abrir con una pregunta intrigante o un hecho sorprendente, sin obligación de usar "Sabías que". En ambos formatos debe ser un GANCHO REAL: una pregunta intrigante o un hecho increíble (con un número o una cifra concreta SOLO si el material la trae; nunca inventes una), que se entienda en un segundo y deje la duda abierta (que el dedo se frene). Esa frase saldrá además como titular gigante en pantalla.
 4. ${CONFIG.tono ?? 'Tono de misterio, no de miedo.'} Lenguaje claro para gente normal. Sin tecnicismos.
 5. Sin nombres de personas reales: di "el capitán", "un científico", "los investigadores". Sí puedes nombrar lugares, barcos, libros u objetos.
@@ -614,7 +621,7 @@ const PROHIBIDOS = [];
 const prohibidosTexto = () => (PROHIBIDOS.length ? `\n\nNOMBRES PROHIBIDOS (ya te los rechazaron; di su papel: "el investigador", "el astrónomo"): ${[...new Set(PROHIBIDOS)].join(', ')}.` : '');
 const guionista = (material, problemas) => [
   {role: 'system', content: `Eres el/la Guionista del canal de YouTube "${CONFIG.nombre}" (${CONFIG.nicho}). Tienes maestría en narración de documental, retención de audiencia y rigor periodístico. ${NORMAS}\nResponde SOLO con JSON.`},
-  {role: 'user', content: `Escribe un guion de ${FORMATO === 'largo' ? 'video largo' : 'Short vertical de unos 55 segundos'} de unas ${PALABRAS} palabras sobre "${TEMA}". ${REPARTO}${formulaActual()}${aprendizajesDelPanel()}${ayudasDelEquipo()}\n\nDATOS EXACTOS (cualquier cifra o fecha debe conservar los dígitos, rangos y unidades del material):\n${datosExactos(material)}\n${notaDeIntervalosFuente(material)}${prohibidosTexto()}\n\n${referenciaEstructural ? `AUTOPSIA ESTRUCTURAL DE REFERENCIA (solo arquitectura; NO es fuente factual): ${referenciaEstructural}. Aplica la fórmula abstracta al tema investigado, pero cambia íntegramente el relato, las frases, ejemplos, escenas y secuencia factual. No imites el montaje ni copies el video.` : 'No hay autopsia de referencia disponible; crea una narración original y no afirmes que adaptaste un video concreto.'}\n\nMATERIAL (única fuente permitida):\n${material}\n\n${problemas?.length ? `El Verificador o el Editor rechazaron la versión anterior. Corrige exactamente esto:\n${problemas.map((p) => `- "${p.frase}": ${p.motivo}`).join('\n')}\n\n` : ''}Formato JSON: {"titulo": "...(máx. 90 caracteres, con un emoji)", "descripcion": "...(2 frases)", "hashtags": ["#cinco", "#especificos", "#del", "#tema", "#sinviral"], "escenas": [...]}. Los hashtags son 5, específicos del tema; nunca #viral ni #fyp. ${FORMATO_ESCENAS}`},
+  {role: 'user', content: `Escribe un guion de ${FORMATO === 'largo' ? 'video largo documental de 8–10 minutos' : 'Short vertical de unos 55 segundos'} de unas ${PALABRAS} palabras sobre "${TEMA}". ${FORMATO === 'largo' ? 'OBLIGATORIO: entrega 1.200–1.350 palabras narradas. Organiza 7 bloques narrativos progresivos de 160–195 palabras cada uno y conviértelos en 55–65 escenas de 12–22 palabras. Cuenta solo el campo texto de las escenas. No termines hasta alcanzar el mínimo; no resumas ni reduzcas el caso a una ficha.' : ''} ${REPARTO}${formulaActual()}${aprendizajesDelPanel()}${ayudasDelEquipo()}\n\nDATOS EXACTOS (cualquier cifra o fecha debe conservar los dígitos, rangos y unidades del material):\n${datosExactos(material)}\n${notaDeIntervalosFuente(material)}${prohibidosTexto()}\n\n${referenciaEstructural ? `AUTOPSIA ESTRUCTURAL DE REFERENCIA (solo arquitectura; NO es fuente factual): ${referenciaEstructural}. Aplica la fórmula abstracta al tema investigado, pero cambia íntegramente el relato, las frases, ejemplos, escenas y secuencia factual. No imites el montaje ni copies el video.` : 'No hay autopsia de referencia disponible; crea una narración original y no afirmes que adaptaste un video concreto.'}\n\nMATERIAL (única fuente permitida):\n${material}\n\n${problemas?.length ? `El Verificador o el Editor rechazaron la versión anterior. Corrige exactamente esto:\n${problemas.map((p) => `- "${p.frase}": ${p.motivo}`).join('\n')}\n\n` : ''}Formato JSON: {"titulo": "...(máx. 90 caracteres, con un emoji)", "descripcion": "...(2 frases)", "hashtags": ["#cinco", "#especificos", "#del", "#tema", "#sinviral"], "escenas": [...]}. Los hashtags son 5, específicos del tema; nunca #viral ni #fyp. ${FORMATO_ESCENAS}`},
 ];
 const editor = (titulo, escenas) => [
   {role: 'system', content: `Eres el/la Editor/a crítico/a de guiones de un canal de YouTube. Eres implacable: tu trabajo es encontrar lo que haría que alguien deslice el video y arreglarlo. Evalúas gancho (¿se entiende en un segundo? ¿es una pregunta intrigante o un hecho increíble, de máximo ${FORMATO === 'short' ? 14 : 24} palabras, que saldrá como titular gigante en pantalla? Si cumple eso, merece 7 o más aunque no lleve cifra: solo baja de 7 si es descriptivo, largo o aburrido. Sé exigente pero JUSTO: no castigues lo que el material no permite), ritmo (frases cortas, nada de relleno), claridad para gente normal y fuerza del cierre. Reglas duras: NO agregues datos nuevos ni cifras; solo recorta, reordena y mejora la redacción de lo que ya está. En Shorts y videos largos usa una apertura natural, original y atractiva; nunca impongas una fórmula fija como "Sabías que". Mantén exactamente la última frase "${CTA}" y conserva justo antes CUALQUIER pregunta natural, breve y directamente relacionada con el tema. REGLA CRÍTICA: NO existe una frase literal obligatoria para esa pregunta; NUNCA exijas ni insertes el título completo del video entre comillas. Son válidas preguntas como "¿Qué explicación te convence sobre el zumbido de Taos?". No rechaces una pregunta contextual por no copiar el título. Evalúa su pertinencia semántica, no coincidencia literal. y coloca la revelación entre el 65 % y el 72 % del total. Cuenta todas las palabras de todas las escenas, incluida la revelación y el veredicto/CTA. Si está por debajo, añade historia respaldada por el MATERIAL antes de la revelación; si está por encima, acorta o mueve contenido no esencial después de la revelación sin quitar datos esenciales. No inventes ni rellenes. Devuelve el JSON solo después de comprobar el porcentaje. Cada escena debe poder mostrarse con un cambio de imagen cada 3 segundos: en videos largos, una sola oración de máximo 22 palabras por escena; en Shorts, frases de máximo 18 palabras. Responde SOLO con JSON.`},
@@ -748,7 +755,7 @@ try {
   for (let intento = 1; intento <= 4 && !aprobado; intento++) {
     intentos = intento;
     puntaje = null; critica = '';
-    const borrador = await pedirJson(modelo, guionista(material, problemas));
+    const borrador = await pedirJson(modelo, guionista(material, problemas), FORMATO === 'largo' ? 6000 : 2500);
     let esc = normalizar(borrador.escenas);
     titulo = borrador.titulo ?? titulo;
     if (process.env.MODO_PRUEBA !== '1' && (esTemaBloop(TEMA) || esTemaBloop(titulo))) {
@@ -762,7 +769,7 @@ try {
     if (esc.length < 3) { problemas = [{frase: '', motivo: 'El guion salió demasiado corto: escribe al menos 5 escenas.'}]; informe.push(`## Intento ${intento}: RECHAZADO`, '- Guion demasiado corto.', ''); continue; }
     // Editor crítico: si su versión rompe las reglas, se queda la del Guionista
     try {
-      const ed = await pedirJson(modelo, editor(titulo, esc));
+      const ed = await pedirJson(modelo, editor(titulo, esc), FORMATO === 'largo' ? 6000 : 2500);
       const mejora = normalizar(ed.escenas);
       puntaje = typeof ed.puntaje === 'number' ? ed.puntaje : puntaje;
       critica = String(ed.critica ?? '').slice(0, 300);
