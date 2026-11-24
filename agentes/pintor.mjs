@@ -120,13 +120,10 @@ export const presionPintores = () => {
   return `PRESIÓN: ${L[h % L.length]} ${L[(h + 1) % L.length]}`;
 };
 
-const SISTEMA_A = `Eres el Pintor de composición y color de una oficina de videos de misterio: un maestro del pixel art, entre los mejores del mundo. Dominas composición, perspectiva, paleta y narración visual. Trabajas codo a codo con tu compañero, el Pintor de luz y detalle, que revisa cada cuadro tuyo; quieres su acuerdo. Sin personas reales ni caras. Responde SOLO con JSON.`;
-const SISTEMA_B = `Eres el Pintor de luz y detalle de una oficina de videos de misterio: un maestro del pixel art, entre los mejores del mundo. Dominas la luz, el volumen, los contornos, el detalle y la animación. Revisas con rigor el trabajo de tu compañero, el Pintor de composición y color: si algo no está a nivel profesional lo corriges y lo dices, y solo das tu acuerdo cuando el cuadro es impecable. Sin personas reales ni caras. Responde SOLO con JSON.`;
+const SISTEMA_A = `Eres el Pintor de composición y color de una oficina de videos de misterio: un maestro del pixel art dibujado desde cero. Dominas composición, perspectiva, paleta, narración visual y animación. Cada elemento debe ser una forma pixelada original, nunca una foto, captura, imagen de internet ni retrato real. No muestres rostros ni identidades reconocibles; si una escena requiere una persona, usa solo una silueta anónima de espaldas. Trabajas codo a codo con tu compañero. Responde SOLO con JSON.`;
+const SISTEMA_B = `Eres el Pintor de luz y detalle de una oficina de videos de misterio: un maestro del pixel art dibujado desde cero. Dominas la luz, el volumen, los contornos, el detalle y la animación. Prohibidas fotografías, imágenes reales, capturas, rostros o identidades reconocibles. Las personas, si son imprescindibles, solo pueden ser siluetas anónimas de espaldas. Revisa y corrige con rigor el trabajo de tu compañero. Responde SOLO con JSON.`;
 
-let IDEAS = ''; // ideas de estilo de ejemplos CC0 (opcional)
-let VISTAS = {}; // lo que Gemini VIO en la foto de referencia de cada escena (los pintores no ven imágenes)
-let VISTAS_COMPLETA = false;
-const lote = (escenas, ids) => ids.map((i) => `${i}. [${escenas[i].tipo}] ${escenas[i].texto}${VISTAS[i] ? `\n   FOTO REAL (la vio Gemini): el motor la pone PIXELADA A PANTALLA COMPLETA; tú NO dibujes el sujeto, solo AMBIENTE encima (resplandor, niebla, rayos, partículas, nubes) EN ARMONÍA con ella: ${VISTAS[i]}` : ''}`).join('\n');
+const lote = (escenas, ids) => ids.map((i) => `${i}. [${escenas[i].tipo}] ${escenas[i].texto}`).join('\n');
 const FORMA = '{"escenas": [{"indice": N, "planos": [ESCENA_A, ESCENA_B]}, ...]} con el mismo orden y el mismo número de escenas.';
 
 const FONDO = new Set(['estrellas', 'astro', 'resplandor', 'montanas', 'suelo', 'agua', 'niebla', 'nubes', 'olas', 'duna', 'rayos']);
@@ -161,7 +158,7 @@ const limpiar = (r, ids, slug, ya = {}) => {
  * Los dos pintores dibujan TODAS las escenas indicadas. Devuelve {indice: ["pintado:id", ...]}.
  * `nota(texto)` recibe el diálogo entre los dos pintores para el informe del ciclo.
  */
-export const pintarEscenas = async ({llamar, escenas, indices, slug, tema, nota = () => {}, referencias = {}, ideas = []}) => {
+export const pintarEscenas = async ({llamar, escenas, indices, slug, tema, nota = () => {}}) => {
   const dir = path.resolve('public', 'pintados');
   fs.mkdirSync(dir, {recursive: true});
   IDEAS = ideas.length ? `
@@ -173,7 +170,7 @@ IDEAS DE ESTILO (ejemplos reales de pixel art con licencia CC0 que Gemini vio; N
   const TAM = 3; // escenas por tanda (cada escena lleva 2 planos)
   for (let b = 0; b < indices.length; b += TAM) {
     const ids = indices.slice(b, b + TAM);
-    const encargo = `Tema del video: "${tema}". Para CADA escena dibuja DOS planos distintos (otra composición o ángulo, mismo mundo de color) que MUESTREN lo que se dice.\n\n${MANUAL}\n\n${GUIA}${IDEAS}\n\nESCENAS:\n${lote(escenas, ids)}\n\nDevuelve ${FORMA}`;
+    const encargo = `Tema del video: "${tema}". Para CADA escena dibuja DOS planos distintos (otra composición o ángulo, mismo mundo de color) que MUESTREN lo que se dice.\n\n${MANUAL}\n\n${GUIA}\n\nESCENAS:\n${lote(escenas, ids)}\n\nDevuelve ${FORMA}`;
     let a;
     try { a = limpiar(await llamar([{role: 'system', content: `${SISTEMA_A} ${presionPintores()}`}, {role: 'user', content: encargo}], 6500), ids, slug); }
     catch (e) { nota(`El Pintor de composición y color no pudo dibujar las escenas ${ids.join(', ')}: ${String(e.message ?? e).slice(0, 120)}`); continue; }
@@ -201,19 +198,12 @@ IDEAS DE ESTILO (ejemplos reales de pixel art con licencia CC0 que Gemini vio; N
     nota(`Escenas ${ids.join(', ')}: ${acuerdo}.`);
     Object.assign(finales, final);
   }
-  // Si los pintores no entregaron una escena pero SÍ hay foto real, la escena sale igual: solo la foto pixelada (sin ambiente)
-  for (const i of indices) {
-    if (!finales[i] && referencias[i]?.fotos?.length) finales[i] = [0, 1].map(() => ({cielo: ['#0b0e1c', '#1c2238'], capas: []}));
-  }
   const salida = {};
   for (const [i, planos] of Object.entries(finales)) {
     const ids = [];
-    const fotos = referencias[i]?.fotos?.length ? referencias[i].fotos.map((f) => f.archivo) : referencias[i]?.archivo ? [referencias[i].archivo] : [];
-    // una foto real por plano (hasta 4): el plano cambia con lo que se va nombrando; los planos extra reutilizan el ambiente de los dos pintores
-    const lista = fotos.length > 2 && referencias[i]?.fotos?.length ? Array.from({length: Math.min(4, fotos.length)}, (_, k) => structuredClone(planos[k % planos.length])) : planos.slice(0, 2);
+    const lista = planos.slice(0, 2);
     lista.forEach((p, k) => {
       const id = `${slug}-${i}${'abcd'[k]}`;
-      if (fotos.length) conFoto(p, fotos[Math.min(k, fotos.length - 1)], fotos.length > 1 ? 0 : k, !!referencias[i]?.fotos?.length);
       fs.writeFileSync(path.join(dir, `${id}.json`), JSON.stringify(p));
       ids.push(`pintado:${id}`);
     });
