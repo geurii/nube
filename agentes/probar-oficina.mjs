@@ -62,11 +62,11 @@ globalThis.fetch = async (url, opciones) => {
   const u = String(url);
   if (u.includes('html.duckduckgo.com/html/')) {
     const consulta = new URL(u).searchParams.get('q') || '';
-    const dominio = /site:([^\\s]+)/.exec(consulta)?.[1] || 'si.edu';
+    const dominio = /site:([^\s]+)/.exec(consulta)?.[1] || 'si.edu';
     const snippet = 'Registro institucional con fechas, contexto histórico, descripción documental y datos concretos consultables para verificar este tema.';
     return new Response(`<a class="result__a" href="https://${dominio}/bloop">Bloop institutional record</a><a class="result__snippet">${snippet}</a>`, {status: 200});
   }
-  if (/^https:\\/\\/[^/]+\\/bloop$/.test(u)) {
+  if (/^https:\/\/[^/]+\/bloop$/.test(u)) {
     const texto = 'The institutional record documents the Bloop acoustic event, the hydrophone observations, the recorded date, the geographic context and the scientific explanation. This page provides a primary institutional account and enough descriptive detail for the research test. '.repeat(2);
     return new Response(`<html><head><title>Institutional Bloop Record</title><meta name="description" content="${texto}"></head><body><p>${texto}</p><p>${texto}</p></body></html>`, {status: 200});
   }
