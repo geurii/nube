@@ -119,6 +119,9 @@ jobs:
               CANAL=$c timeout 120 node agentes/ayuda.mjs || true
               CANAL=$c timeout 120 node agentes/funciones.mjs || true
               CANAL=$c timeout 120 node agentes/conciencia.mjs || true
+            else
+              echo "No hubo guion aprobado para $c tras 3 intentos; no se activa Produccion."
+              fallo=1
             fi
           done
           exit $fallo
