@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
     inputs:
       tema:
-        description: 'Opcional: tema libre. Vacio = la Oficina elige y documenta uno en fuentes institucionales'
+        description: 'Opcional: tema libre. Vacio = la Oficina elige una curiosidad y usa material consultable; sin respaldo, solo ficción explícita'
         required: false
       formato:
         description: 'short o largo'
@@ -55,7 +55,7 @@ jobs:
         run: |
           if [ -f agentes/PAUSA ]; then echo "ok=no" >> "$GITHUB_OUTPUT"; echo "PRODUCCION EN PAUSA (existe agentes/PAUSA): este ciclo se salta."; exit 0; fi
           if [ "${{ github.event_name }}" = "schedule" ]; then
-            if [ -f agentes/secuencia-largo-short.json ] && node -e "const x=require('./agentes/secuencia-largo-short.json'); process.exit(x.activo ? 0 : 1)"; then
+            if [ -f agentes/secuencia-largo-short.json ] && node -e "try { const x=require('./agentes/secuencia-largo-short.json'); process.exit(x.activo ? 0 : 1); } catch { process.exit(0); }"; then
               echo "ok=no" >> "$GITHUB_OUTPUT"
               echo "Secuencia extraordinaria largo + Short en curso: se omite el horario automático hasta terminar ambos."
             elif ! node agentes/encadenar.mjs; then
