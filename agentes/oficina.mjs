@@ -277,37 +277,57 @@ const existeEnWikipedia = async (titulo) => {
   return !!p && (p.extract ?? '').length > 3000;
 };
 const elegirTema = async (modelo) => {
-  const hechos = leerJson(HISTORIAL, []);
-  // RADAR: videos de canales CHICOS que acaban de explotar en el nicho (YouTube público). El tema se elige mirando lo que está pegando, no solo Wikipedia.
+  const hechos = leerJson(HISTORIAL, []).filter(Boolean);
+  // Inventario único de TODO lo que ya se intentó, guionizó, produjo o publicó.
+  const clave = (x) => String(x ?? '').toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').replace(/^the[-_ ]+/, '').replace(/[^a-z0-9]+/g, '');
+  let guiones = [];
+  try { guiones = fs.readdirSync(SALIDA).filter((f) => /^guion-.+\\.json$/.test(f)).map((f) => f.replace(/^guion-|\\.json$/g, '')); } catch { /* sin carpeta */ }
+  const subidosTitulos = (leerJson(path.join(SALIDA, 'subidos.json'), {}).videos ?? []).map((v) => v.titulo);
+  const producidos = leerJson(path.join(SALIDA, 'producidos.json'), []);
+  const ideasJules = leerJson(path.join(SALIDA, 'ideas-jules.json'), []).map((x) => x.tema).filter(Boolean);
+  const estrategia = leerJson(path.join(SALIDA, 'estrategia.json'), {});
+  const ideasEstrategia = (estrategia.ideas ?? []).map((x) => x.temaWikipedia).filter(Boolean);
+  const ideasEquipo = filtrarTemas(leerJson(path.join(SALIDA, 'ayudas.json'), {}).temas ?? [], CANAL_ID);
+  const inventario = [...new Set([...hechos, ...guiones, ...producidos, ...subidosTitulos, ...ideasJules, ...ideasEstrategia].map((x) => String(x ?? '').trim()).filter(Boolean))];
+  const vistos = inventario.map(clave).filter((k) => k.length >= 4);
+  const yaHecho = (x) => {
+    if (fueRechazada(x, CANAL_ID)) return true;
+    const k = clave(x);
+    return k.length >= 4 && vistos.some((v) => v === k || (k.length >= 6 && v.length >= 6 && (v.includes(k) || k.includes(v))));
+  };
   const radar = leerJson(path.join(SALIDA, 'radar.json'), null);
   const resumenRadar = textoDeRadar(radar, 8);
   const bloqueRadar = resumenRadar
-    ? ` RADAR DE CANALES POR EXPLOTAR (videos recientes de canales chicos del nicho que se dispararon): ${resumenRadar}. PRIORIDAD: los PRIMEROS temas de tu lista deben salir de lo que está pegando en ese radar: la misma idea (un suceso, objeto o lugar REAL y documentado) escrita como el título exacto de su artículo de Wikipedia. Descarta del radar lo que no sea un hecho real (películas, series, famosos, chismes, juegos).`
+    ? ` RADAR DE CANALES PEQUEÑOS: ${resumenRadar}. Usa tendencias solo como inspiración para hallar un HECHO REAL documentado; no copies títulos ni temas ya usados.`
     : '';
-  if (resumenRadar) informe.push(`Radar: ${radar.canales.length} canales chicos que explotaron (${String(radar.fecha).slice(0, 10)}); se usan para elegir el tema.`);
-  const r = await pedirJson(modelo, [
-    {role: 'system', content: `Eres el/la Director/a de contenido del canal de YouTube "${CONFIG.nombre}" (${CONFIG.nicho}). Respondes SOLO con JSON.`},
-    {role: 'user', content: `Dame 30 títulos EXACTOS de artículos de Wikipedia en inglés sobre ${CONFIG.nicho}, con mucha documentación. Prefiere casos con HECHOS CONCRETOS y bien documentados (un objeto, un lugar, un evento con fecha y cifras), no fenómenos que solo tienen teorías ni conspiraciones. Reglas: nada sobre personas (ni biografías), nada de política ni de violencia gráfica, nada ya hecho. Ya hechos: ${hechos.join(', ') || 'ninguno'}.${bloqueRadar} Formato: {"temas": ["Titulo 1", "Titulo 2"]}`},
-  ], 1500);
-  const ideasEquipo = filtrarTemas(leerJson(path.join(SALIDA, 'ayudas.json'), {}).temas ?? [], CANAL_ID); // los temas que el dueño rechazó se quitan y los que aprobó van primero
-  // NUNCA se repite un tema: "Bloop" y "The Bloop" son el MISMO tema (se compara sin mayúsculas, sin "The" inicial y sin signos).
-  // Se miran los temas anotados, todos los guiones que existen (aprobados o no), lo ya producido y lo ya subido a YouTube.
-  const clave = (x) => String(x).toLowerCase().replace(/^the[-_ ]+/, '').replace(/[^a-z0-9]+/g, '');
-  let guiones = [];
-  try { guiones = fs.readdirSync(SALIDA).filter((f) => /^guion-.+\.json$/.test(f)).map((f) => f.replace(/^guion-|\.json$/g, '')); } catch { /* sin carpeta */ }
-  const subidosTitulos = (leerJson(path.join(SALIDA, 'subidos.json'), {}).videos ?? []).map((v) => v.titulo);
-  const vistos = [...new Set([...hechos, ...guiones, ...leerJson(path.join(SALIDA, 'producidos.json'), []), ...subidosTitulos].map(clave).filter((k) => k.length >= 4))];
-  const yaHecho = (x) => { if (fueRechazada(x, CANAL_ID)) return true; const k = clave(x); return k.length >= 4 && vistos.some((v) => v === k || (k.length >= 6 && v.length >= 6 && (v.includes(k) || k.includes(v)))); };
-  const aprobadosDelDueno = temasAprobadosDelDueno(CANAL_ID); // ideas de la estrategia y de Jules que el dueño aprobó: van PRIMERO
-  if (aprobadosDelDueno.length) informe.push(`Temas aprobados por el dueño (se prueban primero): ${aprobadosDelDueno.slice(0, 5).join(', ')}`);
-  for (const t of [...aprobadosDelDueno, ...ideasEquipo, ...(r.temas ?? [])]) {
+  if (resumenRadar) informe.push(`Radar: ${radar.canales.length} canales pequeños analizados (${String(radar.fecha).slice(0, 10}).`);
+  // Primero se validan ideas propias guardadas por los agentes; después se pide una lista amplia y se reintenta con exclusiones actualizadas.
+  const candidatosLocales = [...temasAprobadosDelDueno(CANAL_ID), ...ideasEquipo, ...ideasEstrategia, ...ideasJules];
+  for (const t of candidatosLocales) {
     if (typeof t !== 'string' || yaHecho(t)) continue;
     const p = await wikipedia('en', t);
-    if (!p || (p.extract ?? '').length <= 3000) continue;
-    if (yaHecho(p.title)) continue; // el artículo real (tras la redirección) tampoco debe ser un tema ya hecho
-    return p.title;
+    if (p && (p.extract ?? '').length > 3000 && !yaHecho(p.title)) return p.title;
   }
-  throw new Error('No encontré un tema nuevo con material suficiente en Wikipedia.');
+  for (let ronda = 1; ronda <= 3; ronda++) {
+    const r = await pedirJson(modelo, [
+      {role: 'system', content: `Eres Director/a de contenido del canal "${CONFIG.nombre}" (${CONFIG.nicho}). Respondes SOLO JSON válido.`},
+      {role: 'user', content: `Propón 40 títulos EXACTOS de artículos de Wikipedia en inglés, distintos entre sí, sobre ${CONFIG.nicho}. Deben ser temas NUEVOS para este canal, con abundante documentación y hechos concretos (lugares, objetos, eventos o descubrimientos). No personas, biografías, política, violencia gráfica, películas, series, juegos ni chismes. PROHIBIDO repetir o proponer variantes de esta lista de temas ya usados, rechazados, producidos, publicados o reservados: ${inventario.join(' | ').slice(0, 9000) || 'ninguno'}. No devuelvas ningún título de esa lista aunque cambies "The", signos, idioma o redacción. Prioriza variedad temática y artículos con más de 3.000 caracteres de contenido. ${bloqueRadar} Ronda ${ronda}/3: busca candidatos diferentes a los de una lista anterior. Formato: {"temas":["Título exacto 1","Título exacto 2"]}.`},
+    ], 2600);
+    const propuestas = Array.isArray(r.temas) ? r.temas : [];
+    for (const t of propuestas) {
+      if (typeof t !== 'string' || !t.trim() || yaHecho(t)) continue;
+      const p = await wikipedia('en', t.trim());
+      if (!p || (p.extract ?? '').length <= 3000 || yaHecho(p.title)) continue;
+      informe.push(`Tema elegido por la Oficina en ronda ${ronda}; se comprobó que no aparece en el historial.`);
+      return p.title;
+    }
+    // Los títulos de esta ronda también se excluyen de las siguientes para no dar vueltas sobre lo mismo.
+    for (const t of propuestas) {
+      const k = clave(t);
+      if (k.length >= 4 && !vistos.includes(k)) { vistos.push(k); inventario.push(String(t).trim()); }
+    }
+  }
+  throw new Error('La Directora no encontró un tema nuevo y verificable tras 3 rondas. No se permite reutilizar temas antiguos.');
 };
 
 /* ====================== Normas de la jefa (las cumplen todos) ====================== */
@@ -463,6 +483,7 @@ try {
   const modelo = await elegirModelo();
   informe.push(`Modelo usado en Groq: ${modelo}`, '');
   if (!TEMA) { TEMA = await elegirTema(modelo); informe[0] = `# Informe de la oficina · ${TEMA} (${FORMATO})`; informe.push('Tema elegido por la oficina.', ''); }
+  if (!TEMA.trim()) throw new Error('La Oficina no puede investigar ni escribir sin un tema seleccionado.');
   slug = slugDe(TEMA);
   const fuentes = await investigar();
   if (!fuentes.some((f) => !f.apoyo)) throw new Error(`No encontré el tema "${TEMA}" en Wikipedia (${IDIOMAS.join(', ')}). Pruébalo con el título exacto del artículo.`);
@@ -601,7 +622,7 @@ try {
   if (!aprobado) console.log('El Verificador no aprobó el guion tras 4 intentos. Queda marcado para revisión.');
 } catch (e) {
   informe.push('## ERROR', String(e.message ?? e));
-  const temaMalo = /No encontré el tema|material suficiente|sin material/i.test(String(e.message ?? e));
+  const temaMalo = Boolean(TEMA.trim()) && /No encontré el tema|material suficiente|sin material/i.test(String(e.message ?? e));
   if (temaMalo) {
     // Un tema que no carga NO es un error de la oficina: se descarta y el ciclo prueba con otro.
     try { fs.writeFileSync(HISTORIAL, JSON.stringify([...new Set([...leerJson(HISTORIAL, []), TEMA])], null, 2)); } catch { /* sin historial */ }
