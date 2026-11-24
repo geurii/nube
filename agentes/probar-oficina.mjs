@@ -53,7 +53,7 @@ const respuestaPanel = () => {
 
 // ---- Los dos pintores (simulados): A propone, B objeta la primera vez, A acepta ----
 let rondaB = 0;
-const cuadro = (v = 0) => ({cielo: ['#10183a', '#3a4a8a', '#e8a070'], capas: [{t: 'estrellas', n: 40 + v}, {t: 'olas', y: 0.62 + v * 0.01, color: '#1d4f86'}, {t: 'barco', x: 0.3 + v * 0.03, y: 0.64, w: 0.3}, {t: 'pez', tipo: 'ballena', x: 0.5, y: 0.45 + v * 0.02, w: 0.4}]});
+const cuadro = (v = 0) => ({cielo: ['#10183a', '#3a4a8a', '#e8a070'], capas: [{t: 'estrellas', n: 40 + v}, {t: 'olas', y: 0.62 + v * 0.01, color: '#1d4f86'}, {t: 'barco', x: 0.3 + v * 0.03, y: 0.64, w: 0.3}, {t: 'pez', tipo: 'ballena', x: 0.5, y: 0.45 + v * 0.02, w: 0.4}, {t: 'edificio', x: 0.72, y: 0.55, w: 0.18, h: 0.32}]});
 const indicesDe = (txt) => [...new Set([...Array.from({length: 6}, (_, i) => i), ...[...txt.matchAll(/^(\d+)\. \[/gm)].map((m) => Number(m[1])), ...[...txt.matchAll(/"indice":(\d+)/g)].map((m) => Number(m[1]))])];
 const respuestaPintor = (sistema, usuario) => {
   const ids = indicesDe(usuario);
