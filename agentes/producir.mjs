@@ -47,7 +47,9 @@ const colaCompleta = fs.readdirSync(RAIZ, {withFileTypes: true})
     return fs.readdirSync(path.join(RAIZ, d.name))
       .filter((f) => /^guion-.+\.json$/.test(f))
       .map((f) => ({canal: d.name, slug: f.replace(/^guion-|\.json$/g, ''), ruta: path.join(RAIZ, d.name, f), g: leer(path.join(RAIZ, d.name, f), null), t: fs.statSync(path.join(RAIZ, d.name, f)).mtimeMs, producidos}))
-      .filter((x) => x.g && x.g.estado === 'aprobado' && !x.producidos.some((p) => claveTema(p) === claveTema(x.slug)))
+      .filter((x) => x.g && x.g.estado === 'aprobado'
+         && !/(bloop|lituya)/.test(claveTema(x.slug + ' ' + (x.g.titulo ?? '')))
+         && !x.producidos.some((p) => claveTema(p) === claveTema(x.slug)))
       .filter((x) => {
         const palabras = (x.g.escenas ?? []).reduce((n, e) => n + String(e.texto ?? '').trim().split(/\s+/).filter(Boolean).length, 0);
         const motivo = x.g.formato === 'largo' && (palabras < 1200 || palabras > 1350)
