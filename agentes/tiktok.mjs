@@ -3,6 +3,7 @@
 // (service = tiktok), mutación createPost con video por enlace público (Buffer no recibe archivos). Se publica YA (shareNow) en modo automático.
 // Nunca lanza hacia afuera: devuelve el resultado o lanza un Error con un mensaje claro que el llamador captura.
 const API = 'https://api.buffer.com';
+const dormir = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const quitarClave = (t, clave) => String(t ?? '').split(clave).join('***');
 
@@ -52,7 +53,7 @@ export const buscarCanalTikTok = async (apiKey, nombre = '') => {
   throw new Error('Buffer: no hay ningún canal de TikTok conectado. Conéctalo en publish.buffer.com.');
 };
 
-const MUTACION = 'mutation CreatePost($input: CreatePostInput!) { createPost(input: $input) { ... on PostActionSuccess { post { id } } ... on MutationError { message } } }';
+const MUTACION = 'mutation CreatePost($input: CreatePostInput!) { createPost(input: $input) { ... on PostActionSuccess { post { id status sentAt externalLink error { message } } } ... on MutationError { message } } }';
 
 /** Crea la publicación (reintenta con needsApproval:false si la API lo exige) y devuelve el resultado de createPost. */
 const crear = async (apiKey, entrada) => {
@@ -69,6 +70,20 @@ const crear = async (apiKey, entrada) => {
   }
   if (!res?.post?.id) throw new Error(`Buffer no publicó el video: ${String(res?.message ?? 'respuesta sin detalle').slice(0, 200)}`);
   return res;
+};
+
+/** Espera a que Buffer confirme el estado final de publicación; un ID de post por sí solo no significa que TikTok ya lo publicó. */
+export const esperarEnvioTikTok = async (apiKey, postId, maxIntentos = 18) => {
+  let ultimo = null;
+  for (let i = 0; i < maxIntentos; i++) {
+    const d = await graphql(apiKey, `query GetPostStatus { post(input: {id: ${JSON.stringify(postId)}}) { id status sentAt externalLink error { message } } }`);
+    ultimo = d?.post;
+    if (!ultimo) throw new Error('Buffer no devolvió el estado del post de TikTok.');
+    if (ultimo.status === 'sent') return ultimo;
+    if (ultimo.status === 'error') throw new Error(`TikTok rechazó la publicación: ${String(ultimo.error?.message ?? 'error sin detalle').slice(0,180)}`);
+    await dormir(10000);
+  }
+  throw new Error(`Buffer aceptó el video, pero no confirmó que TikTok lo publicara tras 3 minutos (estado: ${ultimo?.status ?? 'desconocido'}). No se marca como publicado.`);
 };
 
 /**
@@ -89,5 +104,9 @@ export const publicarEnTikTok = async ({apiKey, url, texto, ia = false, canal = 
     programado = 'ahora (el canal no tiene calendario)';
   }
   const nombre = ch.displayName ?? ch.name;
+  if (modo === 'ahora') {
+    const enviado = await esperarEnvioTikTok(apiKey, res.post.id);
+    return {id: res.post.id, canal: nombre, programado: 'ahora', externalLink: enviado.externalLink ?? '', texto: JSON.stringify({id: res.post.id, canal: nombre, programado: 'ahora', status: enviado.status, externalLink: enviado.externalLink ?? ''}).slice(0, 300)};
+  }
   return {id: res.post.id, canal: nombre, programado, texto: JSON.stringify({id: res.post.id, canal: nombre, programado}).slice(0, 300)};
 };
