@@ -541,7 +541,8 @@ try {
   } catch { /* sin internet extra */ }
   informe.push('## Investigación web (fuentes consultadas; no se exige que sean institucionales)', ...fuentes.map((f) => `- ${f.apoyo ? 'Wikipedia (opcional; no cuenta como prueba)' : `${f.institucion || f.idioma} (${f.dominio || 'fuente consultada'})`}: [${f.titulo}](${f.url})`), '');
   const materialRecuperado = fuentes.filter((f) => !f.apoyo).map((f) => `### FUENTE CONSULTADA ${f.url}\n${f.texto}`).join('\n\n');
-  const material = materialRecuperado || `MODO FICCIÓN EXPLÍCITA: no se recuperó documentación consultable para "${TEMA}". Solo se permite crear un relato original de misterio claramente presentado como ficción; no atribuyas hechos, fechas, cifras, lugares ni causas al mundo real. La narración debe decir explícitamente que es un relato ficticio y nunca fingir que ocurrió.`;
+  if (!materialRecuperado.trim()) throw new Error(`No se recuperó material suficiente y consultable para "${TEMA}". Se descarta el tema; no se inventa contenido.`);
+  const material = materialRecuperado;
 
   const GARANTIA = enGarantia(CANAL_ID);
   let retencionPanel = null;
