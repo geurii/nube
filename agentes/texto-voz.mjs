@@ -24,10 +24,6 @@ const UNIDADES = [
   [/(\d)\s*°/g, '$1 grados'],
 ];
 
-const UNIDADES_NUMERO = [
-  ['', 'mil', 'millón', 'mil millones', 'billón', 'mil billones', 'trillón'],
-];
-
 const UNIDADES_ES = ['cero','uno','dos','tres','cuatro','cinco','seis','siete','ocho','nueve'];
 const DIEZ_A_DIECINUEVE = ['diez','once','doce','trece','catorce','quince','dieciséis','diecisiete','dieciocho','diecinueve'];
 const DECENAS_ES = ['', '', 'veinte','treinta','cuarenta','cincuenta','sesenta','setenta','ochenta','noventa'];
