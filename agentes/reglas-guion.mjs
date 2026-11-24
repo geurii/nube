@@ -9,7 +9,7 @@ export const validarGancho = (texto, formato = 'short') => {
 
 /** Calcula la posición real de la revelación sobre el total del guion, sin redondear antes de validar. */
 export const medirRevelacion = (escenas = []) => {
-  const palabras = (e) => String(e?.texto ?? '').trim().split(/\\s+/).filter(Boolean).length;
+  const palabras = (e) => String(e?.texto ?? '').trim().split(/\s+/).filter(Boolean).length;
   const indice = escenas.findIndex((e) => e?.tipo === 'revelacion');
   const total = escenas.reduce((s, e) => s + palabras(e), 0);
   const antes = indice < 0 ? 0 : escenas.slice(0, indice).reduce((s, e) => s + palabras(e), 0);
