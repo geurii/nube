@@ -112,6 +112,7 @@ jobs:
           node --check agentes/probar-oficina.mjs
           node --check agentes/encadenar.mjs
           node --check agentes/radar.mjs
+          node agentes/probar-referencias-largas.mjs
           node --check agentes/cazador.mjs
           node --check agentes/producir.mjs
           node --check agentes/subir.mjs
@@ -167,7 +168,7 @@ jobs:
             CANAL=$c timeout 120 node agentes/vistas.mjs || true
             CANAL=$c timeout 120 node agentes/analytics.mjs || true
             CANAL=$c timeout 120 node agentes/cazador.mjs || true
-            CANAL=$c timeout 200 node agentes/radar.mjs || true
+            CANAL=$c timeout 300 node agentes/radar.mjs || true
             intento=0
             espera=30
             limite_intento=900
