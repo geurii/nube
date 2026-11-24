@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-24T20:17:54.672Z",
+  "actualizado": "2026-11-24T20:24:13.935Z",
   "totales": {
     "aprobados": 15,
     "rechazados": 73,
@@ -194,14 +194,14 @@
       "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título"
     },
     "Locutor": {
-      "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Guionista). Entregó: 1 ganchos nuevos ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "estado": "esperando_decision",
+      "actividad": "hablando",
+      "tarea": "No pudo grabar o renderizar \"🍺 1 470 000 Litros: La Inundación que Cambió Londres para Siempre\". Revisa la corrida \"Produccion\" en GitHub. JEFA: sin video no hay canal."
     },
     "Técnico de render": {
-      "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Editor de guion). Entregó: 3 mejoras al último guion ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "estado": "esperando_decision",
+      "actividad": "pensando",
+      "tarea": "Falló el render de \"🍺 1 470 000 Litros: La Inundación que Cambió Londres para Siempre\". JEFA: quiero la causa y el arreglo."
     },
     "Publicador": {
       "estado": "libre",
