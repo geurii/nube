@@ -41,6 +41,13 @@ jobs:
           sudo apt-get install -y ffmpeg libnss3 libdbus-1-3 libatk1.0-0 libasound2t64 libxrandr2 libxkbcommon-dev libxfixes3 libxcomposite1 libxdamage1 libgbm-dev libcups2 libcairo2 libpango-1.0-0 libatk-bridge2.0-0
       - if: ${{ hashFiles('agentes/PAUSA') == '' }}
         run: npm install --no-audit --no-fund
+      - name: Comprobación de sintaxis de producción y publicadores
+        if: ${{ hashFiles('agentes/PAUSA') == '' }}
+        run: |
+          node --check agentes/producir.mjs
+          node --check agentes/subir.mjs
+          node --check agentes/facebook.mjs
+          node --check agentes/tiktok.mjs
       - name: Voz (msedge-tts solo para este flujo)
         if: ${{ hashFiles('agentes/PAUSA') == '' }}
         run: npm install --no-save --no-audit --no-fund msedge-tts@2.1.1
