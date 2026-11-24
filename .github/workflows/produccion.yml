@@ -158,7 +158,7 @@ jobs:
         env:
           ID: ${{ steps.producir.outputs.id }}
         run: |
-          node --input-type=module -e 'import fs from "node:fs"; const p="agentes/secuencia-largo-short.json"; if (!fs.existsSync(p)) process.exit(0); const x=JSON.parse(fs.readFileSync(p,"utf8")); if (!x.activo || x.fase !== "short-encolado") process.exit(0); x.activo=false; x.fase="completada"; x.videoShortId=process.env.ID; x.fechaShortPublicado=new Date().toISOString(); fs.writeFileSync(p, JSON.stringify(x,null,2)+"\\n");'
+          node --input-type=module -e 'import fs from "node:fs"; const p="agentes/secuencia-largo-short.json"; if (!fs.existsSync(p)) process.exit(0); const x=JSON.parse(fs.readFileSync(p,"utf8")); if (!x.activo || x.fase !== "short-encolado") process.exit(0); x.activo=false; x.fase="completada"; x.videoShortId=process.env.ID; x.fechaShortPublicado=new Date().toISOString(); fs.writeFileSync(p, JSON.stringify(x,null,2)+"\n");'
           git add agentes/secuencia-largo-short.json
           git commit -m "Completar secuencia extraordinaria largo y Short"
           git pull --rebase --autostash -X theirs origin main
@@ -169,7 +169,7 @@ jobs:
         env:
           ID: ${{ steps.producir.outputs.id }}
         run: |
-          node --input-type=module -e 'import fs from "node:fs"; const p="agentes/secuencia-largo-short.json"; if (!fs.existsSync(p)) process.exit(0); const x=JSON.parse(fs.readFileSync(p,"utf8")); if (!x.activo || x.fase !== "largo") process.exit(0); x.fase="short-encolado"; x.videoLargoId=process.env.ID; x.fechaLargoPublicado=new Date().toISOString(); fs.writeFileSync(p, JSON.stringify(x,null,2)+"\\n"); fs.writeFileSync("agentes/oficina.disparo", new Date().toISOString()+"|short\\n");'
+          node --input-type=module -e 'import fs from "node:fs"; const p="agentes/secuencia-largo-short.json"; if (!fs.existsSync(p)) process.exit(0); const x=JSON.parse(fs.readFileSync(p,"utf8")); if (!x.activo || x.fase !== "largo") process.exit(0); x.fase="short-encolado"; x.videoLargoId=process.env.ID; x.fechaLargoPublicado=new Date().toISOString(); fs.writeFileSync(p, JSON.stringify(x,null,2)+"\n"); fs.writeFileSync("agentes/oficina.disparo", new Date().toISOString()+"|short\n");'
           git add agentes/secuencia-largo-short.json agentes/oficina.disparo
           git commit -m "Encolar el Short único después de publicar el largo"
           git pull --rebase --autostash -X theirs origin main
