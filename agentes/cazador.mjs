@@ -75,7 +75,7 @@ try {
           reasoning_effort: 'low',
           messages: [
             {role: 'system', content: 'Eres analista de formatos virales de YouTube. Analizas SOLO la estructura (cómo está hecho el título y el gancho), jamás el contenido ni los temas. Respondes SOLO con JSON.'},
-            {role: 'user', content: `Estos son los videos que más están rindiendo ahora (vistas por hora) en canales parecidos a "${CONFIG.nombre}" (${CONFIG.nicho}):\n${mejores.map((v, i) => `${i + 1}. "${v.titulo}" · ${v.canal} · ${v.vistasPorHora} vistas/hora`).join('\n')}\n\nDevuelve: {"formula": "una frase con la estructura que se repite en los títulos y ganchos", "ganchos": ["3 plantillas de gancho en español, con huecos entre [corchetes], sin copiar temas"], "evitar": ["2 errores que se ven en los de menor rendimiento"]}.`},
+            {role: 'user', content: `Estos son los videos que más están rindiendo ahora en canales de referencia: los vigilados y, especialmente, los nuevos canales que explotaron en el radar multilingüe (menores de 90 días).\n${[...mejores, ...(leer(path.join(SAL, 'radar.json'), {}).videosVirales ?? []).map(v => ({titulo:v.titulo,canal:v.canal,vistasPorHora:v.vistas}))].slice(0,18).map((v,i)=>`${i+1}. "${v.titulo}" · ${v.canal ?? 'radar multilingüe'} · ${v.vistasPorHora} vistas/hora aprox.`).join('\n')}\n\nAnaliza patrones de gancho, promesa, tensión, ritmo y revelación; ignora el idioma original. No copies frases ni guiones. Devuelve: {"formula": "una frase con la estructura que se repite en los títulos y ganchos", "ganchos": ["3 plantillas de gancho en español, con huecos entre [corchetes], sin copiar temas"], "evitar": ["2 errores que se ven en los de menor rendimiento"]}.`},
           ],
         }),
       });
