@@ -76,7 +76,11 @@ jobs:
           CANAL: ${{ steps.producir.outputs.canal }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
-        run: node agentes/panel.mjs
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          node --check agentes/video-gemini.mjs
+          node --check agentes/panel.mjs
+          node agentes/panel.mjs
       - name: Ayuda mutua (los puestos libres hacen otras tareas)
         if: ${{ steps.producir.outputs.id != '' }}
         continue-on-error: true
