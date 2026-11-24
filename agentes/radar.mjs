@@ -76,9 +76,18 @@ export const datosDeCanal = async (canalId) => {
   const html = await r.text();
   const subs = /"content":"([\d.,]+[KMB]?) subscribers"/.exec(html)?.[1];
   const videos = /"content":"([\d,]+) videos"/.exec(html)?.[1];
-  const joined = /"joinedDateText":\s*\{\s*"content":"([^"]+)"/.exec(html)?.[1]
+  let joined = /"joinedDateText":\s*\{\s*"content":"([^"]+)"/.exec(html)?.[1]
     ?? /"joinedDateText":\s*\{\s*"simpleText":"([^"]+)"/.exec(html)?.[1]
     ?? /Joined\s+([A-Z][a-z]+\s+\d{1,2},\s+\d{4})/.exec(html)?.[1];
+  if (!joined) {
+    const about = await pedir(`https://www.youtube.com/channel/${canalId}/about?hl=en`, {headers: CABECERAS, signal: AbortSignal.timeout(20000)}).catch(() => null);
+    if (about?.ok) {
+      const ah = await about.text();
+      joined = /"joinedDateText":\s*\{\s*"content":"([^"]+)"/.exec(ah)?.[1]
+        ?? /"joinedDateText":\s*\{\s*"simpleText":"([^"]+)"/.exec(ah)?.[1]
+        ?? /Joined\s+([A-Z][a-z]+\s+\d{1,2},\s+\d{4})/.exec(ah)?.[1];
+    }
+  }
   const fechaAlta = joined ? Date.parse(joined.replace(/^Joined\s+/i, '').replace(/\s+$/, '')) : NaN;
   if (!subs || !Number.isFinite(fechaAlta)) return null;
   return {suscriptores: numeroDe(subs), videos: videos ? numeroDe(videos) : null, fechaAlta: new Date(fechaAlta).toISOString(), diasCanal: Math.max(0, (Date.now() - fechaAlta) / 86400000)};
