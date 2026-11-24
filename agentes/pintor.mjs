@@ -62,7 +62,7 @@ export const validarEscena = (raw) => {
     return o;
   }).filter(Boolean).filter((c) => !esCajaVacia(c)); // sin barras rectangulares vacías
   if (!cielo || capas.length < 3) return null;
-  const salida = {cielo, capas};
+  const salida = {cielo, capas: capas.filter((c) => c.t !== 'foto')};
   if (typeof raw.escenario === 'string' && Object.hasOwn(ESCENARIOS, raw.escenario)) salida.escenario = raw.escenario;
   return salida;
 };
@@ -126,21 +126,7 @@ const SISTEMA_B = `Eres el Pintor de luz y detalle de una oficina de videos de m
 const lote = (escenas, ids) => ids.map((i) => `${i}. [${escenas[i].tipo}] ${escenas[i].texto}`).join('\n');
 const FORMA = '{"escenas": [{"indice": N, "planos": [ESCENA_A, ESCENA_B]}, ...]} con el mismo orden y el mismo número de escenas.';
 
-const FONDO = new Set(['estrellas', 'astro', 'resplandor', 'montanas', 'suelo', 'agua', 'niebla', 'nubes', 'olas', 'duna', 'rayos']);
-/** Pone la foto de referencia (ya pixelada por el motor) sobre el fondo y bajo el resto; el plano B la acerca para variar. Quita la silueta, que taparía la foto. */
-// Con foto real a pantalla completa, los pintores SOLO añaden ambiente (luz, niebla, partículas): lo que dibujaría al sujeto se quita para no tapar ni duplicar la foto.
-const AMBIENTE = new Set(['resplandor', 'niebla', 'nubes', 'rayos', 'particulas', 'vapor', 'lluvia', 'nieve', 'estrellas', 'chispas', 'destello', 'brillo']);
-const conFoto = (plano, archivo, k, completa = true) => {
-  if (completa) {
-    plano.capas = plano.capas.filter((c) => AMBIENTE.has(c.t) || c.t === 'texto');
-    plano.capas.unshift({t: 'foto', archivo, x0: 0, y0: 0.1, x1: 1, y1: 0.84, zoom: k === 0 ? 1 : 1.45, pan: true});
-    return;
-  }
-  let pos = 0;
-  while (pos < plano.capas.length && pos < 4 && FONDO.has(plano.capas[pos].t)) pos++;
-  plano.capas = plano.capas.filter((c) => c.t !== 'silueta');
-  plano.capas.splice(Math.min(pos, plano.capas.length), 0, {t: 'foto', archivo, zoom: k === 0 ? 1 : 1.7, pan: true});
-};
+
 
 const limpiar = (r, ids, slug, ya = {}) => {
   const salida = {};
@@ -161,11 +147,6 @@ const limpiar = (r, ids, slug, ya = {}) => {
 export const pintarEscenas = async ({llamar, escenas, indices, slug, tema, nota = () => {}}) => {
   const dir = path.resolve('public', 'pintados');
   fs.mkdirSync(dir, {recursive: true});
-  IDEAS = ideas.length ? `
-
-IDEAS DE ESTILO (ejemplos reales de pixel art con licencia CC0 que Gemini vio; NO se copian, aprovecha lo que hacen bien): ${ideas.map((x, k) => `(${k + 1}) ${x.texto}`).join(' ')}` : '';
-  VISTAS = Object.fromEntries(Object.entries(referencias).filter(([, r]) => r?.vista).map(([i, r]) => [i, r.vista]));
-  VISTAS_COMPLETA = Object.values(referencias).some((r) => r?.fotos?.length);
   const finales = {};
   const TAM = 3; // escenas por tanda (cada escena lleva 2 planos)
   for (let b = 0; b < indices.length; b += TAM) {
@@ -178,7 +159,7 @@ IDEAS DE ESTILO (ejemplos reales de pixel art con licencia CC0 que Gemini vio; N
     let final = a;
     let acuerdo = 'sin revisión (el Pintor de luz y detalle no respondió)';
     try {
-      const revision = `Tema: "${tema}". Tu compañero propuso estos cuadros para las escenas:\n${lote(escenas, ids)}\n\nSUS CUADROS:\n${JSON.stringify({escenas: ids.filter((i) => a[i]).map((i) => ({indice: i, planos: a[i]}))})}\n\n${MANUAL}\n\n${GUIA}${IDEAS}\n\nRevisa cada cuadro como un profesional: ¿muestra lo que dice la frase?, ¿luz coherente?, ¿profundidad en 3 planos?, ¿sujeto legible y fuera de las zonas reservadas?, ¿hay movimiento?, ¿los dos planos de cada escena son distintos? CORRIGE lo que no esté a nivel profesional (añade detalle, luz, primer plano, movimiento).\nDevuelve {"acuerdo": true|false (¿el cuadro ORIGINAL de tu compañero ya era impecable?), "objeciones": ["máx. 4 frases cortas"], "escenas": ${FORMA.replace('{"escenas": ', '').replace(/ con el mismo.*$/, '')} con TUS cuadros corregidos}`;
+      const revision = `Tema: "${tema}". Tu compañero propuso estos cuadros para las escenas:\n${lote(escenas, ids)}\n\nSUS CUADROS:\n${JSON.stringify({escenas: ids.filter((i) => a[i]).map((i) => ({indice: i, planos: a[i]}))})}\n\n${MANUAL}\n\n${GUIA}\n\nRevisa cada cuadro como un profesional: ¿muestra lo que dice la frase?, ¿luz coherente?, ¿profundidad en 3 planos?, ¿sujeto legible y fuera de las zonas reservadas?, ¿hay movimiento?, ¿los dos planos de cada escena son distintos? CORRIGE lo que no esté a nivel profesional (añade detalle, luz, primer plano, movimiento).\nDevuelve {"acuerdo": true|false (¿el cuadro ORIGINAL de tu compañero ya era impecable?), "objeciones": ["máx. 4 frases cortas"], "escenas": ${FORMA.replace('{"escenas": ', '').replace(/ con el mismo.*$/, '')} con TUS cuadros corregidos}`;
       const rb = await llamar([{role: 'system', content: `${SISTEMA_B} ${presionPintores()}`}, {role: 'user', content: revision}], 6500);
       const mejorB = limpiar(rb, ids, slug, a);
       const objeciones = (Array.isArray(rb?.objeciones) ? rb.objeciones : []).map(String).slice(0, 4);
