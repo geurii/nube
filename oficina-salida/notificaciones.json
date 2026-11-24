@@ -1,5 +1,21 @@
 [
   {
+    "fecha": "2026-11-24T14:48:02.974Z",
+    "canal": "lqns",
+    "tipo": "alerta",
+    "titulo": "Revision tecnica fallida",
+    "texto": "¿Qué oculta el zumbido de Taos que nadie puede explicar? 🌍. Revision fallida: parts is not defined No se publicara."
+  },
+  {
+    "id": "mwut5aq6tage",
+    "fecha": "2026-11-24T14:46:26.190Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "listo",
+    "titulo": "Video renderizado: ¿Qué oculta el zumbido de Taos que nadie puede explicar? 🌍",
+    "texto": "Se renderizó \"¿Qué oculta el zumbido de Taos que nadie puede explicar? 🌍\" para Lo Que No Sabías (122 MB). Sigue en cola de publicación; este aviso NO significa que ya esté publicado."
+  },
+  {
     "fecha": "2026-11-24T14:29:24.826Z",
     "canal": "lqns",
     "tipo": "alerta",
@@ -693,21 +709,5 @@
     "tipo": "alerta",
     "titulo": "No se pudo publicar en las redes",
     "texto": "\"Sabías que una ola de melaza arrasó Boston? 🍯\": el repositorio público \"geurii/oficina-videos-legal\" no aceptó el video: no pude subir el video al repositorio público (422): {\"message\":\"Sorry, the file is too large to be processed. Consider creating/updating th; y el "
-  },
-  {
-    "id": "mws7uimzt2kw",
-    "fecha": "2026-11-22T19:14:38.939Z",
-    "canal": "lqns",
-    "tipo": "alerta",
-    "titulo": "No se pudo publicar en las redes",
-    "texto": "\"🔊 El enigma del Bloop: el rugido del hielo\": el repositorio público \"geurii/oficina-videos-legal\" no aceptó el video: no pude subir el video al repositorio público (403): {\"message\":\"The rule did not run because of a timeout.\",\"documentation_url\":\"https://do; y el "
-  },
-  {
-    "id": "mws7u5yp5r7g",
-    "fecha": "2026-11-22T19:14:22.513Z",
-    "canal": "lqns",
-    "tipo": "alerta",
-    "titulo": "No se pudo publicar en las redes",
-    "texto": "\"¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️\": el repositorio público \"geurii/oficina-videos-legal\" no aceptó el video: no pude subir el video al repositorio público (422): {\"message\":\"Sorry, the file is too large to be processed. Consider creating/updating th; y el "
   }
 ]
