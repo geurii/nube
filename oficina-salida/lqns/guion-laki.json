@@ -1,0 +1,141 @@
+{
+  "titulo": "🌋 Laki: El volcán que cambió el mundo en 1783",
+  "formato": "largo",
+  "orientacion": "horizontal",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-laki.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T23:39:22.542Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿Una erupción en Islandia en 1783 mató a 6 millones…?",
+  "publicacion": {
+    "titulo": "🌋 Laki: El volcán que cambió el mundo en 1783",
+    "descripcion": "Descubre cómo una erupción volcánica en Islandia en 1783 desencadenó una cadena de eventos globales, desde hambrunas hasta cambios climáticos. Un fenómeno que pocos conocen pero que marcó la historia.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\n#Laki #Islandia #Historia #HistoriaOculta #MisteriosSinResolver"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 5,
+    "critica": "El gancho es débil y no intriga lo suficiente. La revelación llega tarde y carece de impacto. El ritmo es lento y hay repetición de información."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Sabías que una erupción en Islandia en mil setecientos ochenta y tres mató a seis millones de personas en todo el mundo?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El Laki, o Lakagígar, es una fisura volcánica en el sur de Islandia, cerca del cañón del Eldgjá.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En la mitología nórdica, los volcanes estaban asociados con Loki, el dios del caos y la destrucción.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El ocho de junio de mil setecientos ochenta y tres, una fisura con ciento treinta cráteres se abrió en el volcán Grímsvötn.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "La erupción duró ocho meses, expulsando catorce kilómetros cúbicos de lava basáltica.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Nubes tóxicas de ácido fluorhídrico y dióxido de azufre cubrieron Islandia y más allá.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En Islandia, nueve mil personas y más del cincuenta por ciento del ganado murieron por los gases tóxicos.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "La nube bloqueó el sol, arruinando cosechas y causando una hambruna de tres años.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En el Reino Unido, el verano de mil setecientos ochenta y tres fue conocido como el 'verano de arena' por la caída de cenizas.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Los gases llegaron a altitudes de quince kilómetros, afectando el clima global.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El río Nilo experimentó un bajo nivel de agua, causando hambruna en el valle del Nilo.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "La población del valle del Nilo se redujo en un sexto debido a la falta de alimentos.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: la bruma de Laki liberó ciento veinte millones de toneladas de dióxido de azufre.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Este evento es considerado una de las mayores catástrofes medioambientales de la historia europea.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "La erupción de Laki no solo afectó a Islandia, sino que tuvo repercusiones globales.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Podría un evento similar ocurrir hoy y cambiar nuestro mundo de nuevo? Sígueme para descubrir más misterios.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

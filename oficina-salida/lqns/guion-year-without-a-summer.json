@@ -1,0 +1,134 @@
+{
+  "titulo": "🌋 1816: El año sin verano y la erupción que cambió el mundo",
+  "formato": "largo",
+  "orientacion": "horizontal",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-year-without-a-summer.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T23:14:01.277Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿En 1816 el verano nunca llegó y fue llamado el año…?",
+  "publicacion": {
+    "titulo": "🌋 1816: El año sin verano y la erupción que cambió el mundo",
+    "descripcion": "Descubre por qué 1816 es conocido como el año sin verano y cómo una erupción volcánica en Indonesia provocó una crisis global. Un fenómeno que combinó actividad solar y volcanes, dejando un impacto histórico.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\n#ClimaExtremo #HistoriaGlobal #Crisis1816 #YearWithoutASummer #Without"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El gancho es descriptivo y no intriga lo suficiente. La revelación llega tarde y falta impacto en el cierre. Ritmo lento en escenas intermedias."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Sabías que en mil ochocientos dieciséis el verano nunca llegó y fue llamado el año que no tuvo verano?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "mil ochocientos dieciséis es conocido como el año sin verano, año de la pobreza, el verano que nunca fue y el año que no tuvo verano.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Las temperaturas en Europa fueron las más frías entre mil setecientos sesenta y seis y dos mil, causando una grave escasez de alimentos en el hemisferio norte.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Este fenómeno ocurrió durante la década final de la Pequeña Edad de Hielo, un enfriamiento que comenzó en torno a mil trescientos cincuenta.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "La anomalía fue causada por una combinación de una histórica caída en la actividad solar y un invierno volcánico.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Varias erupciones volcánicas importantes, como la del Mayon en mil ochocientos catorce, contribuyeron a este evento.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Pero la erupción del monte Tambora en abril de mil ochocientos quince, en Indonesia, fue la más grande en mil trescientos años.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Esta erupción liberó una enorme cantidad de cenizas y gases que se extendieron por la atmósfera global.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "La disminución en la temperatura mundial fue de entre cero coma cuatro y cero coma siete grados, un cambio significativo para la época.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El historiador que estudió este evento lo llamó la última gran crisis de supervivencia del mundo occidental.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: la erupción del Tambora no solo enfrió el planeta, sino que también afectó la cultura y la literatura.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Durante ese verano, un grupo de escritores, entre ellos Mary Shelley, se reunió en Suiza y creó obras icónicas.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "La falta de sol y el clima frío los mantuvieron en interiores, inspirando historias como 'Frankenstein'.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Este evento demuestra cómo los fenómenos naturales pueden tener un impacto profundo en la sociedad y el arte.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Podría un evento similar ocurrir hoy y cambiar nuestra cultura? Sígueme para descubrir más misterios.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

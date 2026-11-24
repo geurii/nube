@@ -1,11 +1,59 @@
 {
-  "actualizado": "2026-11-24T23:06:33.542Z",
+  "actualizado": "2026-11-24T23:39:22.546Z",
   "totales": {
     "aprobados": 16,
-    "rechazados": 93,
+    "rechazados": 99,
     "errores": 20
   },
   "historial": [
+    {
+      "fecha": "2026-11-24T23:39:22.545Z",
+      "tema": "Laki",
+      "formato": "largo",
+      "resultado": "rechazado",
+      "intentos": 4,
+      "detalle": "El video largo necesita entre 1200 y 1350 palabras narradas para durar 8–10 minutos. Ahora tiene 253. Amplía o recorta con hechos del MATERIAL; no rellenes ni i"
+    },
+    {
+      "fecha": "2026-11-24T23:29:25.414Z",
+      "tema": "Laki",
+      "formato": "largo",
+      "resultado": "rechazado",
+      "intentos": 4,
+      "detalle": "El video largo necesita entre 1200 y 1350 palabras narradas para durar 8–10 minutos. Ahora tiene 1180. Amplía o recorta con hechos del MATERIAL; no rellenes ni "
+    },
+    {
+      "fecha": "2026-11-24T23:22:25.380Z",
+      "tema": "Laki",
+      "formato": "largo",
+      "resultado": "rechazado",
+      "intentos": 4,
+      "detalle": "El video largo necesita entre 1200 y 1350 palabras narradas para durar 8–10 minutos. Ahora tiene 249. Amplía o recorta con hechos del MATERIAL; no rellenes ni i"
+    },
+    {
+      "fecha": "2026-11-24T23:18:42.446Z",
+      "tema": "Laki",
+      "formato": "largo",
+      "resultado": "rechazado",
+      "intentos": 4,
+      "detalle": "El video largo necesita entre 1200 y 1350 palabras narradas para durar 8–10 minutos. Ahora tiene 178. Amplía o recorta con hechos del MATERIAL; no rellenes ni i"
+    },
+    {
+      "fecha": "2026-11-24T23:15:53.546Z",
+      "tema": "Great Frost of 1709",
+      "formato": "largo",
+      "resultado": "rechazado",
+      "intentos": 4,
+      "detalle": "El video largo necesita entre 1200 y 1350 palabras narradas para durar 8–10 minutos. Ahora tiene 278. Amplía o recorta con hechos del MATERIAL; no rellenes ni i"
+    },
+    {
+      "fecha": "2026-11-24T23:14:01.279Z",
+      "tema": "Year Without a Summer",
+      "formato": "largo",
+      "resultado": "rechazado",
+      "intentos": 4,
+      "detalle": "El video largo necesita entre 1200 y 1350 palabras narradas para durar 8–10 minutos. Ahora tiene 280. Amplía o recorta con hechos del MATERIAL; no rellenes ni i"
+    },
     {
       "fecha": "2026-11-24T23:06:33.496Z",
       "tema": "Lake Nyos disaster",
@@ -117,76 +165,28 @@
       "resultado": "rechazado",
       "intentos": 4,
       "detalle": "El MATERIAL menciona que el terremoto fue de 7.8 (sin escala especificada) en una sección y 8.3 Mw en otra. No se puede combinar o alternar estas cifras sin esp"
-    },
-    {
-      "fecha": "2026-11-24T21:47:40.651Z",
-      "tema": "1958 Lituya Bay earthquake and megatsunami",
-      "formato": "largo",
-      "resultado": "rechazado",
-      "intentos": 4,
-      "detalle": "La fuente menciona dos magnitudes distintas (7.8 y 8.3 Mw) sin especificar un rango. La frase debe usar la magnitud exacta del MATERIAL con su escala (8.3 Mw) o"
-    },
-    {
-      "fecha": "2026-11-24T21:45:13.913Z",
-      "tema": "1958 Lituya Bay earthquake and megatsunami",
-      "formato": "largo",
-      "resultado": "rechazado",
-      "intentos": 4,
-      "detalle": "El MATERIAL menciona una magnitud de 8.3 Mw, no 7.8. Además, la hora y la fecha son correctas, pero la magnitud no coincide."
-    },
-    {
-      "fecha": "2026-11-24T21:16:52.798Z",
-      "tema": "London Beer Flood: víctimas, funerales y reconstrucción del desastre de 1814",
-      "formato": "largo",
-      "resultado": "error",
-      "intentos": 0,
-      "detalle": "No se recuperó una fuente consultable para \"London Beer Flood: víctimas, funerales y reconstrucción del desastre de 1814\". Se descarta el tema; no se inventa co"
-    },
-    {
-      "fecha": "2026-11-24T20:45:53.736Z",
-      "tema": "1958 Lituya Bay earthquake and megatsunami",
-      "formato": "short",
-      "resultado": "aprobado",
-      "intentos": 3,
-      "detalle": "76 palabras, 5 escenas."
-    },
-    {
-      "fecha": "2026-11-24T20:39:47.566Z",
-      "tema": "1958 Lituya Bay earthquake and megatsunami",
-      "formato": "short",
-      "resultado": "rechazado",
-      "intentos": 4,
-      "detalle": "El material consultado presenta un intervalo de magnitud entre 7.8 y 8.3 Mw, no una única cifra de 8.3 Mw."
-    },
-    {
-      "fecha": "2026-11-24T20:26:11.550Z",
-      "tema": "1958 Lituya Bay earthquake and megatsunami",
-      "formato": "short",
-      "resultado": "rechazado",
-      "intentos": 4,
-      "detalle": "La fuente indica que el terremoto fue de magnitud 8.3 Mw, no 7.8."
     }
   ],
   "agentes": {
     "Directora de contenido": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "Necesita revisión: el guion de \"Lake Nyos disaster\" no pasó la verificación. Aprobados: 16. Rechazados: 93. Con error: 20. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. JEFA: Un guion rechazado no se publica. Tienen 2 h para entregar algo que pase."
+      "tarea": "Necesita revisión: el guion de \"Laki\" no pasó la verificación. Aprobados: 16. Rechazados: 99. Con error: 20. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. JEFA: Un guion rechazado no se publica. Tienen 2 h para entregar algo que pase."
     },
     "Investigador de temas": {
       "estado": "libre",
       "actividad": "leyendo",
-      "tarea": "Dejó material consultable sobre \"Lake Nyos disaster\". ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "tarea": "Dejó material consultable sobre \"Laki\". ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Guionista": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Intentó 4 veces escribir \"Lake Nyos disaster\" sin que el Verificador lo aprobara. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. JEFA: 4 intentos y nada aprobado. Esto es inaceptable. Estudien la fuente antes de escribir."
+      "tarea": "Intentó 4 veces escribir \"Laki\" sin que el Verificador lo aprobara. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. JEFA: 4 intentos y nada aprobado. Esto es inaceptable. Estudien la fuente antes de escribir."
     },
     "Verificador de datos": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Rechazó \"Lake Nyos disaster\": El video largo necesita entre 1200 y 1350 palabras narradas para durar 8–10 minutos. Ahora tiene 177. Amplía o recorta con hechos del MATERIAL; no rellenes ni i ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "tarea": "Rechazó \"Laki\": El video largo necesita entre 1200 y 1350 palabras narradas para durar 8–10 minutos. Ahora tiene 253. Amplía o recorta con hechos del MATERIAL; no rellenes ni i ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Editor de guion": {
       "estado": "trabajando",
@@ -261,12 +261,12 @@
     "Jefa de calidad": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Frenó \"Lake Nyos disaster\": El video largo necesita entre 1200 y 1350 palabras narradas para durar 8–10 minutos. Ahora tiene 177. Amplía o recorta con hechos del MATERIAL; no rellenes ni inventes. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "tarea": "Frenó \"Laki\": El video largo necesita entre 1200 y 1350 palabras narradas para durar 8–10 minutos. Ahora tiene 253. Amplía o recorta con hechos del MATERIAL; no rellenes ni inventes. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Cazador de fórmulas": {
       "estado": "libre",
       "actividad": "leyendo",
-      "tarea": "Revisó 133 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (24860 vistas/hora). Fórmula: Pregunta intrigante + elemento misterioso o prohibido + pista de revelación impactante ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "Revisó 133 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (24830 vistas/hora). Fórmula: Pregunta intrigante + elemento misterioso o prohibido + pista de revelación impactante ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Vigía de tendencias": {
       "estado": "libre",
@@ -296,7 +296,7 @@
     "Auditor de normas": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Encontró incumplimientos: El video largo necesita entre 1200 y 1350 palabras narradas para durar 8–10 minutos. Ahora tiene 177. Amplía o recorta con hechos del MATERIAL; no rellenes ni inventes. | La revelación cae al 83.1 % (147 de 177 palabras antes de ella) y debe caer entre 55 % y 80 %; apunta a 65 %–72 % contando todas las escenas, incluida la revelación y el cierre. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
+      "tarea": "Encontró incumplimientos: El video largo necesita entre 1200 y 1350 palabras narradas para durar 8–10 minutos. Ahora tiene 253. Amplía o recorta con hechos del MATERIAL; no rellenes ni inventes. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
     },
     "Revisor de nombres": {
       "estado": "libre",
@@ -320,7 +320,7 @@
     }
   },
   "jefa": {
-    "mensaje": "Necesita revisión: el guion de \"Lake Nyos disaster\" no pasó la verificación. Aprobados: 16. Rechazados: 93. Con error: 20. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. JEFA: Un guion rechazado no se publica. Tienen 2 h para entregar algo que pase.",
+    "mensaje": "Necesita revisión: el guion de \"Laki\" no pasó la verificación. Aprobados: 16. Rechazados: 99. Con error: 20. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. JEFA: Un guion rechazado no se publica. Tienen 2 h para entregar algo que pase.",
     "horasParaProximoCiclo": 2
   }
 }

@@ -1,0 +1,162 @@
+{
+  "titulo": "❄️ El invierno de 1709: ¿El más frío en 500 años?",
+  "formato": "largo",
+  "orientacion": "horizontal",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-great-frost-of-1709.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T23:15:53.544Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿En 1709 Europa enfrentó el invierno más frío en 500 años?",
+  "publicacion": {
+    "titulo": "❄️ El invierno de 1709: ¿El más frío en 500 años?",
+    "descripcion": "Descubre el impacto del Gran Invierno de 1709 en Europa, un fenómeno que cambió la historia. ¿Cómo sobrevivió la gente a temperaturas extremas?\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\n#GranInvierno1709 #HistoriaEuropa #ClimaExtremo #GuerraDelNorte #GreatFrostOf1709"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El gancho es descriptivo y carece de intriga. La revelación llega tarde y se diluye en detalles. Falta un cierre impactante que invite a seguir viendo."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Sabías que en mil setecientos nueve Europa enfrentó el invierno más frío en quinientos años?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El Gran Invierno de mil setecientos nueve, conocido como Great Frost en Inglaterra y Le Grand Hiver en Francia, fue excepcional.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Ocurrió a finales de mil setecientos ocho e inicios de mil setecientos nueve, durante el periodo llamado Mínimo de Maunder.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En este periodo, las manchas solares casi desaparecieron de la superficie del Sol.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Un científico registró -doce grados en Upminster, cerca de Londres, la noche del cinco de enero de mil setecientos nueve.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Esta fue la temperatura más baja desde que comenzó su registro en mil seiscientos noventa y siete.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Otros observadores en Europa reportaron mínimas de hasta -quince grados.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El científico escribió que la helada fue la más grande en la memoria del hombre.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El frío afectó la campaña rusa de un líder sueco durante la Gran Guerra del Norte.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Miles de soldados suecos murieron por las heladas y tormentas repentinas.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Una noche fuera del campamento fue suficiente para causar estragos en las tropas.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El líder sueco enfrentaba a un gobernante ruso en una guerra que cambió el mapa de Europa.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El invierno extremo debilitó las ofensivas suecas, alterando el curso de la guerra.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Los ríos y canales se congelaron, un fenómeno raro que impactó el transporte y la vida diaria.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "La gente tuvo que adaptarse a condiciones nunca antes vistas en su vida.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: este frío extremo coincidió con el Mínimo de Maunder, un periodo de mínima actividad solar.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "La falta de manchas solares durante este periodo está ligada al frío intenso en Europa.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Aunque no se sabe si hubo una relación directa, la coincidencia es notable.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Podría un evento solar explicar inviernos tan extremos? Sígueme para descubrir más misterios.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}
