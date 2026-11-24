@@ -122,7 +122,7 @@ export const subirABeacon = async ({archivo, nombre}) => {
   const fin = await fetch(finUrl, {method: 'POST', headers: {'X-Claim-Token': claimToken}, signal: AbortSignal.timeout(60000)});
   const fj = await fin.json().catch(() => ({}));
   if (!fin.ok) throw new Error(`Beacon finalización HTTP ${fin.status}: ${JSON.stringify(fj).slice(0,160)}`);
-  const url = fj.fileUrls?.[0] ?? fj.files?.[0]?.url ?? (fj.site?.url ? `${fj.site.url.replace(/\\/$/,'')}/${encodeURIComponent(nombre)}` : '');
+  const url = fj.fileUrls?.[0] ?? fj.files?.[0]?.url ?? (fj.site?.url ? `${fj.site.url.replace(/\/$/,'')}/${encodeURIComponent(nombre)}` : '');
   if (!url) throw new Error('Beacon finalizó pero no devolvió enlace directo del MP4');
   const head = await fetch(url, {method: 'HEAD', signal: AbortSignal.timeout(30000)});
   if (!head.ok) throw new Error(`Beacon enlace directo HTTP ${head.status}`);
