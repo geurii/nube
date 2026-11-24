@@ -1,6 +1,55 @@
 {
   "decisiones": [
     {
+      "id": "irx2wmc",
+      "texto": "Carolina (Coordinador de producción): Crear un tablero de tareas con fechas límite rígidas y alertas automáticas para cada entrega.",
+      "categoria": "Iniciativa",
+      "decision": "si",
+      "fecha": "2026-11-24T02:36:39.598Z"
+    },
+    {
+      "id": "i1m2wwne",
+      "texto": "Valentina (Directora de contenido): Definir una línea editorial clara y un documento de estilo que guíe a todo el equipo desde el primer video.",
+      "categoria": "Iniciativa",
+      "decision": "si",
+      "fecha": "2026-11-24T02:36:38.839Z"
+    },
+    {
+      "id": "iyp9htf",
+      "texto": "Añade un cierre que invite a la interacción sin ser demasiado directo: por ejemplo, pregunta: \"¿Qué otras estrategias de supervivencia histórica crees que han cambiado el curso de la historia? Deja tu respuesta en los co",
+      "categoria": "Mejora de guion",
+      "decision": "si",
+      "fecha": "2026-11-24T02:36:37.646Z"
+    },
+    {
+      "id": "ioeijo7",
+      "texto": "Reestructura el ritmo dividiendo la narración en bloques más cortos y dinámicos: describe el incendio, luego la sospecha de intriga extranjera, y finalmente la táctica de la Torre de Londres. Utiliza transiciones como \"P",
+      "categoria": "Mejora de guion",
+      "decision": "si",
+      "fecha": "2026-11-24T02:36:36.664Z"
+    },
+    {
+      "id": "ies4qsi",
+      "texto": "Incorpora un gancho inicial más impactante y misterioso, por ejemplo: \"Sabías que en medio del Gran Incendio de Londres, una fuerza secreta de la Torre de Londres usó pólvora para detener el fuego\", para captar la atenci",
+      "categoria": "Mejora de guion",
+      "decision": "si",
+      "fecha": "2026-11-24T02:36:35.207Z"
+    },
+    {
+      "id": "iwijlvu",
+      "texto": "¿Qué oculta realmente el [objeto]?",
+      "categoria": "Título",
+      "decision": "si",
+      "fecha": "2026-11-24T02:36:32.877Z"
+    },
+    {
+      "id": "i171xvuj",
+      "texto": "Sabías que [acción] [número] [emoji]",
+      "categoria": "Título",
+      "decision": "si",
+      "fecha": "2026-11-24T02:36:32.629Z"
+    },
+    {
       "id": "i1hbzqq0",
       "texto": "Sabías que [acción] [número] [emoji] (Parte [X]/[Y])",
       "categoria": "Título",
