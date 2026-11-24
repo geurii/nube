@@ -1,0 +1,70 @@
+{
+  "titulo": "¿Qué oculta el USS Clemson que nadie quiere que descubras? ⚓",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-uss-clemson-dd-186.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T06:14:37.478Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿Un barco cambió de rol múltiples veces en su servicio?",
+  "publicacion": {
+    "titulo": "¿Qué oculta el USS Clemson que nadie quiere que descubras? ⚓",
+    "descripcion": "Descubre la verdad sobre el USS Clemson, un barco con una historia única en la Marina de EE. UU. Su versatilidad y secretos te sorprenderán.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/USS_Clemson_(DD-186)\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#USSClemson #MarinaEEUU #SegundaGuerraMundial #BarcoVersatil #HistoriaNaval"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 5,
+    "critica": "El gancho es débil y no genera curiosidad. La revelación es tardía y poco impactante. El ritmo es lento y falta emoción."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Sabías que un barco cambió de rol múltiples veces en su servicio?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El USS Clemson, lanzado en 1918 y comisionado en 1919, sirvió en la costa este de EE. UU. y Cuba hasta 1922, cuando fue colocado en reserva.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En 1939, se convirtió en tender de aeronaves, y en 1943, volvió a ser destructor para la Batalla del Atlántico.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En 1944, se transformó en transporte de alta velocidad, participando en invasiones en el Pacífico.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: el USS Clemson es el único barco con ese nombre en la Marina de EE. UU.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "Tras la guerra, fue vendido para desguace en 1946. Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

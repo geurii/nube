@@ -1,0 +1,63 @@
+{
+  "titulo": "🛸 El secreto de Roswell: ¿Ovni o proyecto militar? (1947)",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-roswell-incident.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T06:16:51.159Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿En 1947 un rancho en Nuevo México se convirtió…?",
+  "publicacion": {
+    "titulo": "🛸 El secreto de Roswell: ¿Ovni o proyecto militar? (1947)",
+    "descripcion": "En 1947, un rancho en Nuevo México se convirtió en el epicentro de un misterio que persiste hasta hoy. ¿Qué encontraron realmente en Roswell?\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Roswell_incident\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#Roswell #Ovni #ProyectoMogul #Conspiracion #Historia"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 5,
+    "critica": "El gancho es demasiado largo y descriptivo. La revelación llega tarde y no sorprende lo suficiente. El título es mejorable para generar más intriga."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Sabías que en 1947 un rancho en Nuevo México se convirtió en el epicentro de un misterio global?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Un ranchero encontró extraños restos metálicos y de goma. El ejército anunció haber recuperado un 'disco volador', pero retractó al día siguiente.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "La noticia dio la vuelta al mundo, pero ¿qué ocultaba realmente el gobierno de EE. UU.?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: los restos eran de un globo militar secreto del Proyecto Mogul.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Crees que el gobierno aún oculta algo? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

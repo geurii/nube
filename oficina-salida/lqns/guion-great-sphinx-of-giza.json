@@ -1,0 +1,63 @@
+{
+  "titulo": "🦁 El secreto de la Esfinge de Guiza que nadie quiere que sepas",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-great-sphinx-of-giza.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-24T06:18:58.930Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿La Gran Esfinge de Guiza, con 73 metros de largo, esconde…?",
+  "publicacion": {
+    "titulo": "🦁 El secreto de la Esfinge de Guiza que nadie quiere que sepas",
+    "descripcion": "Descubre el misterio detrás de la Gran Esfinge de Guiza. ¿Quién la construyó y por qué su nariz está destruida?\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\nFuentes: https://en.wikipedia.org/wiki/Great_Sphinx_of_Giza\n\nMás historias en el canal: https://youtube.com/@lo.que.no.sabias_do\n\n#Esfinge #Guiza #Egipto #Misterio #Historia"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 5,
+    "critica": "El gancho es largo y no intriga lo suficiente. La revelación llega tarde y no impacta. El ritmo es lento y falta fuerza en el cierre."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Sabías que la Gran Esfinge de Guiza, con 73 metros de largo, esconde un secreto?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Esculpida entre 2600 y 2500 a.C., su constructor es un enigma. ¿Fue el faraón Khufu o su hijo Khafre?",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "La cara, posiblemente de Khufu o sus hijos, sigue en disputa. Su nariz, destruida a propósito, no fue por Napoleón.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Pero lo que no sabías: su nombre original y propósito siguen siendo un misterio.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Crees que algún día descubriremos su secreto? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

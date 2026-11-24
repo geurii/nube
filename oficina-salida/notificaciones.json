@@ -1,5 +1,41 @@
 [
   {
+    "id": "mwub0poemucp",
+    "fecha": "2026-11-24T06:18:59.198Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Great Sphinx of Giza",
+    "texto": "El Verificador no aprobó \"Great Sphinx of Giza\" tras 4 intentos: El gancho inicial debe tener 14 palabras o menos. Aprobados: 11. Rechazados: 45. Con error: 10. No se publica. Próximo ciclo en 8 h."
+  },
+  {
+    "id": "mwuaxz3gjfw8",
+    "fecha": "2026-11-24T06:16:51.436Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Roswell incident",
+    "texto": "El Verificador no aprobó \"Roswell incident\" tras 4 intentos: El gancho inicial debe tener 14 palabras o menos. Aprobados: 11. Rechazados: 44. Con error: 10. No se publica. Próximo ciclo en 8 h."
+  },
+  {
+    "id": "mwuav3xbanx8",
+    "fecha": "2026-11-24T06:14:37.727Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: USS Clemson (DD-186)",
+    "texto": "El Verificador no aprobó \"USS Clemson (DD-186)\" tras 4 intentos: La revelación cae al 64 % (74 de 115 palabras antes de ella) y debe caer entre 65 % y 75 %: añade historia antes de la revelación o acórtala. Aprobados: 11. Rechazados: 43. Con error: 10. No se publica. Próximo ciclo en 8 h."
+  },
+  {
+    "id": "mwuargf8hw2s",
+    "fecha": "2026-11-24T06:11:47.300Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante o afirmación impactante + elemento misterioso o prohibido + pista de revelación El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (27571 vistas/hora)."
+  },
+  {
     "id": "mwu7aip0vn4f",
     "fecha": "2026-11-24T04:34:38.244Z",
     "canal": "lqns",
@@ -657,40 +693,5 @@
     "tipo": "alerta",
     "titulo": "Guion rechazado: Stonehenge",
     "texto": "El Verificador no aprobó \"Stonehenge\" tras 4 intentos: El Editor puso 5/10 (mínimo 6). Reescribe arreglando esto: El hook es débil y demasiado genérico. El ritmo es lento y hay frases largas. Falta un cierre contund Aprobados: 9. Rechazados: 13. Con error: 8. No se publica. Próximo ciclo en 5 h."
-  },
-  {
-    "id": "mwrl3mmu7gxm",
-    "fecha": "2026-11-22T08:37:52.854Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: Phaistos Disc",
-    "texto": "El Verificador no aprobó \"Phaistos Disc\" tras 4 intentos: El Editor puso 5/10 (mínimo 6). Reescribe arreglando esto: El gancho es débil, la historia se alarga y el ritmo es lento. Falta urgencia y frases más cortas. El Aprobados: 9. Rechazados: 12. Con error: 8. No se publica. Próximo ciclo en 5 h."
-  },
-  {
-    "id": "mwrkz7c9agy8",
-    "fecha": "2026-11-22T08:34:26.409Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: Beale ciphers",
-    "texto": "El Verificador no aprobó \"Beale ciphers\" tras 4 intentos: El material no indica que la caja se dejó en 1820; solo menciona que el tesoro se enterró en 1820 y que la caja se entregó al posadero en 1822. Aprobados: 9. Rechazados: 11. Con error: 8. No se publica. Próximo ciclo en 5 h."
-  },
-  {
-    "id": "mwrkvgncqajc",
-    "fecha": "2026-11-22T08:31:31.848Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante o afirmación impactante + elemento misterioso/extraño + pista de revelación o consecuencia El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (39451 vistas/hora)."
-  },
-  {
-    "id": "mwrjqdztt9v2",
-    "fecha": "2026-11-22T07:59:35.513Z",
-    "canal": "lqns",
-    "tipo": "alerta",
-    "titulo": "El panel rechazó: 🌌 El misterio explosivo de Tunguska 1908",
-    "texto": "Gemini (gemini-4-hydrogen) lo vio: 3/10, no subir. 0 de 8 aprobaron, 2 pasaron los primeros 3 segundos, 0 lo compartirían. No se sube. Mejora principal: Reemplaza la voz sintética y los fondos genéricos por una narración humana clara y visuales reales del desastre de Tunguska; un gancho impactante y sin errores aumentará drásticamente la retención."
   }
 ]
