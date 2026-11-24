@@ -187,7 +187,7 @@ export const pintarEscenas = async ({llamar, escenas, indices, slug, tema, nota 
       const pendientes = ids.filter((i) => !a[i]);
       if (!pendientes.length) break;
       const encargoReintento = intento === 1 ? encargo : `REPARACIÓN ${intento}/5. CONTEXTO ORIGINAL COMPLETO: tema del video: "${tema}". Completa únicamente estas escenas: ${lote(escenas, pendientes)}. Para cada una entrega exactamente TRES cuadros de pixel art completos, distintos entre sí y fieles a la frase. Mantén el mismo mundo visual, época, objetos y contexto narrativo del tema. No cambies la escena ni uses fondos genéricos.\n\n${MANUAL}\n\n${GUIA}\n\nDevuelve ${FORMA}`;
-      try { const nueva = limpiar(await llamar([{role: 'system', content: `${SISTEMA_A} ${presionPintores()}`}, {role: 'user', content: encargoReintento}], 6500), pendientes, slug); Object.assign(a, nueva); }
+      try { const nueva = limpiar(await llamar([{role: 'system', content: `${SISTEMA_A} ${presionPintores()}`}, {role: 'user', content: encargoReintento}], 6500), pendientes, slug, {}, escenas); Object.assign(a, nueva); }
       catch (e) { nota(`Pintor A, intento ${intento}/5: ${String(e.message ?? e).slice(0, 120)}`); }
     }
     if (ids.some((i) => !a[i])) { nota(`Faltan tres cuadros distintos para las escenas ${ids.filter((i) => !a[i]).join(', ')}; se aborta esta tanda, no se usarán fondos de relleno.`); continue; }
@@ -196,7 +196,7 @@ export const pintarEscenas = async ({llamar, escenas, indices, slug, tema, nota 
     try {
       const revision = `Tema: "${tema}". Tu compañero propuso estos cuadros para las escenas:\n${lote(escenas, ids)}\n\nSUS CUADROS:\n${JSON.stringify({escenas: ids.filter((i) => a[i]).map((i) => ({indice: i, planos: a[i]}))})}\n\n${MANUAL}\n\n${GUIA}\n\nRevisa cada cuadro como un profesional: ¿muestra lo que dice la frase?, ¿luz coherente?, ¿profundidad en 3 planos?, ¿sujeto legible y fuera de las zonas reservadas?, ¿hay movimiento?, ¿los tres planos de cada escena son distintos? CORRIGE lo que no esté a nivel profesional (añade detalle, luz, primer plano, movimiento).\nDevuelve {"acuerdo": true|false (¿el cuadro ORIGINAL de tu compañero ya era impecable?), "objeciones": ["máx. 4 frases cortas"], "escenas": ${FORMA.replace('{"escenas": ', '').replace(/ con el mismo.*$/, '')} con TUS cuadros corregidos}`;
       const rb = await llamar([{role: 'system', content: `${SISTEMA_B} ${presionPintores()}`}, {role: 'user', content: revision}], 6500);
-      const mejorB = limpiar(rb, ids, slug, a);
+      const mejorB = limpiar(rb, ids, slug, a, escenas);
       const objeciones = (Array.isArray(rb?.objeciones) ? rb.objeciones : []).map(String).slice(0, 4);
       if (rb?.acuerdo === true) { final = Object.keys(mejorB).length ? mejorB : a; acuerdo = 'acuerdo en la ronda 1'; }
       else {
@@ -204,7 +204,7 @@ export const pintarEscenas = async ({llamar, escenas, indices, slug, tema, nota 
         try {
           const respuesta = `Tu compañero (Pintor de luz y detalle) revisó tus cuadros y puso estas objeciones: ${objeciones.join(' | ') || 'mejorar luz y detalle'}.\nEsta es SU versión corregida:\n${JSON.stringify({escenas: ids.filter((i) => mejorB[i]).map((i) => ({indice: i, planos: mejorB[i]}))})}\n\nSi su versión es mejor, acéptala; si ves algo que empeora, ajústalo. Entrega la versión FINAL que firmarían los dos.\nDevuelve {"acuerdo": true|false, "escenas": [...]} con ${FORMA.replace('{"escenas": ', '').replace(/ con el mismo.*$/, '')}`;
           const ra = await llamar([{role: 'system', content: `${SISTEMA_A} ${presionPintores()}`}, {role: 'user', content: respuesta}], 6500);
-          const trasA = limpiar(ra, ids, slug, mejorB);
+          const trasA = limpiar(ra, ids, slug, mejorB, escenas);
           if (ra?.acuerdo === true) { final = trasA; acuerdo = 'acuerdo en la ronda 2 (el de composición ajustó con las objeciones)'; }
           else { final = mejorB; acuerdo = 'el de luz y detalle tuvo la última palabra tras discutir'; }
         } catch { final = mejorB; acuerdo = 'el de luz y detalle tuvo la última palabra'; }
