@@ -22,6 +22,7 @@ import {filtrarTemas, sinRechazadas, leerPreferencias, fueRechazada, temasAproba
 import {enGarantia} from './garantia.mjs';
 import {chatAlternativo, proveedoresConLlave, modelosDisponibles, diagnosticoRespaldo} from './llm.mjs';
 import {sinEnlaces} from './sin-enlaces.mjs';
+import {datosDeVideo, mensajesDeDesglose} from './analizar-videos.mjs';
 
 const KEY = process.env.GROQ_API_KEY;
 const CANAL_ID = (process.env.CANAL || 'lqns').trim();
@@ -29,6 +30,8 @@ const leerJsonSync = (ruta, porDefecto) => { try { return JSON.parse(fs.readFile
 const CONFIG = (leerJsonSync(path.resolve('agentes', 'canales-propios.json'), {canales: []}).canales ?? []).find((c) => c.id === CANAL_ID);
 if (!CONFIG) { console.error(`ERROR: el canal "${CANAL_ID}" no existe en agentes/canales-propios.json`); process.exit(1); }
 let TEMA = (process.env.TEMA ?? '').trim();
+let referenciaEstructural = '';
+let referenciaMeta = null;
 const FORMATO = process.env.FORMATO === 'largo' ? 'largo' : 'short';
 const IDIOMAS = (process.env.IDIOMAS ? process.env.IDIOMAS.split(',') : CONFIG.idiomasFuente ?? ['es', 'en']).map((x) => x.trim()).filter(Boolean);
 const PALABRAS = FORMATO === 'largo' ? Math.max(1200, Math.min(1350, Number(process.env.PALABRAS) || 1250)) : 140;
@@ -363,27 +366,73 @@ const elegirTema = async (modelo) => {
     ? ` RADAR PRIORITARIO DE VIDEOS QUE YA EXPLOTARON: ${resumenRadar}. Los ejemplos proceden de canales creados hace 90 días o menos y videos publicados en los últimos 90 días. Reproduce la ARQUITECTURA de retención (tipo de gancho, promesa, ritmo, giros, revelación y cierre), no copies el guion, frases, escenas, montaje, miniatura ni recursos protegidos. Adapta el concepto al español dominicano/neutro y al formato del canal; verifica los hechos de forma independiente.`
     : '';
   if (resumenRadar) informe.push(`Radar prioritario: ${radar.canales.length} canales nuevos con videos que superaron al menos 5x su rendimiento habitual (${String(radar.fecha).slice(0, 10)}).`);
-  // Primero adaptar ideas procedentes de videos virales recientes de canales nuevos; solo se pasa a ideas generales si no hay una fuente factual legible.
-  const videosRadar = (radar?.videosVirales ?? []).slice(0, 6);
+  // Desmontar referencias reales de YouTube: exige duración compatible y subtítulos públicos.
+  // Solo se extrae la estructura narrativa; nunca se descarga ni reutiliza el video, su audio o sus escenas.
+  const videosRadar = (radar?.videosVirales ?? []).slice(0, 18);
+  let referenciasEvaluadas = 0;
   for (const viral of videosRadar) {
     if (!viral?.titulo || yaHecho(viral.titulo)) continue;
     try {
+      const id = String(viral.id ?? /[?&]v=([\w-]{11})/.exec(viral.url ?? '')?.[1] ?? '');
+      if (!/^[\w-]{11}$/.test(id)) continue;
+      const referencia = await datosDeVideo(id);
+      if (!referencia.transcripcion || referencia.transcripcion.length < 350) {
+        informe.push('Referencia descartada para autopsia: no ofreció subtítulos públicos legibles (' + viral.titulo + ').');
+        continue;
+      }
+      if (!Number.isFinite(referencia.segundos)
+        || (FORMATO === 'largo' && referencia.segundos < 480)
+        || (FORMATO === 'short' && referencia.segundos > 180)) {
+        informe.push('Referencia descartada por duración incompatible con el formato ' + FORMATO + ': ' + viral.titulo + '.');
+        continue;
+      }
+      referenciasEvaluadas++;
+      const autopsia = await pedirJson(modelo, mensajesDeDesglose(referencia, FORMATO), 1900);
+      if (!String(autopsia.formula_abstracta ?? '').trim() || !Array.isArray(autopsia.desglose) || !autopsia.desglose.length) {
+        informe.push('Referencia descartada: el análisis no produjo un desglose temporal verificable (' + viral.titulo + ').');
+        continue;
+      }
       const traducido = await pedirJson(modelo, [
-        {role:'system',content:'Eres editor de adaptación de tendencias internacionales. Devuelve solo JSON válido.'},
-        {role:'user',content:`Convierte este título de un video viral de otro idioma en el nombre claro, factual y natural del acontecimiento/curiosidad en español. No inventes detalles, no traduzcas literalmente si queda extraño y no copies el gancho. Título: "${viral.titulo}". Devuelve {"tema":"..."}.`}
+        {role: 'system', content: 'Eres editor de adaptación de tendencias internacionales. Devuelve solo JSON válido.'},
+        {role: 'user', content: 'Identifica el acontecimiento real que trata este título y exprésalo como tema factual natural en español. No inventes ni copies el gancho. Título: "' + viral.titulo + '". Devuelve {"tema":"..."}.'},
       ], 220);
       const temaViral = String(traducido.tema ?? '').trim();
       if (!temaViral || yaHecho(temaViral)) continue;
       const fuentesViral = await investigarEnLaWeb(temaViral);
-      const fuenteViral = fuentesViral.find(x => String(x.texto ?? '').trim().length >= 220);
-      if (fuenteViral) {
-        informe.push(`Tema adaptado de video viral internacional: "${viral.titulo}" (${viral.vistas} vistas; canal de ${viral.diasCanal} días). Se verificó aparte en ${fuenteViral.dominio || fuenteViral.url}.`);
-        return temaViral;
+      const fuenteViral = fuentesViral.find((x) => String(x.texto ?? '').trim().length >= 220);
+      if (!fuenteViral) {
+        informe.push('Referencia viral descartada: el tema no pudo verificarse independientemente (' + viral.titulo + ').');
+        continue;
       }
-      informe.push(`Referencia viral descartada por falta de fuente factual independiente: "${viral.titulo}".`);
-    } catch (e) { informe.push(`No se pudo adaptar referencia viral "${viral.titulo}": ${String(e.message ?? e).slice(0,100)}.`); }
+      referenciaMeta = {
+        id,
+        url: referencia.url,
+        titulo: referencia.titulo ?? viral.titulo,
+        canal: referencia.canal ?? viral.canal ?? 'sin dato',
+        duracionSegundos: referencia.segundos,
+        vistas: referencia.vistas ?? viral.vistas ?? null,
+        idiomaTranscripcion: referencia.idiomaTranscripcion ?? 'desconocido',
+        transcripcionAutomatica: Boolean(referencia.transcripcionAutomatica),
+      };
+      referenciaEstructural = JSON.stringify({
+        gancho: autopsia.gancho,
+        desglose: autopsia.desglose,
+        patron_de_giros: autopsia.patron_de_giros,
+        tipo_de_revelacion: autopsia.tipo_de_revelacion,
+        cierre: autopsia.cierre,
+        formula_abstracta: autopsia.formula_abstracta,
+        confianza: autopsia.confianza,
+      }).slice(0, 5200);
+      informe.push('AUTOPSIA REAL DE YOUTUBE: "' + referenciaMeta.titulo + '" · ' + referenciaMeta.duracionSegundos + ' s · subtítulos ' + referenciaMeta.idiomaTranscripcion + ' · ' + autopsia.desglose.length + ' bloques temporales analizados · confianza ' + (autopsia.confianza ?? 'sin especificar') + '. Se adapta únicamente la arquitectura; los hechos del guion proceden de investigación independiente.');
+      informe.push('Tema tomado de la referencia y verificado por separado en ' + (fuenteViral.dominio || fuenteViral.url) + '.');
+      return temaViral;
+    } catch (e) {
+      informe.push('No se pudo desmontar la referencia "' + viral.titulo + '": ' + String(e.message ?? e).slice(0, 100) + '.');
+    }
   }
-  // Si el radar no aporta un caso verificable, se usan las ideas locales y el catálogo editorial.
+  if (videosRadar.length && referenciasEvaluadas === 0) {
+    informe.push('El Radar encontró títulos, pero ninguna referencia con duración y transcripción suficiente para una autopsia real. No se afirmará que este guion está adaptado de un video concreto.');
+  }  // Si el radar no aporta un caso verificable, se usan las ideas locales y el catálogo editorial.
   const candidatosLocales = [...temasAprobadosDelDueno(CANAL_ID), ...ideasEquipo, ...ideasEstrategia, ...ideasJules];
   for (const t of candidatosLocales) {
     if (typeof t !== 'string' || yaHecho(t)) continue;
@@ -557,7 +606,7 @@ const PROHIBIDOS = [];
 const prohibidosTexto = () => (PROHIBIDOS.length ? `\n\nNOMBRES PROHIBIDOS (ya te los rechazaron; di su papel: "el investigador", "el astrónomo"): ${[...new Set(PROHIBIDOS)].join(', ')}.` : '');
 const guionista = (material, problemas) => [
   {role: 'system', content: `Eres el/la Guionista del canal de YouTube "${CONFIG.nombre}" (${CONFIG.nicho}). Tienes maestría en narración de documental, retención de audiencia y rigor periodístico. ${NORMAS}\nResponde SOLO con JSON.`},
-  {role: 'user', content: `Escribe un guion de ${FORMATO === 'largo' ? 'video largo' : 'Short vertical de unos 55 segundos'} de unas ${PALABRAS} palabras sobre "${TEMA}". ${REPARTO}${formulaActual()}${aprendizajesDelPanel()}${ayudasDelEquipo()}\n\nDATOS EXACTOS (cualquier cifra o fecha debe conservar los dígitos, rangos y unidades del material):\n${datosExactos(material)}\n${notaDeIntervalosFuente(material)}${prohibidosTexto()}\n\nMATERIAL (única fuente permitida):\n${material}\n\n${problemas?.length ? `El Verificador o el Editor rechazaron la versión anterior. Corrige exactamente esto:\n${problemas.map((p) => `- "${p.frase}": ${p.motivo}`).join('\n')}\n\n` : ''}Formato JSON: {"titulo": "...(máx. 90 caracteres, con un emoji)", "descripcion": "...(2 frases)", "hashtags": ["#cinco", "#especificos", "#del", "#tema", "#sinviral"], "escenas": [...]}. Los hashtags son 5, específicos del tema; nunca #viral ni #fyp. ${FORMATO_ESCENAS}`},
+  {role: 'user', content: `Escribe un guion de ${FORMATO === 'largo' ? 'video largo' : 'Short vertical de unos 55 segundos'} de unas ${PALABRAS} palabras sobre "${TEMA}". ${REPARTO}${formulaActual()}${aprendizajesDelPanel()}${ayudasDelEquipo()}\n\nDATOS EXACTOS (cualquier cifra o fecha debe conservar los dígitos, rangos y unidades del material):\n${datosExactos(material)}\n${notaDeIntervalosFuente(material)}${prohibidosTexto()}\n\n${referenciaEstructural ? `AUTOPSIA ESTRUCTURAL DE REFERENCIA (solo arquitectura; NO es fuente factual): ${referenciaEstructural}. Aplica la fórmula abstracta al tema investigado, pero cambia íntegramente el relato, las frases, ejemplos, escenas y secuencia factual. No imites el montaje ni copies el video.` : 'No hay autopsia de referencia disponible; crea una narración original y no afirmes que adaptaste un video concreto.'}\n\nMATERIAL (única fuente permitida):\n${material}\n\n${problemas?.length ? `El Verificador o el Editor rechazaron la versión anterior. Corrige exactamente esto:\n${problemas.map((p) => `- "${p.frase}": ${p.motivo}`).join('\n')}\n\n` : ''}Formato JSON: {"titulo": "...(máx. 90 caracteres, con un emoji)", "descripcion": "...(2 frases)", "hashtags": ["#cinco", "#especificos", "#del", "#tema", "#sinviral"], "escenas": [...]}. Los hashtags son 5, específicos del tema; nunca #viral ni #fyp. ${FORMATO_ESCENAS}`},
 ];
 const editor = (titulo, escenas) => [
   {role: 'system', content: `Eres el/la Editor/a crítico/a de guiones de un canal de YouTube. Eres implacable: tu trabajo es encontrar lo que haría que alguien deslice el video y arreglarlo. Evalúas gancho (¿se entiende en un segundo? ¿es una pregunta intrigante o un hecho increíble, de máximo ${FORMATO === 'short' ? 14 : 24} palabras, que saldrá como titular gigante en pantalla? Si cumple eso, merece 7 o más aunque no lleve cifra: solo baja de 7 si es descriptivo, largo o aburrido. Sé exigente pero JUSTO: no castigues lo que el material no permite), ritmo (frases cortas, nada de relleno), claridad para gente normal y fuerza del cierre. Reglas duras: NO agregues datos nuevos ni cifras; solo recorta, reordena y mejora la redacción de lo que ya está. En Shorts y videos largos usa una apertura natural, original y atractiva; nunca impongas una fórmula fija como "Sabías que". Mantén exactamente la última frase "${CTA}" y conserva justo antes CUALQUIER pregunta natural, breve y directamente relacionada con el tema. REGLA CRÍTICA: NO existe una frase literal obligatoria para esa pregunta; NUNCA exijas ni insertes el título completo del video entre comillas. Son válidas preguntas como "¿Qué explicación te convence sobre el zumbido de Taos?". No rechaces una pregunta contextual por no copiar el título. Evalúa su pertinencia semántica, no coincidencia literal. y coloca la revelación entre el 65 % y el 72 % del total. Cuenta todas las palabras de todas las escenas, incluida la revelación y el veredicto/CTA. Si está por debajo, añade historia respaldada por el MATERIAL antes de la revelación; si está por encima, acorta o mueve contenido no esencial después de la revelación sin quitar datos esenciales. No inventes ni rellenes. Devuelve el JSON solo después de comprobar el porcentaje. Cada escena debe poder mostrarse con un cambio de imagen cada 3 segundos: en videos largos, una sola oración de máximo 22 palabras por escena; en Shorts, frases de máximo 18 palabras. Responde SOLO con JSON.`},
@@ -806,6 +855,7 @@ try {
     musica: CONFIG.musica ?? null,
     personaje: {visible: false}, // FORMATO FACELESS (22 nov 2026): sin personaje ni cara en pantalla, solo voz en off y visuales en movimiento
     creado: new Date().toISOString(),
+    ...(referenciaMeta ? {referenciaEditorial: referenciaMeta} : {}),
     estilo: 'gancho', // edición de gancho: titular gigante, cortes rápidos con glitch y escaneo (copia el ritmo de los reels que frenan el dedo, sin cambiar el pixel del canal)
     ganchoTexto: ganchoDe(escenas[0]?.texto),
     publicacion: {titulo, descripcion: sinEnlaces(`${descripcion}\n\n${CONFIG.ctaEscrito ?? ''}${hashtags.length ? `\n\n${hashtags.join(' ')}` : ''}`)},
@@ -817,6 +867,13 @@ try {
   };
   if (CTX.mesa) guion.publicacion = {...guion.publicacion, titulosAlternativos: CTX.mesa.titulos, comentarioFijado: CTX.mesa.comentarioFijado, miniatura: CTX.mesa.miniatura};
   fs.writeFileSync(path.join(SALIDA, `guion-${slug}.json`), JSON.stringify(guion, null, 2));
+  if (aprobado && !MANUAL.activo && process.env.MODO_PRUEBA !== '1' && process.env.GITHUB_RUN_ID) {
+    const manifiesto = path.resolve('oficina-salida', 'produccion-pendiente.json');
+    const pendientesRun = leerJsonSync(manifiesto, []);
+    const listaPendientes = Array.isArray(pendientesRun) ? pendientesRun : [];
+    const item = {runId: String(process.env.GITHUB_RUN_ID), canal: CANAL_ID, slug, formato: FORMATO, creado: guion.creado};
+    fs.writeFileSync(manifiesto, JSON.stringify([...listaPendientes.filter((x) => !(String(x.runId) === item.runId && x.canal === item.canal)), item].slice(-20), null, 2));
+  }
   registrar(aprobado ? 'aprobado' : 'rechazado', aprobado ? `${palabras} palabras, ${escenas.length} escenas.` : (problemas[0]?.motivo ?? 'sin detalle').slice(0, 160), intentos, {editor: puntaje !== null ? `Puntaje: ${puntaje}/10. ${critica}`.slice(0, 200) : '', puntaje: puntaje ?? undefined});
   fs.writeFileSync(path.join(SALIDA, `informe-${slug}.md`), informe.join('\n'));
   console.log(informe.join('\n'));
