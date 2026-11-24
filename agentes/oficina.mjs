@@ -435,7 +435,12 @@ const elegirTema = async (modelo) => {
   }
   if (videosRadar.length && referenciasEvaluadas === 0) {
     informe.push('El Radar encontró títulos, pero ninguna referencia con duración y transcripción suficiente para una autopsia real. No se afirmará que este guion está adaptado de un video concreto.');
-  }  // Si el radar no aporta un caso verificable, se usan las ideas locales y el catálogo editorial.
+  }  // El dueño pidió que CADA video largo parta de desmontar una referencia viral real.
+  // Sin transcripción pública y desglose temporal verificable, no se finge una adaptación: se descarta el ciclo.
+  if (FORMATO === 'largo' && !referenciaMeta) {
+    throw new Error('No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el próximo ciclo.');
+  }
+  // Si el radar no aporta un caso verificable, se usan las ideas locales y el catálogo editorial.
   const candidatosLocales = [...temasAprobadosDelDueno(CANAL_ID), ...ideasEquipo, ...ideasEstrategia, ...ideasJules];
   for (const t of candidatosLocales) {
     if (typeof t !== 'string' || yaHecho(t)) continue;
