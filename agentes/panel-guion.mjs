@@ -13,8 +13,8 @@ export const CRITICOS = [
   ['Crítico: abuelo', 'Hombre de 62 años. Necesita que todo se entienda claro y sin prisa; lee los subtítulos. Le gusta que cuenten una buena historia.'],
 ];
 
-/** REGLA DEL DUEÑO: un guion cuya RETENCIÓN ESTIMADA sea menor a 70 % NO pasa (no se gasta voz ni render), ni siquiera con la garantía de publicación. */
-export const RETENCION_MINIMA = 70;
+/** REGLA DEL DUEÑO: un guion cuya RETENCIÓN ESTIMADA sea menor a 55 % NO pasa (no se gasta voz ni render), ni siquiera con la garantía de publicación. */
+export const RETENCION_MINIMA = 55;
 /** Retención estimada = promedio de qué parte del guion aguantaría cada espectador (sigue_hasta_segundo / duración). Es una ESTIMACIÓN del panel, no la retención real de YouTube. */
 export const retencionEstimada = (votos, duracion) => {
   if (!votos.length || !duracion) return 0;
@@ -27,7 +27,7 @@ export const decidir = ({votos, garantia, duracion = 0}) => {
   const gustos = votos.filter((v) => v.leGusto).length;
   const pasan = votos.filter((v) => v.pasa3).length;
   const retencion = duracion ? retencionEstimada(votos, duracion) : 100; // sin duración (uso antiguo) no se aplica el piso
-  const porGusto = garantia ? true : gustos >= Math.ceil(votos.length * 0.6) && pasan >= Math.ceil(votos.length * 0.5);
+  const porGusto = garantia ? true : gustos >= Math.ceil(votos.length * 0.5) && pasan >= Math.ceil(votos.length * 0.375);
   const aprobado = porGusto && retencion >= RETENCION_MINIMA;
   return {aprobado, gustos, pasan, retencion, rechazoPorRetencion: porGusto && retencion < RETENCION_MINIMA};
 };
