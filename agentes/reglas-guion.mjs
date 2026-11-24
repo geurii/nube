@@ -16,7 +16,7 @@ export const medirRevelacion = (escenas = []) => {
   return {antes, total, porcentaje: total > 0 && indice >= 0 ? antes / total * 100 : 0, existe: indice >= 0};
 };
 
-export const validarRevelacion = (escenas = [], minimo = 65, maximo = 75) => {
+export const validarRevelacion = (escenas = [], minimo = 55, maximo = 80) => {
   const m = medirRevelacion(escenas);
   return {...m, valido: m.existe && m.total > 0 && m.porcentaje >= minimo && m.porcentaje <= maximo};
 };
