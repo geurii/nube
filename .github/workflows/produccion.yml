@@ -62,7 +62,7 @@ jobs:
         run: node agentes/producir.mjs
       - name: Seleccionar destino de publicación
         id: destino
-        if: ${{ steps.producir.outputs.id != '' }}
+        if: ${{ always() && hashFiles('agentes/PAUSA') == '' }}
         run: |
           destino=$(node -e "try { const x=require('./agentes/publicacion.json'); process.stdout.write(x.destino || 'ambos'); } catch { process.stdout.write('ambos'); }")
           case "$destino" in tiktok|youtube|ambos) ;; *) echo "Destino inválido: $destino"; exit 1;; esac
