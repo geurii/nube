@@ -1,11 +1,59 @@
 {
-  "actualizado": "2026-11-25T01:15:58.042Z",
+  "actualizado": "2026-11-25T01:34:58.631Z",
   "totales": {
     "aprobados": 16,
     "rechazados": 99,
-    "errores": 44
+    "errores": 50
   },
   "historial": [
+    {
+      "fecha": "2026-11-25T01:34:58.623Z",
+      "tema": "(sin tema)",
+      "formato": "largo",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
+    },
+    {
+      "fecha": "2026-11-25T01:26:26.424Z",
+      "tema": "(sin tema)",
+      "formato": "largo",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
+    },
+    {
+      "fecha": "2026-11-25T01:22:26.057Z",
+      "tema": "(sin tema)",
+      "formato": "largo",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
+    },
+    {
+      "fecha": "2026-11-25T01:20:25.686Z",
+      "tema": "(sin tema)",
+      "formato": "largo",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
+    },
+    {
+      "fecha": "2026-11-25T01:19:25.326Z",
+      "tema": "(sin tema)",
+      "formato": "largo",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
+    },
+    {
+      "fecha": "2026-11-25T01:18:54.941Z",
+      "tema": "(sin tema)",
+      "formato": "largo",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
+    },
     {
       "fecha": "2026-11-25T01:15:58.036Z",
       "tema": "(sin tema)",
@@ -117,61 +165,13 @@
       "resultado": "error",
       "intentos": 0,
       "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
-    },
-    {
-      "fecha": "2026-11-25T00:20:23.535Z",
-      "tema": "(sin tema)",
-      "formato": "largo",
-      "resultado": "error",
-      "intentos": 0,
-      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
-    },
-    {
-      "fecha": "2026-11-25T00:15:22.701Z",
-      "tema": "(sin tema)",
-      "formato": "largo",
-      "resultado": "error",
-      "intentos": 0,
-      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
-    },
-    {
-      "fecha": "2026-11-25T00:10:21.875Z",
-      "tema": "(sin tema)",
-      "formato": "largo",
-      "resultado": "error",
-      "intentos": 0,
-      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
-    },
-    {
-      "fecha": "2026-11-25T00:05:17.909Z",
-      "tema": "(sin tema)",
-      "formato": "largo",
-      "resultado": "error",
-      "intentos": 0,
-      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
-    },
-    {
-      "fecha": "2026-11-25T00:00:14.182Z",
-      "tema": "(sin tema)",
-      "formato": "largo",
-      "resultado": "error",
-      "intentos": 0,
-      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
-    },
-    {
-      "fecha": "2026-11-24T23:52:10.215Z",
-      "tema": "(sin tema)",
-      "formato": "largo",
-      "resultado": "error",
-      "intentos": 0,
-      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
     }
   ],
   "agentes": {
     "Directora de contenido": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "La oficina falló en su último ciclo: No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el  ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. JEFA: Falló el ciclo. Quiero la causa y el arreglo antes de las próximas 1 h."
+      "tarea": "La oficina falló en su último ciclo: No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el  ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. JEFA: Falló el ciclo. Quiero la causa y el arreglo antes de las próximas 24 h."
     },
     "Investigador de temas": {
       "estado": "libre",
@@ -320,7 +320,7 @@
     }
   },
   "jefa": {
-    "mensaje": "La oficina falló en su último ciclo: No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el  ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. JEFA: Falló el ciclo. Quiero la causa y el arreglo antes de las próximas 1 h.",
-    "horasParaProximoCiclo": 1
+    "mensaje": "La oficina falló en su último ciclo: No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el  ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. JEFA: Falló el ciclo. Quiero la causa y el arreglo antes de las próximas 24 h.",
+    "horasParaProximoCiclo": 24
   }
 }
