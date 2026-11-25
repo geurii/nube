@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-25T07:28:08.883Z",
+  "fecha": "2026-11-25T08:10:50.003Z",
   "criterio": "canales con un video reciente que supera 5x su mediana; candidatos individuales verificados después por duración y subtítulos públicos",
   "consultas": [
     "unsolved mystery explained",
@@ -16,30 +16,30 @@
     "기묘한 역사 미스터리 실화",
     "غموض تاريخي قصة حقيقية غريبة"
   ],
-  "canalesRevisados": 63,
-  "explotaron": 26,
+  "canalesRevisados": 86,
+  "explotaron": 35,
   "canales": [
     {
-      "id": "UCD9YwRZaBLiy4KmyD8gFQ0w",
-      "nombre": "Sleepless Nations",
-      "suscriptores": 300,
-      "videosDelCanal": 14,
-      "fechaAlta": "2026-10-09T00:00:00.000Z",
-      "diasCanal": 47,
-      "veces": 54,
+      "id": "UCGcVuScYBs4oP0MTU6oLWSQ",
+      "nombre": "Ballen Of File",
+      "suscriptores": 1560,
+      "videosDelCanal": 21,
+      "fechaAlta": "2026-11-11T00:00:00.000Z",
+      "diasCanal": 14,
+      "veces": 21,
       "mejor": {
-        "id": "cIwVBQMA_yM",
-        "titulo": "30 Bizarre Historical Events That Sound 100% Fake (But Actually Happened)",
-        "vistas": 43017,
-        "hace": 22,
-        "url": "https://youtube.com/watch?v=cIwVBQMA_yM"
+        "id": "GUnx_FTNgRw",
+        "titulo": "Cops CAN’T Explain His 911 Call… The Mystery Gets DARKER!",
+        "vistas": 158859,
+        "hace": 9,
+        "url": "https://youtube.com/watch?v=GUnx_FTNgRw"
       },
-      "puntaje": 13.71
+      "puntaje": 18.34
     },
     {
       "id": "UCn87yhmEcgnI4PGIvhM4DFg",
       "nombre": "Chill Dude Plus",
-      "suscriptores": 788,
+      "suscriptores": 789,
       "videosDelCanal": 51,
       "fechaAlta": "2026-10-02T00:00:00.000Z",
       "diasCanal": 54,
@@ -47,11 +47,11 @@
       "mejor": {
         "id": "9p43SRaCEng",
         "titulo": "10 Genius Ideas That Backfired on Entire Civilizations",
-        "vistas": 88934,
+        "vistas": 89390,
         "hace": 10,
         "url": "https://youtube.com/watch?v=9p43SRaCEng"
       },
-      "puntaje": 6.72
+      "puntaje": 6.75
     },
     {
       "id": "UCdQx7-YvvW5oFQgb7ityDiQ",
@@ -64,14 +64,33 @@
       "mejor": {
         "id": "KqJsbgsUuWA",
         "titulo": "30 Incredible Stories You Won't Believe",
-        "vistas": 203343,
+        "vistas": 203740,
         "hace": 22,
         "url": "https://youtube.com/watch?v=KqJsbgsUuWA"
       },
-      "puntaje": 5.93
+      "puntaje": 5.94
+    },
+    {
+      "id": "UCycmRza8F3YHyZ9W-bjAdFg",
+      "nombre": "Umbrella Vault",
+      "suscriptores": 1920,
+      "videosDelCanal": 23,
+      "fechaAlta": "2026-10-06T00:00:00.000Z",
+      "diasCanal": 50,
+      "veces": 9,
+      "mejor": {
+        "id": "04snj4rUmfs",
+        "titulo": "12 Resident Evil Mysteries That Were FINALLY Solved...",
+        "vistas": 194731,
+        "hace": 23,
+        "url": "https://youtube.com/watch?v=04snj4rUmfs"
+      },
+      "puntaje": 5.6
     }
   ],
   "videosVirales": [],
   "busquedaSinResultados": true,
-  "notasBusqueda": []
+  "notasBusqueda": [
+    "(Radar: la búsqueda \"historias reales sorprendentes misterio\" falló: YouTube no devolvió ytInitialData legible (bloqueo, consentimiento o cambio de f)"
+  ]
 }
