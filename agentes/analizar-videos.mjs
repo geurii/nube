@@ -114,23 +114,20 @@ export const parsearTranscripcion = (contenido) => {
 export const extraerTranscripcionYoutube = async (playerResponse) => {
   const pistas = playerResponse?.captions?.playerCaptionsTracklistRenderer?.captionTracks ?? [];
   if (!pistas.length) return null;
-  const ordenadas = [...pistas].sort((a, b) => {
-    const preferencia = (x) => {
-      const idioma = String(x.languageCode ?? '').toLowerCase();
-      return (idioma.startsWith('es') ? 0 : idioma.startsWith('en') ? 1 : 3) + (x.kind === 'asr' ? 1 : 0);
-    };
-    return preferencia(a) - preferencia(b);
-  });
-  for (const pista of ordenadas.slice(0, 8)) {
+  // Cualquier idioma sirve. Priorizar subtítulos humanos, pero recorrer todas las pistas.
+  const ordenadas = [...pistas].sort((a, b) => Number(a.kind === 'asr') - Number(b.kind === 'asr'));
+  for (const pista of ordenadas) {
+    if (!pista?.baseUrl) continue;
     try {
       const urls = [pista.baseUrl];
-      try { const json3 = new URL(pista.baseUrl); json3.searchParams.set('fmt', 'json3'); urls.push(json3.toString()); } catch {}
-      try { const vtt = new URL(pista.baseUrl); vtt.searchParams.set('fmt', 'vtt'); urls.push(vtt.toString()); } catch {}
+      for (const formato of ['json3', 'srv3', 'vtt']) {
+        try { const u = new URL(pista.baseUrl); u.searchParams.set('fmt', formato); urls.push(u.toString()); } catch {}
+      }
       let cues = [];
-      for (const url of urls) {
+      for (const url of [...new Set(urls)]) {
         for (let intento = 0; intento < 2 && !cues.length; intento++) {
           try {
-            const r = await fetch(url, {headers: {'User-Agent': 'Mozilla/5.0', 'Accept-Language': 'en-US,en;q=0.9'}, signal: AbortSignal.timeout(15000)});
+            const r = await fetch(url, {headers: {'User-Agent': 'Mozilla/5.0', 'Accept-Language': '*'}, signal: AbortSignal.timeout(15000)});
             if (!r.ok) continue;
             cues = parsearTranscripcion(await r.text());
           } catch { if (intento === 0) await new Promise((resolve) => setTimeout(resolve, 700)); }
@@ -141,7 +138,7 @@ export const extraerTranscripcionYoutube = async (playerResponse) => {
       const texto = cues.map((x) => '[' + x.tiempo + '] ' + x.texto).join('\n').slice(0, 18000);
       if (texto.length < 350) continue;
       return {texto, idioma: pista.languageCode ?? 'desconocido', automatica: pista.kind === 'asr', fragmentos: cues.length};
-    } catch { /* intenta la siguiente pista disponible */ }
+    } catch { /* intentar las demás pistas, sin filtrar por idioma */ }
   }
   return null;
 };
@@ -162,6 +159,7 @@ export const playerInnertube = async (html, id, headers = {}) => {
     {clientName:'ANDROID', clientVersion:'20.45.38', androidSdkVersion:35, hl:'en', gl:'US'},
     {clientName:'IOS', clientVersion:'20.45.4', deviceModel:'iPhone16,2', hl:'en', gl:'US'},
   ];
+  let mejorRespuesta = null;
   for (const client of clientes) {
     try {
       const r = await fetch('https://www.youtube.com/youtubei/v1/player?key=' + encodeURIComponent(apiKey) + '&prettyPrint=false', {
@@ -170,10 +168,12 @@ export const playerInnertube = async (html, id, headers = {}) => {
       });
       if (!r.ok) continue;
       const j = await r.json();
-      if (j?.videoDetails?.videoId || j?.captions?.playerCaptionsTracklistRenderer?.captionTracks?.length) return j;
+      // No detenerse ante un cliente que devuelve metadatos pero omite captions.
+      if (j?.captions?.playerCaptionsTracklistRenderer?.captionTracks?.length) return j;
+      if (j?.videoDetails?.videoId) mejorRespuesta = j;
     } catch { /* probar el siguiente cliente público */ }
   }
-  return null;
+  return mejorRespuesta;
 };
 
 /** Datos públicos del video: oEmbed + vistas, duración, descripción y, cuando existe, subtítulos públicos. */
@@ -210,11 +210,16 @@ export const datosDeVideo = async (id) => {
       }
       if (player) break;
     }
-    // Si /watch y /embed no entregaron el reproductor, recuperar la respuesta mediante Innertube.
-    if (!player) {
-      player = await playerInnertube(html, id, headers);
-      if (player) d.metodoLectura = 'youtube-innertube';
-      else d.errorLectura = d.errorLectura ?? 'YouTube no entregó playerResponse ni pistas públicas de subtítulos.';
+    // Si /watch o /embed no entregan pistas, probar también Innertube.
+    // Metadatos sin captions no deben impedir probar Android e iOS.
+    const pistasWeb = player?.captions?.playerCaptionsTracklistRenderer?.captionTracks ?? [];
+    if (!player || !pistasWeb.length) {
+      const respaldo = await playerInnertube(html, id, headers);
+      if (respaldo) {
+        player = respaldo;
+        d.metodoLectura = 'youtube-innertube';
+      }
+      if (!player) d.errorLectura = d.errorLectura ?? 'YouTube no entregó playerResponse ni pistas públicas de subtítulos.';
     }
     const v = player?.videoDetails ?? {};
     d.titulo = d.titulo ?? v.title;
