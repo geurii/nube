@@ -279,7 +279,8 @@ const groqUnaRonda = async (modelo, mensajes, maxTokens, json = false) => {
   if (!KEY && proveedoresConLlave().length) {
     const alternativo = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: tokensDeSalida(maxTokens), json});
     if (alternativo) { console.log(`Groq sin clave: se usó ${alternativo.proveedor} (${alternativo.modelo}).`); return alternativo.texto; }
-    throw new Error('Groq no tiene clave y ningún proveedor alternativo respondió.');
+    const agotado = /429|límite|cooldown/i.test(diagnosticoRespaldo.join(' '));
+    throw Object.assign(new Error('Groq no tiene clave y ningún proveedor alternativo respondió.'), {cuotaAgotada: agotado});
   }
   if (Date.now() < groqBloqueadoHasta && proveedoresConLlave().length) {
     const rapido = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: tokensDeSalida(maxTokens), json});
