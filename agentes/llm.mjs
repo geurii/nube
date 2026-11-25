@@ -1,3 +1,5 @@
+import fs from 'node:fs';
+import path from 'node:path';
 // Respaldo de modelos: si Groq se queda sin cuota, la oficina pasa sola a otros proveedores GRATIS (los que tengan llave en los secretos).
 // Todos usan el formato "compatible con OpenAI". El modelo se elige solo: se pregunta a cada proveedor qué modelos tiene y se toma el mejor
 // de una lista de preferencias. Si ningún proveedor tiene llave, devuelve null y todo sigue como antes. Nunca imprime llaves.
@@ -24,6 +26,21 @@ export const diagnosticoRespaldo = [];
 const nota = (t) => { console.log(t); diagnosticoRespaldo.push(t); };
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
 const modelos = new Map();
+const rutaCooldown = path.resolve('oficina-salida', process.env.CANAL || 'lqns', 'cooldowns-ia.json');
+const leerCooldowns = () => { try { return JSON.parse(fs.readFileSync(rutaCooldown, 'utf8')); } catch { return {}; } };
+const guardarCooldowns = () => {
+  try { fs.mkdirSync(path.dirname(rutaCooldown), {recursive: true}); fs.writeFileSync(rutaCooldown, JSON.stringify(Object.fromEntries(bloqueadoHasta), null, 2)); } catch { /* el ciclo puede continuar sin persistencia */ }
+};
+const cargarCooldowns = () => {
+  const datos = leerCooldowns();
+  for (const [nombre, hasta] of Object.entries(datos)) if (Number.isFinite(Number(hasta)) && Number(hasta) > Date.now()) bloqueadoHasta.set(nombre, Number(hasta));
+};
+cargarCooldowns();
+export const proveedorEnCooldown = (nombre) => (bloqueadoHasta.get(nombre) ?? 0) > Date.now();
+export const bloquearProveedor = (nombre, segundos = 900) => {
+  bloqueadoHasta.set(nombre, Date.now() + Math.max(60, Math.min(Number(segundos) || 900, 3600)) * 1000);
+  guardarCooldowns();
+};
 
 const elegirModelos = async (p, key) => {
   if (modelos.has(p.nombre)) return modelos.get(p.nombre);
@@ -52,8 +69,10 @@ const ordenados = () => {
   return orden; // si todos están en cooldown, NO se consulta ninguno: proteger las cuotas agotadas
 };
 const descansar = (nombre, r) => {
-  const espera = Number(r.headers?.get?.('retry-after')) || 60;
-  bloqueadoHasta.set(nombre, Date.now() + Math.min(Math.max(espera, 45), 1800) * 1000);
+  const cabecera = r.headers?.get?.('retry-after') ?? r.headers?.get?.('x-ratelimit-reset-requests') ?? '';
+  const segundos = Number.parseFloat(String(cabecera).replace(/s$/i, ''));
+  const espera = Number.isFinite(segundos) && segundos > 0 ? segundos : 900;
+  bloquearProveedor(nombre, Math.max(espera, 900));
 };
 export const chatAlternativo = async (mensajes, {maxTokens = 2500, temperatura = 0.4, json = false} = {}) => {
   const limite = Date.now() + 180_000; // no permitir que el respaldo consuma toda la ventana de producción
