@@ -35,7 +35,7 @@ permissions:
 
 # Un solo turno a la vez: una nueva ejecución NO cancela la que ya está trabajando.
 concurrency:
-  group: oficina
+  group: oficina-largo-rescate
   cancel-in-progress: false
 
 env:
@@ -44,7 +44,7 @@ env:
 jobs:
   oficina:
     runs-on: ubuntu-24.04
-    timeout-minutes: 360
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
