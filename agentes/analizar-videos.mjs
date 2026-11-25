@@ -153,11 +153,32 @@ export const datosDeVideo = async (id) => {
     if (r.ok) { const j = await r.json(); d.titulo = j.title; d.canal = j.author_name; }
   } catch { /* se intenta con la página */ }
   try {
-    const r = await fetch(d.url, {headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36', 'Accept-Language': 'en-US,en;q=0.9', Cookie: 'CONSENT=YES+1'}, signal: AbortSignal.timeout(18000)});
-    if (!r.ok) throw new Error('YouTube ' + r.status);
-    const html = await r.text();
-    const player = objetoDespuesDe(html, 'ytInitialPlayerResponse =')
-      ?? objetoDespuesDe(html, '"ytInitialPlayerResponse":');
+    const headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36', 'Accept-Language': 'en-US,en;q=0.9', Cookie: 'CONSENT=YES+1'};
+    let html = '';
+    let player = null;
+    // La página /watch puede entregar una pantalla de consentimiento o limitarse; probar también el reproductor embebido.
+    for (const pagina of [d.url, 'https://www.youtube.com/embed/' + id + '?hl=en']) {
+      for (let intento = 0; intento < 2 && !player; intento++) {
+        try {
+          const r = await fetch(pagina, {headers, signal: AbortSignal.timeout(18000)});
+          if (!r.ok) {
+            if ([429, 500, 502, 503, 504].includes(r.status) && intento === 0) {
+              await new Promise((resolve) => setTimeout(resolve, r.status === 429 ? 2500 : 900));
+              continue;
+            }
+            break;
+          }
+          html = await r.text();
+          player = objetoDespuesDe(html, 'ytInitialPlayerResponse =')
+            ?? objetoDespuesDe(html, '"ytInitialPlayerResponse":');
+          if (player) break;
+          if (intento === 0) await new Promise((resolve) => setTimeout(resolve, 500));
+        } catch (error) {
+          if (intento === 1) d.errorLectura = String(error.message ?? error).slice(0, 100);
+        }
+      }
+      if (player) break;
+    }
     const v = player?.videoDetails ?? {};
     d.titulo = d.titulo ?? v.title;
     d.canal = d.canal ?? v.author;
