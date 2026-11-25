@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-25T21:37:33.972Z",
+  "actualizado": "2026-11-25T21:38:01.469Z",
   "totales": {
     "aprobados": 16,
     "rechazados": 115,
@@ -204,9 +204,9 @@
       "tarea": "AYUDA: le echó una mano a (Editor de guion). Entregó: 3 mejoras al último guion"
     },
     "Publicador": {
-      "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Investigador de temas). Entregó: 5 temas candidatos"
+      "estado": "libre",
+      "actividad": "pensando",
+      "tarea": "Subió \"¿Por qué un lápiz roto tiene 68 millones de vistas?\" y quedó PÚBLICO ahora mismo: https://youtu.be/ERL-GCARL8I"
     },
     "Crítico: padre trabajador": {
       "estado": "trabajando",
