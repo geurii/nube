@@ -661,7 +661,7 @@ export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: n
       const ang = t * 1.65;
       g.line(cx, cy, cx + Math.cos(ang) * w * 0.34, cy + Math.sin(ang) * h * 0.34, [108, 255, 211], 2);
       const tx = cx + Math.sin(t * 0.83) * w * 0.2, ty = cy - h * 0.1 + Math.cos(t * 0.63) * h * 0.12;
-      g.ellO(tx, ty, Math.max(2, w * 0.018), Math.max(2, h * 0.025), [255, 230, 151]);
+      g.ellO(tx, ty, Math.max(2, w * 0.018), Math.max(2, h * 0.025), [[255, 230, 151]]);
       g.line(tx - w * 0.06, ty, tx + w * 0.06, ty, [255, 230, 151], 1);
       g.line(tx, ty - h * 0.09, tx, ty + h * 0.09, [255, 230, 151], 1);
       g.rect(cx - w * 0.5, cy + h * 0.47, w, Math.max(2, h * 0.035), frame[1]);
@@ -672,7 +672,7 @@ export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: n
       const w = num(e.w, 0.38, 0.18, 0.72) * lw, h = num(e.h, 0.09, 0.045, 0.19) * lh, r = rampaDeE(e, '#dce7ee', 5);
       g.ellO(cx + w * 0.015, cy + h * 0.1, w * 0.5, h * 0.5, [[15, 27, 43], [15, 27, 43], [15, 27, 43]]);
       g.ellO(cx, cy, w * 0.5, h * 0.5, r);
-      g.ellO(cx - w * 0.06, cy - h * 0.12, w * 0.31, h * 0.16, [245, 250, 255]);
+      g.ellO(cx - w * 0.06, cy - h * 0.12, w * 0.31, h * 0.16, [[245, 250, 255]]);
       g.line(cx - w * 0.32, cy + h * 0.22, cx + w * 0.32, cy + h * 0.22, [122, 151, 170], Math.max(1, u));
       for (let k = -2; k <= 2; k++) g.rect(cx + k * w * 0.13 - 1, cy + h * 0.22, 2, 2, Math.floor(t * 3 + k) % 2 ? [143, 229, 245] : [255, 255, 255]);
       return true;
