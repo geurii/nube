@@ -1,6 +1,12 @@
 {
-  "total": 11,
+  "total": 12,
   "videos": [
+    {
+      "id": "VXbbW_o1PWo",
+      "titulo": "Nintendo nació vendiendo cartas: la historia antes de los videojuegos",
+      "fecha": "2026-11-25T17:07:30.254Z",
+      "url": "https://youtu.be/VXbbW_o1PWo"
+    },
     {
       "id": "ju9-ibZWM5s",
       "titulo": "⚡ La ola de 524 metros: El megatsunami que escaló una montaña en Alaska (1958)",
