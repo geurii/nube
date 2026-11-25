@@ -462,7 +462,7 @@ const principal = async () => {
   // el presupuesto y disparaban el limitador antes de encontrar documentales.
   const radar = esLargo
     ? {fecha: new Date().toISOString(), consultas: CONSULTAS_LARGAS_POR_DEFECTO, canalesRevisados: 0, explotaron: 0, canales: []}
-    : await construirRadar({consultas: config?.radar?.consultas ?? CONSULTAS_POR_DEFECTO, minVistas: 5000, maxSubs: 300000, limiteMs: 170000, nota: (t) => { notas.push(t); console.log(t); }});
+    : {fecha: new Date().toISOString(), consultas: config?.radar?.consultas ?? CONSULTAS_POR_DEFECTO, canalesRevisados: 0, explotaron: 0, canales: []};
   // La búsqueda de documentales largos jamás se ejecuta durante la producción de Shorts.
   if (esLargo) {
     const referenciasLargas = await buscarReferenciasLargas({nicho: config?.nicho ?? '', canales: config?.vigilar ?? [], maxResultados: 10, limiteMs: 260000, nota: (t) => { notas.push(t); console.log(t); }});
