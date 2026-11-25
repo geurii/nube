@@ -1,26 +1,26 @@
 {
-  "fecha": "2026-11-25T21:56:48.227Z",
+  "fecha": "2026-11-25T23:56:30.662Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 337,
-  "ganadasDesdeElUltimoCiclo": 0,
+  "total": 1062,
+  "ganadasDesdeElUltimoCiclo": 725,
   "videos": [
     {
       "id": "ERL-GCARL8I",
       "titulo": "¿Por qué un lápiz roto tiene 68 millones de vistas?",
       "publicado": "2026-11-25T21:38:46+00:00",
-      "vistas": 36
+      "vistas": 746
     },
     {
       "id": "VXbbW_o1PWo",
       "titulo": "Nintendo nació vendiendo cartas: la historia antes de los videojuegos",
       "publicado": "2026-11-25T17:08:39+00:00",
-      "vistas": 82
+      "vistas": 96
     },
     {
       "id": "ju9-ibZWM5s",
       "titulo": "⚡ La ola de 524 metros: El megatsunami que escaló una montaña en Alaska (1958)",
       "publicado": "2026-11-24T21:05:01+00:00",
-      "vistas": 3
+      "vistas": 4
     },
     {
       "id": "i0w6F46yv3o",
@@ -96,10 +96,6 @@
     }
   ],
   "historia": [
-    {
-      "fecha": "2026-11-24T14:27:39.462Z",
-      "total": 2244
-    },
     {
       "fecha": "2026-11-24T14:46:26.754Z",
       "total": 2244
@@ -335,6 +331,10 @@
     {
       "fecha": "2026-11-25T21:56:48.227Z",
       "total": 337
+    },
+    {
+      "fecha": "2026-11-25T23:56:30.662Z",
+      "total": 1062
     }
   ]
 }

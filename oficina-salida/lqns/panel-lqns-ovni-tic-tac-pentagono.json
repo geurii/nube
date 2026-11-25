@@ -1,0 +1,36 @@
+{
+  "fecha": "2026-11-25T23:57:08.138Z",
+  "id": "lqns-ovni-tic-tac-pentagono",
+  "modo": "tecnico",
+  "aprobado": true,
+  "resumen": "Sin defectos graves detectados.",
+  "motivos": [],
+  "revision": {
+    "modelo": "NVIDIA nvidia/nemotron-3-nano-omni-30b-a3b-reasoning + Groq whisper-large-v3",
+    "gancho_3s": {
+      "nota": 0,
+      "comentario": "Revisión visual técnica; no es una valoración del gancho."
+    },
+    "audio": {
+      "nota": 8,
+      "comentario": "Groq Whisper transcribió el audio en español. Duración: 61 segundos. Transcripción: El Pentágono publicó tres videos auténticos de la Marina, muestran fenómenos aéreos que siguen sin identificación. El primero se grabó en 2004. Lo llaman Tic Tac por su forma blanca y alargada, lo captó un sensor infrarrojo desde un F barra diagonal A18. En enero de 2015 aparecieron Gimbal y Go Fast. En uno, el objeto parece girar, en el otro, parece correr sobre el océano. Pero la imagen engaña, la perspectiva y el movimiento del avión pueden hacer que algo parezca rapidísimo. En 2025, el análisis oficial de GoFast concluyó que el objeto no mostró velocidad ni rendimiento anómalos. Eso cambia la historia. En 2020, Defensa confirmó los videos como grabaciones reales de la Marina, los objetos siguieron sin identificar. No prueba que sean extraterrestres. ¿Qué crees?"
+    },
+    "subtitulos": {
+      "legibles": true,
+      "tapados_o_cortados": false,
+      "comentario": "Subtitles are fully visible and legible throughout the video."
+    },
+    "imagen": {
+      "nota": 0,
+      "defectos": []
+    },
+    "ritmo": {
+      "nota": 8,
+      "comentario": "No se utiliza el ritmo como motivo de rechazo técnico."
+    },
+    "defectos_graves": [],
+    "nota_general": 0,
+    "recomendacion": "subir",
+    "por_que": "No se detectaron fallas visuales graves y Groq pudo transcribir el audio."
+  }
+}

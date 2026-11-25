@@ -1,5 +1,21 @@
 [
   {
+    "fecha": "2026-11-25T23:57:08.247Z",
+    "canal": "lqns",
+    "tipo": "reporte",
+    "titulo": "Revision aprobada: ¿Ovnis reales captados en cámara?",
+    "texto": "Sin defectos graves detectados."
+  },
+  {
+    "id": "mwws8jhaf4gf",
+    "fecha": "2026-11-25T23:56:30.238Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "listo",
+    "titulo": "Video renderizado: ¿Ovnis reales captados en cámara?",
+    "texto": "Se renderizó \"¿Ovnis reales captados en cámara?\" para Lo Que No Sabías (400 MB). Sigue en cola de publicación; este aviso NO significa que ya esté publicado."
+  },
+  {
     "id": "mwwrxvbcr9eq",
     "fecha": "2026-11-25T23:48:12.360Z",
     "canal": "lqns",
@@ -679,23 +695,5 @@
     "tipo": "reporte",
     "titulo": "Fórmula del momento",
     "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante o afirmación impactante + elemento misterioso/extraño + pista de revelación o consecuencia El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (25997 vistas/hora)."
-  },
-  {
-    "id": "mwuu34aswowz",
-    "fecha": "2026-11-24T15:12:44.164Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: ¿Por qué el lago Hillier cambia de color cada verano?",
-    "texto": "El Verificador no aprobó \"¿Por qué el lago Hillier cambia de color cada verano?\" tras 4 intentos: Falta la frase de cierre exacta: \"Comparte este video con un amigo que haría lo mismo, sígueme.\" Aprobados: 12. Rechazados: 60. Con error: 14. No se publica. Próximo ciclo en 11 h."
-  },
-  {
-    "id": "mwuu096bljz1",
-    "fecha": "2026-11-24T15:10:30.515Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: Sabías que el lago de Karachay‑Khan es el más tóxico del planeta?",
-    "texto": "El Verificador no aprobó \"Sabías que el lago de Karachay‑Khan es el más tóxico del planeta?\" tras 4 intentos: La revelación cae al 61.4 % (54 de 88 palabras antes de ella) y debe caer entre 65 % y 75 %; apunta a 70 %–72 % contando todas las escenas, incluida la revelaci Aprobados: 12. Rechazados: 59. Con error: 14. No se publica. Próximo ciclo en 11 h."
   }
 ]

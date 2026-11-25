@@ -1,13 +1,24 @@
 {
-  "fecha": "2026-11-25T21:37:05.109Z",
-  "total": 453,
-  "promedio": 30,
-  "queFunciono": "Los videos con mayor rendimiento comparten títulos que utilizan preguntas o afirmaciones impactantes con emojis y palabras clave de curiosidad histórica o tecnológica, y fueron publicados en fechas recientes (últimos 3 días).",
+  "fecha": "2026-11-25T23:56:31.578Z",
+  "total": 1062,
+  "promedio": 71,
+  "queFunciono": "Los videos con más vistas comparten títulos que son curiosos, breves y utilizan emojis para captar atención. Además, sus fechas de publicación son recientes (2026‑11‑25) y están agrupados en un rango de 1‑2 días, lo que sugiere que la frescura y la consistencia de publicación favorecen el rendimient",
   "porQueFallaron": [
-    "El video \"Nintendo nació vendiendo cartas: la historia antes de los videojuegos\" tiene 76 vistas; su título no incluye un emoji ni una pregunta directa, lo que reduce el atractivo visual. No se dispone de datos de retención, por lo que no se puede confirmar si",
-    "El video \"¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️\" obtuvo 50 vistas a pesar de una retención media alta (57.2 %) y 36 s de duración media; su bajo rendimiento sugiere que la temática, aunque interesante, no resonó con la audiencia objetivo o el algoritmo",
-    "Los videos con 40 vistas o menos presentan títulos sin emojis, sin preguntas directas y con temáticas muy específicas (por ejemplo, un motor AC de 1884 o un secreto de la Isla de Pascua). La falta de elementos visuales y de curiosidad inmediata puede haber lim"
+    "El título es demasiado largo o poco claro (ej. \"Nintendo nació vendiendo cartas: la historia antes de los videojuegos\"), lo que reduce la curiosidad inicial.",
+    "El tema es demasiado específico o de nicho sin un hook atractivo (ej. \"Sabías que una ola de melaza arrasó Boston? 🍯\"), lo que limita la audiencia potencial.",
+    "La ausencia de emojis o símbolos llamativos en el título (ej. \"⚡ 1884: El inventor que encendió Niágara con su motor AC\") disminuye la visibilidad en búsquedas y recomendaciones.",
+    "La publicación en fechas con menor actividad de la audiencia (por ejemplo, 2026‑11‑22) puede afectar la exposición inicial.",
+    "La falta de datos de retención o suscriptores positivos indica que el contenido no retuvo a los espectadores ni generó nuevos seguidores, lo que sugiere falta de valor percibido o de llamada a la acción."
   ],
-  "noSePuedeSaber": [],
-  "reglas": []
+  "noSePuedeSaber": [
+    "Qué miniatura se utilizó para cada video.",
+    "Si los videos fueron promocionados en redes sociales o a través de colaboraciones.",
+    "A quién se mostró cada video (segmento demográfico, intereses).",
+    "Cuántas vistas se generaron a partir de la búsqueda versus recomendaciones."
+  ],
+  "reglas": [
+    "1. Utilizar títulos breves (<10 palabras), con emojis y una pregunta o afirmación intrigante para maximizar la curiosidad y la visibilidad en búsquedas.",
+    "2. Publicar videos en días con mayor actividad de la audiencia (según datos internos) y mantener una frecuencia constante (1‑2 videos por semana).",
+    "3. Incluir una llamada a la acción clara (suscribirse, comentar) al final del video y medir la retención para ajustar el contenido en tiempo real."
+  ]
 }

@@ -1,41 +1,41 @@
 {
   "plan": [
-    "Crear y lanzar la serie de 3 videos sobre el megatsunami de Lituya Bay 1958, con títulos atractivos y miniaturas A/B de colores contrastantes: Equipo de Producción y Diseño: Monetizar al menos 5,000 vistas y generar 500 USD en ingresos publ",
-    "Desarrollar y publicar un episodio sobre el terremoto de Lisboa 1755 y su tsunami, usando datos históricos verificados y una narrativa de misterio sin nombres reales: Equipo de Investigación y Guionismo: Alcanzar 7,000 vistas y lograr 300 U",
-    "Planificar y ejecutar la campaña promocional de los tres episodios, con intervalos de 1‑2 días y difusión en redes y colaboraciones estratégicas: Equipo de Marketing y Social Media: Incrementar la audiencia total en un 20% y asegurar 1,000 "
+    "Crear y lanzar serie de 3 videos sobre el megatsunami de Lituya Bay 1958: Equipo de investigación histórica: Generar al menos 5,000 vistas y 200 suscriptores nuevos antes del 13 de diciembre",
+    "Desarrollar miniaturas A/B con colores contrastantes y textos legibles para la serie sobre el terremoto de Lisboa 1755: Equipo de diseño gráfico: Aumentar la tasa de clics en 15% y alcanzar 3,000 vistas en la primera semana de publicación a",
+    "Programar publicación de los tres episodios con intervalos de 1‑2 días y promocionar en redes sociales: Equipo de producción y marketing: Alcanzar 10,000 vistas acumuladas y 500 comentarios interactivos antes del 13 de diciembre"
   ],
   "ganchos": [
-    "¿Sabías que [TEMA] se reveló cuando [CIFRA] se volvió real? | Imagen de un mapa antiguo con un punto resaltado",
-    "[TEMA] nunca fue lo que parece: la cifra [CIFRA] lo cambió todo | Imagen de una puerta antigua entre sombras",
-    "¿Te imaginas que [TEMA] se descubrió tras la cifra [CIFRA]? | Imagen de un viejo manuscrito con anotaciones brillantes",
-    "[TEMA] y la cifra [CIFRA] que nadie pudo prever | Imagen de un reloj de arena con números flotantes",
-    "¿Qué [TEMA] realmente se esconde tras la cifra [CIFRA]? | Imagen de una puerta de madera entre niebla"
+    "¿Sabías que [TEMA] ocurrió cuando [CIFRA] se volvió real? | Imagen de un mapa antiguo con un punto rojo resaltado",
+    "[TEMA] reveló un secreto cuando [CIFRA] cambió el mundo | Imagen de una puerta antigua entreabierta",
+    "¿Te imaginas que [TEMA] se descubrió tras [CIFRA] inesperado? | Imagen de un libro de historia abierto a una página marcada",
+    "[TEMA] sorprendió a todos cuando [CIFRA] se hizo realidad | Imagen de un reloj de arena con la arena cayendo lentamente",
+    "¿Qué ocurrió cuando [TEMA] se activó con [CIFRA]? | Imagen de una lámpara antigua encendiéndose con un destello"
   ],
   "mejorasGuion": [
-    "1. Gancho más impactante y directo: sustituir la frase inicial por algo como \"¿Sabías que cinco estudiantes desaparecieron en Rusia buscando el misterio de Dyatlov?\", eliminando la palabra “Sabías” para evitar redundanci"
+    "1️⃣ **Gancho de título**: Cambia el encabezado a algo más directo y emocional, por ejemplo, \"🔊 ¿Qué es el zumbido que solo 2 % de la gente escucha?\". El uso de un emoji y una pregunta específica aumenta la curiosidad y "
   ],
   "temas": [
     "The Bloop",
-    "Lake Peigneur",
-    "The moving rocks of Death Valley",
     "Lake Nyos disaster",
-    "The 1958 Lituya Bay earthquake and megatsunami"
+    "The moving rocks of Death Valley",
+    "The disappearing lake of Cerknica",
+    "Lake Peigneur"
   ],
   "titulos": [
-    "X nació vendiendo Y: la historia antes de Z",
-    "¿Qué oculta realmente el X?",
-    "⚡ YYYY: El inventor que ... con su ...",
-    "¿Por qué un X tiene Y vistas?"
+    "¿Por qué <objeto> tiene <número> vistas?",
+    "<Nombre> nació vendiendo <producto>: la historia antes de <tema>",
+    "¿Qué oculta realmente el <objeto>? 🕵️‍♂️",
+    "⚡ <año>: El inventor que <acción> <objeto>"
   ],
-  "fecha": "2026-11-25T21:56:48.475Z",
+  "fecha": "2026-11-25T23:57:08.441Z",
   "iniciativas": [
-    "Valentina (Directora de contenido): Definir una línea editorial clara y un documento de estilo que guíe a todo el equipo desde el inicio.",
-    "Carolina (Coordinador de producción): Crear un calendario de producción con buffers de tiempo y asignar responsables claros para cada entrega.",
-    "Fernanda (Jefa de calidad): Implementar una lista de verificación de calidad para cada pieza antes de su publicación.",
-    "Camila (Investigador de temas): Compilar fuentes preliminares y crear un dossier de referencias que sirva de base para futuros guiones.",
-    "Daniela (Cazador de fórmulas): Probar tres estructuras de guion diferentes en videos piloto y medir el engagement con pruebas internas.",
-    "Julieta (Vigía de tendencias): Configurar alertas diarias en herramientas de tendencias y compartir un resumen rápido al equipo.",
-    "Lucía (Guionista): Escribir un hook de 15 segundos para cada guion y someterlo a revisión grupal antes de desarrollar el resto.",
-    "Mariana (Editor de guion): Establecer una ronda de revisión cruzada donde dos editores revisen cada guion antes de aprobarlo."
+    "Valentina (Directora de contenido): Definir una línea editorial clara y documentarla en un manual de estilo para que todo el equipo siga la misma visión desde el primer video.",
+    "Carolina (Coordinador de producción): Crear un cronograma detallado con buffers de tiempo y asignar responsables claros para cada hito, usando herramientas de gestión visual.",
+    "Fernanda (Jefa de calidad): Implementar una checklist de calidad de 10 puntos que se revise antes de aprobar cualquier pieza, incluso en fase de prueba.",
+    "Camila (Investigador de temas): Compilar una lista de fuentes primarias y secundarias confiables sobre el terremoto de Lisboa y su tsunami, y asignar mini‑tareas de búsqueda a cada miembro.",
+    "Daniela (Cazador de fórmulas): Probar tres estructuras de guion (gancho‑dato‑historia, pregunta‑respuesta‑clausura, misterio‑revelación‑reflexión) y medir cuál genera mayor interés en pruebas internas.",
+    "Julieta (Vigía de tendencias): Suscribirme a newsletters y alertas de tendencias en YouTube Shorts y TikTok, y compartir un informe semanal de insights relevantes.",
+    "Lucía (Guionista): Escribir un guion piloto con tres ganchos diferentes y someterlos a votación interna para escoger el más impactante.",
+    "Mariana (Editor de guion): Establecer una ronda de revisión cruzada donde cada guion sea leído por al menos dos compañeros antes de avanzar."
   ]
 }

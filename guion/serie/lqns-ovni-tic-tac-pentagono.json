@@ -12,7 +12,7 @@
   },
   "orientacion": "vertical",
   "duracionObjetivo": 60,
-  "creado": "2026-11-25T23:42:18.244Z",
+  "creado": "2026-11-25T23:48:41.441Z",
   "estilo": "gancho",
   "ganchoTexto": "El Pentágono publicó tres videos auténticos de la Marina: muestran fenómenos aéreos que siguen sin identificación.",
   "publicacion": {
@@ -90,12 +90,15 @@
     },
     {
       "tipo": "veredicto",
-      "texto": "En dos mil veinte, Defensa confirmó que los tres archivos eran videos reales de la Marina, pero mantuvo los fenómenos como no identificados. No prueba que sean extraterrestres. Prueba que el material es auténtico. ¿Qué crees tú? Compártelo y sígueme.",
+      "texto": "En dos mil veinte, Defensa confirmó los videos como grabaciones reales de la Marina; los objetos siguieron sin identificar. No prueba que sean extraterrestres. ¿Qué crees?",
       "fondo": [
         "pintado:ovni-tic-tac-pentagono-5a",
         "pintado:ovni-tic-tac-pentagono-5b",
         "pintado:ovni-tic-tac-pentagono-5c",
-        "pintado:ovni-tic-tac-pentagono-5d"
+        "pintado:ovni-tic-tac-pentagono-5d",
+        "pintado:ovni-tic-tac-pentagono-5e",
+        "pintado:ovni-tic-tac-pentagono-5f",
+        "pintado:ovni-tic-tac-pentagono-5g"
       ]
     }
   ]
