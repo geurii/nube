@@ -1,0 +1,1 @@
+{"cielo":["#2a1b2d","#633347","#aa6c64"],"capas":[{"t":"pergamino","x":0.09,"y":0.76,"w":0.9,"h":0.22,"color":"#2a1b2d","lineas":6,"simbolos":true},{"t":"cartas","x":0.31,"y":0.59,"w":0.8,"h":0.52,"color":"#ead6ac","simbolos":true,"semilla":24},{"t":"calendario","x":0.78,"y":0.25,"w":0.28,"h":0.28,"color":"#aa6c64"},{"t":"particulas","n":21,"color":"#ead6ac","alpha":0.35}]}
