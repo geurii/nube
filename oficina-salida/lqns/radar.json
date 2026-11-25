@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-25T09:36:15.597Z",
+  "fecha": "2026-11-25T09:41:52.319Z",
   "criterio": "canales con un video reciente que supera 5x su mediana; candidatos individuales verificados después por duración y subtítulos públicos",
   "consultas": [
     "unsolved mystery explained",
@@ -16,7 +16,7 @@
     "기묘한 역사 미스터리 실화",
     "غموض تاريخي قصة حقيقية غريبة"
   ],
-  "canalesRevisados": 75,
+  "canalesRevisados": 87,
   "explotaron": 36,
   "canales": [
     {
@@ -30,7 +30,7 @@
       "mejor": {
         "id": "GUnx_FTNgRw",
         "titulo": "Cops CAN’T Explain His 911 Call… The Mystery Gets DARKER!",
-        "vistas": 159770,
+        "vistas": 159821,
         "hace": 9,
         "url": "https://youtube.com/watch?v=GUnx_FTNgRw"
       },
@@ -47,7 +47,7 @@
       "mejor": {
         "id": "9p43SRaCEng",
         "titulo": "10 Genius Ideas That Backfired on Entire Civilizations",
-        "vistas": 89950,
+        "vistas": 89981,
         "hace": 10,
         "url": "https://youtube.com/watch?v=9p43SRaCEng"
       },
@@ -64,7 +64,7 @@
       "mejor": {
         "id": "KqJsbgsUuWA",
         "titulo": "30 Incredible Stories You Won't Believe",
-        "vistas": 204481,
+        "vistas": 204516,
         "hace": 22,
         "url": "https://youtube.com/watch?v=KqJsbgsUuWA"
       },
@@ -81,7 +81,7 @@
       "mejor": {
         "id": "04snj4rUmfs",
         "titulo": "12 Resident Evil Mysteries That Were FINALLY Solved...",
-        "vistas": 194931,
+        "vistas": 194943,
         "hace": 23,
         "url": "https://youtube.com/watch?v=04snj4rUmfs"
       },
@@ -91,6 +91,6 @@
   "videosVirales": [],
   "busquedaSinResultados": true,
   "notasBusqueda": [
-    "(Radar: la búsqueda \"historias reales sorprendentes misterio\" falló: YouTube no devolvió ytInitialData legible (bloqueo, consentimiento o cambio de f)"
+    "(Radar: la búsqueda \"true strange history story\" falló: YouTube no devolvió ytInitialData legible (bloqueo, consentimiento o cambio de f)"
   ]
 }
