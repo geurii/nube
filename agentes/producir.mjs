@@ -103,6 +103,12 @@ if (oficinaRunId) {
   if (slugManual && formatoManual && canalManual) {
     pendientes = pendientes.filter((x) => x.slug === slugManual && x.g.formato === formatoManual && x.canal === canalManual);
     if (!pendientes.length) {
+      const gManual = leer(path.join(RAIZ, canalManual, `guion-${slugManual}.json`), null);
+      if (gManual && ['en-renderizado', 'renderizado'].includes(gManual.estado)) {
+        console.log(`El guion ${slugManual} ya está ${gManual.estado}; se evita un render duplicado.`);
+        salida('id', ''); salida('canal', '');
+        process.exit(0);
+      }
       console.error(`El disparo manual ${slugManual} no coincide con un guion aprobado y válido de ${canalManual}.`);
       salida('id', ''); salida('canal', '');
       process.exit(1);
