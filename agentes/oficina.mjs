@@ -461,10 +461,11 @@ const elegirTema = async (modelo) => {
     informe.push('El Radar encontró títulos, pero ninguna referencia con duración y transcripción suficiente para una autopsia real. No se afirmará que este guion está adaptado de un video concreto.');
   }  // El dueño pidió que CADA video largo parta de desmontar una referencia viral real.
   // Sin transcripción pública y desglose temporal verificable, no se finge una adaptación: se descarta el ciclo.
-  if (!referenciaMeta && process.env.MODO_PRUEBA !== '1') {
-    throw Object.assign(new Error(FORMATO === 'largo'
-      ? 'No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. No se escribe ni produce el largo sin ese análisis.'
-      : 'No hay Short viral verificable de 10–75 segundos con subtítulos públicos y autopsia temporal. No se escribe un Short genérico ni se afirma una adaptación inexistente.'), {referenciaNoDisponible: true});
+  if (!referenciaMeta && process.env.MODO_PRUEBA !== '1' && FORMATO === 'largo') {
+    throw Object.assign(new Error('No hay referencia documental larga de YouTube con subtítulos públicos y autopsia temporal verificable. No se escribe ni produce el largo sin ese análisis.'), {referenciaNoDisponible: true});
+  }
+  if (!referenciaMeta && FORMATO === 'short') {
+    informe.push('SHORT DE CONTINUIDAD: no se encontró una transcripción pública utilizable para desmontar un Short concreto. Se produce con la fórmula editorial de retención ya validada del canal (gancho inmediato, contexto mínimo, escalada visual, giro/revelación, recompensa y cierre), sin afirmar que se copió o adaptó una referencia específica. La investigación factual sigue siendo independiente y obligatoria.');
   }
   // Si el radar no aporta un caso verificable, se usan las ideas locales y el catálogo editorial.
   const candidatosLocales = [...temasAprobadosDelDueno(CANAL_ID), ...ideasEquipo, ...ideasEstrategia, ...ideasJules];
