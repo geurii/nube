@@ -153,7 +153,7 @@ const composition = await selectComposition({
 });
 const tiempos = composition.props.tiempos;
 const total = tiempos.duracionTotal;
-if (guion.formato === 'short' && total > 65) throw new Error(`PUBLICACIÓN BLOQUEADA: Short de ${total.toFixed(1)} s; el máximo es 65 s.`);
+if (guion.formato === 'short' && total > 180) throw new Error(`PUBLICACIÓN BLOQUEADA: Short de ${total.toFixed(1)} s; excede el límite de 180 s.`);
 if (guion.formato === 'largo' && (total < 480 || total > 600)) throw new Error(`PUBLICACIÓN BLOQUEADA: video largo de ${total.toFixed(1)} s; debe durar entre 480 y 600 s (8–10 minutos, límite común para TikTok y YouTube).`);
 
 // --- Comprobación de estructura -------------------------------------------
@@ -191,7 +191,7 @@ else {
   if (restante < 10 || restante > 15) avisos.push(`El veredicto dura ${restante.toFixed(1)} s (ideal 10-15 s finales).`);
 }
 }
-if (guion.formato === 'short' && total > 65) avisos.push(`Un Short debe durar máximo 65 s y este dura ${total.toFixed(1)} s.`);
+if (guion.formato === 'short' && total > 180) avisos.push(`La narración supera 180 s: ${total.toFixed(1)} s.`);
 
 if (avisos.length) {
   console.log('\nAvisos:');
