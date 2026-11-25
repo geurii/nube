@@ -176,6 +176,39 @@ export const playerInnertube = async (html, id, headers = {}) => {
   return mejorRespuesta;
 };
 
+/** Respaldo de subtítulos públicos mediante el endpoint timedtext de YouTube.
+ * No descarga audio/video ni usa cookies privadas; consulta solo pistas de captions publicadas.
+ */
+export const extraerTimedtextPublico = async (id) => {
+  const base = 'https://www.youtube.com/api/timedtext?v=' + encodeURIComponent(id) + '&type=list';
+  try {
+    const r = await fetch(base, {headers:{'User-Agent':'Mozilla/5.0','Accept-Language':'*'},signal:AbortSignal.timeout(12000)});
+    if (!r.ok) return null;
+    const xml = await r.text();
+    const pistas = [...xml.matchAll(/<track\\b([^>]*)\\/?\s*>/gi)].map(m => {
+      const attrs = Object.fromEntries([...m[1].matchAll(/([\\w-]+)="([^"]*)"/g)].map(x=>[x[1],x[2]]));
+      return attrs;
+    }).filter(x=>x.lang_code);
+    pistas.sort((x,y)=>Number(x.kind==='asr')-Number(y.kind==='asr'));
+    for (const p of pistas) {
+      for (const fmt of ['json3','srv3','vtt']) {
+        try {
+          const u=new URL('https://www.youtube.com/api/timedtext');
+          u.searchParams.set('v',id);u.searchParams.set('lang',p.lang_code);u.searchParams.set('fmt',fmt);
+          if(p.name)u.searchParams.set('name',p.name);
+          if(p.kind)u.searchParams.set('kind',p.kind);
+          const tr=await fetch(u,{headers:{'User-Agent':'Mozilla/5.0','Accept-Language':'*'},signal:AbortSignal.timeout(12000)});
+          if(!tr.ok)continue;
+          const cues=parsearTranscripcion(await tr.text());
+          const texto=cues.map(x=>'['+x.tiempo+'] '+x.texto).join('\\n').slice(0,18000);
+          if(cues.length>=5&&texto.length>=180)return {texto,idioma:p.lang_code,automatica:p.kind==='asr',fragmentos:cues.length,metodo:'timedtext-publico'};
+        } catch {}
+      }
+    }
+  } catch {}
+  return null;
+};
+
 /** Datos públicos del video: oEmbed + vistas, duración, descripción y, cuando existe, subtítulos públicos. */
 export const datosDeVideo = async (id) => {
   const d = {id, url: 'https://www.youtube.com/watch?v=' + id};
@@ -233,6 +266,8 @@ export const datosDeVideo = async (id) => {
     const likes = /"label":"([\d.,]+[KMkm]?) likes"/.exec(html);
     if (likes) d.likes = likes[1];
     if (player) d.subtitulos = await extraerTranscripcionYoutube(player);
+    // YouTube a veces oculta captionTracks en playerResponse aunque timedtext siga exponiendo pistas.
+    if (!d.subtitulos) d.subtitulos = await extraerTimedtextPublico(id);
     if (d.subtitulos) {
       d.transcripcion = d.subtitulos.texto;
       d.idiomaTranscripcion = d.subtitulos.idioma;
