@@ -142,6 +142,9 @@ export const CONSULTAS_LARGAS_POR_DEFECTO = [
   'Wendover Productions documentary mystery', 'Fall of Civilizations documentary history',
   'DW Documentary mystery history', 'ARTE documentary mystery history', 'Timeline documentary history',
   'NOVA PBS documentary mystery', 'BBC documentary history mystery', 'Veritasium historical mystery',
+  'imineo Documentaires documentaire histoire enquête', 'NHK documentary mystery history',
+  'ZDFinfo Doku ungelöste Rätsel Geschichte', 'KBS 다큐멘터리 역사 미스터리',
+  'CCTV纪录片 历史谜团 调查',
   // Búsqueda nativa en idiomas distintos al español e inglés.
   'documentaire mystère historique enquête ARTE', 'documentaire histoire vraie phénomène inexpliqué',
   'Geschichte ungelöstes Rätsel Dokumentation Geheimnis', 'Wissenschaft Geschichte Dokumentation Rätsel',
