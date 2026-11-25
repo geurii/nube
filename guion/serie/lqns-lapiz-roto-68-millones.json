@@ -24,7 +24,7 @@
   ],
   "editor": {
     "puntaje": null,
-    "critica": "Guion del usuario preparado para producción vertical. La cifra de 68 millones se conserva como dato aportado por el usuario y no se presenta como verificación independiente."
+    "critica": "Recursos visuales específicos añadidos para cada escena; cuatro cuadros pixel art distintos por escena. Listo para repetir render y someter a revisión técnica."
   },
   "retencionEstimada": null,
   "escenas": [
@@ -32,35 +32,50 @@
       "tipo": "hook",
       "texto": "Sabías que un lápiz roto de una niña hizo sesenta y ocho millones de vistas en cuatro días.",
       "fondo": [
-        "pixelmisterio"
+        "pintado:lapiz-roto-68-millones-s1-01",
+        "pintado:lapiz-roto-68-millones-s1-02",
+        "pintado:lapiz-roto-68-millones-s1-03",
+        "pintado:lapiz-roto-68-millones-s1-04"
       ]
     },
     {
       "tipo": "historia",
       "texto": "Sonya estaba coloreando con su mamá y su papá. Quería el azul, le dieron el rojo y, cuando empezó a colorear, el lápiz se rompió.",
       "fondo": [
-        "pixelmisterio"
+        "pintado:lapiz-roto-68-millones-s2-01",
+        "pintado:lapiz-roto-68-millones-s2-02",
+        "pintado:lapiz-roto-68-millones-s2-03",
+        "pintado:lapiz-roto-68-millones-s2-04"
       ]
     },
     {
       "tipo": "historia",
       "texto": "Ella lloró como si fuera una tragedia. Sus papás reaccionaron con shock. Un problema chiquito se sintió gigante, y ahí todo el mundo se quedó mirando.",
       "fondo": [
-        "pixelmisterio"
+        "pintado:lapiz-roto-68-millones-s3-01",
+        "pintado:lapiz-roto-68-millones-s3-02",
+        "pintado:lapiz-roto-68-millones-s3-03",
+        "pintado:lapiz-roto-68-millones-s3-04"
       ]
     },
     {
       "tipo": "revelacion",
       "texto": "Entonces el papá sacó una caja enorme de lápices. Ella agarró el azul y pasó del llanto a la risa en dos segundos. Ese cambio es lo que hace que nadie pueda dejar de verlo.",
       "fondo": [
-        "pixelmisterio"
+        "pintado:lapiz-roto-68-millones-s4-01",
+        "pintado:lapiz-roto-68-millones-s4-02",
+        "pintado:lapiz-roto-68-millones-s4-03",
+        "pintado:lapiz-roto-68-millones-s4-04"
       ]
     },
     {
       "tipo": "veredicto",
       "texto": "¿Estafador o genio? Genio: no vendió nada, solo mostró una emoción real. Comparte este video con un amigo que haría lo mismo y sígueme.",
       "fondo": [
-        "pixelmisterio"
+        "pintado:lapiz-roto-68-millones-s5-01",
+        "pintado:lapiz-roto-68-millones-s5-02",
+        "pintado:lapiz-roto-68-millones-s5-03",
+        "pintado:lapiz-roto-68-millones-s5-04"
       ]
     }
   ]
