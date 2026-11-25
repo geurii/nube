@@ -137,13 +137,19 @@ export const feedDeCanal = async (canalId) => {
  * No depende del radar de canales nuevos: incluye creadores establecidos y búsquedas de todo el historial.
  */
 export const CONSULTAS_LARGAS_POR_DEFECTO = [
-  'misterios sin resolver documental completo',
-  'fenómenos inexplicables investigación documental historia real',
+  // Referentes consolidados: documentales con millones de vistas y formatos narrativos probados.
+  'LEMMiNO mystery documentary', 'RealLifeLore documentary mystery history', 'fern documentary investigation',
+  'Wendover Productions documentary mystery', 'Fall of Civilizations documentary history',
+  'DW Documentary mystery history', 'ARTE documentary mystery history', 'Timeline documentary history',
+  'NOVA PBS documentary mystery', 'BBC documentary history mystery', 'Veritasium historical mystery',
+  // Búsqueda nativa en idiomas distintos al español e inglés.
+  'documentaire mystère historique enquête ARTE', 'documentaire histoire vraie phénomène inexpliqué',
+  'Geschichte ungelöstes Rätsel Dokumentation Geheimnis', 'Wissenschaft Geschichte Dokumentation Rätsel',
+  '歴史 ミステリー ドキュメンタリー 実話', '未解決事件 ドキュメンタリー 歴史',
+  '历史 未解之谜 纪录片 科学 历史事件', '真实历史谜团 纪录片 调查',
+  'documentário mistério histórico investigação', 'documentário história real fenômeno inexplicável',
+  '기묘한 역사 미스터리 다큐멘터리 실화',
   'misterios históricos documental investigación completa',
-  'casos extraños reales narración documental',
-  'misterios del mundo explicación documental',
-  'Expressy misterios documental',
-  'XpressTV misterios documental',
 ];
 
 export const esReferenciaLarga = (video) => {
@@ -158,16 +164,12 @@ export const buscarReferenciasLargas = async ({
   limiteMs = 110000,
   nota = () => {},
 } = {}) => {
-  // Búsqueda deliberadamente pequeña y secuencial: 17 peticiones simultáneas provocaban HTTP 429.
+  // Consultas por canales de referencia consolidados + búsquedas nativas en varios idiomas.
+  // Se priorizan documentales con tracción demostrada; no se toma como modelo cualquier canal pequeño.
   const consultas = [
-    'misterios sin resolver documental completo',
-    'fenómenos inexplicables investigación documental historia real',
-    'misterios históricos documental investigación completa',
-    'Expressy misterios documental',
-    'XpressTV misterios documental',
-    'MrBallen mystery documentary',
-    'The Why Files mystery documentary',
-    ...(nicho ? [`${nicho} documental investigación completa`] : []),
+    ...CONSULTAS_LARGAS_POR_DEFECTO,
+    'MrBallen mystery documentary', 'The Why Files mystery documentary',
+    ...(nicho ? [`${nicho} documentary investigation`] : []),
   ];
   const hasta = Date.now() + limiteMs;
   const candidatos = new Map();
@@ -176,9 +178,12 @@ export const buscarReferenciasLargas = async ({
     try {
       const lista = await buscarVideos(q, 0, false);
       for (const v of lista) {
-        if (!v?.id || !esReferenciaLarga(v)) continue;
+        // Umbral mínimo para evitar referencias con poco rendimiento: 150.000 vistas y al menos 8 minutos.
+        if (!v?.id || !esReferenciaLarga(v) || Number(v.vistas ?? 0) < 150000) continue;
         const previo = candidatos.get(v.id);
-        if (!previo || Number(v.vistas ?? 0) > Number(previo.vistas ?? 0)) candidatos.set(v.id, v);
+        if (!previo || Number(v.vistas ?? 0) > Number(previo.vistas ?? 0)) {
+          candidatos.set(v.id, {...v, consultaOrigen: q});
+        }
       }
       nota(`Búsqueda larga completada: ${q}`);
     } catch (e) {
@@ -213,19 +218,41 @@ export const buscarReferenciasLargas = async ({
       await dormir(700);
     }
   }
-  const lista = [...candidatos.values()]
-    .sort((a, b) => Number(b.vistas ?? 0) - Number(a.vistas ?? 0))
-    .slice(0, Math.max(20, Math.min(40, maxResultados * 4)));
+  const porCanal = new Map();
+  const lista = [];
+  for (const v of [...candidatos.values()].sort((a, b) => Number(b.vistas ?? 0) - Number(a.vistas ?? 0))) {
+    const cuenta = porCanal.get(v.canalId) ?? 0;
+    if (cuenta >= 3) continue;
+    porCanal.set(v.canalId, cuenta + 1);
+    lista.push(v);
+    if (lista.length >= Math.max(24, Math.min(36, maxResultados * 3))) break;
+  }
   const detalles = [];
   let intentosLectura = 0;
-  // Se inspeccionan hasta 40 candidatos secuencialmente: mezcla canales y reduce el riesgo de agotar el tiempo con Shorts.
+  const canalesValidados = new Map();
+  const canalesDePrestigio = /LEMMiNO|RealLifeLore|\\bfern\\b|Wendover|Fall of Civilizations|DW Documentary|ARTE|Timeline|NOVA|BBC|Veritasium|MrBallen|The Why Files|National Geographic|Free Documentary|History Hit|Kings and Generals|Astrum|Real Engineering/i;
+  // Máximo 30 candidatos; máximo 3 por canal. Se comprueba que la fuente sea consolidada.
   for (const video of lista) {
-    if (Date.now() >= hasta - 5000 || detalles.length >= maxResultados || intentosLectura >= 40) break;
+    if (Date.now() >= hasta - 5000 || detalles.length >= maxResultados || intentosLectura >= 30) break;
     intentosLectura++;
     try {
+      let calidad = canalesValidados.get(video.canalId);
+      if (calidad === undefined) {
+        calidad = canalesDePrestigio.test(String(video.canal ?? ''));
+        if (!calidad && video.canalId) {
+          const perfil = await datosDeCanal(video.canalId).catch(() => null);
+          calidad = Boolean(perfil && perfil.suscriptores >= 250000 && perfil.diasCanal >= 365);
+        }
+        canalesValidados.set(video.canalId, calidad);
+      }
+      if (!calidad) {
+        nota(`Fuente descartada por no acreditar canal consolidado: ${video.canal || video.canalId}.`);
+        continue;
+      }
       const d = await datosDeVideo(video.id);
       const segundos = Number(d.segundos ?? video.segundos);
-      if (!esReferenciaLarga({segundos}) || String(d.transcripcion ?? '').trim().length < 1800) continue;
+      if (!esReferenciaLarga({segundos}) || Number(d.vistas ?? video.vistas ?? 0) < 150000
+        || String(d.transcripcion ?? '').trim().length < 1800) continue;
       detalles.push({
         ...video,
         ...d,
@@ -236,12 +263,13 @@ export const buscarReferenciasLargas = async ({
         vistas: d.vistas ?? video.vistas,
         segundos,
         caracteresTranscripcion: String(d.transcripcion).length,
+        consultaOrigen: video.consultaOrigen,
       });
-      nota(`Referencia documental válida: ${d.titulo || video.titulo} (${segundos}s; ${String(d.transcripcion).length} caracteres de transcripción).`);
+      nota(`Referencia documental válida: ${d.titulo || video.titulo} · ${d.canal || video.canal} · ${Number(d.vistas ?? video.vistas).toLocaleString('en-US')} vistas · ${segundos}s · subtítulos ${d.idiomaTranscripcion || 'no identificado'}.`);
     } catch (e) {
       nota(`No se pudo leer la referencia ${video.id}: ${String(e.message ?? e).slice(0, 100)}`);
     }
-    await dormir(900);
+    await dormir(700);
   }
   return detalles.sort((a, b) => Number(b.vistas ?? 0) - Number(a.vistas ?? 0)).slice(0, maxResultados);
 };
