@@ -416,7 +416,7 @@ const elegirTema = async (modelo) => {
       ], 220);
       const temaViral = String(traducido.tema ?? '').trim();
       if (!temaViral || yaHecho(temaViral)) continue;
-      const fuentesViral = seleccionarFuentesParaGuion(await investigarEnLaWeb(temaViral, {maxPorFuente: 3, minimoDominios: 3}), 'largo');
+      const fuentesViral = seleccionarFuentesParaGuion(await investigarEnLaWeb(temaViral, {maxPorFuente: 3, minimoDominios: 3}), FORMATO);
       const fuenteViral = fuentesViral[0];
       if (!fuenteViral) {
         informe.push('Referencia viral descartada: el tema no pudo verificarse independientemente (' + viral.titulo + ').');
