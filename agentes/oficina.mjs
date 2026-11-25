@@ -723,7 +723,22 @@ const comprobar = (escenas) => {
   return p;
 };
 /** Titular de los primeros segundos: la frase del hook sin "Sabías que", en pregunta corta (máx. ~9 palabras). */
-const normalizar = (lista) => (lista ?? []).map((e) => ({tipo: ['hook', 'historia', 'revelacion', 'veredicto'].includes(e?.tipo) ? e.tipo : 'historia', texto: String(e?.texto ?? '').trim()})).filter((e) => e.texto);
+const normalizar = (lista) => (lista ?? []).map((e, i) => {
+  let texto = String(e?.texto ?? '').trim();
+  // Reparación determinista del hook: evita agotar cuatro intentos por longitud.
+  if (FORMATO === 'short' && i === 0) {
+    const max = 14;
+    const palabras = texto.split(/\s+/).filter(Boolean);
+    if (palabras.length > max) {
+      let recorte = palabras.slice(0, max);
+      while (recorte.length > 5 && /^(a|al|de|del|el|la|las|los|en|con|por|para|que|y|o|un|una|unos|unas|su|sus)$/i.test(recorte.at(-1).replace(/[¿¡,;:.!?]+$/g, ''))) recorte.pop();
+      const esPregunta = texto.startsWith('¿') || /\?\s*$/.test(texto);
+      texto = recorte.join(' ').replace(/[,:;.!?]+$/g, '') + (esPregunta ? '?' : '.');
+      if (esPregunta && !texto.startsWith('¿')) texto = '¿' + texto;
+    }
+  }
+  return {tipo: ['hook', 'historia', 'revelacion', 'veredicto'].includes(e?.tipo) ? e.tipo : (i === 0 ? 'hook' : 'historia'), texto};
+}).filter((e) => e.texto);
 
 /* ====================== Flujo ====================== */
 const informe = [`# Informe de la oficina · ${CONFIG.nombre} · ${TEMA || 'tema por elegir'} (${FORMATO})`, ''];
