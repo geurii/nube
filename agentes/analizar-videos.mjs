@@ -146,6 +146,36 @@ export const extraerTranscripcionYoutube = async (playerResponse) => {
   return null;
 };
 
+/** Recuperación secundaria: el reproductor WEB puede venir bloqueado en /watch y /embed.
+ * Se consulta el endpoint público de YouTube Innertube con la clave/versiones halladas en la propia página.
+ * No usa cookies privadas, no descarga audio y solo solicita metadatos/subtítulos expuestos por YouTube.
+ */
+export const playerInnertube = async (html, id, headers = {}) => {
+  const apiKey = /"INNERTUBE_API_KEY"\\s*:\\s*"([^"]+)"/.exec(html)?.[1]
+    ?? /INNERTUBE_API_KEY\\s*=\\s*["']([^"']+)["']/.exec(html)?.[1];
+  const version = /"INNERTUBE_CLIENT_VERSION"\\s*:\\s*"([^"]+)"/.exec(html)?.[1]
+    ?? /"clientVersion"\\s*:\\s*"([0-9.]+)"/.exec(html)?.[1]
+    ?? '2.20261124.01.00';
+  if (!apiKey) return null;
+  const clientes = [
+    {clientName:'WEB', clientVersion:version, hl:'en', gl:'US'},
+    {clientName:'ANDROID', clientVersion:'20.45.38', androidSdkVersion:35, hl:'en', gl:'US'},
+    {clientName:'IOS', clientVersion:'20.45.4', deviceModel:'iPhone16,2', hl:'en', gl:'US'},
+  ];
+  for (const client of clientes) {
+    try {
+      const r = await fetch('https://www.youtube.com/youtubei/v1/player?key=' + encodeURIComponent(apiKey) + '&prettyPrint=false', {
+        method:'POST', headers:{...headers, 'Content-Type':'application/json', 'X-YouTube-Client-Name': client.clientName === 'ANDROID' ? '3' : client.clientName === 'IOS' ? '5' : '1', 'X-YouTube-Client-Version':client.clientVersion},
+        body:JSON.stringify({videoId:id, context:{client}, contentCheckOk:true, racyCheckOk:true}), signal:AbortSignal.timeout(18000),
+      });
+      if (!r.ok) continue;
+      const j = await r.json();
+      if (j?.videoDetails?.videoId || j?.captions?.playerCaptionsTracklistRenderer?.captionTracks?.length) return j;
+    } catch { /* probar el siguiente cliente público */ }
+  }
+  return null;
+};
+
 /** Datos públicos del video: oEmbed + vistas, duración, descripción y, cuando existe, subtítulos públicos. */
 export const datosDeVideo = async (id) => {
   const d = {id, url: 'https://www.youtube.com/watch?v=' + id};
@@ -179,6 +209,12 @@ export const datosDeVideo = async (id) => {
         }
       }
       if (player) break;
+    }
+    // Si /watch y /embed no entregaron el reproductor, recuperar la respuesta mediante Innertube.
+    if (!player) {
+      player = await playerInnertube(html, id, headers);
+      if (player) d.metodoLectura = 'youtube-innertube';
+      else d.errorLectura = d.errorLectura ?? 'YouTube no entregó playerResponse ni pistas públicas de subtítulos.';
     }
     const v = player?.videoDetails ?? {};
     d.titulo = d.titulo ?? v.title;
