@@ -1,142 +1,27 @@
 {
-  "fecha": "2026-11-25T00:27:37.806Z",
-  "criterio": "canales creados hace 90 días o menos; videos publicados hace 90 días o menos; rendimiento mínimo 5x la mediana del canal",
+  "fecha": "2026-11-25T01:12:01.311Z",
   "consultas": [
-    "unsolved mystery explained",
-    "true strange history story",
-    "mysterious discovery explained",
-    "歴史 ミステリー 不思議な出来事 解説",
-    "未解決事件 奇妙な歴史 雑学",
-    "历史 未解之谜 奇闻真实故事",
-    "离奇历史事件 真相揭秘",
-    "misterios sin resolver historia extraña",
-    "historias reales sorprendentes misterio",
-    "mystère historique inexpliqué histoire vraie",
-    "mistério histórico história real surpreendente",
-    "기묘한 역사 미스터리 실화",
-    "غموض تاريخي قصة حقيقية غريبة"
+    "misterios sin resolver documental completo",
+    "fenómenos inexplicables investigación documental historia real",
+    "misterios históricos documental investigación completa",
+    "casos extraños reales narración documental",
+    "misterios del mundo explicación documental",
+    "Expressy misterios documental",
+    "XpressTV misterios documental"
   ],
-  "canalesRevisados": 74,
-  "explotaron": 32,
-  "canales": [
-    {
-      "id": "UCGcVuScYBs4oP0MTU6oLWSQ",
-      "nombre": "Ballen Of File",
-      "suscriptores": 1480,
-      "videosDelCanal": 20,
-      "fechaAlta": "2026-11-11T00:00:00.000Z",
-      "diasCanal": 14,
-      "veces": 22,
-      "mejor": {
-        "id": "GUnx_FTNgRw",
-        "titulo": "Cops CAN’T Explain His 911 Call… The Mystery Gets DARKER!",
-        "vistas": 155568,
-        "hace": 8,
-        "url": "https://youtube.com/watch?v=GUnx_FTNgRw"
-      },
-      "puntaje": 19.95
-    },
-    {
-      "id": "UCn87yhmEcgnI4PGIvhM4DFg",
-      "nombre": "Chill Dude Plus",
-      "suscriptores": 771,
-      "videosDelCanal": 51,
-      "fechaAlta": "2026-10-02T00:00:00.000Z",
-      "diasCanal": 54,
-      "veces": 9,
-      "mejor": {
-        "id": "9p43SRaCEng",
-        "titulo": "10 Genius Ideas That Backfired on Entire Civilizations",
-        "vistas": 85884,
-        "hace": 9,
-        "url": "https://youtube.com/watch?v=9p43SRaCEng"
-      },
-      "puntaje": 6.52
-    },
-    {
-      "id": "UCdQx7-YvvW5oFQgb7ityDiQ",
-      "nombre": "Nobody Believes This",
-      "suscriptores": 2820,
-      "videosDelCanal": 21,
-      "fechaAlta": "2026-10-15T00:00:00.000Z",
-      "diasCanal": 41,
-      "veces": 13,
-      "mejor": {
-        "id": "KqJsbgsUuWA",
-        "titulo": "30 Incredible Stories You Won't Believe",
-        "vistas": 200436,
-        "hace": 21,
-        "url": "https://youtube.com/watch?v=KqJsbgsUuWA"
-      },
-      "puntaje": 5.97
-    },
-    {
-      "id": "UCycmRza8F3YHyZ9W-bjAdFg",
-      "nombre": "Umbrella Vault",
-      "suscriptores": 1910,
-      "videosDelCanal": 22,
-      "fechaAlta": "2026-10-06T00:00:00.000Z",
-      "diasCanal": 50,
-      "veces": 6,
-      "mejor": {
-        "id": "04snj4rUmfs",
-        "titulo": "12 Resident Evil Mysteries That Were FINALLY Solved...",
-        "vistas": 193634,
-        "hace": 23,
-        "url": "https://youtube.com/watch?v=04snj4rUmfs"
-      },
-      "puntaje": 3.76
-    }
-  ],
-  "videosVirales": [
-    {
-      "canal": "Ballen Of File",
-      "canalId": "UCGcVuScYBs4oP0MTU6oLWSQ",
-      "diasCanal": 14,
-      "suscriptores": 1480,
-      "titulo": "Cops CAN’T Explain His 911 Call… The Mystery Gets DARKER!",
-      "vistas": 155568,
-      "hace": 8,
-      "veces": 22,
-      "url": "https://youtube.com/watch?v=GUnx_FTNgRw",
-      "idiomaDetectado": "multilingüe"
-    },
-    {
-      "canal": "Chill Dude Plus",
-      "canalId": "UCn87yhmEcgnI4PGIvhM4DFg",
-      "diasCanal": 54,
-      "suscriptores": 771,
-      "titulo": "10 Genius Ideas That Backfired on Entire Civilizations",
-      "vistas": 85884,
-      "hace": 9,
-      "veces": 9,
-      "url": "https://youtube.com/watch?v=9p43SRaCEng",
-      "idiomaDetectado": "multilingüe"
-    },
-    {
-      "canal": "Nobody Believes This",
-      "canalId": "UCdQx7-YvvW5oFQgb7ityDiQ",
-      "diasCanal": 41,
-      "suscriptores": 2820,
-      "titulo": "30 Incredible Stories You Won't Believe",
-      "vistas": 200436,
-      "hace": 21,
-      "veces": 13,
-      "url": "https://youtube.com/watch?v=KqJsbgsUuWA",
-      "idiomaDetectado": "multilingüe"
-    },
-    {
-      "canal": "Umbrella Vault",
-      "canalId": "UCycmRza8F3YHyZ9W-bjAdFg",
-      "diasCanal": 50,
-      "suscriptores": 1910,
-      "titulo": "12 Resident Evil Mysteries That Were FINALLY Solved...",
-      "vistas": 193634,
-      "hace": 23,
-      "veces": 6,
-      "url": "https://youtube.com/watch?v=04snj4rUmfs",
-      "idiomaDetectado": "multilingüe"
-    }
-  ],
-  "referenciasLargas": []
+  "canalesRevisados": 0,
+  "explotaron": 0,
+  "canales": [],
+  "referenciasLargas": [],
+  "busquedaSinResultados": true,
+  "notasBusqueda": [
+    "Búsqueda larga completada: misterios sin resolver documental completo",
+    "Búsqueda larga completada: fenómenos inexplicables investigación documental historia real",
+    "Búsqueda larga completada: misterios históricos documental investigación completa",
+    "Búsqueda larga completada: Expressy misterios documental",
+    "Búsqueda larga completada: XpressTV misterios documental",
+    "Búsqueda larga completada: MrBallen mystery documentary",
+    "Búsqueda larga completada: The Why Files mystery documentary",
+    "Búsqueda larga completada: misterios sin resolver, fenómenos raros, objetos históricos enigmáticos y casos curiosos con mucha documentación documental investigación completa"
+  ]
 }
