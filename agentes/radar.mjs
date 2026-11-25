@@ -187,9 +187,34 @@ export const buscarReferenciasLargas = async ({
     }
     await dormir(1800);
   }
+  // Respaldo sin el buscador web de YouTube: feeds RSS públicos de los canales que el dueño ya eligió vigilar.
+  // Esto sigue funcionando cuando /results responde 429 y evita depender de canales recién creados.
+  if (candidatos.size < 3 && Array.isArray(canales) && canales.length) {
+    nota('Buscador de YouTube limitado; activo respaldo RSS de canales vigilados.');
+    for (const canal of canales.slice(0, 9)) {
+      if (Date.now() >= hasta - 35000) break;
+      const idCanal = typeof canal === 'string' ? canal : canal?.id;
+      if (!idCanal) continue;
+      try {
+        const feed = await feedDeCanal(idCanal);
+        const mejores = [...feed].sort((a, b) => Number(b.vistas ?? 0) - Number(a.vistas ?? 0)).slice(0, 4);
+        for (const v of mejores) {
+          if (!v?.id) continue;
+          const previo = candidatos.get(v.id);
+          if (!previo || Number(v.vistas ?? 0) > Number(previo.vistas ?? 0)) {
+            candidatos.set(v.id, {...v, canal: typeof canal === 'object' ? canal.nombre : undefined, canalId: idCanal});
+          }
+        }
+        nota(`Respaldo RSS leído: ${typeof canal === 'object' ? canal.nombre : idCanal}; ${feed.length} videos recientes.`);
+      } catch (e) {
+        nota(`RSS no disponible para ${idCanal}: ${String(e.message ?? e).slice(0, 90)}`);
+      }
+      await dormir(700);
+    }
+  }
   const lista = [...candidatos.values()]
     .sort((a, b) => Number(b.vistas ?? 0) - Number(a.vistas ?? 0))
-    .slice(0, Math.max(10, Math.min(20, maxResultados * 2)));
+    .slice(0, Math.max(12, Math.min(24, maxResultados * 2)));
   const detalles = [];
   // Las páginas de video también se leen de una en una para no volver a disparar el limitador.
   for (const video of lista) {
