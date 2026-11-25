@@ -33,10 +33,10 @@ permissions:
   actions: write
   models: read
 
-# Un solo turno a la vez: una nueva ejecución NO cancela la que ya está trabajando.
+# Un solo ciclo largo activo: al lanzar una versión corregida, se cancela el ciclo obsoleto que bloquea la cola.
 concurrency:
   group: oficina
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 env:
   NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
