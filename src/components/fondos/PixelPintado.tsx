@@ -8,7 +8,7 @@ import type {PropsEscena} from './Escenas';
 
 const {fontFamily: FUENTE_PIXEL} = loadFont();
 const F = 2;
-const OBJETOS_NARRATIVOS = new Set(['barco','pez','hielo','faro','ovni','explosion','ciudad','bosque','arbol','edificio','central','pergamino','calendario','reloj','castillo','corona','libro','moneda','iglesia','caballo','silueta','astro','duna','montanas','hidrofono','sonar','microfono','volcan','fuego','lago','avion','tren','submarino','barril','cerveza','cerveceria','tsunami','deslizamiento']);
+const OBJETOS_NARRATIVOS = new Set(['barco','pez','hielo','faro','ovni','explosion','ciudad','bosque','arbol','edificio','central','pergamino','calendario','reloj','castillo','corona','libro','moneda','iglesia','caballo','silueta','astro','duna','montanas','hidrofono','sonar','microfono','volcan','fuego','lago','avion','tren','submarino','barril','cerveza','cerveceria','tsunami','deslizamiento','terremoto']);
 const CAPAS_PROHIBIDAS = new Set(['circulo','rect','poligono','linea','texto','foto']);
 
 const Lienzo: React.FC<{id: string}> = ({id}) => {
