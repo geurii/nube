@@ -81,7 +81,7 @@ export const chatAlternativo = async (mensajes, {maxTokens = 2500, temperatura =
   }
   return null;
 };
-export const proveedoresConLlave = () => PROVEEDORES.filter((p) => (process.env[p.clave] || '').trim() && p.nombre !== 'Cloudflare').map((p) => p.nombre);
+export const proveedoresConLlave = () => PROVEEDORES.filter((p) => p.nombre !== 'Cloudflare' && ((process.env[p.clave] || '').trim() || p.sinLlave === true)).map((p) => p.nombre);
 
 /** Modelos de Groq que esta cuenta SÍ tiene, en orden de preferencia. Nunca devuelve una lista vacía. */
 export const modelosDisponibles = async (key, base = 'https://api.groq.com/openai/v1') => {
