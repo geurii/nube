@@ -34,60 +34,69 @@
       "tipo": "hook",
       "texto": "La empresa de Mario nació vendiendo cartas. Y eso fue solo el comienzo.",
       "fondo": [
-        "pintado:nintendo-hanafuda-1889-0a",
-        "pintado:nintendo-hanafuda-1889-0b",
-        "pintado:nintendo-hanafuda-1889-0c",
-        "pintado:nintendo-hanafuda-1889-0d"
+        "pintado:nintendo-hanafuda-1889-s1-01",
+        "pintado:nintendo-hanafuda-1889-s1-02",
+        "pintado:nintendo-hanafuda-1889-s1-03"
       ]
     },
     {
       "tipo": "historia",
       "texto": "En 1889, en Kioto, Japón, Fusajiro Yamauchi fundó Nintendo para fabricar hanafuda: barajas ilustradas con flores y símbolos de las estaciones.",
       "fondo": [
-        "pintado:nintendo-hanafuda-1889-0a",
-        "pintado:nintendo-hanafuda-1889-0b",
-        "pintado:nintendo-hanafuda-1889-0c",
-        "pintado:nintendo-hanafuda-1889-0d"
+        "pintado:nintendo-hanafuda-1889-s2-01",
+        "pintado:nintendo-hanafuda-1889-s2-02",
+        "pintado:nintendo-hanafuda-1889-s2-03",
+        "pintado:nintendo-hanafuda-1889-s2-04",
+        "pintado:nintendo-hanafuda-1889-s2-05"
       ]
     },
     {
       "tipo": "historia",
       "texto": "Una baraja tradicional tenía 48 cartas. No eran cartas de póker: sus dibujos representaban los doce meses del año.",
       "fondo": [
-        "pintado:nintendo-hanafuda-1889-0a",
-        "pintado:nintendo-hanafuda-1889-0b",
-        "pintado:nintendo-hanafuda-1889-0c",
-        "pintado:nintendo-hanafuda-1889-0d"
+        "pintado:nintendo-hanafuda-1889-s3-01",
+        "pintado:nintendo-hanafuda-1889-s3-02",
+        "pintado:nintendo-hanafuda-1889-s3-03",
+        "pintado:nintendo-hanafuda-1889-s3-04",
+        "pintado:nintendo-hanafuda-1889-s3-05"
       ]
     },
     {
       "tipo": "historia",
       "texto": "Durante décadas, ese fue su negocio. En 1959, Nintendo incluso lanzó cartas con personajes de Disney. La empresa siguió cambiando mucho antes de entrar al entretenimiento electrónico.",
       "fondo": [
-        "pintado:nintendo-hanafuda-1889-0a",
-        "pintado:nintendo-hanafuda-1889-0b",
-        "pintado:nintendo-hanafuda-1889-0c",
-        "pintado:nintendo-hanafuda-1889-0d"
+        "pintado:nintendo-hanafuda-1889-s4-01",
+        "pintado:nintendo-hanafuda-1889-s4-02",
+        "pintado:nintendo-hanafuda-1889-s4-03",
+        "pintado:nintendo-hanafuda-1889-s4-04",
+        "pintado:nintendo-hanafuda-1889-s4-05",
+        "pintado:nintendo-hanafuda-1889-s4-06",
+        "pintado:nintendo-hanafuda-1889-s4-07"
       ]
     },
     {
       "tipo": "revelacion",
       "texto": "Y aquí viene el giro: Nintendo no saltó directamente de las cartas a Mario. En 1963 adoptó el nombre Nintendo Co., Ltd. y se expandió hacia juguetes y otros juegos. Sus primeras máquinas de videojuegos domésticas llegaron en 1977.",
       "fondo": [
-        "pintado:nintendo-hanafuda-1889-0a",
-        "pintado:nintendo-hanafuda-1889-0b",
-        "pintado:nintendo-hanafuda-1889-0c",
-        "pintado:nintendo-hanafuda-1889-0d"
+        "pintado:nintendo-hanafuda-1889-s5-01",
+        "pintado:nintendo-hanafuda-1889-s5-02",
+        "pintado:nintendo-hanafuda-1889-s5-03",
+        "pintado:nintendo-hanafuda-1889-s5-04",
+        "pintado:nintendo-hanafuda-1889-s5-05",
+        "pintado:nintendo-hanafuda-1889-s5-06",
+        "pintado:nintendo-hanafuda-1889-s5-07",
+        "pintado:nintendo-hanafuda-1889-s5-08"
       ]
     },
     {
       "tipo": "veredicto",
       "texto": "Mario debutó en Donkey Kong en 1981. La compañía detrás de tus videojuegos favoritos empezó con una baraja japonesa. ¿Lo sabías?",
       "fondo": [
-        "pintado:nintendo-hanafuda-1889-0a",
-        "pintado:nintendo-hanafuda-1889-0b",
-        "pintado:nintendo-hanafuda-1889-0c",
-        "pintado:nintendo-hanafuda-1889-0d"
+        "pintado:nintendo-hanafuda-1889-s6-01",
+        "pintado:nintendo-hanafuda-1889-s6-02",
+        "pintado:nintendo-hanafuda-1889-s6-03",
+        "pintado:nintendo-hanafuda-1889-s6-04",
+        "pintado:nintendo-hanafuda-1889-s6-05"
       ]
     }
   ],
