@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-11-25T05:45:51.036Z",
-  "criterio": "canales creados hace 90 días o menos; videos publicados hace 90 días o menos; rendimiento mínimo 5x la mediana del canal",
+  "fecha": "2026-11-25T06:02:36.978Z",
+  "criterio": "canales con un video reciente que supera 5x su mediana; candidatos individuales verificados después por duración y subtítulos públicos",
   "consultas": [
     "unsolved mystery explained",
     "true strange history story",
@@ -16,25 +16,25 @@
     "기묘한 역사 미스터리 실화",
     "غموض تاريخي قصة حقيقية غريبة"
   ],
-  "canalesRevisados": 83,
-  "explotaron": 35,
+  "canalesRevisados": 69,
+  "explotaron": 27,
   "canales": [
     {
-      "id": "UCGcVuScYBs4oP0MTU6oLWSQ",
-      "nombre": "Ballen Of File",
-      "suscriptores": 1530,
-      "videosDelCanal": 21,
-      "fechaAlta": "2026-11-11T00:00:00.000Z",
-      "diasCanal": 14,
-      "veces": 22,
+      "id": "UCD9YwRZaBLiy4KmyD8gFQ0w",
+      "nombre": "Sleepless Nations",
+      "suscriptores": 299,
+      "videosDelCanal": 14,
+      "fechaAlta": "2026-10-09T00:00:00.000Z",
+      "diasCanal": 47,
+      "veces": 54,
       "mejor": {
-        "id": "GUnx_FTNgRw",
-        "titulo": "Cops CAN’T Explain His 911 Call… The Mystery Gets DARKER!",
-        "vistas": 157566,
-        "hace": 8,
-        "url": "https://youtube.com/watch?v=GUnx_FTNgRw"
+        "id": "cIwVBQMA_yM",
+        "titulo": "30 Bizarre Historical Events That Sound 100% Fake (But Actually Happened)",
+        "vistas": 42642,
+        "hace": 22,
+        "url": "https://youtube.com/watch?v=cIwVBQMA_yM"
       },
-      "puntaje": 19.47
+      "puntaje": 13.61
     },
     {
       "id": "UCn87yhmEcgnI4PGIvhM4DFg",
@@ -47,11 +47,11 @@
       "mejor": {
         "id": "9p43SRaCEng",
         "titulo": "10 Genius Ideas That Backfired on Entire Civilizations",
-        "vistas": 88206,
+        "vistas": 88315,
         "hace": 10,
         "url": "https://youtube.com/watch?v=9p43SRaCEng"
       },
-      "puntaje": 6.67
+      "puntaje": 6.68
     },
     {
       "id": "UCdQx7-YvvW5oFQgb7ityDiQ",
@@ -64,28 +64,28 @@
       "mejor": {
         "id": "KqJsbgsUuWA",
         "titulo": "30 Incredible Stories You Won't Believe",
-        "vistas": 202416,
+        "vistas": 202605,
         "hace": 21,
         "url": "https://youtube.com/watch?v=KqJsbgsUuWA"
       },
-      "puntaje": 5.93
+      "puntaje": 5.94
     },
     {
-      "id": "UCycmRza8F3YHyZ9W-bjAdFg",
-      "nombre": "Umbrella Vault",
-      "suscriptores": 1910,
-      "videosDelCanal": 23,
-      "fechaAlta": "2026-10-06T00:00:00.000Z",
-      "diasCanal": 50,
-      "veces": 9,
+      "id": "UCwOy9ngY_SGGf_g0fIhu6xw",
+      "nombre": "Ballen's Mystery Stories",
+      "suscriptores": 1460,
+      "videosDelCanal": 27,
+      "fechaAlta": "2026-10-21T00:00:00.000Z",
+      "diasCanal": 35,
+      "veces": 8,
       "mejor": {
-        "id": "04snj4rUmfs",
-        "titulo": "12 Resident Evil Mysteries That Were FINALLY Solved...",
-        "vistas": 194396,
-        "hace": 23,
-        "url": "https://youtube.com/watch?v=04snj4rUmfs"
+        "id": "QKeuawxShzs",
+        "titulo": "BETRAYAL: 6 Tragic Mysteries & when a lover's promise turns deadly - MrBallen",
+        "vistas": 37787,
+        "hace": 13,
+        "url": "https://youtube.com/watch?v=QKeuawxShzs"
       },
-      "puntaje": 5.63
+      "puntaje": 1.61
     }
   ],
   "videosVirales": [],

@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-25T05:58:30.015Z",
+  "actualizado": "2026-11-25T06:01:13.069Z",
   "canalesLeidos": 9,
   "videosRevisados": 133,
   "mejores": [
@@ -9,31 +9,31 @@
       "titulo": "Why Is Antarctica Closed? The Operation Highjump Mystery",
       "publicado": "2026-11-20T01:00:08.000Z",
       "vistas": 3016242,
-      "vistasPorHora": 24135
+      "vistasPorHora": 24126
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "Always open your fan mail",
       "publicado": "2026-11-21T19:00:32.000Z",
-      "vistas": 1277299,
-      "vistasPorHora": 15395
+      "vistas": 1278723,
+      "vistasPorHora": 15404
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "How Skydiving Changed Will Smith's Life!",
       "publicado": "2026-11-17T17:00:07.000Z",
-      "vistas": 2314678,
-      "vistasPorHora": 12790
+      "vistas": 2316211,
+      "vistasPorHora": 12795
     },
     {
       "canal": "The Why Files",
       "idioma": "en",
       "titulo": "The Basement: Close Encounters Compilation | Abductions, Missing Time & Contact",
       "publicado": "2026-11-23T18:00:10.000Z",
-      "vistas": 378437,
-      "vistasPorHora": 10520
+      "vistas": 377966,
+      "vistasPorHora": 10494
     },
     {
       "canal": "The Why Files",
@@ -41,7 +41,7 @@
       "titulo": "America Is Hiding Something Underground",
       "publicado": "2026-11-18T18:00:14.000Z",
       "vistas": 1421982,
-      "vistasPorHora": 9117
+      "vistasPorHora": 9114
     }
   ],
   "formula": null
