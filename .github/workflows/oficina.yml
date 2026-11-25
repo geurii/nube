@@ -178,6 +178,7 @@ jobs:
             espera=30
             limite_intento=900
             if [ "$FORMATO_ACTUAL" = "largo" ]; then limite_intento=2100; fi
+            cuota_agotada=0
             while [ "$SECONDS" -lt "$limite" ]; do
               intento=$((intento + 1))
               echo "Intento continuo $intento para $c (sin límite de rechazos)."
@@ -188,6 +189,11 @@ jobs:
                 if env -u TEMA CANAL=$c timeout "$limite_intento" node agentes/oficina.mjs; then rc=0; else rc=$?; fi
               fi
               echo "::notice::Fin del intento $intento para $c; código de salida=$rc; duración acumulada=$((SECONDS))s."
+              if [ "$rc" -eq 75 ]; then
+                cuota_agotada=1
+                echo "::warning::Todos los proveedores están en cooldown. Se detiene aquí: no se gastan más solicitudes ni se encadena otro ciclo."
+                break
+              fi
               if [ "$rc" -eq 124 ]; then echo "::warning::La generación agotó su límite individual de ${limite_intento}s; se intentará en la siguiente ventana."; fi
               if CANAL=$c node agentes/ultimo-aprobado.mjs; then
                 echo "Guion aprobado para $c en el intento $intento."
@@ -197,6 +203,10 @@ jobs:
               sleep "$espera"
               espera=$((espera < 300 ? espera * 2 : 300))
             done
+            if [ "$cuota_agotada" -eq 1 ]; then
+              echo "Ciclo cerrado por cuota agotada. El cooldown queda guardado para el siguiente horario."
+              break
+            fi
             if ! CANAL=$c node agentes/ultimo-aprobado.mjs; then
               canal_pendiente="$c"
               echo "Ventana agotada para $c; se continuará automáticamente en otra ejecución."
