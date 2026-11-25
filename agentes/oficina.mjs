@@ -399,7 +399,7 @@ const elegirTema = async (modelo) => {
         continue;
       }
       if (!Number.isFinite(referencia.segundos)
-        || (FORMATO === 'largo' && (referencia.segundos < 480 || referencia.segundos > 3600))
+        || (FORMATO === 'largo' && (referencia.segundos < 480 || referencia.segundos > 14400))
         || (FORMATO === 'short' && referencia.segundos > 180)) {
         informe.push('Referencia descartada por duración incompatible con el formato ' + FORMATO + ': ' + viral.titulo + '.');
         continue;
