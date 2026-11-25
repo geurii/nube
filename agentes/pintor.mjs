@@ -22,7 +22,7 @@ export const ESCENARIOS = {
 };
 export const TIPOS = new Set([
   'estrellas', 'astro', 'resplandor', 'montanas', 'suelo', 'agua', 'niebla', 'arbol', 'edificio', 'central', 'pergamino',
-  'nubes', 'olas', 'particulas', 'rayos', 'barco', 'pez', 'roca', 'hielo', 'duna', 'algas', 'sargazo', 'faro', 'silueta', 'ovni', 'explosion', 'ciudad', 'bosque', 'calendario', 'reloj', 'castillo', 'corona', 'libro', 'moneda', 'iglesia', 'caballo',
+  'nubes', 'olas', 'particulas', 'rayos', 'barco', 'pez', 'roca', 'hielo', 'duna', 'algas', 'sargazo', 'faro', 'silueta', 'ovni', 'explosion', 'ciudad', 'bosque', 'calendario', 'reloj', 'castillo', 'corona', 'libro', 'moneda', 'iglesia', 'caballo', 'terremoto',
   'cartas', 'hidrofono', 'sonar', 'microfono', 'volcan', 'fuego', 'lago', 'avion', 'tren', 'submarino', 'barril', 'cerveza', 'cerveceria', 'tsunami', 'deslizamiento',
 ]);
 
@@ -53,7 +53,7 @@ export const sujetosDelTexto = (texto = '') => {
     [/\b(hielo|glaciar|iceberg|congelado|criosismo|crujido de hielo)\b/, ['hielo']],
     [/\b(volcan|erupcion|lava|crater|magma)\b/, ['volcan']],
     [/\b(bosque|arbol|arboles|pino|selva)\b/, ['bosque','arbol']],
-    [/\b(ciudad|edificio|casa|pueblo|vivienda|calle|barrio)\b/, ['ciudad','edificio']],
+    [/\b(lisboa|ciudad|edificio|casa|pueblo|vivienda|calle|barrio|capital|casco historico|centro historico)\b/, ['ciudad','edificio']],
     [/\b(fabrica|central|reactor|nuclear|chimenea|energia|planta industrial)\b/, ['central']],
     [/\b(desierto|duna|arena)\b/, ['duna']],
     [/\b(ovni|extraterrestre|nave espacial|espacio|planeta|luna|asteroide)\b/, ['ovni','astro']],
@@ -67,9 +67,8 @@ export const sujetosDelTexto = (texto = '') => {
     [/\b(tren|ferrocarril|locomotora|vagon|via ferroviaria)\b/, ['tren']],
     [/\b(montana|montanas|cordillera|cumbre|acantilado)\b/, ['montanas']],
     [/\b(cerveza|cerveceria|barril|barriles|tonel|toneles|cuba|brewery|beer)\b/, ['barril','cerveza','cerveceria']],
-    [/\b(inundacion|riada|avenida|oleada)\b/, ['cerveza','tsunami']],
-    [/\b(tsunami|megatsunami|maremoto|ola gigante)\b/, ['tsunami','agua','hielo']],
-    [/\b(terremoto|seismo|temblor|falla geologica|fallas tectonicas)\b/, ['deslizamiento','tsunami','montanas']],
+    [/\b(tsunami|megatsunami|maremoto|ola gigante)\b/, ['tsunami']],
+    [/\b(terremoto|seismo|temblor|sacudida sismica|movimiento sismico|falla geologica|fallas tectonicas|colapso|colapsaron|derrumbe|derrumbaron|desplome|se desplomo)\b/, ['terremoto','edificio','ciudad']],
     [/\b(deslizamiento|derrumbe|avalancha|rocas cayeron|desprendimiento)\b/, ['deslizamiento','roca','montanas']],
     [/\b(faro|torre de luz)\b/, ['faro']],
   ];
@@ -80,7 +79,7 @@ export const OBJETOS_NARRATIVOS = new Set([
   'barco','pez','hielo','faro','ovni','explosion','ciudad','bosque','arbol','edificio','central',
   'pergamino','calendario','reloj','castillo','corona','libro','moneda','iglesia','caballo','silueta','astro','duna',
   'montanas','hidrofono','sonar','microfono','volcan','fuego','lago','avion','tren','submarino',
-  'barril','cerveza','cerveceria','tsunami','deslizamiento','cartas',
+  'barril','cerveza','cerveceria','tsunami','deslizamiento','cartas','terremoto',
 ]);
 
 /** Un cuadro solo sirve si contiene un objeto implementado y este coincide con la frase narrada. */
@@ -155,6 +154,7 @@ FORMAS CLÁSICAS:
 - {"t":"faro","x":0.3,"y":0.82,"h":0.34} (con rayo que gira)   {"t":"ovni","x":0.5,"y":0.3,"r":0.1}   {"t":"explosion","x":0.5,"y":0.46,"r":0.2}
 - {"t":"central","x":0.5,"y":0.82,"w":0.6,"h":0.5,"color":"#aab1b8","vapor":true} (CENTRAL NUCLEAR o planta industrial: torre de enfriamiento, chimenea con franjas y bloque del reactor, con vapor; úsala para reactores, fábricas y energía)
 - {"t":"ciudad","y":0.85,"alto":0.3,"color":"#1f2442"} (horizonte de edificios con ventanas)   {"t":"bosque","y":0.88,"n":14,"color":"#1c4a38"} (pinos)
+- TERREMOTO: {"t":"terremoto","x":0.5,"y":0.72,"w":0.88,"h":0.55} (casas y edificios históricos de piedra que se sacuden, se agrietan y sueltan escombros; movimiento visible, no un paisaje genérico).
 - OBJETOS PROTAGONISTAS ESPECÍFICOS: {"t":"microfono","x":0.5,"y":0.56,"w":0.2,"h":0.44} (micrófono de mano con rejilla, mango y base); {"t":"hidrofono","x":0.5,"y":0.58,"w":0.17,"h":0.52} (sensor cilíndrico submarino con cable y anillos acústicos); {"t":"sonar","x":0.5,"y":0.58,"w":0.58,"h":0.48} (consola real con pantalla, círculos de barrido y eco); {"t":"volcan","x":0.5,"y":0.86,"w":0.68,"h":0.56} (cono volcánico con cráter y lava); {"t":"fuego","x":0.5,"y":0.78,"w":0.34,"h":0.43} (llamas reconocibles); {"t":"lago","x":0.5,"y":0.7,"w":0.76,"h":0.3} (masa de agua delimitada por orilla); {"t":"avion","x":0.5,"y":0.5,"w":0.62} (avión de perfil); {"t":"tren","x":0.5,"y":0.78,"w":0.58,"h":0.42} (locomotora con ruedas); {"t":"submarino","x":0.5,"y":0.58,"w":0.58,"h":0.24} (casco, torre y ventanillas). {"t":"barril","x":0.5,"y":0.82,"w":0.27,"h":0.38} (barril de madera con duelas y aros de hierro); {"t":"cerveza","x":0.5,"y":0.86,"w":0.94,"h":0.38} (ola de líquido ámbar con espuma, claramente cerveza); {"t":"cerveceria","x":0.5,"y":0.84,"w":0.7,"h":0.52} (fábrica con techo, tinas de cobre y tuberías); {"t":"tsunami","x":0.5,"y":0.86,"w":0.96,"h":0.58} (ola marina gigantesca con cresta y espuma); {"t":"deslizamiento","x":0.56,"y":0.9,"w":0.72,"h":0.56} (ladera desprendida con rocas cayendo).
 - {"t":"silueta","x":0.5,"y":0.8,"h":0.22,"color":"#10121f"} (persona de espaldas, SIN cara). ÚSALA SOLO si la frase habla de una persona; NUNCA para representar una ola, un objeto, un animal o un lugar.
 - {"t":"particulas","tipo":"polvo"|"burbujas"|"nieve"|"brasas","n":50}   {"t":"rayos","x":0.1,"color":"#ffd9a0","alpha":0.1} (rayos de luz)
@@ -192,7 +192,8 @@ const limpiar = (r, ids, slug, ya = {}, escenas = [], tema = '') => {
   for (const e of Array.isArray(r?.escenas) ? r.escenas : []) {
     const i = Number(e.indice);
     if (!ids.includes(i)) continue;
-    const textoEscena = `${escenas[i]?.texto ?? escenas[i]?.tipo ?? ''} ${tema}`;
+    // El tema global da época y contexto, pero NO puede autorizar objetos ajenos a esta frase.
+    const textoEscena = String(escenas[i]?.texto ?? escenas[i]?.tipo ?? '');
     const planos = (Array.isArray(e.planos) ? e.planos : []).slice(0, 4).map(validarEscena).filter(Boolean).filter((plano) => tieneAnclaNarrativa(plano, textoEscena));
     if (planos.length === 4 && new Set(planos.map((p) => JSON.stringify(p))).size === 4) salida[i] = planos;
   }
