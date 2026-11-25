@@ -404,7 +404,7 @@ export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: n
         const y = base - (hs(k,80)*h*0.09) - Math.abs(Math.sin(t*5+k))*h*0.025;
         g.set(x,y,[184,157,129],0.55);
       }
-      break;
+      return true;
     }
     case 'tsunami': {
       const cx=X(e.x,0.5), base=Y(e.y,0.86), w=num(e.w,0.96,0.6,1)*lw, h=num(e.h,0.58,0.3,0.78)*lh;
@@ -677,4 +677,4 @@ export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: n
   return false;
 }
 
-export const TIPOS_PRO = ['poligono', 'linea', 'nubes', 'olas', 'particulas', 'rayos', 'barco', 'pez', 'roca', 'hielo', 'duna', 'algas', 'sargazo', 'faro', 'silueta', 'ovni', 'explosion', 'ciudad', 'bosque', 'hidrofono', 'sonar', 'microfono', 'volcan', 'fuego', 'lago', 'avion', 'tren', 'submarino', 'barril', 'cerveza', 'cerveceria', 'tsunami', 'deslizamiento'];
+export const TIPOS_PRO = ['poligono', 'linea', 'nubes', 'olas', 'particulas', 'rayos', 'barco', 'pez', 'roca', 'hielo', 'duna', 'algas', 'sargazo', 'faro', 'silueta', 'ovni', 'explosion', 'ciudad', 'bosque', 'hidrofono', 'sonar', 'microfono', 'volcan', 'fuego', 'lago', 'avion', 'tren', 'submarino', 'barril', 'cerveza', 'cerveceria', 'tsunami', 'deslizamiento', 'terremoto'];
