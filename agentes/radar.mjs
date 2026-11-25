@@ -9,14 +9,17 @@ import {datosDeVideo} from './analizar-videos.mjs';
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36';
 const CABECERAS = {'User-Agent': UA, 'Accept-Language': 'en-US,en;q=0.9', Cookie: 'CONSENT=YES+1; SOCS=CAI', Connection: 'close'};
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
-const pedir = async (url, opts) => {
+const pedir = async (url, opts = {}) => {
   let ultimo;
+  const {timeoutMs, signal: señalOriginal, ...base} = opts;
   for (let intento = 0; intento < 4; intento++) {
     try {
-      const r = await fetch(url, opts);
+      // Crear un timeout nuevo en cada intento: no reutilizar una señal que pudo vencer durante el backoff.
+      const signal = timeoutMs ? AbortSignal.timeout(timeoutMs) : (intento === 0 ? señalOriginal : undefined);
+      const r = await fetch(url, {...base, ...(signal ? {signal} : {})});
       if (r.status !== 429 || intento === 3) return r;
       const retry = Number(r.headers.get('retry-after'));
-      const espera = Number.isFinite(retry) && retry > 0 ? retry * 1000 : [8000, 18000, 35000][intento];
+      const espera = Number.isFinite(retry) && retry > 0 ? retry * 1000 : [5000, 10000, 20000][intento];
       console.warn(`YouTube 429: pausa de ${Math.round(espera / 1000)} s antes de reintentar.`);
       await dormir(espera);
     } catch (e) {
@@ -69,7 +72,7 @@ const esIngles = (t) => { const s = String(t ?? ''); return s.length > 5 && !/[�
 
 /** Videos que salen para una consulta (con canal, vistas, antigüedad y duración). */
 export const buscarVideos = async (consulta, fecha = 4, corto = false) => {
-  const r = await pedir(`https://www.youtube.com/results?search_query=${encodeURIComponent(consulta)}&sp=${filtroBusqueda(fecha, corto)}&hl=en&gl=US`, {headers: CABECERAS, signal: AbortSignal.timeout(25000)});
+  const r = await pedir(`https://www.youtube.com/results?search_query=${encodeURIComponent(consulta)}&sp=${filtroBusqueda(fecha, corto)}&hl=en&gl=US`, {headers: CABECERAS, timeoutMs: 25000});
   if (!r.ok) throw new Error('YouTube ' + r.status);
   const html = await r.text();
   const m = /var ytInitialData = (\{[\s\S]*?\});<\/script>/.exec(html);
@@ -98,7 +101,7 @@ export const datosDeCanal = async (canalId) => {
     ?? /"joinedDateText":\s*\{\s*"simpleText":"([^"]+)"/.exec(html)?.[1]
     ?? /Joined\s+([A-Z][a-z]+\s+\d{1,2},\s+\d{4})/.exec(html)?.[1];
   if (!joined) {
-    const about = await pedir(`https://www.youtube.com/channel/${canalId}/about?hl=en`, {headers: CABECERAS, signal: AbortSignal.timeout(20000)}).catch(() => null);
+    const about = await pedir(`https://www.youtube.com/channel/${canalId}/about?hl=en`, {headers: CABECERAS, timeoutMs: 20000}).catch(() => null);
     if (about?.ok) {
       const ah = await about.text();
       joined = /"joinedDateText":\s*\{\s*"content":"([^"]+)"/.exec(ah)?.[1]
