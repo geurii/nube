@@ -38,7 +38,7 @@ const cargarCooldowns = () => {
 cargarCooldowns();
 export const proveedorEnCooldown = (nombre) => (bloqueadoHasta.get(nombre) ?? 0) > Date.now();
 export const bloquearProveedor = (nombre, segundos = 900) => {
-  bloqueadoHasta.set(nombre, Date.now() + Math.max(60, Math.min(Number(segundos) || 900, 86400)) * 1000);
+  bloqueadoHasta.set(nombre, Date.now() + Math.max(5, Math.min(Number(segundos) || 900, 86400)) * 1000);
   guardarCooldowns();
 };
 
@@ -83,7 +83,7 @@ const descansar = (nombre, r, minimo = 900) => {
   const cabecera = r?.headers?.get?.('retry-after') ?? r?.headers?.get?.('x-ratelimit-reset-requests') ?? '';
   const segundos = Number.parseFloat(String(cabecera).replace(/s$/i, ''));
   const espera = Number.isFinite(segundos) && segundos > 0 ? segundos + 5 : minimo;
-  bloquearProveedor(nombre, Math.max(60, espera));
+  bloquearProveedor(nombre, Math.max(5, espera));
 };
 export const chatAlternativo = async (mensajes, {maxTokens = 2500, temperatura = 0.4, json = false} = {}) => {
   const limite = Date.now() + 180_000; // no permitir que el respaldo consuma toda la ventana de producción
