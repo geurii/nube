@@ -1,6 +1,15 @@
 {
-  "total": 10,
+  "total": 11,
   "posts": [
+    {
+      "id": "lqns-nintendo-hanafuda-1889",
+      "titulo": "Nintendo nació vendiendo cartas: la historia antes de los videojuegos",
+      "fecha": "2026-11-25T17:08:20.137Z",
+      "accion": "create_reel",
+      "alojamiento": "temporal-72h",
+      "video_url": "https://tumbled-path-21.beacon.host/lqns-nintendo-hanafuda-1889.mp4",
+      "respuesta": "{\"result\":\"Published Reel to Facebook Page 1414517028413600. Video id: 1858271528644820. Post id: 1414517028413600_122107308963552661.\"}\n"
+    },
     {
       "id": "lqns-1958-lituya-bay-earthquake-and-megatsunami",
       "titulo": "⚡ La ola de 524 metros: El megatsunami que escaló una montaña en Alaska (1958)",
