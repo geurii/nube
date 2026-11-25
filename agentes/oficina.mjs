@@ -462,9 +462,9 @@ const elegirTema = async (modelo) => {
   }  // El dueño pidió que CADA video largo parta de desmontar una referencia viral real.
   // Sin transcripción pública y desglose temporal verificable, no se finge una adaptación: se descarta el ciclo.
   if (!referenciaMeta && process.env.MODO_PRUEBA !== '1') {
-    throw new Error(FORMATO === 'largo'
+    throw Object.assign(new Error(FORMATO === 'largo'
       ? 'No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. No se escribe ni produce el largo sin ese análisis.'
-      : 'No hay Short viral verificable de 10–75 segundos con subtítulos públicos y autopsia temporal. No se escribe un Short genérico ni se afirma una adaptación inexistente.');
+      : 'No hay Short viral verificable de 10–75 segundos con subtítulos públicos y autopsia temporal. No se escribe un Short genérico ni se afirma una adaptación inexistente.'), {referenciaNoDisponible: true});
   }
   // Si el radar no aporta un caso verificable, se usan las ideas locales y el catálogo editorial.
   const candidatosLocales = [...temasAprobadosDelDueno(CANAL_ID), ...ideasEquipo, ...ideasEstrategia, ...ideasJules];
@@ -931,6 +931,12 @@ try {
   if (!aprobado) console.log('El Verificador no aprobó el guion tras 4 intentos. Queda marcado para revisión.');
 } catch (e) {
   informe.push('## ERROR', String(e.message ?? e));
+  if (e.referenciaNoDisponible) {
+    try { registrar('error', 'No se encontró una referencia viral verificable; se detiene el ciclo sin repetir la misma búsqueda.', 0); } catch { /* sin estado */ }
+    try { fs.writeFileSync(path.join(SALIDA, `informe-${slug}.md`), informe.join('\\n')); } catch { /* sin informe */ }
+    console.error('REFERENCIA_NO_DISPONIBLE: se detiene el ciclo; no se generan reintentos idénticos.');
+    process.exit(76);
+  }
   if (e.cuotaAgotada) {
     try { registrar('error', 'Cuotas de IA agotadas; ciclo detenido para no consumir más solicitudes.', 0); } catch { /* sin estado */ }
     try { fs.writeFileSync(path.join(SALIDA, `informe-${slug}.md`), informe.join('\n')); } catch { /* sin informe */ }
