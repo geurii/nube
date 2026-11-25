@@ -474,7 +474,7 @@ const elegirTema = async (modelo) => {
     'The 1961 Lake Monoun disaster', 'The Donora smog', 'The Great Blizzard of 1888',
     'The Peshtigo fire', 'The Cadaver Synod', 'The Great Hedge of India',
     'The 1912 Villisca axe murders', 'The 1918 molasses flood', 'The Great Sheep Panic of 1888',
-    'The 1958 Lituya Bay megatsunami', 'The 1902 eruption of Mount Pelée',
+    'The 1902 eruption of Mount Pelée',
     'The 1965 New York City blackout', 'The 1974 Xenia tornado',
     'The 1937 Hindenburg disaster', 'The 1948 Donora smog',
     'The 1925 serum run to Nome', 'The 1906 San Francisco earthquake'
