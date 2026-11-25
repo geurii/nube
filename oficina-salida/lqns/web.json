@@ -1,7 +1,38 @@
 {
-  "fecha": "2026-11-25T13:11:00.332Z",
+  "fecha": "2026-11-25T13:26:10.713Z",
   "tema": "Laki",
-  "bloque": "INTERNET (datos de hoy; úsalos solo como apoyo para contrastar y aprender de lo que pega; no copies contenido ni inventes más allá de ellos): Lo que dicen otras páginas sobre \"Laki\": (es) El Laki o Lakagígar (cráteres de Laki) es una fisura volcánica situada en el sur de Islandia, cerca del cañón del Eldgjá y el pequ",
+  "bloque": "INTERNET (datos de hoy; úsalos solo como apoyo para contrastar y aprender de lo que pega; no copies contenido ni inventes más allá de ellos): Lo que dicen otras páginas sobre \"Laki\": (es) El Laki o Lakagígar (cráteres de Laki) es una fisura volcánica situada en el sur de Islandia, cerca del cañón del Eldgjá y el pequ. Videos de YouTube con más vistas este mes sobre el tema: \"amah\" (1,245,178 vistas) | \"NAGULAT ANG LAHAT SA LAKI NG COBRA SA HALAMANAN 😱\" (1,010,927 vistas) | \"Men's Dance Practice LIVE! 🔥 Boys' Passion for Preserving Balinese Dance | Sanggar Pradny\" (714,071 vistas) | \"NAPAKA LAKI NG MONSTER KING COBRA\" (516,167 vistas)",
   "resumenes": 1,
-  "titulos": []
+  "titulos": [
+    {
+      "titulo": "amah",
+      "vistas": 1245178,
+      "dias": 28,
+      "canal": "EGO ADRIANO"
+    },
+    {
+      "titulo": "NAGULAT ANG LAHAT SA LAKI NG COBRA SA HALAMANAN 😱",
+      "vistas": 1010927,
+      "dias": 14,
+      "canal": "Cobra Prince"
+    },
+    {
+      "titulo": "Men's Dance Practice LIVE! 🔥 Boys' Passion for Preserving Balinese Dance | Sanggar Pradny",
+      "vistas": 714071,
+      "dias": 4,
+      "canal": "SANGGAR PRADNYA SWARI"
+    },
+    {
+      "titulo": "NAPAKA LAKI NG MONSTER KING COBRA",
+      "vistas": 516167,
+      "dias": 3,
+      "canal": "Cobra Prince"
+    },
+    {
+      "titulo": "MALA HALIMAW SA LAKI NG LUMALAMON NG MAHIGIT SAMPONG KAMBING",
+      "vistas": 424664,
+      "dias": 1,
+      "canal": "Cobra Prince"
+    }
+  ]
 }

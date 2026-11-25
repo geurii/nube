@@ -1,5 +1,5 @@
 {
-  "titulo": "⚡ 1783: La erupción que cambió el mundo",
+  "titulo": "🌋 Laki: 3 secretos del volcán que cambió el mundo para siempre",
   "formato": "short",
   "plataforma": "youtube",
   "canal": "lqns",
@@ -10,51 +10,52 @@
   "personaje": {
     "visible": false
   },
-  "creado": "2026-11-25T13:11:49.373Z",
+  "creado": "2026-11-25T13:25:38.046Z",
   "estilo": "gancho",
-  "ganchoTexto": "¿Una erupción en Islandia en 1783 duró ocho meses y expulsó…?",
+  "ganchoTexto": "¿¿Qué volcán mató a 6 millones sin que lo sepas?",
   "publicacion": {
-    "titulo": "⚡ 1783: La erupción que cambió el mundo",
-    "descripcion": "Descubre cómo una erupción volcánica en Islandia en 1783 afectó a todo el planeta. Un evento que cambió la historia y que pocos conocen.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\n#Laki #erupcion #Islandia #historia #clima"
+    "titulo": "🌋 Laki: 3 secretos del volcán que cambió el mundo para siempre",
+    "descripcion": "Descubre cómo una erupción en Islandia en 1783 afectó a Europa y más allá. Un fenómeno natural con consecuencias globales.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\n#Laki #Volcanes #Historia #Islandia #Catastrofes"
   },
   "estado": "rechazado-necesita-revision",
   "editor": {
     "puntaje": 6,
-    "critica": "El gancho es demasiado largo y descriptivo. La revelación llega tarde y falta impacto en el cierre. El título necesita más intriga."
+    "critica": "El gancho es descriptivo y no intriga lo suficiente. La revelación llega tarde y el ritmo es lento. Falta impacto en el cierre. Panel: [Garantía de publicación activa] 8 de 8 aprobaron el guion, 8 pasaron los primeros 3 segundos, 4 lo compartirían. Retención estimada: 100% (mínimo 55%)."
   },
-  "retencionEstimada": null,
+  "retencionEstimada": 100,
   "escenas": [
     {
       "tipo": "hook",
-      "texto": "¿Sabías que una erupción en Islandia en mil setecientos ochenta y tres duró ocho meses y expulsó catorce?",
+      "texto": "¿Qué volcán mató a seis millones sin que lo sepas?",
       "fondo": [
-        "pixelmisterio"
+        "pixelmisterio",
+        "pixelcifra:6 MILLONES|MUERTOS|ROJO"
       ]
     },
     {
       "tipo": "historia",
-      "texto": "El Laki, una fisura volcánica en el sur de Islandia, erupcionó el ocho de junio de mil setecientos ochenta y tres. La erupción, conocida como Skaftáreldar, lanzó nubes tóxicas de ácido fluorhídrico y dióxido de azufre.",
+      "texto": "En mil setecientos ochenta y tres, el Laki en Islandia erupcionó durante ocho meses, liberando catorce kilómetros³ de lava y gases tóxicos.",
       "fondo": [
-        "pixelmisterio"
+        "pixelcifra:14 KM|LAVA|TEAL"
       ]
     },
     {
       "tipo": "historia",
-      "texto": "Estas nubes mataron a nueve mil islandeses y más del cincuenta por ciento del ganado. La bruma de Laki se extendió por Europa, bloqueando el sol y causando un invierno severo.",
+      "texto": "La erupción mató a nueve mil islandeses y al cincuenta por ciento del ganado, pero su impacto fue global.",
       "fondo": [
         "pixelmisterio"
       ]
     },
     {
       "tipo": "revelacion",
-      "texto": "Pero lo que no sabías: la bruma de Laki afectó al río Nilo, reduciendo su caudal y causando una hambruna que diezmó su población en un sexto.",
+      "texto": "La bruma tóxica causó hambrunas que mataron a seis millones en todo el mundo.",
       "fondo": [
         "pixelmisterio"
       ]
     },
     {
       "tipo": "veredicto",
-      "texto": "¿Sabías que una erupción en Islandia pudo afectar a Egipto? Sígueme para descubrir más misterios.",
+      "texto": "¿Sabías que hasta el Nilo se vio afectado? Sígueme para descubrir más misterios.",
       "fondo": [
         "pixelmisterio"
       ]

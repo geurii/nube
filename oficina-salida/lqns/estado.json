@@ -1,11 +1,19 @@
 {
-  "actualizado": "2026-11-25T13:11:49.381Z",
+  "actualizado": "2026-11-25T13:25:38.057Z",
   "totales": {
     "aprobados": 16,
-    "rechazados": 114,
+    "rechazados": 115,
     "errores": 169
   },
   "historial": [
+    {
+      "fecha": "2026-11-25T13:25:38.048Z",
+      "tema": "Laki",
+      "formato": "short",
+      "resultado": "rechazado",
+      "intentos": 2,
+      "detalle": "No se generaron imágenes específicas para las escenas: Los pintores no generaron pixel art para las escenas: 3, 4. No se sustituirán por fotos.. No se permite s"
+    },
     {
       "fecha": "2026-11-25T13:11:49.375Z",
       "tema": "Laki",
@@ -157,21 +165,13 @@
       "resultado": "error",
       "intentos": 0,
       "detalle": "No hay Short viral verificable de 10–75 segundos con subtítulos públicos y autopsia temporal. No se escribe un Short genérico ni se afirma una adaptación inexis"
-    },
-    {
-      "fecha": "2026-11-25T09:45:23.181Z",
-      "tema": "(sin tema)",
-      "formato": "short",
-      "resultado": "error",
-      "intentos": 0,
-      "detalle": "No hay Short viral verificable de 10–75 segundos con subtítulos públicos y autopsia temporal. No se escribe un Short genérico ni se afirma una adaptación inexis"
     }
   ],
   "agentes": {
     "Directora de contenido": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "Necesita revisión: el guion de \"Laki\" no pasó la verificación. Este proceso: 0 aprobados, 1 rechazados y 0 errores. Histórico acumulado: 16 aprobados, 114 rechazados y 169 errores. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. JEFA: Un guion rechazado no se publica. Tienen 12 h para entregar algo que pase."
+      "tarea": "Necesita revisión: el guion de \"Laki\" no pasó la verificación. Este proceso: 0 aprobados, 1 rechazados y 0 errores. Histórico acumulado: 16 aprobados, 115 rechazados y 169 errores. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. JEFA: Un guion rechazado no se publica. Tienen 12 h para entregar algo que pase."
     },
     "Investigador de temas": {
       "estado": "libre",
@@ -181,12 +181,12 @@
     "Guionista": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Intentó 4 veces escribir \"Laki\" sin que el Verificador lo aprobara. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 19 días y sin un video viral no cobras. ¿Qué entregaste hoy? JEFA: 4 intentos y nada aprobado. Esto es inaceptable. Estudien la fuente antes de escribir."
+      "tarea": "Intentó 2 veces escribir \"Laki\" sin que el Verificador lo aprobara. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 19 días y sin un video viral no cobras. ¿Qué entregaste hoy? JEFA: 2 intentos y nada aprobado. Esto es inaceptable. Estudien la fuente antes de escribir."
     },
     "Verificador de datos": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Rechazó \"Laki\": GANCHO RECHAZADO: nunca empezar con «Sabías que». Reescribe con una pregunta específica, una afirmación sorprendente o una contradicción concreta del tema. No u ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "Rechazó \"Laki\": No se generaron imágenes específicas para las escenas: Los pintores no generaron pixel art para las escenas: 3, 4. No se sustituirán por fotos.. No se permite s ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Editor de guion": {
       "estado": "trabajando",
@@ -261,12 +261,12 @@
     "Jefa de calidad": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Frenó \"Laki\": GANCHO RECHAZADO: nunca empezar con «Sabías que». Reescribe con una pregunta específica, una afirmación sorprendente o una contradicción concreta del tema. No uses fórmulas genéricas. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "Frenó \"Laki\": No se generaron imágenes específicas para las escenas: Los pintores no generaron pixel art para las escenas: 3, 4. No se sustituirán por fotos.. No se permite sustituirlas por fondos genéricos ni publicar el video sin visuales. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Cazador de fórmulas": {
       "estado": "libre",
       "actividad": "leyendo",
-      "tarea": "Revisó 133 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (23349 vistas/hora). Sin análisis de IA esta vez. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 19 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "Revisó 133 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (23242 vistas/hora). Sin análisis de IA esta vez. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 19 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Vigía de tendencias": {
       "estado": "libre",
@@ -296,7 +296,7 @@
     "Auditor de normas": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Encontró incumplimientos: GANCHO RECHAZADO: nunca empezar con «Sabías que». Reescribe con una pregunta específica, una afirmación sorprendente o una contradicción concreta del tema. No uses fórmulas genéricas. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "tarea": "Encontró incumplimientos: No se generaron imágenes específicas para las escenas: Los pintores no generaron pixel art para las escenas: 3, 4. No se sustituirán por fotos.. No se permite sustituirlas por fondos genéricos ni publicar el video sin visuales. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Revisor de nombres": {
       "estado": "libre",
@@ -320,7 +320,7 @@
     }
   },
   "jefa": {
-    "mensaje": "Necesita revisión: el guion de \"Laki\" no pasó la verificación. Este proceso: 0 aprobados, 1 rechazados y 0 errores. Histórico acumulado: 16 aprobados, 114 rechazados y 169 errores. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. JEFA: Un guion rechazado no se publica. Tienen 12 h para entregar algo que pase.",
+    "mensaje": "Necesita revisión: el guion de \"Laki\" no pasó la verificación. Este proceso: 0 aprobados, 1 rechazados y 0 errores. Histórico acumulado: 16 aprobados, 115 rechazados y 169 errores. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas. JEFA: Un guion rechazado no se publica. Tienen 12 h para entregar algo que pase.",
     "horasParaProximoCiclo": 12
   }
 }
