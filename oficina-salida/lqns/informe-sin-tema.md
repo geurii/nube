@@ -28,35 +28,6 @@ Respaldo RSS leído: The Why Files; 15 videos recientes.
 Respaldo RSS leído: Mysterious Middle East; 15 videos recientes.
 Respaldo RSS leído: Beyond The Record; 15 videos recientes.
 Respaldo RSS leído: HiddenGuy Explainer; 13 videos recientes.
-Referencia descartada: The Vanishing of Flight 370 — subtítulos públicos insuficientes (0 caracteres).
-Referencia descartada: Cicada 3301: An Internet Mystery — subtítulos públicos insuficientes (0 caracteres).
-Referencia descartada: The Search For D. B. Cooper — subtítulos públicos insuficientes (0 caracteres).
-Referencia descartada: Premiers hommes, le début de l'humanité — subtítulos públicos insuficientes (0 caracteres).
-Referencia descartada: FOUND FOOTAGE fuels decades long MYSTERY (*WARNING GRAPHIC CONTENT*) — subtítulos públicos insuficientes (0 caracteres).
-Referencia descartada: This psycho inspired "Scream" (*MATURE AUDIENCES ONLY*) — subtítulos públicos insuficientes (0 caracteres).
-Referencia descartada: The most BELIEVABLE alien encounter | The Skinwalker Ranch story — subtítulos públicos insuficientes (0 caracteres).
-Referencia descartada: Staline, le tyran rouge — subtítulos públicos insuficientes (0 caracteres).
-Referencia descartada: Une espèce à part (intégrale) | ARTE — subtítulos públicos insuficientes (0 caracteres).
-Referencia descartada: Dictature, Paranoïa, Famine : bienvenue en Corée du Nord ! — subtítulos públicos insuficientes (0 caracteres).
-Referencia descartada: Eight Wonders Of Our Solar System | The Planets | BBC Earth Science — subtítulos públicos insuficientes (0 caracteres).
-Referencia descartada: The Strange Disappearance of D.B. Cooper — subtítulos públicos insuficientes (0 caracteres).
-Referencia descartada: What Happened to Malaysia Airlines Flight 370? — subtítulos públicos insuficientes (0 caracteres).
-Referencia descartada: Chris Watts - 2000 Page Discovery Murder, Mystery & Makeup | Bailey Sarian — subtítulos públicos insuficientes (0 caracteres).
-Referencia descartada: The Skyjacker That Got Away: D.B. Cooper (Full Episode) | Undercover History — subtítulos públicos insuficientes (0 caracteres).
-Referencia descartada: Who Sank The Titanic? - The Secrets Behind the History | Free Documentary History — subtítulos públicos insuficientes (0 caracteres).
-Referencia descartada: Anne Frank betrayal suspect identified after 77 years - BBC News — duración insuficiente/no verificable (165s).
-Referencia descartada: Hitler: From Homeless to Monster — subtítulos públicos insuficientes (0 caracteres).
-Referencia descartada: Mumbai: the Infernal Megalopolis — subtítulos públicos insuficientes (0 caracteres).
-Referencia descartada: LEMMiNO - Cipher (BGM) — duración insuficiente/no verificable (197s).
-Referencia descartada: 31 Minutes of Unexplainable Incidents — subtítulos públicos insuficientes (0 caracteres).
-Referencia descartada: Oussama Ben Laden : L'histoire secrète du milliardaire devenu terroriste — subtítulos públicos insuficientes (0 caracteres).
-Referencia descartada: Bachar El Assad, le pouvoir ou la mort — subtítulos públicos insuficientes (0 caracteres).
-Referencia descartada: Mossad, l'histoire secrète d'Israël — subtítulos públicos insuficientes (0 caracteres).
-Referencia descartada: 5 Most Disturbing Reddit Threads — subtítulos públicos insuficientes (0 caracteres).
-Referencia descartada: Japan's Strangest Unsolved Mystery — subtítulos públicos insuficientes (0 caracteres).
-Referencia descartada: What Archaeologists Discovered in Ancient Egypt | Lost Treasures of Egypt MEGA Episode | Nat Geo — subtítulos públicos insuficientes (0 caracteres).
-Referencia descartada: YouTube Channels Abandoned for Disturbing Reasons — subtítulos públicos insuficientes (0 caracteres).
-Referencia descartada: Descobertas do Egito que assustaram os cientistas — subtítulos públicos insuficientes (0 caracteres).
-Referencia descartada: The Last Sign: 3I/ATLAS and the Hopi Blue Star — subtítulos públicos insuficientes (0 caracteres).
+Fuente descartada por no acreditar canal consolidado: TV - Quantum Universe.
 ## ERROR
 No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el próximo ciclo.
