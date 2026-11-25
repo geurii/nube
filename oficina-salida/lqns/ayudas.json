@@ -1,43 +1,43 @@
 {
   "plan": [
-    "Crear y lanzar la serie de 3 videos sobre el megatsunami de Lituya Bay 1958, con títulos numéricos y misteriosos (Ej.: '3 secretos del megatsunami que nadie vio'): Equipo de investigación de misterios históricos: Generar al menos 15,000 vis",
-    "Desarrollar miniaturas A/B para los próximos 5 videos, usando colores contrastantes y texto legible que destaque el número y el gancho: Equipo de diseño gráfico y analítica: Aumentar el CTR en un 20% y alcanzar 10,000 vistas por video antes",
-    "Programar publicación de las series continuas con intervalos de 1‑2 días y promocionar en redes y colaboraciones de nicho: Equipo de producción y marketing: Incrementar la retención de suscriptores en un 15% y monetizar 5,000 USD antes del "
+    "Crear y lanzar la serie de 3 videos sobre el megatsunami de Lituya Bay 1958: Departamento de Investigación y Contenido: Alcanzar 15,000 vistas y 200 suscriptores nuevos antes del 13 de diciembre",
+    "Desarrollar miniaturas A/B con colores contrastantes y textos legibles para la serie sobre el Bloop: Equipo de Diseño Gráfico: Incrementar la tasa de clics en un 20% y generar 1,200 vistas adicionales antes del 13 de diciembre",
+    "Programar publicación de los tres episodios con intervalos de 1‑2 días y promocionar en redes sociales: Equipo de Marketing Digital: Lograr 10,000 vistas combinadas y 100 interacciones en redes antes del 13 de diciembre"
   ],
   "ganchos": [
-    "¿Sabías que [CIFRA] [TEMA] desapareció sin dejar rastro? | Imagen de un mapa antiguo con un punto rojo y una sombra difusa",
-    "[CIFRA] [TEMA] fueron descubiertos en una cueva subterránea, ¿qué escondían? | Imagen de una cueva iluminada con luces verdes y objetos misteriosos",
-    "El secreto de [CIFRA] [TEMA] está guardado en una caja sellada. ¿Qué contiene? | Imagen de una caja de madera con cerradura antigua y un candado brillante",
-    "[CIFRA] [TEMA] fueron encontrados en un sitio arqueológico. ¿Qué historia cuentan? | Imagen de ruinas antiguas con estelas de luz y símbolos extraños",
-    "¿Qué ocurrió cuando [CIFRA] [TEMA] se activó? Descubre el misterio. | Imagen de una máquina antigua con luces parpadeantes y un fondo oscuro"
+    "¿Sabías que [TEMA] ocurrió cuando [CIFRA] se volvió real? | Imagen de una puerta antigua abierta con luz misteriosa",
+    "¿Qué oculta realmente [TEMA] cuando [CIFRA] se revela? | Imagen de un mapa antiguo con un punto rojo resaltado",
+    "¿Te imaginas que [TEMA] se descubrió cuando [CIFRA] se convirtió en realidad? | Imagen de un viejo libro abierto con una ilustración de cartas hanafuda",
+    "¿Sabías que [TEMA] surgió cuando [CIFRA] se hizo posible? | Imagen de una sala de juego con cartas hanafuda dispersas",
+    "¿Qué se esconde detrás de [TEMA] cuando [CIFRA] se confirma? | Imagen de un reloj antiguo marcando la hora exacta"
   ],
   "mejorasGuion": [
-    "1. Añade un número concreto al título para cumplir la regla de formato: por ejemplo, '3 secretos que el Mar de Azov oculta tras su profundidad de 14 m' y coloca la parte 1/3 al inicio del guion para crear expectativa y f",
-    "2. Reestructura el ritmo introduciendo un gancho visual y auditivo al principio (un dato impactante o una pregunta retórica) y usando pausas cortas y preguntas al final de cada párrafo para mantener la atención y la curi",
-    "3. Cierra con una llamada a la acción más fuerte y específica: invita a los espectadores a comentar cuál de los tres secretos les parece más intrigante y a activar la campana de notificaciones para no perder la Parte 2/3"
+    "1. Gancho más impactante y numérico: sustituir el inicio por algo como \"¿Sabías que 1,300 km de líneas en el desierto esconden un secreto que solo 33 cm de ancho revela?\" para captar atención inmediata.",
+    "2. Ritmo visual: dividir el texto en bloques cortos y usar emojis o símbolos (📐🗺️) para resaltar datos clave, creando pausas que mantengan el interés y faciliten la lectura rápida.",
+    "3. Cierre con llamada a la acción intrigante: terminar con \"¿Qué crees que está oculto bajo esas líneas? Deja tu teoría en los comentarios y suscríbete para descubrir más misterios sin resolver.\" para fomentar interacció"
   ],
   "temas": [
     "The Bloop",
-    "Laki",
-    "Lake Nyos disaster",
-    "1958 Lituya Bay earthquake and megatsunami",
-    "Lake Peigneur"
+    "The Voynich Manuscript",
+    "The Green Children of Woolpit",
+    "The Mysterious Disappearance of the Roanoke Colony",
+    "The Lost City of Atlantis"
   ],
   "titulos": [
-    "X cosas que…",
-    "X millones de…",
-    "¿Qué oculta realmente el…?",
-    "⚡ X: El… con su…"
+    "Sabías que [sustantivo] [verbo] [objeto] [emoji]",
+    "¿Qué [verbo] realmente [sustantivo]?",
+    "⚡ [año]: El [profesión] que [verbo] [objeto]",
+    "🌊 [sustantivo]: ¡[número] km de misterio [preposición] [objeto]!"
   ],
-  "fecha": "2026-11-25T09:02:16.813Z",
+  "fecha": "2026-11-25T17:06:34.103Z",
   "iniciativas": [
-    "Valentina (Directora de contenido): Definir una línea editorial clara basada en los temas de mayor tendencia y crear un documento de estilo que guíe a todo el equipo desde el primer video.",
-    "Carolina (Coordinador de producción): Implementar un calendario de producción con alertas automáticas y buffers de 2 horas entre tareas críticas.",
-    "Fernanda (Jefa de calidad): Crear una checklist de control de calidad que incluya revisión de audio, subtítulos y metadatos antes de cualquier publicación.",
-    "Camila (Investigador de temas): Compilar una base de fuentes fiables sobre el Laki y el megatsunami de Lituya Bay, con notas resumidas y enlaces verificables.",
-    "Daniela (Cazador de fórmulas): Probar tres estructuras de guion (gancho‑teoría‑curiosidad, misterio‑dato‑conclusión, historia‑impacto‑call‑to‑action) en videos piloto de 30 segundos y medir la retención en pruebas internas.",
-    "Julieta (Vigía de tendencias): Suscribirme a alertas de Google Trends y a newsletters de canales emergentes para actualizar semanalmente una hoja de tendencias relevantes.",
-    "Lucía (Guionista): Escribir una versión de apertura de 15 segundos que incluya una pregunta provocadora y un dato impactante sobre el Laki.",
-    "Mariana (Editor de guion): Establecer una revisión cruzada: cada guion será leído por dos miembros del equipo antes de avanzar."
+    "Valentina (Directora de contenido): Definir una línea editorial clara y un documento de estilo que guíe a todo el equipo desde el inicio.",
+    "Carolina (Coordinador de producción): Crear un calendario de producción con buffers de tiempo y asignar responsables claros para cada entrega.",
+    "Fernanda (Jefa de calidad): Implementar una lista de verificación de calidad para cada pieza antes de su publicación.",
+    "Camila (Investigador de temas): Compilar fuentes preliminares y crear un dossier de referencias que sirva de base para futuros guiones.",
+    "Daniela (Cazador de fórmulas): Probar tres estructuras de guion diferentes en videos piloto y medir el engagement con pruebas internas.",
+    "Julieta (Vigía de tendencias): Configurar alertas diarias en herramientas de tendencias y compartir un resumen rápido al equipo.",
+    "Lucía (Guionista): Escribir un hook de 15 segundos para cada guion y someterlo a revisión grupal antes de desarrollar el resto.",
+    "Mariana (Editor de guion): Establecer una ronda de revisión cruzada donde dos editores revisen cada guion antes de aprobarlo."
   ]
 }

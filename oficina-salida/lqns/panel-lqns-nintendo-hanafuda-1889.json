@@ -1,0 +1,36 @@
+{
+  "fecha": "2026-11-25T17:06:33.731Z",
+  "id": "lqns-nintendo-hanafuda-1889",
+  "modo": "tecnico",
+  "aprobado": true,
+  "resumen": "Sin defectos graves detectados.",
+  "motivos": [],
+  "revision": {
+    "modelo": "Gemini (fotogramas de respaldo) + Groq whisper-large-v3",
+    "gancho_3s": {
+      "nota": 8.5,
+      "comentario": "Revisión visual técnica; no es una valoración del gancho."
+    },
+    "audio": {
+      "nota": 8,
+      "comentario": "Groq Whisper transcribió el audio en español. Duración: 75 segundos. Transcripción: La empresa de Mario nació vendiendo cartas. Y eso fue solo el comienzo. En 1889, en Kioto, Japón, Fusahiro Yamauchi fundó Nintendo para fabricar anafuda, barajas ilustradas con flores y símbolos de las estaciones. Una baraja tradicional tenía 48 cartas. No eran cartas de póker, sus dibujos representaban los 12 meses del año. Durante décadas, ese fue su negocio. En 1959, Nintendo incluso lanzó cartas con personajes de Disney. La empresa siguió cambiando mucho antes de entrar al entretenimiento electrónico. Y aquí viene el giro, Nintendo no saltó directamente de las cartas a Mario. En 1963 adoptó el nombre Nintendo Co., Ltd., y se expandió hacia juguetes y otros juegos. Sus primeras máquinas de videojuegos domésticas llegaron en 1977. Mario debutó en Donkey Kong en 1981. La compañía detrás de tus videojuegos favoritos empezó con una baraja japonesa. ¿Lo sabías?"
+    },
+    "subtitulos": {
+      "legibles": true,
+      "tapados_o_cortados": false,
+      "comentario": "Los subtítulos son claros, legibles y están bien situados en la pantalla."
+    },
+    "imagen": {
+      "nota": 8.5,
+      "defectos": []
+    },
+    "ritmo": {
+      "nota": 8,
+      "comentario": "No se utiliza el ritmo como motivo de rechazo técnico."
+    },
+    "defectos_graves": [],
+    "nota_general": 8.5,
+    "recomendacion": "subir",
+    "por_que": "No se detectaron fallas visuales graves y Groq pudo transcribir el audio."
+  }
+}

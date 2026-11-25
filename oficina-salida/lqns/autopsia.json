@@ -1,23 +1,14 @@
 {
-  "fecha": "2026-11-24T21:03:01.942Z",
-  "total": 1159,
-  "promedio": 77,
-  "queFunciono": "Los videos con más vistas son los de la serie 'Sabías que…' (Parte 3/3, Parte 2/3) y el de 'un banco pagó 175 millones…', todos publicados entre el 20 y 21 de noviembre y con títulos que incluyen un gancho numérico o de misterio (ej. '3 huevos de pingüino', '2 millones de pingüinos', '175 millones')",
+  "fecha": "2026-11-25T17:03:32.989Z",
+  "total": 1002,
+  "promedio": 67,
+  "queFunciono": "Los videos con más vistas comparten títulos que combinan curiosidad histórica o científica con un elemento sorprendente y un número de parte (Parte 3/3). Además, se publicaron en fechas recientes (20‑21 noviembre) y presentan un formato de storytelling que genera expectativa.",
   "porQueFallaron": [
-    "[object Object]",
-    "[object Object]",
-    "[object Object]",
-    "[object Object]",
-    "[object Object]"
+    "Poca retención media (21‑22 %) indica que el contenido no mantiene el interés; la falta de ganadores de suscriptores sugiere que el video no logra convertir la curiosidad en acción.",
+    "Los títulos de los videos con pocas vistas son muy largos, incluyen emojis y palabras clave poco comunes (ej. “Bloop”, “Chernóbil”), lo que puede dificultar la búsqueda y el descubrimiento.",
+    "La publicación de varios videos en la misma fecha (22 noviembre) puede haber saturado la audiencia, reduciendo la exposición individual.",
+    "El contenido de los videos con pocas vistas carece de una narrativa clara o de un gancho inicial, lo que se refleja en la baja retención y el bajo número de vistas."
   ],
-  "noSePuedeSaber": [
-    "Retención y tiempo de visualización de los videos que no aparecen en la lista de retención (todos los que tienen < 30 vistas).",
-    "Datos de miniaturas (CTR, diseño, colores) y de a quién se mostró cada video (segmentación demográfica, fuentes de tráfico).",
-    "Información sobre la frecuencia de publicación anterior al 20‑noviembre y si hubo cambios en el algoritmo o en la programación del canal."
-  ],
-  "reglas": [
-    "1. Mantener la estructura de título con un número concreto y un elemento de misterio o sorpresa (ej. 'X cosas que…', 'Y millones de…'), ya que los videos con mayor número de vistas siguen este patrón.",
-    "2. Publicar videos en series continuas (Parte 1/3, Parte 2/3, etc.) con intervalos de 1‑2 días para aprovechar el impulso de la audiencia y fomentar la suscripción.",
-    "3. Priorizar la creación de miniaturas con colores contrastantes y texto legible que destaque el número o el gancho del título; probar A/B con la audiencia para mejorar el CTR, ya que la falta de datos de miniatura impide evaluar su impacto."
-  ]
+  "noSePuedeSaber": [],
+  "reglas": []
 }

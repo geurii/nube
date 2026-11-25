@@ -1,5 +1,21 @@
 [
   {
+    "fecha": "2026-11-25T17:06:33.974Z",
+    "canal": "lqns",
+    "tipo": "reporte",
+    "titulo": "Revision aprobada: Nintendo nació vendiendo cartas: la historia antes de los videojuegos",
+    "texto": "Sin defectos graves detectados."
+  },
+  {
+    "id": "mwwdhghzjhwo",
+    "fecha": "2026-11-25T17:03:32.039Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "listo",
+    "titulo": "Video renderizado: Nintendo nació vendiendo cartas: la historia antes de los videojuegos",
+    "texto": "Se renderizó \"Nintendo nació vendiendo cartas: la historia antes de los videojuegos\" para Lo Que No Sabías (377 MB). Sigue en cola de publicación; este aviso NO significa que ya esté publicado."
+  },
+  {
     "id": "mwwcynhi4wql",
     "fecha": "2026-11-25T16:48:54.630Z",
     "canal": "lqns",
@@ -678,23 +694,5 @@
     "tipo": "reporte",
     "titulo": "Guion aprobado: The Taos Hum",
     "texto": "Video largo de \"The Taos Hum\" aprobado en el intento 4. 200 palabras, 9 escenas. Editor: Puntaje: 6/10. El gancho es débil y no genera curiosidad inmediata. La revelación llega tarde y no impacta lo suficiente. El ritmo es lento en la primera mitad. Panel: [Garantía de publicación activa] Aprobados: 12. Rechazados: 57. Con error: 14. Próximo ciclo en 12 h."
-  },
-  {
-    "id": "mwurn89566ky",
-    "fecha": "2026-11-24T14:04:23.562Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: The Taos Hum",
-    "texto": "El Verificador no aprobó \"The Taos Hum\" tras 4 intentos: La revelación cae al 79 % (192 de 244 palabras antes de ella) y debe caer entre 65 % y 75 %: añade historia antes de la revelación o acórtala. Aprobados: 11. Rechazados: 57. Con error: 14. No se publica. Próximo ciclo en 12 h."
-  },
-  {
-    "id": "mwurkmhwe3rr",
-    "fecha": "2026-11-24T14:02:22.052Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título que plantea una pregunta intrigante o una afirmación impactante + elemento de misterio o dato sorprendente + referencia a un caso/tema específico El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (26263 vistas/hora)."
   }
 ]
