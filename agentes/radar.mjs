@@ -75,10 +75,25 @@ export const buscarVideos = async (consulta, fecha = 4, corto = false) => {
   const r = await pedir(`https://www.youtube.com/results?search_query=${encodeURIComponent(consulta)}&sp=${filtroBusqueda(fecha, corto)}&hl=en&gl=US`, {headers: CABECERAS, timeoutMs: 25000});
   if (!r.ok) throw new Error('YouTube ' + r.status);
   const html = await r.text();
-  const m = /var ytInitialData = (\{[\s\S]*?\});<\/script>/.exec(html);
-  if (!m) throw new Error('YouTube no devolvió resultados (¿bloqueo o página de consentimiento?)');
+  // YouTube cambia el envoltorio HTML; extraer el JSON por balanceo de llaves.
+  const marcadores = ['var ytInitialData =', 'ytInitialData =', '"ytInitialData":', 'window["ytInitialData"] ='];
+  const marcador = marcadores.find((x) => html.includes(x));
+  const pos = marcador ? html.indexOf(marcador) : -1;
+  const inicio = pos >= 0 ? html.indexOf('{', pos + marcador.length) : -1;
+  let datos = null;
+  if (inicio >= 0) {
+    let nivel = 0, cadena = false, escape = false;
+    for (let i = inicio; i < html.length; i++) {
+      const ch = html[i];
+      if (cadena) { if (escape) escape = false; else if (ch === '\\') escape = true; else if (ch === '"') cadena = false; continue; }
+      if (ch === '"') cadena = true;
+      else if (ch === '{') nivel++;
+      else if (ch === '}' && --nivel === 0) { try { datos = JSON.parse(html.slice(inicio, i + 1)); } catch {} break; }
+    }
+  }
+  if (!datos) throw new Error('YouTube no devolvió ytInitialData legible (bloqueo, consentimiento o cambio de formato).');
   const salida = [];
-  recorrer(JSON.parse(m[1]), (o) => {
+  recorrer(datos, (o) => {
     const v = o.videoRenderer;
     if (!v?.videoId) return;
     const canalId = v.ownerText?.runs?.[0]?.navigationEndpoint?.browseEndpoint?.browseId;
