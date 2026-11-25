@@ -8,6 +8,10 @@ assert.equal(esReferenciaLarga({segundos: 720}), true, 'un video de 12:00 sí si
 assert.equal(esReferenciaLarga({segundos: 1800}), true, 'un documental de 30 minutos sí sirve como referencia');
 assert.equal(esReferenciaLarga({segundos: 3600}), true, 'una hora es el máximo de referencia permitido');
 assert.equal(esReferenciaLarga({segundos: 3601}), false, 'no se usan directos o documentales de más de una hora');
-assert.ok(CONSULTAS_LARGAS_POR_DEFECTO.some((q) => /Expressy/i.test(q)), 'debe buscar el canal Expressy solicitado');
-assert.ok(CONSULTAS_LARGAS_POR_DEFECTO.some((q) => /XpressTV/i.test(q)), 'debe buscar la variante XpressTV');
-console.log('REFERENCIAS LARGAS OK: excluye videos de 280 s, exige mínimo 8 minutos y busca documentales del nicho.');
+assert.ok(CONSULTAS_LARGAS_POR_DEFECTO.some((q) => /LEMMiNO/i.test(q)), 'debe incluir un referente documental consolidado');
+assert.ok(CONSULTAS_LARGAS_POR_DEFECTO.some((q) => /RealLifeLore/i.test(q)), 'debe incluir un referente de gran audiencia');
+assert.ok(CONSULTAS_LARGAS_POR_DEFECTO.some((q) => /ARTE/i.test(q)), 'debe buscar documentales de una fuente europea consolidada');
+assert.ok(CONSULTAS_LARGAS_POR_DEFECTO.some((q) => /歴史|未解決事件/.test(q)), 'debe buscar en japonés');
+assert.ok(CONSULTAS_LARGAS_POR_DEFECTO.some((q) => /documentaire/.test(q)), 'debe buscar en francés');
+assert.ok(CONSULTAS_LARGAS_POR_DEFECTO.some((q) => /Dokumentation/.test(q)), 'debe buscar en alemán');
+console.log('REFERENCIAS LARGAS OK: duración mínima, canales consolidados y búsquedas multilingües.');
