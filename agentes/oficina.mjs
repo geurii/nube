@@ -765,10 +765,7 @@ try {
   if (!TEMA) { TEMA = await elegirTema(modelo); informe[0] = `# Informe de la oficina · ${TEMA} (${FORMATO})`; informe.push('Tema elegido por la oficina.', ''); }
   if (!TEMA.trim()) throw new Error('La Oficina no puede investigar ni escribir sin un tema seleccionado.');
   if (process.env.TEMA && temaYaRegistrado(TEMA)) {
-    console.log(`Tema solicitado ya tratado anteriormente: "${TEMA}". Se sustituye por uno nuevo.`);
-    informe.push(`Tema repetido bloqueado: "${TEMA}". Se selecciona un tema nuevo del inventario.`);
-    TEMA = await elegirTema(modelo);
-    informe[0] = `# Informe de la oficina · ${TEMA} (${FORMATO})`;
+    throw new Error(`El tema explícito "${TEMA}" ya figura en el historial de este canal. No se sustituirá silenciosamente por otro tema.`);
   }
   slug = slugDe(TEMA);
   const fuentesEncontradas = await investigar();
