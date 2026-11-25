@@ -15,6 +15,6 @@ const comprobar = (tipo, texto, dimensiones) => {
 
 comprobar('tic_tac', 'El objeto blanco con forma de Tic Tac aparece en el video FLIR1', {w: 0.42, h: 0.12});
 comprobar('radar', 'La cámara infrarroja y la pantalla muestran el seguimiento del objeto', {w: 0.58, h: 0.42});
-comprobar('ovni', 'Los pilotos registraron un objeto aéreo no identificado', {r: 0.16});
+comprobar('ovni', 'Los pilotos registraron un ovni no identificado', {r: 0.16});
 comprobar('avion', 'Un avión F/A-18 de la Marina sigue el objeto', {w: 0.62});
 console.log('OK: cuatro anclas visuales OVNI validadas; sin personajes ni rostros.');
