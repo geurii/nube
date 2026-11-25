@@ -49,7 +49,7 @@ const ordenados = () => {
   const ahora = Date.now();
   const libres = PROVEEDORES.filter((p) => (bloqueadoHasta.get(p.nombre) ?? 0) <= ahora);
   const orden = [...libres.filter((p) => p.nombre === ultimoBueno), ...libres.filter((p) => p.nombre !== ultimoBueno)];
-  return orden.length ? orden : PROVEEDORES; // si todos descansan, se prueban igual
+  return orden; // si todos están en cooldown, NO se consulta ninguno: proteger las cuotas agotadas
 };
 const descansar = (nombre, r) => {
   const espera = Number(r.headers?.get?.('retry-after')) || 60;
@@ -57,14 +57,16 @@ const descansar = (nombre, r) => {
 };
 export const chatAlternativo = async (mensajes, {maxTokens = 2500, temperatura = 0.4, json = false} = {}) => {
   const limite = Date.now() + 180_000; // no permitir que el respaldo consuma toda la ventana de producción
-  for (const p of ordenados()) {
+  const disponibles = ordenados();
+  if (!disponibles.length) { nota('Todos los respaldos están en cooldown; no se gastan más solicitudes.'); return null; }
+  for (const p of disponibles) {
     if (Date.now() >= limite) { nota('Respaldo: se agotó la ventana de 3 minutos; se evita bloquear el ciclo.'); break; }
     const key = (process.env[p.clave] || '').trim();
     if ((!key && !p.sinLlave) || p.nombre === 'Cloudflare') continue; // los marcados sinLlave (Pollinations, OVHcloud) contestan sin ninguna llave: respaldo gratis automático
     const lista = await elegirModelos(p, key);
     if (!lista.length) { nota(`${p.nombre}: sin modelo`); continue; }
     let fallos = 0;
-    for (const modelo of lista) {
+    for (const modelo of lista.slice(0, 1)) { // una sola solicitud por proveedor y turno; evita quemar cuota probando varios modelos
       if (fallos >= 2) { descansar(p.nombre, {}); break; } // proveedor lento o caído: se pasa al siguiente sin perder minutos
       try {
         const r = await fetch(`${p.base}/chat/completions`, {
