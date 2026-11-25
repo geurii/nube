@@ -185,8 +185,8 @@ export const extraerTimedtextPublico = async (id) => {
     const r = await fetch(base, {headers:{'User-Agent':'Mozilla/5.0','Accept-Language':'*'},signal:AbortSignal.timeout(12000)});
     if (!r.ok) return null;
     const xml = await r.text();
-    const pistas = [...xml.matchAll(/<track\\b([^>]*)\\/?\s*>/gi)].map(m => {
-      const attrs = Object.fromEntries([...m[1].matchAll(/([\\w-]+)="([^"]*)"/g)].map(x=>[x[1],x[2]]));
+    const pistas = [...xml.matchAll(/<track\b([^>]*)\/?\s*>/gi)].map(m => {
+      const attrs = Object.fromEntries([...m[1].matchAll(/([\w-]+)="([^"]*)"/g)].map(x=>[x[1],x[2]]));
       return attrs;
     }).filter(x=>x.lang_code);
     pistas.sort((x,y)=>Number(x.kind==='asr')-Number(y.kind==='asr'));
@@ -200,7 +200,7 @@ export const extraerTimedtextPublico = async (id) => {
           const tr=await fetch(u,{headers:{'User-Agent':'Mozilla/5.0','Accept-Language':'*'},signal:AbortSignal.timeout(12000)});
           if(!tr.ok)continue;
           const cues=parsearTranscripcion(await tr.text());
-          const texto=cues.map(x=>'['+x.tiempo+'] '+x.texto).join('\\n').slice(0,18000);
+          const texto=cues.map(x=>'['+x.tiempo+'] '+x.texto).join('\n').slice(0,18000);
           if(cues.length>=5&&texto.length>=180)return {texto,idioma:p.lang_code,automatica:p.kind==='asr',fragmentos:cues.length,metodo:'timedtext-publico'};
         } catch {}
       }
