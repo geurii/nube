@@ -1,0 +1,102 @@
+{
+  "titulo": "¿Ovnis reales captados en cámara?",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-ovni-tic-tac-pentagono.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "orientacion": "vertical",
+  "duracionObjetivo": 60,
+  "creado": "2026-11-25T23:42:18.244Z",
+  "estilo": "gancho",
+  "ganchoTexto": "El Pentágono publicó tres videos auténticos de la Marina: muestran fenómenos aéreos que siguen sin identificación.",
+  "publicacion": {
+    "titulo": "¿Ovnis reales captados en cámara?",
+    "descripcion": "Tres grabaciones auténticas de la Marina estadounidense siguen generando preguntas. El Pentágono confirmó los videos, no que fueran naves extraterrestres. ¿Qué muestran realmente?\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\n#OvnisReales #Misterio #Pentagono #UFO #LoQueNoSabias"
+  },
+  "estado": "aprobado",
+  "editor": {
+    "puntaje": 9,
+    "critica": "Revisión editorial manual: se distingue la autenticidad de las grabaciones de la identificación de los objetos. Se elimina la afirmación falsa de velocidad imposible; el análisis AARO de GoFast de 2025 concluyó que no mostró rendimiento anómalo. Visuales dedicados a Tic Tac, sensores infrarrojos, Gimbal, GoFast y la publicación oficial. Faceless, sin personajes."
+  },
+  "retencionEstimada": 78,
+  "referencias": [
+    {
+      "organismo": "U.S. Department of Defense",
+      "documento": "Statement on the Release of Historical Navy Videos",
+      "fecha": "2020-04-27"
+    },
+    {
+      "organismo": "All-domain Anomaly Resolution Office",
+      "documento": "GoFast Case Resolution",
+      "fecha": "2025-02-06"
+    }
+  ],
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "El Pentágono publicó tres videos auténticos de la Marina: muestran fenómenos aéreos que siguen sin identificación.",
+      "fondo": [
+        "pintado:ovni-tic-tac-pentagono-0a",
+        "pintado:ovni-tic-tac-pentagono-0b",
+        "pintado:ovni-tic-tac-pentagono-0c",
+        "pintado:ovni-tic-tac-pentagono-0d"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El primero se grabó en 2004. Lo llaman Tic Tac por su forma blanca y alargada; lo captó un sensor infrarrojo desde un F/A-18.",
+      "fondo": [
+        "pintado:ovni-tic-tac-pentagono-1a",
+        "pintado:ovni-tic-tac-pentagono-1b",
+        "pintado:ovni-tic-tac-pentagono-1c",
+        "pintado:ovni-tic-tac-pentagono-1d"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En enero de 2015 aparecieron Gimbal y GoFast. En uno, el objeto parece girar; en el otro, parece correr sobre el océano.",
+      "fondo": [
+        "pintado:ovni-tic-tac-pentagono-2a",
+        "pintado:ovni-tic-tac-pentagono-2b",
+        "pintado:ovni-tic-tac-pentagono-2c",
+        "pintado:ovni-tic-tac-pentagono-2d"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Pero la imagen engaña: la perspectiva y el movimiento del avión pueden hacer que algo parezca rapidísimo.",
+      "fondo": [
+        "pintado:ovni-tic-tac-pentagono-3a",
+        "pintado:ovni-tic-tac-pentagono-3b",
+        "pintado:ovni-tic-tac-pentagono-3c",
+        "pintado:ovni-tic-tac-pentagono-3d"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "En 2025, el análisis oficial de GoFast concluyó que el objeto no mostró velocidad ni rendimiento anómalos. Eso cambia la historia.",
+      "fondo": [
+        "pintado:ovni-tic-tac-pentagono-4a",
+        "pintado:ovni-tic-tac-pentagono-4b",
+        "pintado:ovni-tic-tac-pentagono-4c",
+        "pintado:ovni-tic-tac-pentagono-4d"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "En 2020, Defensa confirmó que los tres archivos eran videos reales de la Marina, pero mantuvo los fenómenos como no identificados. No prueba que sean extraterrestres. Prueba que el material es auténtico. ¿Qué crees tú? Compártelo y sígueme.",
+      "fondo": [
+        "pintado:ovni-tic-tac-pentagono-5a",
+        "pintado:ovni-tic-tac-pentagono-5b",
+        "pintado:ovni-tic-tac-pentagono-5c",
+        "pintado:ovni-tic-tac-pentagono-5d"
+      ]
+    }
+  ]
+}
