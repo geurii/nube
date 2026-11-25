@@ -7,7 +7,6 @@ const PROVEEDORES = [
   {nombre: 'Cerebras', base: 'https://api.cerebras.ai/v1', clave: 'CEREBRAS_API_KEY', prefiere: [/gpt-oss/i, /llama.*70b/i, /qwen.*(235|32)b/i, /llama/i]},
   {nombre: 'Gemini', base: 'https://generativelanguage.googleapis.com/v1beta/openai', clave: 'GEMINI_API_KEY', prefiere: [/gemini-.*flash(?!.*(lite|tts|image|live|preview-tts))/i, /gemini-.*flash/i], descarta: /tts|image|embed|live|audio/i},
   {nombre: 'OpenRouter', base: 'https://openrouter.ai/api/v1', clave: 'OPENROUTER_API_KEY', prefiere: [/(llama-3\.3-70b|gpt-oss-120b|qwen3.*235b|deepseek).*:free$/i, /:free$/i], soloGratis: true},
-  {nombre: 'GitHub Models', base: 'https://models.github.ai/inference', catalogo: 'https://models.github.ai/catalog/models', clave: 'GITHUB_TOKEN', cabeceras: {'X-GitHub-Api-Version': '2022-11-28', Accept: 'application/vnd.github+json'}, prefiere: [/gpt-4\.1$/i, /gpt-4o$/i, /llama.*70b/i, /gpt-4\.1-mini/i, /mini/i], descarta: /embed|nano|vision|o1|o3|o4/i},
   {nombre: 'Mistral', base: 'https://api.mistral.ai/v1', clave: 'MISTRAL_API_KEY', prefiere: [/mistral-large/i, /mistral-medium/i, /mistral-small/i], descarta: /embed|ocr|moderation|codestral-embed/i},
   // MÁS PROVEEDORES GRATIS (verificados con la red el 22 nov 2026: la lista de modelos responde; los marcados sinLlave también contestan un chat sin ninguna llave)
   {nombre: 'Groq', base: 'https://api.groq.com/openai/v1', clave: 'GROQ_API_KEY', prefiere: [/gpt-oss-120b/i, /llama-3.3-70b/i, /gpt-oss/i, /llama/i], descarta: /whisper|tts|guard|orpheus|playai|prompt/i},
@@ -83,8 +82,8 @@ const ordenados = () => {
 const descansar = (nombre, r, minimo = 900) => {
   const cabecera = r?.headers?.get?.('retry-after') ?? r?.headers?.get?.('x-ratelimit-reset-requests') ?? '';
   const segundos = Number.parseFloat(String(cabecera).replace(/s$/i, ''));
-  const espera = Number.isFinite(segundos) && segundos > 0 ? segundos : minimo;
-  bloquearProveedor(nombre, Math.max(espera, minimo));
+  const espera = Number.isFinite(segundos) && segundos > 0 ? segundos + 5 : minimo;
+  bloquearProveedor(nombre, Math.max(60, espera));
 };
 export const chatAlternativo = async (mensajes, {maxTokens = 2500, temperatura = 0.4, json = false} = {}) => {
   const limite = Date.now() + 180_000; // no permitir que el respaldo consuma toda la ventana de producción
