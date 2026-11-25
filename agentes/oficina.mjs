@@ -215,7 +215,7 @@ const tokensDeSalida = (n) => Math.min(Number(n) || (FORMATO === 'largo' ? 6000 
 const groqDirecto = async (modelo, mensajes, maxTokens = FORMATO === 'largo' ? 6000 : 2500, json = false) => {
   mensajes = mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + (ORDEN_JULES ? ` ORDEN VIGENTE DE JULES (nivel ${ORDEN_JULES.nivel}/5, la dio el dueño): ${ORDEN_JULES.orden}` : '') + '\n\n' + m.content} : m));
   let ultimo = 'sin respuesta';
-  const maxIntentos = proveedoresConLlave().length ? 4 : 8; // con respaldo disponible no se pierde tiempo esperando a Groq
+  const maxIntentos = proveedoresConLlave().length ? 1 : 2; // un solo intento a Groq si hay respaldos: no quemar cuota repitiendo 429
   for (let intento = 1; intento <= maxIntentos; intento++) {
     try {
       // si el modelo principal agotó su cuota (429), se pasa a otros modelos de Groq, que tienen cuotas separadas
@@ -266,17 +266,9 @@ const groqDirecto = async (modelo, mensajes, maxTokens = FORMATO === 'largo' ? 6
   throw new Error(`Groq no respondió tras ${maxIntentos} intentos (${ultimo}).`);
 };
 /** Groq primero; si se agota, pasa a Gemini, Cerebras, OpenRouter o Mistral (los que tengan llave). */
-let esperaTotal = 0; // segundos esperando a que se libere la cuota (tope por ciclo)
-const groq = async (modelo, mensajes, maxTokens, json = false) => {
-  for (let ronda = 1; ; ronda++) {
-    try { return await groqUnaRonda(modelo, mensajes, maxTokens, json); }
-    catch (e) {
-      if (e.fatal || e.groq413 || ronda >= 3 || esperaTotal >= 480 || !/429|Respaldos/.test(String(e.message))) throw e;
-      console.log(`Todos los proveedores en límite: espero 70 s a que se libere la cuota (ronda ${ronda}/3).`);
-      esperaTotal += 70; await dormir(70_000);
-    }
-  }
-};
+// No repetir llamadas cuando los proveedores ya agotaron cuota. El siguiente ciclo
+// programado podrá volver a intentarlo; este ciclo conserva sus recursos y falla claro.
+const groq = async (modelo, mensajes, maxTokens, json = false) => groqUnaRonda(modelo, mensajes, maxTokens, json);
 const groqUnaRonda = async (modelo, mensajes, maxTokens, json = false) => {
   if (!KEY && proveedoresConLlave().length) {
     const alternativo = await chatAlternativo(mensajes.map((m, i) => (i === 0 && m.role === 'system' ? {...m, content: CULTURA + (WEB_BLOQUE ? ' ' + WEB_BLOQUE : '') + ' ' + m.content} : m)), {maxTokens: tokensDeSalida(maxTokens), json});
