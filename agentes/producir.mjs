@@ -88,13 +88,13 @@ if (oficinaRunId) {
   if (!encargo) {
     console.log('No hay un guion aprobado por la ejecución de Oficina ' + oficinaRunId + '; no se rescata ningún guion anterior.');
     salida('id', ''); salida('canal', '');
-    process.exit(0);
+    process.exit(1);
   }
   pendientes = pendientes.filter((x) => x.canal === encargo.canal && x.slug === encargo.slug && x.g.formato === encargo.formato);
   if (!pendientes.length) {
     console.log('El guion del manifiesto ya no está aprobado o no supera las validaciones; no se produce.');
     salida('id', ''); salida('canal', '');
-    process.exit(0);
+    process.exit(1);
   }
 }
 
