@@ -23,7 +23,7 @@ export const ESCENARIOS = {
 export const TIPOS = new Set([
   'estrellas', 'astro', 'resplandor', 'montanas', 'suelo', 'agua', 'niebla', 'arbol', 'edificio', 'central', 'pergamino',
   'nubes', 'olas', 'particulas', 'rayos', 'barco', 'pez', 'roca', 'hielo', 'duna', 'algas', 'sargazo', 'faro', 'silueta', 'ovni', 'explosion', 'ciudad', 'bosque', 'calendario', 'reloj', 'castillo', 'corona', 'libro', 'moneda', 'iglesia', 'caballo', 'terremoto',
-  'cartas', 'hidrofono', 'sonar', 'microfono', 'volcan', 'fuego', 'lago', 'avion', 'tren', 'submarino', 'barril', 'cerveza', 'cerveceria', 'tsunami', 'deslizamiento',
+  'cartas', 'hidrofono', 'sonar', 'microfono', 'radar', 'tic_tac', 'volcan', 'fuego', 'lago', 'avion', 'tren', 'submarino', 'barril', 'cerveza', 'cerveceria', 'tsunami', 'deslizamiento',
 ]);
 
 /** Una "caja vacía": barra o rectángulo ancho y bajo sin forma de objeto (parece un cuadro de texto sin texto). Gemini la marca como falla grave. */
@@ -57,6 +57,8 @@ export const sujetosDelTexto = (texto = '') => {
     [/\b(lisboa|ciudad|edificio|casa|pueblo|vivienda|calle|barrio|capital|casco historico|centro historico)\b/, ['ciudad','edificio']],
     [/\b(fabrica|central|reactor|nuclear|chimenea|energia|planta industrial)\b/, ['central']],
     [/\b(desierto|duna|arena)\b/, ['duna']],
+    [/\b(tic[\s-]?tac|capsula blanca|objeto blanco ovalado)\b/, ['tic_tac']],
+    [/\b(radar|pantalla|infrarrojo|infrarrojos|sensor|sensores|camara|camaras|grabacion|grabaciones|video|videos|gimbal|gofast|flir|pentagono)\b/, ['radar']],
     [/\b(ovni|extraterrestre|nave espacial|espacio|planeta|luna|asteroide)\b/, ['ovni','astro']],
     [/\b(nino|nina|ninos|ninas|persona|hombre|mujer|habitante|poblacion|multitud)\b/, ['silueta']],
     [/\b(libro|manuscrito|documento|texto|pergamino|escrito|archivo|mapa|carta)\b/, ['libro','pergamino']],
