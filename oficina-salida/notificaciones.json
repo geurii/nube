@@ -1,5 +1,14 @@
 [
   {
+    "id": "mwwrxvbcr9eq",
+    "fecha": "2026-11-25T23:48:12.360Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Falló la producción",
+    "texto": "No se pudo producir \"¿Ovnis reales captados en cámara?\". Revisa la corrida \"Produccion\" en GitHub (Actions)."
+  },
+  {
     "id": "mwwnd8pwdh9p",
     "fecha": "2026-11-25T21:40:11.493Z",
     "canal": "lqns",
@@ -688,14 +697,5 @@
     "tipo": "alerta",
     "titulo": "Guion rechazado: Sabías que el lago de Karachay‑Khan es el más tóxico del planeta?",
     "texto": "El Verificador no aprobó \"Sabías que el lago de Karachay‑Khan es el más tóxico del planeta?\" tras 4 intentos: La revelación cae al 61.4 % (54 de 88 palabras antes de ella) y debe caer entre 65 % y 75 %; apunta a 70 %–72 % contando todas las escenas, incluida la revelaci Aprobados: 12. Rechazados: 59. Con error: 14. No se publica. Próximo ciclo en 11 h."
-  },
-  {
-    "id": "mwutxxlowcu1",
-    "fecha": "2026-11-24T15:08:42.204Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: ¿Qué oculta la extraña luz verde del Monte St. Helens tras su erupción?",
-    "texto": "El Verificador no aprobó \"¿Qué oculta la extraña luz verde del Monte St. Helens tras su erupción?\" tras 4 intentos: El gancho inicial debe tener 14 palabras o menos para formato short. Aprobados: 12. Rechazados: 58. Con error: 14. No se publica. Próximo ciclo en 11 h."
   }
 ]

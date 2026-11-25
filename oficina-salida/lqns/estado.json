@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-25T22:13:31.213Z",
+  "actualizado": "2026-11-25T23:48:12.236Z",
   "totales": {
     "aprobados": 16,
     "rechazados": 115,
@@ -194,14 +194,14 @@
       "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 19 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Locutor": {
-      "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Guionista). Entregó: 5 ganchos nuevos ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "estado": "esperando_decision",
+      "actividad": "hablando",
+      "tarea": "No pudo grabar o renderizar \"¿Ovnis reales captados en cámara?\". Revisa la corrida \"Produccion\" en GitHub. JEFA: sin video no hay canal."
     },
     "Técnico de render": {
-      "estado": "trabajando",
-      "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Editor de guion). Entregó: 3 mejoras al último guion ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "estado": "esperando_decision",
+      "actividad": "pensando",
+      "tarea": "Falló el render de \"¿Ovnis reales captados en cámara?\". JEFA: quiero la causa y el arreglo."
     },
     "Publicador": {
       "estado": "libre",
