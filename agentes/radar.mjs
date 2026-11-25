@@ -183,7 +183,7 @@ export const buscarReferenciasLargas = async ({
       nota(`Búsqueda larga completada: ${q}`);
     } catch (e) {
       nota(`Búsqueda larga falló (${q}): ${String(e.message ?? e).slice(0, 100)}`);
-      if (/429/.test(String(e.message))) await dormir(12000);
+      if (/429/.test(String(e.message))) { nota('YouTube mantiene el límite 429; se detiene esta tanda para no agravar el bloqueo y se reintentará en el siguiente ciclo.'); break; }
     }
     await dormir(1800);
   }
@@ -307,8 +307,9 @@ const principal = async () => {
   const referenciasLargas = await buscarReferenciasLargas({nicho: config?.nicho ?? '', canales: config?.vigilar ?? [], maxResultados: 10, limiteMs: esLargo ? 260000 : 105000, nota: (t) => { notas.push(t); console.log(t); }});
   radar.referenciasLargas = referenciasLargas.map(({id, url, titulo, canal, vistas, segundos, caracteresTranscripcion, idiomaTranscripcion}) => ({id, url, titulo, canal, vistas, segundos, caracteresTranscripcion, idiomaTranscripcion}));
   if (!radar.canales.length && !radar.referenciasLargas.length) {
-    console.log('Radar sin referencias largas con subtítulos suficientes; se conserva el anterior.', notas.join(' '));
-    return;
+    radar.busquedaSinResultados = true;
+    radar.notasBusqueda = notas.slice(-20);
+    console.log('Radar sin referencias largas con subtítulos suficientes; se guarda el intento y se reintentará en el siguiente ciclo.', notas.join(' '));
   }
   fs.writeFileSync(ruta, JSON.stringify(radar, null, 2));
   console.log(`Radar listo: ${radar.canales.length} canales chicos que explotaron (de ${radar.canalesRevisados} canales revisados, ${radar.explotaron} con un video que explotó).`);
