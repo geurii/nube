@@ -1,9 +1,15 @@
 {
-  "fecha": "2026-11-25T21:49:43.123Z",
+  "fecha": "2026-11-25T21:56:48.227Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 459,
-  "ganadasDesdeElUltimoCiclo": 6,
+  "total": 337,
+  "ganadasDesdeElUltimoCiclo": 0,
   "videos": [
+    {
+      "id": "ERL-GCARL8I",
+      "titulo": "¿Por qué un lápiz roto tiene 68 millones de vistas?",
+      "publicado": "2026-11-25T21:38:46+00:00",
+      "vistas": 36
+    },
     {
       "id": "VXbbW_o1PWo",
       "titulo": "Nintendo nació vendiendo cartas: la historia antes de los videojuegos",
@@ -87,19 +93,9 @@
       "titulo": "Los \"jóvenes genios\" que terminaron acusados de fraude: ¿estafadores o genios?",
       "publicado": "2026-11-21T02:03:25+00:00",
       "vistas": 3
-    },
-    {
-      "id": "Md9Rrt9EiTM",
-      "titulo": "Sabías que un banco pagó 175 millones por clientes que no existían 👻🏦",
-      "publicado": "2026-11-21T01:48:24+00:00",
-      "vistas": 158
     }
   ],
   "historia": [
-    {
-      "fecha": "2026-11-24T14:02:19.412Z",
-      "total": 2244
-    },
     {
       "fecha": "2026-11-24T14:27:39.462Z",
       "total": 2244
@@ -335,6 +331,10 @@
     {
       "fecha": "2026-11-25T21:49:43.123Z",
       "total": 459
+    },
+    {
+      "fecha": "2026-11-25T21:56:48.227Z",
+      "total": 337
     }
   ]
 }

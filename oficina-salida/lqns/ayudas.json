@@ -1,35 +1,33 @@
 {
   "plan": [
-    "1️⃣ Crear y lanzar una serie de 3 videos sobre el megatsunami de Lituya Bay 1958, con títulos misteriosos y miniaturas A/B contrastantes; responsable: Producción; meta: alcanzar 200 vistas y 20 suscriptores nuevos antes del 13 de diciembre.",
-    "2️⃣ Desarrollar una pieza documental sobre el fenómeno del Laki en Islandia, incluyendo mapas antiguos y análisis de impacto climático; responsable: Investigación; meta: generar 150 vistas y 10 interacciones en comentarios antes del 13 de d",
-    "3️⃣ Publicar un episodio sobre la historia secreta de Nintendo, destacando su origen con cartas y la evolución a videojuegos; responsable: Contenido; meta: lograr 80 vistas y 5 compartidos antes del 13 de diciembre."
+    "Crear y lanzar la serie de 3 videos sobre el megatsunami de Lituya Bay 1958, con títulos atractivos y miniaturas A/B de colores contrastantes: Equipo de Producción y Diseño: Monetizar al menos 5,000 vistas y generar 500 USD en ingresos publ",
+    "Desarrollar y publicar un episodio sobre el terremoto de Lisboa 1755 y su tsunami, usando datos históricos verificados y una narrativa de misterio sin nombres reales: Equipo de Investigación y Guionismo: Alcanzar 7,000 vistas y lograr 300 U",
+    "Planificar y ejecutar la campaña promocional de los tres episodios, con intervalos de 1‑2 días y difusión en redes y colaboraciones estratégicas: Equipo de Marketing y Social Media: Incrementar la audiencia total en un 20% y asegurar 1,000 "
   ],
   "ganchos": [
-    "¿Te imaginas que [TEMA] se reveló cuando [CIFRA] se volvió real? | Imagen de una puerta antigua abierta a la luz",
-    "Sabías que [TEMA] pagó [CIFRA] por algo que nadie esperaba? | Imagen de una caja misteriosa con cerradura",
-    "¿Qué [TEMA] realmente esconde cuando [CIFRA] aparece en el cielo? | Imagen de un cielo nocturno con destellos inusuales",
-    "¿Puedes creer que [TEMA] se descubrió tras [CIFRA] de datos extraños? | Imagen de un mapa antiguo con puntos resaltados",
-    "¿Qué [TEMA] se activó cuando [CIFRA] se convirtió en leyenda? | Imagen de un cráter volcánico iluminado por fuego"
+    "¿Sabías que [TEMA] se reveló cuando [CIFRA] se volvió real? | Imagen de un mapa antiguo con un punto resaltado",
+    "[TEMA] nunca fue lo que parece: la cifra [CIFRA] lo cambió todo | Imagen de una puerta antigua entre sombras",
+    "¿Te imaginas que [TEMA] se descubrió tras la cifra [CIFRA]? | Imagen de un viejo manuscrito con anotaciones brillantes",
+    "[TEMA] y la cifra [CIFRA] que nadie pudo prever | Imagen de un reloj de arena con números flotantes",
+    "¿Qué [TEMA] realmente se esconde tras la cifra [CIFRA]? | Imagen de una puerta de madera entre niebla"
   ],
   "mejorasGuion": [
-    "1. Gancho más impactante: reemplaza “Sabías que en el desierto de Texas aparecen luces…” por “¿Alguna vez has visto luces que parpadean sin explicación en el desierto de Texas? 🌌” para captar curiosidad desde el primer ",
-    "2. Ritmo y tensión: introduce un breve relato de un testigo contemporáneo antes de revelar la explicación, por ejemplo: “En 1983, un vaquero llamado Miguel, mientras cruzaba el Paso de Paisano, vio una llama que se movía",
-    "3. Cierre con llamado a la acción más directo y emotivo: sustituye “¿Te sorprende? Comparte este video con un amigo que haría lo mismo, sígueme.” por “¿Te quedas con la duda de si son fantasmas o simples faros? Deja tu c"
+    "1. Gancho más impactante y directo: sustituir la frase inicial por algo como \"¿Sabías que cinco estudiantes desaparecieron en Rusia buscando el misterio de Dyatlov?\", eliminando la palabra “Sabías” para evitar redundanci"
   ],
   "temas": [
-    "Laki",
+    "The Bloop",
     "Lake Peigneur",
     "The moving rocks of Death Valley",
     "Lake Nyos disaster",
-    "1958 Lituya Bay earthquake and megatsunami"
+    "The 1958 Lituya Bay earthquake and megatsunami"
   ],
   "titulos": [
-    "Sabías que <sustantivo> <verbo> <objeto> <emoji>",
-    "<Nombre> nació vendiendo <objeto> <emoji>",
-    "¿Qué oculta realmente <sustantivo> <emoji>?",
-    "⚡ <año>: El <profesión> que <verbo> <objeto> <emoji>"
+    "X nació vendiendo Y: la historia antes de Z",
+    "¿Qué oculta realmente el X?",
+    "⚡ YYYY: El inventor que ... con su ...",
+    "¿Por qué un X tiene Y vistas?"
   ],
-  "fecha": "2026-11-25T21:37:30.591Z",
+  "fecha": "2026-11-25T21:56:48.475Z",
   "iniciativas": [
     "Valentina (Directora de contenido): Definir una línea editorial clara y un documento de estilo que guíe a todo el equipo desde el inicio.",
     "Carolina (Coordinador de producción): Crear un calendario de producción con buffers de tiempo y asignar responsables claros para cada entrega.",
