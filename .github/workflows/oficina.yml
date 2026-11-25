@@ -136,6 +136,7 @@ jobs:
           node --check agentes/producir.mjs
           node --check agentes/pintor.mjs
           node --check agentes/probar-oficina.mjs
+          node --check agentes/probar-proveedores.mjs
           node --check agentes/encadenar.mjs
           node --check agentes/radar.mjs
           node agentes/probar-referencias-largas.mjs
