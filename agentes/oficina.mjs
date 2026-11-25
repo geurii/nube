@@ -208,7 +208,7 @@ const investigar = async () => {
 /** Cultura de la empresa: va delante de las instrucciones de todos los agentes. Ambición sin bajar el rigor: perfeccionistas. */
 const CULTURA = 'EMPRESA: ' + (CONFIG.nombre ?? 'el canal') + '. RETENCIÓN (regla del dueño): un guion con retención estimada menor a 70 % NO pasa y no se renderiza; escribe para sostener el interés hasta el final (un giro o dato nuevo cada 8-10 segundos, nada de relleno ni repeticiones). FORMATO FACELESS (decisión del dueño): videos SIN personaje, SIN caras ni rostros de nadie en pantalla y sin mascota con lupa; solo voz en off y visuales en movimiento que muestran lo que se dice. META: monetizar el canal antes del 13 de diciembre de 2026 (YouTube pide 1.000 suscriptores y 4.000 horas de reproducción, o 10 millones de vistas en Shorts en 90 días) y llevarlo arriba. Eres un/a profesional con cinco maestrías en tu área, perfeccionista y obsesionado/a con hacer videos virales. Tu paga individual son 10.000 vistas ganadas para el canal (Jules, la jefa, cobra 20.000): si el canal no las consigue no cobras, y tienes una familia que alimentar, así que trabajas duro y sin descanso. Jules te presiona a diario. Ambición NO es inventar: jamás sacrificas la verdad ni las normas por vistas.';
 const ORDEN_JULES = leerJson(path.join(SALIDA, 'ordenes.json'), [])[0];
-const ALTERNOS = process.env.GROQ_API_KEY && !proveedorEnCooldown('Groq') ? (await modelosDisponibles(process.env.GROQ_API_KEY)).filter((m) => m !== 'openai/gpt-oss-120b') : []; // modelos de Groq con cuota separada que SÍ existen en la cuenta
+const ALTERNOS = []; // no se consultan catálogos alternos de Groq: cada petición de texto usa un único intento
 let groqBloqueadoHasta = 0; // mientras Groq esté en 429, se usan primero los demás proveedores
 let WEB_BLOQUE = [leerPreferencias(CANAL_ID), textoDeLecciones(CANAL_ID)].filter(Boolean).join(' ').slice(0, 1800); // arranca con lo que el dueño aprobó y rechazó; después se le suma lo que dice internet // lo que dice internet HOY sobre el tema: se les da a TODOS los agentes (se llena después de investigar)
 const tokensDeSalida = (n) => Math.min(Number(n) || (FORMATO === 'largo' ? 6000 : 2500), FORMATO === 'largo' ? 6500 : 3500);
@@ -325,19 +325,29 @@ const pedirJson = async (modelo, mensajes, maxTokens) => {
 };
 const elegirModelo = async () => {
   if (!KEY && proveedoresConLlave().length) return 'openai/gpt-oss-120b';
-  for (let i = 1; i <= 4; i++) {
-    try {
-      const r = await fetch('https://api.groq.com/openai/v1/models', {headers: {Authorization: `Bearer ${KEY}`}, signal: AbortSignal.timeout(30000)});
-      if (r.status === 401) { if (proveedoresConLlave().length) { console.warn('Groq 401: se continúa con los proveedores alternativos.'); return 'openai/gpt-oss-120b'; } throw Object.assign(new Error('La clave de Groq no es válida (401). Crea otra y guárdala como GROQ_API_KEY.'), {fatal: true}); }
-      if (!r.ok) { await dormir(2000 * i); continue; }
-      const ids = (await r.json()).data.map((m) => m.id);
-      const preferidos = ['openai/gpt-oss-120b', 'llama-3.3-70b-versatile', 'openai/gpt-oss-20b', 'llama-3.1-8b-instant'];
-      const modelo = preferidos.find((p) => ids.includes(p)) ?? ids.find((x) => !/whisper|guard|tts|orpheus|playai/i.test(x));
-      if (!modelo) throw Object.assign(new Error('No hay un modelo de texto disponible en Groq: ' + ids.join(', ')), {fatal: true});
-      return modelo;
-    } catch (e) { if (e.fatal) throw e; await dormir(2000 * i); }
+  if (proveedorEnCooldown('Groq')) return 'openai/gpt-oss-120b';
+  try {
+    const r = await fetch('https://api.groq.com/openai/v1/models', {headers: {Authorization: `Bearer ${KEY}`}, signal: AbortSignal.timeout(12000)});
+    if (r.status === 429) {
+      bloquearProveedor('Groq', 900);
+      if (proveedoresConLlave().length) return 'openai/gpt-oss-120b';
+      throw Object.assign(new Error('Groq agotó la cuota al consultar modelos.'), {cuotaAgotada: true});
+    }
+    if (r.status === 401) { if (proveedoresConLlave().length) { console.warn('Groq 401: se continúa con proveedores alternativos.'); return 'openai/gpt-oss-120b'; } throw Object.assign(new Error('La clave de Groq no es válida (401). Crea otra y guárdala como GROQ_API_KEY.'), {fatal: true}); }
+    if (!r.ok) {
+      if (proveedoresConLlave().length) return 'openai/gpt-oss-120b';
+      throw new Error(`Groq no pudo listar modelos (HTTP ${r.status}).`);
+    }
+    const ids = (await r.json()).data.map((m) => m.id);
+    const preferidos = ['openai/gpt-oss-120b', 'llama-3.3-70b-versatile', 'openai/gpt-oss-20b', 'llama-3.1-8b-instant'];
+    const modelo = preferidos.find((p) => ids.includes(p)) ?? ids.find((x) => !/whisper|guard|tts|orpheus|playai/i.test(x));
+    if (!modelo) throw Object.assign(new Error('No hay un modelo de texto disponible en Groq: ' + ids.join(', ')), {fatal: true});
+    return modelo;
+  } catch (e) {
+    if (e.fatal || e.cuotaAgotada) throw e;
+    if (proveedoresConLlave().length) return 'openai/gpt-oss-120b';
+    throw e;
   }
-  throw new Error('No pude conectar con Groq para listar los modelos.');
 };
 
 /* ====================== Dirección: elige el tema sola ====================== */
