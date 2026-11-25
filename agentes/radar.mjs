@@ -125,10 +125,10 @@ export const feedDeCanal = async (canalId) => {
     return {
       id: /<yt:videoId>([^<]+)</.exec(e)?.[1],
       titulo: (/<title>([^<]*)</.exec(e)?.[1] ?? '').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'"),
-      vistas: Number(/<media:statistics views="(\d+)"/.exec(e)?.[1] ?? NaN),
+      vistas: Number(/<media:statistics views="(\d+)"/.exec(e)?.[1] ?? 0),
       dias: publicado ? (Date.now() - Date.parse(publicado)) / 86400000 : null,
     };
-  }).filter((v) => v.id && Number.isFinite(v.vistas));
+  }).filter((v) => v.id);
 };
 
 
