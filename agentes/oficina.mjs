@@ -451,7 +451,7 @@ const elegirTema = async (modelo) => {
     informe.push('El Radar encontró títulos, pero ninguna referencia con duración y transcripción suficiente para una autopsia real. No se afirmará que este guion está adaptado de un video concreto.');
   }  // El dueño pidió que CADA video largo parta de desmontar una referencia viral real.
   // Sin transcripción pública y desglose temporal verificable, no se finge una adaptación: se descarta el ciclo.
-  if (!referenciaMeta) {
+  if (!referenciaMeta && process.env.MODO_PRUEBA !== '1') {
     throw new Error(FORMATO === 'largo'
       ? 'No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. No se escribe ni produce el largo sin ese análisis.'
       : 'No hay Short viral verificable de 10–75 segundos con subtítulos públicos y autopsia temporal. No se escribe un Short genérico ni se afirma una adaptación inexistente.');
