@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-24T23:44:10.492Z",
+  "fecha": "2026-11-25T00:27:37.806Z",
   "criterio": "canales creados hace 90 días o menos; videos publicados hace 90 días o menos; rendimiento mínimo 5x la mediana del canal",
   "consultas": [
     "unsolved mystery explained",
@@ -16,13 +16,13 @@
     "기묘한 역사 미스터리 실화",
     "غموض تاريخي قصة حقيقية غريبة"
   ],
-  "canalesRevisados": 85,
+  "canalesRevisados": 74,
   "explotaron": 32,
   "canales": [
     {
       "id": "UCGcVuScYBs4oP0MTU6oLWSQ",
       "nombre": "Ballen Of File",
-      "suscriptores": 1470,
+      "suscriptores": 1480,
       "videosDelCanal": 20,
       "fechaAlta": "2026-11-11T00:00:00.000Z",
       "diasCanal": 14,
@@ -30,16 +30,16 @@
       "mejor": {
         "id": "GUnx_FTNgRw",
         "titulo": "Cops CAN’T Explain His 911 Call… The Mystery Gets DARKER!",
-        "vistas": 155235,
+        "vistas": 155568,
         "hace": 8,
         "url": "https://youtube.com/watch?v=GUnx_FTNgRw"
       },
-      "puntaje": 20.06
+      "puntaje": 19.95
     },
     {
       "id": "UCn87yhmEcgnI4PGIvhM4DFg",
       "nombre": "Chill Dude Plus",
-      "suscriptores": 770,
+      "suscriptores": 771,
       "videosDelCanal": 51,
       "fechaAlta": "2026-10-02T00:00:00.000Z",
       "diasCanal": 54,
@@ -47,11 +47,11 @@
       "mejor": {
         "id": "9p43SRaCEng",
         "titulo": "10 Genius Ideas That Backfired on Entire Civilizations",
-        "vistas": 85630,
+        "vistas": 85884,
         "hace": 9,
         "url": "https://youtube.com/watch?v=9p43SRaCEng"
       },
-      "puntaje": 6.51
+      "puntaje": 6.52
     },
     {
       "id": "UCdQx7-YvvW5oFQgb7ityDiQ",
@@ -64,7 +64,7 @@
       "mejor": {
         "id": "KqJsbgsUuWA",
         "titulo": "30 Incredible Stories You Won't Believe",
-        "vistas": 200259,
+        "vistas": 200436,
         "hace": 21,
         "url": "https://youtube.com/watch?v=KqJsbgsUuWA"
       },
@@ -85,7 +85,7 @@
         "hace": 23,
         "url": "https://youtube.com/watch?v=04snj4rUmfs"
       },
-      "puntaje": 3.77
+      "puntaje": 3.76
     }
   ],
   "videosVirales": [
@@ -93,9 +93,9 @@
       "canal": "Ballen Of File",
       "canalId": "UCGcVuScYBs4oP0MTU6oLWSQ",
       "diasCanal": 14,
-      "suscriptores": 1470,
+      "suscriptores": 1480,
       "titulo": "Cops CAN’T Explain His 911 Call… The Mystery Gets DARKER!",
-      "vistas": 155235,
+      "vistas": 155568,
       "hace": 8,
       "veces": 22,
       "url": "https://youtube.com/watch?v=GUnx_FTNgRw",
@@ -105,9 +105,9 @@
       "canal": "Chill Dude Plus",
       "canalId": "UCn87yhmEcgnI4PGIvhM4DFg",
       "diasCanal": 54,
-      "suscriptores": 770,
+      "suscriptores": 771,
       "titulo": "10 Genius Ideas That Backfired on Entire Civilizations",
-      "vistas": 85630,
+      "vistas": 85884,
       "hace": 9,
       "veces": 9,
       "url": "https://youtube.com/watch?v=9p43SRaCEng",
@@ -119,7 +119,7 @@
       "diasCanal": 41,
       "suscriptores": 2820,
       "titulo": "30 Incredible Stories You Won't Believe",
-      "vistas": 200259,
+      "vistas": 200436,
       "hace": 21,
       "veces": 13,
       "url": "https://youtube.com/watch?v=KqJsbgsUuWA",
