@@ -1,0 +1,70 @@
+{
+  "titulo": "⚡ Laki: el volcán que mató a 6 millones y cambió el clima global",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-laki.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-25T12:27:00.875Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿¿Qué volcán islandés causó una hambruna global y mató a 6…?",
+  "publicacion": {
+    "titulo": "⚡ Laki: el volcán que mató a 6 millones y cambió el clima global",
+    "descripcion": "Descubre cómo una erupción en Islandia en 1783 afectó a todo el planeta. Un fenómeno que mató a miles y cambió el clima global.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\n#Laki #Volcanes #Historia #Islandia #Clima"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El gancho es descriptivo y no intriga lo suficiente. La revelación llega tarde y el ritmo es lento. Falta impacto en el cierre. Panel: [Garantía de publicación activa] 6 de 8 aprobaron el guion, 8 pasaron los primeros 3 segundos, 2 lo compartirían. Retención estimada: 86% (mínimo 55%)."
+  },
+  "retencionEstimada": 86,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Qué volcán islandés causó una hambruna global y mató a seis millones?",
+      "fondo": [
+        "pixelcifra:6 MILLONES|MUERTOS|ROJO"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En mil setecientos ochenta y tres, el Laki o Lakagígar, una fisura volcánica en Islandia, erupcionó durante ocho meses.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Expulsó catorce kilómetros³ de lava y gases tóxicos, como ácido fluorhídrico y dióxido de azufre.",
+      "fondo": [
+        "pixelcifra:14 KM|LAVA|TEAL"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "La bruma tóxica envenenó tierras y ganado, devastando Islandia y Europa.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "La erupción causó una hambruna global que mató a seis millones en tres años.",
+      "fondo": [
+        "pixelcifra:6 MILLONES|MUERTOS|ROJO"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Sabías que hasta el río Nilo se vio afectado? Sígueme para descubrir más misterios.",
+      "fondo": [
+        "pixelcifra:NILO|AFECTADO|AZUL"
+      ]
+    }
+  ]
+}

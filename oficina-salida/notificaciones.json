@@ -1,5 +1,14 @@
 [
   {
+    "id": "mww2q1ykikbd",
+    "fecha": "2026-11-25T12:02:17.324Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: Laki",
+    "texto": "El Verificador no aprobó \"Laki\" tras 3 intentos: No se generaron imágenes específicas para las escenas: Los pintores no generaron pixel art para las escenas: 2, 3, 4, 5. No se sustituirán por fotos.. No se per Este proceso: 0 aprobados, 1 rechazados y 0 errores. Histórico acumulado: 16 aprobados, 109 rechazados y 169 errores. No se publica. Próximo ciclo en 13 h."
+  },
+  {
     "id": "mwvp88sb85cs",
     "fecha": "2026-11-25T05:44:31.355Z",
     "canal": "lqns",
@@ -687,14 +696,5 @@
     "tipo": "reporte",
     "titulo": "Fórmula del momento",
     "texto": "Lo que hoy funciona para Lo Que No Sabías: Título con pregunta intrigante o afirmación impactante + elemento misterioso o inesperado + pista de contenido exclusivo El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (26293 vistas/hora)."
-  },
-  {
-    "id": "mwuqlsxftj4t",
-    "fecha": "2026-11-24T13:35:17.427Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "La oficina falló",
-    "texto": "No se encontraron dos fuentes institucionales independientes con contenido consultable para un tema nuevo. Se reintentará en otro ciclo. Aprobados: 11. Rechazados: 56. Con error: 13. Próximo ciclo en 1 h."
   }
 ]
