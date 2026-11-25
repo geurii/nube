@@ -1,11 +1,91 @@
 {
-  "actualizado": "2026-11-24T23:39:22.546Z",
+  "actualizado": "2026-11-25T00:20:23.536Z",
   "totales": {
     "aprobados": 16,
     "rechazados": 99,
-    "errores": 20
+    "errores": 30
   },
   "historial": [
+    {
+      "fecha": "2026-11-25T00:20:23.535Z",
+      "tema": "(sin tema)",
+      "formato": "largo",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
+    },
+    {
+      "fecha": "2026-11-25T00:15:22.701Z",
+      "tema": "(sin tema)",
+      "formato": "largo",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
+    },
+    {
+      "fecha": "2026-11-25T00:10:21.875Z",
+      "tema": "(sin tema)",
+      "formato": "largo",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
+    },
+    {
+      "fecha": "2026-11-25T00:05:17.909Z",
+      "tema": "(sin tema)",
+      "formato": "largo",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
+    },
+    {
+      "fecha": "2026-11-25T00:00:14.182Z",
+      "tema": "(sin tema)",
+      "formato": "largo",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
+    },
+    {
+      "fecha": "2026-11-24T23:52:10.215Z",
+      "tema": "(sin tema)",
+      "formato": "largo",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
+    },
+    {
+      "fecha": "2026-11-24T23:48:06.425Z",
+      "tema": "(sin tema)",
+      "formato": "largo",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
+    },
+    {
+      "fecha": "2026-11-24T23:46:02.626Z",
+      "tema": "(sin tema)",
+      "formato": "largo",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
+    },
+    {
+      "fecha": "2026-11-24T23:44:58.806Z",
+      "tema": "(sin tema)",
+      "formato": "largo",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
+    },
+    {
+      "fecha": "2026-11-24T23:44:23.064Z",
+      "tema": "(sin tema)",
+      "formato": "largo",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
+    },
     {
       "fecha": "2026-11-24T23:39:22.545Z",
       "tema": "Laki",
@@ -85,242 +165,162 @@
       "resultado": "rechazado",
       "intentos": 4,
       "detalle": "La fuente consultada menciona dos magnitudes distintas para el terremoto: 8.3 Mw en el primer párrafo y 7.8 (sin escala especificada) en el segundo. No se puede"
-    },
-    {
-      "fecha": "2026-11-24T22:49:56.823Z",
-      "tema": "1958 Lituya Bay earthquake and megatsunami",
-      "formato": "largo",
-      "resultado": "rechazado",
-      "intentos": 4,
-      "detalle": "El MATERIAL menciona que el terremoto fue de 7.8 en la escala de momento, no 8.3 Mw."
-    },
-    {
-      "fecha": "2026-11-24T22:47:10.427Z",
-      "tema": "1958 Lituya Bay earthquake and megatsunami",
-      "formato": "largo",
-      "resultado": "rechazado",
-      "intentos": 4,
-      "detalle": "El MATERIAL menciona que la ola alcanzó 524 metros, pero no especifica que 'escaló una montaña'."
-    },
-    {
-      "fecha": "2026-11-24T22:44:54.764Z",
-      "tema": "1958 Lituya Bay earthquake and megatsunami",
-      "formato": "largo",
-      "resultado": "rechazado",
-      "intentos": 4,
-      "detalle": "El MATERIAL menciona que el terremoto tuvo una magnitud de 8.3 Mw, no 7.8. Además, la fuente indica que la magnitud de 7.8 se refiere a la magnitud de momento ("
-    },
-    {
-      "fecha": "2026-11-24T22:36:17.098Z",
-      "tema": "1958 Lituya Bay earthquake and megatsunami",
-      "formato": "largo",
-      "resultado": "rechazado",
-      "intentos": 4,
-      "detalle": "La revelación cae al 84.4 % (146 de 173 palabras antes de ella) y debe caer entre 55 % y 80 %; apunta a 65 %–72 % contando todas las escenas, incluida la revela"
-    },
-    {
-      "fecha": "2026-11-24T22:28:41.546Z",
-      "tema": "1958 Lituya Bay earthquake and megatsunami",
-      "formato": "largo",
-      "resultado": "rechazado",
-      "intentos": 4,
-      "detalle": "El MATERIAL no menciona que la ola 'escaló una montaña', solo indica que alcanzó 524 metros."
-    },
-    {
-      "fecha": "2026-11-24T22:19:42.060Z",
-      "tema": "1958 Lituya Bay earthquake and megatsunami",
-      "formato": "largo",
-      "resultado": "rechazado",
-      "intentos": 4,
-      "detalle": "El MATERIAL menciona que el terremoto fue de 7.8 (sin escala especificada) en un párrafo y 8.3 Mw en otro, pero no se puede combinar en un intervalo. La frase d"
-    },
-    {
-      "fecha": "2026-11-24T22:11:44.991Z",
-      "tema": "1958 Lituya Bay earthquake and megatsunami",
-      "formato": "largo",
-      "resultado": "rechazado",
-      "intentos": 4,
-      "detalle": "El MATERIAL menciona que el terremoto fue de magnitud 8.3 Mw, pero en el guion se usa 8.3 Mw sin aclarar la escala. Sin embargo, el problema principal es que el"
-    },
-    {
-      "fecha": "2026-11-24T22:01:08.306Z",
-      "tema": "1958 Lituya Bay earthquake and megatsunami",
-      "formato": "largo",
-      "resultado": "rechazado",
-      "intentos": 4,
-      "detalle": "El MATERIAL menciona que el terremoto fue de 7.8 en la escala de momento, no 8.3 Mw."
-    },
-    {
-      "fecha": "2026-11-24T21:54:28.542Z",
-      "tema": "1958 Lituya Bay earthquake and megatsunami",
-      "formato": "largo",
-      "resultado": "rechazado",
-      "intentos": 4,
-      "detalle": "La fuente consultada menciona que el terremoto tuvo una magnitud de momento de 7.8, no 8.3 Mw."
-    },
-    {
-      "fecha": "2026-11-24T21:50:21.763Z",
-      "tema": "1958 Lituya Bay earthquake and megatsunami",
-      "formato": "largo",
-      "resultado": "rechazado",
-      "intentos": 4,
-      "detalle": "El MATERIAL menciona que el terremoto fue de 7.8 (sin escala especificada) en una sección y 8.3 Mw en otra. No se puede combinar o alternar estas cifras sin esp"
     }
   ],
   "agentes": {
     "Directora de contenido": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "Necesita revisión: el guion de \"Laki\" no pasó la verificación. Aprobados: 16. Rechazados: 99. Con error: 20. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. JEFA: Un guion rechazado no se publica. Tienen 2 h para entregar algo que pase."
+      "tarea": "La oficina falló en su último ciclo: No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el  ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 20 días y sin un video viral no cobras. ¿Qué entregaste hoy? JEFA: Falló el ciclo. Quiero la causa y el arreglo antes de las próximas 1 h."
     },
     "Investigador de temas": {
       "estado": "libre",
       "actividad": "leyendo",
-      "tarea": "Dejó material consultable sobre \"Laki\". ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
+      "tarea": "Dejó material consultable sobre \"Laki\". ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
     },
     "Guionista": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Intentó 4 veces escribir \"Laki\" sin que el Verificador lo aprobara. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta. JEFA: 4 intentos y nada aprobado. Esto es inaceptable. Estudien la fuente antes de escribir."
+      "tarea": "Intentó 4 veces escribir \"Laki\" sin que el Verificador lo aprobara. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Verificador de datos": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Rechazó \"Laki\": El video largo necesita entre 1200 y 1350 palabras narradas para durar 8–10 minutos. Ahora tiene 253. Amplía o recorta con hechos del MATERIAL; no rellenes ni i ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "tarea": "Rechazó \"Laki\": El video largo necesita entre 1200 y 1350 palabras narradas para durar 8–10 minutos. Ahora tiene 253. Amplía o recorta con hechos del MATERIAL; no rellenes ni i ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Editor de guion": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Locutor": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Guionista). Entregó: 5 ganchos nuevos ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
+      "tarea": "AYUDA: le echó una mano a (Guionista). Entregó: 5 ganchos nuevos ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 20 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Técnico de render": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Editor de guion). Entregó: 1 mejoras al último guion ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
+      "tarea": "AYUDA: le echó una mano a (Editor de guion). Entregó: 1 mejoras al último guion ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 20 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Publicador": {
       "estado": "libre",
       "actividad": "pensando",
-      "tarea": "Registro confirmado: 11 videos subidos a YouTube. El último: \"⚡ La ola de 524 metros: El megatsunami que escaló una montaña en Alaska (1958)\". ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "tarea": "Registro confirmado: 11 videos subidos a YouTube. El último: \"⚡ La ola de 524 metros: El megatsunami que escaló una montaña en Alaska (1958)\". ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Crítico: padre trabajador": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Crítica: fan del misterio": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Crítico: adolescente": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Crítica: universitaria": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Editor de guion). Entregó: 3 mejoras al último guion ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
+      "tarea": "AYUDA: le echó una mano a (Editor de guion). Entregó: 3 mejoras al último guion ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 20 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Crítico: joven dominicano": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Investigador de temas). Entregó: 5 temas candidatos ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "tarea": "AYUDA: le echó una mano a (Investigador de temas). Entregó: 5 temas candidatos ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Crítica: ama de casa": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "tarea": "AYUDA: le echó una mano a (Titulista). Entregó: 4 plantillas de título ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Crítico: escéptico": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Guionista). Entregó: 5 ganchos nuevos ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 20 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "AYUDA: le echó una mano a (Guionista). Entregó: 5 ganchos nuevos ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Crítico: abuelo": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "AYUDA: le echó una mano a (Editor de guion). Entregó: 3 mejoras al último guion ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "tarea": "AYUDA: le echó una mano a (Editor de guion). Entregó: 3 mejoras al último guion ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Enlace de datos": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "En su puesto, preparando el próximo ciclo. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "tarea": "En su puesto, preparando el próximo ciclo. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Coordinador de producción": {
       "estado": "libre",
       "actividad": "pensando",
-      "tarea": "En espera entre ciclos. Calendario configurado: Shorts cada 3 horas y videos largos cada 12 horas; la programación real está en GitHub Actions. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "tarea": "En espera entre ciclos. Calendario configurado: Shorts cada 3 horas y videos largos cada 12 horas; la programación real está en GitHub Actions. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Jefa de calidad": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Frenó \"Laki\": El video largo necesita entre 1200 y 1350 palabras narradas para durar 8–10 minutos. Ahora tiene 253. Amplía o recorta con hechos del MATERIAL; no rellenes ni inventes. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "tarea": "Frenó \"\": no pasó la verificación ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: La competencia no descansa. Si no hay vistas, no cobras; ponte las pilas."
     },
     "Cazador de fórmulas": {
       "estado": "libre",
       "actividad": "leyendo",
-      "tarea": "Revisó 133 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (24830 vistas/hora). Fórmula: Pregunta intrigante + elemento misterioso o prohibido + pista de revelación impactante ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "Revisó 133 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (24765 vistas/hora). Fórmula: Pregunta intrigante + elemento misterioso o prohibido + pista de revelación impactante ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Vigía de tendencias": {
       "estado": "libre",
       "actividad": "leyendo",
-      "tarea": "Revisión de feeds terminada: 9 canales vigilados en este ciclo. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "Revisión de feeds terminada: 9 canales vigilados en este ciclo. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Titulista": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Redactor de descripción": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 20 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Especialista en hashtags": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
+      "tarea": "La Mesa de publicación no pudo trabajar en este ciclo; se usó lo que escribió el Guionista. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Auditor de fuentes": {
       "estado": "libre",
       "actividad": "leyendo",
-      "tarea": "Comprobó que cada dato salga de las 1 fuentes del material y las puso en la descripción. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 20 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "Comprobó que cada dato salga de las 0 fuentes del material y las puso en la descripción. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Auditor de normas": {
       "estado": "trabajando",
       "actividad": "leyendo",
-      "tarea": "Encontró incumplimientos: El video largo necesita entre 1200 y 1350 palabras narradas para durar 8–10 minutos. Ahora tiene 253. Amplía o recorta con hechos del MATERIAL; no rellenes ni inventes. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica."
+      "tarea": "Encontró incumplimientos:  ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 20 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
     },
     "Revisor de nombres": {
       "estado": "libre",
       "actividad": "leyendo",
-      "tarea": "Busca nombres reales de personas en el guion y en lo que escribe la Mesa. Si aparece uno, rechaza. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 20 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "Busca nombres reales de personas en el guion y en lo que escribe la Mesa. Si aparece uno, rechaza. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Revisor de ganchos": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "Espera un guion aprobado para medir el gancho. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 20 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "Espera un guion aprobado para medir el gancho. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Pintor de imágenes": {
       "estado": "trabajando",
       "actividad": "escribiendo",
-      "tarea": "Pintor de composición y color: en este ciclo no logró dibujar las escenas; se usó el fondo del catálogo y repite en el próximo. PRESIÓN: Gemini RECHAZA el video si las imágenes no muestran lo que se dice, y un video rechazado cuesta vistas y tu paga. Aquí no se entrega nada que no sea de maestro. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 20 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "Pintor de composición y color: espera un guion aprobado para dibujar sus escenas. PRESIÓN: Gemini RECHAZA el video si las imágenes no muestran lo que se dice, y un video rechazado cuesta vistas y tu paga. Aquí no se entrega nada que no sea de maestro. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     },
     "Pintor de luz y detalle": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "Pintor de luz y detalle: espera los cuadros de su compañero para revisarlos y no firma nada flojo. PRESIÓN: Gemini RECHAZA el video si las imágenes no muestran lo que se dice, y un video rechazado cuesta vistas y tu paga. Aquí no se entrega nada que no sea de maestro. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 20 días y sin un video viral no cobras. ¿Qué entregaste hoy?"
+      "tarea": "Pintor de luz y detalle: espera los cuadros de su compañero para revisarlos y no firma nada flojo. PRESIÓN: Gemini RECHAZA el video si las imágenes no muestran lo que se dice, y un video rechazado cuesta vistas y tu paga. Aquí no se entrega nada que no sea de maestro. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Un video del montón no paga la comida de tu casa. Quiero algo que la gente comparta."
     }
   },
   "jefa": {
-    "mensaje": "Necesita revisión: el guion de \"Laki\" no pasó la verificación. Aprobados: 16. Rechazados: 99. Con error: 20. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Quiero ideas más atrevidas, pero verdaderas. Lo flojo no se publica. JEFA: Un guion rechazado no se publica. Tienen 2 h para entregar algo que pase.",
-    "horasParaProximoCiclo": 2
+    "mensaje": "La oficina falló en su último ciclo: No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el  ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 20 días y sin un video viral no cobras. ¿Qué entregaste hoy? JEFA: Falló el ciclo. Quiero la causa y el arreglo antes de las próximas 1 h.",
+    "horasParaProximoCiclo": 1
   }
 }

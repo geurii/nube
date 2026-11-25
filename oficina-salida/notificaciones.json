@@ -1,5 +1,14 @@
 [
   {
+    "id": "mwvcb4f51shy",
+    "fecha": "2026-11-24T23:42:50.657Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante + elemento misterioso o prohibido + pista de revelación impactante El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (24765 vistas/hora)."
+  },
+  {
     "id": "mwvbg32eu8vl",
     "fecha": "2026-11-24T23:18:42.566Z",
     "canal": "lqns",
@@ -687,14 +696,5 @@
     "tipo": "alerta",
     "titulo": "Guion rechazado: Devil's Footprints",
     "texto": "El Verificador no aprobó \"Devil's Footprints\" tras 4 intentos: El material no menciona que las huellas dejaran un misterio específico, solo describe el fenómeno y las teorías. Aprobados: 11. Rechazados: 55. Con error: 11. No se publica. Próximo ciclo en 1 h."
-  },
-  {
-    "id": "mwup6a5in52m",
-    "fecha": "2026-11-24T12:55:13.638Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: Emu War",
-    "texto": "El Verificador no aprobó \"Emu War\" tras 4 intentos: El material indica que los veteranos recibieron tierras tras la Primera Guerra Mundial, pero no menciona que la Gran Depresión los forzó a cultivar más trigo. E Aprobados: 11. Rechazados: 54. Con error: 11. No se publica. Próximo ciclo en 1 h."
   }
 ]

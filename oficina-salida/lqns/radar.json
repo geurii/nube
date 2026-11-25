@@ -1,242 +1,142 @@
 {
-  "fecha": "2026-11-24T15:06:35.660Z",
+  "fecha": "2026-11-24T23:44:10.492Z",
+  "criterio": "canales creados hace 90 días o menos; videos publicados hace 90 días o menos; rendimiento mínimo 5x la mediana del canal",
   "consultas": [
     "unsolved mystery explained",
-    "true story shocking history",
-    "strange discovery nobody can explain",
-    "scam genius true story",
-    "historical mystery you never knew",
-    "creepy true facts history",
-    "lost ancient technology mystery",
-    "weird history facts"
+    "true strange history story",
+    "mysterious discovery explained",
+    "歴史 ミステリー 不思議な出来事 解説",
+    "未解決事件 奇妙な歴史 雑学",
+    "历史 未解之谜 奇闻真实故事",
+    "离奇历史事件 真相揭秘",
+    "misterios sin resolver historia extraña",
+    "historias reales sorprendentes misterio",
+    "mystère historique inexpliqué histoire vraie",
+    "mistério histórico história real surpreendente",
+    "기묘한 역사 미스터리 실화",
+    "غموض تاريخي قصة حقيقية غريبة"
   ],
-  "canalesRevisados": 129,
-  "explotaron": 21,
+  "canalesRevisados": 85,
+  "explotaron": 32,
   "canales": [
-    {
-      "id": "UCDSFDAIei9m6J44qIDAZi4w",
-      "nombre": "Titan Discovery",
-      "suscriptores": 2350,
-      "videosDelCanal": 36,
-      "veces": 124,
-      "mejor": {
-        "id": "rW-eMVqecT8",
-        "titulo": "Camera Thrown Into Mel's Hole, What They See Terrifies The Whole World",
-        "vistas": 899862,
-        "hace": 8,
-        "url": "https://youtube.com/watch?v=rW-eMVqecT8"
-      },
-      "puntaje": 87.01
-    },
-    {
-      "id": "UC0dNXhS0VfG4-T0ehqGoXEg",
-      "nombre": "Moon Romance Hub",
-      "suscriptores": 3090,
-      "videosDelCanal": 19,
-      "veces": 229,
-      "mejor": {
-        "id": "zYzck48B4OI",
-        "titulo": "Reborn at 18, She'd Never Chose The Cold Lord Again, Unexpected He Insists Win Her Back... #drama",
-        "vistas": 397858,
-        "hace": 22,
-        "url": "https://youtube.com/watch?v=zYzck48B4OI"
-      },
-      "puntaje": 40.63
-    },
     {
       "id": "UCGcVuScYBs4oP0MTU6oLWSQ",
       "nombre": "Ballen Of File",
-      "suscriptores": 1400,
-      "videosDelCanal": 19,
-      "veces": 24,
+      "suscriptores": 1470,
+      "videosDelCanal": 20,
+      "fechaAlta": "2026-11-11T00:00:00.000Z",
+      "diasCanal": 14,
+      "veces": 22,
       "mejor": {
         "id": "GUnx_FTNgRw",
         "titulo": "Cops CAN’T Explain His 911 Call… The Mystery Gets DARKER!",
-        "vistas": 152273,
+        "vistas": 155235,
         "hace": 8,
         "url": "https://youtube.com/watch?v=GUnx_FTNgRw"
       },
-      "puntaje": 22.69
+      "puntaje": 20.06
     },
     {
-      "id": "UCH7SuUyule2C8Y1ZVWXvj0g",
-      "nombre": "NavinVerse",
-      "suscriptores": 5520,
-      "videosDelCanal": 214,
-      "veces": 154,
+      "id": "UCn87yhmEcgnI4PGIvhM4DFg",
+      "nombre": "Chill Dude Plus",
+      "suscriptores": 770,
+      "videosDelCanal": 51,
+      "fechaAlta": "2026-10-02T00:00:00.000Z",
+      "diasCanal": 54,
+      "veces": 9,
       "mejor": {
-        "id": "aBVjB0xXbQo",
-        "titulo": "The TRUTH About Oggy's Mystery Man Explained!",
-        "vistas": 363303,
-        "hace": 29,
-        "url": "https://youtube.com/watch?v=aBVjB0xXbQo"
-      },
-      "puntaje": 16.76
-    },
-    {
-      "id": "UCC0k9nV5wiab_gpjW8JbEzQ",
-      "nombre": "Unobserved Mystery",
-      "suscriptores": 131,
-      "videosDelCanal": 16,
-      "veces": 215,
-      "mejor": {
-        "id": "a6shWXxft9A",
-        "titulo": "The Loch Ness Monster Mystery Was Finally Solved — So Why Are People Still Seeing It?",
-        "vistas": 50578,
-        "hace": 23,
-        "url": "https://youtube.com/watch?v=a6shWXxft9A"
-      },
-      "puntaje": 15.64
-    },
-    {
-      "id": "UCD9YwRZaBLiy4KmyD8gFQ0w",
-      "nombre": "Sleepless Nations",
-      "suscriptores": 293,
-      "videosDelCanal": 14,
-      "veces": 52,
-      "mejor": {
-        "id": "cIwVBQMA_yM",
-        "titulo": "30 Bizarre Historical Events That Sound 100% Fake (But Actually Happened)",
-        "vistas": 41438,
-        "hace": 21,
-        "url": "https://youtube.com/watch?v=cIwVBQMA_yM"
-      },
-      "puntaje": 13.44
-    },
-    {
-      "id": "UCeDySuAl0T72lGHoE4WqfHw",
-      "nombre": "ECHOES OF OHIO",
-      "suscriptores": 715,
-      "videosDelCanal": 7,
-      "veces": 18,
-      "mejor": {
-        "id": "lgESmMh3ZPo",
-        "titulo": "12 Creepiest Places in Ohio: The Real History vs. The Ghost Stories",
-        "vistas": 94591,
-        "hace": 15,
-        "url": "https://youtube.com/watch?v=lgESmMh3ZPo"
-      },
-      "puntaje": 12.76
-    },
-    {
-      "id": "UC5OMFzatX4soWmBQurT5e6g",
-      "nombre": "TomSmith",
-      "suscriptores": 9000,
-      "videosDelCanal": 12,
-      "veces": 13,
-      "mejor": {
-        "id": "gkE9m-l5Yl0",
-        "titulo": "Nikola Tesla Said He Knew How To Speak To God — And Revealed The Exact Method",
-        "vistas": 1174268,
-        "hace": 19,
-        "url": "https://youtube.com/watch?v=gkE9m-l5Yl0"
-      },
-      "puntaje": 11.62
-    },
-    {
-      "id": "UCHfuIMtVzhMxtPFvlnmYNzw",
-      "nombre": "Story Cinema TV",
-      "suscriptores": 13800,
-      "videosDelCanal": 63,
-      "veces": 41,
-      "mejor": {
-        "id": "kzELCL1NwqU",
-        "titulo": "😨 This SHOCKING MOVIE Will Stay With You Forever! | BASED ON A TRUE STORY | Full English Movie",
-        "vistas": 449566,
+        "id": "9p43SRaCEng",
+        "titulo": "10 Genius Ideas That Backfired on Entire Civilizations",
+        "vistas": 85630,
         "hace": 9,
-        "url": "https://youtube.com/watch?v=kzELCL1NwqU"
+        "url": "https://youtube.com/watch?v=9p43SRaCEng"
       },
-      "puntaje": 11.37
+      "puntaje": 6.51
     },
     {
       "id": "UCdQx7-YvvW5oFQgb7ityDiQ",
       "nombre": "Nobody Believes This",
-      "suscriptores": 2790,
+      "suscriptores": 2820,
       "videosDelCanal": 21,
+      "fechaAlta": "2026-10-15T00:00:00.000Z",
+      "diasCanal": 41,
       "veces": 13,
       "mejor": {
         "id": "KqJsbgsUuWA",
         "titulo": "30 Incredible Stories You Won't Believe",
-        "vistas": 198162,
+        "vistas": 200259,
         "hace": 21,
         "url": "https://youtube.com/watch?v=KqJsbgsUuWA"
       },
-      "puntaje": 6.03
+      "puntaje": 5.97
     },
     {
-      "id": "UCnMI99vl9vROH4ao3-0dQEQ",
-      "nombre": "Morbid’s Dark Stories ",
-      "suscriptores": 1290,
-      "videosDelCanal": 38,
-      "veces": 23,
+      "id": "UCycmRza8F3YHyZ9W-bjAdFg",
+      "nombre": "Umbrella Vault",
+      "suscriptores": 1910,
+      "videosDelCanal": 22,
+      "fechaAlta": "2026-10-06T00:00:00.000Z",
+      "diasCanal": 50,
+      "veces": 6,
       "mejor": {
-        "id": "tMcGgC5HerA",
-        "titulo": "One Hour of SCARY & TWISTED Morbid Facts You’ll Wish You Never Knew",
-        "vistas": 44133,
-        "hace": 29,
-        "url": "https://youtube.com/watch?v=tMcGgC5HerA"
+        "id": "04snj4rUmfs",
+        "titulo": "12 Resident Evil Mysteries That Were FINALLY Solved...",
+        "vistas": 193634,
+        "hace": 23,
+        "url": "https://youtube.com/watch?v=04snj4rUmfs"
       },
-      "puntaje": 4.08
-    },
-    {
-      "id": "UCQMwDGUtwTWBobh9PwPQasQ",
-      "nombre": "Rosewood Cinema",
-      "suscriptores": 54300,
-      "videosDelCanal": 117,
-      "veces": 40,
-      "mejor": {
-        "id": "4PN5w8RzIPw",
-        "titulo": "👉 I Highly Recommend This Movie! The Laurie Samuels Story | Drama, Mystery",
-        "vistas": 376467,
-        "hace": 12,
-        "url": "https://youtube.com/watch?v=4PN5w8RzIPw"
-      },
-      "puntaje": 2.22
-    },
-    {
-      "id": "UCtggghgcffr7-OSjiRXRM3Q",
-      "nombre": "BAFTA",
-      "suscriptores": 240000,
-      "videosDelCanal": null,
-      "veces": 154,
-      "mejor": {
-        "id": "FiCcdbPJPO0",
-        "titulo": "Pedro Pascal is Moved as he Watches Scenes That Mean the World to Him | BAFTA",
-        "vistas": 1044541,
-        "hace": 6,
-        "url": "https://youtube.com/watch?v=FiCcdbPJPO0"
-      },
-      "puntaje": 1.96
-    },
-    {
-      "id": "UCTgM_Z6LX9upwutrJveOPSA",
-      "nombre": "Károly Póka",
-      "suscriptores": 20300,
-      "videosDelCanal": 184,
-      "veces": 77,
-      "mejor": {
-        "id": "09UBrc4CYxM",
-        "titulo": "What He Found Inside the Great Sphinx | Robert Temple - Ancient Technology Podcast",
-        "vistas": 134590,
-        "hace": 28,
-        "url": "https://youtube.com/watch?v=09UBrc4CYxM"
-      },
-      "puntaje": 1.77
-    },
-    {
-      "id": "UCwOy9ngY_SGGf_g0fIhu6xw",
-      "nombre": "Ballen's Mystery Stories",
-      "suscriptores": 1410,
-      "videosDelCanal": 26,
-      "veces": 8,
-      "mejor": {
-        "id": "QKeuawxShzs",
-        "titulo": "BETRAYAL: 6 Tragic Mysteries & when a lover's promise turns deadly - MrBallen",
-        "vistas": 37437,
-        "hace": 13,
-        "url": "https://youtube.com/watch?v=QKeuawxShzs"
-      },
-      "puntaje": 1.68
+      "puntaje": 3.77
     }
-  ]
+  ],
+  "videosVirales": [
+    {
+      "canal": "Ballen Of File",
+      "canalId": "UCGcVuScYBs4oP0MTU6oLWSQ",
+      "diasCanal": 14,
+      "suscriptores": 1470,
+      "titulo": "Cops CAN’T Explain His 911 Call… The Mystery Gets DARKER!",
+      "vistas": 155235,
+      "hace": 8,
+      "veces": 22,
+      "url": "https://youtube.com/watch?v=GUnx_FTNgRw",
+      "idiomaDetectado": "multilingüe"
+    },
+    {
+      "canal": "Chill Dude Plus",
+      "canalId": "UCn87yhmEcgnI4PGIvhM4DFg",
+      "diasCanal": 54,
+      "suscriptores": 770,
+      "titulo": "10 Genius Ideas That Backfired on Entire Civilizations",
+      "vistas": 85630,
+      "hace": 9,
+      "veces": 9,
+      "url": "https://youtube.com/watch?v=9p43SRaCEng",
+      "idiomaDetectado": "multilingüe"
+    },
+    {
+      "canal": "Nobody Believes This",
+      "canalId": "UCdQx7-YvvW5oFQgb7ityDiQ",
+      "diasCanal": 41,
+      "suscriptores": 2820,
+      "titulo": "30 Incredible Stories You Won't Believe",
+      "vistas": 200259,
+      "hace": 21,
+      "veces": 13,
+      "url": "https://youtube.com/watch?v=KqJsbgsUuWA",
+      "idiomaDetectado": "multilingüe"
+    },
+    {
+      "canal": "Umbrella Vault",
+      "canalId": "UCycmRza8F3YHyZ9W-bjAdFg",
+      "diasCanal": 50,
+      "suscriptores": 1910,
+      "titulo": "12 Resident Evil Mysteries That Were FINALLY Solved...",
+      "vistas": 193634,
+      "hace": 23,
+      "veces": 6,
+      "url": "https://youtube.com/watch?v=04snj4rUmfs",
+      "idiomaDetectado": "multilingüe"
+    }
+  ],
+  "referenciasLargas": []
 }
