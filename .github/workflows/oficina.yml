@@ -117,12 +117,13 @@ jobs:
               echo "formato=short" >> "$GITHUB_OUTPUT"
               echo "Formato elegido en el boton: SHORT"
             fi
-            canal_d=$(cut -d'|' -f4 agentes/oficina.disparo | tr -d '\r\n' | tr -cd '[:alnum:]_-.' | cut -c1-40)
+            canal_d=$(cut -d'|' -f4 agentes/oficina.disparo | tr -d '\r\n' | tr -cd '[:alnum:]_.-' | cut -c1-40)
             if [ -n "$canal_d" ]; then echo "canal=$canal_d" >> "$GITHUB_OUTPUT"; echo "Canal solicitado: $canal_d"; fi
           else
             echo "Formato: segun el horario o Short"
           fi
       - name: Prueba de humo (simulada, no gasta Groq)
+        id: humo
         if: always()
         run: |
           node --check agentes/reglas-guion.mjs
@@ -146,7 +147,7 @@ jobs:
           node agentes/probar-oficina.mjs
           node agentes/probar-proveedores.mjs
       - name: Marcar inicio del video
-        if: always() && steps.pres.outputs.ok != 'no'
+        if: always() && steps.pres.outputs.ok != 'no' && steps.humo.outcome == 'success'
         run: |
           PROGRESO_DE=oficina node agentes/progreso.mjs 5 "Buscando tema y escribiendo el guion" || true
           git config user.name "github-actions"
@@ -155,7 +156,7 @@ jobs:
           git diff --cached --quiet || git commit -m "Progreso: Buscando tema y escribiendo el guion"
           for i in 1 2 3; do git pull --rebase --autostash -X theirs origin main && git push && break; sleep 4; done
       - name: Ciclo de todos los canales activos (el Cazador primero; si uno falla, los demás siguen)
-        if: steps.pres.outputs.ok != 'no'
+        if: steps.pres.outputs.ok != 'no' && steps.humo.outcome == 'success'
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
