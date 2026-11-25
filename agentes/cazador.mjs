@@ -61,31 +61,9 @@ try {
   const mejores = todos.filter((v) => v.vistas > 0 && new Date(v.publicado).getTime() > hace30).sort((a, b) => b.vistasPorHora - a.vistasPorHora).slice(0, 12);
   if (!mejores.length) throw new Error('No pude leer videos recientes de ningún canal (¿YouTube bloqueó la consulta?).');
 
-  let formula = null;
-  if (KEY) {
-    try {
-      const r = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-        method: 'POST',
-        headers: {Authorization: `Bearer ${KEY}`, 'Content-Type': 'application/json'},
-        signal: AbortSignal.timeout(120000),
-        body: JSON.stringify({
-          model: 'openai/gpt-oss-120b',
-          temperature: 0.3,
-          max_tokens: 1500,
-          reasoning_effort: 'low',
-          messages: [
-            {role: 'system', content: 'Eres analista de formatos virales de YouTube. Analizas SOLO la estructura (cómo está hecho el título y el gancho), jamás el contenido ni los temas. Respondes SOLO con JSON.'},
-            {role: 'user', content: `Estos son los videos que más están rindiendo ahora en canales de referencia: los vigilados y, especialmente, los nuevos canales que explotaron en el radar multilingüe (menores de 90 días).\n${[...mejores, ...(leer(path.join(SAL, 'radar.json'), {}).videosVirales ?? []).map(v => ({titulo:v.titulo,canal:v.canal,vistasPorHora:v.vistas}))].slice(0,18).map((v,i)=>`${i+1}. "${v.titulo}" · ${v.canal ?? 'radar multilingüe'} · ${v.vistasPorHora} vistas/hora aprox.`).join('\n')}\n\nAnaliza patrones de gancho, promesa, tensión, ritmo y revelación; ignora el idioma original. No copies frases ni guiones. Devuelve: {"formula": "una frase con la estructura que se repite en los títulos y ganchos", "ganchos": ["3 plantillas de gancho en español, con huecos entre [corchetes], sin copiar temas"], "evitar": ["2 errores que se ven en los de menor rendimiento"]}.`},
-          ],
-        }),
-      });
-      if (r.ok) {
-        const texto = (await r.json()).choices?.[0]?.message?.content ?? '';
-        const a = texto.indexOf('{'), b = texto.lastIndexOf('}');
-        if (a >= 0 && b > a) formula = JSON.parse(texto.slice(a, b + 1));
-      }
-    } catch { /* sin análisis de IA esta vez */ }
-  }
+  // No gastar tokens analizando solo títulos. La fórmula se obtiene en Oficina
+  // desmontando un Short real con duración y subtítulos públicos verificables.
+  const formula = null;
   fs.writeFileSync(path.join(SAL, 'formulas.json'), JSON.stringify({actualizado: new Date().toISOString(), canalesLeidos: lista.length, videosRevisados: todos.length, mejores: mejores.slice(0, 5), formula}, null, 2));
   marcar(`Revisó ${todos.length} videos de ${lista.length} canales. Mejor ahora: "${mejores[0].titulo.slice(0, 70)}" (${mejores[0].vistasPorHora} vistas/hora). ${formula?.formula ? `Fórmula: ${String(formula.formula).slice(0, 110)}` : 'Sin análisis de IA esta vez.'}`);
   if (formula?.formula) notificar('reporte', 'Fórmula del momento', `Lo que hoy funciona para ${CONFIG.nombre}: ${String(formula.formula).slice(0, 260)} El mejor video ahora: "${mejores[0].titulo.slice(0, 90)}" (${mejores[0].vistasPorHora} vistas/hora).`);
