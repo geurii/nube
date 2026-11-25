@@ -45,6 +45,8 @@ jobs:
         if: ${{ hashFiles('agentes/PAUSA') == '' }}
         run: |
           node --check agentes/producir.mjs
+          node --check agentes/probar-ovni.mjs
+          node agentes/probar-ovni.mjs
           node --check agentes/subir.mjs
           node --check agentes/facebook.mjs
           node --check agentes/tiktok.mjs
