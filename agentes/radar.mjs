@@ -326,7 +326,11 @@ export const detectarExplosion = (videos, {minVistas = 5000, maxDias = 90, veces
   const normal = Math.max(mediana(videos.map((v) => v.vistas)), 50);
   const mejor = [...recientes].sort((a, b) => b.vistas - a.vistas)[0];
   if (mejor.vistas < minVistas || mejor.vistas / normal < veces) return null;
-  return {video: mejor, normal, veces: Math.round(mejor.vistas / normal)};
+  const candidatos = recientes
+    .filter((v) => v.vistas >= minVistas && v.vistas / normal >= 2)
+    .sort((a, b) => b.vistas - a.vistas)
+    .slice(0, 5);
+  return {video: mejor, normal, veces: Math.round(mejor.vistas / normal), candidatos};
 };
 
 /** Canales chicos que explotaron: pocas suscripciones, un video con muchas vistas recientes (y que se salió de lo normal del canal). */
@@ -378,7 +382,17 @@ export const construirRadar = async ({consultas = CONSULTAS_POR_DEFECTO, maxSubs
     });
   });
   canales.sort((a, b) => b.puntaje - a.puntaje);
-  return {fecha: new Date().toISOString(), criterio: 'canales creados hace 90 días o menos; videos publicados hace 90 días o menos; rendimiento mínimo 5x la mediana del canal', consultas, canalesRevisados: canalesVistos.size, explotaron: explotaron.length, canales: canales.slice(0, 15), videosVirales: canales.slice(0, 15).map(c => ({canal:c.nombre, canalId:c.id, diasCanal:c.diasCanal, suscriptores:c.suscriptores, titulo:c.mejor.titulo, vistas:c.mejor.vistas, hace:c.mejor.hace, veces:c.veces, url:c.mejor.url, idiomaDetectado:'multilingüe'}))};
+  const ids = new Set();
+  const videosVirales = explotaron
+    .flatMap((x) => (x.candidatos ?? [x.video]).map((v) => ({
+      canal: x.nombre, canalId: x.id, titulo: v.titulo, vistas: v.vistas,
+      hace: Math.round(v.dias), veces: x.veces, url: `https://youtube.com/watch?v=${v.id}`,
+      idiomaDetectado: 'multilingüe',
+    })))
+    .sort((a, b) => b.vistas - a.vistas)
+    .filter((v) => v.url && !ids.has(v.url) && ids.add(v.url))
+    .slice(0, 15);
+  return {fecha: new Date().toISOString(), criterio: 'canales con un video reciente que supera 5x su mediana; candidatos individuales verificados después por duración y subtítulos públicos', consultas, canalesRevisados: canalesVistos.size, explotaron: explotaron.length, canales: canales.slice(0, 15), videosVirales};
 };
 
 /** Texto corto para meter en el encargo del Director de contenido. */
