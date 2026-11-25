@@ -190,7 +190,9 @@ globalThis.fetch = async (url, opciones) => {
   }
   if (u.includes('.wikipedia.org/w/api.php')) return new Response(JSON.stringify({query:{pages:{'-1':{missing:''}}}}), {status:200});
   if (u.includes('api.groq.com/openai/v1/models')) return new Response(JSON.stringify({data: [{id: 'openai/gpt-oss-120b'}]}), {status: 200});
-  if (u.includes('api.groq.com/openai/v1/chat/completions')) {
+  // La prueba es 100 % simulada: nunca debe salir a Pollinations ni consumir cuotas reales.
+  if (u.includes('text.pollinations.ai/openai/models')) return new Response(JSON.stringify({data: [{id: 'openai-fast'}]}), {status: 200});
+  if (u.includes('api.groq.com/openai/v1/chat/completions') || u.includes('text.pollinations.ai/openai/chat/completions')) {
     llamadas++;
     const cuerpo = JSON.parse(opciones.body);
     if (cuerpo.messages.some((m) => String(m.content).includes('LECCIONES QUE EL EQUIPO YA APRENDIÓ') && String(m.content).includes('LECCION-DE-PRUEBA'))) vioLecciones = true;
