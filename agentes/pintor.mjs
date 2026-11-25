@@ -81,7 +81,7 @@ export const sujetosDelTexto = (texto = '') => {
 export const OBJETOS_NARRATIVOS = new Set([
   'barco','pez','hielo','faro','ovni','explosion','ciudad','bosque','arbol','edificio','central',
   'pergamino','calendario','reloj','castillo','corona','libro','moneda','iglesia','caballo','silueta','astro','duna',
-  'montanas','hidrofono','sonar','microfono','volcan','fuego','lago','avion','tren','submarino',
+  'montanas','hidrofono','sonar','microfono','radar','tic_tac','volcan','fuego','lago','avion','tren','submarino',
   'barril','cerveza','cerveceria','tsunami','deslizamiento','cartas','terremoto',
 ]);
 
