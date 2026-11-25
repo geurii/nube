@@ -108,8 +108,20 @@ jobs:
             tema_d=$(cut -d'|' -f3 agentes/oficina.disparo | tr -d '\r\n' | sed 's/[^[:alnum:] .,()&:-]//g' | cut -c1-90)
             if [ -n "$tema_d" ]; then echo "tema=$tema_d" >> "$GITHUB_OUTPUT"; echo "Tema elegido en el Estudio: $tema_d"; fi
           fi
-          # formato elegido con el botón "Producir ahora" (el archivo trae "fecha|short" o "fecha|largo"); sin elección, Short
-          if [ "${{ github.event_name }}" = "push" ] && [ -f agentes/oficina.disparo ] && [ "$(cut -d'|' -f2 agentes/oficina.disparo | tr -d '[:space:]')" = "largo" ]; then echo "formato=largo" >> "$GITHUB_OUTPUT"; echo "Formato elegido en el boton: LARGO"; else echo "Formato: segun el horario o Short"; fi
+          # Formato y canal se fijan en el disparo: fecha|formato|tema|canal.
+          if [ "${{ github.event_name }}" = "push" ] && [ -f agentes/oficina.disparo ]; then
+            if [ "$(cut -d'|' -f2 agentes/oficina.disparo | tr -d '[:space:]')" = "largo" ]; then
+              echo "formato=largo" >> "$GITHUB_OUTPUT"
+              echo "Formato elegido en el boton: LARGO"
+            else
+              echo "formato=short" >> "$GITHUB_OUTPUT"
+              echo "Formato elegido en el boton: SHORT"
+            fi
+            canal_d=$(cut -d'|' -f4 agentes/oficina.disparo | tr -d '\r\n' | tr -cd '[:alnum:]_-.' | cut -c1-40)
+            if [ -n "$canal_d" ]; then echo "canal=$canal_d" >> "$GITHUB_OUTPUT"; echo "Canal solicitado: $canal_d"; fi
+          else
+            echo "Formato: segun el horario o Short"
+          fi
       - name: Prueba de humo (simulada, no gasta Groq)
         if: always()
         run: |
@@ -163,41 +175,51 @@ jobs:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           TEMA: ${{ inputs.tema || steps.pres.outputs.tema }}
-          CANAL_PEDIDO: ${{ inputs.canal }}
+          CANAL_PEDIDO: ${{ inputs.canal || steps.pres.outputs.canal }}
           GH_TOKEN: ${{ github.token }}
           FORMATO_ACTUAL: ${{ inputs.formato || steps.pres.outputs.formato || (github.event.schedule == '0 16 * * *' && 'largo' || 'short') }}
           FORMATO: ${{ inputs.formato || steps.pres.outputs.formato || (github.event.schedule == '0 16 * * *' && 'largo' || 'short') }}
           PALABRAS: ${{ inputs.palabras }}
         run: |
-          canales=$(node agentes/canales-activos.mjs)
-          if [ -n "$CANAL_PEDIDO" ]; then canales="$CANAL_PEDIDO"; fi
+          canales=$(CANAL_PEDIDO="$CANAL_PEDIDO" node agentes/canales-activos.mjs)
+          if [ -n "$CANAL_PEDIDO" ] && [ -z "$canales" ]; then
+            echo "ERROR: el canal solicitado no existe o no está activo: $CANAL_PEDIDO"
+            exit 1
+          fi
           echo "Canales de este ciclo: $canales"
-          # GitHub limita cada trabajo a 6 horas; se encadenan ventanas para continuar.
-          # Una ejecución no debe monopolizar Actions durante 5.5 horas. Se trabaja por ventanas de 40 min y se encadena otra ejecución.
           limite=$((SECONDS + 40 * 60))
           canal_pendiente=""
+          tema_fijo="${TEMA:-}"
           for c in $canales; do
             echo "=== $c ==="
-            if [ "$FORMATO_ACTUAL" = "largo" ]; then
-              echo "LARGO: se prioriza la búsqueda de documentales de 8+ minutos; se omiten análisis auxiliares de Shorts."
+            # Un encargo con tema explícito no debe perder tiempo ni créditos buscando tendencias.
+            # Cazador, Analytics, Radar y vistas solo se ejecutan cuando la Oficina debe elegir tema.
+            if [ -z "$tema_fijo" ]; then
+              if [ "$FORMATO_ACTUAL" = "largo" ]; then
+                echo "LARGO: se prioriza la búsqueda de documentales de 8+ minutos."
+              else
+                CANAL=$c timeout 120 node agentes/vistas.mjs || true
+                CANAL=$c timeout 120 node agentes/analytics.mjs || true
+                CANAL=$c timeout 120 node agentes/cazador.mjs || true
+              fi
+              CANAL=$c FORMATO=$FORMATO_ACTUAL timeout 300 node agentes/radar.mjs || true
             else
-              CANAL=$c timeout 120 node agentes/vistas.mjs || true
-              CANAL=$c timeout 120 node agentes/analytics.mjs || true
-              CANAL=$c timeout 120 node agentes/cazador.mjs || true
+              echo "Tema fijo solicitado: $tema_fijo. Se omiten Cazador, Analytics, vistas y Radar."
             fi
-            CANAL=$c FORMATO=$FORMATO_ACTUAL timeout 300 node agentes/radar.mjs || true
             intento=0
             espera=30
             limite_intento=900
+            max_ciclos=3
+            if [ -n "$tema_fijo" ]; then max_ciclos=1; fi
             if [ "$FORMATO_ACTUAL" = "largo" ]; then limite_intento=2100; fi
             cuota_agotada=0
             referencia_no_disponible=0
-            while [ "$SECONDS" -lt "$limite" ]; do
+            while [ "$SECONDS" -lt "$limite" ] && [ "$intento" -lt "$max_ciclos" ]; do
               intento=$((intento + 1))
               echo "Intento continuo $intento para $c (sin límite de rechazos)."
               echo "::notice::Inicio del intento $intento para $c a $(date -u +'%Y-%m-%dT%H:%M:%SZ')."
-              if [ "$intento" -eq 1 ]; then
-                if CANAL=$c timeout "$limite_intento" node agentes/oficina.mjs; then rc=0; else rc=$?; fi
+              if [ -n "$tema_fijo" ] || [ "$intento" -eq 1 ]; then
+                if CANAL=$c TEMA="$tema_fijo" timeout "$limite_intento" node agentes/oficina.mjs; then rc=0; else rc=$?; fi
               else
                 if env -u TEMA CANAL=$c timeout "$limite_intento" node agentes/oficina.mjs; then rc=0; else rc=$?; fi
               fi
@@ -217,6 +239,10 @@ jobs:
                 echo "Guion aprobado para $c en el intento $intento."
                 break
               fi
+              if [ -n "$tema_fijo" ]; then
+                echo "El tema solicitado no fue aprobado en su ciclo interno de cuatro revisiones. No se sustituye por otro tema ni se consume otra ronda."
+                break
+              fi
               echo "No hay guion aprobado. Se cambia de tema/proveedor y se reintenta en ${espera}s."
               sleep "$espera"
               espera=$((espera < 300 ? espera * 2 : 300))
@@ -230,6 +256,10 @@ jobs:
               break
             fi
             if ! CANAL=$c node agentes/ultimo-aprobado.mjs; then
+              if [ -n "$tema_fijo" ]; then
+                echo "El tema fijo no dejó un guion aprobado. Se detiene aquí; no se dispara otra ejecución con un tema distinto."
+                break
+              fi
               canal_pendiente="$c"
               echo "Ventana agotada para $c; se continuará automáticamente en otra ejecución."
               break
