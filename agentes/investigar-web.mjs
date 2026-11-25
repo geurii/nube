@@ -123,7 +123,7 @@ export const investigarEnLaWeb = async (tema,{maxPorFuente=2,minimoDominios=0}={
   const dominios = () => new Set(paginas.map(f => String(f.dominio || hostDe(f.url)).toLowerCase().replace(/^www\./,'')));
   // Respaldo directo: si el buscador falla, consultar páginas corporativas oficiales conocidas.
   // El tema ya fue elegido; el buscador no puede convertir un fallo de búsqueda en descarte editorial.
-  if (dominios().size < minimoDominios && /nintendo|hanafuda|cartas japonesas/i.test(tema)) {
+  if (/nintendo|hanafuda|cartas japonesas/i.test(tema)) {
     const directas = [
       {url:'https://www.nintendo.co.jp/corporate/en/history/index.html',dominio:'nintendo.co.jp',institucion:'Nintendo Co., Ltd. (historia corporativa)'},
       {url:'https://www.nintendo.com/us/about/',dominio:'nintendo.com',institucion:'Nintendo (sitio corporativo oficial)'},
