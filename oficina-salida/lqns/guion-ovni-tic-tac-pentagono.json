@@ -12,7 +12,7 @@
   },
   "orientacion": "vertical",
   "duracionObjetivo": 60,
-  "creado": "2026-11-25T23:48:41.441Z",
+  "creado": "2026-11-25T23:49:55.911Z",
   "estilo": "gancho",
   "ganchoTexto": "El Pentágono publicó tres videos auténticos de la Marina: muestran fenómenos aéreos que siguen sin identificación.",
   "publicacion": {
@@ -50,7 +50,7 @@
     },
     {
       "tipo": "historia",
-      "texto": "El primero se grabó en 2004. Lo llaman Tic Tac por su forma blanca y alargada; lo captó un sensor infrarrojo desde un F/A-18.",
+      "texto": "El primero se grabó en 2004: el Tic Tac, una forma blanca y alargada captada por un sensor infrarrojo desde un F/A-18.",
       "fondo": [
         "pintado:ovni-tic-tac-pentagono-1a",
         "pintado:ovni-tic-tac-pentagono-1b",
@@ -90,7 +90,7 @@
     },
     {
       "tipo": "veredicto",
-      "texto": "En 2020, Defensa confirmó los videos como grabaciones reales de la Marina; los objetos siguieron sin identificar. No prueba que sean extraterrestres. ¿Qué crees?",
+      "texto": "En 2020, Defensa confirmó los videos como grabaciones reales de la Marina; los objetos siguieron sin identificar. No prueba que sean extraterrestres. ¿Qué crees? Compártelo y sígueme.",
       "fondo": [
         "pintado:ovni-tic-tac-pentagono-5a",
         "pintado:ovni-tic-tac-pentagono-5b",
@@ -101,5 +101,6 @@
         "pintado:ovni-tic-tac-pentagono-5g"
       ]
     }
-  ]
+  ],
+  "velocidad": 2
 }
