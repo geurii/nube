@@ -207,8 +207,8 @@ export const buscarReferenciasLargas = async ({
   }
   // Respaldo sin el buscador web de YouTube: feeds RSS públicos de los canales que el dueño ya eligió vigilar.
   // Esto sigue funcionando cuando /results responde 429 y evita depender de canales recién creados.
-  if (candidatos.size < 3 && Array.isArray(canales) && canales.length) {
-    nota('Buscador de YouTube limitado; activo respaldo RSS de canales vigilados.');
+  if (Array.isArray(canales) && canales.length) {
+    nota('Complemento RSS: incorporo videos recientes de canales vigilados para no depender solo del buscador de YouTube.');
     for (const canal of canales.slice(0, 9)) {
       if (Date.now() >= hasta - 35000) break;
       const idCanal = typeof canal === 'string' ? canal : canal?.id;
