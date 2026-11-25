@@ -163,10 +163,10 @@ export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: n
         const sway=Math.sin(t*0.8+i*1.2)*2, x=cx+(i-1)*w*0.72-w*0.42+sway, y=cy-h/2+(i===1?-5:5);
         g.rect(x-3,y-3,w+6,h+6,ink); g.rect(x,y,w,h,base);
         g.rect(x+w*0.08,y+h*0.08,w*0.84,h*0.84,[224,211,166]);
-        const fx=x+w*0.5, fy=y+h*0.43, petal=i===0?[174,66,55]:i===1?[211,153,57]:[76,119,76];
+        const fx=x+w*0.5, fy=y+h*0.43, petal: RGB=i===0?[174,66,55]:i===1?[211,153,57]:[76,119,76];
         for(let k=0;k<5;k++){const a=k*Math.PI*2/5;g.ell(fx+Math.cos(a)*w*0.13,fy+Math.sin(a)*h*0.09,w*0.075,h*0.055,[petal]);}
         g.ell(fx,fy,w*0.045,h*0.035,[238,211,117]);
-        g.line(x+w*0.18,y+h*0.72,x+w*0.78,y+h*0.72,[91,104,62],Math.max(2,Math.round(u*2)));
+        g.line(x+w*0.18,y+h*0.72,x+w*0.78,y+h*0.72,[91,104,62] as RGB,Math.max(2,Math.round(u*2)));
         if(i===0) g.rect(x+w*0.08,y+h*0.12,w*0.84,h*0.12,[155,49,43]);
       }
       break;
