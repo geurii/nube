@@ -264,7 +264,7 @@ export const buscarReferenciasLargas = async ({
   }
   const detalles = [];
   const canalesValidados = new Map();
-  const canalesDePrestigio = /LEMMiNO|RealLifeLore|\\bfern\\b|Wendover|Fall of Civilizations|DW Documentary|ARTE|Timeline|NOVA|BBC|Veritasium|MrBallen|The Why Files|National Geographic|Free Documentary|History Hit|Kings and Generals|Astrum|Real Engineering|imineo|NHK|ZDFinfo|KBS|CCTV|Quanta/i;
+  const canalesDePrestigio = /LEMMiNO|RealLifeLore|\bfern\b|Wendover|Fall of Civilizations|DW Documentary|ARTE|Timeline|NOVA|BBC|Veritasium|MrBallen|The Why Files|National Geographic|Free Documentary|History Hit|Kings and Generals|Astrum|Real Engineering|imineo|NHK|ZDFinfo|KBS|CCTV|Quanta/i;
   // Compartir la promesa de validación evita consultar el perfil varias veces si coinciden
   // varios videos del mismo canal durante el procesamiento concurrente.
   const validarCanal = (video) => {
