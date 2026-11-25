@@ -72,6 +72,8 @@ jobs:
           CANAL_PENDIENTE: ${{ inputs.canal }}
         run: |
           if [ -f agentes/PAUSA ]; then echo "ok=no" >> "$GITHUB_OUTPUT"; echo "PRODUCCION EN PAUSA (existe agentes/PAUSA): este ciclo se salta."; exit 0; fi
+          # Por defecto los encargos push/manual SÍ deben ejecutar el ciclo; los horarios pueden anularlo con ok=no.
+          echo "ok=yes" >> "$GITHUB_OUTPUT"
           if [ "${{ github.event_name }}" = "schedule" ]; then
             fase=""
             if [ -f agentes/secuencia-largo-short.json ]; then
