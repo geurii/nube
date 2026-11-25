@@ -4,11 +4,11 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import {pathToFileURL, fileURLToPath} from 'node:url';
-import {parsearTranscripcion, mensajesDeDesglose} from './analizar-videos.mjs';
 
 const aqui = path.dirname(fileURLToPath(import.meta.url));
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'oficina-prueba-'));
 process.chdir(tmp);
+const {parsearTranscripcion, mensajesDeDesglose} = await import(pathToFileURL(path.join(aqui, 'analizar-videos.mjs')).href + '?prueba-oficina');
 fs.mkdirSync('agentes');
 const base = JSON.parse(fs.readFileSync(path.join(aqui, 'canales-propios.json'), 'utf8')).canales[0];
 fs.writeFileSync(path.join('agentes', 'canales-propios.json'), JSON.stringify({canales: [
