@@ -35,7 +35,7 @@ permissions:
 
 # Un solo turno a la vez: una nueva ejecución NO cancela la que ya está trabajando.
 concurrency:
-  group: oficina-largo-rescate
+  group: oficina
   cancel-in-progress: false
 
 env:
