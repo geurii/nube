@@ -111,8 +111,15 @@ export const datosDeCanal = async (canalId) => {
   const r = await pedir(`https://www.youtube.com/channel/${canalId}?hl=en`, {headers: CABECERAS, timeoutMs: 25000});
   if (!r.ok) return null;
   const html = await r.text();
-  const subs = /"content":"([\d.,]+[KMB]?) subscribers"/.exec(html)?.[1];
-  const videos = /"content":"([\d,]+) videos"/.exec(html)?.[1];
+  // YouTube cambia la forma del contador entre la portada del canal y la pestaña About.
+  // Leer las variantes reales de subscriberCountText, no depender solo de un meta-tag antiguo.
+  const subs = /"subscriberCountText"\s*:\s*\{\s*"simpleText"\s*:\s*"([^"]+)"/.exec(html)?.[1]
+    ?? /"subscriberCountText"\s*:\s*\{\s*"runs"\s*:\s*\[\s*\{\s*"text"\s*:\s*"([^"]+)"/.exec(html)?.[1]
+    ?? /"content"\s*:\s*"([\d.,]+\s*[KMB]?) subscribers"/i.exec(html)?.[1]
+    ?? /([\d.,]+\s*[KMB]?) subscribers/i.exec(html)?.[1];
+  const videos = /"videoCountText"\s*:\s*\{\s*"simpleText"\s*:\s*"([^"]+)"/.exec(html)?.[1]
+    ?? /"content"\s*:\s*"([\d,]+) videos"/i.exec(html)?.[1]
+    ?? /([\d,]+) videos/i.exec(html)?.[1];
   let joined = /"joinedDateText":\s*\{\s*"content":"([^"]+)"/.exec(html)?.[1]
     ?? /"joinedDateText":\s*\{\s*"simpleText":"([^"]+)"/.exec(html)?.[1]
     ?? /Joined\s+([A-Z][a-z]+\s+\d{1,2},\s+\d{4})/.exec(html)?.[1];
@@ -256,49 +263,57 @@ export const buscarReferenciasLargas = async ({
     if (lista.length >= Math.max(24, Math.min(36, maxResultados * 3))) break;
   }
   const detalles = [];
-  let intentosLectura = 0;
   const canalesValidados = new Map();
-  const canalesDePrestigio = /LEMMiNO|RealLifeLore|\bfern\b|Wendover|Fall of Civilizations|DW Documentary|ARTE|Timeline|NOVA|BBC|Veritasium|MrBallen|The Why Files|National Geographic|Free Documentary|History Hit|Kings and Generals|Astrum|Real Engineering|imineo|NHK|ZDFinfo|KBS|CCTV/i;
-  // Máximo 30 candidatos; máximo 3 por canal. Se comprueba que la fuente sea consolidada.
-  for (const video of lista) {
-    if (Date.now() >= hasta - 5000 || detalles.length >= maxResultados || intentosLectura >= 30) break;
-    intentosLectura++;
-    try {
-      let calidad = canalesValidados.get(video.canalId);
-      if (calidad === undefined) {
-        calidad = canalesDePrestigio.test(String(video.canal ?? ''));
-        if (!calidad && video.canalId) {
-          const perfil = await datosDeCanal(video.canalId).catch(() => null);
-          calidad = Boolean(perfil && perfil.suscriptores >= 250000 && perfil.diasCanal >= 365);
-        }
-        canalesValidados.set(video.canalId, calidad);
-      }
-      if (!calidad) {
-        nota(`Fuente descartada por no acreditar canal consolidado: ${video.canal || video.canalId}.`);
-        continue;
-      }
-      const d = await datosDeVideo(video.id);
-      const segundos = Number(d.segundos ?? video.segundos);
-      if (!esReferenciaLarga({segundos}) || Number(d.vistas ?? video.vistas ?? 0) < 150000
-        || String(d.transcripcion ?? '').trim().length < 1800) continue;
-      detalles.push({
-        ...video,
-        ...d,
-        id: video.id,
-        url: d.url || `https://www.youtube.com/watch?v=${video.id}`,
-        titulo: d.titulo || video.titulo,
-        canal: d.canal || video.canal,
-        vistas: d.vistas ?? video.vistas,
-        segundos,
-        caracteresTranscripcion: String(d.transcripcion).length,
-        consultaOrigen: video.consultaOrigen,
-      });
-      nota(`Referencia documental válida: ${d.titulo || video.titulo} · ${d.canal || video.canal} · ${Number(d.vistas ?? video.vistas).toLocaleString('en-US')} vistas · ${segundos}s · subtítulos ${d.idiomaTranscripcion || 'no identificado'}.`);
-    } catch (e) {
-      nota(`No se pudo leer la referencia ${video.id}: ${String(e.message ?? e).slice(0, 100)}`);
+  const canalesDePrestigio = /LEMMiNO|RealLifeLore|\\bfern\\b|Wendover|Fall of Civilizations|DW Documentary|ARTE|Timeline|NOVA|BBC|Veritasium|MrBallen|The Why Files|National Geographic|Free Documentary|History Hit|Kings and Generals|Astrum|Real Engineering|imineo|NHK|ZDFinfo|KBS|CCTV|Quanta/i;
+  // Compartir la promesa de validación evita consultar el perfil varias veces si coinciden
+  // varios videos del mismo canal durante el procesamiento concurrente.
+  const validarCanal = (video) => {
+    const id = video.canalId || video.canal;
+    if (!canalesValidados.has(id)) {
+      canalesValidados.set(id, (async () => {
+        if (canalesDePrestigio.test(String(video.canal ?? ''))) return true;
+        if (!video.canalId) return false;
+        const perfil = await datosDeCanal(video.canalId).catch(() => null);
+        return Boolean(perfil && perfil.suscriptores >= 250000 && perfil.diasCanal >= 365);
+      })());
     }
-    await dormir(700);
-  }
+    return canalesValidados.get(id);
+  };
+  let cursor = 0;
+  const trabajadores = Array.from({length: 3}, async () => {
+    while (cursor < lista.length && Date.now() < hasta - 8000 && detalles.length < maxResultados) {
+      const video = lista[cursor++];
+      try {
+        const calidad = await validarCanal(video);
+        if (!calidad) {
+          nota(`Fuente descartada por no acreditar canal consolidado: ${video.canal || video.canalId || video.id}.`);
+          continue;
+        }
+        const d = await datosDeVideo(video.id);
+        const segundos = Number(d.segundos ?? video.segundos);
+        const vistas = Number(d.vistas ?? video.vistas ?? 0);
+        const transcripcion = String(d.transcripcion ?? '');
+        const motivo = !esReferenciaLarga({segundos}) ? `duración insuficiente/no verificable (${segundos || 'sin dato'}s)`
+          : vistas < 150000 ? `tracción insuficiente/no verificable (${vistas.toLocaleString('en-US')} vistas)`
+          : transcripcion.trim().length < 1800 ? `subtítulos públicos insuficientes (${transcripcion.length} caracteres)` : '';
+        if (motivo) {
+          nota(`Referencia descartada: ${d.titulo || video.titulo || video.id} — ${motivo}.`);
+          continue;
+        }
+        detalles.push({
+          ...video, ...d, id: video.id,
+          url: d.url || `https://www.youtube.com/watch?v=${video.id}`,
+          titulo: d.titulo || video.titulo, canal: d.canal || video.canal,
+          vistas, segundos, caracteresTranscripcion: transcripcion.length,
+          consultaOrigen: video.consultaOrigen,
+        });
+        nota(`Referencia documental válida: ${d.titulo || video.titulo} · ${d.canal || video.canal} · ${vistas.toLocaleString('en-US')} vistas · ${segundos}s · subtítulos ${d.idiomaTranscripcion || 'no identificado'}.`);
+      } catch (e) {
+        nota(`No se pudo leer la referencia ${video.id}: ${String(e.message ?? e).slice(0, 100)}`);
+      }
+    }
+  });
+  await Promise.all(trabajadores);
   return detalles.sort((a, b) => Number(b.vistas ?? 0) - Number(a.vistas ?? 0)).slice(0, maxResultados);
 };
 
