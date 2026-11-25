@@ -106,13 +106,15 @@ const notificar = (tipo, titulo, texto) => {
 };
 /** Lo que la Mesa de publicación y los auditores dejaron en este ciclo (para el estado de los 30 puestos). */
 const CTX = {pintadas: 0, gancho: null, mesa: null, fuentes: 0, escenas: 0, sinImagen: 0, problemas: [], puntaje: null};
+const CONTADORES_CICLO = {aprobados: 0, rechazados: 0, errores: 0};
 const registrar = (resultado, detalle, intentos, extra = {}) => {
   const e = leerJson(ESTADO, {agentes: {}, historial: [], totales: {aprobados: 0, rechazados: 0, errores: 0}});
   e.totales = {aprobados: 0, rechazados: 0, errores: 0, ...(e.totales ?? {})};
   e.totales[resultado === 'aprobado' ? 'aprobados' : resultado === 'rechazado' ? 'rechazados' : 'errores']++;
   e.historial = [{fecha: new Date().toISOString(), tema: TEMA || '(sin tema)', formato: FORMATO, resultado, intentos, detalle}, ...(e.historial ?? [])].slice(0, 20);
   const t = e.totales;
-  const resumen = `Aprobados: ${t.aprobados}. Rechazados: ${t.rechazados}. Con error: ${t.errores}.`;
+  CONTADORES_CICLO[resultado === 'aprobado' ? 'aprobados' : resultado === 'rechazado' ? 'rechazados' : 'errores']++;
+  const resumen = `Este proceso: ${CONTADORES_CICLO.aprobados} aprobados, ${CONTADORES_CICLO.rechazados} rechazados y ${CONTADORES_CICLO.errores} errores. Histórico acumulado: ${t.aprobados} aprobados, ${t.rechazados} rechazados y ${t.errores} errores.`;
   const ag = e.agentes ?? {};
   if (resultado === 'aprobado') {
     ag['Directora de contenido'] = {estado: 'libre', actividad: 'hablando', tarea: `Último guion aprobado: "${TEMA}" (${FORMATO}). ${resumen}`};
