@@ -151,10 +151,10 @@ export const extraerTranscripcionYoutube = async (playerResponse) => {
  * No usa cookies privadas, no descarga audio y solo solicita metadatos/subtítulos expuestos por YouTube.
  */
 export const playerInnertube = async (html, id, headers = {}) => {
-  const apiKey = /"INNERTUBE_API_KEY"\\s*:\\s*"([^"]+)"/.exec(html)?.[1]
-    ?? /INNERTUBE_API_KEY\\s*=\\s*["']([^"']+)["']/.exec(html)?.[1];
-  const version = /"INNERTUBE_CLIENT_VERSION"\\s*:\\s*"([^"]+)"/.exec(html)?.[1]
-    ?? /"clientVersion"\\s*:\\s*"([0-9.]+)"/.exec(html)?.[1]
+  const apiKey = /"INNERTUBE_API_KEY"\s*:\s*"([^"]+)"/.exec(html)?.[1]
+    ?? /INNERTUBE_API_KEY\s*=\s*["']([^"']+)["']/.exec(html)?.[1];
+  const version = /"INNERTUBE_CLIENT_VERSION"\s*:\s*"([^"]+)"/.exec(html)?.[1]
+    ?? /"clientVersion"\s*:\s*"([0-9.]+)"/.exec(html)?.[1]
     ?? '2.20261124.01.00';
   if (!apiKey) return null;
   const clientes = [
