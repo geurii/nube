@@ -19,7 +19,7 @@
     "titulo": "¿Ovnis reales captados en cámara?",
     "descripcion": "Tres grabaciones auténticas de la Marina estadounidense siguen generando preguntas. El Pentágono confirmó los videos, no que fueran naves extraterrestres. ¿Qué muestran realmente?\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\n#OvnisReales #Misterio #Pentagono #UFO #LoQueNoSabias"
   },
-  "estado": "aprobado",
+  "estado": "en-renderizado",
   "editor": {
     "puntaje": 9,
     "critica": "Revisión editorial manual: se distingue la autenticidad de las grabaciones de la identificación de los objetos. Se elimina la afirmación falsa de velocidad imposible; el análisis AARO de GoFast de 2025 concluyó que no mostró rendimiento anómalo. Visuales dedicados a Tic Tac, sensores infrarrojos, Gimbal, GoFast y la publicación oficial. Faceless, sin personajes."
@@ -102,5 +102,6 @@
       ]
     }
   ],
-  "velocidad": 2
+  "velocidad": 2,
+  "actualizado": "2026-11-25T23:55:16.579Z"
 }
