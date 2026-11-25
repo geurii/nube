@@ -39,7 +39,7 @@ const cargarCooldowns = () => {
 cargarCooldowns();
 export const proveedorEnCooldown = (nombre) => (bloqueadoHasta.get(nombre) ?? 0) > Date.now();
 export const bloquearProveedor = (nombre, segundos = 900) => {
-  bloqueadoHasta.set(nombre, Date.now() + Math.max(60, Math.min(Number(segundos) || 900, 3600)) * 1000);
+  bloqueadoHasta.set(nombre, Date.now() + Math.max(60, Math.min(Number(segundos) || 900, 86400)) * 1000);
   guardarCooldowns();
 };
 
@@ -50,7 +50,16 @@ const elegirModelos = async (p, key) => {
     const r = await fetch(p.catalogo ?? `${p.base}/models`, {headers: {...(key ? {Authorization: `Bearer ${key}`} : {}), ...(p.cabeceras ?? {})}, signal: AbortSignal.timeout(8000)});
     if (r.status === 429) {
       bloquearProveedor(p.nombre, 900);
-      nota(`${'${p.nombre}'}: catálogo en límite (429); cooldown persistido durante 15 minutos.`);
+      nota(p.nombre + ': catálogo en límite (429); cooldown persistido durante 15 minutos.');
+    } else if (r.status === 402) {
+      bloquearProveedor(p.nombre, 21600);
+      nota(p.nombre + ': catálogo responde 402; pausa de 6 horas para no repetir solicitudes sin saldo/facturación válida.');
+    } else if (r.status === 401 || r.status === 403) {
+      bloquearProveedor(p.nombre, 3600);
+      nota(p.nombre + ': catálogo responde ' + r.status + '; pausa de 1 hora por credenciales/permisos.');
+    } else if (r.status >= 500) {
+      bloquearProveedor(p.nombre, 900);
+      nota(p.nombre + ': catálogo responde ' + r.status + '; pausa de 15 minutos.');
     } else if (r.ok) {
       const j = await r.json();
       const ids = (Array.isArray(j) ? j : (j.data ?? [])).map((x) => String(x.id ?? x.name ?? '').replace(/^models\//, '')).filter((x) => x && !(p.descarta?.test(x)));
@@ -71,11 +80,11 @@ const ordenados = () => {
   const orden = [...libres.filter((p) => p.nombre === ultimoBueno), ...libres.filter((p) => p.nombre !== ultimoBueno)];
   return orden; // si todos están en cooldown, NO se consulta ninguno: proteger las cuotas agotadas
 };
-const descansar = (nombre, r) => {
-  const cabecera = r.headers?.get?.('retry-after') ?? r.headers?.get?.('x-ratelimit-reset-requests') ?? '';
+const descansar = (nombre, r, minimo = 900) => {
+  const cabecera = r?.headers?.get?.('retry-after') ?? r?.headers?.get?.('x-ratelimit-reset-requests') ?? '';
   const segundos = Number.parseFloat(String(cabecera).replace(/s$/i, ''));
-  const espera = Number.isFinite(segundos) && segundos > 0 ? segundos : 900;
-  bloquearProveedor(nombre, Math.max(espera, 900));
+  const espera = Number.isFinite(segundos) && segundos > 0 ? segundos : minimo;
+  bloquearProveedor(nombre, Math.max(espera, minimo));
 };
 export const chatAlternativo = async (mensajes, {maxTokens = 2500, temperatura = 0.4, json = false} = {}) => {
   const limite = Date.now() + 180_000; // no permitir que el respaldo consuma toda la ventana de producción
@@ -95,12 +104,29 @@ export const chatAlternativo = async (mensajes, {maxTokens = 2500, temperatura =
           method: 'POST', headers: {...(key ? {Authorization: `Bearer ${key}`} : {}), 'Content-Type': 'application/json', ...(p.cabeceras ?? {})}, signal: AbortSignal.timeout(Math.min(18000, Math.max(1000, limite - Date.now()))),
           body: JSON.stringify({model: modelo, messages: mensajes, temperature: temperatura, max_tokens: json ? Math.round(maxTokens * 1.8) : maxTokens, ...(json ? {response_format: {type: 'json_object'}} : {}), ...(/gpt-oss/i.test(modelo) && p.nombre === 'Cerebras' ? {reasoning_effort: 'low'} : {})}),
         });
-        if (!r.ok) { nota(`${p.nombre}/${modelo}: ${r.status}`); if (r.status === 429) { descansar(p.nombre, r); break; } fallos++; continue; }
+        if (!r.ok) {
+          nota(p.nombre + '/' + modelo + ': ' + r.status);
+          if (r.status === 429) { descansar(p.nombre, r, 900); break; }
+          if (r.status === 402) { descansar(p.nombre, r, 21600); nota(p.nombre + ': bloqueado 6 horas por HTTP 402.'); break; }
+          if (r.status === 401 || r.status === 403) { descansar(p.nombre, r, 3600); nota(p.nombre + ': bloqueado 1 hora por HTTP ' + r.status + '.'); break; }
+          if (r.status >= 500) { descansar(p.nombre, r, 900); nota(p.nombre + ': bloqueado 15 minutos por error del servidor.'); break; }
+          fallos++;
+          continue;
+        }
         let texto = ((await r.json()).choices?.[0]?.message?.content ?? '').replace(/<think>[\s\S]*?<\/think>/gi, '');
         if (json) { const a = texto.indexOf('{'), b = texto.lastIndexOf('}'); try { JSON.parse(texto.slice(a, b + 1)); } catch { nota(`${p.nombre}/${modelo}: JSON roto (${texto.trim() ? texto.trim().length + ' letras' : 'vacío'})`); fallos++; continue; } }
         if (texto.trim()) { ultimoBueno = p.nombre; return {texto, proveedor: p.nombre, modelo}; }
         nota(`${p.nombre}/${modelo}: vacío`);
-      } catch (e) { fallos++; nota(`${p.nombre}/${modelo}: ${String(e.message ?? e).slice(0, 50)}`); }
+      } catch (e) {
+        fallos++;
+        const detalle = String(e.message ?? e).slice(0, 50);
+        nota(p.nombre + '/' + modelo + ': ' + detalle);
+        if (e.name === 'TimeoutError' || /timed out|timeout|aborted/i.test(detalle)) {
+          descansar(p.nombre, null, 900);
+          nota(p.nombre + ': bloqueado 15 minutos tras timeout para evitar solicitudes repetidas que no responden.');
+          break;
+        }
+      }
     }
   }
   return null;
