@@ -650,6 +650,33 @@ export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: n
       g.line(pieDerX, cy - Math.max(0, -zancada) * h * 0.12, pieDerX + h * 0.06, cy, r[0], ancho);
       return true;
     }
+    case 'radar': {
+      const cx = X(e.x, 0.5), cy = Y(e.y, 0.54), w = num(e.w, 0.58, 0.28, 0.88) * lw, h = num(e.h, 0.42, 0.2, 0.68) * lh;
+      const frame = rampaDeE(e, '#26384b', 5);
+      g.rect(cx - w * 0.5, cy - h * 0.5, w, h, frame[0]);
+      g.rect(cx - w * 0.46, cy - h * 0.42, w * 0.92, h * 0.84, [8, 19, 31]);
+      for (let k = 1; k <= 3; k++) g.line(cx - w * 0.42, cy - h * 0.42 + k * h * 0.21, cx + w * 0.42, cy - h * 0.42 + k * h * 0.21, [31, 76, 84], 1);
+      for (let k = 1; k <= 4; k++) g.line(cx - w * 0.42 + k * w * 0.168, cy - h * 0.42, cx - w * 0.42 + k * w * 0.168, cy + h * 0.42, [31, 76, 84], 1);
+      g.ring(cx, cy, Math.min(w, h) * 0.25, 1, [67, 150, 145]);
+      const ang = t * 1.65;
+      g.line(cx, cy, cx + Math.cos(ang) * w * 0.34, cy + Math.sin(ang) * h * 0.34, [108, 255, 211], 2);
+      const tx = cx + Math.sin(t * 0.83) * w * 0.2, ty = cy - h * 0.1 + Math.cos(t * 0.63) * h * 0.12;
+      g.ellO(tx, ty, Math.max(2, w * 0.018), Math.max(2, h * 0.025), [255, 230, 151]);
+      g.line(tx - w * 0.06, ty, tx + w * 0.06, ty, [255, 230, 151], 1);
+      g.line(tx, ty - h * 0.09, tx, ty + h * 0.09, [255, 230, 151], 1);
+      g.rect(cx - w * 0.5, cy + h * 0.47, w, Math.max(2, h * 0.035), frame[1]);
+      return true;
+    }
+    case 'tic_tac': {
+      const cx = X(e.x, 0.5) + Math.sin(t * 0.82) * lw * 0.025, cy = Y(e.y, 0.34) + Math.sin(t * 1.35) * lh * 0.012;
+      const w = num(e.w, 0.38, 0.18, 0.72) * lw, h = num(e.h, 0.09, 0.045, 0.19) * lh, r = rampaDeE(e, '#dce7ee', 5);
+      g.ellO(cx + w * 0.015, cy + h * 0.1, w * 0.5, h * 0.5, [[15, 27, 43], [15, 27, 43], [15, 27, 43]]);
+      g.ellO(cx, cy, w * 0.5, h * 0.5, r);
+      g.ellO(cx - w * 0.06, cy - h * 0.12, w * 0.31, h * 0.16, [245, 250, 255]);
+      g.line(cx - w * 0.32, cy + h * 0.22, cx + w * 0.32, cy + h * 0.22, [122, 151, 170], Math.max(1, u));
+      for (let k = -2; k <= 2; k++) g.rect(cx + k * w * 0.13 - 1, cy + h * 0.22, 2, 2, Math.floor(t * 3 + k) % 2 ? [143, 229, 245] : [255, 255, 255]);
+      return true;
+    }
     case 'ovni': {
       const cx = X(e.x, 0.5) + Math.sin(t * 0.7) * 6, cy = Y(e.y, 0.3) + Math.sin(t * 1.3) * 3, r = num(e.r, 0.1, 0.03, 0.4) * lw;
       for (let y = 0; y < lh * 0.5; y++) g.rect(cx - r * 0.3 - y * 0.18, cy + r * 0.2 + y, r * 0.6 + y * 0.36, 1, [255, 240, 160], 0.07 * (1 - y / (lh * 0.5)));
@@ -696,4 +723,4 @@ export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: n
   return false;
 }
 
-export const TIPOS_PRO = ['poligono', 'linea', 'nubes', 'olas', 'particulas', 'rayos', 'barco', 'pez', 'roca', 'hielo', 'duna', 'algas', 'sargazo', 'faro', 'silueta', 'ovni', 'explosion', 'ciudad', 'bosque', 'hidrofono', 'sonar', 'microfono', 'volcan', 'fuego', 'lago', 'avion', 'tren', 'submarino', 'barril', 'cerveza', 'cerveceria', 'tsunami', 'deslizamiento', 'terremoto'];
+export const TIPOS_PRO = ['poligono', 'linea', 'nubes', 'olas', 'particulas', 'rayos', 'barco', 'pez', 'roca', 'hielo', 'duna', 'algas', 'sargazo', 'faro', 'silueta', 'radar', 'tic_tac', 'ovni', 'explosion', 'ciudad', 'bosque', 'hidrofono', 'sonar', 'microfono', 'volcan', 'fuego', 'lago', 'avion', 'tren', 'submarino', 'barril', 'cerveza', 'cerveceria', 'tsunami', 'deslizamiento', 'terremoto'];
