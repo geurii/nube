@@ -93,7 +93,7 @@ export const buscarVideos = async (consulta, fecha = 4, corto = false) => {
 
 /** Suscriptores y cantidad de videos de un canal (página pública). */
 export const datosDeCanal = async (canalId) => {
-  const r = await pedir(`https://www.youtube.com/channel/${canalId}`, {headers: CABECERAS, signal: AbortSignal.timeout(25000)});
+  const r = await pedir(`https://www.youtube.com/channel/${canalId}?hl=en`, {headers: CABECERAS, timeoutMs: 25000});
   if (!r.ok) return null;
   const html = await r.text();
   const subs = /"content":"([\d.,]+[KMB]?) subscribers"/.exec(html)?.[1];
