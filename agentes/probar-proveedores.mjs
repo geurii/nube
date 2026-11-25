@@ -12,7 +12,7 @@ fs.mkdirSync(salida, {recursive: true});
 
 const pausa = Date.now() + 60 * 60 * 1000;
 const bloqueados = [
-  'Gemini', 'OpenRouter', 'GitHub Models', 'Mistral', 'Groq', 'SambaNova',
+  'Gemini', 'OpenRouter', 'Mistral', 'Groq', 'SambaNova',
   'NVIDIA NIM', 'Cohere', 'Z.ai (GLM)', 'Ollama Cloud', 'LLM7', 'Requesty',
   'Pollinations', 'OVHcloud', 'Cloudflare',
 ];
