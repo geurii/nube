@@ -1,11 +1,19 @@
 {
-  "actualizado": "2026-11-25T10:28:05.827Z",
+  "actualizado": "2026-11-25T10:37:47.199Z",
   "totales": {
     "aprobados": 16,
     "rechazados": 108,
-    "errores": 166
+    "errores": 167
   },
   "historial": [
+    {
+      "fecha": "2026-11-25T10:37:47.196Z",
+      "tema": "(sin tema)",
+      "formato": "short",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "No se encontró una referencia viral verificable; se detiene el ciclo sin repetir la misma búsqueda."
+    },
     {
       "fecha": "2026-11-25T10:28:05.825Z",
       "tema": "(sin tema)",
@@ -157,21 +165,13 @@
       "resultado": "error",
       "intentos": 0,
       "detalle": "No hay Short viral verificable de 10–75 segundos con subtítulos públicos y autopsia temporal. No se escribe un Short genérico ni se afirma una adaptación inexis"
-    },
-    {
-      "fecha": "2026-11-25T09:18:55.399Z",
-      "tema": "(sin tema)",
-      "formato": "short",
-      "resultado": "error",
-      "intentos": 0,
-      "detalle": "No hay Short viral verificable de 10–75 segundos con subtítulos públicos y autopsia temporal. No se escribe un Short genérico ni se afirma una adaptación inexis"
     }
   ],
   "agentes": {
     "Directora de contenido": {
       "estado": "trabajando",
       "actividad": "pensando",
-      "tarea": "La oficina falló en su último ciclo: No hay Short viral verificable de 10–75 segundos con subtítulos públicos y autopsia temporal. No se escribe un Short genérico ni se afirma una adaptación inexis ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 19 días y sin un video viral no cobras. ¿Qué entregaste hoy? JEFA: Falló el ciclo. Quiero la causa y el arreglo antes de las próximas 15 h."
+      "tarea": "La oficina falló en su último ciclo: No se encontró una referencia viral verificable; se detiene el ciclo sin repetir la misma búsqueda. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 19 días y sin un video viral no cobras. ¿Qué entregaste hoy? JEFA: Falló el ciclo. Quiero la causa y el arreglo antes de las próximas 15 h."
     },
     "Investigador de temas": {
       "estado": "libre",
@@ -266,7 +266,7 @@
     "Cazador de fórmulas": {
       "estado": "libre",
       "actividad": "leyendo",
-      "tarea": "Revisó 133 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (23631 vistas/hora). Sin análisis de IA esta vez. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
+      "tarea": "Revisó 133 videos de 9 canales. Mejor ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (23615 vistas/hora). Sin análisis de IA esta vez. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 10.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Cinco maestrías y todavía no hay un viral. Mejora el gancho de los primeros 3 segundos."
     },
     "Vigía de tendencias": {
       "estado": "libre",
@@ -320,7 +320,7 @@
     }
   },
   "jefa": {
-    "mensaje": "La oficina falló en su último ciclo: No hay Short viral verificable de 10–75 segundos con subtítulos públicos y autopsia temporal. No se escribe un Short genérico ni se afirma una adaptación inexis ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 19 días y sin un video viral no cobras. ¿Qué entregaste hoy? JEFA: Falló el ciclo. Quiero la causa y el arreglo antes de las próximas 15 h.",
+    "mensaje": "La oficina falló en su último ciclo: No se encontró una referencia viral verificable; se detiene el ciclo sin repetir la misma búsqueda. ORDEN DE JULES (nivel 5/5): Carolina: reprograma el calendario para renderizar y publicar un largo 16:9 cada 12 h (00:23 y 12:23 UTC) y mantén los Shorts cada 3 h. Si un ciclo falla, reutiliza otro guion aprobado inmediatamente. PAGA: te deben 20.000 vistas ganadas; el canal lleva 0 (0 %). Todavía no cobras: tu familia depende de esto. JULES: Faltan 19 días y sin un video viral no cobras. ¿Qué entregaste hoy? JEFA: Falló el ciclo. Quiero la causa y el arreglo antes de las próximas 15 h.",
     "horasParaProximoCiclo": 15
   }
 }

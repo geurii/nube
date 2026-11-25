@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-25T10:24:34.526Z",
+  "fecha": "2026-11-25T10:32:00.862Z",
   "criterio": "canales con un video reciente que supera 5x su mediana; candidatos individuales verificados después por duración y subtítulos públicos",
   "consultas": [
     "unsolved mystery explained",
@@ -30,11 +30,11 @@
       "mejor": {
         "id": "GUnx_FTNgRw",
         "titulo": "Cops CAN’T Explain His 911 Call… The Mystery Gets DARKER!",
-        "vistas": 160137,
+        "vistas": 160233,
         "hace": 9,
         "url": "https://youtube.com/watch?v=GUnx_FTNgRw"
       },
-      "puntaje": 18.22
+      "puntaje": 18.23
     },
     {
       "id": "UCn87yhmEcgnI4PGIvhM4DFg",
@@ -47,7 +47,7 @@
       "mejor": {
         "id": "9p43SRaCEng",
         "titulo": "10 Genius Ideas That Backfired on Entire Civilizations",
-        "vistas": 90184,
+        "vistas": 90219,
         "hace": 10,
         "url": "https://youtube.com/watch?v=9p43SRaCEng"
       },
@@ -64,7 +64,7 @@
       "mejor": {
         "id": "KqJsbgsUuWA",
         "titulo": "30 Incredible Stories You Won't Believe",
-        "vistas": 204863,
+        "vistas": 204937,
         "hace": 22,
         "url": "https://youtube.com/watch?v=KqJsbgsUuWA"
       },
@@ -81,14 +81,180 @@
       "mejor": {
         "id": "04snj4rUmfs",
         "titulo": "12 Resident Evil Mysteries That Were FINALLY Solved...",
-        "vistas": 195017,
+        "vistas": 195033,
         "hace": 23,
         "url": "https://youtube.com/watch?v=04snj4rUmfs"
       },
       "puntaje": 5.59
     }
   ],
-  "videosVirales": [],
-  "busquedaSinResultados": true,
+  "videosVirales": [
+    {
+      "id": "0FEeM_QQb0s",
+      "canal": "Brofessor Stein",
+      "canalId": "UCZqJKUTmgB-cffFSzL3ENJA",
+      "titulo": "How Every Major Revolutionary Died",
+      "vistas": 2110034,
+      "hace": 43,
+      "veces": 9,
+      "url": "https://youtube.com/watch?v=0FEeM_QQb0s",
+      "idiomaDetectado": "multilingüe"
+    },
+    {
+      "id": "rW-eMVqecT8",
+      "canal": "Titan Discovery",
+      "canalId": "UCDSFDAIei9m6J44qIDAZi4w",
+      "titulo": "Camera Thrown Into Mel's Hole, What They See Terrifies The Whole World",
+      "vistas": 934942,
+      "hace": 9,
+      "veces": 116,
+      "url": "https://youtube.com/watch?v=rW-eMVqecT8",
+      "idiomaDetectado": "multilingüe"
+    },
+    {
+      "id": "KCQNSQXvQDk",
+      "canal": "Piantapedia",
+      "canalId": "UCijNjT9JbdWVDtWm07jETfQ",
+      "titulo": "What is the Hardest Boss in Every Super Mario Game?",
+      "vistas": 933514,
+      "hace": 62,
+      "veces": 21,
+      "url": "https://youtube.com/watch?v=KCQNSQXvQDk",
+      "idiomaDetectado": "multilingüe"
+    },
+    {
+      "id": "jQQIKcfDlnU",
+      "canal": "gruz",
+      "canalId": "UCUPpgACglOj4P07Y52FJiIg",
+      "titulo": "Breaking the Flagpole in Super Mario Bros! 🔥",
+      "vistas": 830447,
+      "hace": 14,
+      "veces": 6,
+      "url": "https://youtube.com/watch?v=jQQIKcfDlnU",
+      "idiomaDetectado": "multilingüe"
+    },
+    {
+      "id": "wraDdVSlxII",
+      "canal": "Brofessor Stein",
+      "canalId": "UCZqJKUTmgB-cffFSzL3ENJA",
+      "titulo": "The Most Disturbing Documentaries You Shouldn't Watch",
+      "vistas": 698025,
+      "hace": 16,
+      "veces": 9,
+      "url": "https://youtube.com/watch?v=wraDdVSlxII",
+      "idiomaDetectado": "multilingüe"
+    },
+    {
+      "id": "D66CiMKPu08",
+      "canal": "Remember When",
+      "canalId": "UCII0HsHMG7yT0MNrKhjeF5g",
+      "titulo": "National Lampoon's Christmas Vacation (1989): 15 Weird Facts You Didn't Know!",
+      "vistas": 691776,
+      "hace": 5,
+      "veces": 11,
+      "url": "https://youtube.com/watch?v=D66CiMKPu08",
+      "idiomaDetectado": "multilingüe"
+    },
+    {
+      "id": "TU3vGTT3i48",
+      "canal": "Lulusia",
+      "canalId": "UC5pAPow7BS1WPqEa6EasMGg",
+      "titulo": "Who And What Is The D. CLAN?",
+      "vistas": 635097,
+      "hace": 82,
+      "veces": 8,
+      "url": "https://youtube.com/watch?v=TU3vGTT3i48",
+      "idiomaDetectado": "multilingüe"
+    },
+    {
+      "id": "-PVd0NDw_n4",
+      "canal": "gruz",
+      "canalId": "UCUPpgACglOj4P07Y52FJiIg",
+      "titulo": "Bowser is a HOMING MISSILE! 🚀",
+      "vistas": 586016,
+      "hace": 11,
+      "veces": 6,
+      "url": "https://youtube.com/watch?v=-PVd0NDw_n4",
+      "idiomaDetectado": "multilingüe"
+    },
+    {
+      "id": "keT1MXuxUcI",
+      "canal": "Brofessor Stein",
+      "canalId": "UCZqJKUTmgB-cffFSzL3ENJA",
+      "titulo": "Every Historical Glitch We Can't Explain",
+      "vistas": 510338,
+      "hace": 39,
+      "veces": 9,
+      "url": "https://youtube.com/watch?v=keT1MXuxUcI",
+      "idiomaDetectado": "multilingüe"
+    },
+    {
+      "id": "msSI-P0zjs0",
+      "canal": "A Touch Of Mystery-Telugu ",
+      "canalId": "UCcj8CovoRyhbMva7UI45ijw",
+      "titulo": "Pushpaka Vimanam: Vishwakarma’s Greatest Creation | Untold History & Mysteries in Telugu",
+      "vistas": 469529,
+      "hace": 18,
+      "veces": 13,
+      "url": "https://youtube.com/watch?v=msSI-P0zjs0",
+      "idiomaDetectado": "multilingüe"
+    },
+    {
+      "id": "wHbkX51nEYQ",
+      "canal": "gruz",
+      "canalId": "UCUPpgACglOj4P07Y52FJiIg",
+      "titulo": "Can You SAVE Bowser in Super Mario Bros? 🐢",
+      "vistas": 412331,
+      "hace": 19,
+      "veces": 6,
+      "url": "https://youtube.com/watch?v=wHbkX51nEYQ",
+      "idiomaDetectado": "multilingüe"
+    },
+    {
+      "id": "aBVjB0xXbQo",
+      "canal": "NavinVerse",
+      "canalId": "UCH7SuUyule2C8Y1ZVWXvj0g",
+      "titulo": "The TRUTH About Oggy's Mystery Man Explained!",
+      "vistas": 366353,
+      "hace": 30,
+      "veces": 184,
+      "url": "https://youtube.com/watch?v=aBVjB0xXbQo",
+      "idiomaDetectado": "multilingüe"
+    },
+    {
+      "id": "mgGbrK-ceGg",
+      "canal": "Lulusia",
+      "canalId": "UC5pAPow7BS1WPqEa6EasMGg",
+      "titulo": "Everything We Know For A FACT About The Void Century",
+      "vistas": 341055,
+      "hace": 54,
+      "veces": 8,
+      "url": "https://youtube.com/watch?v=mgGbrK-ceGg",
+      "idiomaDetectado": "multilingüe"
+    },
+    {
+      "id": "R-k0VjEP05E",
+      "canal": "gruz",
+      "canalId": "UCUPpgACglOj4P07Y52FJiIg",
+      "titulo": "What If EVERY Enemy Jumped with Mario? 🍄",
+      "vistas": 280588,
+      "hace": 12,
+      "veces": 6,
+      "url": "https://youtube.com/watch?v=R-k0VjEP05E",
+      "idiomaDetectado": "multilingüe"
+    },
+    {
+      "id": "oa8p92wQNrQ",
+      "canal": "Remember When",
+      "canalId": "UCII0HsHMG7yT0MNrKhjeF5g",
+      "titulo": "Titanic (1997): 15 Weird Facts You Didn't Know!",
+      "vistas": 265220,
+      "hace": 16,
+      "veces": 11,
+      "url": "https://youtube.com/watch?v=oa8p92wQNrQ",
+      "idiomaDetectado": "multilingüe"
+    }
+  ],
+  "busquedaSinResultados": false,
   "notasBusqueda": []
 }
