@@ -76,6 +76,18 @@ if (!cuadroTerremoto || !tieneAnclaNarrativa(cuadroTerremoto, 'Lisboa temblo dur
 if (tieneAnclaNarrativa(cuadroTsunami, 'Lisboa temblo durante el terremoto de 1755')) {
   throw new Error('Un tsunami no puede aprobar una escena que solo habla del terremoto.');
 }
+const cuadroIglesia = validarEscena({cielo:['#101820','#26384a'],capas:[
+  capa('estrellas',{n:20}), capa('fuego',{x:0.6,y:0.75,w:0.3,h:0.3}), capa('iglesia',{x:0.5,y:0.82,w:0.5,h:0.45}),
+]});
+if (!cuadroIglesia || !tieneAnclaNarrativa(cuadroIglesia, 'Las iglesias de Lisboa estaban llenas durante la misa de Todos los Santos')) {
+  throw new Error('El pintor debe reconocer iglesias cuando la narración habla de misa y catedrales.');
+}
+const cuadroPuerto = validarEscena({cielo:['#101820','#26384a'],capas:[
+  capa('estrellas',{n:20}), capa('olas'), capa('barco',{x:0.5,y:0.65,w:0.4}),
+]});
+if (!cuadroPuerto || !tieneAnclaNarrativa(cuadroPuerto, 'Los supervivientes buscaron refugio junto a los muelles del puerto')) {
+  throw new Error('El pintor debe reconocer un puerto y sus barcos en la escena de los muelles.');
+}
 const hook16 = 'El barco desapareció y nadie pudo explicar qué ocurrió aquella noche en medio del océano Atlántico.';
 if (validarGancho(hook16, 'short').valido || !validarGancho(hook16, 'largo').valido) throw new Error('La regla del gancho debe permitir 24 palabras en largo y mantener 14 en short.');
 const escena = (tipo, texto, n) => ({tipo, texto: Array.from({length:n}, (_,i)=>`palabra${i}`).join(' ')});
