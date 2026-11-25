@@ -1,0 +1,67 @@
+{
+  "titulo": "¿Por qué un lápiz roto tiene 68 millones de vistas?",
+  "formato": "short",
+  "orientacion": "vertical",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-lapiz-roto-68-millones.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2000-01-01T00:00:00.000Z",
+  "estilo": "gancho",
+  "ganchoTexto": "Un lápiz roto. Una niña llorando. Y 68 millones de vistas en cuatro días.",
+  "publicacion": {
+    "titulo": "¿Por qué un lápiz roto tiene 68 millones de vistas?",
+    "descripcion": "Una escena cotidiana terminó atrapando a millones: una niña quería un lápiz azul, el rojo se rompió y la reacción de sus padres convirtió el momento en algo inolvidable.\n\n#VideosVirales #Internet #Curiosidades #LoQueNoSabias"
+  },
+  "estado": "aprobado",
+  "fuentes": [
+    "Premisa y cifras de visualizaciones proporcionadas por el usuario; verificar la cifra antes de presentarla como dato independiente."
+  ],
+  "editor": {
+    "puntaje": null,
+    "critica": "Guion del usuario preparado para producción vertical. La cifra de 68 millones se conserva como dato aportado por el usuario y no se presenta como verificación independiente."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Sabías que un lápiz roto de una niña hizo sesenta y ocho millones de vistas en cuatro días.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Sonya estaba coloreando con su mamá y su papá. Quería el azul, le dieron el rojo y, cuando empezó a colorear, el lápiz se rompió.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Ella lloró como si fuera una tragedia. Sus papás reaccionaron con shock. Un problema chiquito se sintió gigante, y ahí todo el mundo se quedó mirando.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Entonces el papá sacó una caja enorme de lápices. Ella agarró el azul y pasó del llanto a la risa en dos segundos. Ese cambio es lo que hace que nadie pueda dejar de verlo.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Estafador o genio? Genio: no vendió nada, solo mostró una emoción real. Comparte este video con un amigo que haría lo mismo y sígueme.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

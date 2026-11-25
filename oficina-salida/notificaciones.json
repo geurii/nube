@@ -1,5 +1,14 @@
 [
   {
+    "id": "mwwmqmx8a2yl",
+    "fecha": "2026-11-25T21:22:36.812Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Falló la producción",
+    "texto": "No se pudo producir \"¿Por qué un lápiz roto tiene 68 millones de vistas?\". Revisa la corrida \"Produccion\" en GitHub (Actions)."
+  },
+  {
     "id": "mwwkofndxi2c",
     "fecha": "2026-11-25T20:24:54.841Z",
     "canal": "lqns",
@@ -686,12 +695,5 @@
     "tipo": "listo",
     "titulo": "Video renderizado: ¿Qué oculta el zumbido de Taos que nadie puede explicar? 🌍",
     "texto": "Se renderizó \"¿Qué oculta el zumbido de Taos que nadie puede explicar? 🌍\" para Lo Que No Sabías (122 MB). Sigue en cola de publicación; este aviso NO significa que ya esté publicado."
-  },
-  {
-    "fecha": "2026-11-24T14:29:24.826Z",
-    "canal": "lqns",
-    "tipo": "alerta",
-    "titulo": "Revision tecnica fallida",
-    "texto": "¿Qué oculta el zumbido de Taos que nadie puede explicar? 🌍. Revision fallida: No se pudo revisar la imagen: NVIDIA devolvió una respuesta vacía No se publicara."
   }
 ]
