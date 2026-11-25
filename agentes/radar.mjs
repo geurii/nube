@@ -243,7 +243,7 @@ export const buscarReferenciasLargas = async ({
   const detalles = [];
   let intentosLectura = 0;
   const canalesValidados = new Map();
-  const canalesDePrestigio = /LEMMiNO|RealLifeLore|\\bfern\\b|Wendover|Fall of Civilizations|DW Documentary|ARTE|Timeline|NOVA|BBC|Veritasium|MrBallen|The Why Files|National Geographic|Free Documentary|History Hit|Kings and Generals|Astrum|Real Engineering|imineo|NHK|ZDFinfo|KBS|CCTV/i;
+  const canalesDePrestigio = /LEMMiNO|RealLifeLore|\bfern\b|Wendover|Fall of Civilizations|DW Documentary|ARTE|Timeline|NOVA|BBC|Veritasium|MrBallen|The Why Files|National Geographic|Free Documentary|History Hit|Kings and Generals|Astrum|Real Engineering|imineo|NHK|ZDFinfo|KBS|CCTV/i;
   // Máximo 30 candidatos; máximo 3 por canal. Se comprueba que la fuente sea consolidada.
   for (const video of lista) {
     if (Date.now() >= hasta - 5000 || detalles.length >= maxResultados || intentosLectura >= 30) break;
