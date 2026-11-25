@@ -47,6 +47,16 @@ jobs:
     timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
+      - name: Cancelar ejecuciones antiguas de Oficina
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          ids=$(gh api "repos/$GH_REPO/actions/workflows/oficina.yml/runs?per_page=100" --jq ".workflow_runs[] | select(.id != $GITHUB_RUN_ID and (.status == \"in_progress\" or .status == \"queued\" or .status == \"pending\")) | .id")
+          for id in $ids; do
+            echo "Cancelando ejecución antigua de Oficina: $id"
+            gh api --method POST "repos/$GH_REPO/actions/runs/$id/cancel" || true
+          done
       - uses: actions/setup-node@v4
         with:
           node-version: 22
