@@ -88,7 +88,7 @@ export const chatAlternativo = async (mensajes, {maxTokens = 2500, temperatura =
     const lista = await elegirModelos(p, key);
     if (!lista.length) { nota(`${p.nombre}: sin modelo`); continue; }
     let fallos = 0;
-    for (const modelo of lista.slice(0, 1)) { // una sola solicitud por proveedor y turno; evita quemar cuota probando varios modelos
+    for (const modelo of lista.slice(0, 3)) { // prueba hasta 3 modelos anunciados; se detiene en el primero que responda y nunca insiste tras 429
       if (fallos >= 2) { descansar(p.nombre, {}); break; } // proveedor lento o caído: se pasa al siguiente sin perder minutos
       try {
         const r = await fetch(`${p.base}/chat/completions`, {
