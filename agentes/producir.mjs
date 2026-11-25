@@ -98,7 +98,7 @@ if (oficinaRunId) {
   }
 } else {
   // Disparo manual explícito: timestamp|slug|formato|canal. Nunca toma otro guion por accidente.
-  const disparo = leer(path.join('agentes', 'produccion.disparo'), '');
+  let disparo = ''; try { disparo = fs.readFileSync(path.join('agentes', 'produccion.disparo'), 'utf8'); } catch {}
   const [, slugManual, formatoManual, canalManual] = String(disparo).trim().split('|');
   if (slugManual && formatoManual && canalManual) {
     pendientes = pendientes.filter((x) => x.slug === slugManual && x.g.formato === formatoManual && x.canal === canalManual);
