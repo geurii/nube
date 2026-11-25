@@ -68,7 +68,7 @@ export const sujetosDelTexto = (texto = '') => {
     [/\b(montana|montanas|cordillera|cumbre|acantilado)\b/, ['montanas']],
     [/\b(cerveza|cerveceria|barril|barriles|tonel|toneles|cuba|brewery|beer)\b/, ['barril','cerveza','cerveceria']],
     [/\b(tsunami|megatsunami|maremoto|ola gigante)\b/, ['tsunami']],
-    [/\b(terremoto|seismo|temblor|sacudida sismica|movimiento sismico|falla geologica|fallas tectonicas|colapso|colapsaron|derrumbe|derrumbaron|desplome|se desplomo)\b/, ['terremoto','edificio','ciudad']],
+    [/\b(terremoto|seismo|temblor|sacudida sismica|movimiento sismico|falla geologica|fallas tectonicas)\b/, ['terremoto','edificio','ciudad']],
     [/\b(deslizamiento|derrumbe|avalancha|rocas cayeron|desprendimiento)\b/, ['deslizamiento','roca','montanas']],
     [/\b(faro|torre de luz)\b/, ['faro']],
   ];
