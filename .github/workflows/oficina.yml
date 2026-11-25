@@ -173,7 +173,7 @@ jobs:
               CANAL=$c timeout 120 node agentes/analytics.mjs || true
               CANAL=$c timeout 120 node agentes/cazador.mjs || true
             fi
-            CANAL=$c timeout 300 node agentes/radar.mjs || true
+            CANAL=$c FORMATO=$FORMATO_ACTUAL timeout 300 node agentes/radar.mjs || true
             intento=0
             espera=30
             limite_intento=900
