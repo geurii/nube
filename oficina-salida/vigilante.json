@@ -1,6 +1,8 @@
 {
-  "alertas": {},
-  "fecha": "2026-11-25T08:30:20.121Z",
+  "alertas": {
+    "corrida-Oficina": "2026-11-25T21:40:11.492Z"
+  },
+  "fecha": "2026-11-25T21:40:11.735Z",
   "ok": [
     "YouTube conectado",
     "analítica autorizada",
@@ -10,6 +12,8 @@
     "Buffer responde",
     "hay publicaciones recientes"
   ],
-  "problemas": [],
-  "resumenDia": "2026-11-24"
+  "problemas": [
+    "Falló \"Oficina\" en GitHub"
+  ],
+  "resumenDia": "2026-11-25"
 }

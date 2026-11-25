@@ -1,5 +1,23 @@
 [
   {
+    "id": "mwwnd8pwdh9p",
+    "fecha": "2026-11-25T21:40:11.493Z",
+    "canal": "lqns",
+    "canalNombre": "Vigilante",
+    "tipo": "alerta",
+    "titulo": "Falló \"Oficina\" en GitHub",
+    "texto": "6 corrida(s) fallida(s) en 24 h; la última: https://github.com/geurii/nube/actions/runs/45693887479"
+  },
+  {
+    "id": "mwwnd8pvx7eo",
+    "fecha": "2026-11-25T21:40:11.491Z",
+    "canal": "lqns",
+    "canalNombre": "Vigilante",
+    "tipo": "reporte",
+    "titulo": "Resumen del día",
+    "texto": "Últimas 24 h: 2 video(s) en YouTube, 2 en Facebook, 2 en Instagram, 3 en TikTok. Pendiente: Falló \"Oficina\" en GitHub"
+  },
+  {
     "id": "mwwnaggmp74t",
     "fecha": "2026-11-25T21:38:01.558Z",
     "canal": "lqns",
@@ -679,22 +697,5 @@
     "tipo": "alerta",
     "titulo": "Guion rechazado: ¿Qué oculta la extraña luz verde del Monte St. Helens tras su erupción?",
     "texto": "El Verificador no aprobó \"¿Qué oculta la extraña luz verde del Monte St. Helens tras su erupción?\" tras 4 intentos: El gancho inicial debe tener 14 palabras o menos para formato short. Aprobados: 12. Rechazados: 58. Con error: 14. No se publica. Próximo ciclo en 11 h."
-  },
-  {
-    "id": "mwuttjhk10sw",
-    "fecha": "2026-11-24T15:05:17.288Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título con pregunta intrigante o afirmación impactante + elemento misterioso o inesperado + referencia a un lugar/persona/objeto concreto El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (26076 vistas/hora)."
-  },
-  {
-    "id": "mwutsg8jgq4p",
-    "fecha": "2026-11-24T15:04:26.419Z",
-    "canal": "lqns",
-    "tipo": "reporte",
-    "titulo": "Video subido a YouTube",
-    "texto": "\"¿Qué oculta el zumbido de Taos que nadie puede explicar? 🌍\" quedó PÚBLICO ahora mismo: https://youtu.be/85i8fzFF970"
   }
 ]
