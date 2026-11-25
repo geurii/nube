@@ -91,7 +91,8 @@ export const parsearTranscripcion = (contenido) => {
       const m = /(?:(\d{2}):)?(\d{2}):(\d{2})[.,](\d{3})\s+-->/.exec(bloque);
       if (!m) continue;
       const segundo = Number(m[1] ?? 0) * 3600 + Number(m[2]) * 60 + Number(m[3]) + Number(m[4]) / 1000;
-      const texto = decodificarHtml(bloque.slice(m.index + m[0].length).replace(/<\/?[a-z][^>]*>/gi, ' '));
+      const cuerpo = bloque.slice(m.index + m[0].length).replace(/^\s*(?:(?:\d{2}:)?\d{2}:\d{2}[.,]\d{3})\s*/, '');
+      const texto = decodificarHtml(cuerpo.replace(/<\/?[a-z][^>]*>/gi, ' '));
       if (texto) resultado.push({segundo, tiempo: tiempoDeSegundos(segundo), texto});
     }
     if (resultado.length) return resultado;
