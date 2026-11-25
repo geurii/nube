@@ -64,8 +64,17 @@ if (!cuadroCerveza || !tieneAnclaNarrativa(cuadroCerveza, 'La inundacion de cerv
 const cuadroTsunami = validarEscena({cielo:['#101820','#26384a'],capas:[
   capa('estrellas',{n:30}), capa('deslizamiento',{x:0.4,y:0.85,w:0.6,h:0.4}), capa('tsunami',{x:0.55,y:0.8,w:0.9,h:0.6}),
 ]});
-if (!cuadroTsunami || !tieneAnclaNarrativa(cuadroTsunami, 'Un megatsunami arraso la costa tras el terremoto de Lituya Bay')) {
+if (!cuadroTsunami || !tieneAnclaNarrativa(cuadroTsunami, 'Un megatsunami arraso la costa de Lituya Bay')) {
   throw new Error('El pintor debe reconocer un megatsunami y no sustituirlo por formas decorativas.');
+}
+const cuadroTerremoto = validarEscena({cielo:['#101820','#26384a'],capas:[
+  capa('estrellas',{n:30}), capa('terremoto',{x:0.5,y:0.72,w:0.88,h:0.55}), capa('edificio',{x:0.28,y:0.8,w:0.25,h:0.45}),
+]});
+if (!cuadroTerremoto || !tieneAnclaNarrativa(cuadroTerremoto, 'Lisboa temblo durante el terremoto de 1755')) {
+  throw new Error('El pintor debe reconocer una escena de terremoto urbano.');
+}
+if (tieneAnclaNarrativa(cuadroTsunami, 'Lisboa temblo durante el terremoto de 1755')) {
+  throw new Error('Un tsunami no puede aprobar una escena que solo habla del terremoto.');
 }
 const hook16 = 'El barco desapareció y nadie pudo explicar qué ocurrió aquella noche en medio del océano Atlántico.';
 if (validarGancho(hook16, 'short').valido || !validarGancho(hook16, 'largo').valido) throw new Error('La regla del gancho debe permitir 24 palabras en largo y mantener 14 en short.');
