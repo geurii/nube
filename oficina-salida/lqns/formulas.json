@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-25T13:40:43.701Z",
+  "actualizado": "2026-11-25T20:20:44.616Z",
   "canalesLeidos": 9,
   "videosRevisados": 133,
   "mejores": [
@@ -8,40 +8,40 @@
       "idioma": "en",
       "titulo": "Why Is Antarctica Closed? The Operation Highjump Mystery",
       "publicado": "2026-11-20T01:00:08.000Z",
-      "vistas": 3075632,
-      "vistasPorHora": 23181
+      "vistas": 3117402,
+      "vistasPorHora": 22372
+    },
+    {
+      "canal": "MrBallen",
+      "idioma": "en",
+      "titulo": "Bizarre dashcam footage confounded police",
+      "publicado": "2026-11-25T19:00:23.000Z",
+      "vistas": 22649,
+      "vistasPorHora": 16913
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "Always open your fan mail",
       "publicado": "2026-11-21T19:00:32.000Z",
-      "vistas": 1328797,
-      "vistasPorHora": 14655
+      "vistas": 1375955,
+      "vistasPorHora": 14136
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "How Skydiving Changed Will Smith's Life!",
       "publicado": "2026-11-17T17:00:07.000Z",
-      "vistas": 2352740,
-      "vistasPorHora": 12470
+      "vistas": 2386854,
+      "vistasPorHora": 12219
     },
     {
-      "canal": "The Why Files",
+      "canal": "Psychopoly",
       "idioma": "en",
-      "titulo": "The Basement: Close Encounters Compilation | Abductions, Missing Time & Contact",
-      "publicado": "2026-11-23T18:00:10.000Z",
-      "vistas": 412530,
-      "vistasPorHora": 9445
-    },
-    {
-      "canal": "The Why Files",
-      "idioma": "en",
-      "titulo": "America Is Hiding Something Underground",
-      "publicado": "2026-11-18T18:00:14.000Z",
-      "vistas": 1440382,
-      "vistasPorHora": 8800
+      "titulo": "Animal Hybrids Iceberg (Full Video)",
+      "publicado": "2026-11-21T15:00:27.000Z",
+      "vistas": 880907,
+      "vistasPorHora": 8693
     }
   ],
   "formula": null

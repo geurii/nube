@@ -1,10 +1,10 @@
 {
-  "fecha": "2026-11-25T13:40:43.412Z",
+  "fecha": "2026-11-25T20:20:43.913Z",
   "ultimos28Dias": {
-    "views": 5584,
-    "estimatedMinutesWatched": 1010,
+    "views": 5589,
+    "estimatedMinutesWatched": 1011,
     "averageViewDuration": 26,
-    "averageViewPercentage": 46.42,
+    "averageViewPercentage": 46.4,
     "subscribersGained": 19,
     "subscribersLost": 4
   },
@@ -13,8 +13,8 @@
     "faltanSuscriptores": 957,
     "horas12Meses": 17.1,
     "faltanHoras": 3982.9,
-    "vistasShorts90": 5550,
-    "faltanVistasShorts": 9994450,
+    "vistasShorts90": 5555,
+    "faltanVistasShorts": 9994445,
     "requisitos": "1.000 suscriptores y (4.000 horas en 12 meses o 10 millones de vistas de Shorts en 90 días)"
   },
   "porVideo": [
@@ -123,19 +123,19 @@
       "suscriptoresGanados": 0
     },
     {
+      "id": "hVawPPY5K_Y",
+      "vistas": 38,
+      "retencionPct": 48.2,
+      "duracionMediaSeg": 35,
+      "minutos": 15,
+      "suscriptoresGanados": 0
+    },
+    {
       "id": "plzlom47-f0",
       "vistas": 38,
       "retencionPct": 37.8,
       "duracionMediaSeg": 23,
       "minutos": 6,
-      "suscriptoresGanados": 0
-    },
-    {
-      "id": "hVawPPY5K_Y",
-      "vistas": 36,
-      "retencionPct": 49.3,
-      "duracionMediaSeg": 36,
-      "minutos": 14,
       "suscriptoresGanados": 0
     }
   ]

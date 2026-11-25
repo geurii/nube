@@ -6,36 +6,23 @@ SHORT DE CONTINUIDAD: no se encontró una transcripción pública utilizable par
 Tema elegido del catálogo editorial verificado; se excluyen los temas ya tratados.
 Tema elegido por la oficina.
 
-Internet para todos los agentes: 1 fuente consultada y 5 videos virales de YouTube sobre el tema.
+Internet para todos los agentes: 1 fuente consultada y 0 videos virales de YouTube sobre el tema.
 ## Investigación (1 fuente(s) web)
 - Fuente 1: web — [Laki](https://es.wikipedia.org/wiki/Laki)
 
 ## Intento 1: RECHAZADO
-Editor (5/10): El gancho es débil y descriptivo, sin intriga. La revelación llega tarde y el veredicto es redundante. Falta ritmo y fuerza en el cierre.
+Editor (4/10): La historia está demasiado densa y supera el límite de palabras por escena. Falta ritmo: los datos se acumulan sin pausas visuales. La revelación está mal ubicada, fuera del rango de retención requerido.
+- "En aquella época el clima cambió drásticamente y la gente luchó por sobrevivir bajo la niebla azul de Laki. Sígueme para descubrir más misterios." → Antes de la invitación a seguir debe haber una pregunta natural relacionada con el tema.
+- "(calidad)" → El Editor puso 4/10 (mínimo 5). Reescribe si hay una mejora concreta: La historia está demasiado densa y supera el límite de palabras por escena. Falta ritmo: los datos se acumulan sin pausas visuales. La revelación está mal ubicada, fuera del rango de retención requerido.
+
+## Intento 2: RECHAZADO
+Editor (7/10): El gancho es fuerte pero el ritmo se vuelve denso al acumular datos; la revelación está justo en el límite de porcentaje permitido; el cierre debe usar la frase exacta requerida.
+- "¿Sabías que una erupción islandesa oscureció el sol en 1783?" → GANCHO RECHAZADO: nunca empezar con «Sabías que». Reescribe con una pregunta específica, una afirmación sorprendente o una contradicción concreta del tema. No uses fórmulas genéricas.
+- "¿Crees que la bruma de Laki pudo haber alterado la historia del mundo? Sígueme para descubrir más misterios en los siglos venideros." → El cierre debe terminar exactamente con "Sígueme para descubrir más misterios.".
+- "La bruma de Laki cubrió Europa, provocando una hambruna que llegó a diez millones de víctimas en todo el mundo." → El material indica una hambruna de aproximadamente seis millones de víctimas, no diez millones.
+- "la bruma de Laki redujo la temperatura global en 1 °C, alterando patrones climáticos durante años." → El material no menciona una reducción exacta de 1 °C en la temperatura global.
 - "Benjamin Franklin" → El guion nombra a personas reales. Usa su papel ("el líder", "un científico", "el capitán"), aunque el material traiga el nombre.
+- "(verificador)" → El Verificador no confirmó una aprobación explícita.
 
-Panel de 8 espectadores (guion, intento 2): [Garantía de publicación activa] 8 de 8 aprobaron el guion, 8 pasaron los primeros 3 segundos, 4 lo compartirían. Retención estimada: 100% (mínimo 55%). Mejora: Añadir un elemento visual impactante (como una animación de la bruma tóxica extendiéndose) para reforzar el giro del Nilo y mantener el interés hasta el final.
-- Crítico: adolescente: le gustó · El gancho de los 6 millones me atrapó, pero el ritmo es clave. Si se ralentiza, deslizo.
-- Crítica: universitaria: le gustó · Me encanta el dato del Nilo al final. Le da un giro inesperado. Lo comparto con mis amigas.
-- Crítico: padre trabajador: le gustó · Concreto y al punto. Aprendí algo nuevo en 30 segundos. Bien hecho.
-- Crítico: escéptico: le gustó · No es clickbait. Los datos son sólidos. Pero el 'cambió el mundo' suena exagerado sin más contexto.
-- Crítica: fan del misterio: le gustó · Conozco el tema, pero el dato del Nilo me sorprendió. Bien investigado.
-- Crítica: ama de casa: le gustó · La voz en off debe ser más cálida. El ritmo es bueno, no me aburrí.
-- Crítico: joven dominicano: le gustó · El lenguaje es claro y directo. No suena a clase aburrida. Lo comparto.
-- Crítico: abuelo: le gustó · Todo se entiende bien. El subtítulo ayuda. Buena historia en poco tiempo.
-## Intento 2: APROBADO
-Editor (6/10): El gancho es descriptivo y no intriga lo suficiente. La revelación llega tarde y el ritmo es lento. Falta impacto en el cierre. Panel: [Garantía de publicación activa] 8 de 8 aprobaron el guion, 8 pasaron los primeros 3 segundos, 4 lo compartirían. Retención estimada: 100% (mínimo 55%).
-
-(La Mesa de publicación no entregó algo válido: se usa lo del Guionista.)
-Pintor de luz y detalle objetó: El volcán no es el protagonista en todos los planos, faltan objetos narrativos específicos para cada frase. | Ausencia de víctimas o consecuencias humanas en los planos, crucial para la frase sobre 6 millones de muertes. | Falta de movimiento en algunos planos (ej. partículas de polvo estáticas). | 
-Escenas 0: acuerdo en la ronda 2 (el de composición ajustó con las objeciones).
-Pintor de luz y detalle objetó: 1. Falta de objeto protagonista claro en la escena 1: el volcán no está suficientemente destacado y la luz no proviene de la izquierda como exige la regla. | 2. El primer plano no contiene ningún elemento que muestre el efecto de la erupción (lava, humo). | 3. La escena 2 incluye un resplandor que n
-Escenas 1: el de luz y detalle tuvo la última palabra.
-(El Pintor de luz y detalle no pudo revisar: Cuota de Groq y respaldos en cooldown; se detiene para proteger las cuotas.. Se usa el cuadro del de composición.)
-Escenas 2: sin revisión (el Pintor de luz y detalle no respondió).
-Faltan cuatro cuadros distintos para las escenas 3; se aborta esta tanda, no se usarán fondos de relleno.
-Pintor A, intento 2/5: Cuota de Groq y respaldos en cooldown; se detiene para proteger las cuotas.
-Pintor A, intento 5/5: Cuota de Groq y respaldos en cooldown; se detiene para proteger las cuotas.
-Faltan cuatro cuadros distintos para las escenas 4; se aborta esta tanda, no se usarán fondos de relleno.
-(GUION BLOQUEADO: no se generaron visuales específicos; no se publicará con fondos genéricos.)
-Palabras: 71 · Escenas: 5
+## ERROR
+Cuota de Groq y respaldos en cooldown; se detiene para proteger las cuotas.

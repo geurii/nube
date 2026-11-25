@@ -1,9 +1,15 @@
 {
-  "fecha": "2026-11-25T17:03:32.402Z",
+  "fecha": "2026-11-25T20:20:43.075Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 1002,
+  "total": 417,
   "ganadasDesdeElUltimoCiclo": 0,
   "videos": [
+    {
+      "id": "VXbbW_o1PWo",
+      "titulo": "Nintendo nació vendiendo cartas: la historia antes de los videojuegos",
+      "publicado": "2026-11-25T17:08:39+00:00",
+      "vistas": 40
+    },
     {
       "id": "ju9-ibZWM5s",
       "titulo": "⚡ La ola de 524 metros: El megatsunami que escaló una montaña en Alaska (1958)",
@@ -87,19 +93,9 @@
       "titulo": "Sabías que un banco pagó 175 millones por clientes que no existían 👻🏦",
       "publicado": "2026-11-21T01:48:24+00:00",
       "vistas": 158
-    },
-    {
-      "id": "ujvVWAyrSUg",
-      "titulo": "Sabías que tres hombres caminaron en plena noche polar por 3 huevos de pingüino 🥚 (Parte 3/3)",
-      "publicado": "2026-11-20T17:30:34+00:00",
-      "vistas": 625
     }
   ],
   "historia": [
-    {
-      "fecha": "2026-11-24T13:17:07.299Z",
-      "total": 2244
-    },
     {
       "fecha": "2026-11-24T13:28:29.377Z",
       "total": 2244
@@ -335,6 +331,10 @@
     {
       "fecha": "2026-11-25T17:03:32.402Z",
       "total": 1002
+    },
+    {
+      "fecha": "2026-11-25T20:20:43.075Z",
+      "total": 417
     }
   ]
 }
