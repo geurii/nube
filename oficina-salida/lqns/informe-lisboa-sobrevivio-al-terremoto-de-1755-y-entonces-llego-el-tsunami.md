@@ -7,18 +7,19 @@ Internet para todos los agentes: 1 fuente consultada y 0 videos virales de YouTu
 - Fuente 1: web — [Terremoto de Lisboa de 1755](https://es.wikipedia.org/wiki/Terremoto_de_Lisboa_de_1755)
 
 ## Intento 1: RECHAZADO
-Editor (5/10): Demasiado texto en varias escenas, ritmo irregular y cierre demasiado largo.
-- "¿Cómo habría sido Lisboa sin esa ola que borró siglos de historia? La ciudad renació entre ruinas, pero el recuerdo del desastre sigue marcando su identidad. Sígueme para descubrir más misterios en todo." → El cierre debe terminar exactamente con "Sígueme para descubrir más misterios.".
-- "El sismo surgió en el Atlántico, a menos de 300 km de la ciudad, provocando una serie de ondas que arrasaron edificios y puentes." → La parte sobre "arrasaron edificios y puentes" no está respaldada por el material proporcionado.
-- "Pero lo que no sabías: el tsunami llegó a 20 metros, destruyó puerto y redefinió la costa." → El material no menciona una altura de 20 metros ni la destrucción del puerto ni la redefinición de la costa.
+Editor (6/10): El gancho es demasiado genérico y no captura la magnitud del desastre. Falta una pregunta clara antes del llamado a la acción. El ritmo se pierde al acumular datos sin pausas visuales.
+- "4. Tras el temblor, una ola gigantesca emergió del Atlántico, arrasando los barrios costeros en minutos." → El material menciona que hubo un tsunami que causó casi destrucción total de Lisboa, pero no especifica que arrasó barrios costeros en minutos.
+- "5. Los testigos vieron el agua subir como una pared de espuma que alcanzó el segundo piso." → No hay evidencia en el material de que testigos describieran el tsunami como una pared de espuma que llegó al segundo piso.
+- "7. Lo que no sabías: el tsunami alcanzó 30 metros de altura al tocar la costa." → El material no indica la altura del tsunami; la cifra de 30 metros no está respaldada.
+- "8. El agua arrasó puentes, derribó barcos y dejó la ribera inexplorable durante horas." → El material no menciona daños específicos a puentes, barcos ni la duración de la inexplorabilidad de la ribera.
 - "(verificador)" → El Verificador no confirmó una aprobación explícita.
 
 ## Intento 2: RECHAZADO
-Editor (4/10): El guion original es demasiado extenso y carece de ritmo; la historia se diluye en datos sin cortes claros. Falta un gancho visual que atrape en los primeros segundos. La revelación llega demasiado tarde, reduciendo la retención.
-- "El tsunami sumergió casi todo el puerto en cuestión de minutos." → El material menciona que el terremoto fue seguido por un tsunami que causó gran destrucción, pero no indica específicamente que el tsunami sumergió casi todo el puerto ni que lo hizo en cuestión de minutos.
-- "(calidad)" → El Editor puso 4/10 (mínimo 5). Reescribe si hay una mejora concreta: El guion original es demasiado extenso y carece de ritmo; la historia se diluye en datos sin cortes claros. Falta un gancho visual que atrape en los primeros segundos. La revelación llega demasiado tarde, reduciendo la retención.
+Editor (7/10): El gancho es bueno pero el cuerpo es demasiado denso; divide la información en fragmentos más breves. La revelación llega justo al límite de tiempo, pero necesita estar más cerca del 70 % para maximizar el impacto. El cierre es correcto, pero la pregunta podría ser más directa.
+- "El epicentro quedó a menos de 300 km del Atlántico; el mar se retiró y volvió con una ola terrible" → El material menciona la distancia del epicentro, pero no describe el retiro del mar ni la ola como se indica.
+- "que arrasó la ciudad en segundos." → El material no especifica la velocidad ni la duración del impacto del tsunami.
+- "Lo sorprendente: el tsunami llegó apenas minutos después, sin ninguna señal de alerta previa." → El material indica que el tsunami siguió al terremoto, pero no brinda datos sobre el intervalo de minutos ni la ausencia de alertas.
 - "(verificador)" → El Verificador no confirmó una aprobación explícita.
 
-(El Editor no pudo revisar este intento: Cuota de Groq y respaldos en cooldown; se detiene para proteger las cuotas.)
 ## ERROR
 Cuota de Groq y respaldos en cooldown; se detiene para proteger las cuotas.
