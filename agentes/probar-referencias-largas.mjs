@@ -7,7 +7,9 @@ assert.equal(esReferenciaLarga({segundos: 480}), true, 'un video de 8:00 sí sir
 assert.equal(esReferenciaLarga({segundos: 720}), true, 'un video de 12:00 sí sirve');
 assert.equal(esReferenciaLarga({segundos: 1800}), true, 'un documental de 30 minutos sí sirve como referencia');
 assert.equal(esReferenciaLarga({segundos: 3600}), true, 'una hora es el máximo de referencia permitido');
-assert.equal(esReferenciaLarga({segundos: 3601}), false, 'no se usan directos o documentales de más de una hora');
+assert.equal(esReferenciaLarga({segundos: 3601}), true, 'un documental de más de una hora puede ser referencia');
+assert.equal(esReferenciaLarga({segundos: 14400}), true, 'se permiten documentales de hasta cuatro horas');
+assert.equal(esReferenciaLarga({segundos: 14401}), false, 'se excluyen emisiones de más de cuatro horas');
 assert.ok(CONSULTAS_LARGAS_POR_DEFECTO.some((q) => /LEMMiNO/i.test(q)), 'debe incluir un referente documental consolidado');
 assert.ok(CONSULTAS_LARGAS_POR_DEFECTO.some((q) => /RealLifeLore/i.test(q)), 'debe incluir un referente de gran audiencia');
 assert.ok(CONSULTAS_LARGAS_POR_DEFECTO.some((q) => /ARTE/i.test(q)), 'debe buscar documentales de una fuente europea consolidada');
