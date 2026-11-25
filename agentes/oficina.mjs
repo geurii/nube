@@ -467,7 +467,7 @@ const elegirTema = async (modelo) => {
   // Catálogo curado de temas reales conocidos: se comprueba que exista una página con contenido antes de elegirlos.
   const reserva = [
     'The London Beer Flood', 'The Great Stink of 1858', 'Lake Peigneur disaster',
-    'Lituya Bay megatsunami', 'Lake Nyos disaster', 'The Year Without a Summer',
+'Lake Nyos disaster', 'The Year Without a Summer',
     'The Great Frost of 1709', 'Laki eruption', 'The 1904 Olympic marathon',
     'The Great Stork Derby', 'The Dancing Forest of Kaliningrad',
     'Shag Harbour UFO incident', 'The 1977 Southern Television broadcast interruption',
