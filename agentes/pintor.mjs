@@ -23,7 +23,7 @@ export const ESCENARIOS = {
 export const TIPOS = new Set([
   'estrellas', 'astro', 'resplandor', 'montanas', 'suelo', 'agua', 'niebla', 'arbol', 'edificio', 'central', 'pergamino',
   'nubes', 'olas', 'particulas', 'rayos', 'barco', 'pez', 'roca', 'hielo', 'duna', 'algas', 'sargazo', 'faro', 'silueta', 'ovni', 'explosion', 'ciudad', 'bosque', 'calendario', 'reloj', 'castillo', 'corona', 'libro', 'moneda', 'iglesia', 'caballo',
-  'hidrofono', 'sonar', 'microfono', 'volcan', 'fuego', 'lago', 'avion', 'tren', 'submarino', 'barril', 'cerveza', 'cerveceria', 'tsunami', 'deslizamiento',
+  'cartas', 'hidrofono', 'sonar', 'microfono', 'volcan', 'fuego', 'lago', 'avion', 'tren', 'submarino', 'barril', 'cerveza', 'cerveceria', 'tsunami', 'deslizamiento',
 ]);
 
 /** Una "caja vacía": barra o rectángulo ancho y bajo sin forma de objeto (parece un cuadro de texto sin texto). Gemini la marca como falla grave. */
@@ -43,6 +43,7 @@ export const esCajaVacia = (e) => {
 export const sujetosDelTexto = (texto = '') => {
   const t = String(texto).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   const reglas = [
+    [/\\b(nintendo|hanafuda|baraja|barajas|cartas japonesas|naipes)\\b/, ['cartas']],
     [/\\b(laki|lakagigar|eldgja|fisura volcanica|erupcion fisural)\\b/, ['volcan','fuego','roca']],
     [/\b(calendario|fecha|ano|anos|siglo|cronologia|tiempo|reloj|hora|horas)\b/, ['calendario','reloj','pergamino']],
     [/\b(castillo|medieval|reino|rey|reina|corona|monarquia|moneda|iglesia|caballero|caballo)\b/, ['castillo','corona','moneda','iglesia','caballo','pergamino']],
@@ -79,7 +80,7 @@ export const OBJETOS_NARRATIVOS = new Set([
   'barco','pez','hielo','faro','ovni','explosion','ciudad','bosque','arbol','edificio','central',
   'pergamino','calendario','reloj','castillo','corona','libro','moneda','iglesia','caballo','silueta','astro','duna',
   'montanas','hidrofono','sonar','microfono','volcan','fuego','lago','avion','tren','submarino',
-  'barril','cerveza','cerveceria','tsunami','deslizamiento',
+  'barril','cerveza','cerveceria','tsunami','deslizamiento','cartas',
 ]);
 
 /** Un cuadro solo sirve si contiene un objeto implementado y este coincide con la frase narrada. */
@@ -145,7 +146,7 @@ FORMAS CLÁSICAS:
 - {"t":"arbol","x":0.2,"y":0.95,"h":0.22,"rampa":[...]}   {"t":"edificio","x":0.5,"w":0.2,"h":0.4,"y":0.85,"color":"#1d2140","ventanas":true} (SOLO edificios de apartamentos u oficinas: NUNCA para un reactor, una fábrica o una planta)
 
 - {"t":"pergamino","x":0.12,"y":0.2,"w":0.76,"h":0.5,"lineas":14,"simbolos":true}
-- OBJETOS HISTÓRICOS (usa estos tipos cuando el guion trate de historia, fechas o civilizaciones; son objetos reconocibles, no abstracciones): {"t":"calendario","x":0.5,"y":0.55,"w":0.48,"h":0.48,"color":"#b58a52"} (hoja de calendario con cuadrícula y fecha marcada); {"t":"reloj","x":0.5,"y":0.48,"r":0.18,"color":"#d9b66f"} (reloj circular con agujas); {"t":"castillo","x":0.5,"y":0.86,"w":0.65,"h":0.5,"color":"#827b78"} (castillo medieval con torres y almenas); {"t":"corona","x":0.5,"y":0.5,"w":0.3,"h":0.2,"color":"#d9b33d"}; {"t":"libro","x":0.5,"y":0.6,"w":0.38,"h":0.32,"color":"#7a3f32"}; {"t":"moneda","x":0.5,"y":0.5,"r":0.1,"color":"#d9b33d"}; {"t":"iglesia","x":0.5,"y":0.85,"w":0.42,"h":0.42,"color":"#b7a58c"}; {"t":"caballo","x":0.5,"y":0.65,"w":0.38,"color":"#79513a"}. En historia medieval muestra documentos, calendarios, castillos, coronas, monedas o iglesias según la frase; nunca sustituyas esos objetos por círculos, triángulos o polígonos abstractos.\nFORMAS PROFESIONALES (con sombreado, contorno y movimiento propios; "color" = el tono base, el motor hace la rampa):
+- CARTAS HANAfUDA: {\"t\":\"cartas\",\"x\":0.5,\"y\":0.58,\"w\":0.68,\"h\":0.46,\"color\":\"#d8c28a\"} (abanico de tres cartas japonesas rectangulares, flores estacionales, hojas y detalles rojos; deben parecer cartas físicas, no naipes occidentales).\n- OBJETOS HISTÓRICOS (usa estos tipos cuando el guion trate de historia, fechas o civilizaciones; son objetos reconocibles, no abstracciones): {"t":"calendario","x":0.5,"y":0.55,"w":0.48,"h":0.48,"color":"#b58a52"} (hoja de calendario con cuadrícula y fecha marcada); {"t":"reloj","x":0.5,"y":0.48,"r":0.18,"color":"#d9b66f"} (reloj circular con agujas); {"t":"castillo","x":0.5,"y":0.86,"w":0.65,"h":0.5,"color":"#827b78"} (castillo medieval con torres y almenas); {"t":"corona","x":0.5,"y":0.5,"w":0.3,"h":0.2,"color":"#d9b33d"}; {"t":"libro","x":0.5,"y":0.6,"w":0.38,"h":0.32,"color":"#7a3f32"}; {"t":"moneda","x":0.5,"y":0.5,"r":0.1,"color":"#d9b33d"}; {"t":"iglesia","x":0.5,"y":0.85,"w":0.42,"h":0.42,"color":"#b7a58c"}; {"t":"caballo","x":0.5,"y":0.65,"w":0.38,"color":"#79513a"}. En historia medieval muestra documentos, calendarios, castillos, coronas, monedas o iglesias según la frase; nunca sustituyas esos objetos por círculos, triángulos o polígonos abstractos.\nFORMAS PROFESIONALES (con sombreado, contorno y movimiento propios; "color" = el tono base, el motor hace la rampa):
 - {"t":"nubes","y":0.2,"n":4,"color":"#7a6aa8"}   {"t":"olas","y":0.62,"alto":0.38,"color":"#1d4f86","espuma":true} (mar animado con espuma)
 - {"t":"sargazo","y":0.7,"n":60,"color":"#8a7a2a"} (algas flotando en la superficie)   {"t":"algas","n":14,"y":1,"color":"#2f7a4a"} (algas que se mecen desde el fondo)
 - {"t":"barco","x":0.32,"y":0.64,"w":0.34,"color":"#6a4426","vela":"#e8dcc0"} (velero que cabecea)
