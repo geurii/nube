@@ -1,5 +1,14 @@
 [
   {
+    "id": "mwwcv6i345wh",
+    "fecha": "2026-11-25T16:46:12.651Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Falló la producción",
+    "texto": "No se pudo producir \"Nintendo nació vendiendo cartas: la historia antes de los videojuegos\". Revisa la corrida \"Produccion\" en GitHub (Actions)."
+  },
+  {
     "id": "mww2q1ykikbd",
     "fecha": "2026-11-25T12:02:17.324Z",
     "canal": "lqns",
@@ -687,14 +696,5 @@
     "tipo": "alerta",
     "titulo": "La oficina falló",
     "texto": "No se encontró una fuente institucional con contenido consultable para un tema nuevo. Se reintentará en otro ciclo. Aprobados: 11. Rechazados: 56. Con error: 14. Próximo ciclo en 1 h."
-  },
-  {
-    "id": "mwur6fh41r75",
-    "fecha": "2026-11-24T13:51:19.768Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título con pregunta intrigante o afirmación impactante + elemento misterioso o inesperado + pista de contenido exclusivo El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (26293 vistas/hora)."
   }
 ]

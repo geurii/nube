@@ -1,0 +1,95 @@
+{
+  "titulo": "Nintendo nació vendiendo cartas: la historia antes de los videojuegos",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-nintendo-hanafuda-1889.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-25T16:17:16.669Z",
+  "estilo": "gancho",
+  "ganchoTexto": "La empresa de Mario nació vendiendo cartas. Y eso fue solo el comienzo.",
+  "publicacion": {
+    "titulo": "Nintendo nació vendiendo cartas: la historia antes de los videojuegos",
+    "descripcion": "Nintendo comenzó en Kioto fabricando cartas hanafuda en 1889. Décadas después, la compañía entró en los videojuegos y creó personajes que marcaron generaciones.\n\n#Nintendo #Hanafuda #HistoriaDeLosVideojuegos #Gaming #LoQueNoSabias"
+  },
+  "estado": "aprobado",
+  "fuentes": [
+    "Nintendo (sitio oficial): historia corporativa; fundada en 1889 y fabricación de hanafuda.",
+    "Nintendo (sitio oficial): explicación de las cartas hanafuda, 48 cartas y motivos estacionales.",
+    "Nintendo (sitio oficial): cronología corporativa, cartas Disney en 1959, cambio de nombre en 1963 y máquinas domésticas en 1977.",
+    "Nintendo (sitio oficial): historia de Mario, debut en Donkey Kong en 1981."
+  ],
+  "editor": {
+    "puntaje": null,
+    "critica": "Guion preparado con cronología y datos de fuentes oficiales; pendiente de panel automatizado de revisión."
+  },
+  "retencionEstimada": null,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "La empresa de Mario nació vendiendo cartas. Y eso fue solo el comienzo.",
+      "fondo": [
+        "pintado:nintendo-hanafuda-1889-0a",
+        "pintado:nintendo-hanafuda-1889-0b",
+        "pintado:nintendo-hanafuda-1889-0c",
+        "pintado:nintendo-hanafuda-1889-0d"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En mil ochocientos ochenta y nueve, en Kioto, Japón, Fusajiro Yamauchi fundó Nintendo para fabricar hanafuda: barajas ilustradas con flores y símbolos de las estaciones.",
+      "fondo": [
+        "pintado:nintendo-hanafuda-1889-0a",
+        "pintado:nintendo-hanafuda-1889-0b",
+        "pintado:nintendo-hanafuda-1889-0c",
+        "pintado:nintendo-hanafuda-1889-0d"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Una baraja tradicional tenía cuarenta y ocho cartas. No eran cartas de póker: sus dibujos representaban los doce meses del año.",
+      "fondo": [
+        "pintado:nintendo-hanafuda-1889-0a",
+        "pintado:nintendo-hanafuda-1889-0b",
+        "pintado:nintendo-hanafuda-1889-0c",
+        "pintado:nintendo-hanafuda-1889-0d"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Durante décadas, ese fue su negocio. En mil novecientos cincuenta y nueve, Nintendo incluso lanzó cartas con personajes de Disney. La empresa siguió cambiando mucho antes de entrar al entretenimiento electrónico.",
+      "fondo": [
+        "pintado:nintendo-hanafuda-1889-0a",
+        "pintado:nintendo-hanafuda-1889-0b",
+        "pintado:nintendo-hanafuda-1889-0c",
+        "pintado:nintendo-hanafuda-1889-0d"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Y aquí viene el giro: Nintendo no saltó directamente de las cartas a Mario. En mil novecientos sesenta y tres adoptó el nombre Nintendo Co., Ltd. y se expandió hacia juguetes y otros juegos. Sus primeras máquinas de videojuegos domésticas llegaron en mil novecientos setenta y siete.",
+      "fondo": [
+        "pintado:nintendo-hanafuda-1889-0a",
+        "pintado:nintendo-hanafuda-1889-0b",
+        "pintado:nintendo-hanafuda-1889-0c",
+        "pintado:nintendo-hanafuda-1889-0d"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "Mario debutó en Donkey Kong en mil novecientos ochenta y uno. La compañía detrás de tus videojuegos favoritos empezó con una baraja japonesa. ¿Lo sabías?",
+      "fondo": [
+        "pintado:nintendo-hanafuda-1889-0a",
+        "pintado:nintendo-hanafuda-1889-0b",
+        "pintado:nintendo-hanafuda-1889-0c",
+        "pintado:nintendo-hanafuda-1889-0d"
+      ]
+    }
+  ],
+  "orientacion": "vertical"
+}
