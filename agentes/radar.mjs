@@ -87,7 +87,8 @@ export const buscarVideos = async (consulta, fecha = 4, corto = false) => {
       vistas: numeroDe(v.viewCountText?.simpleText), dias: diasDe(v.publishedTimeText?.simpleText), segundos: segundosDe(v.lengthText?.simpleText),
     });
   });
-  return salida.filter((v) => v.canalId && v.vistas !== null);
+  // No descartar resultados sin contador de vistas: la página del video puede aportar vistas y duración reales.
+  return salida.filter((v) => v.canalId);
 };
 
 /** Suscriptores y cantidad de videos de un canal (página pública). */
@@ -169,11 +170,18 @@ export const buscarReferenciasLargas = async ({
 } = {}) => {
   // Consultas por canales de referencia consolidados + búsquedas nativas en varios idiomas.
   // Se priorizan documentales con tracción demostrada; no se toma como modelo cualquier canal pequeño.
-  const consultas = [
-    ...CONSULTAS_LARGAS_POR_DEFECTO,
-    'MrBallen mystery documentary', 'The Why Files mystery documentary',
-    ...(nicho ? [`${nicho} documentary investigation`] : []),
+  // Lote equilibrado para que la ventana de ejecución sí alcance idiomas distintos del inglés.
+  // La lista completa permanece en CONSULTAS_LARGAS_POR_DEFECTO; aquí se distribuyen 12 búsquedas por ciclo.
+  const consultasPrioritarias = [
+    'LEMMiNO mystery documentary', 'RealLifeLore documentary mystery history',
+    'ARTE documentaire mystère historique enquête', 'ZDFinfo Doku ungelöste Rätsel Geschichte',
+    '歴史 ミステリー ドキュメンタリー 実話', '历史 未解之谜 纪录片 科学 历史事件',
+    'documentário mistério histórico investigação', '기묘한 역사 미스터리 다큐멘터리 실화',
+    'DW Documentary mystery history', 'imineo Documentaires documentaire histoire enquête',
+    'BBC documentary history mystery', 'NHK documentary mystery history',
   ];
+  const consultas = [...consultasPrioritarias, 'MrBallen mystery documentary', 'The Why Files mystery documentary',
+    ...(nicho ? [`${nicho} documentary investigation`] : [])];
   const hasta = Date.now() + limiteMs;
   const candidatos = new Map();
   for (const q of consultas) {
@@ -182,7 +190,9 @@ export const buscarReferenciasLargas = async ({
       const lista = await buscarVideos(q, 0, false);
       for (const v of lista) {
         // Umbral mínimo para evitar referencias con poco rendimiento: 150.000 vistas y al menos 8 minutos.
-        if (!v?.id || !esReferenciaLarga(v) || Number(v.vistas ?? 0) < 150000) continue;
+        // La duración y las vistas pueden faltar en la tarjeta de búsqueda; se verifican después
+        // consultando la página pública del video. Aquí solo se exige un ID recuperable.
+        if (!v?.id) continue;
         const previo = candidatos.get(v.id);
         if (!previo || Number(v.vistas ?? 0) > Number(previo.vistas ?? 0)) {
           candidatos.set(v.id, {...v, consultaOrigen: q});
