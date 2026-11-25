@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-25T08:10:50.003Z",
+  "fecha": "2026-11-25T08:53:23.673Z",
   "criterio": "canales con un video reciente que supera 5x su mediana; candidatos individuales verificados después por duración y subtítulos públicos",
   "consultas": [
     "unsolved mystery explained",
@@ -16,8 +16,8 @@
     "기묘한 역사 미스터리 실화",
     "غموض تاريخي قصة حقيقية غريبة"
   ],
-  "canalesRevisados": 86,
-  "explotaron": 35,
+  "canalesRevisados": 71,
+  "explotaron": 28,
   "canales": [
     {
       "id": "UCGcVuScYBs4oP0MTU6oLWSQ",
@@ -30,45 +30,11 @@
       "mejor": {
         "id": "GUnx_FTNgRw",
         "titulo": "Cops CAN’T Explain His 911 Call… The Mystery Gets DARKER!",
-        "vistas": 158859,
+        "vistas": 159311,
         "hace": 9,
         "url": "https://youtube.com/watch?v=GUnx_FTNgRw"
       },
-      "puntaje": 18.34
-    },
-    {
-      "id": "UCn87yhmEcgnI4PGIvhM4DFg",
-      "nombre": "Chill Dude Plus",
-      "suscriptores": 789,
-      "videosDelCanal": 51,
-      "fechaAlta": "2026-10-02T00:00:00.000Z",
-      "diasCanal": 54,
-      "veces": 9,
-      "mejor": {
-        "id": "9p43SRaCEng",
-        "titulo": "10 Genius Ideas That Backfired on Entire Civilizations",
-        "vistas": 89390,
-        "hace": 10,
-        "url": "https://youtube.com/watch?v=9p43SRaCEng"
-      },
-      "puntaje": 6.75
-    },
-    {
-      "id": "UCdQx7-YvvW5oFQgb7ityDiQ",
-      "nombre": "Nobody Believes This",
-      "suscriptores": 2860,
-      "videosDelCanal": 21,
-      "fechaAlta": "2026-10-15T00:00:00.000Z",
-      "diasCanal": 41,
-      "veces": 13,
-      "mejor": {
-        "id": "KqJsbgsUuWA",
-        "titulo": "30 Incredible Stories You Won't Believe",
-        "vistas": 203740,
-        "hace": 22,
-        "url": "https://youtube.com/watch?v=KqJsbgsUuWA"
-      },
-      "puntaje": 5.94
+      "puntaje": 18.38
     },
     {
       "id": "UCycmRza8F3YHyZ9W-bjAdFg",
@@ -81,7 +47,7 @@
       "mejor": {
         "id": "04snj4rUmfs",
         "titulo": "12 Resident Evil Mysteries That Were FINALLY Solved...",
-        "vistas": 194731,
+        "vistas": 194846,
         "hace": 23,
         "url": "https://youtube.com/watch?v=04snj4rUmfs"
       },
@@ -91,6 +57,7 @@
   "videosVirales": [],
   "busquedaSinResultados": true,
   "notasBusqueda": [
-    "(Radar: la búsqueda \"historias reales sorprendentes misterio\" falló: YouTube no devolvió ytInitialData legible (bloqueo, consentimiento o cambio de f)"
+    "(Radar: la búsqueda \"歴史 ミステリー 不思議な出来事 解説\" falló: YouTube no devolvió ytInitialData legible (bloqueo, consentimiento o cambio de f)",
+    "(Radar: la búsqueda \"歴史 ミステリー 不思議な出来事 解説\" falló: YouTube no devolvió ytInitialData legible (bloqueo, consentimiento o cambio de f)"
   ]
 }
