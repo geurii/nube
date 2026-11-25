@@ -1,8 +1,8 @@
 {
-  "fecha": "2026-11-24T23:42:48.824Z",
+  "fecha": "2026-11-25T04:42:54.479Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 999,
-  "ganadasDesdeElUltimoCiclo": 0,
+  "total": 1002,
+  "ganadasDesdeElUltimoCiclo": 3,
   "videos": [
     {
       "id": "ju9-ibZWM5s",
@@ -20,7 +20,7 @@
       "id": "xE32CX_fsXM",
       "titulo": "🌋 ¿Qué secreto ancestral esconde el cráter de la Isla de Pascua?",
       "publicado": "2026-11-24T16:28:54+00:00",
-      "vistas": 20
+      "vistas": 22
     },
     {
       "id": "85i8fzFF970",
@@ -32,7 +32,7 @@
       "id": "hVawPPY5K_Y",
       "titulo": "⚡ 1884: El inventor que encendió Niágara con su motor AC",
       "publicado": "2026-11-22T16:44:58+00:00",
-      "vistas": 38
+      "vistas": 40
     },
     {
       "id": "FEwqFlpnAe4",
@@ -92,14 +92,10 @@
       "id": "ujvVWAyrSUg",
       "titulo": "Sabías que tres hombres caminaron en plena noche polar por 3 huevos de pingüino 🥚 (Parte 3/3)",
       "publicado": "2026-11-20T17:30:34+00:00",
-      "vistas": 626
+      "vistas": 625
     }
   ],
   "historia": [
-    {
-      "fecha": "2026-11-22T16:43:51.039Z",
-      "total": 2145
-    },
     {
       "fecha": "2026-11-22T19:56:07.261Z",
       "total": 2137
@@ -335,6 +331,10 @@
     {
       "fecha": "2026-11-24T23:42:48.824Z",
       "total": 999
+    },
+    {
+      "fecha": "2026-11-25T04:42:54.479Z",
+      "total": 1002
     }
   ]
 }
