@@ -180,7 +180,7 @@ export const CONSULTAS_LARGAS_POR_DEFECTO = [
 
 export const esReferenciaLarga = (video) => {
   const segundos = Number(video?.segundos);
-  return Number.isFinite(segundos) && segundos >= 480 && segundos <= 3600;
+  return Number.isFinite(segundos) && segundos >= 480 && segundos <= 14400;
 };
 
 export const buscarReferenciasLargas = async ({
