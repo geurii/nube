@@ -238,6 +238,12 @@ jobs:
             sleep 5
           done
           if [ -n "$(git log origin/main..HEAD --oneline 2>/dev/null)" ]; then echo "ERROR: no se pudo subir el resultado al repositorio"; exit 1; fi
+      - name: Impedir producción si este ciclo no aprobó un guion
+        if: always() && steps.pres.outputs.ok != 'no'
+        env:
+          OFICINA_RUN_ID: ${{ github.run_id }}
+        run: |
+          node --input-type=module -e 'import fs from "node:fs"; const p="oficina-salida/produccion-pendiente.json"; let xs=[]; try{xs=JSON.parse(fs.readFileSync(p,"utf8"));}catch{}; const ok=Array.isArray(xs)&&xs.some(x=>String(x.runId)===String(process.env.OFICINA_RUN_ID)); if(!ok){console.error("Este ciclo no dejó un guion aprobado en su manifiesto. Producción no debe arrancar.");process.exit(1)} console.log("Manifiesto de guion aprobado confirmado para esta ejecución.");'
       - name: Esperar al siguiente horario programado
         if: always()
         run: echo Ciclos ejecutados segun horario programado
