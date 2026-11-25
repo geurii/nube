@@ -104,6 +104,7 @@ jobs:
           node --check agentes/reglas-guion.mjs
           node --check agentes/llm.mjs
           node --check agentes/analizar-videos.mjs
+          node agentes/probar-subtitulos-publicos.mjs
           node --check agentes/fuentes-guion.mjs
           node agentes/probar-fuentes-guion.mjs
           node --check agentes/oficina.mjs
