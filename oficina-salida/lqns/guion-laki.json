@@ -1,5 +1,5 @@
 {
-  "titulo": "🔥 Laki: la erupción que oscureció el sol y mató millones",
+  "titulo": "🌋 La erupción que cambió el mundo: Laki, 1783",
   "formato": "short",
   "plataforma": "youtube",
   "canal": "lqns",
@@ -10,58 +10,51 @@
   "personaje": {
     "visible": false
   },
-  "creado": "2026-11-25T05:37:12.571Z",
+  "creado": "2026-11-25T05:54:41.004Z",
   "estilo": "gancho",
-  "ganchoTexto": "¿¿Qué erupción volcánica ocultó el sol y alteró el clima…?",
+  "ganchoTexto": "¿¿Qué ocurrió en 1783 que mató a 6 millones de personas…?",
   "publicacion": {
-    "titulo": "🔥 Laki: la erupción que oscureció el sol y mató millones",
-    "descripcion": "Una fisura volcánica cambió el clima del planeta. Descubre los datos que pocos conocen.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\n#Laki #Misterios #HistoriaOculta #MisteriosSinResolver #DatosCuriosos"
+    "titulo": "🌋 La erupción que cambió el mundo: Laki, 1783",
+    "descripcion": "Descubre cómo una erupción volcánica en Islandia en 1783 afectó a todo el planeta. Un evento que pocos conocen, pero que cambió la historia.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\n#Laki #ErupcionVolcanica #Islandia #Historia #Catastrofe"
   },
   "estado": "rechazado-necesita-revision",
   "editor": {
-    "puntaje": 8,
-    "critica": "El gancho es potente pero el cuerpo tiene frases demasiado largas; la revelación está bien ubicada pero el cierre necesita más fuerza. Panel: [Garantía de publicación activa] 6 de 8 aprobaron el guion, 8 pasaron los primeros 3 segundos, 2 lo compartirían. Retención estimada: 88% (mínimo 55%)."
+    "puntaje": 6,
+    "critica": "El gancho es intrigante pero no menciona a Laki. La revelación llega tarde y falta impacto en el cierre. Ritmo bueno, pero la conexión entre la erupción y la hambruna global no está clara."
   },
-  "retencionEstimada": 88,
+  "retencionEstimada": null,
   "escenas": [
     {
       "tipo": "hook",
-      "texto": "¿Qué erupción volcánica ocultó el sol y alteró el clima global?",
+      "texto": "¿Qué ocurrió en mil setecientos ochenta y tres que mató a seis millones de personas y nadie lo?",
       "fondo": [
         "pixelmisterio"
       ]
     },
     {
       "tipo": "historia",
-      "texto": "Laki, una fisura entre Mýrdalsjökull y Vatnajökull, empezó a erupcionar el ocho de junio de mil setecientos ochenta y tres y duró ocho meses.",
+      "texto": "En junio de mil setecientos ochenta y tres, una fisura en el volcán Grímsvötn, en Islandia, liberó catorce kilómetros³ de lava y gases tóxicos. La erupción duró ocho meses.",
       "fondo": [
         "pixelmisterio"
       ]
     },
     {
       "tipo": "historia",
-      "texto": "Abrió ciento treinta cráteres, expulsó catorce kilómetros³ de lava y liberó ocho millones de fluoruro de hidrógeno y ciento veinte millones de azufre.",
-      "fondo": [
-        "pixelcifra:14 KM|DE LAVA|ORO"
-      ]
-    },
-    {
-      "tipo": "historia",
-      "texto": "Las nubes tóxicas subieron a quince kilómetros, bloquearon el sol y mataron a nueve mil islandeses, además perdieron más del cincuenta por ciento del ganado.",
+      "texto": "Nubes de ácido fluorhídrico y dióxido de azufre envenenaron los pastos, mataron al cincuenta por ciento del ganado islandés y a nueve mil personas.",
       "fondo": [
         "pixelmisterio"
       ]
     },
     {
       "tipo": "revelacion",
-      "texto": "La bruma de Laki cubrió toda Europa durante el verano de mil setecientos ochenta y tres.",
+      "texto": "Pero lo que no sabías: ciento veinte millones de toneladas de dióxido de azufre crearon una bruma global que bloqueó el sol, causando una hambruna de tres años.",
       "fondo": [
         "pixelmisterio"
       ]
     },
     {
       "tipo": "veredicto",
-      "texto": "¿Cuántas vidas se perdieron bajo una nube invisible? Esta catástrofe cambió el clima y afecta nuestros inviernos. Sígueme para descubrir más misterios.",
+      "texto": "La bruma de Laki afectó cosechas en Europa, Asia y África. ¿Sabías que hasta el Nilo se secó parcialmente? Sígueme para descubrir más misterios.",
       "fondo": [
         "pixelmisterio"
       ]

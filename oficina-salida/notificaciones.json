@@ -1,5 +1,14 @@
 [
   {
+    "id": "mwvp88sb85cs",
+    "fecha": "2026-11-25T05:44:31.355Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante + elemento misterioso o prohibido + pista de revelación impactante El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (24163 vistas/hora)."
+  },
+  {
     "id": "mwvo4aqmjll1",
     "fecha": "2026-11-25T05:13:27.646Z",
     "canal": "lqns",
@@ -687,14 +696,5 @@
     "tipo": "alerta",
     "titulo": "La oficina falló",
     "texto": "No se encontraron dos fuentes institucionales independientes con contenido consultable para un tema nuevo. Se reintentará en otro ciclo. Aprobados: 11. Rechazados: 56. Con error: 13. Próximo ciclo en 1 h."
-  },
-  {
-    "id": "mwuq8z993doj",
-    "fecha": "2026-11-24T13:25:19.101Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "La oficina falló",
-    "texto": "No se encontraron dos fuentes institucionales independientes con contenido consultable para un tema nuevo. Se reintentará en otro ciclo. Aprobados: 11. Rechazados: 56. Con error: 12. Próximo ciclo en 1 h."
   }
 ]

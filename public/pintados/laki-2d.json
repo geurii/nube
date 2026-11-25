@@ -1,1 +1,0 @@
-{"cielo":["#a0c4ff","#c6e2ff","#e8f4ff"],"capas":[{"t":"montanas","y":0.78,"alto":0.25,"semilla":9,"picos":4,"rampa":["#7a8fa0","#8899b5","#99a8c8"]},{"t":"volcan","x":0.5,"y":0.86,"w":0.68,"h":0.56,"color":"#b35a3c"},{"t":"particulas","x":0.5,"y":0.78,"n":28,"tipo":"polvo"},{"t":"fuego","x":0.5,"y":0.78,"w":0.34,"h":0.43,"color":"#ff8c42"}]}
