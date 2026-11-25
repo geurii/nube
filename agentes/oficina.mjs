@@ -379,7 +379,8 @@ const elegirTema = async (modelo) => {
   const radarIntentadoReciente = Boolean(radar?.fecha)
     && Number.isFinite(Date.parse(radar.fecha))
     && Date.now() - Date.parse(radar.fecha) < 15 * 60 * 1000
-    && Array.isArray(radar?.referenciasLargas);
+    && Array.isArray(radar?.referenciasLargas)
+    && radar.referenciasLargas.length > 0;
   if (FORMATO === 'largo' && !videosRadar.length && !radarIntentadoReciente) {
     informe.push('No hay un intento reciente de referencias largas; se ejecuta una búsqueda de respaldo.');
     videosRadar = await buscarReferenciasLargas({nicho: CONFIG.nicho, canales: CONFIG.vigilar ?? [], maxResultados: 10, limiteMs: 150000, nota: (t) => informe.push(t)});
