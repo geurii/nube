@@ -924,8 +924,7 @@ try {
     try { registrar('error', 'Cuotas de IA agotadas; ciclo detenido para no consumir más solicitudes.', 0); } catch { /* sin estado */ }
     try { fs.writeFileSync(path.join(SALIDA, `informe-${slug}.md`), informe.join('\n')); } catch { /* sin informe */ }
     console.error('CUOTA_AGOTADA: se detiene el ciclo sin más llamadas. Cooldowns guardados para la próxima ejecución.');
-    process.exitCode = 75;
-    return;
+    process.exit(75);
   }
   const temaMalo = Boolean(TEMA.trim()) && /No encontré el tema|No se encontró un tema nuevo|material suficiente|investigación insuficiente|sin material/i.test(String(e.message ?? e));
   if (temaMalo) {
