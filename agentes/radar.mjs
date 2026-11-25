@@ -385,7 +385,7 @@ export const construirRadar = async ({consultas = CONSULTAS_POR_DEFECTO, maxSubs
   const ids = new Set();
   const videosVirales = explotaron
     .flatMap((x) => (x.candidatos ?? [x.video]).map((v) => ({
-      canal: x.nombre, canalId: x.id, titulo: v.titulo, vistas: v.vistas,
+      id: v.id, canal: x.nombre, canalId: x.id, titulo: v.titulo, vistas: v.vistas,
       hace: Math.round(v.dias), veces: x.veces, url: `https://youtube.com/watch?v=${v.id}`,
       idiomaDetectado: 'multilingüe',
     })))
