@@ -68,18 +68,40 @@ const tiempoDeSegundos = (n) => {
 };
 
 /** Convierte subtítulos XML públicos de YouTube en líneas con marca de tiempo. */
-export const parsearTranscripcion = (xml) => {
+export const parsearTranscripcion = (contenido) => {
+  const fuente = String(contenido ?? '').replace(/^\uFEFF/, '').trim();
   const resultado = [];
   const atributo = (attrs, nombre) => {
     const m = new RegExp('(?:^|\\s)' + nombre + '="([^"]*)"').exec(attrs);
     return m ? Number(m[1]) : 0;
   };
-  for (const m of String(xml ?? '').matchAll(/<text\b([^>]*)>([\s\S]*?)<\/text>/gi)) {
+  if (fuente.startsWith('{')) {
+    try {
+      const json = JSON.parse(fuente);
+      for (const evento of json.events ?? []) {
+        const segundo = Number(evento.tStartMs ?? 0) / 1000;
+        const texto = decodificarHtml((evento.segs ?? []).map((s) => s.utf8 ?? '').join(''));
+        if (texto) resultado.push({segundo, tiempo: tiempoDeSegundos(segundo), texto});
+      }
+      if (resultado.length) return resultado;
+    } catch { /* probar formatos alternativos */ }
+  }
+  if (/WEBVTT/i.test(fuente.slice(0, 40))) {
+    for (const bloque of fuente.split(/\n\s*\n/)) {
+      const m = /(?:(\d{2}):)?(\d{2}):(\d{2})[.,](\d{3})\s+-->/.exec(bloque);
+      if (!m) continue;
+      const segundo = Number(m[1] ?? 0) * 3600 + Number(m[2]) * 60 + Number(m[3]) + Number(m[4]) / 1000;
+      const texto = decodificarHtml(bloque.slice(m.index + m[0].length).replace(/<\/?[a-z][^>]*>/gi, ' '));
+      if (texto) resultado.push({segundo, tiempo: tiempoDeSegundos(segundo), texto});
+    }
+    if (resultado.length) return resultado;
+  }
+  for (const m of fuente.matchAll(/<text\b([^>]*)>([\s\S]*?)<\/text>/gi)) {
     const inicio = atributo(m[1], 'start');
     const texto = decodificarHtml(m[2]);
     if (texto) resultado.push({segundo: inicio, tiempo: tiempoDeSegundos(inicio), texto});
   }
-  if (!resultado.length) for (const m of String(xml ?? '').matchAll(/<p\b([^>]*)>([\s\S]*?)<\/p>/gi)) {
+  if (!resultado.length) for (const m of fuente.matchAll(/<p\b([^>]*)>([\s\S]*?)<\/p>/gi)) {
     const inicio = atributo(m[1], 't') / 1000;
     const texto = decodificarHtml(m[2]);
     if (texto) resultado.push({segundo: inicio, tiempo: tiempoDeSegundos(inicio), texto});
@@ -98,11 +120,22 @@ export const extraerTranscripcionYoutube = async (playerResponse) => {
     };
     return preferencia(a) - preferencia(b);
   });
-  for (const pista of ordenadas.slice(0, 3)) {
+  for (const pista of ordenadas.slice(0, 8)) {
     try {
-      const r = await fetch(pista.baseUrl, {headers: {'User-Agent': 'Mozilla/5.0'}, signal: AbortSignal.timeout(12000)});
-      if (!r.ok) continue;
-      const cues = parsearTranscripcion(await r.text());
+      const urls = [pista.baseUrl];
+      try { const json3 = new URL(pista.baseUrl); json3.searchParams.set('fmt', 'json3'); urls.push(json3.toString()); } catch {}
+      try { const vtt = new URL(pista.baseUrl); vtt.searchParams.set('fmt', 'vtt'); urls.push(vtt.toString()); } catch {}
+      let cues = [];
+      for (const url of urls) {
+        for (let intento = 0; intento < 2 && !cues.length; intento++) {
+          try {
+            const r = await fetch(url, {headers: {'User-Agent': 'Mozilla/5.0', 'Accept-Language': 'en-US,en;q=0.9'}, signal: AbortSignal.timeout(15000)});
+            if (!r.ok) continue;
+            cues = parsearTranscripcion(await r.text());
+          } catch { if (intento === 0) await new Promise((resolve) => setTimeout(resolve, 700)); }
+        }
+        if (cues.length) break;
+      }
       if (cues.length < 8) continue;
       const texto = cues.map((x) => '[' + x.tiempo + '] ' + x.texto).join('\n').slice(0, 18000);
       if (texto.length < 350) continue;
