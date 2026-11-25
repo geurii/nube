@@ -35,7 +35,7 @@ permissions:
 
 # Un solo ciclo largo activo: al lanzar una versión corregida, se cancela el ciclo obsoleto que bloquea la cola.
 concurrency:
-  group: oficina
+  group: oficina-documentales-multilingues
   cancel-in-progress: true
 
 env:
