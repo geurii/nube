@@ -43,8 +43,8 @@ export const esCajaVacia = (e) => {
 export const sujetosDelTexto = (texto = '') => {
   const t = String(texto).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   const reglas = [
-    [/\\b(nintendo|hanafuda|baraja|barajas|cartas japonesas|naipes)\\b/, ['cartas']],
-    [/\\b(laki|lakagigar|eldgja|fisura volcanica|erupcion fisural)\\b/, ['volcan','fuego','roca']],
+    [/\b(nintendo|hanafuda|baraja|barajas|cartas japonesas|naipes)\b/, ['cartas']],
+    [/\b(laki|lakagigar|eldgja|fisura volcanica|erupcion fisural)\b/, ['volcan','fuego','roca']],
     [/\b(calendario|fecha|ano|anos|siglo|cronologia|tiempo|reloj|hora|horas)\b/, ['calendario','reloj','pergamino']],
     [/\b(castillo|medieval|reino|rey|reina|corona|monarquia|moneda|iglesia|caballero|caballo)\b/, ['castillo','corona','moneda','iglesia','caballo','pergamino']],
     [/\b(barco|nave|embarcacion|marinero|naufragio|hundido|velero|naufragar)\b/, ['barco','submarino','faro']],
