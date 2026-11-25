@@ -26,6 +26,7 @@ export const diagnosticoRespaldo = [];
 const nota = (t) => { console.log(t); diagnosticoRespaldo.push(t); };
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
 const modelos = new Map();
+const bloqueadoHasta = new Map();
 const rutaCooldown = path.resolve('oficina-salida', process.env.CANAL || 'lqns', 'cooldowns-ia.json');
 const leerCooldowns = () => { try { return JSON.parse(fs.readFileSync(rutaCooldown, 'utf8')); } catch { return {}; } };
 const guardarCooldowns = () => {
@@ -59,8 +60,7 @@ const elegirModelos = async (p, key) => {
 };
 
 /** Pide una respuesta a los proveedores de respaldo, en orden. Devuelve {texto, proveedor, modelo} o null. */
-// Balance entre proveedores: el que acaba de funcionar va primero; el que da límite (429) descansa un rato y se vuelve a usar solo.
-const bloqueadoHasta = new Map();
+// Los cooldowns se conservan entre ejecuciones para no volver a gastar cuotas agotadas.
 let ultimoBueno = null;
 const ordenados = () => {
   const ahora = Date.now();
