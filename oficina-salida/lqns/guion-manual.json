@@ -1,0 +1,65 @@
+{
+  "titulo": "🤲 ¿Sabías que 'manual' esconde un oscuro secreto del siglo XV?",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "audio": "audio/lqns-manual.wav",
+  "musica": "musica/firma-canal.mp3",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-25T05:13:27.450Z",
+  "estilo": "gancho",
+  "ganchoTexto": "¿¿Crees que 'manual' solo describe algo hecho a mano?",
+  "publicacion": {
+    "titulo": "🤲 ¿Sabías que 'manual' esconde un oscuro secreto del siglo XV?",
+    "descripcion": "Descubre el significado oculto detrás de la palabra 'manual' y cómo va más allá de lo que creías. Un viaje sorprendente a través de su historia y usos.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\n#manual #significado #historia #curiosidades #lenguaje"
+  },
+  "estado": "rechazado-necesita-revision",
+  "editor": {
+    "puntaje": 6,
+    "critica": "El gancho es bueno pero la revelación llega tarde y falta impacto en el cierre. Ritmo adecuado, pero la historia podría ser más concisa. Panel: [Garantía de publicación activa] 6 de 8 aprobaron el guion, 8 pasaron los primeros 3 segundos, 2 lo compartirían. Retención estimada: 87% (mínimo 55%)."
+  },
+  "retencionEstimada": 87,
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "¿Crees que 'manual' solo describe algo hecho a mano?",
+      "fondo": [
+        "pixelmisterio",
+        "pixelcifra:1|MANUAL|ORO"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Además de guías como el Manual de Carreño o el Manual de Merck, 'manual' tiene un significado oculto.",
+      "fondo": [
+        "pixeldocs",
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En el siglo XV, el Manual de Múnich de Magia Demoníaca exploraba rituales y demonología.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Este manuscrito es uno de los ejemplos más oscuros y menos conocidos del uso de la palabra 'manual'.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "¿Te sorprende este lado oculto de 'manual'? Sígueme para descubrir más misterios.",
+      "fondo": [
+        "pixelmisterio"
+      ]
+    }
+  ]
+}

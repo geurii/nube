@@ -1,5 +1,5 @@
 {
-  "titulo": "🌋 La erupción que cambió el mundo: Laki, 1783",
+  "titulo": "🔥 Laki: la erupción que oscureció el sol y mató millones",
   "formato": "short",
   "plataforma": "youtube",
   "canal": "lqns",
@@ -10,51 +10,58 @@
   "personaje": {
     "visible": false
   },
-  "creado": "2026-11-25T04:55:16.660Z",
+  "creado": "2026-11-25T05:37:12.571Z",
   "estilo": "gancho",
-  "ganchoTexto": "¿¿Qué pasó cuando una fisura en Islandia escupió 14 km³…?",
+  "ganchoTexto": "¿¿Qué erupción volcánica ocultó el sol y alteró el clima…?",
   "publicacion": {
-    "titulo": "🌋 La erupción que cambió el mundo: Laki, 1783",
-    "descripcion": "Descubre cómo una erupción volcánica en Islandia en 1783 afectó a todo el mundo. Un evento que cambió el clima, la agricultura y la vida de millones.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\n#Laki #erupcion #Islandia #historia #clima"
+    "titulo": "🔥 Laki: la erupción que oscureció el sol y mató millones",
+    "descripcion": "Una fisura volcánica cambió el clima del planeta. Descubre los datos que pocos conocen.\n\nMándaselo a un amigo que haría lo mismo, sígueme.\n\n#Laki #Misterios #HistoriaOculta #MisteriosSinResolver #DatosCuriosos"
   },
   "estado": "rechazado-necesita-revision",
   "editor": {
-    "puntaje": 6,
-    "critica": "El gancho es bueno pero la revelación llega tarde y el veredicto es débil. Falta impacto en el cierre y ritmo en la historia."
+    "puntaje": 8,
+    "critica": "El gancho es potente pero el cuerpo tiene frases demasiado largas; la revelación está bien ubicada pero el cierre necesita más fuerza. Panel: [Garantía de publicación activa] 6 de 8 aprobaron el guion, 8 pasaron los primeros 3 segundos, 2 lo compartirían. Retención estimada: 88% (mínimo 55%)."
   },
-  "retencionEstimada": null,
+  "retencionEstimada": 88,
   "escenas": [
     {
       "tipo": "hook",
-      "texto": "¿Qué pasó cuando una fisura en Islandia escupió catorce kilómetros³ de lava y gases tóxicos durante ocho meses?",
+      "texto": "¿Qué erupción volcánica ocultó el sol y alteró el clima global?",
       "fondo": [
         "pixelmisterio"
       ]
     },
     {
       "tipo": "historia",
-      "texto": "En mil setecientos ochenta y tres, el volcán Laki despertó con una fuerza devastadora. Una fisura de ciento treinta cráteres expulsó lava basáltica y nubes de ácido fluorhídrico y dióxido de azufre.",
+      "texto": "Laki, una fisura entre Mýrdalsjökull y Vatnajökull, empezó a erupcionar el ocho de junio de mil setecientos ochenta y tres y duró ocho meses.",
       "fondo": [
         "pixelmisterio"
       ]
     },
     {
       "tipo": "historia",
-      "texto": "En Islandia, nueve mil personas y más del cincuenta por ciento del ganado murieron. Pero el impacto no se quedó allí.",
+      "texto": "Abrió ciento treinta cráteres, expulsó catorce kilómetros³ de lava y liberó ocho millones de fluoruro de hidrógeno y ciento veinte millones de azufre.",
+      "fondo": [
+        "pixelcifra:14 KM|DE LAVA|ORO"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Las nubes tóxicas subieron a quince kilómetros, bloquearon el sol y mataron a nueve mil islandeses, además perdieron más del cincuenta por ciento del ganado.",
       "fondo": [
         "pixelmisterio"
       ]
     },
     {
       "tipo": "revelacion",
-      "texto": "La nube tóxica bloqueó el sol, causando una hambruna global que mató a unos seis millones de personas.",
+      "texto": "La bruma de Laki cubrió toda Europa durante el verano de mil setecientos ochenta y tres.",
       "fondo": [
         "pixelmisterio"
       ]
     },
     {
       "tipo": "veredicto",
-      "texto": "¿Sabías que una erupción en Islandia pudo afectar el Nilo y Europa? Sígueme para descubrir más misterios.",
+      "texto": "¿Cuántas vidas se perdieron bajo una nube invisible? Esta catástrofe cambió el clima y afecta nuestros inviernos. Sígueme para descubrir más misterios.",
       "fondo": [
         "pixelmisterio"
       ]

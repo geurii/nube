@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-25T04:42:56.474Z",
+  "actualizado": "2026-11-25T05:05:40.619Z",
   "canalesLeidos": 9,
   "videosRevisados": 133,
   "mejores": [
@@ -8,52 +8,52 @@
       "idioma": "en",
       "titulo": "Why Is Antarctica Closed? The Operation Highjump Mystery",
       "publicado": "2026-11-20T01:00:08.000Z",
-      "vistas": 2997766,
-      "vistasPorHora": 24232
+      "vistas": 3003840,
+      "vistasPorHora": 24207
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "Always open your fan mail",
       "publicado": "2026-11-21T19:00:32.000Z",
-      "vistas": 1264713,
-      "vistasPorHora": 15479
+      "vistas": 1270833,
+      "vistasPorHora": 15482
     },
     {
       "canal": "MrBallen",
       "idioma": "en",
       "titulo": "How Skydiving Changed Will Smith's Life!",
       "publicado": "2026-11-17T17:00:07.000Z",
-      "vistas": 2301843,
-      "vistasPorHora": 12808
+      "vistas": 2308261,
+      "vistasPorHora": 12817
     },
     {
       "canal": "The Why Files",
       "idioma": "en",
       "titulo": "The Basement: Close Encounters Compilation | Abductions, Missing Time & Contact",
       "publicado": "2026-11-23T18:00:10.000Z",
-      "vistas": 369235,
-      "vistasPorHora": 10637
+      "vistas": 372643,
+      "vistasPorHora": 10619
     },
     {
       "canal": "The Why Files",
       "idioma": "en",
       "titulo": "America Is Hiding Something Underground",
       "publicado": "2026-11-18T18:00:14.000Z",
-      "vistas": 1416552,
-      "vistasPorHora": 9156
+      "vistas": 1418485,
+      "vistasPorHora": 9146
     }
   ],
   "formula": {
-    "formula": "Pregunta intrigante + elemento misterioso o inesperado + pista de revelación o consecuencia impactante",
+    "formula": "Pregunta intrigante + elemento misterioso o prohibido + promesa de revelación impactante",
     "ganchos": [
-      "¿Qué [evento/objeto] oculta [situación misteriosa] que podría cambiar todo?",
-      "Descubre el [secreto/verdad] detrás de [fenómeno] y lo que sucede cuando [consecuencia inesperada].",
-      "La historia de [persona/lugar] que [acción sorprendente] y el giro que nadie vio venir."
+      "¿Qué [evento/objeto] oculta [grupo/persona] y por qué nadie lo cuenta?",
+      "Descubre el [secreto/verdad] detrás de [situación] que cambiará todo lo que sabes",
+      "La historia [asombrosa/oscura] de [personaje/lugar] que [evento impactante] te dejará sin palabras"
     ],
     "evitar": [
-      "Títulos demasiado genéricos sin una promesa clara de misterio o revelación.",
-      "Uso excesivo de palabras de relleno que diluyen la tensión y hacen el gancho poco impactante."
+      "Títulos demasiado genéricos sin un gancho claro",
+      "Uso excesivo de palabras de relleno que diluyen la tensión"
     ]
   }
 }

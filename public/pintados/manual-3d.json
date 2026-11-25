@@ -1,0 +1,1 @@
+{"cielo":["#1a1a2e","#2e2e4a","#4a4a6b"],"capas":[{"t":"estrellas","hasta":0.6,"n":60},{"t":"pergamino","x":0.5,"y":0.5,"w":0.8,"h":0.6,"lineas":14,"simbolos":true},{"t":"castillo","x":0.5,"y":0.86,"w":0.65,"h":0.5,"color":"#827b78"},{"t":"rayos","x":0.5,"alpha":0.1,"color":"#ffd9a0"}]}

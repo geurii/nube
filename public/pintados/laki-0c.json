@@ -1,0 +1,1 @@
+{"cielo":["#1a1a33","#2e2e5d","#4a4a88"],"capas":[{"t":"volcan","x":0.5,"y":0.86,"w":0.68,"h":0.56,"color":"#6a4a33"},{"t":"nubes","y":0.2,"alpha":0.8,"n":4,"color":"#7a6aa8"},{"t":"particulas","y":0.6,"alto":0.4,"n":50,"color":"#885533","tipo":"polvo"},{"t":"ciudad","y":0.85,"alto":0.3,"color":"#1f2442"}]}

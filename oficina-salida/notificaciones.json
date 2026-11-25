@@ -1,5 +1,23 @@
 [
   {
+    "id": "mwvo4aqmjll1",
+    "fecha": "2026-11-25T05:13:27.646Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "Guion rechazado: manual",
+    "texto": "El Verificador no aprobó \"manual\" tras 4 intentos: No se generaron imágenes específicas para las escenas: Los pintores no generaron pixel art para las escenas: 0, 1, 2, 4. No se sustituirán por fotos.. No se per Este proceso: 0 aprobados, 1 rechazados y 0 errores. Histórico acumulado: 16 aprobados, 102 rechazados y 99 errores. No se publica. Próximo ciclo en 20 h."
+  },
+  {
+    "id": "mwvnuaix01tj",
+    "fecha": "2026-11-25T05:05:40.809Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "reporte",
+    "titulo": "Fórmula del momento",
+    "texto": "Lo que hoy funciona para Lo Que No Sabías: Pregunta intrigante + elemento misterioso o prohibido + promesa de revelación impactante El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (24207 vistas/hora)."
+  },
+  {
     "id": "mwvn1206yu0y",
     "fecha": "2026-11-25T04:42:56.742Z",
     "canal": "lqns",
@@ -678,23 +696,5 @@
     "tipo": "alerta",
     "titulo": "La oficina falló",
     "texto": "No se encontraron dos fuentes institucionales independientes con contenido consultable para un tema nuevo. Se reintentará en otro ciclo. Aprobados: 11. Rechazados: 56. Con error: 12. Próximo ciclo en 1 h."
-  },
-  {
-    "id": "mwupyi8z1v4v",
-    "fecha": "2026-11-24T13:17:10.499Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título con pregunta intrigante o afirmación impactante + elemento misterioso o inesperado + pista de contenido (ej.: \"¿Por qué…? El misterio de…\") El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (26407 vistas/hora)."
-  },
-  {
-    "id": "mwups9rdwoe1",
-    "fecha": "2026-11-24T13:12:19.561Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: Piri Reis map",
-    "texto": "El Verificador no aprobó \"Piri Reis map\" tras 4 intentos: No hay evidencia en el material que respalde la afirmación de que el mapa muestra tierras que 'no deberían existir' en 1513. Aprobados: 11. Rechazados: 56. Con error: 11. No se publica. Próximo ciclo en 1 h."
   }
 ]

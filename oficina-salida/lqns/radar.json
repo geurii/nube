@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-25T04:44:20.044Z",
+  "fecha": "2026-11-25T05:07:00.906Z",
   "criterio": "canales creados hace 90 días o menos; videos publicados hace 90 días o menos; rendimiento mínimo 5x la mediana del canal",
   "consultas": [
     "unsolved mystery explained",
@@ -16,127 +16,10 @@
     "기묘한 역사 미스터리 실화",
     "غموض تاريخي قصة حقيقية غريبة"
   ],
-  "canalesRevisados": 85,
-  "explotaron": 33,
-  "canales": [
-    {
-      "id": "UCGcVuScYBs4oP0MTU6oLWSQ",
-      "nombre": "Ballen Of File",
-      "suscriptores": 1520,
-      "videosDelCanal": 21,
-      "fechaAlta": "2026-11-11T00:00:00.000Z",
-      "diasCanal": 14,
-      "veces": 22,
-      "mejor": {
-        "id": "GUnx_FTNgRw",
-        "titulo": "Cops CAN’T Explain His 911 Call… The Mystery Gets DARKER!",
-        "vistas": 157112,
-        "hace": 8,
-        "url": "https://youtube.com/watch?v=GUnx_FTNgRw"
-      },
-      "puntaje": 19.55
-    },
-    {
-      "id": "UCn87yhmEcgnI4PGIvhM4DFg",
-      "nombre": "Chill Dude Plus",
-      "suscriptores": 780,
-      "videosDelCanal": 51,
-      "fechaAlta": "2026-10-02T00:00:00.000Z",
-      "diasCanal": 54,
-      "veces": 9,
-      "mejor": {
-        "id": "9p43SRaCEng",
-        "titulo": "10 Genius Ideas That Backfired on Entire Civilizations",
-        "vistas": 87723,
-        "hace": 10,
-        "url": "https://youtube.com/watch?v=9p43SRaCEng"
-      },
-      "puntaje": 6.64
-    },
-    {
-      "id": "UCdQx7-YvvW5oFQgb7ityDiQ",
-      "nombre": "Nobody Believes This",
-      "suscriptores": 2840,
-      "videosDelCanal": 21,
-      "fechaAlta": "2026-10-15T00:00:00.000Z",
-      "diasCanal": 41,
-      "veces": 13,
-      "mejor": {
-        "id": "KqJsbgsUuWA",
-        "titulo": "30 Incredible Stories You Won't Believe",
-        "vistas": 201916,
-        "hace": 21,
-        "url": "https://youtube.com/watch?v=KqJsbgsUuWA"
-      },
-      "puntaje": 5.95
-    },
-    {
-      "id": "UCycmRza8F3YHyZ9W-bjAdFg",
-      "nombre": "Umbrella Vault",
-      "suscriptores": 1910,
-      "videosDelCanal": 23,
-      "fechaAlta": "2026-10-06T00:00:00.000Z",
-      "diasCanal": 50,
-      "veces": 9,
-      "mejor": {
-        "id": "04snj4rUmfs",
-        "titulo": "12 Resident Evil Mysteries That Were FINALLY Solved...",
-        "vistas": 194252,
-        "hace": 23,
-        "url": "https://youtube.com/watch?v=04snj4rUmfs"
-      },
-      "puntaje": 5.64
-    }
-  ],
-  "videosVirales": [
-    {
-      "canal": "Ballen Of File",
-      "canalId": "UCGcVuScYBs4oP0MTU6oLWSQ",
-      "diasCanal": 14,
-      "suscriptores": 1520,
-      "titulo": "Cops CAN’T Explain His 911 Call… The Mystery Gets DARKER!",
-      "vistas": 157112,
-      "hace": 8,
-      "veces": 22,
-      "url": "https://youtube.com/watch?v=GUnx_FTNgRw",
-      "idiomaDetectado": "multilingüe"
-    },
-    {
-      "canal": "Chill Dude Plus",
-      "canalId": "UCn87yhmEcgnI4PGIvhM4DFg",
-      "diasCanal": 54,
-      "suscriptores": 780,
-      "titulo": "10 Genius Ideas That Backfired on Entire Civilizations",
-      "vistas": 87723,
-      "hace": 10,
-      "veces": 9,
-      "url": "https://youtube.com/watch?v=9p43SRaCEng",
-      "idiomaDetectado": "multilingüe"
-    },
-    {
-      "canal": "Nobody Believes This",
-      "canalId": "UCdQx7-YvvW5oFQgb7ityDiQ",
-      "diasCanal": 41,
-      "suscriptores": 2840,
-      "titulo": "30 Incredible Stories You Won't Believe",
-      "vistas": 201916,
-      "hace": 21,
-      "veces": 13,
-      "url": "https://youtube.com/watch?v=KqJsbgsUuWA",
-      "idiomaDetectado": "multilingüe"
-    },
-    {
-      "canal": "Umbrella Vault",
-      "canalId": "UCycmRza8F3YHyZ9W-bjAdFg",
-      "diasCanal": 50,
-      "suscriptores": 1910,
-      "titulo": "12 Resident Evil Mysteries That Were FINALLY Solved...",
-      "vistas": 194252,
-      "hace": 23,
-      "veces": 9,
-      "url": "https://youtube.com/watch?v=04snj4rUmfs",
-      "idiomaDetectado": "multilingüe"
-    }
-  ],
-  "referenciasLargas": []
+  "canalesRevisados": 55,
+  "explotaron": 18,
+  "canales": [],
+  "videosVirales": [],
+  "busquedaSinResultados": true,
+  "notasBusqueda": []
 }

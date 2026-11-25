@@ -1,8 +1,8 @@
 {
-  "fecha": "2026-11-25T04:42:54.479Z",
+  "fecha": "2026-11-25T05:05:38.552Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
   "total": 1002,
-  "ganadasDesdeElUltimoCiclo": 3,
+  "ganadasDesdeElUltimoCiclo": 0,
   "videos": [
     {
       "id": "ju9-ibZWM5s",
@@ -96,10 +96,6 @@
     }
   ],
   "historia": [
-    {
-      "fecha": "2026-11-22T19:56:07.261Z",
-      "total": 2137
-    },
     {
       "fecha": "2026-11-23T00:19:13.942Z",
       "total": 2194
@@ -334,6 +330,10 @@
     },
     {
       "fecha": "2026-11-25T04:42:54.479Z",
+      "total": 1002
+    },
+    {
+      "fecha": "2026-11-25T05:05:38.552Z",
       "total": 1002
     }
   ]
