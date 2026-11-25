@@ -1,5 +1,14 @@
 [
   {
+    "id": "mwvh7gpgqtr9",
+    "fecha": "2026-11-25T01:59:58.036Z",
+    "canal": "lqns",
+    "canalNombre": "Lo Que No Sabías",
+    "tipo": "alerta",
+    "titulo": "La oficina falló",
+    "texto": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el  Aprobados: 16. Rechazados: 99. Con error: 56. Próximo ciclo en 23 h."
+  },
+  {
     "id": "mwvcb4f51shy",
     "fecha": "2026-11-24T23:42:50.657Z",
     "canal": "lqns",
@@ -687,14 +696,5 @@
     "tipo": "reporte",
     "titulo": "Fórmula del momento",
     "texto": "Lo que hoy funciona para Lo Que No Sabías: Título corto + pregunta intrigante o afirmación impactante + referencia a un misterio/evento desconocido El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (26438 vistas/hora)."
-  },
-  {
-    "id": "mwupitp9v4ym",
-    "fecha": "2026-11-24T13:04:58.845Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: Devil's Footprints",
-    "texto": "El Verificador no aprobó \"Devil's Footprints\" tras 4 intentos: El material no menciona que las huellas dejaran un misterio específico, solo describe el fenómeno y las teorías. Aprobados: 11. Rechazados: 55. Con error: 11. No se publica. Próximo ciclo en 1 h."
   }
 ]
