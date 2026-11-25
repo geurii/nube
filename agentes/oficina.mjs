@@ -707,9 +707,11 @@ const comprobar = (escenas) => {
   }
   if (FORMATO === 'largo') escenas.forEach((e, n) => { const cuenta = palabrasDe(e); if (cuenta > 22) p.push({frase: e.texto, motivo: `La escena ${n + 1} tiene ${cuenta} palabras. Divídela en escenas separadas de máximo 22 palabras para que las imágenes cambien cada 3 segundos.`}); });
   if (/recuerda.{0,40}ficci[oó]n|esto es ficci[oó]n|es (?:un )?relato ficticio|no es real|contenido ficticio|historia inventada/i.test(textoCompleto)) p.push({frase: '(descargo meta)', motivo: 'PROHIBIDO: no mencionar ficción ni insertar advertencias meta en la narración.'});
-  const gancho = validarGancho(escenas[0]?.texto, FORMATO);
-  if (!String(escenas[0]?.texto ?? '').trim()) p.push({frase: '', motivo: 'Falta un gancho inicial claro.'});
-  else if (!gancho.valido) p.push({frase: escenas[0].texto, motivo: `El gancho inicial debe tener ${gancho.maximo} palabras o menos para formato ${FORMATO}.`});
+  const ganchoTexto = String(escenas[0]?.texto ?? '').trim();
+  const gancho = validarGancho(ganchoTexto, FORMATO);
+  if (!ganchoTexto) p.push({frase: '', motivo: 'Falta un gancho inicial claro.'});
+  else if (/^(?:¿?\s*)sab[ií]as\s+que\b/i.test(ganchoTexto)) p.push({frase: ganchoTexto, motivo: 'GANCHO RECHAZADO: nunca empezar con «Sabías que». Reescribe con una pregunta específica, una afirmación sorprendente o una contradicción concreta del tema. No uses fórmulas genéricas.'});
+  else if (!gancho.valido) p.push({frase: ganchoTexto, motivo: `El gancho inicial debe tener ${gancho.maximo} palabras o menos para formato ${FORMATO}.`});
   const ultima = String(escenas[escenas.length - 1]?.texto ?? '').trim();
   const antesDelCierre = ultima.slice(0, Math.max(0, ultima.length - CTA.length)).trim();
   if (!ultima.endsWith(CTA)) p.push({frase: ultima, motivo: `El cierre debe terminar exactamente con "${CTA}".`});
