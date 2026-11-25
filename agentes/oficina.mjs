@@ -374,9 +374,15 @@ const elegirTema = async (modelo) => {
   // Desmontar referencias reales de YouTube: exige duración compatible y subtítulos públicos.
   // Solo se extrae la estructura narrativa; nunca se descarga ni reutiliza el video, su audio o sus escenas.
   let videosRadar = (FORMATO === 'largo' ? (radar?.referenciasLargas ?? []) : (radar?.videosVirales ?? [])).slice(0, 24);
-  if (FORMATO === 'largo' && !videosRadar.length) {
-    informe.push('El radar no dejó referencias largas guardadas; se buscan directamente en canales establecidos y consultas del nicho.');
-    videosRadar = await buscarReferenciasLargas({nicho: CONFIG.nicho, canales: CONFIG.vigilar ?? [], maxResultados: 14, limiteMs: 150000, nota: (t) => informe.push(t)});
+  const radarIntentadoReciente = Boolean(radar?.fecha)
+    && Number.isFinite(Date.parse(radar.fecha))
+    && Date.now() - Date.parse(radar.fecha) < 15 * 60 * 1000
+    && Array.isArray(radar?.referenciasLargas);
+  if (FORMATO === 'largo' && !videosRadar.length && !radarIntentadoReciente) {
+    informe.push('No hay un intento reciente de referencias largas; se ejecuta una búsqueda de respaldo.');
+    videosRadar = await buscarReferenciasLargas({nicho: CONFIG.nicho, canales: CONFIG.vigilar ?? [], maxResultados: 10, limiteMs: 150000, nota: (t) => informe.push(t)});
+  } else if (FORMATO === 'largo' && !videosRadar.length) {
+    informe.push('El Radar ya buscó referencias largas en este ciclo y guardó el resultado vacío; no se repite la misma tanda ni se dispara otro 429. Se reintentará automáticamente en el siguiente ciclo.');
   }
   let referenciasEvaluadas = 0;
   for (const viral of videosRadar) {
