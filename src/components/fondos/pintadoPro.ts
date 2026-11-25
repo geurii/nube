@@ -370,6 +370,42 @@ export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: n
       for(let k=0;k<7;k++) g.ellA(cx+(hs(k,41)-0.5)*w*0.72,base-h*(0.86+hs(k,42)*0.27),w*0.022,h*0.035,[255,240,203],0.65);
       break;
     }
+    case 'terremoto': {
+      const cx = X(e.x, 0.5), base = Y(e.y, 0.86);
+      const w = num(e.w, 0.88, 0.55, 0.98) * lw, h = num(e.h, 0.55, 0.34, 0.78) * lh;
+      const stone = rampaDeE(e, '#b18a68', 5), roof: RGB = [116, 54, 43], ink: RGB = [38, 31, 34];
+      // Fachadas de piedra y tejados de época; el temblor afecta cada edificio con fase distinta.
+      for (let i = 0; i < 3; i++) {
+        const bw = w * (0.22 + (i === 1 ? 0.03 : 0)), bh = h * (0.55 + (i === 1 ? 0.16 : i === 0 ? -0.04 : 0.03));
+        const bx = cx + (i - 1) * w * 0.29, sway = Math.sin(t * 15 + i * 1.7) * (2.2 + i) * u;
+        const lean = Math.sin(t * 13 + i) * 0.018;
+        const top = base - bh;
+        const wall: Pt[] = [[bx-bw/2+sway,base],[bx-bw/2+sway+lean*bh,top],[bx+bw/2+sway+lean*bh,top],[bx+bw/2+sway,base]];
+        poli(g, wall, stone, 'izq', true);
+        poli(g, [[bx-bw*0.58+sway+lean*bh,top+2],[bx+sway+lean*bh,top-bh*0.16],[bx+bw*0.58+sway+lean*bh,top+2]], rampaDe(roof,4), 'izq', true);
+        for (let row = 0; row < 2; row++) for (let colN = 0; colN < 2; colN++) {
+          const wx = bx - bw*0.27 + colN*bw*0.34 + sway, wy = top + bh*(0.25 + row*0.3);
+          g.rect(wx, wy, Math.max(3,bw*0.075), Math.max(4,bh*0.075), [40,36,39]);
+        }
+        g.rect(bx-bw*0.06+sway,base-bh*0.24,bw*0.12,bh*0.24,ink);
+        // Grietas visibles que vibran y pequeños escombros que caen.
+        g.line(bx-bw*0.08+sway,top+bh*0.25,bx+bw*0.02+sway,top+bh*0.44,[55,42,39],Math.max(1,u*1.4));
+        g.line(bx+bw*0.02+sway,top+bh*0.44,bx-bw*0.04+sway,top+bh*0.61,[55,42,39],Math.max(1,u*1.4));
+        for (let k=0;k<3;k++) {
+          const phase = (t*0.32 + hs(i*9+k,77)) % 1;
+          const dx = bx + (hs(i*9+k,78)-0.5)*bw + sway;
+          const dy = top + phase*bh*0.9;
+          g.rect(dx,dy,Math.max(2,u*3),Math.max(2,u*2),stone[1]);
+        }
+      }
+      // Polvo bajo las fachadas y pequeños golpes de suelo.
+      for(let k=0;k<18;k++){
+        const x = cx-w*0.48 + hs(k,79)*w*0.96;
+        const y = base - (hs(k,80)*h*0.09) - Math.abs(Math.sin(t*5+k))*h*0.025;
+        g.set(x,y,[184,157,129],0.55);
+      }
+      break;
+    }
     case 'tsunami': {
       const cx=X(e.x,0.5), base=Y(e.y,0.86), w=num(e.w,0.96,0.6,1)*lw, h=num(e.h,0.58,0.3,0.78)*lh;
       const r=rampaDeE(e,'#286d98',5), x0=cx-w/2, x1=cx+w/2, crest:Pt[]=[];
