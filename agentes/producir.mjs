@@ -96,6 +96,18 @@ if (oficinaRunId) {
     salida('id', ''); salida('canal', '');
     process.exit(1);
   }
+} else {
+  // Disparo manual explícito: timestamp|slug|formato|canal. Nunca toma otro guion por accidente.
+  const disparo = leer(path.join('agentes', 'produccion.disparo'), '');
+  const [, slugManual, formatoManual, canalManual] = String(disparo).trim().split('|');
+  if (slugManual && formatoManual && canalManual) {
+    pendientes = pendientes.filter((x) => x.slug === slugManual && x.g.formato === formatoManual && x.canal === canalManual);
+    if (!pendientes.length) {
+      console.error(`El disparo manual ${slugManual} no coincide con un guion aprobado y válido de ${canalManual}.`);
+      salida('id', ''); salida('canal', '');
+      process.exit(1);
+    }
+  }
 }
 
 if (!pendientes.length) {
