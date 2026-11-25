@@ -133,8 +133,8 @@ const probe = spawnSync('ffprobe', ['-v', 'error', '-show_entries', 'format=dura
 const duracion = Number(probe.stdout?.trim());
 const formatoInvalido = !Number.isFinite(duracion) || duracion <= 0
   ? 'No se pudo medir la duración real del MP4.'
-  : g.formato === 'short' && duracion > 65.5
-    ? `Short excede 65 segundos: ${duracion.toFixed(1)} s.`
+  : g.formato === 'short' && duracion > 180
+    ? `Short excede 180 segundos: ${duracion.toFixed(1)} s.`
     : g.formato === 'largo' && (duracion < 480 || duracion > 600)
       ? `Video largo dura ${duracion.toFixed(1)} s; debe durar entre 480 y 600 s (8–10 minutos, compatible con TikTok y YouTube).`
       : '';
