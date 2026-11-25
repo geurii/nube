@@ -403,12 +403,20 @@ const principal = async () => {
   const radar = esLargo
     ? {fecha: new Date().toISOString(), consultas: CONSULTAS_LARGAS_POR_DEFECTO, canalesRevisados: 0, explotaron: 0, canales: []}
     : await construirRadar({consultas: config?.radar?.consultas ?? CONSULTAS_POR_DEFECTO, minVistas: 5000, maxSubs: 300000, limiteMs: 170000, nota: (t) => { notas.push(t); console.log(t); }});
-  const referenciasLargas = await buscarReferenciasLargas({nicho: config?.nicho ?? '', canales: config?.vigilar ?? [], maxResultados: 10, limiteMs: esLargo ? 260000 : 105000, nota: (t) => { notas.push(t); console.log(t); }});
-  radar.referenciasLargas = referenciasLargas.map(({id, url, titulo, canal, vistas, segundos, caracteresTranscripcion, idiomaTranscripcion}) => ({id, url, titulo, canal, vistas, segundos, caracteresTranscripcion, idiomaTranscripcion}));
-  if (!radar.canales.length && !radar.referenciasLargas.length) {
-    radar.busquedaSinResultados = true;
+  // La búsqueda de documentales largos jamás se ejecuta durante la producción de Shorts.
+  if (esLargo) {
+    const referenciasLargas = await buscarReferenciasLargas({nicho: config?.nicho ?? '', canales: config?.vigilar ?? [], maxResultados: 10, limiteMs: 260000, nota: (t) => { notas.push(t); console.log(t); }});
+    radar.referenciasLargas = referenciasLargas.map(({id, url, titulo, canal, vistas, segundos, caracteresTranscripcion, idiomaTranscripcion}) => ({id, url, titulo, canal, vistas, segundos, caracteresTranscripcion, idiomaTranscripcion}));
+    if (!radar.referenciasLargas.length) {
+      radar.busquedaSinResultados = true;
+      radar.notasBusqueda = notas.slice(-20);
+      console.log('Radar sin referencias largas con subtítulos suficientes; se guarda el intento y se reintentará en el siguiente ciclo.', notas.join(' '));
+    }
+  } else {
+    radar.videosVirales = (radar.videosVirales ?? []).filter(v => v?.id && v?.url);
+    radar.busquedaSinResultados = radar.videosVirales.length === 0;
     radar.notasBusqueda = notas.slice(-20);
-    console.log('Radar sin referencias largas con subtítulos suficientes; se guarda el intento y se reintentará en el siguiente ciclo.', notas.join(' '));
+    console.log(`Radar Shorts: ${radar.videosVirales.length} referencias cortas disponibles.`);
   }
   fs.writeFileSync(ruta, JSON.stringify(radar, null, 2));
   console.log(`Radar listo: ${radar.canales.length} canales chicos que explotaron (de ${radar.canalesRevisados} canales revisados, ${radar.explotaron} con un video que explotó).`);
