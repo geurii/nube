@@ -48,7 +48,10 @@ const elegirModelos = async (p, key) => {
   const lista = [];
   try {
     const r = await fetch(p.catalogo ?? `${p.base}/models`, {headers: {...(key ? {Authorization: `Bearer ${key}`} : {}), ...(p.cabeceras ?? {})}, signal: AbortSignal.timeout(8000)});
-    if (r.ok) {
+    if (r.status === 429) {
+      bloquearProveedor(p.nombre, 900);
+      nota(`${'${p.nombre}'}: catálogo en límite (429); cooldown persistido durante 15 minutos.`);
+    } else if (r.ok) {
       const j = await r.json();
       const ids = (Array.isArray(j) ? j : (j.data ?? [])).map((x) => String(x.id ?? x.name ?? '').replace(/^models\//, '')).filter((x) => x && !(p.descarta?.test(x)));
       for (const re of p.prefiere) for (const x of ids) if (re.test(x) && !lista.includes(x)) lista.push(x);
