@@ -197,7 +197,8 @@ export const buscarReferenciasLargas = async ({
       if (!idCanal) continue;
       try {
         const feed = await feedDeCanal(idCanal);
-        const mejores = [...feed].sort((a, b) => Number(b.vistas ?? 0) - Number(a.vistas ?? 0)).slice(0, 4);
+        // RSS no informa duración y muchos canales mezclan Shorts con documentales: ampliar candidatos evita que cuatro Shorts recientes oculten los largos.
+        const mejores = [...feed].sort((a, b) => Number(b.vistas ?? 0) - Number(a.vistas ?? 0)).slice(0, 8);
         for (const v of mejores) {
           if (!v?.id) continue;
           const previo = candidatos.get(v.id);
@@ -214,11 +215,13 @@ export const buscarReferenciasLargas = async ({
   }
   const lista = [...candidatos.values()]
     .sort((a, b) => Number(b.vistas ?? 0) - Number(a.vistas ?? 0))
-    .slice(0, Math.max(12, Math.min(24, maxResultados * 2)));
+    .slice(0, Math.max(20, Math.min(40, maxResultados * 4)));
   const detalles = [];
-  // Las páginas de video también se leen de una en una para no volver a disparar el limitador.
+  let intentosLectura = 0;
+  // Se inspeccionan hasta 40 candidatos secuencialmente: mezcla canales y reduce el riesgo de agotar el tiempo con Shorts.
   for (const video of lista) {
-    if (Date.now() >= hasta - 5000 || detalles.length >= maxResultados) break;
+    if (Date.now() >= hasta - 5000 || detalles.length >= maxResultados || intentosLectura >= 40) break;
+    intentosLectura++;
     try {
       const d = await datosDeVideo(video.id);
       const segundos = Number(d.segundos ?? video.segundos);
