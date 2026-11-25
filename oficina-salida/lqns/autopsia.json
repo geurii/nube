@@ -1,13 +1,12 @@
 {
-  "fecha": "2026-11-25T17:03:32.989Z",
-  "total": 1002,
-  "promedio": 67,
-  "queFunciono": "Los videos con más vistas comparten títulos que combinan curiosidad histórica o científica con un elemento sorprendente y un número de parte (Parte 3/3). Además, se publicaron en fechas recientes (20‑21 noviembre) y presentan un formato de storytelling que genera expectativa.",
+  "fecha": "2026-11-25T21:37:05.109Z",
+  "total": 453,
+  "promedio": 30,
+  "queFunciono": "Los videos con mayor rendimiento comparten títulos que utilizan preguntas o afirmaciones impactantes con emojis y palabras clave de curiosidad histórica o tecnológica, y fueron publicados en fechas recientes (últimos 3 días).",
   "porQueFallaron": [
-    "Poca retención media (21‑22 %) indica que el contenido no mantiene el interés; la falta de ganadores de suscriptores sugiere que el video no logra convertir la curiosidad en acción.",
-    "Los títulos de los videos con pocas vistas son muy largos, incluyen emojis y palabras clave poco comunes (ej. “Bloop”, “Chernóbil”), lo que puede dificultar la búsqueda y el descubrimiento.",
-    "La publicación de varios videos en la misma fecha (22 noviembre) puede haber saturado la audiencia, reduciendo la exposición individual.",
-    "El contenido de los videos con pocas vistas carece de una narrativa clara o de un gancho inicial, lo que se refleja en la baja retención y el bajo número de vistas."
+    "El video \"Nintendo nació vendiendo cartas: la historia antes de los videojuegos\" tiene 76 vistas; su título no incluye un emoji ni una pregunta directa, lo que reduce el atractivo visual. No se dispone de datos de retención, por lo que no se puede confirmar si",
+    "El video \"¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️\" obtuvo 50 vistas a pesar de una retención media alta (57.2 %) y 36 s de duración media; su bajo rendimiento sugiere que la temática, aunque interesante, no resonó con la audiencia objetivo o el algoritmo",
+    "Los videos con 40 vistas o menos presentan títulos sin emojis, sin preguntas directas y con temáticas muy específicas (por ejemplo, un motor AC de 1884 o un secreto de la Isla de Pascua). La falta de elementos visuales y de curiosidad inmediata puede haber lim"
   ],
   "noSePuedeSaber": [],
   "reglas": []

@@ -24,7 +24,7 @@
   ],
   "editor": {
     "puntaje": null,
-    "critica": "Recursos visuales específicos añadidos para cada escena; cuatro cuadros pixel art distintos por escena. Listo para repetir render y someter a revisión técnica."
+    "critica": "Recursos visuales ampliados a cinco cuadros distintos en las escenas largas para cumplir el mínimo del render sin repetir imágenes."
   },
   "retencionEstimada": null,
   "escenas": [
@@ -55,7 +55,8 @@
         "pintado:lapiz-roto-68-millones-s3-01",
         "pintado:lapiz-roto-68-millones-s3-02",
         "pintado:lapiz-roto-68-millones-s3-03",
-        "pintado:lapiz-roto-68-millones-s3-04"
+        "pintado:lapiz-roto-68-millones-s3-04",
+        "pintado:lapiz-roto-68-millones-s3-05"
       ]
     },
     {
@@ -65,7 +66,8 @@
         "pintado:lapiz-roto-68-millones-s4-01",
         "pintado:lapiz-roto-68-millones-s4-02",
         "pintado:lapiz-roto-68-millones-s4-03",
-        "pintado:lapiz-roto-68-millones-s4-04"
+        "pintado:lapiz-roto-68-millones-s4-04",
+        "pintado:lapiz-roto-68-millones-s4-05"
       ]
     },
     {
@@ -75,7 +77,8 @@
         "pintado:lapiz-roto-68-millones-s5-01",
         "pintado:lapiz-roto-68-millones-s5-02",
         "pintado:lapiz-roto-68-millones-s5-03",
-        "pintado:lapiz-roto-68-millones-s5-04"
+        "pintado:lapiz-roto-68-millones-s5-04",
+        "pintado:lapiz-roto-68-millones-s5-05"
       ]
     }
   ]

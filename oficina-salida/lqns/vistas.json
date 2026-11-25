@@ -1,14 +1,14 @@
 {
-  "fecha": "2026-11-25T20:20:43.075Z",
+  "fecha": "2026-11-25T21:37:04.375Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 417,
-  "ganadasDesdeElUltimoCiclo": 0,
+  "total": 453,
+  "ganadasDesdeElUltimoCiclo": 36,
   "videos": [
     {
       "id": "VXbbW_o1PWo",
       "titulo": "Nintendo nació vendiendo cartas: la historia antes de los videojuegos",
       "publicado": "2026-11-25T17:08:39+00:00",
-      "vistas": 40
+      "vistas": 76
     },
     {
       "id": "ju9-ibZWM5s",
@@ -96,10 +96,6 @@
     }
   ],
   "historia": [
-    {
-      "fecha": "2026-11-24T13:28:29.377Z",
-      "total": 2244
-    },
     {
       "fecha": "2026-11-24T13:51:17.520Z",
       "total": 2244
@@ -335,6 +331,10 @@
     {
       "fecha": "2026-11-25T20:20:43.075Z",
       "total": 417
+    },
+    {
+      "fecha": "2026-11-25T21:37:04.375Z",
+      "total": 453
     }
   ]
 }

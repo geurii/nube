@@ -1,0 +1,36 @@
+{
+  "fecha": "2026-11-25T21:37:30.360Z",
+  "id": "lqns-lapiz-roto-68-millones",
+  "modo": "tecnico",
+  "aprobado": true,
+  "resumen": "Sin defectos graves detectados.",
+  "motivos": [],
+  "revision": {
+    "modelo": "NVIDIA nvidia/nemotron-3-nano-omni-30b-a3b-reasoning + Groq whisper-large-v3",
+    "gancho_3s": {
+      "nota": 0,
+      "comentario": "Revisión visual técnica; no es una valoración del gancho."
+    },
+    "audio": {
+      "nota": 8,
+      "comentario": "Groq Whisper transcribió el audio en español. Duración: 53 segundos. Transcripción: ¿Sabías que un lápiz roto de una niña hizo 68 millones de vistas en 4 días? Sonia estaba coloreando con su mamá y su papá. Quería el azul, le dieron el rojo y, cuando empezó a colorear, el lápiz se rompió. Ella lloró como si fuera una tragedia. Sus papás reaccionaron con shock. Un problema chiquito se sintió gigante, y ahí todo el mundo se quedó mirando. Entonces el papá sacó una caja enorme de lápices. Ella agarró el azul y pasó del llanto a la risa en dos segundos. Ese cambio es lo que hace que nadie pueda dejar de verlo. ¿Estafador o genio? Genio, no vendió nada, solo mostró una emoción real. Comparte este video con un amigo que haría lo mismo y sígueme."
+    },
+    "subtitulos": {
+      "legibles": true,
+      "tapados_o_cortados": false,
+      "comentario": ""
+    },
+    "imagen": {
+      "nota": 0,
+      "defectos": []
+    },
+    "ritmo": {
+      "nota": 8,
+      "comentario": "No se utiliza el ritmo como motivo de rechazo técnico."
+    },
+    "defectos_graves": [],
+    "nota_general": 0,
+    "recomendacion": "subir",
+    "por_que": "No se detectaron fallas visuales graves y Groq pudo transcribir el audio."
+  }
+}

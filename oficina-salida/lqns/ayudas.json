@@ -1,35 +1,35 @@
 {
   "plan": [
-    "Crear y lanzar la serie de 3 videos sobre el megatsunami de Lituya Bay 1958: Departamento de Investigación y Contenido: Alcanzar 15,000 vistas y 200 suscriptores nuevos antes del 13 de diciembre",
-    "Desarrollar miniaturas A/B con colores contrastantes y textos legibles para la serie sobre el Bloop: Equipo de Diseño Gráfico: Incrementar la tasa de clics en un 20% y generar 1,200 vistas adicionales antes del 13 de diciembre",
-    "Programar publicación de los tres episodios con intervalos de 1‑2 días y promocionar en redes sociales: Equipo de Marketing Digital: Lograr 10,000 vistas combinadas y 100 interacciones en redes antes del 13 de diciembre"
+    "1️⃣ Crear y lanzar una serie de 3 videos sobre el megatsunami de Lituya Bay 1958, con títulos misteriosos y miniaturas A/B contrastantes; responsable: Producción; meta: alcanzar 200 vistas y 20 suscriptores nuevos antes del 13 de diciembre.",
+    "2️⃣ Desarrollar una pieza documental sobre el fenómeno del Laki en Islandia, incluyendo mapas antiguos y análisis de impacto climático; responsable: Investigación; meta: generar 150 vistas y 10 interacciones en comentarios antes del 13 de d",
+    "3️⃣ Publicar un episodio sobre la historia secreta de Nintendo, destacando su origen con cartas y la evolución a videojuegos; responsable: Contenido; meta: lograr 80 vistas y 5 compartidos antes del 13 de diciembre."
   ],
   "ganchos": [
-    "¿Sabías que [TEMA] ocurrió cuando [CIFRA] se volvió real? | Imagen de una puerta antigua abierta con luz misteriosa",
-    "¿Qué oculta realmente [TEMA] cuando [CIFRA] se revela? | Imagen de un mapa antiguo con un punto rojo resaltado",
-    "¿Te imaginas que [TEMA] se descubrió cuando [CIFRA] se convirtió en realidad? | Imagen de un viejo libro abierto con una ilustración de cartas hanafuda",
-    "¿Sabías que [TEMA] surgió cuando [CIFRA] se hizo posible? | Imagen de una sala de juego con cartas hanafuda dispersas",
-    "¿Qué se esconde detrás de [TEMA] cuando [CIFRA] se confirma? | Imagen de un reloj antiguo marcando la hora exacta"
+    "¿Te imaginas que [TEMA] se reveló cuando [CIFRA] se volvió real? | Imagen de una puerta antigua abierta a la luz",
+    "Sabías que [TEMA] pagó [CIFRA] por algo que nadie esperaba? | Imagen de una caja misteriosa con cerradura",
+    "¿Qué [TEMA] realmente esconde cuando [CIFRA] aparece en el cielo? | Imagen de un cielo nocturno con destellos inusuales",
+    "¿Puedes creer que [TEMA] se descubrió tras [CIFRA] de datos extraños? | Imagen de un mapa antiguo con puntos resaltados",
+    "¿Qué [TEMA] se activó cuando [CIFRA] se convirtió en leyenda? | Imagen de un cráter volcánico iluminado por fuego"
   ],
   "mejorasGuion": [
-    "1. Gancho más impactante y numérico: sustituir el inicio por algo como \"¿Sabías que 1,300 km de líneas en el desierto esconden un secreto que solo 33 cm de ancho revela?\" para captar atención inmediata.",
-    "2. Ritmo visual: dividir el texto en bloques cortos y usar emojis o símbolos (📐🗺️) para resaltar datos clave, creando pausas que mantengan el interés y faciliten la lectura rápida.",
-    "3. Cierre con llamada a la acción intrigante: terminar con \"¿Qué crees que está oculto bajo esas líneas? Deja tu teoría en los comentarios y suscríbete para descubrir más misterios sin resolver.\" para fomentar interacció"
+    "1. Gancho más impactante: reemplaza “Sabías que en el desierto de Texas aparecen luces…” por “¿Alguna vez has visto luces que parpadean sin explicación en el desierto de Texas? 🌌” para captar curiosidad desde el primer ",
+    "2. Ritmo y tensión: introduce un breve relato de un testigo contemporáneo antes de revelar la explicación, por ejemplo: “En 1983, un vaquero llamado Miguel, mientras cruzaba el Paso de Paisano, vio una llama que se movía",
+    "3. Cierre con llamado a la acción más directo y emotivo: sustituye “¿Te sorprende? Comparte este video con un amigo que haría lo mismo, sígueme.” por “¿Te quedas con la duda de si son fantasmas o simples faros? Deja tu c"
   ],
   "temas": [
-    "The Bloop",
-    "The Voynich Manuscript",
-    "The Green Children of Woolpit",
-    "The Mysterious Disappearance of the Roanoke Colony",
-    "The Lost City of Atlantis"
+    "Laki",
+    "Lake Peigneur",
+    "The moving rocks of Death Valley",
+    "Lake Nyos disaster",
+    "1958 Lituya Bay earthquake and megatsunami"
   ],
   "titulos": [
-    "Sabías que [sustantivo] [verbo] [objeto] [emoji]",
-    "¿Qué [verbo] realmente [sustantivo]?",
-    "⚡ [año]: El [profesión] que [verbo] [objeto]",
-    "🌊 [sustantivo]: ¡[número] km de misterio [preposición] [objeto]!"
+    "Sabías que <sustantivo> <verbo> <objeto> <emoji>",
+    "<Nombre> nació vendiendo <objeto> <emoji>",
+    "¿Qué oculta realmente <sustantivo> <emoji>?",
+    "⚡ <año>: El <profesión> que <verbo> <objeto> <emoji>"
   ],
-  "fecha": "2026-11-25T17:06:34.103Z",
+  "fecha": "2026-11-25T21:37:30.591Z",
   "iniciativas": [
     "Valentina (Directora de contenido): Definir una línea editorial clara y un documento de estilo que guíe a todo el equipo desde el inicio.",
     "Carolina (Coordinador de producción): Crear un calendario de producción con buffers de tiempo y asignar responsables claros para cada entrega.",
