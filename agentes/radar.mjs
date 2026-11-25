@@ -319,6 +319,52 @@ export const buscarReferenciasLargas = async ({
 
 const mediana = (xs) => { const s = [...xs].sort((a, b) => a - b); return s.length ? s[Math.floor(s.length / 2)] : 0; };
 
+/**
+ * Referencias SHORT reales: búsqueda directa de Shorts del nicho, no RSS de videos largos.
+ * Solo entrega candidatos si duración y subtítulos públicos se pueden verificar.
+ */
+export const buscarReferenciasCortas = async ({nicho = '', maxResultados = 12, limiteMs = 145000, nota = () => {}} = {}) => {
+  const hasta = Date.now() + limiteMs;
+  const consultas = [
+    'misterios sin resolver #shorts', 'fenómenos inexplicables #shorts',
+    'historias misteriosas reales #shorts', 'objetos históricos misteriosos #shorts',
+    'unexplained mysteries #shorts', 'strange true stories #shorts',
+    'mysterious historical facts #shorts', ...(nicho ? [`${nicho} #shorts`] : []),
+  ];
+  const candidatos = new Map();
+  for (const q of consultas) {
+    if (Date.now() >= hasta - 30000) break;
+    try {
+      const encontrados = await buscarVideos(q, 3, true);
+      for (const v of encontrados) if (v?.id) {
+        const anterior = candidatos.get(v.id);
+        if (!anterior || Number(v.vistas ?? 0) > Number(anterior.vistas ?? 0)) candidatos.set(v.id, {...v, consultaOrigen:q});
+      }
+      nota(`Shorts buscados: ${q}; candidatos acumulados: ${candidatos.size}`);
+    } catch (e) {
+      nota(`Búsqueda Shorts falló (${q}): ${String(e.message ?? e).slice(0,100)}`);
+      if (/429/.test(String(e.message))) break;
+    }
+    await dormir(900);
+  }
+  const ordenados=[...candidatos.values()].sort((a,b)=>Number(b.vistas??0)-Number(a.vistas??0)).slice(0,36);
+  const validos=[]; let cursor=0;
+  const workers=Array.from({length:4},async()=>{
+    while(cursor<ordenados.length && Date.now()<hasta-5000 && validos.length<maxResultados){
+      const v=ordenados[cursor++];
+      try {
+        const d=await datosDeVideo(v.id), segundos=Number(d.segundos ?? v.segundos), transcripcion=String(d.transcripcion??'').trim();
+        if(!Number.isFinite(segundos)||segundos<10||segundos>75){nota(`Short descartado por duración no válida: ${d.titulo||v.titulo||v.id} (${segundos||'sin dato'}s)`);continue;}
+        if(transcripcion.length<350){nota(`Short descartado: subtítulos públicos insuficientes (${transcripcion.length} caracteres): ${d.titulo||v.titulo||v.id}`);continue;}
+        validos.push({...v,...d,id:v.id,segundos,vistas:Number(d.vistas??v.vistas??0),url:d.url||`https://youtube.com/watch?v=${v.id}`,canal:d.canal||v.canal,caracteresTranscripcion:transcripcion.length});
+        nota(`SHORT VERIFICADO: ${d.titulo||v.titulo} · ${segundos}s · ${transcripcion.length} caracteres de subtítulos.`);
+      } catch(e){nota(`No se pudo verificar Short ${v.id}: ${String(e.message??e).slice(0,100)}`);}
+    }
+  });
+  await Promise.all(workers);
+  return validos.sort((a,b)=>Number(b.vistas??0)-Number(a.vistas??0)).slice(0,maxResultados);
+};
+
 /** ¿Este canal tiene un video que EXPLOTÓ? Devuelve el video y cuánto se salió de lo normal del canal, o null. */
 export const detectarExplosion = (videos, {minVistas = 5000, maxDias = 90, veces = 5} = {}) => {
   const recientes = videos.filter((v) => v.dias !== null && v.dias <= maxDias);
@@ -427,10 +473,14 @@ const principal = async () => {
       console.log('Radar sin referencias largas con subtítulos suficientes; se guarda el intento y se reintentará en el siguiente ciclo.', notas.join(' '));
     }
   } else {
-    radar.videosVirales = (radar.videosVirales ?? []).filter(v => v?.id && v?.url);
+    // Para Shorts, buscar videos cortos directamente; no usar feeds RSS que mezclan largos.
+    radar.videosVirales = await buscarReferenciasCortas({
+      nicho: config?.nicho ?? '', maxResultados: 12, limiteMs: 145000,
+      nota: (t) => { notas.push(t); console.log(t); },
+    });
     radar.busquedaSinResultados = radar.videosVirales.length === 0;
-    radar.notasBusqueda = notas.slice(-20);
-    console.log(`Radar Shorts: ${radar.videosVirales.length} referencias cortas disponibles.`);
+    radar.notasBusqueda = notas.slice(-30);
+    console.log(`Radar Shorts: ${radar.videosVirales.length} referencias cortas verificadas con subtítulos.`);
   }
   fs.writeFileSync(ruta, JSON.stringify(radar, null, 2));
   console.log(`Radar listo: ${radar.canales.length} canales chicos que explotaron (de ${radar.canalesRevisados} canales revisados, ${radar.explotaron} con un video que explotó).`);
