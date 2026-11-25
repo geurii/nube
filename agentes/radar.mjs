@@ -9,7 +9,24 @@ import {datosDeVideo} from './analizar-videos.mjs';
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36';
 const CABECERAS = {'User-Agent': UA, 'Accept-Language': 'en-US,en;q=0.9', Cookie: 'CONSENT=YES+1; SOCS=CAI', Connection: 'close'};
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
-const pedir = async (url, opts) => { try { return await fetch(url, opts); } catch { await dormir(3000); return await fetch(url, opts); } }; // YouTube a veces corta la conexión: un reintento
+const pedir = async (url, opts) => {
+  let ultimo;
+  for (let intento = 0; intento < 4; intento++) {
+    try {
+      const r = await fetch(url, opts);
+      if (r.status !== 429 || intento === 3) return r;
+      const retry = Number(r.headers.get('retry-after'));
+      const espera = Number.isFinite(retry) && retry > 0 ? retry * 1000 : [8000, 18000, 35000][intento];
+      console.warn(`YouTube 429: pausa de ${Math.round(espera / 1000)} s antes de reintentar.`);
+      await dormir(espera);
+    } catch (e) {
+      ultimo = e;
+      if (intento === 3) throw e;
+      await dormir(2500 * (intento + 1));
+    }
+  }
+  throw ultimo ?? new Error('YouTube no respondió después de los reintentos.');
+}; // Reintenta 429 con backoff y respeta Retry-After
 const leer = (ruta, d) => { try { return JSON.parse(fs.readFileSync(ruta, 'utf8')); } catch { return d; } };
 
 // Búsqueda multilingüe: no limitar el descubrimiento a creadores anglófonos.
@@ -138,49 +155,64 @@ export const buscarReferenciasLargas = async ({
   limiteMs = 110000,
   nota = () => {},
 } = {}) => {
+  // Búsqueda deliberadamente pequeña y secuencial: 17 peticiones simultáneas provocaban HTTP 429.
   const consultas = [
-    ...CONSULTAS_LARGAS_POR_DEFECTO,
-    ...(nicho ? [`${nicho} documental`, `${nicho} investigación completa`] : []),
-    ...(Array.isArray(canales) ? canales.slice(0, 8).map((c) => `${c.nombre ?? ''} ${nicho || 'misterios documental'}`.trim()).filter(Boolean) : []),
+    'misterios sin resolver documental completo',
+    'fenómenos inexplicables investigación documental historia real',
+    'misterios históricos documental investigación completa',
+    'Expressy misterios documental',
+    'XpressTV misterios documental',
+    'MrBallen mystery documentary',
+    'The Why Files mystery documentary',
+    ...(nicho ? [`${nicho} documental investigación completa`] : []),
   ];
   const hasta = Date.now() + limiteMs;
-  const resultados = await Promise.allSettled(consultas.map((q) => buscarVideos(q, 0, false)));
   const candidatos = new Map();
-  for (const r of resultados) {
-    if (r.status !== 'fulfilled') { nota(`Búsqueda de referencia larga falló: ${String(r.reason?.message ?? r.reason).slice(0, 80)}`); continue; }
-    for (const v of r.value) {
-      if (!v?.id || !esReferenciaLarga(v)) continue; // 280 s, Shorts y videos menores de 8 min quedan fuera
-      const previo = candidatos.get(v.id);
-      if (!previo || Number(v.vistas ?? 0) > Number(previo.vistas ?? 0)) candidatos.set(v.id, v);
+  for (const q of consultas) {
+    if (Date.now() >= hasta - 25000) break;
+    try {
+      const lista = await buscarVideos(q, 0, false);
+      for (const v of lista) {
+        if (!v?.id || !esReferenciaLarga(v)) continue;
+        const previo = candidatos.get(v.id);
+        if (!previo || Number(v.vistas ?? 0) > Number(previo.vistas ?? 0)) candidatos.set(v.id, v);
+      }
+      nota(`Búsqueda larga completada: ${q}`);
+    } catch (e) {
+      nota(`Búsqueda larga falló (${q}): ${String(e.message ?? e).slice(0, 100)}`);
+      if (/429/.test(String(e.message))) await dormir(12000);
     }
+    await dormir(1800);
   }
-  const lista = [...candidatos.values()].sort((a, b) => Number(b.vistas ?? 0) - Number(a.vistas ?? 0)).slice(0, Math.max(12, maxResultados * 2));
-  const detalles = [];
-  let i = 0;
-  await Promise.all(Array.from({length: 4}, async () => {
-    while (i < lista.length && Date.now() < hasta) {
-      const video = lista[i++];
-      try {
-        const d = await datosDeVideo(video.id);
-        const segundos = Number(d.segundos ?? video.segundos);
-        if (!esReferenciaLarga({segundos}) || String(d.transcripcion ?? '').trim().length < 1800) continue;
-        detalles.push({
-          ...video,
-          ...d,
-          id: video.id,
-          url: d.url || `https://www.youtube.com/watch?v=${video.id}`,
-          titulo: d.titulo || video.titulo,
-          canal: d.canal || video.canal,
-          vistas: d.vistas ?? video.vistas,
-          segundos,
-          caracteresTranscripcion: String(d.transcripcion).length,
-        });
-      } catch (e) { nota(`No se pudo leer la referencia ${video.id}: ${String(e.message ?? e).slice(0, 80)}`); }
-    }
-  }));
-  return detalles
+  const lista = [...candidatos.values()]
     .sort((a, b) => Number(b.vistas ?? 0) - Number(a.vistas ?? 0))
-    .slice(0, maxResultados);
+    .slice(0, Math.max(10, Math.min(20, maxResultados * 2)));
+  const detalles = [];
+  // Las páginas de video también se leen de una en una para no volver a disparar el limitador.
+  for (const video of lista) {
+    if (Date.now() >= hasta - 5000 || detalles.length >= maxResultados) break;
+    try {
+      const d = await datosDeVideo(video.id);
+      const segundos = Number(d.segundos ?? video.segundos);
+      if (!esReferenciaLarga({segundos}) || String(d.transcripcion ?? '').trim().length < 1800) continue;
+      detalles.push({
+        ...video,
+        ...d,
+        id: video.id,
+        url: d.url || `https://www.youtube.com/watch?v=${video.id}`,
+        titulo: d.titulo || video.titulo,
+        canal: d.canal || video.canal,
+        vistas: d.vistas ?? video.vistas,
+        segundos,
+        caracteresTranscripcion: String(d.transcripcion).length,
+      });
+      nota(`Referencia documental válida: ${d.titulo || video.titulo} (${segundos}s; ${String(d.transcripcion).length} caracteres de transcripción).`);
+    } catch (e) {
+      nota(`No se pudo leer la referencia ${video.id}: ${String(e.message ?? e).slice(0, 100)}`);
+    }
+    await dormir(900);
+  }
+  return detalles.sort((a, b) => Number(b.vistas ?? 0) - Number(a.vistas ?? 0)).slice(0, maxResultados);
 };
 
 const mediana = (xs) => { const s = [...xs].sort((a, b) => a - b); return s.length ? s[Math.floor(s.length / 2)] : 0; };
@@ -263,11 +295,16 @@ const principal = async () => {
     console.log('Radar reciente (menos de 12 horas): no se repite para ahorrar minutos.');
     return;
   }
-  const radar = await construirRadar({consultas: config?.radar?.consultas ?? CONSULTAS_POR_DEFECTO, minVistas: 5000, maxSubs: 300000, limiteMs: 170000, nota: (t) => { notas.push(t); console.log(t); }});
-  const referenciasLargas = await buscarReferenciasLargas({nicho: config?.nicho ?? '', canales: config?.vigilar ?? [], maxResultados: 14, limiteMs: 105000, nota: (t) => { notas.push(t); console.log(t); }});
+  const esLargo = process.env.FORMATO === 'largo';
+  // En formato largo se omite el radar de canales nuevos: sus decenas de búsquedas consumían
+  // el presupuesto y disparaban el limitador antes de encontrar documentales.
+  const radar = esLargo
+    ? {fecha: new Date().toISOString(), consultas: CONSULTAS_LARGAS_POR_DEFECTO, canalesRevisados: 0, explotaron: 0, canales: []}
+    : await construirRadar({consultas: config?.radar?.consultas ?? CONSULTAS_POR_DEFECTO, minVistas: 5000, maxSubs: 300000, limiteMs: 170000, nota: (t) => { notas.push(t); console.log(t); }});
+  const referenciasLargas = await buscarReferenciasLargas({nicho: config?.nicho ?? '', canales: config?.vigilar ?? [], maxResultados: 10, limiteMs: esLargo ? 260000 : 105000, nota: (t) => { notas.push(t); console.log(t); }});
   radar.referenciasLargas = referenciasLargas.map(({id, url, titulo, canal, vistas, segundos, caracteresTranscripcion, idiomaTranscripcion}) => ({id, url, titulo, canal, vistas, segundos, caracteresTranscripcion, idiomaTranscripcion}));
   if (!radar.canales.length && !radar.referenciasLargas.length) {
-    console.log('Radar sin canales nuevos ni referencias largas con subtítulos suficientes; se conserva el anterior.', notas.join(' '));
+    console.log('Radar sin referencias largas con subtítulos suficientes; se conserva el anterior.', notas.join(' '));
     return;
   }
   fs.writeFileSync(ruta, JSON.stringify(radar, null, 2));
