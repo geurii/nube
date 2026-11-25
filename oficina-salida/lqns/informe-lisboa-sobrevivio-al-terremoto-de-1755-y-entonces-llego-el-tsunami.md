@@ -7,19 +7,19 @@ Internet para todos los agentes: 1 fuente consultada y 0 videos virales de YouTu
 - Fuente 1: web — [Terremoto de Lisboa de 1755](https://es.wikipedia.org/wiki/Terremoto_de_Lisboa_de_1755)
 
 ## Intento 1: RECHAZADO
-Editor (6/10): El gancho es demasiado genérico y no captura la magnitud del desastre. Falta una pregunta clara antes del llamado a la acción. El ritmo se pierde al acumular datos sin pausas visuales.
-- "4. Tras el temblor, una ola gigantesca emergió del Atlántico, arrasando los barrios costeros en minutos." → El material menciona que hubo un tsunami que causó casi destrucción total de Lisboa, pero no especifica que arrasó barrios costeros en minutos.
-- "5. Los testigos vieron el agua subir como una pared de espuma que alcanzó el segundo piso." → No hay evidencia en el material de que testigos describieran el tsunami como una pared de espuma que llegó al segundo piso.
-- "7. Lo que no sabías: el tsunami alcanzó 30 metros de altura al tocar la costa." → El material no indica la altura del tsunami; la cifra de 30 metros no está respaldada.
-- "8. El agua arrasó puentes, derribó barcos y dejó la ribera inexplorable durante horas." → El material no menciona daños específicos a puentes, barcos ni la duración de la inexplorabilidad de la ribera.
+Editor (5/10): Hook poco impactante, la historia excede el límite de palabras y la revelación está mal posicionada.
+- "minutos después, una ola gigantesca arrasó la costa atlántica, arrasando barrios y barcos." → El material menciona que el terremoto fue sucedido por un tsunami, pero no especifica que ocurrió "minutos después" ni que arrasó barrios y barcos en la costa atlántica.
+- "Los testigos describieron el agua subiendo como una pared de 20 metros" → El material no indica la altura del tsunami ni menciona una descripción de "una pared de 20 metros".
+- "el tsunami arrasó Lisboa cuando la marea estaba en su punto máximo." → El material no menciona la fase de la marea ni que el tsunami coincidió con la marea alta.
 - "(verificador)" → El Verificador no confirmó una aprobación explícita.
 
 ## Intento 2: RECHAZADO
-Editor (7/10): El gancho es bueno pero el cuerpo es demasiado denso; divide la información en fragmentos más breves. La revelación llega justo al límite de tiempo, pero necesita estar más cerca del 70 % para maximizar el impacto. El cierre es correcto, pero la pregunta podría ser más directa.
-- "El epicentro quedó a menos de 300 km del Atlántico; el mar se retiró y volvió con una ola terrible" → El material menciona la distancia del epicentro, pero no describe el retiro del mar ni la ola como se indica.
-- "que arrasó la ciudad en segundos." → El material no especifica la velocidad ni la duración del impacto del tsunami.
-- "Lo sorprendente: el tsunami llegó apenas minutos después, sin ninguna señal de alerta previa." → El material indica que el tsunami siguió al terremoto, pero no brinda datos sobre el intervalo de minutos ni la ausencia de alertas.
+Editor (5/10): El gancho es débil y la revelación llega demasiado temprano; falta ritmo sostenido y la pregunta final no encaja bien.
+- "Sígueme para descubrir más misterios." → Antes de la invitación a seguir debe haber una pregunta natural relacionada con el tema.
+- "Un temblor de magnitud entre 8,7 y 9,0 sacudió la ciudad durante diez minutos, dejando entre 60 000 y 100 000 víctimas." → La duración de diez minutos no está respaldada por el material; solo se menciona que el temblor tuvo varias fases y gran duración, sin especificar minutos.
+- "Pero lo que no sabías: el tsunami fue el primer gran evento estudiado científicamente." → El material indica que fue el primer terremoto estudiado científicamente, no el tsunami.
 - "(verificador)" → El Verificador no confirmó una aprobación explícita.
 
+(El Editor no pudo revisar este intento: Cuota de Groq y respaldos en cooldown; se detiene para proteger las cuotas.)
 ## ERROR
 Cuota de Groq y respaldos en cooldown; se detiene para proteger las cuotas.

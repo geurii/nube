@@ -1,11 +1,19 @@
 {
-  "actualizado": "2026-11-25T22:12:01.924Z",
+  "actualizado": "2026-11-25T22:13:31.213Z",
   "totales": {
     "aprobados": 16,
     "rechazados": 115,
-    "errores": 177
+    "errores": 178
   },
   "historial": [
+    {
+      "fecha": "2026-11-25T22:13:31.207Z",
+      "tema": "Lisboa sobrevivió al terremoto de 1755 y entonces llegó el tsunami",
+      "formato": "short",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "Cuotas de IA agotadas; ciclo detenido para no consumir más solicitudes."
+    },
     {
       "fecha": "2026-11-25T22:12:01.917Z",
       "tema": "Lisboa sobrevivió al terremoto de 1755 y entonces llegó el tsunami",
@@ -152,14 +160,6 @@
     },
     {
       "fecha": "2026-11-25T10:28:05.825Z",
-      "tema": "(sin tema)",
-      "formato": "short",
-      "resultado": "error",
-      "intentos": 0,
-      "detalle": "No hay Short viral verificable de 10–75 segundos con subtítulos públicos y autopsia temporal. No se escribe un Short genérico ni se afirma una adaptación inexis"
-    },
-    {
-      "fecha": "2026-11-25T10:26:05.562Z",
       "tema": "(sin tema)",
       "formato": "short",
       "resultado": "error",
