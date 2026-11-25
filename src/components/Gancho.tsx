@@ -41,7 +41,7 @@ export const Titular: React.FC<{texto: string; segundos?: number}> = ({texto, se
   const salida = interpolate(frame, [fin - 6, fin], [1, 0], {extrapolateLeft: 'clamp'});
   const dx = frame % 4 < 2 ? 5 : -5; // temblor RGB
   return (
-    <AbsoluteFill style={{alignItems: 'center', justifyContent: 'flex-start', paddingTop: height * (vertical ? 0.33 : 0.14), opacity: salida, pointerEvents: 'none'}}>
+    <AbsoluteFill style={{background: '#000', alignItems: 'center', justifyContent: 'flex-start', paddingTop: height * (vertical ? 0.33 : 0.14), opacity: salida, pointerEvents: 'none'}}>
       <div style={{transform: `scale(${entrada})`, textAlign: 'center', fontFamily: FUENTE_PIXEL, fontSize: tam, lineHeight: 1.45, width: '92%'}}>
         {lineas.map((l, i) => {
           const ultima = i === lineas.length - 1 && lineas.length > 1;
