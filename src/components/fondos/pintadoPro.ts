@@ -626,9 +626,28 @@ export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: n
     }
     case 'silueta': {
       const cx = X(e.x, 0.5), cy = Y(e.y, 0.8), h = num(e.h, 0.22, 0.05, 0.7) * lh, c = col(e.color, '#10121f');
-      const r = rampaDe(c, 4);
+      const r = rampaDe(c, 4), fase = t * 6.2 + cx * 0.012;
+      const zancada = Math.sin(fase), brazo = Math.cos(fase);
+      const hombroY = cy - h * 0.54, caderaY = cy - h * 0.08;
+      const ancho = Math.max(2, h * 0.055);
+      // Tronco y cabeza de una persona anónima.
       poli(g, [[cx - h * 0.2, cy], [cx - h * 0.22, cy - h * 0.55], [cx - h * 0.1, cy - h * 0.7], [cx + h * 0.1, cy - h * 0.7], [cx + h * 0.22, cy - h * 0.55], [cx + h * 0.2, cy]], r, 'izq');
-      g.ellO(cx, cy - h * 0.82, h * 0.11, h * 0.12, r);
+      g.ellO(cx, cy - h * 0.82 + Math.abs(zancada) * h * 0.012, h * 0.11, h * 0.12, r);
+      // Brazos alternos y piernas que caminan/corren; el ciclo cambia cada frame.
+      const codoIzqX = cx - h * 0.3 - brazo * h * 0.075;
+      const codoDerX = cx + h * 0.3 + brazo * h * 0.075;
+      const manoIzqX = cx - h * 0.34 + brazo * h * 0.13;
+      const manoDerX = cx + h * 0.34 - brazo * h * 0.13;
+      g.line(cx - h * 0.16, hombroY, codoIzqX, hombroY + zancada * h * 0.12, r[0], ancho);
+      g.line(codoIzqX, hombroY + zancada * h * 0.12, manoIzqX, hombroY + h * 0.23 + zancada * h * 0.09, r[0], ancho);
+      g.line(cx + h * 0.16, hombroY, codoDerX, hombroY - zancada * h * 0.12, r[0], ancho);
+      g.line(codoDerX, hombroY - zancada * h * 0.12, manoDerX, hombroY + h * 0.23 - zancada * h * 0.09, r[0], ancho);
+      const pieIzqX = cx - h * 0.12 + zancada * h * 0.22;
+      const pieDerX = cx + h * 0.12 - zancada * h * 0.22;
+      g.line(cx - h * 0.09, caderaY, pieIzqX, cy - Math.max(0, zancada) * h * 0.12, r[0], ancho);
+      g.line(cx + h * 0.09, caderaY, pieDerX, cy - Math.max(0, -zancada) * h * 0.12, r[0], ancho);
+      g.line(pieIzqX, cy - Math.max(0, zancada) * h * 0.12, pieIzqX - h * 0.06, cy, r[0], ancho);
+      g.line(pieDerX, cy - Math.max(0, -zancada) * h * 0.12, pieDerX + h * 0.06, cy, r[0], ancho);
       return true;
     }
     case 'ovni': {
