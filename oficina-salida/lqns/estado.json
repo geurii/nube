@@ -1,13 +1,85 @@
 {
-  "actualizado": "2026-11-25T02:06:58.232Z",
+  "actualizado": "2026-11-25T02:45:34.796Z",
   "totales": {
     "aprobados": 16,
     "rechazados": 99,
-    "errores": 57
+    "errores": 68
   },
   "historial": [
     {
-      "fecha": "2026-11-25T02:06:58.224Z",
+      "fecha": "2026-11-25T02:45:34.787Z",
+      "tema": "(sin tema)",
+      "formato": "largo",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
+    },
+    {
+      "fecha": "2026-11-25T02:39:24.650Z",
+      "tema": "(sin tema)",
+      "formato": "largo",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
+    },
+    {
+      "fecha": "2026-11-25T02:33:13.540Z",
+      "tema": "(sin tema)",
+      "formato": "largo",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
+    },
+    {
+      "fecha": "2026-11-25T02:27:01.440Z",
+      "tema": "(sin tema)",
+      "formato": "largo",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
+    },
+    {
+      "fecha": "2026-11-25T02:17:51.198Z",
+      "tema": "(sin tema)",
+      "formato": "largo",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
+    },
+    {
+      "fecha": "2026-11-25T02:13:50.783Z",
+      "tema": "(sin tema)",
+      "formato": "largo",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
+    },
+    {
+      "fecha": "2026-11-25T02:11:50.423Z",
+      "tema": "(sin tema)",
+      "formato": "largo",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
+    },
+    {
+      "fecha": "2026-11-25T02:10:50.056Z",
+      "tema": "(sin tema)",
+      "formato": "largo",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
+    },
+    {
+      "fecha": "2026-11-25T02:10:19.677Z",
+      "tema": "(sin tema)",
+      "formato": "largo",
+      "resultado": "error",
+      "intentos": 0,
+      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
+    },
+    {
+      "fecha": "2026-11-25T02:06:38.064Z",
       "tema": "(sin tema)",
       "formato": "largo",
       "resultado": "error",
@@ -72,126 +144,6 @@
     },
     {
       "fecha": "2026-11-25T01:52:27.164Z",
-      "tema": "(sin tema)",
-      "formato": "largo",
-      "resultado": "error",
-      "intentos": 0,
-      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
-    },
-    {
-      "fecha": "2026-11-25T01:46:52.758Z",
-      "tema": "(sin tema)",
-      "formato": "largo",
-      "resultado": "error",
-      "intentos": 0,
-      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
-    },
-    {
-      "fecha": "2026-11-25T01:41:20.365Z",
-      "tema": "(sin tema)",
-      "formato": "largo",
-      "resultado": "error",
-      "intentos": 0,
-      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
-    },
-    {
-      "fecha": "2026-11-25T01:35:47.901Z",
-      "tema": "(sin tema)",
-      "formato": "largo",
-      "resultado": "error",
-      "intentos": 0,
-      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
-    },
-    {
-      "fecha": "2026-11-25T01:27:14.246Z",
-      "tema": "(sin tema)",
-      "formato": "largo",
-      "resultado": "error",
-      "intentos": 0,
-      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
-    },
-    {
-      "fecha": "2026-11-25T01:23:13.800Z",
-      "tema": "(sin tema)",
-      "formato": "largo",
-      "resultado": "error",
-      "intentos": 0,
-      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
-    },
-    {
-      "fecha": "2026-11-25T01:21:13.426Z",
-      "tema": "(sin tema)",
-      "formato": "largo",
-      "resultado": "error",
-      "intentos": 0,
-      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
-    },
-    {
-      "fecha": "2026-11-25T01:20:13.052Z",
-      "tema": "(sin tema)",
-      "formato": "largo",
-      "resultado": "error",
-      "intentos": 0,
-      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
-    },
-    {
-      "fecha": "2026-11-25T01:19:42.652Z",
-      "tema": "(sin tema)",
-      "formato": "largo",
-      "resultado": "error",
-      "intentos": 0,
-      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
-    },
-    {
-      "fecha": "2026-11-25T01:15:58.036Z",
-      "tema": "(sin tema)",
-      "formato": "largo",
-      "resultado": "error",
-      "intentos": 0,
-      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
-    },
-    {
-      "fecha": "2026-11-25T01:13:57.723Z",
-      "tema": "(sin tema)",
-      "formato": "largo",
-      "resultado": "error",
-      "intentos": 0,
-      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
-    },
-    {
-      "fecha": "2026-11-25T01:12:57.408Z",
-      "tema": "(sin tema)",
-      "formato": "largo",
-      "resultado": "error",
-      "intentos": 0,
-      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
-    },
-    {
-      "fecha": "2026-11-25T01:12:27.063Z",
-      "tema": "(sin tema)",
-      "formato": "largo",
-      "resultado": "error",
-      "intentos": 0,
-      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
-    },
-    {
-      "fecha": "2026-11-25T01:03:50.862Z",
-      "tema": "(sin tema)",
-      "formato": "largo",
-      "resultado": "error",
-      "intentos": 0,
-      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
-    },
-    {
-      "fecha": "2026-11-25T00:58:46.639Z",
-      "tema": "(sin tema)",
-      "formato": "largo",
-      "resultado": "error",
-      "intentos": 0,
-      "detalle": "No hay referencia viral de YouTube con subtítulos públicos y autopsia temporal verificable. El video largo no se escribirá sin ese análisis; se reintenta en el "
-    },
-    {
-      "fecha": "2026-11-25T00:53:42.109Z",
       "tema": "(sin tema)",
       "formato": "largo",
       "resultado": "error",
