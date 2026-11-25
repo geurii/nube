@@ -9,6 +9,8 @@ export const FUENTES_INSTITUCIONALES = [
   {id:'usgs',nombre:'US Geological Survey',dominio:'usgs.gov'},
   {id:'pubmed',nombre:'PubMed / NCBI',dominio:'pubmed.ncbi.nlm.nih.gov'},
   {id:'unesco',nombre:'UNESCO',dominio:'unesco.org'},
+  {id:'nintendo',nombre:'Nintendo (fuente oficial)',dominio:'nintendo.com'},
+  {id:'nintendo-jp',nombre:'Nintendo Co., Ltd. (historia corporativa)',dominio:'nintendo.co.jp'},
 ];
 const SIN_WIKI = /(^|\.)(wikipedia|wikimedia|wikiwand|dbpedia|wikidata)\./i;
 const limpiar = (h) => String(h ?? '')
@@ -119,6 +121,27 @@ export const investigarEnLaWeb = async (tema,{maxPorFuente=2,minimoDominios=0}={
   } catch { /* se intenta el respaldo institucional */ }
 
   const dominios = () => new Set(paginas.map(f => String(f.dominio || hostDe(f.url)).toLowerCase().replace(/^www\./,'')));
+  // Respaldo directo: si el buscador falla, consultar páginas corporativas oficiales conocidas.
+  // El tema ya fue elegido; el buscador no puede convertir un fallo de búsqueda en descarte editorial.
+  if (dominios().size < minimoDominios && /nintendo|hanafuda|cartas japonesas/i.test(tema)) {
+    const directas = [
+      {url:'https://www.nintendo.co.jp/corporate/en/history/index.html',dominio:'nintendo.co.jp',institucion:'Nintendo Co., Ltd. (historia corporativa)'},
+      {url:'https://www.nintendo.com/us/about/',dominio:'nintendo.com',institucion:'Nintendo (sitio corporativo oficial)'},
+    ];
+    const leidas = await Promise.all(directas.map(async x => {
+      try {
+        const r = await fetch(x.url,{headers:{'User-Agent':UA},signal:AbortSignal.timeout(18000),redirect:'follow'});
+        if (!r.ok) return null;
+        const pagina = extraerPagina(await r.text());
+        if (pagina.texto.length < 220) return null;
+        return {idioma:'institucional',tipo:'fuente_primaria_o_institucional',institucion:x.institucion,dominio:x.dominio,titulo:pagina.titulo,url:x.url,texto:pagina.texto,apoyo:false};
+      } catch { return null; }
+    }));
+    for (const fuente of leidas.filter(Boolean)) {
+      if (!dominios().has(fuente.dominio)) paginas.push(fuente);
+    }
+  }
+
   // Si la búsqueda general no trae suficientes dominios independientes, completar con organismos oficiales.
   if (dominios().size < minimoDominios) {
     const grupos = await Promise.all(FUENTES_INSTITUCIONALES.map(async inst => {
