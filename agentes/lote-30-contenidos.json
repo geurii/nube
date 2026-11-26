@@ -65,12 +65,12 @@
     {
       "slug": "alcatraz-fuga-cabezas-falsas",
       "title": "La fuga de Alcatraz que dejó cabezas falsas en las camas",
-      "desc": "Tres presos escaparon de sus celdas en Alcatraz en 1962. Dejaron cabezas falsas y nunca se supo si sobrevivieron. #Alcatraz #Misterios #Historia #Prision #LoQueNoSabias",
+      "desc": "En 1962, tres presos desaparecieron de Alcatraz. Dejaron cabezas falsas y nunca se confirmó si sobrevivieron. #Alcatraz #Misterios #Historia #Prision #LoQueNoSabias",
       "source": "https://www.fbi.gov/history/cases-and-criminals/alcatraz-escape",
       "scenes": [
         {
           "anchor": "edificio",
-          "text": "Una mañana de junio de mil novecientos sesenta y dos, los guardias revisaron el edificio de la prisión de Alcatraz y encontraron tres camas ocupadas… aparentemente."
+          "text": "Tres presos desaparecieron de Alcatraz en junio de mil novecientos sesenta y dos. Cuando los guardias revisaron sus celdas, encontraron camas ocupadas… aparentemente."
         },
         {
           "anchor": "edificio",
@@ -86,7 +86,7 @@
         },
         {
           "anchor": "edificio",
-          "text": "El FBI nunca confirmó que sobrevivieran ni que murieran. La prisión conserva el hueco del escape; el destino de los tres sigue abierto."
+          "text": "El FBI nunca confirmó que sobrevivieran ni que murieran. La fuga fue real; el destino de los tres sigue abierto."
         }
       ]
     },
@@ -120,13 +120,13 @@
     },
     {
       "slug": "uss-cyclops-desaparecio",
-      "title": "El barco de la Marina que desapareció con 306 personas",
-      "desc": "El USS Cyclops salió del Caribe en 1918 y nunca llegó a Baltimore. No hay restos ni prueba de ataque enemigo. #USS Cyclops #Marina #Historia #Misterios #LoQueNoSabias",
+      "title": "El barco de la Marina que desapareció con unas 306 personas",
+      "desc": "El USS Cyclops salió del Caribe en 1918 con alrededor de 306 personas y nunca llegó a Baltimore. #USSCyclops #Marina #Historia #Misterios #LoQueNoSabias",
       "source": "https://www.history.navy.mil/about-us/leadership/director/directors-corner/h-grams/h-gram-016.html",
       "scenes": [
         {
           "anchor": "barco",
-          "text": "Un enorme barco de la Marina salió de Barbados rumbo a Baltimore con trescientas seis personas a bordo."
+          "text": "Un enorme barco de la Marina salió de Barbados rumbo a Baltimore con unas trescientas seis personas a bordo."
         },
         {
           "anchor": "barco",
@@ -466,7 +466,7 @@
         },
         {
           "anchor": "avion",
-          "text": "Frederick Valentich volaba sobre el estrecho de Bass, entre Australia y Tasmania, en octubre de mil novecientos setenta y ocho. El avión quedó en el centro del expediente."
+          "text": "Frederick Valentich volaba sobre el estrecho de Bass, entre Australia y Tasmania, el veintiuno de octubre de mil novecientos setenta y ocho."
         },
         {
           "anchor": "avion",
@@ -478,7 +478,7 @@
         },
         {
           "anchor": "avion",
-          "text": "El informe oficial clasificó el caso como accidente aéreo y dijo que la causa de la desaparición no pudo determinarse. Al final, el documento original permite separar los hechos comprobados de las hipótesis que todavía no cuentan con evidencia suficiente. El avión quedó en el centro del expediente."
+          "text": "La búsqueda no encontró restos del avión ni del piloto. La causa de la desaparición sobre el estrecho de Bass nunca quedó establecida."
         }
       ]
     },
@@ -642,11 +642,11 @@
         },
         {
           "anchor": "puente",
-          "text": "El viento interactuó con la estructura y alimentó un movimiento torsional conocido como flutter aeroelástico, no un simple rebote. El puente quedó registrado mientras oscilaba."
+          "text": "La explicación principal es el flutter torsional: el viento interactuó con la estructura y alimentó el giro, aunque los ingenieros siguen discutiendo detalles del colapso."
         },
         {
           "anchor": "puente",
-          "text": "El colapso transformó la ingeniería de puentes y demostró que el viento debe probarse junto con la estructura. Al final, el documento original permite separar los hechos comprobados de las hipótesis que todavía no cuentan con evidencia suficiente."
+          "text": "El colapso transformó la ingeniería de puentes y demostró que el viento debe probarse junto con la estructura, aunque la causa exacta sigue estudiándose."
         }
       ]
     },
