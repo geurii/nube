@@ -70,15 +70,15 @@
       "scenes": [
         {
           "anchor": "edificio",
-          "text": "Una mañana de junio de mil novecientos sesenta y dos, los guardias revisaron Alcatraz y encontraron tres camas ocupadas… aparentemente."
+          "text": "Una mañana de junio de mil novecientos sesenta y dos, los guardias revisaron el edificio de la prisión de Alcatraz y encontraron tres camas ocupadas… aparentemente."
         },
         {
           "anchor": "edificio",
-          "text": "Las cabezas eran muñecos de yeso, pintura y cabello real. Desde la puerta, parecían presos durmiendo."
+          "text": "Dentro de la prisión, las cabezas eran muñecos de yeso, pintura y cabello real. Desde la puerta, parecían presos durmiendo."
         },
         {
           "anchor": "edificio",
-          "text": "Frank Morris y los hermanos Anglin habían agrandado ventilaciones y excavado una ruta hasta el techo de la prisión."
+          "text": "Frank Morris y los hermanos Anglin habían agrandado ventilaciones y excavado una ruta hasta el techo del edificio de la prisión."
         },
         {
           "anchor": "barco",
@@ -86,7 +86,7 @@
         },
         {
           "anchor": "edificio",
-          "text": "El FBI nunca confirmó que sobrevivieran ni que murieran. La fuga fue real; el destino de los tres sigue abierto. Al final, el documento original permite separar los hechos comprobados de las hipótesis que todavía no cuentan con evidencia suficiente."
+          "text": "El FBI nunca confirmó que sobrevivieran ni que murieran. La prisión conserva el hueco del escape; el destino de los tres sigue abierto."
         }
       ]
     },
@@ -105,8 +105,8 @@
           "text": "Ocurrió el veintidós de noviembre de mil novecientos ochenta y siete, cuando dos canales de Chicago fueron interceptados."
         },
         {
-          "anchor": "radio",
-          "text": "La primera interrupción duró unos treinta segundos. La segunda, en otra estación, se extendió cerca de noventa."
+          "anchor": "televisor",
+          "text": "La primera interrupción en televisión duró unos treinta segundos. La segunda, en otra estación, se extendió cerca de noventa."
         },
         {
           "anchor": "televisor",
@@ -222,7 +222,7 @@
         },
         {
           "anchor": "roca",
-          "text": "Su fabricación, uso y significado siguen sin aclararse por completo. No existe evidencia seria de que fueran tecnología extraterrestre."
+          "text": "La piedra que compone las esferas y su significado siguen sin aclararse por completo. No existe evidencia seria de que fueran tecnología extraterrestre."
         },
         {
           "anchor": "esfera",
@@ -498,7 +498,7 @@
         },
         {
           "anchor": "radio",
-          "text": "Algunos oyentes que sintonizaron tarde no escucharon la introducción teatral y confundieron partes del programa con noticias."
+          "text": "Algunos oyentes que sintonizaron tarde la radio no escucharon la introducción teatral y confundieron partes del programa con noticias."
         },
         {
           "anchor": "radio",
