@@ -81,7 +81,7 @@ for(let ti=0;ti<config.topics.length;ti++){
  fs.writeFileSync(path.join('guion/serie',id+'.json'),JSON.stringify(g,null,2)+'\n');
  const editorial={...g,slug};
  fs.writeFileSync(path.join('oficina-salida/lqns','guion-'+slug+'.json'),JSON.stringify(editorial,null,2)+'\n');
- console.log('PREPARADO '+(ti+1)+'/30 '+id+' · '+words+' palabras · 20 planos');
+ console.log('PREPARADO '+(ti+1)+'/30 '+id+' · '+words+' palabras · 50 planos');
 }
 const state={
  version:1,fase:'preparado',canal:'lqns',total:30,completedCount:0,intervalMinutes:10,
