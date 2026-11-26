@@ -90,5 +90,6 @@ jobs:
           path: |
             agentes/lote-30-publicacion.json
             guion/serie/*.json
+            out/serie/*-subida.mp4
           if-no-files-found: warn
           retention-days: 14
