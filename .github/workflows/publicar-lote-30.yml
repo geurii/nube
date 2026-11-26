@@ -1,7 +1,5 @@
 name: Lote 30 - publicar cada veinte minutos
 on:
-  schedule:
-    - cron: '*/5 * * * *'
   workflow_dispatch:
 permissions:
   contents: write
