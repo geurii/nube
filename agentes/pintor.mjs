@@ -54,7 +54,7 @@ export const sujetosDelTexto = (texto = '') => {
     [/\b(hielo|glaciar|iceberg|congelado|criosismo|crujido de hielo)\b/, ['hielo']],
     [/\b(volcan|erupcion|lava|crater|magma)\b/, ['volcan']],
     [/\b(bosque|arbol|arboles|pino|selva)\b/, ['bosque','arbol']],
-    [/\b(lisboa|ciudad|edificio|casa|pueblo|vivienda|calle|barrio|capital|casco historico|centro historico)\b/, ['ciudad','edificio']],
+    [/\b(lisboa|ciudad|edificio|casa|pueblo|vivienda|calle|barrio|capital|casco historico|centro historico|prision|presidio|carcel)\b/, ['ciudad','edificio']],
     [/\b(fabrica|central|reactor|nuclear|chimenea|energia|planta industrial)\b/, ['central']],
     [/\b(desierto|duna|arena)\b/, ['duna']],
     [/\b(tic[\s-]?tac|capsula blanca|objeto blanco ovalado)\b/, ['tic_tac']],
