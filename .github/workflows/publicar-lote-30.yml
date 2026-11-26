@@ -1,4 +1,4 @@
-name: Lote 30 - publicar cada diez minutos
+name: Lote 30 - publicar cada veinte minutos
 on:
   schedule:
     - cron: '*/5 * * * *'
@@ -18,7 +18,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Comprobar barrera 30 de 30 y reloj de diez minutos
+      - name: Comprobar barrera 30 de 30 y reloj de veinte minutos
         id: cola
         run: node scripts/publicar-lote-30.mjs --prepare
       - name: Preparar ffprobe para verificar y publicar
@@ -67,7 +67,7 @@ jobs:
           ID: ${{ steps.cola.outputs.id }}
           LOTE_INDEX: ${{ steps.cola.outputs.index }}
         run: node scripts/publicar-lote-30.mjs --finalize
-      - name: Esperar diez minutos y activar el siguiente Short
+      - name: Esperar veinte minutos y activar el siguiente Short
         if: success() && steps.cola.outputs.enabled == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
@@ -76,7 +76,7 @@ jobs:
         run: |
           listo=$(node --input-type=module -e 'import fs from "node:fs"; const x=JSON.parse(fs.readFileSync("agentes/lote-30-publicacion.json","utf8")); process.stdout.write(x.fase==="ready_to_publish" && Number(x.nextIndex)<30 ? "si" : "no");')
           if [ "$listo" != "si" ]; then echo "Cola completa o bloqueada; no se encadena otro Short."; exit 0; fi
-          sleep 600
+          sleep 1200
           curl --fail-with-body --silent --show-error -X POST \
             -H "Authorization: Bearer $GH_TOKEN" \
             -H "Accept: application/vnd.github+json" \
