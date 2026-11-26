@@ -22,7 +22,10 @@ const palettes=[
 ];
 const variants=[
  {x:.50,y:.61,w:.70,h:.44,r:.22,alto:.42},{x:.42,y:.58,w:.58,h:.38,r:.18,alto:.36},
- {x:.59,y:.66,w:.76,h:.46,r:.24,alto:.48},{x:.51,y:.55,w:.62,h:.42,r:.20,alto:.40}
+ {x:.59,y:.66,w:.76,h:.46,r:.24,alto:.48},{x:.51,y:.55,w:.62,h:.42,r:.20,alto:.40},
+ {x:.36,y:.64,w:.68,h:.50,r:.21,alto:.44},{x:.65,y:.57,w:.60,h:.40,r:.19,alto:.38},
+ {x:.47,y:.70,w:.78,h:.52,r:.23,alto:.46},{x:.55,y:.50,w:.66,h:.36,r:.17,alto:.34},
+ {x:.31,y:.55,w:.72,h:.48,r:.22,alto:.43},{x:.69,y:.63,w:.64,h:.42,r:.20,alto:.39}
 ];
 const safe=(v)=>Math.max(0,Math.min(1,v));
 const visual=(anchor,index,topicIndex,sceneIndex)=>{
@@ -57,7 +60,7 @@ for(let ti=0;ti<config.topics.length;ti++){
  const scenes=[];
  for(let si=0;si<topic.scenes.length;si++){
   const src=topic.scenes[si],fonds=[];
-  for(let vi=0;vi<4;vi++){
+  for(let vi=0;vi<10;vi++){
    const suffix=String.fromCharCode(97+vi),asset=id+'-s'+(si+1)+'-'+suffix;
    const plano=visual(src.anchor,vi,ti,si);
    fs.writeFileSync(path.join('public/pintados',asset+'.json'),JSON.stringify(plano));
@@ -87,4 +90,5 @@ const state={
  errores:[]
 };
 fs.writeFileSync('agentes/lote-30-publicacion.json',JSON.stringify(state,null,2)+'\n');
-console.log('LOTE PREPARADO: 30 guiones faceless, '+visualCount+' visuales específicos y ningún tema duplicado.');
+if(visualCount!==1500)throw new Error('El lote debe producir exactamente 1500 visuales únicos; generados: '+visualCount);
+console.log('LOTE PREPARADO: 30 guiones faceless, '+visualCount+' visuales específicos (10 por escena) y ningún tema duplicado.');

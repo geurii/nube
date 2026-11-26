@@ -26,7 +26,7 @@ for(let index=0;index<state.items.length;index++){
    const refs=new Set();
    for(let si=0;si<g.escenas.length;si++){
     const scene=g.escenas[si];
-    if(!Array.isArray(scene.fondo)||scene.fondo.length!==4)throw new Error('Se requieren cuatro visuales por escena.');
+    if(!Array.isArray(scene.fondo)||scene.fondo.length!==10)throw new Error('Se requieren diez visuales por escena para sostener escenas de hasta 30 segundos sin repetir imágenes.');
     for(const ref of scene.fondo){
      if(typeof ref!=='string'||!ref.startsWith('pintado:'))throw new Error('Visual sin arte pixel interno.');
      const name=ref.slice('pintado:'.length);
@@ -65,7 +65,7 @@ for(let index=0;index<state.items.length;index++){
    if(!lv||lv.width!==1080||lv.height!==1920||!la)throw new Error('La versión ligera perdió imagen vertical o audio.');
    const bytes=fs.statSync(lite).size;
    if(bytes>10*1024*1024)throw new Error('La copia optimizada supera 10 MB.');
-   const revisionTecnica={fecha:new Date().toISOString(),resultado:'aprobado',metodo:'verificacion_automatica_lote',controles:['duracion_30_a_180_segundos','1080x1920_vertical','voz_y_audio_presentes','faceless_personaje_oculto','subtitulos_temporizados','20_visuals_por_short_sin_repetir_y_con_ancla_narrativa','descripcion_sin_enlaces','archivo_optimizado_menor_de_10MB']};
+   const revisionTecnica={fecha:new Date().toISOString(),resultado:'aprobado',metodo:'verificacion_automatica_lote',controles:['duracion_30_a_180_segundos','1080x1920_vertical','voz_y_audio_presentes','faceless_personaje_oculto','subtitulos_temporizados','50_visuals_por_short_sin_repetir_y_con_ancla_narrativa','descripcion_sin_enlaces','archivo_optimizado_menor_de_10MB']};
    g.estado='aprobado';
    g.revisionTecnica=revisionTecnica;
    fs.writeFileSync(guionPath,JSON.stringify(g,null,2)+'\n');
