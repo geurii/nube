@@ -15,7 +15,7 @@ const leer = (ruta, d) => {
   try {
     const raw = fs.readFileSync(ruta, 'utf8');
     try { return JSON.parse(raw); }
-    catch { return JSON.parse(raw.replace(/\\\\n\\s*$/, '')); }
+    catch { return JSON.parse(raw.replace(/\\n\s*$/, '')); }
   } catch { return d; }
 };
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
