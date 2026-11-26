@@ -21,6 +21,11 @@ jobs:
       - name: Comprobar barrera 30 de 30 y reloj de diez minutos
         id: cola
         run: node scripts/publicar-lote-30.mjs --prepare
+      - name: Preparar ffprobe para verificar y publicar
+        if: steps.cola.outputs.enabled == 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
       - name: Descargar el artefacto del render de los 30 Shorts
         if: steps.cola.outputs.enabled == 'true'
         uses: actions/download-artifact@v4
