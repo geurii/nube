@@ -9,8 +9,8 @@ import type {PropsEscena} from './Escenas';
 const {fontFamily: FUENTE_PIXEL} = loadFont();
 const F = 2;
 // Ambiente (paisaje, clima, efectos): decoran, pero no son el sujeto. Un plano solo con ambiente se rechaza.
-const AMBIENTE = new Set(['bosque','nubes','olas','roca','astro','duna','montanas','lago','silueta','aurora']);
-const OBJETOS_NARRATIVOS = new Set(['barco','pez','hielo','faro','ovni','explosion','ciudad','arbol','edificio','central','pergamino','calendario','reloj','castillo','corona','libro','moneda','iglesia','caballo','hidrofono','sonar','microfono','volcan','fuego','avion','tren','submarino','barril','cerveza','cerveceria','tsunami','deslizamiento','terremoto','paracaidas','televisor','esfera','dodecaedro','zepelin','radio','telegrafo','vaca','puente','satelite','bomba','tornado','fosil','periodico']);
+const AMBIENTE = new Set(['bosque','nubes','olas','roca','astro','duna','montanas','lago','silueta']);
+const OBJETOS_NARRATIVOS = new Set(['aurora','barco','pez','hielo','faro','ovni','explosion','ciudad','arbol','edificio','central','pergamino','calendario','reloj','castillo','corona','libro','moneda','iglesia','caballo','hidrofono','sonar','microfono','volcan','fuego','avion','tren','submarino','barril','cerveza','cerveceria','tsunami','deslizamiento','terremoto','paracaidas','televisor','esfera','dodecaedro','zepelin','radio','telegrafo','vaca','puente','satelite','bomba','tornado','fosil','periodico']);
 const CAPAS_PROHIBIDAS = new Set(['circulo','rect','poligono','linea','texto']);
 
 const Lienzo: React.FC<{id: string}> = ({id}) => {

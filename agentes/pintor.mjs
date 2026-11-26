@@ -102,12 +102,12 @@ export const sujetosDelTexto = (texto = '') => {
 /** AMBIENTE: paisaje, clima y efectos. Hacen bonito el cuadro pero NUNCA son el sujeto del que habla la voz.
  *  (Antes estaban mezclados con los sujetos: por eso el plano del Mary Celeste pasaba con montanas y sin barco.) */
 export const AMBIENTE = new Set([
-  'bosque','nubes','olas','roca','astro','duna','montanas','lago','silueta','aurora',
+  'bosque','nubes','olas','roca','astro','duna','montanas','lago','silueta',
 ]);
 
 /** SUJETOS: lo que la frase nombra y el espectador tiene que reconocer. Al menos uno, dibujado y visible. */
 export const OBJETOS_NARRATIVOS = new Set([
-  'barco','pez','hielo','faro','ovni','explosion','ciudad','arbol','edificio','central','pergamino','calendario',
+  'aurora','barco','pez','hielo','faro','ovni','explosion','ciudad','arbol','edificio','central','pergamino','calendario',
   'reloj','castillo','corona','libro','moneda','iglesia','caballo','hidrofono','sonar','microfono','radar','tic_tac',
   'paracaidas','televisor','esfera','dodecaedro','zepelin','radio','telegrafo','vaca','puente','satelite','bomba','tornado',
   'fosil','periodico','volcan','fuego','avion','tren','submarino','barril','cerveza','cerveceria','tsunami','deslizamiento',

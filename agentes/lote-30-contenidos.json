@@ -29,7 +29,7 @@
           "text": "El informe del faro registró barandas torcidas y una enorme piedra desplazada cerca del desembarcadero; una ola pudo arrastrarlos."
         },
         {
-          "anchor": "olas",
+          "anchor": "faro",
           "text": "No hay evidencia de fantasmas ni de una fuga. El mar es la explicación más probable, pero nunca aparecieron. Al final, el documento original permite separar los hechos comprobados de las hipótesis que todavía no cuentan con evidencia suficiente."
         }
       ]
@@ -161,16 +161,16 @@
           "text": "El vuelo 2501 de Northwest Airlines había salido de Nueva York rumbo a Minneapolis, con destino final Seattle."
         },
         {
-          "anchor": "lago",
-          "text": "La investigación oficial ubicó el accidente en el lago, al noroeste de Benton Harbor, durante la noche del veintitrés de junio de 1950."
+          "anchor": "avion",
+          "text": "La investigación oficial ubicó el avión accidentado en el lago, al noroeste de Benton Harbor, durante la noche del veintitrés de junio de 1950."
         },
         {
           "anchor": "avion",
           "text": "El informe confirmó que el aparato quedó destruido y que no hubo sobrevivientes; las condiciones meteorológicas complicaron la búsqueda. El avión quedó en el centro del expediente."
         },
         {
-          "anchor": "lago",
-          "text": "No fue una desaparición sobrenatural: fue una tragedia aérea documentada. El informe original conserva los detalles del accidente. Al final, el documento original permite separar los hechos comprobados de las hipótesis que todavía no cuentan con evidencia suficiente. El lago fue escenario de la búsqueda."
+          "anchor": "avion",
+          "text": "No fue una desaparición sobrenatural: fue un accidente de avión documentado. El informe original conserva los detalles del accidente. Al final, el documento original permite separar los hechos comprobados de las hipótesis que todavía no cuentan con evidencia suficiente. El lago fue escenario de la búsqueda."
         }
       ]
     },
@@ -221,7 +221,7 @@
           "text": "UNESCO registra tamaños desde setenta centímetros hasta dos metros y medio, colocadas en antiguos asentamientos. La esfera de piedra es el objeto estudiado por los arqueólogos."
         },
         {
-          "anchor": "roca",
+          "anchor": "esfera",
           "text": "La piedra que compone las esferas y su significado siguen sin aclararse por completo. No existe evidencia seria de que fueran tecnología extraterrestre."
         },
         {
@@ -357,7 +357,7 @@
           "text": "El ocho de septiembre de mil novecientos, un huracán llegó a Galveston, Texas, con una marejada enorme. La ciudad quedó marcada por este episodio histórico."
         },
         {
-          "anchor": "olas",
+          "anchor": "ciudad",
           "text": "Las olas y el agua subieron sobre la isla y golpearon edificios, calles y refugios, mientras los escombros se convertían en proyectiles."
         },
         {
@@ -377,23 +377,23 @@
       "source": "https://www.nationalarchives.gov.uk/explore-the-collection/explore-by-time-period/postwar/ufo-reports/",
       "scenes": [
         {
-          "anchor": "bosque",
-          "text": "En un bosque inglés, militares reportaron luces extrañas cerca de una base aérea durante varias noches."
+          "anchor": "avion",
+          "text": "En un bosque inglés, militares reportaron luces extrañas cerca de una base de aviones durante varias noches."
         },
         {
           "anchor": "ovni",
           "text": "Los reportes del posible OVNI ocurrieron en diciembre de mil novecientos ochenta, cerca de RAF Woodbridge, en Suffolk."
         },
         {
-          "anchor": "bosque",
-          "text": "El teniente coronel Charles Halt redactó un memorando sobre luces observadas y una investigación en el bosque."
+          "anchor": "pergamino",
+          "text": "El teniente coronel Charles Halt redactó un documento sobre luces observadas y una investigación en el bosque."
         },
         {
           "anchor": "radar",
           "text": "Los archivos británicos dicen que no se detectaron objetos en radar y que el Ministerio de Defensa no vio importancia militar. El radar fue una de las herramientas centrales de la investigación."
         },
         {
-          "anchor": "bosque",
+          "anchor": "pergamino",
           "text": "El documento confirma que hubo reportes e investigación; no demuestra que una nave extraterrestre aterrizara. Al final, el documento original permite separar los hechos comprobados de las hipótesis que todavía no cuentan con evidencia suficiente. El bosque fue el escenario de los reportes."
         }
       ]
@@ -437,8 +437,8 @@
           "text": "Un periódico aseguró que un astrónomo había descubierto animales y criaturas aladas viviendo en la Luna."
         },
         {
-          "anchor": "astro",
-          "text": "En mil ochocientos treinta y cinco, el New York Sun publicó una serie de artículos sobre supuestos hallazgos lunares. La Luna fue el escenario de aquella historia."
+          "anchor": "periodico",
+          "text": "En mil ochocientos treinta y cinco, el periódico New York Sun publicó una serie de artículos sobre supuestos hallazgos lunares. La Luna fue el escenario de aquella historia."
         },
         {
           "anchor": "periodico",
@@ -449,8 +449,8 @@
           "text": "El periódico atribuyó al astrónomo John Herschel unas observaciones inventadas por el periodista Richard Locke."
         },
         {
-          "anchor": "astro",
-          "text": "La llamada Gran Broma Lunar demuestra cómo un relato convincente puede viajar más rápido que la verificación. Al final, el documento original permite separar los hechos comprobados de las hipótesis que todavía no cuentan con evidencia suficiente. La Luna fue el escenario de aquella historia."
+          "anchor": "periodico",
+          "text": "La llamada Gran Broma Lunar demuestra cómo un relato convincente en un periódico puede viajar más rápido que la verificación. Al final, el documento original permite separar los hechos comprobados de las hipótesis que todavía no cuentan con evidencia suficiente. La Luna fue el escenario de aquella historia."
         }
       ]
     },
@@ -585,8 +585,8 @@
           "text": "Horas después, auroras visibles desde latitudes inusuales acompañaron problemas eléctricos en redes de telégrafo."
         },
         {
-          "anchor": "aurora",
-          "text": "Algunos operadores recibieron descargas y hubo líneas que chispearon; la tormenta geomagnética fue excepcionalmente intensa. La aurora iluminó el cielo nocturno."
+          "anchor": "telegrafo",
+          "text": "Algunos operadores del telégrafo recibieron descargas y hubo líneas telegráficas que chispearon; la tormenta geomagnética fue excepcionalmente intensa. La aurora iluminó el cielo nocturno."
         },
         {
           "anchor": "telegrafo",
