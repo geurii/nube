@@ -13,7 +13,7 @@ const stop=()=>{
  },8000);
  killTimer.unref();
 };
-const timer=setTimeout(()=>{timedOut=true;console.error('TIEMPO AGOTADO: se termina el proceso y sus descendientes.');stop();},10*60*1000);
+const timer=setTimeout(()=>{timedOut=true;console.error('TIEMPO AGOTADO: se termina el proceso y sus descendientes.');stop();},30*60*1000);
 const finish=(code)=>{
  if(finished)return;finished=true;clearTimeout(timer);clearTimeout(killTimer);
  process.exit(timedOut?124:(code??1));
