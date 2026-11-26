@@ -16,4 +16,4 @@ x.nextAt=new Date().toISOString();
 x.lastPublishedAt=null;
 x.activadoEn=new Date().toISOString();
 fs.writeFileSync(file,JSON.stringify(x,null,2)+'\n');
-console.log('BARRERA 30/30 CONFIRMADA. Se habilita una publicación por intervalo mínimo de 10 minutos.');
+console.log('BARRERA 30/30 CONFIRMADA. Se habilita una publicación por intervalo mínimo de 20 minutos.');
