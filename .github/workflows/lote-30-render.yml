@@ -38,7 +38,7 @@ jobs:
           node --check scripts/probar-lote-30.mjs
           node --check scripts/preparar-lote-30.mjs
           node --check scripts/render-lote-30.mjs
-          node agentes/probar-lote-30.mjs
+          node scripts/probar-lote-30.mjs
       - name: Preparar los 30 guiones y 600 visuales específicos
         run: node scripts/preparar-lote-30.mjs
       - name: Comprobar TypeScript y Remotion
