@@ -65,7 +65,13 @@ for(let index=0;index<state.items.length;index++){
    if(!lv||lv.width!==1080||lv.height!==1920||!la)throw new Error('La versión ligera perdió imagen vertical o audio.');
    const bytes=fs.statSync(lite).size;
    if(bytes>10*1024*1024)throw new Error('La copia optimizada supera 10 MB.');
-   Object.assign(item,{estado:'renderizado_aprobado',aprobado:true,duracionSegundos:Number(seconds.toFixed(2)),tamanoBytes:bytes,resolucion:'1080x1920',audio:true,faceless:true,subtitulos:captions.length});
+   const revisionTecnica={fecha:new Date().toISOString(),resultado:'aprobado',metodo:'verificacion_automatica_lote',controles:['duracion_30_a_180_segundos','1080x1920_vertical','voz_y_audio_presentes','faceless_personaje_oculto','subtitulos_temporizados','20_visuals_por_short_sin_repetir_y_con_ancla_narrativa','descripcion_sin_enlaces','archivo_optimizado_menor_de_10MB']};
+   g.estado='aprobado';
+   g.revisionTecnica=revisionTecnica;
+   fs.writeFileSync(guionPath,JSON.stringify(g,null,2)+'\\n');
+   const editorialPath=path.join('oficina-salida/lqns','guion-'+item.slug+'.json');
+   if(fs.existsSync(editorialPath)){const office=JSON.parse(fs.readFileSync(editorialPath,'utf8'));office.estado='aprobado';office.revisionTecnica=revisionTecnica;fs.writeFileSync(editorialPath,JSON.stringify(office,null,2)+'\\n');}
+   Object.assign(item,{estado:'renderizado_aprobado',aprobado:true,duracionSegundos:Number(seconds.toFixed(2)),tamanoBytes:bytes,resolucion:'1080x1920',audio:true,faceless:true,subtitulos:captions.length,revisionTecnica});
    state.completedCount=state.items.filter(x=>x.aprobado).length;
    save();
    console.log('APROBADO '+(index+1)+'/30 · '+seconds.toFixed(1)+'s · '+(bytes/1048576).toFixed(2)+'MB · voz y subtítulos.');
