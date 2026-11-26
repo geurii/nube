@@ -7,7 +7,7 @@ const config=JSON.parse(fs.readFileSync(configPath,'utf8'));
 const normal=(s)=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'');
 const assert=(ok,msg)=>{if(!ok)throw new Error(msg);};
 assert(config.topics.length===30,'El archivo debe contener exactamente 30 temas.');
-assert(config.channel==='lqns'&&config.format==='short'&&config.minimumDurationSeconds>=30&&config.intervalMinutes===10,'Configuración de lote inválida.');
+assert(config.channel==='lqns'&&config.format==='short'&&config.minimumDurationSeconds>=30&&config.intervalMinutes===20,'Configuración de lote inválida.');
 const slugs=new Set(),titles=new Set();
 const palette=['#08182b','#203f60','#6d8eaa'];
 const current=(()=>{try{return JSON.parse(fs.readFileSync('oficina-salida/lqns/producidos.json','utf8'));}catch{return[];}})();
