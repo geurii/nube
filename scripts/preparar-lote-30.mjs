@@ -71,12 +71,12 @@ for(let ti=0;ti<config.topics.length;ti++){
   titulo:topic.title,formato:'short',plataforma:'youtube',canal:'lqns',voz:'es-MX-JorgeNeural',vozGemini:'Sadaltager',
   audio:'audio/'+id+'.wav',musica:'musica/firma-canal.mp3',orientacion:'vertical',personaje:{visible:false},
   creado:new Date().toISOString(),estilo:'gancho',ganchoTexto:scenes[0].texto,
-  publicacion:{titulo:topic.title,descripcion:topic.desc},estado:'aprobado',
-  revisionEditorial:{tipo:'guion_original_con_fuente',fuentes:[{url:topic.source}],nota:'Contenido reescrito; hechos limitados a lo respaldado por la fuente citada.'},
+  publicacion:{titulo:topic.title,descripcion:topic.desc},estado:'pendiente_revision_tecnica',
+  revisionEditorial:{tipo:'prevalidacion_por_fuente',fuentes:[{url:topic.source}],nota:'Guion original preparado con fuente identificada; aprobación final pendiente de render y controles técnicos.'},
   escenas:scenes
  };
  fs.writeFileSync(path.join('guion/serie',id+'.json'),JSON.stringify(g,null,2)+'\n');
- const editorial={...g,slug,editor:{puntaje:10,critica:'Revisión editorial por fuente y coherencia narrativa. La validación técnica del MP4 todavía es obligatoria.'}};
+ const editorial={...g,slug};
  fs.writeFileSync(path.join('oficina-salida/lqns','guion-'+slug+'.json'),JSON.stringify(editorial,null,2)+'\n');
  console.log('PREPARADO '+(ti+1)+'/30 '+id+' · '+words+' palabras · 20 planos');
 }
