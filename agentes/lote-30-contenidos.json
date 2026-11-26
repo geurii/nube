@@ -3,7 +3,7 @@
   "channel": "lqns",
   "format": "short",
   "minimumDurationSeconds": 30,
-  "intervalMinutes": 10,
+  "intervalMinutes": 20,
   "faceless": true,
   "topics": [
     {
