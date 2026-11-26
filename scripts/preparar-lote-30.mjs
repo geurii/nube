@@ -73,7 +73,7 @@ for(let ti=0;ti<config.topics.length;ti++){
   creado:new Date().toISOString(),estilo:'gancho',ganchoTexto:scenes[0].texto,
   publicacion:{titulo:topic.title,descripcion:topic.desc},estado:'aprobado',
   revisionEditorial:{tipo:'guion_original_con_fuente',fuentes:[{url:topic.source}],nota:'Contenido reescrito; hechos limitados a lo respaldado por la fuente citada.'},
-  escenas
+  escenas:scenes
  };
  fs.writeFileSync(path.join('guion/serie',id+'.json'),JSON.stringify(g,null,2)+'\n');
  const editorial={...g,slug,editor:{puntaje:10,critica:'Revisión editorial por fuente y coherencia narrativa. La validación técnica del MP4 todavía es obligatoria.'}};
