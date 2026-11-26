@@ -10,7 +10,7 @@ if(arg==='--prepare'){
  const index=Number(x.nextIndex??0),due=!x.nextAt||Date.parse(x.nextAt)<=Date.now();
  if(!ready||index>=30||!due){
   out('enabled','false');
-  out('reason',!ready?'El lote no ha superado la barrera 30/30.':index>=30?'Los 30 ya se han publicado.':'Aún no vence el intervalo de diez minutos.');
+  out('reason',!ready?'El lote no ha superado la barrera 30/30.':index>=30?'Los 30 ya se han publicado.':'Aún no vence el intervalo de veinte minutos.');
   process.exit(0);
  }
  const item=x.items[index];
@@ -41,12 +41,12 @@ if(arg==='--finalize'){
   item.estado='publicado_en_todas';item.publicado=true;item.publicadoEnHora=item.ultimoIntento;
   x.nextIndex=index+1;x.lastPublishedAt=item.publicadoEnHora;
   if(x.nextIndex===30){x.fase='completed';x.completedAt=item.publicadoEnHora;console.log('30/30 PUBLICADOS Y CONFIRMADOS.');}
-  else{x.nextAt=new Date(Date.now()+10*60*1000).toISOString();console.log('Publicación '+(x.nextIndex)+'/30 confirmada. Siguiente no antes de '+x.nextAt+'.');}
+  else{x.nextAt=new Date(Date.now()+20*60*1000).toISOString();console.log('Publicación '+(x.nextIndex)+'/30 confirmada. Siguiente no antes de '+x.nextAt+'.');}
  }else{
   item.estado='publicacion_parcial_reintentar';item.publicado=false;
   const missing=Object.entries(item.publicadoEn).filter(([,v])=>!v).map(([k])=>k);
   item.errorPublicacion='Falta confirmación: '+missing.join(', ');
-  x.nextAt=new Date(Date.now()+10*60*1000).toISOString();
+  x.nextAt=new Date(Date.now()+20*60*1000).toISOString();
   console.error('No se avanza la cola. Se reintentará el mismo video; falta: '+missing.join(', '));
  }
  save(x);
