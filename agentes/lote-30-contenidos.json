@@ -26,7 +26,7 @@
         },
         {
           "anchor": "faro",
-          "text": "El informe registró barandas torcidas y una enorme piedra desplazada cerca del desembarcadero; una ola pudo arrastrarlos."
+          "text": "El informe del faro registró barandas torcidas y una enorme piedra desplazada cerca del desembarcadero; una ola pudo arrastrarlos."
         },
         {
           "anchor": "olas",
@@ -82,7 +82,7 @@
         },
         {
           "anchor": "barco",
-          "text": "Construyeron un flotador con impermeables y dejaron la isla por la costa, pero el agua de la bahía era helada."
+          "text": "Construyeron un pequeño barco improvisado con impermeables y dejaron la isla por la costa, pero el agua de la bahía era helada."
         },
         {
           "anchor": "edificio",
@@ -190,7 +190,7 @@
         },
         {
           "anchor": "sonar",
-          "text": "La Marina buscó durante meses. Después localizó partes del casco a más de tres mil metros de profundidad."
+          "text": "El sonar de la Marina buscó durante meses. Después localizó partes del casco a más de tres mil metros de profundidad."
         },
         {
           "anchor": "submarino",
@@ -358,7 +358,7 @@
         },
         {
           "anchor": "olas",
-          "text": "El agua subió sobre la isla y golpeó edificios, calles y refugios, mientras los escombros se convertían en proyectiles."
+          "text": "Las olas y el agua subieron sobre la isla y golpearon edificios, calles y refugios, mientras los escombros se convertían en proyectiles."
         },
         {
           "anchor": "ciudad",
@@ -445,8 +445,8 @@
           "text": "Las historias describían bisontes, unicornios y seres parecidos a murciélagos, con templos y bosques en nuestro satélite."
         },
         {
-          "anchor": "libro",
-          "text": "El autor real fue el periodista Richard Locke, que inventó las observaciones atribuidas al astrónomo John Herschel."
+          "anchor": "periodico",
+          "text": "El periódico atribuyó al astrónomo John Herschel unas observaciones inventadas por el periodista Richard Locke."
         },
         {
           "anchor": "astro",
@@ -558,7 +558,7 @@
         },
         {
           "anchor": "sonar",
-          "text": "Parks Canada localizó el Erebus en 2014 y el Terror en 2016, usando tecnología submarina y conocimiento inuit."
+          "text": "Parks Canada localizó el Erebus en 2014 y el Terror en 2016, usando sonar de barrido lateral y conocimiento inuit."
         },
         {
           "anchor": "hielo",
@@ -669,7 +669,7 @@
           "text": "El diez de noviembre apareció cerca de Fiji, abandonado y parcialmente inundado, con su tripulación y pasajeros desaparecidos."
         },
         {
-          "anchor": "sonar",
+          "anchor": "barco",
           "text": "Una comisión de investigación examinó el barco y escuchó testimonios, pero no pudo reconstruir con certeza qué pasó."
         },
         {
@@ -781,8 +781,8 @@
           "text": "Saint-Pierre quedó devastada por una corriente piroclástica, una mezcla de gases, cenizas y fragmentos volcánicos muy calientes."
         },
         {
-          "anchor": "fuego",
-          "text": "El Servicio Geológico de Estados Unidos estima unas treinta mil muertes, la mayoría causadas por esos flujos."
+          "anchor": "ciudad",
+          "text": "La ciudad y sus alrededores sufrieron cerca de treinta mil muertes, principalmente por esos flujos piroclásticos."
         },
         {
           "anchor": "volcan",
