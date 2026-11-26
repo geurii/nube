@@ -6,7 +6,7 @@ import {validarEscena,tieneAnclaNarrativa} from '../agentes/pintor.mjs';
 const statePath='agentes/lote-30-publicacion.json';
 const state=JSON.parse(fs.readFileSync(statePath,'utf8'));
 const save=()=>fs.writeFileSync(statePath,JSON.stringify(state,null,2)+'\n');
-const run=(args)=>spawnSync(process.execPath,args,{stdio:'inherit',timeout:25*60*1000});
+const run=(args)=>spawnSync(process.execPath,args,{stdio:'inherit',timeout:32*60*1000});
 const probe=(file)=>{
  const p=spawnSync('ffprobe',['-v','error','-show_entries','format=duration:stream=codec_type,width,height','-of','json',file],{encoding:'utf8',timeout:60000});
  if(p.status!==0)throw new Error('ffprobe falló: '+String(p.stderr??'').slice(0,200));
