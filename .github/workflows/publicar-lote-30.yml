@@ -1,0 +1,73 @@
+name: Lote 30 - publicar cada diez minutos
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: publicar-lote-30
+  cancel-in-progress: false
+jobs:
+  publicar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Comprobar barrera 30 de 30 y reloj de diez minutos
+        id: cola
+        run: node scripts/publicar-lote-30.mjs --prepare
+      - name: Descargar el artefacto del render de los 30 Shorts
+        if: steps.cola.outputs.enabled == 'true'
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ steps.cola.outputs.artifact }}
+          path: out/serie
+          repository: ${{ github.repository }}
+          run-id: ${{ steps.cola.outputs.run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publicar un solo Short en YouTube, Facebook, Instagram y TikTok
+        if: always() && steps.cola.outputs.enabled == 'true'
+        continue-on-error: true
+        env:
+          ID: ${{ steps.cola.outputs.id }}
+          CANAL: lqns
+          PUBLICACION_LOTE: '1'
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          YT_REFRESH_TOKEN_CANAL: ${{ secrets.YT_REFRESH_TOKEN_LQNS }}
+          WINDSOR_API_KEY: ${{ secrets.WINDSOR_API_KEY }}
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          FB_VIDEOS_TOKEN: ${{ secrets.FB_VIDEOS_TOKEN }}
+        run: |
+          set +e
+          test -s "out/serie/$ID-subida.mp4"
+          if [ "$?" -ne 0 ]; then echo "No se descargó el MP4 optimizado."; exit 1; fi
+          cp "out/serie/$ID-subida.mp4" "out/serie/$ID.mp4"
+          node agentes/subir.mjs
+          YT_RC=$?
+          node agentes/facebook.mjs
+          REDES_RC=$?
+          echo "Resultado técnico: YouTube=$YT_RC; redes=$REDES_RC. La cola solo avanza si las cuatro plataformas confirman."
+          exit 0
+      - name: Confirmar redes y mover el puntero solo si todo salió bien
+        if: always() && steps.cola.outputs.enabled == 'true'
+        env:
+          ID: ${{ steps.cola.outputs.id }}
+          LOTE_INDEX: ${{ steps.cola.outputs.index }}
+        run: node scripts/publicar-lote-30.mjs --finalize
+      - name: Guardar registros y estado de la cola
+        if: always() && steps.cola.outputs.enabled == 'true'
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A agentes/lote-30-publicacion.json oficina-salida/lqns
+          git diff --cached --quiet || git commit -m "Lote 30: guardar confirmaciones y progreso de publicación"
+          git pull --rebase --autostash -X theirs origin main
+          git push
