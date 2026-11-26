@@ -10,6 +10,8 @@ on:
       - 'scripts/probar-lote-30.mjs'
       - 'scripts/preparar-lote-30.mjs'
       - 'scripts/render-lote-30.mjs'
+      - 'scripts/lote.mjs'
+      - 'scripts/ejecutar-hijo.mjs'
       - 'scripts/activar-lote-30-publicacion.mjs'
   workflow_dispatch:
 permissions:
@@ -17,7 +19,7 @@ permissions:
   actions: read
 concurrency:
   group: lote-30-render
-  cancel-in-progress: true
+  cancel-in-progress: false
 jobs:
   renderizar:
     if: ${{ github.event_name != 'push' || !startsWith(github.event.head_commit.message, 'Fix lote 30 JSON persistence') }}
