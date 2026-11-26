@@ -677,6 +677,111 @@ export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: n
       for (let k = -2; k <= 2; k++) g.rect(cx + k * w * 0.13 - 1, cy + h * 0.22, 2, 2, Math.floor(t * 3 + k) % 2 ? [143, 229, 245] : [255, 255, 255]);
       return true;
     }
+
+    case 'paracaidas': {
+      const cx=X(e.x,0.5)+Math.sin(t*1.1)*lw*0.012,cy=Y(e.y,0.38),w=num(e.w,0.66,0.32,0.9)*lw,h=num(e.h,0.42,0.22,0.66)*lh,rr=rampaDeE(e,'#d5d8df',5);
+      g.ellO(cx,cy,w*0.48,h*0.38,rr);
+      for(let k=-3;k<=3;k++)g.line(cx+k*w*0.12,cy-h*0.06,cx+k*w*0.06,cy+h*0.46,[48,56,72],Math.max(1,u*0.8));
+      g.rect(cx-w*0.075,cy+h*0.42,w*0.15,h*0.19,[74,55,39]);g.rect(cx-w*0.04,cy+h*0.60,w*0.08,h*0.13,[37,39,51]);
+      return true;
+    }
+    case 'televisor': {
+      const cx=X(e.x,.5),cy=Y(e.y,.56),w=num(e.w,.72,.4,.9)*lw,h=num(e.h,.5,.3,.7)*lh,rr=rampaDeE(e,'#554b43',5),f=Math.floor(t*8)%3;
+      g.rect(cx-w*.5,cy-h*.5,w,h,rr[0]);g.rect(cx-w*.44,cy-h*.42,w*.88,h*.84,[20,26,34]);
+      g.rect(cx-w*.4,cy-h*.36,w*.8,h*.72,[9,23,36]);
+      for(let k=0;k<13;k++){const yy=cy-h*.33+k*h*.055+Math.sin(t*4+k)*2;g.line(cx-w*.38,yy,cx+w*.38,yy,(k+f)%3===0?[150,214,218]:[49,95,111],Math.max(1,u*.7));}
+      g.ellO(cx+w*.45,cy-h*.16,w*.035,w*.035,[[190,180,154]]);g.ellO(cx+w*.45,cy+h*.12,w*.035,w*.035,[[190,180,154]]);
+      g.line(cx-w*.25,cy+h*.49,cx-w*.34,cy+h*.58,rr[1],Math.max(2,u*1.5));g.line(cx+w*.25,cy+h*.49,cx+w*.34,cy+h*.58,rr[1],Math.max(2,u*1.5));
+      return true;
+    }
+    case 'esfera': {
+      const cx=X(e.x,.5),cy=Y(e.y,.58)+Math.sin(t*.65)*lh*.006,rad=num(e.r,.24,.11,.38)*Math.min(lw,lh),rr=rampaDeE(e,'#8f887b',6);
+      g.ellO(cx+rad*.035,cy+rad*.07,rad,rad*.92,rr);g.ellO(cx-rad*.28,cy-rad*.27,rad*.27,rad*.21,[rr[3],rr[4],rr[5]]);
+      g.ring(cx,cy,rad*.92,Math.max(1,u*.55),[43,48,52]);for(let k=-2;k<=2;k++)g.line(cx-rad*.48,cy+k*rad*.15,cx+rad*.48,cy+k*rad*.15,[76,81,82],Math.max(1,u*.35));
+      return true;
+    }
+    case 'dodecaedro': {
+      const cx=X(e.x,.5),cy=Y(e.y,.57),w=num(e.w,.52,.3,.82)*lw,h=num(e.h,.48,.3,.72)*lh,ang=t*.32,pts:Pt[]=[];
+      for(let k=0;k<12;k++){const a=ang+k*Math.PI/6;pts.push([cx+Math.cos(a)*w*.47,cy+Math.sin(a)*h*.47]);}
+      const rr=rampaDeE(e,'#a77a42',5);poli(g,pts,rr,'izq',true);
+      for(let k=0;k<12;k++){const a=ang+k*Math.PI/6;g.ellO(cx+Math.cos(a)*w*.47,cy+Math.sin(a)*h*.47,w*.04,h*.04,[rr[0],rr[1],rr[2]]);}
+      for(let k=0;k<6;k++){const a=ang+k*Math.PI/3;g.ellO(cx+Math.cos(a)*w*.17,cy+Math.sin(a)*h*.17,w*.075,h*.075,[[32,32,34],[57,55,51],[120,93,61]]);}
+      return true;
+    }
+    case 'zepelin': {
+      const cx=X(e.x,.5)+Math.sin(t*.7)*lw*.018,cy=Y(e.y,.42)+Math.sin(t*1.2)*lh*.012,w=num(e.w,.78,.48,.95)*lw,h=num(e.h,.28,.16,.48)*lh,rr=rampaDeE(e,'#aab3b7',5);
+      g.ellO(cx,cy,w*.49,h*.48,rr);g.line(cx-w*.32,cy-h*.13,cx+w*.32,cy-h*.13,rr[4],Math.max(1,u));
+      poli(g,[[cx-w*.39,cy],[cx-w*.55,cy-h*.18],[cx-w*.49,cy],[cx-w*.55,cy+h*.18]],rr,'izq',true);poli(g,[[cx+w*.35,cy],[cx+w*.55,cy-h*.16],[cx+w*.49,cy],[cx+w*.55,cy+h*.16]],rr,'izq',true);
+      g.line(cx-w*.08,cy+h*.34,cx-w*.05,cy+h*.63,[42,47,54],Math.max(2,u*1.2));g.rect(cx-w*.18,cy+h*.54,w*.27,h*.16,[60,67,74]);
+      for(let k=0;k<7;k++)g.rect(cx-w*.32+k*w*.1,cy-h*.12,2,2,[231,224,189]);
+      return true;
+    }
+    case 'radio': {
+      const cx=X(e.x,.5),cy=Y(e.y,.59),w=num(e.w,.68,.38,.88)*lw,h=num(e.h,.44,.25,.62)*lh,rr=rampaDeE(e,'#81563b',5);
+      g.rect(cx-w*.5,cy-h*.5,w,h,rr[0]);g.rect(cx-w*.44,cy-h*.4,w*.58,h*.78,[35,42,46]);
+      for(let k=0;k<8;k++)g.line(cx-w*.39,cy-h*.3+k*h*.085,cx-w*.02,cy-h*.3+k*h*.085,rr[3],Math.max(1,u*.6));
+      g.ellO(cx+w*.27,cy-h*.08,w*.12,h*.18,[[21,29,34],[74,83,82],[173,151,111]]);g.ellO(cx+w*.27,cy-h*.08,w*.045,h*.07,[[204,187,143]]);
+      g.line(cx+w*.18,cy+h*.29,cx+w*.38,cy+h*.29,rr[4],Math.max(2,u));g.line(cx+w*.38,cy+h*.29,cx+w*.48,cy-h*.2+Math.sin(t*4)*h*.08,rr[4],Math.max(2,u));
+      return true;
+    }
+    case 'telegrafo': {
+      const cx=X(e.x,.5),cy=Y(e.y,.68),w=num(e.w,.7,.4,.9)*lw,h=num(e.h,.36,.2,.6)*lh,rr=rampaDeE(e,'#99673d',5),pulse=Math.sin(t*5);
+      g.rect(cx-w*.5,cy+h*.22,w,h*.18,rr[1]);g.rect(cx-w*.36,cy+h*.08,w*.72,h*.12,rr[0]);
+      g.line(cx-w*.06,cy+h*.08,cx+w*.08,cy-h*.42+pulse*h*.04,[67,74,79],Math.max(3,u*1.5));g.ellO(cx+w*.1,cy-h*.43+pulse*h*.04,w*.09,h*.07,[[183,187,181],[226,215,169]]);
+      g.line(cx-w*.35,cy+h*.08,cx-w*.24,cy-h*.07,[200,175,120],Math.max(2,u));for(let k=0;k<8;k++){const xx=cx-w*.43+k*w*.12;g.rect(xx,cy+h*.31,Math.max(1,u),Math.max(1,u*2),(Math.floor(t*6)+k)%2?[230,208,134]:[52,72,79]);}
+      return true;
+    }
+    case 'aurora': {
+      const y0=Y(e.y,.43),amp=num(e.h,.25,.12,.48)*lh;
+      for(let band=0;band<5;band++)for(let xx=0;xx<lw;xx+=2){const ph=xx*.018+t*(.8+band*.13)+band*1.3,yy=y0+Math.sin(ph)*amp*.23+Math.sin(ph*.37)*amp*.18+band*amp*.09;g.set(xx,yy,[Math.round(65+band*13),Math.round(180+Math.sin(ph)*45),Math.round(150+band*15)],.8);g.set(xx+1,yy+1,[74,150,183],.6);}
+      for(let k=0;k<14;k++){const xx=(k/14)*lw+Math.sin(t+k)*4,yy=y0+Math.sin(t*1.3+k)*amp*.35;g.set(xx,yy,[210,235,218],.8);}
+      return true;
+    }
+    case 'vaca': {
+      const cx=X(e.x,.5),base=Y(e.y,.8),w=num(e.w,.62,.4,.84)*lw,h=num(e.h,.35,.23,.56)*lh,rr=rampaDeE(e,'#c8bba0',5),step=Math.sin(t*4)*w*.025;
+      poli(g,[[cx-w*.38+step,base-h*.72],[cx-w*.34+step,base-h*.98],[cx+w*.27+step,base-h*.96],[cx+w*.39+step,base-h*.63],[cx+w*.31,base-h*.22],[cx-w*.32,base-h*.2]],rr,'izq',true);
+      poli(g,[[cx+w*.27+step,base-h*.8],[cx+w*.43+step,base-h*.9],[cx+w*.5+step,base-h*.6],[cx+w*.38+step,base-h*.48]],rr,'izq',true);
+      for(const q of [-.27,-.08,.18,.31])g.line(cx+w*q,base-h*.26,cx+w*q+step*.2,base,[48,45,42],Math.max(2,u*1.6));
+      g.ellO(cx-w*.18+step,base-h*.72,w*.12,h*.12,[[48,45,42]]);g.ellO(cx+w*.17+step,base-h*.83,w*.09,h*.10,[[48,45,42]]);
+      g.line(cx-w*.36,base-h*.8,cx-w*.48,base-h*.88,[74,67,60],Math.max(2,u));return true;
+    }
+    case 'puente': {
+      const cx=X(e.x,.5),base=Y(e.y,.78),w=num(e.w,.9,.62,.98)*lw,h=num(e.h,.53,.32,.72)*lh,shake=Math.sin(t*2.2)*h*.035,rr=rampaDeE(e,'#7b8793',5),left=cx-w*.34,right=cx+w*.34,top=base-h;
+      g.rect(left-w*.025,top,w*.05,h,rr[1]);g.rect(right-w*.025,top,w*.05,h,rr[1]);g.line(cx-w*.5,base-h*.22+shake,cx+w*.5,base-h*.22-shake,rr[2],Math.max(4,u*2));
+      for(let k=0;k<=18;k++){const xx=cx-w*.48+(k/18)*w*.96,cableY=top+Math.sin((k/18)*Math.PI)*h*.42;g.line(xx,base-h*.22+shake,cx+(xx-cx)*.94,cableY,[159,174,182],Math.max(1,u*.5));}
+      g.line(left,top,right,top,rr[3],Math.max(2,u));for(let k=0;k<6;k++){const xx=cx-w*.46+k*w*.18;g.line(xx,base-h*.22+shake,xx,base-h*.08,[54,62,75],Math.max(1,u));}return true;
+    }
+    case 'satelite': {
+      const cx=X(e.x,.5)+Math.sin(t*.5)*lw*.01,cy=Y(e.y,.47)+Math.cos(t*.8)*lh*.012,w=num(e.w,.55,.34,.8)*lw,h=num(e.h,.34,.2,.52)*lh,rr=rampaDeE(e,'#8797a4',5);
+      poli(g,[[cx-w*.16,cy-h*.26],[cx+w*.16,cy-h*.26],[cx+w*.2,cy+h*.25],[cx-w*.2,cy+h*.25]],rr,'izq',true);
+      for(const side of [-1,1]){const bx=cx+side*w*.22-(side<0?w*.27:0);g.rect(bx,cy-h*.19,w*.27,h*.38,[[27,71,111],[51,109,158],[83,145,190]]);for(let k=1;k<4;k++)g.line(bx+w*.27*k/4,cy-h*.19,bx+w*.27*k/4,cy+h*.19,[182,204,218],1);}
+      g.line(cx,cy-h*.25,cx+w*.28,cy-h*.5,[215,219,201],Math.max(1,u));g.ellO(cx+w*.29,cy-h*.51,w*.045,w*.045,[[222,214,159]]);return true;
+    }
+    case 'bomba': {
+      const cx=X(e.x,.5)+Math.sin(t*.6)*lw*.012,cy=Y(e.y,.56)+Math.cos(t*1.1)*lh*.008,w=num(e.w,.52,.3,.8)*lw,h=num(e.h,.25,.14,.4)*lh,rr=rampaDeE(e,'#66727d',5);
+      g.ellO(cx,cy,w*.39,h*.45,rr);poli(g,[[cx-w*.37,cy],[cx-w*.55,cy-h*.38],[cx-w*.48,cy],[cx-w*.55,cy+h*.38]],rr,'izq',true);
+      poli(g,[[cx+w*.26,cy-h*.18],[cx+w*.48,cy-h*.38],[cx+w*.42,cy],[cx+w*.48,cy+h*.38],[cx+w*.26,cy+h*.18]],rr,'izq',true);
+      g.line(cx+w*.22,cy-h*.2,cx+w*.32,cy-h*.58,[185,162,111],Math.max(2,u));return true;
+    }
+    case 'tornado': {
+      const cx=X(e.x,.5),cy=Y(e.y,.35),w=num(e.w,.7,.4,.94)*lw,h=num(e.h,.65,.42,.85)*lh,rotation=t*1.8,rr=rampaDeE(e,'#75808c',4);
+      for(let k=0;k<9;k++){const q=k/9,ww=w*(.08+q*.42),yy=cy+q*h,offset=Math.sin(rotation+q*6)*w*.08;poli(g,[[cx-ww*.5+offset,yy],[cx+ww*.5+offset,yy],[cx+offset+Math.sin(rotation+q*4)*ww*.2,yy+h*.12]],rr,'izq',false);}
+      for(let k=0;k<13;k++){const q=k/13,xx=cx+Math.sin(rotation+k)*w*(.15+q*.22),yy=cy+q*h;g.set(xx,yy,[193,190,178],.7);}return true;
+    }
+    case 'fosil': {
+      const cx=X(e.x,.5),cy=Y(e.y,.55),w=num(e.w,.64,.36,.88)*lw,h=num(e.h,.46,.27,.65)*lh,rr=rampaDeE(e,'#b7a887',5),jaw=cy+h*.2+Math.sin(t*.4)*2;
+      g.ellO(cx,cy-h*.08,w*.38,h*.36,rr);g.ellO(cx-w*.13,cy-h*.1,w*.09,h*.12,[[35,39,40]]);g.ellO(cx+w*.13,cy-h*.1,w*.09,h*.12,[[35,39,40]]);
+      poli(g,[[cx-w*.25,jaw],[cx-w*.14,jaw+h*.19],[cx+w*.14,jaw+h*.19],[cx+w*.25,jaw]],rr,'izq',true);for(let k=-4;k<=4;k++)g.line(cx+k*w*.045,jaw+h*.05,cx+k*w*.045,jaw+h*.14,[220,211,180],Math.max(1,u));
+      g.line(cx-w*.35,cy+h*.27,cx+w*.35,cy+h*.27,[83,75,62],Math.max(1,u*.7));return true;
+    }
+    case 'periodico': {
+      const cx=X(e.x,.5),cy=Y(e.y,.56),w=num(e.w,.7,.4,.9)*lw,h=num(e.h,.53,.3,.75)*lh,rr=rampaDeE(e,'#d6c99e',5),bend=Math.sin(t*.9)*w*.015;
+      poli(g,[[cx-w*.5,cy-h*.5],[cx+bend,cy-h*.46],[cx+bend,cy+h*.46],[cx-w*.5,cy+h*.5]],rr,'izq',true);
+      poli(g,[[cx+bend,cy-h*.46],[cx+w*.5,cy-h*.5],[cx+w*.5,cy+h*.5],[cx+bend,cy+h*.46]],rr,'izq',true);
+      g.line(cx+bend,cy-h*.45,cx+bend,cy+h*.45,[88,75,57],Math.max(1,u));
+      for(let k=0;k<9;k++){const yy=cy-h*.34+k*h*.085;g.line(cx-w*.42,yy,cx-w*.04,yy,[71,70,63],Math.max(1,u*.45));g.line(cx+w*.06,yy,cx+w*.42,yy,[71,70,63],Math.max(1,u*.45));}
+      g.rect(cx-w*.34,cy-h*.28,w*.28,h*.17,[69,82,86]);return true;
+    }
     case 'ovni': {
       const cx = X(e.x, 0.5) + Math.sin(t * 0.7) * 6, cy = Y(e.y, 0.3) + Math.sin(t * 1.3) * 3, r = num(e.r, 0.1, 0.03, 0.4) * lw;
       for (let y = 0; y < lh * 0.5; y++) g.rect(cx - r * 0.3 - y * 0.18, cy + r * 0.2 + y, r * 0.6 + y * 0.36, 1, [255, 240, 160], 0.07 * (1 - y / (lh * 0.5)));
@@ -723,4 +828,4 @@ export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: n
   return false;
 }
 
-export const TIPOS_PRO = ['poligono', 'linea', 'nubes', 'olas', 'particulas', 'rayos', 'barco', 'pez', 'roca', 'hielo', 'duna', 'algas', 'sargazo', 'faro', 'silueta', 'radar', 'tic_tac', 'ovni', 'explosion', 'ciudad', 'bosque', 'hidrofono', 'sonar', 'microfono', 'volcan', 'fuego', 'lago', 'avion', 'tren', 'submarino', 'barril', 'cerveza', 'cerveceria', 'tsunami', 'deslizamiento', 'terremoto'];
+export const TIPOS_PRO = ['poligono', 'linea', 'nubes', 'olas', 'particulas', 'rayos', 'barco', 'pez', 'roca', 'hielo', 'duna', 'algas', 'sargazo', 'faro', 'silueta', 'radar', 'tic_tac', 'ovni', 'explosion', 'ciudad', 'bosque', 'hidrofono', 'sonar', 'microfono', 'volcan', 'fuego', 'lago', 'avion', 'tren', 'submarino', 'barril', 'cerveza', 'cerveceria', 'tsunami', 'deslizamiento', 'terremoto', 'paracaidas', 'televisor', 'esfera', 'dodecaedro', 'zepelin', 'radio', 'telegrafo', 'aurora', 'vaca', 'puente', 'satelite', 'bomba', 'tornado', 'fosil', 'periodico'];
