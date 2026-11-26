@@ -11,7 +11,13 @@ import {avisarTelefono} from './aviso.mjs';
 import {publicarEnTikTok, textoTikTok} from './tiktok.mjs';
 import {sinEnlaces} from './sin-enlaces.mjs';
 
-const leer = (ruta, d) => { try { return JSON.parse(fs.readFileSync(ruta, 'utf8')); } catch { return d; } };
+const leer = (ruta, d) => {
+  try {
+    const raw = fs.readFileSync(ruta, 'utf8');
+    try { return JSON.parse(raw); }
+    catch { return JSON.parse(raw.replace(/\\\\n\\s*$/, '')); }
+  } catch { return d; }
+};
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
 const MAX_ARCHIVOS = 15; // en el repo de videos se conservan los últimos 15 (Facebook ya los descargó)
 const MAX_COMPLETO_MB = 60; // shorts: por encima se usa la copia liviana; largos TikTok admiten hasta 220 MB
