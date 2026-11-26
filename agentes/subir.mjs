@@ -64,7 +64,7 @@ if (!YT_CLIENT_ID || !YT_CLIENT_SECRET || !YT_REFRESH_TOKEN) {
 try {
   const rutaGuion = path.join('guion', 'serie', `${ID}.json`);
   // Compatibilidad: el render del lote puede dejar un sufijo literal "\\n" tras el JSON.
-  const contenidoGuion = fs.readFileSync(rutaGuion, 'utf8').replace(/\\\\n\\s*$/, '');
+  const contenidoGuion = fs.readFileSync(rutaGuion, 'utf8').replace(/\\n\s*$/, '');
   const guion = JSON.parse(contenidoGuion);
   const claveEditorial = (x) => String(x ?? '').toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').replace(/[^a-z0-9]+/g, '');
   if (process.env.MODO_PRUEBA !== '1' && [ID, guion.titulo, guion.publicacion?.titulo].some((x) => /(bloop|lituya)/.test(claveEditorial(x)))) {
