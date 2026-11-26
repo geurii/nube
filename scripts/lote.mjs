@@ -37,8 +37,8 @@ const comprimir = (entrada, destino, maxMB = 9.4, reducir = false, horizontal = 
   // Videos largos: 540x960 con píxeles nítidos para que quepan en 10 MB sin perder nitidez.
   const filtro = reducir ? ['-vf', `scale=${horizontal ? '960:540' : '540:960'}:flags=neighbor,format=yuv420p`] : [];
   for (let i = 0; i < 4; i++) {
-    const r = spawnSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', entrada, ...filtro, '-c:v', 'libx264', '-preset', 'medium', '-b:v', `${kbps}k`, '-maxrate', `${Math.floor(kbps * 1.25)}k`, '-bufsize', `${kbps * 2}k`, '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '96k', '-movflags', '+faststart', destino], {encoding: 'utf8'});
-    if (r.status !== 0) throw new Error(r.stderr);
+    const r = spawnSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', entrada, ...filtro, '-c:v', 'libx264', '-preset', 'medium', '-b:v', `${kbps}k`, '-maxrate', `${Math.floor(kbps * 1.25)}k`, '-bufsize', `${kbps * 2}k`, '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '96k', '-movflags', '+faststart', destino], {encoding: 'utf8', timeout: 5 * 60 * 1000, killSignal: 'SIGKILL'});
+    if (r.error || r.status !== 0) throw new Error(r.stderr || r.error?.message || 'FFmpeg terminó sin éxito');
     const mb = fs.statSync(destino).size / 1024 / 1024;
     console.log(`  compresión ${kbps} kbps → ${mb.toFixed(2)} MB`);
     if (mb <= maxMB + 0.3) return mb;
