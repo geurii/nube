@@ -1,26 +1,26 @@
 {
-  "fecha": "2026-11-26T08:50:22.748Z",
+  "fecha": "2026-11-26T21:51:50.647Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 1331,
-  "ganadasDesdeElUltimoCiclo": 269,
+  "total": 1332,
+  "ganadasDesdeElUltimoCiclo": 1,
   "videos": [
     {
       "id": "xL9E7Ru2UM4",
       "titulo": "¿Ovnis reales captados en cámara?",
       "publicado": "2026-11-25T23:58:43+00:00",
-      "vistas": 6
+      "vistas": 7
     },
     {
       "id": "ERL-GCARL8I",
       "titulo": "¿Por qué un lápiz roto tiene 68 millones de vistas?",
       "publicado": "2026-11-25T21:38:46+00:00",
-      "vistas": 981
+      "vistas": 978
     },
     {
       "id": "VXbbW_o1PWo",
       "titulo": "Nintendo nació vendiendo cartas: la historia antes de los videojuegos",
       "publicado": "2026-11-25T17:08:39+00:00",
-      "vistas": 127
+      "vistas": 129
     },
     {
       "id": "ju9-ibZWM5s",
@@ -38,7 +38,7 @@
       "id": "xE32CX_fsXM",
       "titulo": "🌋 ¿Qué secreto ancestral esconde el cráter de la Isla de Pascua?",
       "publicado": "2026-11-24T16:28:54+00:00",
-      "vistas": 23
+      "vistas": 24
     },
     {
       "id": "85i8fzFF970",
@@ -96,10 +96,6 @@
     }
   ],
   "historia": [
-    {
-      "fecha": "2026-11-24T15:01:25.943Z",
-      "total": 2244
-    },
     {
       "fecha": "2026-11-24T15:05:15.082Z",
       "total": 2222
@@ -335,6 +331,10 @@
     {
       "fecha": "2026-11-26T08:50:22.747Z",
       "total": 1331
+    },
+    {
+      "fecha": "2026-11-26T21:51:50.647Z",
+      "total": 1332
     }
   ]
 }
