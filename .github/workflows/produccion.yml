@@ -25,7 +25,7 @@ env:
 
 jobs:
   producir:
-    if: ${{ !github.event.workflow_run || github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ hashFiles('agentes/PAUSA_PUBLICACION') == '' && (!github.event.workflow_run || github.event.workflow_run.conclusion == 'success') }}
     runs-on: ubuntu-24.04
     timeout-minutes: 90
     steps:
@@ -133,7 +133,7 @@ jobs:
           retention-days: 14
       - name: Subir a YouTube (publicaciÃ³n automÃ¡tica si hay credenciales)
         id: subir
-        if: ${{ hashFiles('agentes/PAUSA') == '' && steps.producir.outputs.id != '' && steps.panel.outputs.aprobado == 'true' && steps.destino.outputs.valor != 'tiktok' }}
+        if: ${{ hashFiles('agentes/PAUSA') == '' && hashFiles('agentes/PAUSA_PUBLICACION') == '' && steps.producir.outputs.id != '' && steps.panel.outputs.aprobado == 'true' && steps.destino.outputs.valor != 'tiktok' }}
         continue-on-error: true
         env:
           ID: ${{ steps.producir.outputs.id }}
@@ -149,7 +149,7 @@ jobs:
           git pull --rebase --autostash -X theirs origin main && git push || true
       - name: Publicar en Facebook, Instagram y TikTok (Windsor y Buffer; solo si hay claves; nunca falla el ciclo)
         id: redes
-        if: ${{ steps.producir.outputs.id != '' && steps.panel.outputs.aprobado == 'true' && steps.destino.outputs.valor != 'youtube' }}
+        if: ${{ hashFiles('agentes/PAUSA_PUBLICACION') == '' && steps.producir.outputs.id != '' && steps.panel.outputs.aprobado == 'true' && steps.destino.outputs.valor != 'youtube' }}
         continue-on-error: true
         env:
           ID: ${{ steps.producir.outputs.id }}

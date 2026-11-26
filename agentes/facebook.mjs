@@ -319,7 +319,7 @@ export const principal = async () => {
   for (const d of pendientes) {
     try { // un destino que falla no impide el otro
       const resp = d.tipo === 'buffer'
-        ? await publicarEnTikTok({apiKey: bufferKey, url: pub.url, texto: textoTikTok(guion), ia: cfgCanal.tiktok?.ia === true, canal: String(cfgCanal.tiktok?.canal ?? ''), modo: largo ? 'ahora' : (cfgCanal.tiktok?.modo === 'ahora' ? 'ahora' : 'cola')})
+        ? await publicarEnTikTok({apiKey: bufferKey, url: pub.url, texto: textoTikTok(guion), ia: cfgCanal.tiktok?.ia === true, canal: String(cfgCanal.tiktok?.canal ?? ''), modo: (process.env.PUBLICACION_LOTE === '1' || largo || cfgCanal.tiktok?.modo === 'ahora') ? 'ahora' : 'cola'})
         : await publicarConWindsor({apiKey, conector: d.conector, cuenta: d.cuenta, accion: d.accion, params: d.params(pub.url, texto, titulo)});
       d.registro.posts.unshift({id: ID, titulo: titulo.slice(0, 140), fecha: new Date().toISOString(), accion: d.accion, programado: resp.programado, alojamiento: usaRepo ? 'repositorio' : 'temporal-72h', video_url: pub.url, respuesta: resp.texto.slice(0, 300)});
       d.registro.posts = d.registro.posts.slice(0, 200);

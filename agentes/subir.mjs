@@ -19,7 +19,8 @@ const CANAL = process.env.CANAL || 'lqns';
 const YT_REFRESH_TOKEN = (process.env.YT_REFRESH_TOKEN_CANAL || process.env.YT_REFRESH_TOKEN || '').trim();
 // Próxima hora libre: al menos 40 min en el futuro. Las horas locales (UTC-4) pasadas a UTC.
 // Modo de publicación (agentes/publicacion.json): "ahora" = público de inmediato; "programado" = privado con fecha y YouTube lo publica a su hora.
-const MODO = (() => { try { return JSON.parse(fs.readFileSync(path.join('agentes', 'publicacion.json'), 'utf8')).modo; } catch { return 'programado'; } })();
+const MODO_CONFIG = (() => { try { return JSON.parse(fs.readFileSync(path.join('agentes', 'publicacion.json'), 'utf8')).modo; } catch { return 'programado'; } })();
+const MODO = process.env.PUBLICACION_LOTE === '1' ? 'ahora' : MODO_CONFIG;
 const ESTADO = path.join('oficina-salida', CANAL, 'estado.json');
 const avisar = (tipo, titulo, texto) => {
   avisarTelefono(tipo === 'reporte' ? 'subido' : tipo, titulo, texto);
@@ -40,6 +41,18 @@ const marcar = (texto, estado = 'esperando_decision') => {
 };
 
 if (!ID) { console.log('Sin video que subir.'); salida('subido', 'false'); salida('motivo', 'sin_id'); process.exit(0); }
+// En el lote 30, una subida ya confirmada en YouTube es idempotente: permite reintentar otras redes sin duplicar el Short.
+if (process.env.PUBLICACION_LOTE === '1') {
+  const slugLote = ID.replace(new RegExp('^' + CANAL + '-'), '');
+  const rutaLote = path.join('oficina-salida', CANAL, 'producidos.json');
+  let listLote = [];
+  try { listLote = JSON.parse(fs.readFileSync(rutaLote, 'utf8')); } catch {}
+  if (Array.isArray(listLote) && listLote.some((x) => String(x).toLowerCase() === slugLote.toLowerCase())) {
+    console.log('YouTube ya confirmó este video del lote; no se vuelve a subir.');
+    salida('subido', 'true'); salida('video_id', 'ya-confirmado'); salida('ya_existia', 'true');
+    process.exit(0);
+  }
+}
 if (!YT_CLIENT_ID || !YT_CLIENT_SECRET || !YT_REFRESH_TOKEN) {
   avisar('alerta', 'Publicación bloqueada: falta conectar YouTube', `El video "${ID}" está listo, pero faltan credenciales OAuth de YouTube. No requiere aprobación creativa: requiere configurar la conexión una sola vez.`);
   marcar(`Video "${ID}" listo, pero falta conectar YouTube para este canal: crea YT_CLIENT_ID, YT_CLIENT_SECRET y YT_REFRESH_TOKEN (o YT_REFRESH_TOKEN_<CANAL>) como secretos del repositorio. JEFA: un video que no se sube no existe.`);
