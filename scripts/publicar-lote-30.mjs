@@ -30,7 +30,10 @@ if(arg==='--finalize'){
  const tiktok=find('tiktok.json');
  let tick=false;
  try{const response=JSON.parse(tiktok?.respuesta??'{}');tick=response.programado==='ahora'&&response.status==='sent';}catch{}
- const yt=produced.some(x=>String(x).toLowerCase()===item.slug.toLowerCase());
+ const subidos=read('subidos.json');
+ const normalize=v=>String(v??'').normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'');
+ const yt=produced.some(v=>String(v).toLowerCase()===item.slug.toLowerCase())
+  || (Array.isArray(subidos.videos)&&subidos.videos.some(v=>normalize(v.titulo)===normalize(item.titulo)));
  item.publicadoEn={youtube:yt,facebook:fb,instagram:ig,tiktok:tick};
  item.publicacionDetalle={youtube:yt?'confirmado':'pendiente',facebook:fb?'confirmado':'pendiente',instagram:ig?'confirmado':'pendiente',tiktok:tick?'confirmado':'pendiente'};
  item.ultimoIntento=new Date().toISOString();
