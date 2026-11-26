@@ -1,18 +1,5 @@
 name: Lote 30 - render secuencial
 on:
-  push:
-    paths:
-      - '.github/workflows/lote-30-render.yml'
-      - 'agentes/lote-30-contenidos.json'
-      - 'agentes/pintor.mjs'
-      - 'src/components/fondos/PixelPintado.tsx'
-      - 'src/components/fondos/pintadoPro.ts'
-      - 'scripts/probar-lote-30.mjs'
-      - 'scripts/preparar-lote-30.mjs'
-      - 'scripts/render-lote-30.mjs'
-      - 'scripts/lote.mjs'
-      - 'scripts/ejecutar-hijo.mjs'
-      - 'scripts/activar-lote-30-publicacion.mjs'
   workflow_dispatch:
 permissions:
   contents: write
