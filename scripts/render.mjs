@@ -218,11 +218,12 @@ await renderMedia({
   // era lo que hacía ver la imagen blanda y distorsionada.
   // PIXEL ART HD: se renderiza a escala 1 para conservar el detalle original de todos los fondos y subtítulos.
   scale: ESCALA_PIXEL,
-  imageFormat: 'png',
+  imageFormat: 'jpeg',
+  jpegQuality: 100,
   pixelFormat: 'yuv420p',
   colorSpace: 'bt709',
-  crf: 10,
-  x264Preset: 'medium',
+  crf: 14,
+  x264Preset: 'fast',
   audioBitrate: '256k',
   audioCodec: 'aac',
   outputLocation: bajo,

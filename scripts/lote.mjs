@@ -17,12 +17,16 @@ const salida = path.join(raiz, 'out', 'serie');
 fs.mkdirSync(salida, {recursive: true});
 
 const correr = (script, extra) => {
-  const r = spawnSync('node', [path.join('scripts', script), ...extra], {cwd: raiz, stdio: 'inherit'});
-  if (r.status !== 0) throw new Error(`${script} falló`);
+  // El supervisor termina también Chrome/FFmpeg y demás procesos descendientes si se atascan.
+  const r = spawnSync(process.execPath, ['scripts/ejecutar-hijo.mjs', path.join('scripts', script), ...extra], {
+    cwd: raiz, stdio: 'inherit', timeout: 11 * 60 * 1000, killSignal: 'SIGKILL',
+  });
+  if (r.error || r.status !== 0) throw new Error(`${script} falló: ${r.error?.message ?? r.signal ?? r.status}`);
 };
 const duracion = (ruta) => {
-  const r = spawnSync('ffmpeg', ['-hide_banner', '-i', ruta], {encoding: 'utf8'});
-  const m = /Duration:\s*(\d+):(\d+):(\d+\.\d+)/.exec(r.stderr);
+  const r = spawnSync('ffmpeg', ['-hide_banner', '-i', ruta], {encoding: 'utf8', timeout: 60000});
+  const m = /Duration:\s*(\d+):(\d+):(\d+\.\d+)/.exec(r.stderr ?? '');
+  if (r.error || r.status === null || !m) throw new Error(`No se pudo medir la duración de ${ruta}: ${r.error?.message ?? 'ffmpeg sin duración'}`);
   return Number(m[1]) * 3600 + Number(m[2]) * 60 + Number(m[3]);
 };
 
