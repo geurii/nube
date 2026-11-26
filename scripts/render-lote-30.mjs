@@ -15,7 +15,12 @@ const probe=(file)=>{
 const failures=[];
 if(!Array.isArray(state.items)||state.items.length!==30)throw new Error('El renderizador requiere exactamente 30 Shorts.');
 if(new Set(state.items.map(x=>x.id)).size!==30)throw new Error('Hay IDs repetidos: se detiene antes de renderizar.');
-for(let index=0;index<state.items.length;index++){
+// PRUEBA DE UNO: con LOTE_SOLO=1 se renderiza solo el primero (o los N primeros) para verlo antes de gastar
+// las horas de los 30. La publicacion sigue bloqueada: solo 30/30 aprobados la desbloquea.
+const SOLO=Math.max(0,Math.min(30,Number(process.env.LOTE_SOLO??0)||0));
+const hasta=SOLO>0?SOLO:state.items.length;
+if(SOLO>0)console.log('MODO PRUEBA: se renderizan '+SOLO+' de 30. No se publicara nada.');
+for(let index=0;index<hasta;index++){
  const item=state.items[index],id=item.id,guionPath=path.join('guion/serie',id+'.json');
  item.estado='renderizando';item.aprobado=false;state.fase='renderizando_secuencial';save();
  let accepted=false,lastError='';
@@ -94,6 +99,13 @@ for(let index=0;index<state.items.length;index++){
 }
 state.completedCount=state.items.filter(x=>x.aprobado).length;
 state.errores=failures;
+if(SOLO>0){
+ state.fase='prueba';
+ save();
+ const ok=state.items.slice(0,hasta).filter(x=>x.aprobado).length;
+ console.log('PRUEBA: '+ok+'/'+hasta+' renderizados y aprobados. La publicacion sigue bloqueada.');
+ process.exit(ok===hasta?0:1);
+}
 if(state.completedCount===30&&state.items.every(x=>x.estado==='renderizado_aprobado'&&x.aprobado)){
  state.fase='renderizados_30_pendiente_artifacto';
  console.log('30/30 renderizados y aprobados. Publicación sigue bloqueada hasta verificar el artefacto.');
