@@ -693,6 +693,20 @@ export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: n
       for(let k=0;k<6;k++){const yy=cy-h*.3+k*h*.11;g.line(cx-w*.4,yy,cx-w*.08,yy,[216,198,160],Math.max(1,u*.6));g.line(cx+w*.08,yy,cx+w*.4,yy,[216,198,160],Math.max(1,u*.6));}
       return true;
     }
+
+    case 'moneda': {
+      const cx=X(e.x,.5),cy=Y(e.y,.56),rad=num(e.r,.16,.07,.28)*Math.min(lw,lh),spin=Math.abs(Math.cos(t*2.8)),w=rad*(.12+spin*.88),rr=rampaDeE(e,'#c49b43',5);
+      g.ellO(cx,cy,w,rad,rr);g.ellO(cx-w*.12,cy-rad*.12,w*.28,rad*.3,[[242,215,139]]);g.ring(cx,cy,w,Math.max(1,u),rr[0]);
+      return true;
+    }
+    case 'libro': {
+      const cx=X(e.x,.5),cy=Y(e.y,.58),w=num(e.w,.56,.34,.82)*lw,h=num(e.h,.42,.25,.62)*lh,bend=Math.sin(t*1.2)*w*.025,rr=rampaDeE(e,'#7b4535',5);
+      poli(g,[[cx-w*.5,cy-h*.42],[cx-bend,cy-h*.5],[cx-bend,cy+h*.42],[cx-w*.5,cy+h*.5]],rr,'izq',true);
+      poli(g,[[cx+bend,cy-h*.5],[cx+w*.5,cy-h*.42],[cx+w*.5,cy+h*.5],[cx+bend,cy+h*.42]],rr,'der',true);
+      g.line(cx,cy-h*.48,cx,cy+h*.45,[45,36,31],Math.max(1,u));
+      for(let k=0;k<6;k++){const yy=cy-h*.3+k*h*.11;g.line(cx-w*.4,yy,cx-w*.08,yy,[216,198,160],Math.max(1,u*.6));g.line(cx+w*.08,yy,cx+w*.4,yy,[216,198,160],Math.max(1,u*.6));}
+      return true;
+    }
     case 'paracaidas': {
       const cx=X(e.x,0.5)+Math.sin(t*1.1)*lw*0.012,cy=Y(e.y,0.38),w=num(e.w,0.66,0.32,0.9)*lw,h=num(e.h,0.42,0.22,0.66)*lh,rr=rampaDeE(e,'#d5d8df',5);
       g.ellO(cx,cy,w*0.48,h*0.38,rr);
@@ -843,4 +857,4 @@ export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: n
   return false;
 }
 
-export const TIPOS_PRO = ['poligono', 'linea', 'nubes', 'olas', 'particulas', 'rayos', 'barco', 'pez', 'roca', 'hielo', 'duna', 'algas', 'sargazo', 'faro', 'silueta', 'radar', 'tic_tac', 'ovni', 'explosion', 'ciudad', 'bosque', 'hidrofono', 'sonar', 'microfono', 'volcan', 'fuego', 'lago', 'avion', 'tren', 'submarino', 'barril', 'cerveza', 'cerveceria', 'tsunami', 'deslizamiento', 'terremoto', 'libro', 'moneda', 'paracaidas', 'televisor', 'esfera', 'dodecaedro', 'zepelin', 'radio', 'telegrafo', 'aurora', 'vaca', 'puente', 'satelite', 'bomba', 'tornado', 'fosil', 'periodico'];
+export const TIPOS_PRO = ['poligono', 'linea', 'nubes', 'olas', 'particulas', 'rayos', 'barco', 'pez', 'roca', 'hielo', 'duna', 'algas', 'sargazo', 'faro', 'silueta', 'radar', 'tic_tac', 'ovni', 'explosion', 'ciudad', 'bosque', 'hidrofono', 'sonar', 'microfono', 'volcan', 'fuego', 'lago', 'avion', 'tren', 'submarino', 'barril', 'cerveza', 'cerveceria', 'tsunami', 'deslizamiento', 'terremoto', 'libro', 'moneda', 'libro', 'moneda', 'paracaidas', 'televisor', 'esfera', 'dodecaedro', 'zepelin', 'radio', 'telegrafo', 'aurora', 'vaca', 'puente', 'satelite', 'bomba', 'tornado', 'fosil', 'periodico'];
