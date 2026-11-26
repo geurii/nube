@@ -1,0 +1,436 @@
+{
+  "version": 1,
+  "fase": "preparando",
+  "canal": "lqns",
+  "total": 30,
+  "completedCount": 0,
+  "intervalMinutes": 10,
+  "nextIndex": 0,
+  "nextAt": null,
+  "lastPublishedAt": null,
+  "runId": null,
+  "artifact": "lote-30-videos",
+  "items": [
+    {
+      "id": "lqns-flannan-faro-desaparecido",
+      "slug": "flannan-faro-desaparecido",
+      "titulo": "Tres fareros desaparecieron y el faro quedó vacío",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    },
+    {
+      "id": "lqns-db-cooper-salto-imposible",
+      "slug": "db-cooper-salto-imposible",
+      "titulo": "El hombre que saltó de un avión con el rescate y desapareció",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    },
+    {
+      "id": "lqns-alcatraz-fuga-cabezas-falsas",
+      "slug": "alcatraz-fuga-cabezas-falsas",
+      "titulo": "La fuga de Alcatraz que dejó cabezas falsas en las camas",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    },
+    {
+      "id": "lqns-max-headroom-senal-secuestrada",
+      "slug": "max-headroom-senal-secuestrada",
+      "titulo": "El día que alguien secuestró la señal de televisión",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    },
+    {
+      "id": "lqns-uss-cyclops-desaparecio",
+      "slug": "uss-cyclops-desaparecio",
+      "titulo": "El barco de la Marina que desapareció con 306 personas",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    },
+    {
+      "id": "lqns-vuelo-2501-lago-michigan",
+      "slug": "vuelo-2501-lago-michigan",
+      "titulo": "El vuelo que cayó al lago Michigan y no dejó sobrevivientes",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    },
+    {
+      "id": "lqns-uss-scorpion-submarino-perdido",
+      "slug": "uss-scorpion-submarino-perdido",
+      "titulo": "El submarino nuclear que se perdió en el Atlántico",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    },
+    {
+      "id": "lqns-esferas-piedra-diquis",
+      "slug": "esferas-piedra-diquis",
+      "titulo": "Las esferas de piedra perfectamente redondas de Costa Rica",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    },
+    {
+      "id": "lqns-dodecaedros-romanos-misterio",
+      "slug": "dodecaedros-romanos-misterio",
+      "titulo": "El objeto romano de doce caras que nadie sabe para qué servía",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    },
+    {
+      "id": "lqns-halifax-explosion-1917",
+      "slug": "halifax-explosion-1917",
+      "titulo": "La explosión que arrasó un puerto canadiense en segundos",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    },
+    {
+      "id": "lqns-hindenburg-incendio-1937",
+      "slug": "hindenburg-incendio-1937",
+      "titulo": "El dirigible gigante que cayó envuelto en llamas",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    },
+    {
+      "id": "lqns-krakatoa-erupcion-1883",
+      "slug": "krakatoa-erupcion-1883",
+      "titulo": "La erupción que se escuchó a miles de kilómetros",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    },
+    {
+      "id": "lqns-galveston-huracan-1900",
+      "slug": "galveston-huracan-1900",
+      "titulo": "La tormenta que borró barrios enteros de Galveston",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    },
+    {
+      "id": "lqns-rendlesham-luces-bosque-1980",
+      "slug": "rendlesham-luces-bosque-1980",
+      "titulo": "Las luces misteriosas del bosque de Rendlesham",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    },
+    {
+      "id": "lqns-washington-ufo-radar-1952",
+      "slug": "washington-ufo-radar-1952",
+      "titulo": "Cuando los radares de Washington detectaron objetos desconocidos",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    },
+    {
+      "id": "lqns-gran-engano-lunar-1835",
+      "slug": "gran-engano-lunar-1835",
+      "titulo": "El periódico que inventó criaturas viviendo en la Luna",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    },
+    {
+      "id": "lqns-valentich-desaparicion-1978",
+      "slug": "valentich-desaparicion-1978",
+      "titulo": "El piloto que informó de un objeto y desapareció sobre el mar",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    },
+    {
+      "id": "lqns-guerra-mundos-radio-1938",
+      "slug": "guerra-mundos-radio-1938",
+      "titulo": "La emisión de radio que hizo creer que llegaban marcianos",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    },
+    {
+      "id": "lqns-l8-dirigible-fantasma-1942",
+      "slug": "l8-dirigible-fantasma-1942",
+      "titulo": "El dirigible que aterrizó vacío y sin su tripulación",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    },
+    {
+      "id": "lqns-expedicion-franklin-erebus-terror",
+      "slug": "expedicion-franklin-erebus-terror",
+      "titulo": "Los barcos atrapados en el hielo que desaparecieron en el Ártico",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    },
+    {
+      "id": "lqns-evento-carrington-1859",
+      "slug": "evento-carrington-1859",
+      "titulo": "La tormenta solar que hizo arder los cables del telégrafo",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    },
+    {
+      "id": "lqns-vaca-incendio-chicago-1871",
+      "slug": "vaca-incendio-chicago-1871",
+      "titulo": "La vaca acusada de provocar el gran incendio de Chicago",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    },
+    {
+      "id": "lqns-tacoma-narrows-puente-colapso",
+      "slug": "tacoma-narrows-puente-colapso",
+      "titulo": "El puente que empezó a retorcerse hasta caer al agua",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    },
+    {
+      "id": "lqns-joyita-barco-vacio-1955",
+      "slug": "joyita-barco-vacio-1955",
+      "titulo": "El barco encontrado a la deriva sin sus 25 pasajeros",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    },
+    {
+      "id": "lqns-stanislav-petrov-falsa-alarma-1983",
+      "slug": "stanislav-petrov-falsa-alarma-1983",
+      "titulo": "El oficial que decidió no informar de un ataque nuclear",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    },
+    {
+      "id": "lqns-tybee-bomba-perdida-1958",
+      "slug": "tybee-bomba-perdida-1958",
+      "titulo": "La bomba nuclear que cayó al mar y nunca fue recuperada",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    },
+    {
+      "id": "lqns-experimento-filadelfia-mito",
+      "slug": "experimento-filadelfia-mito",
+      "titulo": "El experimento naval que supuestamente volvió invisible un barco",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    },
+    {
+      "id": "lqns-mont-pelee-erupcion-1902",
+      "slug": "mont-pelee-erupcion-1902",
+      "titulo": "El volcán que destruyó una ciudad caribeña en minutos",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    },
+    {
+      "id": "lqns-tornado-triestatal-1925",
+      "slug": "tornado-triestatal-1925",
+      "titulo": "El tornado que cruzó tres estados durante horas",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    },
+    {
+      "id": "lqns-piltdown-fosil-fraude",
+      "slug": "piltdown-fosil-fraude",
+      "titulo": "El fósil que engañó a científicos durante más de 40 años",
+      "estado": "pendiente_render",
+      "aprobado": false,
+      "duracionSegundos": null,
+      "publicadoEn": {
+        "youtube": false,
+        "facebook": false,
+        "instagram": false,
+        "tiktok": false
+      }
+    }
+  ],
+  "errores": []
+}
