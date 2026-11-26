@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-23T23:02:21.306Z",
+  "fecha": "2026-11-26T22:53:56.291Z",
   "resultados": [
     {
       "id": "groq",
@@ -8,8 +8,8 @@
         "GROQ_API_KEY"
       ],
       "estado": "ok",
-      "detalle": "responde (openai/gpt-oss-120b, 0.3 s)",
-      "ms": 313
+      "detalle": "responde (openai/gpt-oss-120b, 0.2 s)",
+      "ms": 190
     },
     {
       "id": "gemini",
@@ -27,8 +27,8 @@
         "OPENROUTER_API_KEY"
       ],
       "estado": "ok",
-      "detalle": "responde (baidu/ernie-5.5-flash-preview:free, 0.8 s)",
-      "ms": 836
+      "detalle": "responde (inclusionai/ling-3.2-flash:free, 0.9 s)",
+      "ms": 910
     },
     {
       "id": "cerebras",
@@ -37,8 +37,8 @@
         "CEREBRAS_API_KEY"
       ],
       "estado": "ok",
-      "detalle": "responde (gpt-oss-120b, 0.2 s)",
-      "ms": 224
+      "detalle": "responde (gpt-oss-120b, 0.3 s)",
+      "ms": 268
     },
     {
       "id": "mistral",
@@ -65,8 +65,8 @@
         "NVIDIA_API_KEY"
       ],
       "estado": "ok",
-      "detalle": "responde (mistralai/mistral-large-4-1t-a52b, 7.8 s)",
-      "ms": 7774
+      "detalle": "responde (mistralai/mistral-large-4-1t-a52b, 1.5 s)",
+      "ms": 1498
     },
     {
       "id": "cohere",
@@ -74,9 +74,8 @@
       "secretos": [
         "COHERE_API_KEY"
       ],
-      "estado": "ok",
-      "detalle": "responde (command-a-03-2025, 0.2 s)",
-      "ms": 189
+      "estado": "error",
+      "detalle": "Cohere: error 429 (descansando: cuota agotada)"
     },
     {
       "id": "zai",
@@ -121,8 +120,8 @@
         "POLLINATIONS_API_KEY"
       ],
       "estado": "ok",
-      "detalle": "responde (openai-fast, 0.2 s) · sin cuenta",
-      "ms": 171
+      "detalle": "responde (openai-fast, 0.4 s) · sin cuenta",
+      "ms": 436
     },
     {
       "id": "ovh",
@@ -131,8 +130,8 @@
         "OVH_API_KEY"
       ],
       "estado": "ok",
-      "detalle": "responde (Meta-Llama-3_3-70B-Instruct, 0.7 s) · sin cuenta",
-      "ms": 699
+      "detalle": "responde (Meta-Llama-3_3-70B-Instruct, 1.9 s) · sin cuenta",
+      "ms": 1858
     },
     {
       "id": "windsor",
@@ -141,8 +140,8 @@
         "WINDSOR_API_KEY"
       ],
       "estado": "ok",
-      "detalle": "responde (0.8 s)",
-      "ms": 804
+      "detalle": "responde (1.0 s)",
+      "ms": 977
     },
     {
       "id": "buffer",
@@ -152,7 +151,7 @@
       ],
       "estado": "ok",
       "detalle": "responde (1 organización)",
-      "ms": 440
+      "ms": 564
     },
     {
       "id": "youtube",
@@ -163,8 +162,8 @@
         "YT_REFRESH_TOKEN"
       ],
       "estado": "ok",
-      "detalle": "conectado (0.4 s)",
-      "ms": 447
+      "detalle": "conectado (0.5 s)",
+      "ms": 481
     },
     {
       "id": "videos",
@@ -174,7 +173,7 @@
       ],
       "estado": "error",
       "detalle": "GitHub: error 401 (llave inválida o sin acceso al repositorio)",
-      "ms": 335
+      "ms": 375
     },
     {
       "id": "ntfy",
