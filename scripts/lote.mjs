@@ -19,7 +19,7 @@ fs.mkdirSync(salida, {recursive: true});
 const correr = (script, extra) => {
   // El supervisor termina también Chrome/FFmpeg y demás procesos descendientes si se atascan.
   const r = spawnSync(process.execPath, ['scripts/ejecutar-hijo.mjs', path.join('scripts', script), ...extra], {
-    cwd: raiz, stdio: 'inherit', timeout: 11 * 60 * 1000, killSignal: 'SIGKILL',
+    cwd: raiz, stdio: 'inherit', timeout: 31 * 60 * 1000, killSignal: 'SIGKILL',
   });
   if (r.error || r.status !== 0) throw new Error(`${script} falló: ${r.error?.message ?? r.signal ?? r.status}`);
 };
