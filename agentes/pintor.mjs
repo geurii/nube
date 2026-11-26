@@ -89,6 +89,7 @@ export const sujetosDelTexto = (texto = '') => {
     [/\b(fosil|fosiles|fossil|hueso fosil)\b/, ['fosil']],
     [/\b(roca|rocas|piedra|piedras)\b/, ['roca']],
     [/\b(periodico|periodicos|prensa|diario|diarios)\b/, ['periodico']],
+    [/\b(roca|rocas|piedra|piedras)/, ['roca']],
     [/\b(moneda|monedas)\b/, ['moneda']],
     [/\b(nube|nubes|tormenta|huracan|huracanes)\b/, ['nubes']],
     [/\b(ola|olas|oleaje|mar|oceano|marea|tsunami)\b/, ['olas']],
