@@ -19,12 +19,12 @@ permissions:
   actions: read
 concurrency:
   group: lote-30-render
-  cancel-in-progress: false
+  cancel-in-progress: true
 jobs:
   renderizar:
     if: ${{ github.event_name != 'push' || !startsWith(github.event.head_commit.message, 'Fix lote 30 JSON persistence') }}
     runs-on: ubuntu-24.04
-    timeout-minutes: 350
+    timeout-minutes: 360
     env:
       NODE_OPTIONS: --max-old-space-size=7168
     steps:
