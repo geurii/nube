@@ -23,7 +23,7 @@ export const ESCENARIOS = {
 export const TIPOS = new Set([
   'estrellas', 'astro', 'resplandor', 'montanas', 'suelo', 'agua', 'niebla', 'arbol', 'edificio', 'central', 'pergamino',
   'nubes', 'olas', 'particulas', 'rayos', 'barco', 'pez', 'roca', 'hielo', 'duna', 'algas', 'sargazo', 'faro', 'silueta', 'ovni', 'explosion', 'ciudad', 'bosque', 'calendario', 'reloj', 'castillo', 'corona', 'libro', 'moneda', 'iglesia', 'caballo', 'terremoto',
-  'cartas', 'hidrofono', 'sonar', 'microfono', 'radar', 'tic_tac', 'volcan', 'fuego', 'lago', 'avion', 'tren', 'submarino', 'barril', 'cerveza', 'cerveceria', 'tsunami', 'deslizamiento',
+  'cartas', 'hidrofono', 'sonar', 'microfono', 'radar', 'tic_tac', 'paracaidas', 'televisor', 'esfera', 'dodecaedro', 'zepelin', 'radio', 'telegrafo', 'aurora', 'vaca', 'puente', 'satelite', 'bomba', 'tornado', 'fosil', 'periodico', 'volcan', 'fuego', 'lago', 'avion', 'tren', 'submarino', 'barril', 'cerveza', 'cerveceria', 'tsunami', 'deslizamiento',
 ]);
 
 /** Una "caja vacía": barra o rectángulo ancho y bajo sin forma de objeto (parece un cuadro de texto sin texto). Gemini la marca como falla grave. */
@@ -65,7 +65,7 @@ export const sujetosDelTexto = (texto = '') => {
     [/\b(explosion|estallido)\b/, ['explosion']],
     [/\b(incendio|fuego|llama|ardiendo|quemado|hoguera)\b/, ['fuego']],
     [/\b(zumbido|sonido|ruido|frecuencia|vibracion|eco|silbido|tono)\b/, ['microfono','hidrofono','sonar']],
-    [/\b(ola|olas|tsunami|marea|mar|oceano|lago|laguna|rio|embalse)\b/, ['lago','barco','pez','faro','submarino']],
+    [/\b(ola|olas|oleaje|tsunami|marea|mar|oceano|lago|laguna|rio|embalse)\b/, ['olas','lago','barco','pez','faro','submarino']],
     [/\b(avion|aeronave|vuelo|piloto|aeroplano)\b/, ['avion']],
     [/\b(tren|ferrocarril|locomotora|vagon|via ferroviaria)\b/, ['tren']],
     [/\b(montana|montanas|cordillera|cumbre|acantilado)\b/, ['montanas']],
@@ -73,15 +73,33 @@ export const sujetosDelTexto = (texto = '') => {
     [/\b(tsunami|megatsunami|maremoto|ola gigante)\b/, ['tsunami']],
     [/\b(terremoto|seismo|temblor|sacudida sismica|movimiento sismico|falla geologica|fallas tectonicas)\b/, ['terremoto','edificio','ciudad']],
     [/\b(deslizamiento|derrumbe|avalancha|rocas cayeron|desprendimiento)\b/, ['deslizamiento','roca','montanas']],
+    [/\b(paracaidas|parachute)\b/, ['paracaidas']],
+    [/\b(televisor|television|pantalla|senal televisiva|transmision televisiva)\b/, ['televisor']],
+    [/\b(esfera|esferas|bolas de piedra)\b/, ['esfera']],
+    [/\b(dodecaedro|dodecaedros)\b/, ['dodecaedro']],
+    [/\b(zepelin|dirigible|blimp|aerostato)\b/, ['zepelin']],
+    [/\b(radio|emision radial|programa radial|boletin radial)\b/, ['radio']],
+    [/\b(telegrafo|telegrama|cable telegrafico|red de telegrafo)\b/, ['telegrafo']],
+    [/\b(aurora|auroras|luces polares)\b/, ['aurora']],
+    [/\b(vaca|vacas|ganado)\b/, ['vaca']],
+    [/\b(puente|puentes)\b/, ['puente']],
+    [/\b(satelite|satelites)\b/, ['satelite']],
+    [/\b(bomba|bomba nuclear|arma nuclear|artefacto nuclear)\b/, ['bomba']],
+    [/\b(tornado|tornados|torbellino|tromba)\b/, ['tornado']],
+    [/\b(fosil|fosiles|fossil|hueso fosil)\b/, ['fosil']],
+    [/\b(periodico|periodicos|prensa|diario|diarios)\b/, ['periodico']],
+    [/\b(moneda|monedas)\b/, ['moneda']],
+    [/\b(nube|nubes|tormenta|huracan|huracanes)\b/, ['nubes']],
+    [/\b(ola|olas|oleaje|mar|oceano|marea|tsunami)\b/, ['olas']],
     [/\b(faro|torre de luz)\b/, ['faro']],
   ];
   return [...new Set(reglas.filter(([re]) => re.test(t)).flatMap(([, tipos]) => tipos))];
 };
 
 export const OBJETOS_NARRATIVOS = new Set([
-  'barco','pez','hielo','faro','ovni','explosion','ciudad','bosque','arbol','edificio','central',
+  'barco','pez','hielo','faro','ovni','explosion','ciudad','bosque','arbol','edificio','central','nubes','olas',
   'pergamino','calendario','reloj','castillo','corona','libro','moneda','iglesia','caballo','silueta','astro','duna',
-  'montanas','hidrofono','sonar','microfono','radar','tic_tac','volcan','fuego','lago','avion','tren','submarino',
+  'montanas','hidrofono','sonar','microfono','radar','tic_tac','paracaidas','televisor','esfera','dodecaedro','zepelin','radio','telegrafo','aurora','vaca','puente','satelite','bomba','tornado','fosil','periodico','volcan','fuego','lago','avion','tren','submarino',
   'barril','cerveza','cerveceria','tsunami','deslizamiento','cartas','terremoto',
 ]);
 
