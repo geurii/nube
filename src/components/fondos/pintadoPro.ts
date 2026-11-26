@@ -783,7 +783,7 @@ export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: n
     case 'satelite': {
       const cx=X(e.x,.5)+Math.sin(t*.5)*lw*.01,cy=Y(e.y,.47)+Math.cos(t*.8)*lh*.012,w=num(e.w,.55,.34,.8)*lw,h=num(e.h,.34,.2,.52)*lh,rr=rampaDeE(e,'#8797a4',5);
       poli(g,[[cx-w*.16,cy-h*.26],[cx+w*.16,cy-h*.26],[cx+w*.2,cy+h*.25],[cx-w*.2,cy+h*.25]],rr,'izq',true);
-      for(const side of [-1,1]){const bx=cx+side*w*.22-(side<0?w*.27:0);g.rect(bx,cy-h*.19,w*.27,h*.38,[[27,71,111],[51,109,158],[83,145,190]]);for(let k=1;k<4;k++)g.line(bx+w*.27*k/4,cy-h*.19,bx+w*.27*k/4,cy+h*.19,[182,204,218],1);}
+      for(const side of [-1,1]){const bx=cx+side*w*.22-(side<0?w*.27:0);g.rect(bx,cy-h*.19,w*.27,h*.38,[27,71,111]);for(let k=1;k<4;k++)g.line(bx+w*.27*k/4,cy-h*.19,bx+w*.27*k/4,cy+h*.19,[182,204,218],1);}
       g.line(cx,cy-h*.25,cx+w*.28,cy-h*.5,[215,219,201],Math.max(1,u));g.ellO(cx+w*.29,cy-h*.51,w*.045,w*.045,[[222,214,159]]);return true;
     }
     case 'bomba': {
