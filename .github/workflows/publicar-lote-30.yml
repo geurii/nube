@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
-  actions: read
+  actions: write
 concurrency:
   group: publicar-lote-30
   cancel-in-progress: false
@@ -67,6 +67,21 @@ jobs:
           ID: ${{ steps.cola.outputs.id }}
           LOTE_INDEX: ${{ steps.cola.outputs.index }}
         run: node scripts/publicar-lote-30.mjs --finalize
+      - name: Esperar diez minutos y activar el siguiente Short
+        if: success() && steps.cola.outputs.enabled == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_API_URL: ${{ github.api_url }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          listo=$(node --input-type=module -e 'import fs from "node:fs"; const x=JSON.parse(fs.readFileSync("agentes/lote-30-publicacion.json","utf8")); process.stdout.write(x.fase==="ready_to_publish" && Number(x.nextIndex)<30 ? "si" : "no");')
+          if [ "$listo" != "si" ]; then echo "Cola completa o bloqueada; no se encadena otro Short."; exit 0; fi
+          sleep 600
+          curl --fail-with-body --silent --show-error -X POST \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "$GITHUB_API_URL/repos/$GITHUB_REPOSITORY/actions/workflows/publicar-lote-30.yml/dispatches" \
+            -d '{"ref":"main"}'
       - name: Guardar registros y estado de la cola
         if: always() && steps.cola.outputs.enabled == 'true'
         run: |
