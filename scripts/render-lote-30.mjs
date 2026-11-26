@@ -13,10 +13,14 @@ const probe=(file)=>{
  return JSON.parse(p.stdout);
 };
 const failures=[];
+if(!Array.isArray(state.items)||state.items.length!==30)throw new Error('El renderizador requiere exactamente 30 Shorts.');
+if(new Set(state.items.map(x=>x.id)).size!==30)throw new Error('Hay IDs repetidos: se detiene antes de renderizar.');
 for(let index=0;index<state.items.length;index++){
  const item=state.items[index],id=item.id,guionPath=path.join('guion/serie',id+'.json');
+ item.estado='renderizando';item.aprobado=false;state.fase='renderizando_secuencial';save();
  let accepted=false,lastError='';
- console.log('\n=== RENDER SECUENCIAL '+(index+1)+'/30: '+id+' ===');
+ console.log('\n=== SHORT '+(index+1)+'/30: '+id+' ===');
+ console.log('Solo se procesa este Short. El siguiente no comienza hasta terminar voz, render, ffprobe, subtítulos y compresión.');
  for(let attempt=1;attempt<=2&&!accepted;attempt++){
   const g=JSON.parse(fs.readFileSync(guionPath,'utf8'));
   try{
@@ -39,7 +43,7 @@ for(let index=0;index<state.items.length;index++){
      if(!clean||!tieneAnclaNarrativa(clean,scene.texto))throw new Error('Visual que no corresponde a la narración: '+name);
     }
    }
-   console.log('Intento '+attempt+': voz y Remotion, uno por uno.');
+   console.log('Intento '+attempt+': iniciando únicamente '+id+'; se espera su proceso completo antes de continuar.');
    const r=run(['scripts/lote.mjs',id,'--forzar']);
    if(r.error||r.status!==0)throw new Error('Lote de voz/render terminó con '+String(r.status??r.error?.message??r.signal));
    const mp4=path.join('out/serie',id+'.mp4'),lite=path.join('out/serie',id+'-subida.mp4');
