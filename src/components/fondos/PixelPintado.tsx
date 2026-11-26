@@ -9,7 +9,7 @@ import type {PropsEscena} from './Escenas';
 const {fontFamily: FUENTE_PIXEL} = loadFont();
 const F = 2;
 const OBJETOS_NARRATIVOS = new Set(['barco','pez','hielo','faro','ovni','explosion','ciudad','bosque','arbol','edificio','central','pergamino','calendario','reloj','castillo','corona','libro','moneda','iglesia','caballo','silueta','astro','duna','montanas','hidrofono','sonar','microfono','volcan','fuego','lago','avion','tren','submarino','barril','cerveza','cerveceria','tsunami','deslizamiento','terremoto','nubes','olas','paracaidas','televisor','esfera','dodecaedro','zepelin','radio','telegrafo','aurora','vaca','puente','satelite','bomba','tornado','fosil','periodico']);
-const CAPAS_PROHIBIDAS = new Set(['circulo','rect','poligono','linea','texto','foto']);
+const CAPAS_PROHIBIDAS = new Set(['circulo','rect','poligono','linea','texto']);
 
 const Lienzo: React.FC<{id: string}> = ({id}) => {
   const {width, height, fps, durationInFrames} = useVideoConfig();
@@ -38,6 +38,8 @@ const Lienzo: React.FC<{id: string}> = ({id}) => {
         const capaSinObjeto = esc.capas.some((cap) => CAPAS_PROHIBIDAS.has(String(cap?.t ?? '')));
         const protagonista = esc.capas.some((cap) => {
           const tipo = String(cap?.t ?? '');
+          // una foto real del sujeto es el mejor protagonista posible: es exactamente la cosa de la que habla la voz
+          if (tipo === 'foto' && String(cap?.archivo ?? '').length > 3) return true;
           if (!OBJETOS_NARRATIVOS.has(tipo)) return false;
           if (tipo === 'bosque') return Number(cap?.n ?? 0) >= 6;
           const medidas = ['w','h','r','alto'].map((k) => Number(cap?.[k])).filter(Number.isFinite);
