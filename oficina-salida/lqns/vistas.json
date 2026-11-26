@@ -1,20 +1,26 @@
 {
-  "fecha": "2026-11-25T23:56:30.662Z",
+  "fecha": "2026-11-26T08:50:22.748Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 1062,
-  "ganadasDesdeElUltimoCiclo": 725,
+  "total": 1331,
+  "ganadasDesdeElUltimoCiclo": 269,
   "videos": [
+    {
+      "id": "xL9E7Ru2UM4",
+      "titulo": "¿Ovnis reales captados en cámara?",
+      "publicado": "2026-11-25T23:58:43+00:00",
+      "vistas": 6
+    },
     {
       "id": "ERL-GCARL8I",
       "titulo": "¿Por qué un lápiz roto tiene 68 millones de vistas?",
       "publicado": "2026-11-25T21:38:46+00:00",
-      "vistas": 746
+      "vistas": 981
     },
     {
       "id": "VXbbW_o1PWo",
       "titulo": "Nintendo nació vendiendo cartas: la historia antes de los videojuegos",
       "publicado": "2026-11-25T17:08:39+00:00",
-      "vistas": 96
+      "vistas": 127
     },
     {
       "id": "ju9-ibZWM5s",
@@ -32,7 +38,7 @@
       "id": "xE32CX_fsXM",
       "titulo": "🌋 ¿Qué secreto ancestral esconde el cráter de la Isla de Pascua?",
       "publicado": "2026-11-24T16:28:54+00:00",
-      "vistas": 22
+      "vistas": 23
     },
     {
       "id": "85i8fzFF970",
@@ -44,7 +50,7 @@
       "id": "hVawPPY5K_Y",
       "titulo": "⚡ 1884: El inventor que encendió Niágara con su motor AC",
       "publicado": "2026-11-22T16:44:58+00:00",
-      "vistas": 40
+      "vistas": 39
     },
     {
       "id": "FEwqFlpnAe4",
@@ -87,19 +93,9 @@
       "titulo": "Sabías que dos jóvenes genios de una lista famosa suman 40 años de cárcel ⚖️",
       "publicado": "2026-11-21T04:00:38+00:00",
       "vistas": 23
-    },
-    {
-      "id": "YXozgtk50pI",
-      "titulo": "Los \"jóvenes genios\" que terminaron acusados de fraude: ¿estafadores o genios?",
-      "publicado": "2026-11-21T02:03:25+00:00",
-      "vistas": 3
     }
   ],
   "historia": [
-    {
-      "fecha": "2026-11-24T14:46:26.754Z",
-      "total": 2244
-    },
     {
       "fecha": "2026-11-24T15:01:25.943Z",
       "total": 2244
@@ -335,6 +331,10 @@
     {
       "fecha": "2026-11-25T23:56:30.662Z",
       "total": 1062
+    },
+    {
+      "fecha": "2026-11-26T08:50:22.747Z",
+      "total": 1331
     }
   ]
 }

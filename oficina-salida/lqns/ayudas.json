@@ -1,41 +1,43 @@
 {
   "plan": [
-    "Crear y lanzar serie de 3 videos sobre el megatsunami de Lituya Bay 1958: Equipo de investigación histórica: Generar al menos 5,000 vistas y 200 suscriptores nuevos antes del 13 de diciembre",
-    "Desarrollar miniaturas A/B con colores contrastantes y textos legibles para la serie sobre el terremoto de Lisboa 1755: Equipo de diseño gráfico: Aumentar la tasa de clics en 15% y alcanzar 3,000 vistas en la primera semana de publicación a",
-    "Programar publicación de los tres episodios con intervalos de 1‑2 días y promocionar en redes sociales: Equipo de producción y marketing: Alcanzar 10,000 vistas acumuladas y 500 comentarios interactivos antes del 13 de diciembre"
+    "Crear y lanzar serie de 3 videos sobre el megatsunami de Lituya Bay 1958 con títulos misteriosos y emojis, optimizando SEO y retención para generar al menos 10,000 vistas en total antes del 13 de diciembre: Equipo de Producción de Contenido",
+    "Desarrollar miniaturas A/B con colores contrastantes y textos legibles para la serie sobre el terremoto de Lisboa 1755, probar A/B en 48 horas y seleccionar la que obtenga 30% más CTR: Equipo de Diseño Gráfico: Incrementar la tasa de clics ",
+    "Planificar y programar publicación de los tres episodios en días de mayor actividad (miércoles y viernes) con intervalos de 1‑2 días, y añadir CTA de suscripción y comentario en cada video: Equipo de Programación y Social Media: Aumentar la"
   ],
   "ganchos": [
-    "¿Sabías que [TEMA] ocurrió cuando [CIFRA] se volvió real? | Imagen de un mapa antiguo con un punto rojo resaltado",
-    "[TEMA] reveló un secreto cuando [CIFRA] cambió el mundo | Imagen de una puerta antigua entreabierta",
-    "¿Te imaginas que [TEMA] se descubrió tras [CIFRA] inesperado? | Imagen de un libro de historia abierto a una página marcada",
-    "[TEMA] sorprendió a todos cuando [CIFRA] se hizo realidad | Imagen de un reloj de arena con la arena cayendo lentamente",
-    "¿Qué ocurrió cuando [TEMA] se activó con [CIFRA]? | Imagen de una lámpara antigua encendiéndose con un destello"
+    "¿Sabías que [TEMA] se reveló cuando [CIFRA] se volvió real? | Imagen de un mapa antiguo con un punto rojo",
+    "[TEMA] sobrevivió al terremoto de 1755 y luego llegó el tsunami: ¿qué ocurrió? | Imagen de una ciudad iluminada bajo un cielo tormentoso",
+    "¿Te imaginas que [TEMA] se reveló cuando [CIFRA] se volvió real? | Imagen de una puerta antigua abierta a la luz",
+    "¿Qué [VERBO] realmente [SUSTANTIVO]? | Imagen de una puerta entreabierta con sombras misteriosas",
+    "¿Sabías que <sustantivo> pagó <monto> por <objeto>? | Imagen de una moneda antigua y un objeto envuelto en pergamino"
   ],
   "mejorasGuion": [
-    "1️⃣ **Gancho de título**: Cambia el encabezado a algo más directo y emocional, por ejemplo, \"🔊 ¿Qué es el zumbido que solo 2 % de la gente escucha?\". El uso de un emoji y una pregunta específica aumenta la curiosidad y "
+    "1. Cambia el gancho inicial por una pregunta directa y breve: \"¿Qué ocurrió cuando cinco estudiantes desaparecieron en el paso Dyatlov?\" para captar la curiosidad de inmediato.",
+    "2. Estructura el ritmo con secciones claras (introducción, contexto histórico, trama de la película, giro inesperado) y utiliza subtítulos dinámicos para mantener la retención y evitar pausas largas.",
+    "3. Añade una llamada a la acción más fuerte al final: \"Dinos en los comentarios si crees que la película es real o ficción, y suscríbete para descubrir más misterios sin resolver.\""
   ],
   "temas": [
     "The Bloop",
-    "Lake Nyos disaster",
-    "The moving rocks of Death Valley",
-    "The disappearing lake of Cerknica",
-    "Lake Peigneur"
+    "Lake Peigneur",
+    "The Moving Rocks of Death Valley",
+    "The Disappearing Lake of Cerknica",
+    "Lake Nyos disaster"
   ],
   "titulos": [
     "¿Por qué <objeto> tiene <número> vistas?",
-    "<Nombre> nació vendiendo <producto>: la historia antes de <tema>",
-    "¿Qué oculta realmente el <objeto>? 🕵️‍♂️",
-    "⚡ <año>: El inventor que <acción> <objeto>"
+    "<Objeto> nació vendiendo <producto>: la historia antes de <evento>",
+    "¿Qué <oculta> realmente el <objeto>? 🕵️‍♂️",
+    "⚡ <año>: El <profesión> que <verbo> <objeto>"
   ],
-  "fecha": "2026-11-25T23:57:08.441Z",
+  "fecha": "2026-11-26T08:50:23.001Z",
   "iniciativas": [
-    "Valentina (Directora de contenido): Definir una línea editorial clara y documentarla en un manual de estilo para que todo el equipo siga la misma visión desde el primer video.",
-    "Carolina (Coordinador de producción): Crear un cronograma detallado con buffers de tiempo y asignar responsables claros para cada hito, usando herramientas de gestión visual.",
-    "Fernanda (Jefa de calidad): Implementar una checklist de calidad de 10 puntos que se revise antes de aprobar cualquier pieza, incluso en fase de prueba.",
-    "Camila (Investigador de temas): Compilar una lista de fuentes primarias y secundarias confiables sobre el terremoto de Lisboa y su tsunami, y asignar mini‑tareas de búsqueda a cada miembro.",
-    "Daniela (Cazador de fórmulas): Probar tres estructuras de guion (gancho‑dato‑historia, pregunta‑respuesta‑clausura, misterio‑revelación‑reflexión) y medir cuál genera mayor interés en pruebas internas.",
-    "Julieta (Vigía de tendencias): Suscribirme a newsletters y alertas de tendencias en YouTube Shorts y TikTok, y compartir un informe semanal de insights relevantes.",
-    "Lucía (Guionista): Escribir un guion piloto con tres ganchos diferentes y someterlos a votación interna para escoger el más impactante.",
-    "Mariana (Editor de guion): Establecer una ronda de revisión cruzada donde cada guion sea leído por al menos dos compañeros antes de avanzar."
+    "Valentina (Directora de contenido): Crear un documento de visión del canal con conceptos clave y estilo visual que sirva como guía constante para todo el equipo.",
+    "Carolina (Coordinador de producción): Diseñar un calendario de producción en hoja compartida con hitos claros y buffers de tiempo para cada fase.",
+    "Fernanda (Jefa de calidad): Implementar una checklist de calidad de 10 puntos que se revise antes de aprobar cualquier contenido.",
+    "Camila (Investigador de temas): Compilar una lista de fuentes académicas y archivos históricos sobre el terremoto de Lisboa 1755 y el tsunami posterior para usar como base.",
+    "Daniela (Cazador de fórmulas): Probar tres estructuras de guion (hook‑story‑close, pregunta‑respuesta‑curiosidad, dato‑análisis‑impacto) en videos piloto y medir la retención interna.",
+    "Julieta (Vigía de tendencias): Suscribirme a newsletters de tendencias de YouTube y crear un informe semanal de formatos emergentes.",
+    "Lucía (Guionista): Escribir un guion que comience con la pregunta: “¿Qué pasó realmente el 1 de noviembre de 1755?” para enganchar desde el primer segundo.",
+    "Mariana (Editor de guion): Establecer una revisión cruzada donde Mariana y yo comparemos versiones del guion línea por línea."
   ]
 }
