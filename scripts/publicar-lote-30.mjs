@@ -6,7 +6,7 @@ const save=x=>fs.writeFileSync(file,JSON.stringify(x,null,2)+'\n');
 const out=(k,v)=>{if(process.env.GITHUB_OUTPUT)fs.appendFileSync(process.env.GITHUB_OUTPUT,k+'='+String(v??'').replace(/[\r\n]/g,' ')+'\n');};
 const arg=process.argv[2]??'';
 if(arg==='--prepare'){
- const x=state(),ready=x.fase==='ready_to_publish'&&x.completedCount===30&&x.items.length===30&&x.items.every(i=>i.aprobado&&i.estado!=='requiere_reparacion');
+ const x=state(),ready=x.intervalMinutes===20&&x.fase==='ready_to_publish'&&x.completedCount===30&&x.items.length===30&&x.items.every(i=>i.aprobado&&i.estado!=='requiere_reparacion');
  const index=Number(x.nextIndex??0),due=!x.nextAt||Date.parse(x.nextAt)<=Date.now();
  if(!ready||index>=30||!due){
   out('enabled','false');
