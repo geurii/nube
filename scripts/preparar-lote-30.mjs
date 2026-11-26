@@ -84,7 +84,7 @@ for(let ti=0;ti<config.topics.length;ti++){
  console.log('PREPARADO '+(ti+1)+'/30 '+id+' · '+words+' palabras · 50 planos');
 }
 const state={
- version:1,fase:'preparado',canal:'lqns',total:30,completedCount:0,intervalMinutes:10,
+ version:1,fase:'preparado',canal:'lqns',total:30,completedCount:0,intervalMinutes:20,
  nextIndex:0,nextAt:null,lastPublishedAt:null,runId:null,artifact:'lote-30-videos',
  items:config.topics.map(t=>({id:'lqns-'+t.slug,slug:t.slug,titulo:t.title,estado:'pendiente_render',aprobado:false,duracionSegundos:null,publicadoEn:{youtube:false,facebook:false,instagram:false,tiktok:false}})),
  errores:[]
