@@ -1,0 +1,850 @@
+{
+  "version": 1,
+  "channel": "lqns",
+  "format": "short",
+  "minimumDurationSeconds": 30,
+  "intervalMinutes": 10,
+  "faceless": true,
+  "topics": [
+    {
+      "slug": "flannan-faro-desaparecido",
+      "title": "Tres fareros desaparecieron y el faro quedó vacío",
+      "desc": "Tres fareros desaparecieron en una isla escocesa. Los registros describen un faro limpio, dos uniformes ausentes y daños junto al mar. #MisteriosReales #Historia #Escocia #Faros #LoQueNoSabias",
+      "source": "https://www.nrscotland.gov.uk/learning-and-events/for-the-safety-of-all-scotlands-lighthouses/the-flannan-islands-lighthouse-a-disappearance",
+      "scenes": [
+        {
+          "anchor": "faro",
+          "text": "Tres fareros desaparecieron de una isla escocesa y, cuando fueron a buscarlos, encontraron el faro vacío."
+        },
+        {
+          "anchor": "faro",
+          "text": "El quince de diciembre de mil novecientos, un barco pasó y notó que la luz del faro estaba apagada."
+        },
+        {
+          "anchor": "barco",
+          "text": "Once días después, el relevo entró: lámparas listas, cocina ordenada y dos juegos de ropa impermeable ausentes."
+        },
+        {
+          "anchor": "faro",
+          "text": "El informe registró barandas torcidas y una enorme piedra desplazada cerca del desembarcadero; una ola pudo arrastrarlos."
+        },
+        {
+          "anchor": "olas",
+          "text": "No hay evidencia de fantasmas ni de una fuga. El mar es la explicación más probable, pero nunca aparecieron."
+        }
+      ]
+    },
+    {
+      "slug": "db-cooper-salto-imposible",
+      "title": "El hombre que saltó de un avión con el rescate y desapareció",
+      "desc": "En 1971, Dan Cooper saltó de un avión con un rescate y un paracaídas. Nunca se confirmó qué ocurrió después. #DBCooper #Aviacion #Misterio #Historia #LoQueNoSabias",
+      "source": "https://www.fbi.gov/history/cases-and-criminals/db-cooper-hijacking",
+      "scenes": [
+        {
+          "anchor": "avion",
+          "text": "Un hombre pidió doscientos mil dólares, cuatro paracaídas y después saltó de un avión en pleno vuelo."
+        },
+        {
+          "anchor": "paracaidas",
+          "text": "El veinticuatro de noviembre de mil novecientos setenta y uno compró un boleto usando el nombre Dan Cooper."
+        },
+        {
+          "anchor": "avion",
+          "text": "Tras liberar a los pasajeros en Seattle, obligó al avión a despegar otra vez rumbo al sur, con la tripulación."
+        },
+        {
+          "anchor": "paracaidas",
+          "text": "Entre Seattle y Reno, abrió la salida trasera y saltó con dinero y paracaídas durante la noche."
+        },
+        {
+          "anchor": "paracaidas",
+          "text": "El avión aterrizó. Cooper no apareció. El FBI cerró la investigación activa, pero cualquier prueba física aún importa."
+        }
+      ]
+    },
+    {
+      "slug": "alcatraz-fuga-cabezas-falsas",
+      "title": "La fuga de Alcatraz que dejó cabezas falsas en las camas",
+      "desc": "Tres presos escaparon de sus celdas en Alcatraz en 1962. Dejaron cabezas falsas y nunca se supo si sobrevivieron. #Alcatraz #Misterios #Historia #Prision #LoQueNoSabias",
+      "source": "https://www.fbi.gov/history/cases-and-criminals/alcatraz-escape",
+      "scenes": [
+        {
+          "anchor": "edificio",
+          "text": "Una mañana de junio de mil novecientos sesenta y dos, los guardias revisaron Alcatraz y encontraron tres camas ocupadas… aparentemente."
+        },
+        {
+          "anchor": "edificio",
+          "text": "Las cabezas eran muñecos de yeso, pintura y cabello real. Desde la puerta, parecían presos durmiendo."
+        },
+        {
+          "anchor": "edificio",
+          "text": "Frank Morris y los hermanos Anglin habían agrandado ventilaciones y excavado una ruta hasta el techo de la prisión."
+        },
+        {
+          "anchor": "barco",
+          "text": "Construyeron un flotador con impermeables y dejaron la isla por la costa, pero el agua de la bahía era helada."
+        },
+        {
+          "anchor": "edificio",
+          "text": "El FBI nunca confirmó que sobrevivieran ni que murieran. La fuga fue real; el destino de los tres sigue abierto."
+        }
+      ]
+    },
+    {
+      "slug": "max-headroom-senal-secuestrada",
+      "title": "El día que alguien secuestró la señal de televisión",
+      "desc": "En 1987, una señal de televisión de Chicago fue interrumpida por una transmisión pirata que nunca se atribuyó. #MaxHeadroom #Television #Misterio #Tecnologia #LoQueNoSabias",
+      "source": "https://news.wttw.com/2017/11/21/30-years-later-notorious-max-headroom-incident-remains-mystery",
+      "scenes": [
+        {
+          "anchor": "televisor",
+          "text": "En directo, la televisión dejó de mostrar su programa y apareció una transmisión pirata con una máscara extraña."
+        },
+        {
+          "anchor": "televisor",
+          "text": "Ocurrió el veintidós de noviembre de mil novecientos ochenta y siete, cuando dos canales de Chicago fueron interceptados."
+        },
+        {
+          "anchor": "radio",
+          "text": "La primera interrupción duró unos treinta segundos. La segunda, en otra estación, se extendió cerca de noventa."
+        },
+        {
+          "anchor": "televisor",
+          "text": "La Comisión Federal de Comunicaciones investigó. La señal exigía conocimientos técnicos y acceso a equipos de transmisión."
+        },
+        {
+          "anchor": "televisor",
+          "text": "Nadie fue identificado públicamente. No fue un hackeo de internet: fue una intrusión real en el aire televisivo."
+        }
+      ]
+    },
+    {
+      "slug": "uss-cyclops-desaparecio",
+      "title": "El barco de la Marina que desapareció con 306 personas",
+      "desc": "El USS Cyclops salió del Caribe en 1918 y nunca llegó a Baltimore. No hay restos ni prueba de ataque enemigo. #USS Cyclops #Marina #Historia #Misterios #LoQueNoSabias",
+      "source": "https://www.history.navy.mil/about-us/leadership/director/directors-corner/h-grams/h-gram-016.html",
+      "scenes": [
+        {
+          "anchor": "barco",
+          "text": "Un enorme barco de la Marina salió de Barbados rumbo a Baltimore con trescientas seis personas a bordo."
+        },
+        {
+          "anchor": "barco",
+          "text": "El USS Cyclops transportaba mineral de manganeso cuando zarpó en marzo de mil novecientos dieciocho."
+        },
+        {
+          "anchor": "barco",
+          "text": "No envió una llamada de socorro, no llegó a su destino y ninguna búsqueda encontró un resto confirmado."
+        },
+        {
+          "anchor": "sonar",
+          "text": "Durante la guerra se sospechó de un submarino alemán, pero los registros revisados no mostraron evidencia de ataque."
+        },
+        {
+          "anchor": "barco",
+          "text": "Tormenta, falla estructural o sobrecarga son hipótesis, no respuestas probadas. El Cyclops sigue perdido."
+        }
+      ]
+    },
+    {
+      "slug": "vuelo-2501-lago-michigan",
+      "title": "El vuelo que cayó al lago Michigan y no dejó sobrevivientes",
+      "desc": "En 1950, el vuelo 2501 de Northwest Airlines cayó al lago Michigan. Murieron 58 personas y el avión quedó destruido. #Aviacion #Historia #LagoMichigan #Misterio #LoQueNoSabias",
+      "source": "https://asn.flightsafety.org/reports/1950/19500623_DC4_N95425.pdf",
+      "scenes": [
+        {
+          "anchor": "avion",
+          "text": "Un avión comercial desapareció sobre el lago Michigan durante una noche de tormenta, con cincuenta y ocho personas a bordo."
+        },
+        {
+          "anchor": "avion",
+          "text": "El vuelo 2501 de Northwest Airlines había salido de Nueva York rumbo a Minneapolis, con destino final Seattle."
+        },
+        {
+          "anchor": "lago",
+          "text": "La investigación oficial ubicó el accidente en el lago, al noroeste de Benton Harbor, durante la noche del veintitrés de junio de 1950."
+        },
+        {
+          "anchor": "avion",
+          "text": "El informe confirmó que el aparato quedó destruido y que no hubo sobrevivientes; las condiciones meteorológicas complicaron la búsqueda."
+        },
+        {
+          "anchor": "lago",
+          "text": "No fue una desaparición sobrenatural: fue una tragedia aérea documentada. El informe original conserva los detalles del accidente."
+        }
+      ]
+    },
+    {
+      "slug": "uss-scorpion-submarino-perdido",
+      "title": "El submarino nuclear que se perdió en el Atlántico",
+      "desc": "El USS Scorpion desapareció en 1968 con 99 tripulantes. La Marina encontró restos, pero no pudo fijar una causa definitiva. #Submarino #Marina #Misterio #Historia #LoQueNoSabias",
+      "source": "https://www.history.navy.mil/about-us/leadership/director/directors-corner/h-grams/h-gram-019/h-019-3.html",
+      "scenes": [
+        {
+          "anchor": "submarino",
+          "text": "Un submarino nuclear estadounidense dejó de responder mientras regresaba de una misión en el Mediterráneo."
+        },
+        {
+          "anchor": "submarino",
+          "text": "El USS Scorpion se perdió el veintidós de mayo de mil novecientos sesenta y ocho, con noventa y nueve personas."
+        },
+        {
+          "anchor": "sonar",
+          "text": "La Marina buscó durante meses. Después localizó partes del casco a más de tres mil metros de profundidad."
+        },
+        {
+          "anchor": "submarino",
+          "text": "Se analizaron fallos técnicos, torpedos y otras posibilidades, pero los estudios no alcanzaron una conclusión definitiva."
+        },
+        {
+          "anchor": "sonar",
+          "text": "Sabemos dónde terminó el submarino, pero no exactamente por qué se hundió. Esa es la diferencia entre restos y respuestas."
+        }
+      ]
+    },
+    {
+      "slug": "esferas-piedra-diquis",
+      "title": "Las esferas de piedra perfectamente redondas de Costa Rica",
+      "desc": "En Costa Rica existen esferas de piedra precolombinas de hasta 2,57 metros. Su función original sigue siendo discutida. #Arqueologia #CostaRica #Misterio #Historia #LoQueNoSabias",
+      "source": "https://whc.unesco.org/es/list/1453/",
+      "scenes": [
+        {
+          "anchor": "esfera",
+          "text": "En Costa Rica hay enormes esferas de piedra tan redondas que parecen fabricadas con herramientas modernas."
+        },
+        {
+          "anchor": "esfera",
+          "text": "Las esferas del delta del Diquís fueron creadas por sociedades precolombinas entre los años quinientos y mil quinientos."
+        },
+        {
+          "anchor": "esfera",
+          "text": "UNESCO registra tamaños desde setenta centímetros hasta dos metros y medio, colocadas en antiguos asentamientos."
+        },
+        {
+          "anchor": "roca",
+          "text": "Su fabricación, uso y significado siguen sin aclararse por completo. No existe evidencia seria de que fueran tecnología extraterrestre."
+        },
+        {
+          "anchor": "esfera",
+          "text": "La verdadera rareza es humana: comunidades antiguas tallaron y movieron estas piedras con una precisión impresionante."
+        }
+      ]
+    },
+    {
+      "slug": "dodecaedros-romanos-misterio",
+      "title": "El objeto romano de doce caras que nadie sabe para qué servía",
+      "desc": "Se han encontrado unos 120 dodecaedros romanos de bronce. Su uso no está demostrado y las teorías se multiplican. #Roma #Arqueologia #Misterios #Historia #LoQueNoSabias",
+      "source": "https://www.english-heritage.org.uk/visit/places/corbridge-roman-town-hadrians-wall/dodecahedron-exhibition/",
+      "scenes": [
+        {
+          "anchor": "dodecaedro",
+          "text": "Un objeto romano de doce caras tiene agujeros, pequeñas bolas en sus esquinas y ninguna explicación definitiva."
+        },
+        {
+          "anchor": "dodecaedro",
+          "text": "Se han encontrado alrededor de ciento veinte dodecaedros en antiguos territorios del Imperio romano."
+        },
+        {
+          "anchor": "dodecaedro",
+          "text": "Están hechos de aleación de cobre. Cada cara tiene un agujero y los tamaños cambian entre ejemplares."
+        },
+        {
+          "anchor": "moneda",
+          "text": "Algunos creen que servían para medir, tejer, calcular fechas o realizar rituales, pero ninguna teoría está probada."
+        },
+        {
+          "anchor": "dodecaedro",
+          "text": "Los arqueólogos saben cómo se fabricaron, pero no para qué. El misterio está en su función, no en su origen."
+        }
+      ]
+    },
+    {
+      "slug": "halifax-explosion-1917",
+      "title": "La explosión que arrasó un puerto canadiense en segundos",
+      "desc": "Dos barcos chocaron en Halifax en 1917. La explosión mató a unas 2.000 personas y devastó la ciudad. #Historia #Halifax #Desastres #Canada #LoQueNoSabias",
+      "source": "https://parks.canada.ca/culture/designation/evenement-event/halifax-explosion",
+      "scenes": [
+        {
+          "anchor": "barco",
+          "text": "Dos barcos chocaron en un puerto canadiense y uno transportaba una carga explosiva destinada a la guerra."
+        },
+        {
+          "anchor": "barco",
+          "text": "El seis de diciembre de mil novecientos diecisiete, el Mont-Blanc y el Imo colisionaron en Halifax."
+        },
+        {
+          "anchor": "explosion",
+          "text": "El fuego alcanzó la carga del Mont-Blanc y provocó una explosión tan grande que destruyó barrios enteros."
+        },
+        {
+          "anchor": "ciudad",
+          "text": "La onda de choque, la marea y los incendios mataron a unas dos mil personas e hirieron a miles."
+        },
+        {
+          "anchor": "fuego",
+          "text": "La tragedia cambió la ciudad y dejó una lección sobre carga peligrosa, navegación y respuesta de emergencia."
+        }
+      ]
+    },
+    {
+      "slug": "hindenburg-incendio-1937",
+      "title": "El dirigible gigante que cayó envuelto en llamas",
+      "desc": "El Hindenburg se incendió durante su aterrizaje en 1937. El desastre quedó filmado y cambió la historia de los dirigibles. #Hindenburg #Aviacion #Historia #Misterios #LoQueNoSabias",
+      "source": "https://www.si.edu/object/hindenburg-disaster-may-6-1937%3Ayt__hJ2YFvxMlc",
+      "scenes": [
+        {
+          "anchor": "zepelin",
+          "text": "Un dirigible gigantesco se acercaba a tierra cuando, de pronto, su estructura comenzó a arder."
+        },
+        {
+          "anchor": "zepelin",
+          "text": "El seis de mayo de mil novecientos treinta y siete, el Hindenburg llegaba a Lakehurst, Nueva Jersey."
+        },
+        {
+          "anchor": "fuego",
+          "text": "Las llamas recorrieron la envoltura y la estructura cayó en cuestión de segundos frente a cámaras y testigos."
+        },
+        {
+          "anchor": "zepelin",
+          "text": "El hidrógeno alimentó el incendio, pero la causa exacta de la ignición sigue debatida entre varias explicaciones."
+        },
+        {
+          "anchor": "zepelin",
+          "text": "El desastre no fue una desaparición misteriosa: fue un accidente filmado que terminó con la era comercial de grandes dirigibles."
+        }
+      ]
+    },
+    {
+      "slug": "krakatoa-erupcion-1883",
+      "title": "La erupción que se escuchó a miles de kilómetros",
+      "desc": "La erupción del Krakatoa en 1883 generó tsunamis y más de 36.000 muertes. Su impacto se registró en todo el mundo. #Volcan #Krakatoa #Historia #Desastres #LoQueNoSabias",
+      "source": "https://www.usgs.gov/publications/krakatau-1883",
+      "scenes": [
+        {
+          "anchor": "volcan",
+          "text": "Una explosión volcánica fue tan intensa que sus sonidos se escucharon a miles de kilómetros de distancia."
+        },
+        {
+          "anchor": "volcan",
+          "text": "El Krakatoa, en Indonesia, entró en su fase más violenta entre el veintiséis y el veintisiete de agosto de 1883."
+        },
+        {
+          "anchor": "tsunami",
+          "text": "El colapso de partes del volcán y las explosiones generaron tsunamis que golpearon las costas cercanas."
+        },
+        {
+          "anchor": "volcan",
+          "text": "Más de treinta y seis mil personas murieron, en su mayoría por las olas, y la atmósfera cambió durante meses."
+        },
+        {
+          "anchor": "volcan",
+          "text": "No fue una leyenda: fue una catástrofe registrada por observadores de muchos países y estudiada por la ciencia."
+        }
+      ]
+    },
+    {
+      "slug": "galveston-huracan-1900",
+      "title": "La tormenta que borró barrios enteros de Galveston",
+      "desc": "El huracán de 1900 inundó Galveston con una marejada devastadora y causó al menos 6.000 muertes. #Huracan #Galveston #Historia #Clima #LoQueNoSabias",
+      "source": "https://vlab.noaa.gov/web/nws-heritage/-/galveston-storm-of-1900",
+      "scenes": [
+        {
+          "anchor": "ciudad",
+          "text": "Una ciudad costera quedó cubierta por el agua durante una tormenta que destruyó miles de viviendas."
+        },
+        {
+          "anchor": "nubes",
+          "text": "El ocho de septiembre de mil novecientos, un huracán llegó a Galveston, Texas, con una marejada enorme."
+        },
+        {
+          "anchor": "olas",
+          "text": "El agua subió sobre la isla y golpeó edificios, calles y refugios, mientras los escombros se convertían en proyectiles."
+        },
+        {
+          "anchor": "ciudad",
+          "text": "El Servicio Meteorológico Nacional estima que murieron al menos seis mil personas en pocas horas."
+        },
+        {
+          "anchor": "ciudad",
+          "text": "La ciudad reconstruyó sus defensas y elevó terrenos. El desastre cambió la ingeniería y la preparación ante huracanes."
+        }
+      ]
+    },
+    {
+      "slug": "rendlesham-luces-bosque-1980",
+      "title": "Las luces misteriosas del bosque de Rendlesham",
+      "desc": "En 1980, militares estadounidenses reportaron luces cerca de una base británica. Los archivos oficiales conservan el caso. #OVNI #Rendlesham #Archivos #Misterio #LoQueNoSabias",
+      "source": "https://www.nationalarchives.gov.uk/explore-the-collection/explore-by-time-period/postwar/ufo-reports/",
+      "scenes": [
+        {
+          "anchor": "bosque",
+          "text": "En un bosque inglés, militares reportaron luces extrañas cerca de una base aérea durante varias noches."
+        },
+        {
+          "anchor": "ovni",
+          "text": "Ocurrió en diciembre de mil novecientos ochenta, cerca de RAF Woodbridge, en Suffolk."
+        },
+        {
+          "anchor": "faro",
+          "text": "El teniente coronel Charles Halt redactó un memorando sobre luces observadas y una investigación en el bosque."
+        },
+        {
+          "anchor": "radar",
+          "text": "Los archivos británicos dicen que no se detectaron objetos en radar y que el Ministerio de Defensa no vio importancia militar."
+        },
+        {
+          "anchor": "bosque",
+          "text": "El documento confirma que hubo reportes e investigación; no demuestra que una nave extraterrestre aterrizara."
+        }
+      ]
+    },
+    {
+      "slug": "washington-ufo-radar-1952",
+      "title": "Cuando los radares de Washington detectaron objetos desconocidos",
+      "desc": "En 1952, operadores reportaron ecos extraños sobre Washington. Un informe técnico atribuyó los radares a una inversión térmica. #UFO #Radar #Historia #Ciencia #LoQueNoSabias",
+      "source": "https://documents.theblackvault.com/bluebookdesk/pbb-univcol.pdf",
+      "scenes": [
+        {
+          "anchor": "radar",
+          "text": "Los radares de Washington mostraron ecos inesperados y pilotos reportaron luces en el cielo durante el verano de 1952."
+        },
+        {
+          "anchor": "avion",
+          "text": "Los reportes se concentraron en julio, cuando aeronaves y operadores observaron fenómenos que parecían moverse sobre la capital."
+        },
+        {
+          "anchor": "radar",
+          "text": "El Proyecto Libro Azul revisó datos meteorológicos y halló capas de aire con temperaturas muy distintas."
+        },
+        {
+          "anchor": "ovni",
+          "text": "El análisis técnico atribuyó las señales de radar y varias observaciones visuales a propagación anómala y efectos de espejismo."
+        },
+        {
+          "anchor": "radar",
+          "text": "El episodio ocurrió y fue investigado. El informe ofrece una explicación física, no una confirmación de visitantes extraterrestres."
+        }
+      ]
+    },
+    {
+      "slug": "gran-engano-lunar-1835",
+      "title": "El periódico que inventó criaturas viviendo en la Luna",
+      "desc": "En 1835, un periódico publicó una falsa historia sobre animales lunares y engañó a muchos lectores. #Luna #Periodismo #Historia #Engano #LoQueNoSabias",
+      "source": "https://www.loc.gov/collections/finding-our-place-in-the-cosmos-with-carl-sagan/articles-and-essays/life-on-other-worlds/peoples-and-creatures-of-the-moon/",
+      "scenes": [
+        {
+          "anchor": "periodico",
+          "text": "Un periódico aseguró que un astrónomo había descubierto animales y criaturas aladas viviendo en la Luna."
+        },
+        {
+          "anchor": "astro",
+          "text": "En mil ochocientos treinta y cinco, el New York Sun publicó una serie de artículos sobre supuestos hallazgos lunares."
+        },
+        {
+          "anchor": "periodico",
+          "text": "Las historias describían bisontes, unicornios y seres parecidos a murciélagos, con templos y bosques en nuestro satélite."
+        },
+        {
+          "anchor": "libro",
+          "text": "El autor real fue el periodista Richard Locke, que inventó las observaciones atribuidas al astrónomo John Herschel."
+        },
+        {
+          "anchor": "astro",
+          "text": "La llamada Gran Broma Lunar demuestra cómo un relato convincente puede viajar más rápido que la verificación."
+        }
+      ]
+    },
+    {
+      "slug": "valentich-desaparicion-1978",
+      "title": "El piloto que informó de un objeto y desapareció sobre el mar",
+      "desc": "Frederick Valentich desapareció en 1978 sobre el estrecho de Bass. La investigación australiana no determinó la causa. #Aviacion #Misterio #Australia #Archivos #LoQueNoSabias",
+      "source": "https://www.nhiarchives.com/records/australia/valentich-disappearance/",
+      "scenes": [
+        {
+          "anchor": "avion",
+          "text": "Un piloto llamó por radio diciendo que veía un objeto extraño cerca de su avión y después desapareció."
+        },
+        {
+          "anchor": "avion",
+          "text": "Frederick Valentich volaba sobre el estrecho de Bass, entre Australia y Tasmania, en octubre de mil novecientos setenta y ocho."
+        },
+        {
+          "anchor": "radar",
+          "text": "En la comunicación describió una aeronave que parecía acercarse y moverse de forma inusual alrededor de su vuelo."
+        },
+        {
+          "anchor": "avion",
+          "text": "Se inició una búsqueda aérea y marítima, pero no se localizó un resto confirmado del avión."
+        },
+        {
+          "anchor": "avion",
+          "text": "El informe oficial clasificó el caso como accidente aéreo y dijo que la causa de la desaparición no pudo determinarse."
+        }
+      ]
+    },
+    {
+      "slug": "guerra-mundos-radio-1938",
+      "title": "La emisión de radio que hizo creer que llegaban marcianos",
+      "desc": "La emisión de La guerra de los mundos en 1938 generó confusión, aunque la historia de un pánico nacional masivo fue exagerada. #Radio #Historia #Medios #Misterio #LoQueNoSabias",
+      "source": "https://blogs.loc.gov/loc/2016/10/lcm-page-from-the-past-war-of-the-worlds/",
+      "scenes": [
+        {
+          "anchor": "radio",
+          "text": "Una emisión de radio narró una invasión marciana como si fueran boletines de noticias de última hora."
+        },
+        {
+          "anchor": "radio",
+          "text": "El treinta de octubre de mil novecientos treinta y ocho, Orson Welles presentó una adaptación de La guerra de los mundos."
+        },
+        {
+          "anchor": "microfono",
+          "text": "Algunos oyentes que sintonizaron tarde no escucharon la introducción teatral y confundieron partes del programa con noticias."
+        },
+        {
+          "anchor": "radio",
+          "text": "Una encuesta de cinco mil hogares encontró que alrededor del dos por ciento escuchaba el programa; muchos sabían que era ficción."
+        },
+        {
+          "anchor": "radio",
+          "text": "La historia real es más interesante: una dramatización, un medio nuevo y titulares que amplificaron la confusión."
+        }
+      ]
+    },
+    {
+      "slug": "l8-dirigible-fantasma-1942",
+      "title": "El dirigible que aterrizó vacío y sin su tripulación",
+      "desc": "En 1942, el dirigible naval L-8 cayó en California con su cabina vacía. Sus dos tripulantes nunca fueron encontrados. #Dirigible #Marina #Misterio #Historia #LoQueNoSabias",
+      "source": "https://www.history.navy.mil/content/history/museums/nnam/explore/collections/aircraft/l/l-8-ghost-ship.html",
+      "scenes": [
+        {
+          "anchor": "zepelin",
+          "text": "Un dirigible de la Marina aterrizó contra edificios en California y los equipos de rescate encontraron su cabina vacía."
+        },
+        {
+          "anchor": "zepelin",
+          "text": "El dieciséis de agosto de mil novecientos cuarenta y dos, el L-8 salió de patrulla antisubmarina."
+        },
+        {
+          "anchor": "barco",
+          "text": "Sus tripulantes avisaron por radio que investigarían una mancha de aceite en el mar."
+        },
+        {
+          "anchor": "zepelin",
+          "text": "Horas después, el dirigible apareció sobre Daly City sin Ernest Cody ni Charles Adams, y el interior estaba en orden."
+        },
+        {
+          "anchor": "zepelin",
+          "text": "La Marina investigó, pero nunca estableció qué ocurrió con los dos hombres. El dirigible regresó sin su tripulación."
+        }
+      ]
+    },
+    {
+      "slug": "expedicion-franklin-erebus-terror",
+      "title": "Los barcos atrapados en el hielo que desaparecieron en el Ártico",
+      "desc": "La expedición Franklin se perdió en 1845 buscando el Paso del Noroeste. Los restos de sus barcos aparecieron en 2014 y 2016. #Arqueologia #Artico #Historia #Misterios #LoQueNoSabias",
+      "source": "https://parks.canada.ca/lhn-nhs/nu/epaveswrecks/culture/archeologie-archeology/decouvertes-discoveries",
+      "scenes": [
+        {
+          "anchor": "barco",
+          "text": "Dos barcos británicos quedaron atrapados en el hielo del Ártico durante una expedición para hallar una ruta marítima."
+        },
+        {
+          "anchor": "hielo",
+          "text": "El HMS Erebus y el HMS Terror zarparon en mil ochocientos cuarenta y cinco bajo el mando de John Franklin."
+        },
+        {
+          "anchor": "barco",
+          "text": "La expedición desapareció y durante décadas solo hubo pistas dispersas, relatos inuit y búsquedas fallidas."
+        },
+        {
+          "anchor": "sonar",
+          "text": "Parks Canada localizó el Erebus en 2014 y el Terror en 2016, usando tecnología submarina y conocimiento inuit."
+        },
+        {
+          "anchor": "hielo",
+          "text": "Los naufragios resolvieron dónde estaban los barcos, pero las circunstancias finales de la tripulación siguen investigándose."
+        }
+      ]
+    },
+    {
+      "slug": "evento-carrington-1859",
+      "title": "La tormenta solar que hizo arder los cables del telégrafo",
+      "desc": "En 1859, una tormenta solar iluminó el cielo hasta el Caribe y alteró sistemas de telégrafo en varios países. #Sol #Ciencia #Historia #TormentaSolar #LoQueNoSabias",
+      "source": "https://www.nasa.gov/history/spots-waves-and-wind-a-solar-science-timeline-full-text/",
+      "scenes": [
+        {
+          "anchor": "aurora",
+          "text": "Una tormenta proveniente del Sol iluminó el cielo nocturno y provocó fallos en los sistemas de comunicación de la época."
+        },
+        {
+          "anchor": "telegrafo",
+          "text": "El primero de septiembre de mil ochocientos cincuenta y nueve, Richard Carrington observó un destello blanco en el Sol."
+        },
+        {
+          "anchor": "telegrafo",
+          "text": "Horas después, auroras visibles desde latitudes inusuales acompañaron problemas eléctricos en redes de telégrafo."
+        },
+        {
+          "anchor": "aurora",
+          "text": "Algunos operadores recibieron descargas y hubo líneas que chispearon; la tormenta geomagnética fue excepcionalmente intensa."
+        },
+        {
+          "anchor": "telegrafo",
+          "text": "Hoy dependemos de satélites y redes eléctricas. Un evento parecido podría afectar tecnología mucho más conectada."
+        }
+      ]
+    },
+    {
+      "slug": "vaca-incendio-chicago-1871",
+      "title": "La vaca acusada de provocar el gran incendio de Chicago",
+      "desc": "La historia de la vaca de la señora O’Leary fue una acusación sin pruebas. El incendio de Chicago de 1871 destruyó miles de edificios. #Chicago #Historia #Mitos #Incendio #LoQueNoSabias",
+      "source": "https://guides.loc.gov/chronicling-america-great-chicago-fire",
+      "scenes": [
+        {
+          "anchor": "vaca",
+          "text": "Durante más de un siglo, una vaca fue culpada de patear una lámpara y provocar el gran incendio de Chicago."
+        },
+        {
+          "anchor": "ciudad",
+          "text": "El fuego comenzó la noche del ocho de octubre de mil ochocientos setenta y uno, cerca de una granja."
+        },
+        {
+          "anchor": "fuego",
+          "text": "Las llamas se extendieron por barrios enteros y destruyeron más de diez mil edificios antes de apagarse."
+        },
+        {
+          "anchor": "libro",
+          "text": "La historia de la vaca circuló en periódicos, pero la Biblioteca del Congreso señala que la acusación no tenía pruebas."
+        },
+        {
+          "anchor": "ciudad",
+          "text": "El incendio fue real; la vaca culpable, no. Un mito periodístico terminó convirtiéndose en parte de la historia."
+        }
+      ]
+    },
+    {
+      "slug": "tacoma-narrows-puente-colapso",
+      "title": "El puente que empezó a retorcerse hasta caer al agua",
+      "desc": "El puente Tacoma Narrows colapsó en 1940 cuando el viento alimentó una oscilación torsional creciente. #Ingenieria #Puentes #Historia #Ciencia #LoQueNoSabias",
+      "source": "https://www.wsdot.wa.gov/TNBhistory/collapse.htm",
+      "scenes": [
+        {
+          "anchor": "puente",
+          "text": "Un puente colgante comenzó a retorcerse con el viento hasta que su tablero se partió y cayó al agua."
+        },
+        {
+          "anchor": "puente",
+          "text": "El siete de noviembre de mil novecientos cuarenta, el puente Tacoma Narrows sufrió movimientos cada vez más violentos."
+        },
+        {
+          "anchor": "puente",
+          "text": "Los ingenieros habían observado oscilaciones verticales desde su apertura, pero aquel día el movimiento cambió de forma."
+        },
+        {
+          "anchor": "puente",
+          "text": "El viento interactuó con la estructura y alimentó un movimiento torsional conocido como flutter aeroelástico, no un simple rebote."
+        },
+        {
+          "anchor": "puente",
+          "text": "El colapso transformó la ingeniería de puentes y demostró que el viento debe probarse junto con la estructura."
+        }
+      ]
+    },
+    {
+      "slug": "joyita-barco-vacio-1955",
+      "title": "El barco encontrado a la deriva sin sus 25 pasajeros",
+      "desc": "El Joyita apareció abandonado y anegado cerca de Fiji en 1955. Sus 25 ocupantes habían desaparecido. #Joyita #Barcos #Misterio #Historia #LoQueNoSabias",
+      "source": "https://natlib.govt.nz/records/36514446",
+      "scenes": [
+        {
+          "anchor": "barco",
+          "text": "Un barco fue encontrado a la deriva, con agua dentro, botiquín y pertenencias, pero sin nadie a bordo."
+        },
+        {
+          "anchor": "barco",
+          "text": "El Joyita salió de Samoa en octubre de mil novecientos cincuenta y cinco rumbo a Tokelau."
+        },
+        {
+          "anchor": "barco",
+          "text": "El diez de noviembre apareció cerca de Fiji, abandonado y parcialmente inundado, con su tripulación y pasajeros desaparecidos."
+        },
+        {
+          "anchor": "sonar",
+          "text": "Una comisión de investigación examinó el barco y escuchó testimonios, pero no pudo reconstruir con certeza qué pasó."
+        },
+        {
+          "anchor": "barco",
+          "text": "La desaparición de veinticinco personas sigue siendo inquietante, aunque el expediente contiene pistas sobre el estado del barco."
+        }
+      ]
+    },
+    {
+      "slug": "stanislav-petrov-falsa-alarma-1983",
+      "title": "El oficial que decidió no informar de un ataque nuclear",
+      "desc": "En 1983, Stanislav Petrov trató como falsa una alerta de misiles. Después se confirmó que el sistema había detectado un reflejo. #Petrov #Historia #Ciencia #GuerraFria #LoQueNoSabias",
+      "source": "https://www.aps.org/apsnews/2026/09/1983-averting-potential-nuclear-war",
+      "scenes": [
+        {
+          "anchor": "radar",
+          "text": "Una pantalla soviética mostró una alerta de misiles estadounidenses y una sirena anunció un posible ataque nuclear."
+        },
+        {
+          "anchor": "radar",
+          "text": "La noche del veintiséis de septiembre de mil novecientos ochenta y tres, Stanislav Petrov estaba de servicio."
+        },
+        {
+          "anchor": "satelite",
+          "text": "El sistema informó primero de un lanzamiento y luego de cuatro más, pero Petrov dudó de la lectura."
+        },
+        {
+          "anchor": "radar",
+          "text": "Meses después se descubrió que reflejos solares en nubes altas habían engañado los sensores infrarrojos del satélite."
+        },
+        {
+          "anchor": "radar",
+          "text": "Petrov informó que era una falsa alarma. La historia no demuestra que evitara por sí solo una guerra, pero su decisión fue crucial."
+        }
+      ]
+    },
+    {
+      "slug": "tybee-bomba-perdida-1958",
+      "title": "La bomba nuclear que cayó al mar y nunca fue recuperada",
+      "desc": "Tras una colisión aérea en 1958, una bomba fue arrojada al agua cerca de Tybee Island. La Fuerza Aérea dijo que no podía detonar nuclearmente. #Historia #Aviacion #Tybee #Misterio #LoQueNoSabias",
+      "source": "https://www.af.mil/News/Article-Display/Article/135895/interagency-team-checking-for-h-bomb-lost-in-1958/",
+      "scenes": [
+        {
+          "anchor": "avion",
+          "text": "Un bombardero militar chocó con otro avión y el piloto pidió soltar su bomba para poder aterrizar."
+        },
+        {
+          "anchor": "bomba",
+          "text": "En mil novecientos cincuenta y ocho, un B-47 arrojó un arma nuclear cerca de Tybee Island, Georgia."
+        },
+        {
+          "anchor": "bomba",
+          "text": "La Fuerza Aérea explicó que el arma no tenía una cápsula de armado nuclear, aunque contenía explosivos convencionales."
+        },
+        {
+          "anchor": "mar",
+          "text": "En 2004, un equipo interinstitucional investigó una posible ubicación en Wassaw Sound y tomó muestras."
+        },
+        {
+          "anchor": "bomba",
+          "text": "La bomba no fue recuperada. El caso es un problema de localización y seguridad, no prueba de una explosión nuclear oculta."
+        }
+      ]
+    },
+    {
+      "slug": "experimento-filadelfia-mito",
+      "title": "El experimento naval que supuestamente volvió invisible un barco",
+      "desc": "La Marina de EE. UU. dice que no encontró documentos que respalden el supuesto experimento de invisibilidad de Filadelfia. #Mitos #Marina #Historia #Ciencia #LoQueNoSabias",
+      "source": "https://www.history.navy.mil/research/library/online-reading-room/title-list-alphabetically/p/philadelphia-experiment.html",
+      "scenes": [
+        {
+          "anchor": "barco",
+          "text": "Una leyenda afirma que un destructor estadounidense se volvió invisible y apareció a cientos de kilómetros en segundos."
+        },
+        {
+          "anchor": "barco",
+          "text": "La historia suele situarse en mil novecientos cuarenta y tres y menciona al USS Eldridge."
+        },
+        {
+          "anchor": "radar",
+          "text": "La Oficina de Historia Naval revisó diarios de cubierta y registros del barco, y no encontró pruebas del experimento."
+        },
+        {
+          "anchor": "barco",
+          "text": "La confusión pudo mezclar la desmagnetización del casco, una técnica real para reducir el riesgo de minas magnéticas."
+        },
+        {
+          "anchor": "barco",
+          "text": "La invisibilidad y la teletransportación no están documentadas. El misterio más interesante es cómo nació y sobrevivió la leyenda."
+        }
+      ]
+    },
+    {
+      "slug": "mont-pelee-erupcion-1902",
+      "title": "El volcán que destruyó una ciudad caribeña en minutos",
+      "desc": "La erupción del Monte Pelée en 1902 arrasó Saint-Pierre. Cerca de 30.000 personas murieron, principalmente por flujos piroclásticos. #Volcan #Caribe #Historia #Desastres #LoQueNoSabias",
+      "source": "https://www.usgs.gov/faqs/which-volcanic-eruptions-were-deadliest?items_per_page=6&page=0",
+      "scenes": [
+        {
+          "anchor": "volcan",
+          "text": "Una nube ardiente descendió desde un volcán y destruyó una ciudad caribeña en cuestión de minutos."
+        },
+        {
+          "anchor": "volcan",
+          "text": "El ocho de mayo de mil novecientos dos, el Monte Pelée entró en erupción sobre la isla de Martinica."
+        },
+        {
+          "anchor": "ciudad",
+          "text": "Saint-Pierre quedó devastada por una corriente piroclástica, una mezcla de gases, cenizas y fragmentos volcánicos muy calientes."
+        },
+        {
+          "anchor": "fuego",
+          "text": "El Servicio Geológico de Estados Unidos estima unas treinta mil muertes, la mayoría causadas por esos flujos."
+        },
+        {
+          "anchor": "volcan",
+          "text": "No fue lava lenta avanzando por las calles: fue una nube volcánica veloz y letal."
+        }
+      ]
+    },
+    {
+      "slug": "tornado-triestatal-1925",
+      "title": "El tornado que cruzó tres estados durante horas",
+      "desc": "En 1925, un tornado recorrió 219 millas por Missouri, Illinois e Indiana y causó cerca de 700 muertes. #Tornado #Clima #Historia #EstadosUnidos #LoQueNoSabias",
+      "source": "https://www.weather.gov/news/251803-tri-State-tornado",
+      "scenes": [
+        {
+          "anchor": "tornado",
+          "text": "Un solo tornado abrió un camino de destrucción que atravesó tres estados y dejó cientos de muertos."
+        },
+        {
+          "anchor": "tornado",
+          "text": "El dieciocho de marzo de mil novecientos veinticinco, la tormenta comenzó en Missouri y siguió hacia Illinois e Indiana."
+        },
+        {
+          "anchor": "ciudad",
+          "text": "El Servicio Meteorológico Nacional describe una trayectoria de unas doscientas diecinueve millas, una de las más largas registradas."
+        },
+        {
+          "anchor": "tornado",
+          "text": "Cerca de setecientas personas murieron y miles resultaron heridas; pueblos enteros quedaron cubiertos por escombros."
+        },
+        {
+          "anchor": "tornado",
+          "text": "La tragedia impulsó mejoras en meteorología y alertas. Hoy el radar y los avisos tempranos salvan vidas."
+        }
+      ]
+    },
+    {
+      "slug": "piltdown-fosil-fraude",
+      "title": "El fósil que engañó a científicos durante más de 40 años",
+      "desc": "El Hombre de Piltdown parecía un eslabón perdido, pero análisis posteriores revelaron una mezcla de restos humanos y de orangután. #Ciencia #Fraude #Paleontologia #Historia #LoQueNoSabias",
+      "source": "https://www.nhm.ac.uk/our-science/services/library/collections/piltdown-man.html",
+      "scenes": [
+        {
+          "anchor": "fosil",
+          "text": "Un cráneo presentado como el eslabón perdido entre humanos y simios resultó ser un fraude elaborado."
+        },
+        {
+          "anchor": "fosil",
+          "text": "Los restos de Piltdown fueron anunciados en Inglaterra a principios del siglo veinte y convencieron a muchos especialistas."
+        },
+        {
+          "anchor": "fosil",
+          "text": "En mil novecientos cuarenta y nueve, pruebas químicas mostraron que los huesos eran mucho más recientes de lo que se decía."
+        },
+        {
+          "anchor": "fosil",
+          "text": "Los análisis revelaron fragmentos de cráneo humano y una mandíbula de orangután, con dientes limados y huesos teñidos."
+        },
+        {
+          "anchor": "fosil",
+          "text": "El Museo de Historia Natural documenta cómo la ciencia corrigió el engaño. La revisión de pruebas venció al mito."
+        }
+      ]
+    }
+  ]
+}
