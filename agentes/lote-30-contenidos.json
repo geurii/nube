@@ -114,7 +114,7 @@
         },
         {
           "anchor": "televisor",
-          "text": "Nadie fue identificado públicamente. No fue un hackeo de internet: fue una intrusión real en el aire televisivo. Al final, el documento original permite separar los hechos comprobados de las hipótesis que todavía no cuentan con evidencia suficiente."
+          "text": "Nadie fue identificado públicamente. No fue un hackeo de internet: fue una intrusión real en la señal de televisión."
         }
       ]
     },
@@ -282,7 +282,7 @@
         },
         {
           "anchor": "fuego",
-          "text": "La tragedia cambió la ciudad y dejó una lección sobre carga peligrosa, navegación y respuesta de emergencia. Al final, el documento original permite separar los hechos comprobados de las hipótesis que todavía no cuentan con evidencia suficiente."
+          "text": "El choque de barcos cambió la ciudad y dejó una lección sobre carga peligrosa, navegación y respuesta de emergencia."
         }
       ]
     },
@@ -382,10 +382,10 @@
         },
         {
           "anchor": "ovni",
-          "text": "Ocurrió en diciembre de mil novecientos ochenta, cerca de RAF Woodbridge, en Suffolk."
+          "text": "Los reportes del posible OVNI ocurrieron en diciembre de mil novecientos ochenta, cerca de RAF Woodbridge, en Suffolk."
         },
         {
-          "anchor": "faro",
+          "anchor": "bosque",
           "text": "El teniente coronel Charles Halt redactó un memorando sobre luces observadas y una investigación en el bosque."
         },
         {
@@ -469,7 +469,7 @@
           "text": "Frederick Valentich volaba sobre el estrecho de Bass, entre Australia y Tasmania, en octubre de mil novecientos setenta y ocho."
         },
         {
-          "anchor": "radar",
+          "anchor": "avion",
           "text": "En la comunicación de radio describió una aeronave que parecía acercarse y moverse de forma inusual alrededor de su vuelo."
         },
         {
@@ -506,7 +506,7 @@
         },
         {
           "anchor": "radio",
-          "text": "La historia real es más interesante: una dramatización, un medio nuevo y titulares que amplificaron la confusión. Al final, el documento original permite separar los hechos comprobados de las hipótesis que todavía no cuentan con evidencia suficiente."
+          "text": "La historia real es más interesante: una dramatización transmitida por radio, un medio nuevo y titulares que amplificaron la confusión."
         }
       ]
     },
@@ -525,8 +525,8 @@
           "text": "El dieciséis de agosto de mil novecientos cuarenta y dos, el L-8 salió de patrulla antisubmarina."
         },
         {
-          "anchor": "barco",
-          "text": "Sus tripulantes avisaron por radio que investigarían una mancha de aceite en el mar."
+          "anchor": "zepelin",
+          "text": "Los dos tripulantes avisaron por radio desde el dirigible que investigarían una mancha de aceite en el mar."
         },
         {
           "anchor": "zepelin",
@@ -561,8 +561,8 @@
           "text": "Parks Canada localizó el Erebus en 2014 y el Terror en 2016, usando sonar de barrido lateral y conocimiento inuit."
         },
         {
-          "anchor": "hielo",
-          "text": "Los naufragios resolvieron dónde estaban los barcos, pero las circunstancias finales de la tripulación siguen investigándose. Al final, el documento original permite separar los hechos comprobados de las hipótesis que todavía no cuentan con evidencia suficiente."
+          "anchor": "barco",
+          "text": "Los barcos hundidos resolvieron dónde estaban las naves, pero las circunstancias finales de la tripulación siguen investigándose."
         }
       ]
     },
@@ -590,7 +590,7 @@
         },
         {
           "anchor": "telegrafo",
-          "text": "Hoy dependemos de satélites y redes eléctricas. Un evento parecido podría afectar tecnología mucho más conectada. Al final, el documento original permite separar los hechos comprobados de las hipótesis que todavía no cuentan con evidencia suficiente."
+          "text": "Hoy dependemos de satélites y redes eléctricas; una tormenta parecida podría afectar incluso los sistemas telegráficos modernos."
         }
       ]
     },
@@ -701,8 +701,8 @@
           "text": "Meses después se descubrió que reflejos solares en nubes altas habían engañado los sensores infrarrojos del satélite."
         },
         {
-          "anchor": "radar",
-          "text": "Petrov informó que era una falsa alarma. La historia no demuestra que evitara por sí solo una guerra, pero su decisión fue crucial. Al final, el documento original permite separar los hechos comprobados de las hipótesis que todavía no cuentan con evidencia suficiente."
+          "anchor": "satelite",
+          "text": "Petrov informó que la alerta del satélite era una falsa alarma. La historia no demuestra que evitara por sí solo una guerra, pero su decisión fue crucial."
         }
       ]
     },
@@ -749,7 +749,7 @@
           "text": "La historia suele situarse en mil novecientos cuarenta y tres y menciona al USS Eldridge."
         },
         {
-          "anchor": "radar",
+          "anchor": "barco",
           "text": "La Oficina de Historia Naval revisó diarios de cubierta y registros del barco, y no encontró pruebas del experimento."
         },
         {
@@ -806,7 +806,7 @@
         },
         {
           "anchor": "tornado",
-          "text": "El Servicio Meteorológico Nacional describe una trayectoria de unas doscientas diecinueve millas, una de las más largas registradas."
+          "text": "El Servicio Meteorológico Nacional describe la trayectoria del tornado, unas doscientas diecinueve millas, una de las más largas registradas."
         },
         {
           "anchor": "tornado",
