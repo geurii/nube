@@ -4,6 +4,9 @@ on:
     paths:
       - '.github/workflows/lote-30-render.yml'
       - 'agentes/lote-30-contenidos.json'
+      - 'agentes/pintor.mjs'
+      - 'src/components/fondos/PixelPintado.tsx'
+      - 'src/components/fondos/pintadoPro.ts'
       - 'scripts/probar-lote-30.mjs'
       - 'scripts/preparar-lote-30.mjs'
       - 'scripts/render-lote-30.mjs'
