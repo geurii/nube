@@ -8,6 +8,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const HEX = /^#[0-9a-fA-F]{6}$/;
+// El renderizador PixelPintado rechaza estas capas aunque sean JSON válido: nunca deben llegar a los MP4.
+const CAPAS_NO_RENDERIZABLES = new Set(['circulo','rect','poligono','linea','texto','foto']);
 const n = (v, d, a, b) => { const x = Number(v); return Number.isFinite(x) ? Math.min(b, Math.max(a, x)) : d; };
 const rampa = (v, min = 2, max = 6) => (Array.isArray(v) ? v.filter((x) => typeof x === 'string' && HEX.test(x)).slice(0, max) : []).length >= min ? v.filter((x) => typeof x === 'string' && HEX.test(x)).slice(0, max) : null;
 /** Escenarios de pixel art libres (CC0, OpenGameArt) guardados en public/escenarios/<id>.png. */
@@ -121,7 +123,7 @@ export const tieneAnclaNarrativa = (plano, texto = '') => {
 export const validarEscena = (raw) => {
   if (!raw || typeof raw !== 'object') return null;
   const cielo = rampa(raw.cielo, 2, 5);
-  const capas = (Array.isArray(raw.capas) ? raw.capas : []).filter((e) => e && TIPOS.has(e.t)).slice(0, 24).map((e) => {
+  const capas = (Array.isArray(raw.capas) ? raw.capas : []).filter((e) => e && TIPOS.has(e.t) && !CAPAS_NO_RENDERIZABLES.has(e.t)).slice(0, 24).map((e) => {
     const o = {t: e.t};
     for (const k of ['x', 'y', 'w', 'h', 'r', 'alto', 'alpha', 'fuerza', 'hasta', 'grosor']) if (e[k] !== undefined) o[k] = n(e[k], 0.5, 0, 1);
     for (const k of ['n', 'semilla', 'picos', 'lineas', 'tam']) if (e[k] !== undefined) o[k] = n(e[k], 5, 0, 200);
