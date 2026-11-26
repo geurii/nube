@@ -4,7 +4,7 @@
   "canal": "lqns",
   "total": 30,
   "completedCount": 0,
-  "intervalMinutes": 10,
+  "intervalMinutes": 20,
   "nextIndex": 0,
   "nextAt": null,
   "lastPublishedAt": null,
