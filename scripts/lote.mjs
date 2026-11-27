@@ -56,7 +56,26 @@ for (const id of ids) {
   const audio = path.join(raiz, 'public', datos.audio);
   if (sinVoz) {
     if (!fs.existsSync(audio)) throw new Error(`Falta la voz ${datos.audio}: genérala en tu laptop con npm run voz`);
-  } else if (forzar || !fs.existsSync(audio)) correr('voz.mjs', ['--guion', guion]);
+  } else if (forzar || !fs.existsSync(audio)) {
+    correr('voz.mjs', ['--guion', guion]);
+    // LAZO DE DURACION: la voz no tarda lo mismo en dos guiones con las mismas palabras (las pausas
+    // dependen de cuantas frases y cuantas cifras lleve). En vez de adivinar contando palabras, se mide
+    // el WAV y se vuelve a grabar con la velocidad justa. Grabar la voz cuesta segundos; renderizar, minutos.
+    if (datos.formato === 'short') {
+      const OBJETIVO = 60.4;          // segundos de narracion: con la cola de 0,6 s el video queda en 61,0
+      const MIN = 59.7, MAX = 61.2;   // ventana aceptable de la narracion
+      let vel = Number(datos.velocidad ?? 0);
+      for (let intento = 1; intento <= 3; intento++) {
+        const d = duracion(audio);
+        if (d >= MIN && d <= MAX) { console.log(`  voz: ${d.toFixed(1)} s (dentro de ${MIN}-${MAX})`); break; }
+        const nueva = Math.max(-25, Math.min(25, Math.round(((1 + vel / 100) * (d / OBJETIVO) - 1) * 100)));
+        if (nueva === vel) { console.log(`  voz: ${d.toFixed(1)} s; la velocidad ya esta al limite (${vel}%)`); break; }
+        vel = nueva;
+        console.log(`  voz: ${d.toFixed(1)} s fuera de rango -> regrabo a velocidad ${vel}%`);
+        correr('voz.mjs', ['--guion', guion, '--velocidad', String(vel)]);
+      }
+    }
+  }
   if (forzar || !fs.existsSync(mp4)) correr('render.mjs', ['--guion', guion, '--salida', mp4, '--escala', '1']);
   if (forzar || !fs.existsSync(ligero)) {
     const mb = comprimir(mp4, ligero, 9.4, datos.formato === 'largo', datos.orientacion === 'horizontal');
