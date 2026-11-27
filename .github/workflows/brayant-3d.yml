@@ -1,0 +1,36 @@
+name: Brayant 3D - imagen de prueba
+# Solo en la rama brayant-3d. No publica nada y no toca la cola de Lo Que No Sabías.
+on:
+  push:
+    branches: [brayant-3d]
+    paths: ['brayant-3d/brayant.py', '.github/workflows/brayant-3d.yml']
+permissions:
+  contents: write
+concurrency:
+  group: brayant-3d
+  cancel-in-progress: true
+jobs:
+  imagen:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Instalar Blender
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y blender
+          blender --version
+      - name: Renderizar las dos vistas
+        run: |
+          mkdir -p brayant-3d/salida
+          for vista in escena cara; do
+            blender -b --python-exit-code 1 -P brayant-3d/brayant.py -- "$PWD/brayant-3d/salida/$vista.png" "$vista"
+            test -s "brayant-3d/salida/$vista.png"
+          done
+      - name: Guardar las imágenes en la rama
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add -f brayant-3d/salida/*.png
+          git commit -m "Brayant 3D: imagen de prueba"
+          git push
