@@ -24,6 +24,10 @@ const ESTILO = 'pixel art scene, detailed 16-bit game background, dithering, dar
 
 const guionPath = path.join('guion', 'serie', `${id}.json`);
 const guion = JSON.parse(fs.readFileSync(guionPath, 'utf8'));
+// El guion no guarda que objeto lleva cada escena: se saca de la lista de temas del lote.
+const contenidos = JSON.parse(fs.readFileSync('agentes/lote-30-contenidos.json', 'utf8'));
+const tema = (contenidos.topics ?? []).find((t) => `lqns-${t.slug}` === id);
+const anclaDe = (i) => String(tema?.scenes?.[i]?.anchor ?? '');
 const dir = path.join('public', 'referencias');          // de aqui las carga el motor
 const dirCuadros = path.join('public', 'pintados');
 fs.mkdirSync(dirCuadros, {recursive: true});
@@ -31,18 +35,16 @@ fs.mkdirSync(dir, {recursive: true});
 
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
 
-/** Cuantos planos necesita cada escena para no repetir imagen (una cada 3 s). */
-const planosDe = (escena) => {
-  const seg = Number(escena.duracion ?? 0) || Math.max(6, String(escena.texto ?? '').split(/\s+/).length / 2.3);
-  return Math.max(2, Math.ceil(seg / SEGUNDOS_POR_PLANO));
-};
+/** El lote exige diez visuales por escena para sostener escenas largas sin repetir imagen. */
+const PLANOS_POR_ESCENA = 10;
+const planosDe = () => PLANOS_POR_ESCENA;
 
 /** Pide a la IA de texto una descripcion EN INGLES de lo que se ve en cada plano. */
 const describir = async (escenas) => {
-  const lista = escenas.map((e, i) => `${i}. [${e.anchor ?? 'escena'}] ${String(e.texto ?? '').slice(0, 220)}`).join('\n');
+  const lista = escenas.map((e, i) => `${i}. [${anclaDe(i) || 'escena'}] ${String(e.texto ?? '').slice(0, 220)}`).join('\n');
   const r = await chatAlternativo([
     {role: 'system', content: 'Eres director de arte de un canal de misterio. Describes imagenes concretas, en ingles, para generar pixel art. Cada descripcion DEBE fijar la epoca y el lugar del hecho (por ejemplo "1900 scottish island", "1917 canadian harbour"), porque si no el generador mete objetos modernos donde no van. Respondes SOLO con JSON.'},
-    {role: 'user', content: `Tema: "${guion.titulo}".\n\nPara CADA escena da ${8} descripciones DISTINTAS en ingles (8 a 16 palabras) de lo que se ve: el objeto, lugar o suceso que la frase nombra, desde angulos y momentos diferentes. EMPIEZA CADA UNA por el ano y el lugar del hecho. Concreto y fotografiable: nada abstracto, ningun texto en la imagen, ninguna persona reconocible, ningun nombre propio de persona, y ningun objeto que no existiera en esa epoca.\n\nESCENAS:\n${lista}\n\nDevuelve {"escenas":[{"indice":N,"vistas":["...","..."]}]}`},
+    {role: 'user', content: `Tema: "${guion.titulo}".\n\nPara CADA escena da ${PLANOS_POR_ESCENA} descripciones DISTINTAS en ingles (8 a 16 palabras) de lo que se ve: el objeto, lugar o suceso que la frase nombra, desde angulos y momentos diferentes. EMPIEZA CADA UNA por el ano y el lugar del hecho. Concreto y fotografiable: nada abstracto, ningun texto en la imagen, ninguna persona reconocible, ningun nombre propio de persona, y ningun objeto que no existiera en esa epoca.\n\nESCENAS:\n${lista}\n\nDevuelve {"escenas":[{"indice":N,"vistas":["...","..."]}]}`},
   ], {maxTokens: 2200, json: true});
   const out = {};
   for (const e of (Array.isArray(r?.escenas) ? r.escenas : [])) {
@@ -102,15 +104,34 @@ if (guion.personaje && guion.personaje.visible !== false) { guion.personaje.visi
 const escenas = guion.escenas ?? [];
 console.log(`Imagenes de escena para ${id}: ${escenas.length} escenas.`);
 
+/** Respaldo: si la IA de texto no contesta, se arma el prompt con el objeto de la escena en ingles
+ *  mas el tema, que es mil veces mejor que mandarle la frase en espanol al generador. */
+const EN = {barco:'old sailing ship at sea',avion:'vintage propeller airplane in flight',zepelin:'giant airship zeppelin in the sky',
+ ciudad:'old city skyline at night',radar:'vintage radar screen in a dark control room',volcan:'erupting volcano with ash column',
+ televisor:'old television set glowing in a dark room',radio:'vintage radio receiver on a wooden desk',puente:'long suspension bridge over water',
+ tornado:'huge tornado over flat farmland',fosil:'fossil skull on a museum table',edificio:'old stone building at dusk',
+ submarino:'submarine on dark ocean surface',esfera:'perfectly round stone sphere in the jungle',dodecaedro:'small bronze twelve-sided roman object',
+ periodico:'old newspaper front page on a table',bomba:'old aerial bomb resting on the seabed',faro:'stone lighthouse on a rocky coast',
+ paracaidas:'open parachute in a night sky',sonar:'sonar console with green display',telegrafo:'telegraph key and wires in an office',
+ fuego:'buildings burning at night',satelite:'satellite above the earth',moneda:'old coin on dark cloth',explosion:'huge explosion over a harbour',
+ tsunami:'giant wave about to hit a coast',ovni:'strange lights hovering over a forest',hielo:'ships trapped in arctic pack ice',
+ vaca:'cow in a wooden barn at night',pergamino:'old handwritten document on a desk',aurora:'green aurora over telegraph poles',
+ libro:'old leather book open on a table',cartas:'old letters scattered on a desk',tren:'steam locomotive on the tracks'};
+const respaldo = (escena, k, idx) => {
+  const obj = EN[anclaDe(idx)] ?? 'mysterious historical scene';
+  const momento = ['wide establishing shot','close detail shot','low angle shot','from the water','at dusk','at night under moonlight','in heavy fog','in a storm','from above','silhouetted against the sky'][k % 10];
+  return `${obj}, ${momento}, ${guion.titulo}`;
+};
+
 let vistas = {};
 try { vistas = await describir(escenas); console.log(`  descripciones de la IA: ${Object.keys(vistas).length}/${escenas.length} escenas`); }
-catch (e) { console.log('  sin descripciones de la IA (' + String(e.message ?? e).slice(0, 80) + '); se usa el texto de la escena'); }
+catch (e) { console.log('  sin descripciones de la IA (' + String(e.message ?? e).slice(0, 80) + '); se usa el respaldo en ingles'); }
 
 let hechas = 0, fallidas = 0, primera = true;
 for (let i = 0; i < escenas.length; i++) {
   const escena = escenas[i];
   const n = planosDe(escena);
-  const base = (vistas[i] && vistas[i].length ? vistas[i] : [String(escena.texto ?? '').slice(0, 120)]);
+  const base = (vistas[i] && vistas[i].length ? vistas[i] : null);
   const fondos = [];
   for (let k = 0; k < n; k++) {
     const nombre = `${id}-${i}-${k + 1}`;
@@ -119,7 +140,7 @@ for (let i = 0; i < escenas.length; i++) {
     if (fs.existsSync(final)) { escribirCuadro(nombre, i, k, escena); fondos.push(`pintado:${nombre}`); continue; }
     if (!primera) await dormir(ESPERA_MS);
     primera = false;
-    const vista = base[k % base.length];
+    const vista = base ? base[k % base.length] : respaldo(escena, k, i);
     console.log(`  escena ${i + 1}, plano ${k + 1}/${n}: ${vista.slice(0, 70)}`);
     if (await bajar(`${ESTILO}, ${vista}`, crudo) && aPixelArt(crudo, final)) {
       fs.rmSync(crudo, {force: true});
