@@ -1,4 +1,4 @@
-name: Lote 30 - publicar cada veinte minutos
+name: Lote 30 - publicar cada dos horas
 on:
   workflow_dispatch:
     inputs:
@@ -12,7 +12,7 @@ on:
     paths: ['agentes/lote-30-publicacion.json']
   # Respaldo: si la cadena se corta, GitHub la vuelve a despertar sola.
   schedule:
-    - cron: '7,27,47 * * * *'
+    - cron: '17 * * * *'
 permissions:
   contents: write
   actions: write
@@ -22,7 +22,7 @@ concurrency:
 jobs:
   publicar:
     runs-on: ubuntu-24.04
-    timeout-minutes: 55
+    timeout-minutes: 180
     steps:
       # ref: main para leer siempre el estado más reciente y no repetir videos.
       - uses: actions/checkout@v4
@@ -41,9 +41,15 @@ jobs:
           git diff --cached --quiet || git commit -m "Lote 30: cola encendida"
           git pull --rebase -X theirs origin main
           git push
-      - name: Comprobar la cola y el reloj de veinte minutos
+      - name: Comprobar la cola y el reloj de dos horas
         id: cola
         run: node scripts/publicar-lote-30.mjs --prepare
+      # Espera la hora y vuelve a leer el estado, por si cambió mientras esperaba.
+      - name: Esperar la hora del siguiente video
+        if: steps.cola.outputs.enabled == 'true'
+        run: |
+          node scripts/publicar-lote-30.mjs --wait
+          git pull --rebase origin main
       - name: Preparar ffprobe para verificar y publicar
         if: steps.cola.outputs.enabled == 'true'
         run: |
@@ -123,14 +129,13 @@ jobs:
             sleep 15
           done
           exit 1
-      - name: Esperar y activar el siguiente Short
+      - name: Activar el siguiente Short
         if: always() && steps.reserva.outcome == 'success'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          espera=$(node -e 'const x=require("./agentes/lote-30-publicacion.json"); if(x.fase!=="ready_to_publish"){console.log(-1)}else{console.log(Math.max(0,Math.floor((Date.parse(x.nextAt)-Date.now())/1000)-150))}')
-          if [ "$espera" -lt 0 ]; then echo "Cola terminada."; exit 0; fi
-          sleep "$espera"
+          fase=$(node -p 'require("./agentes/lote-30-publicacion.json").fase')
+          if [ "$fase" != "ready_to_publish" ]; then echo "Cola terminada o pausada."; exit 0; fi
           curl --fail-with-body --silent --show-error --retry 3 -X POST \
             -H "Authorization: Bearer $GH_TOKEN" \
             -H "Accept: application/vnd.github+json" \

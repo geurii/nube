@@ -1,12 +1,14 @@
-// Cola del lote de 30: un video cada 20 minutos.
+// Cola del lote de 30: un video cada 2 horas.
 // Reglas: cada video se intenta UNA sola vez (así nunca se repite) y la cola sigue aunque una red falle.
 // Lo que falte queda anotado en el estado para subirlo después.
 import fs from 'node:fs';
 import path from 'node:path';
 const file='agentes/lote-30-publicacion.json';
 const RENDER_APROBADO=46042972544;
-const INTERVALO=20*60*1000;
-const MARGEN=5*60*1000;
+const MINUTOS=120;
+const INTERVALO=MINUTOS*60*1000;
+// Una ejecución puede llegar antes de la hora: espera dentro de la propia ejecución.
+const MARGEN=INTERVALO+5*60*1000;
 const state=()=>JSON.parse(fs.readFileSync(file,'utf8'));
 const save=x=>fs.writeFileSync(file,JSON.stringify(x,null,2)+'\n');
 const out=(k,v)=>{if(process.env.GITHUB_OUTPUT)fs.appendFileSync(process.env.GITHUB_OUTPUT,k+'='+String(v??'').replace(/[\r\n]/g,' ')+'\n');};
@@ -25,14 +27,31 @@ if(arg==='--activate'){
  const x=state();
  if(x.fase!=='preparado'){console.log('La cola ya estaba en fase "'+x.fase+'"; no se reinicia.');process.exit(0);}
  if(x.items.length!==30)throw new Error('La cola no tiene 30 videos.');
- Object.assign(x,{fase:'ready_to_publish',completedCount:30,intervalMinutes:20,runId:RENDER_APROBADO,nextIndex:0,nextAt:null,activatedAt:new Date().toISOString()});
+ Object.assign(x,{fase:'ready_to_publish',completedCount:30,intervalMinutes:MINUTOS,runId:RENDER_APROBADO,nextIndex:0,nextAt:null,activatedAt:new Date().toISOString()});
  for(const i of x.items){i.aprobado=true;i.estado='aprobado';}
- save(x);console.log('Cola activada: 30 videos, uno cada 20 minutos.');
+ save(x);console.log('Cola activada: 30 videos, uno cada 2 horas.');
+ process.exit(0);
+}
+
+// Cambia el ritmo de una cola ya empezada: el siguiente sale 2 horas después del último.
+if(arg==='--retime'){
+ const x=state();
+ if(x.fase!=='ready_to_publish')throw new Error('La cola no está en marcha: '+x.fase);
+ const anterior=x.items[Number(x.nextIndex)-1];
+ x.intervalMinutes=MINUTOS;
+ x.nextAt=new Date(Date.parse(anterior?.reservadoEn??new Date().toISOString())+INTERVALO).toISOString();
+ save(x);console.log('Nuevo ritmo: cada 2 horas. Siguiente: '+x.nextAt);
+ process.exit(0);
+}
+
+if(arg==='--wait'){
+ const x=state(),falta=x.nextAt?Date.parse(x.nextAt)-Date.now():0;
+ if(falta>0){console.log('Esperando hasta '+x.nextAt);await new Promise(r=>setTimeout(r,falta));}
  process.exit(0);
 }
 
 if(arg==='--prepare'){
- const x=state(),ready=x.intervalMinutes===20&&x.fase==='ready_to_publish'&&x.completedCount===30&&x.items.length===30&&x.items.every(i=>i.aprobado);
+ const x=state(),ready=x.intervalMinutes===MINUTOS&&x.fase==='ready_to_publish'&&x.completedCount===30&&x.items.length===30&&x.items.every(i=>i.aprobado);
  let index=Number(x.nextIndex??0);
  // Si una ejecución se cortó a mitad de una subida, no se repite ese video: se marca y se sigue.
  if(ready&&index<30&&x.items[index].estado==='publicando'){
@@ -61,6 +80,7 @@ const elegido=()=>{
 // Espera la hora exacta y deja anotado que este video se está subiendo.
 if(arg==='--reserve'){
  const {x,item}=elegido();
+ if(x.fase!=='ready_to_publish')throw new Error('La cola se pausó mientras esperaba.');
  const falta=x.nextAt?Date.parse(x.nextAt)-Date.now():0;
  if(falta>0)await new Promise(r=>setTimeout(r,falta));
  item.estado='publicando';item.reservadoEn=new Date().toISOString();
