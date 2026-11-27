@@ -39,7 +39,7 @@
       "id": "lqns-db-cooper-salto-imposible",
       "slug": "db-cooper-salto-imposible",
       "titulo": "El hombre que saltó de un avión con el rescate y desapareció",
-      "estado": "aprobado",
+      "estado": "publicando",
       "aprobado": true,
       "duracionSegundos": null,
       "publicadoEn": {
@@ -47,7 +47,8 @@
         "facebook": false,
         "instagram": false,
         "tiktok": false
-      }
+      },
+      "reservadoEn": "2026-11-27T21:30:01.421Z"
     },
     {
       "id": "lqns-alcatraz-fuga-cabezas-falsas",
