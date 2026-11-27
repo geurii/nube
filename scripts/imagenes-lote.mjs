@@ -20,7 +20,7 @@ const ANCHO_PIXEL = 288;   // ancho del lienzo de pixel art antes de ampliar
 const COLORES = 48;        // tamano de la paleta
 const SEGUNDOS_POR_PLANO = 3;
 const ESPERA_MS = 47000;   // Pollinations deja 1 imagen cada 45 s por IP
-const ESTILO = 'pixel art scene, detailed 16-bit game background, dithering, dark outlines, moody cinematic lighting, no text, no watermark, no letters';
+const ESTILO = 'pixel art scene, detailed 16-bit game background, dithering, dark outlines, moody cinematic lighting, period-accurate, no modern objects, no text, no watermark, no letters';
 
 const guionPath = path.join('guion', 'serie', `${id}.json`);
 const guion = JSON.parse(fs.readFileSync(guionPath, 'utf8'));
@@ -39,8 +39,8 @@ const planosDe = (escena) => {
 const describir = async (escenas) => {
   const lista = escenas.map((e, i) => `${i}. [${e.anchor ?? 'escena'}] ${String(e.texto ?? '').slice(0, 220)}`).join('\n');
   const r = await chatAlternativo([
-    {role: 'system', content: 'Eres director de arte de un canal de misterio. Describes imagenes concretas, en ingles, para generar pixel art. Respondes SOLO con JSON.'},
-    {role: 'user', content: `Tema: "${guion.titulo}".\n\nPara CADA escena da ${8} descripciones DISTINTAS en ingles (8 a 16 palabras) de lo que se ve: el objeto, lugar o suceso que la frase nombra, desde angulos y momentos diferentes. Concreto y fotografiable: nada abstracto, ningun texto en la imagen, ninguna persona reconocible, ningun nombre propio de persona.\n\nESCENAS:\n${lista}\n\nDevuelve {"escenas":[{"indice":N,"vistas":["...","..."]}]}`},
+    {role: 'system', content: 'Eres director de arte de un canal de misterio. Describes imagenes concretas, en ingles, para generar pixel art. Cada descripcion DEBE fijar la epoca y el lugar del hecho (por ejemplo "1900 scottish island", "1917 canadian harbour"), porque si no el generador mete objetos modernos donde no van. Respondes SOLO con JSON.'},
+    {role: 'user', content: `Tema: "${guion.titulo}".\n\nPara CADA escena da ${8} descripciones DISTINTAS en ingles (8 a 16 palabras) de lo que se ve: el objeto, lugar o suceso que la frase nombra, desde angulos y momentos diferentes. EMPIEZA CADA UNA por el ano y el lugar del hecho. Concreto y fotografiable: nada abstracto, ningun texto en la imagen, ninguna persona reconocible, ningun nombre propio de persona, y ningun objeto que no existiera en esa epoca.\n\nESCENAS:\n${lista}\n\nDevuelve {"escenas":[{"indice":N,"vistas":["...","..."]}]}`},
   ], {maxTokens: 2200, json: true});
   const out = {};
   for (const e of (Array.isArray(r?.escenas) ? r.escenas : [])) {

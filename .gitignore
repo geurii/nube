@@ -1,3 +1,9 @@
 node_modules/
 out/
 .remotion/
+
+# Salida del lote de 30: se genera en cada ejecucion, no se versiona
+# (se colo por un `git add -A` y dejo el control creyendo que los temas ya estaban publicados)
+guion/serie/lqns-*.json
+public/pintados/lqns-*.json
+public/generados/
