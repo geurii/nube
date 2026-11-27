@@ -161,8 +161,9 @@ const escribirCuadro = (nombre, i, k, escena, variante = 0, archivoBase = null, 
     t: 'foto3d', archivo: fichero, pixel: 2,
     deriva: 14 + variante * 4,
     sentido: variante % 2 ? -1 : 1,
-    ondaFuerza: 0,
-    latido: 0,
+    // el plano de cerca ondula si hay agua; la luz late si hay fuego
+    ondaFuerza: mar ? 3.4 : fuego ? 2.2 : 0.8,
+    latido: fuego ? 0.1 : noche ? 0.05 : 0.03,
   } : {
     t: 'foto', archivo: fichero, pan: true, pixel: 1,
     onda: (mar ? 0.62 : fuego ? 0.70 : 0.78) - variante * 0.04,
@@ -197,7 +198,7 @@ const EN = {barco:'old sailing ship at sea',avion:'vintage propeller airplane in
  ciudad:'old city skyline at night',radar:'vintage radar screen in a dark control room',volcan:'erupting volcano with ash column',
  televisor:'old television set glowing in a dark room',radio:'vintage radio receiver on a wooden desk',puente:'long suspension bridge over water',
  tornado:'huge tornado over flat farmland',fosil:'fossil skull on a museum table',edificio:'old stone building at dusk',
- submarino:'submarine on dark ocean surface',esfera:'perfectly round stone sphere in the jungle',dodecaedro:'small bronze twelve-sided roman object',
+ submarino:'military submarine hull half submerged in dark water, conning tower visible',esfera:'perfectly round stone sphere in the jungle',dodecaedro:'small bronze twelve-sided roman object',
  periodico:'old newspaper front page on a table',bomba:'old aerial bomb resting on the seabed',faro:'stone lighthouse on a rocky coast',
  paracaidas:'open parachute in a night sky',sonar:'sonar console with green display',telegrafo:'telegraph key and wires in an office',
  fuego:'buildings burning at night',satelite:'satellite above the earth',moneda:'old coin on dark cloth',explosion:'huge explosion over a harbour',
@@ -244,7 +245,15 @@ for (let i = 0; i < escenas.length; i++) {
     }
     if (!primera) await dormir(ESPERA_MS);
     primera = false;
-    const vista = base ? base[k % base.length] : respaldo(escena, k, i);
+    let vista = base ? base[k % base.length] : respaldo(escena, k, i);
+    // El sujeto de la escena tiene que verse SIEMPRE: si la IA lo dejo fuera, se le anade.
+    const sujeto = EN[anclaDe(i)];
+    if (sujeto) {
+      const claves = sujeto.split(/[ ,]+/).filter((w) => w.length > 4).slice(0, 2);
+      if (!claves.some((w) => vista.toLowerCase().includes(w.toLowerCase()))) {
+        vista = `${vista}; ${sujeto}, clearly visible in the frame`;
+      }
+    }
     console.log(`  escena ${i + 1}, plano ${k + 1}/${n}: ${vista.slice(0, 70)}`);
     if (await bajar(`${ESTILO}, ${vista}`, crudo, vista) && aPixelArt(crudo, final)) {
       fs.rmSync(crudo, {force: true});
