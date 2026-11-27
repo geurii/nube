@@ -42,10 +42,16 @@ const planosDe = () => PLANOS_POR_ESCENA;
 /** Pide a la IA de texto una descripcion EN INGLES de lo que se ve en cada plano. */
 const describir = async (escenas) => {
   const lista = escenas.map((e, i) => `${i}. [${anclaDe(i) || 'escena'}] ${String(e.texto ?? '').slice(0, 220)}`).join('\n');
-  const r = await chatAlternativo([
+  const bruto = await chatAlternativo([
     {role: 'system', content: 'Eres director de arte de un canal de misterio. Describes imagenes concretas, en ingles, para generar pixel art. Cada descripcion DEBE fijar la epoca y el lugar del hecho (por ejemplo "1900 scottish island", "1917 canadian harbour"), porque si no el generador mete objetos modernos donde no van. Respondes SOLO con JSON.'},
     {role: 'user', content: `Tema: "${guion.titulo}".\n\nPara CADA escena da ${PLANOS_POR_ESCENA} descripciones DISTINTAS en ingles (8 a 16 palabras) de lo que se ve: el objeto, lugar o suceso que la frase nombra, desde angulos y momentos diferentes. EMPIEZA CADA UNA por el ano y el lugar del hecho. Concreto y fotografiable: nada abstracto, ningun texto en la imagen, ninguna persona reconocible, ningun nombre propio de persona, y ningun objeto que no existiera en esa epoca.\n\nESCENAS:\n${lista}\n\nDevuelve {"escenas":[{"indice":N,"vistas":["...","..."]}]}`},
   ], {maxTokens: 2200, json: true});
+  // chatAlternativo devuelve {texto, proveedor, modelo}: hay que PARSEAR el texto.
+  // (Antes se leia r.escenas directamente y siempre salia vacio: por eso decia '0/5 escenas'.)
+  if (!bruto?.texto) throw new Error('la IA de texto no devolvio nada');
+  const a = bruto.texto.indexOf('{'), b = bruto.texto.lastIndexOf('}');
+  const r = JSON.parse(bruto.texto.slice(a, b + 1));
+  console.log(`  (descripciones de ${bruto.proveedor}/${bruto.modelo})`);
   const out = {};
   for (const e of (Array.isArray(r?.escenas) ? r.escenas : [])) {
     const i = Number(e.indice);
