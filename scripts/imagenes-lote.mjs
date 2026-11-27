@@ -37,7 +37,8 @@ const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
 
 /** El lote exige diez visuales por escena para sostener escenas largas sin repetir imagen. */
 const PLANOS_POR_ESCENA = 10;   // lo que exige el control del lote
-const IMAGENES_POR_ESCENA = 5;  // cada imagen rinde dos planos: otro encuadre y otra animacion
+const IMAGENES_POR_ESCENA = 3;  // menos descargas = menos riesgo de quedarse sin fotos
+const PLANOS_POR_IMAGEN = 4;    // cada foto rinde cuatro planos: otro encuadre y otra animacion
 const planosDe = () => IMAGENES_POR_ESCENA;
 
 /** Pide a la IA de texto una descripcion EN INGLES de lo que se ve en cada plano. */
@@ -63,9 +64,9 @@ const describir = async (escenas) => {
 };
 
 /** Descarga la imagen generada. Devuelve true si llego un JPEG de verdad. */
-const bajar = async (prompt, destino) => {
-  const url = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=704&height=1248&nologo=true`;
-  for (let intento = 1; intento <= 3; intento++) {
+const bajar = async (prompt, destino, consultaLibre = '') => {
+  const url = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=704&height=1248&nologo=true&seed=${Math.floor(Math.random() * 999999)}`;
+  for (let intento = 1; intento <= 4; intento++) {
     try {
       const r = await fetch(url, {signal: AbortSignal.timeout(180000)});
       if (!r.ok) throw new Error('HTTP ' + r.status);
@@ -74,14 +75,45 @@ const bajar = async (prompt, destino) => {
       fs.writeFileSync(destino, buf);
       return true;
     } catch (e) {
-      console.log(`    intento ${intento}/3: ${String(e.message ?? e).slice(0, 70)}`);
-      if (intento < 3) await dormir(ESPERA_MS);
+      console.log(`    intento ${intento}/4: ${String(e.message ?? e).slice(0, 70)}`);
+      if (intento < 4) await dormir(ESPERA_MS);
     }
   }
+  // Openverse se probo como respaldo y devuelve cartas y documentos con texto:
+  // no sirve para estas escenas. Si el generador falla, la escena toma prestada
+  // una foto de otra escena del mismo video (ver el RELLENO de mas abajo).
   return false;
 };
 
 /** Convierte a pixel art con Pillow. Se probo contra FFmpeg y FFmpeg dejaba grano; Pillow sale limpio. */
+/** Respaldo cuando el generador falla: una foto REAL de dominio publico o CC0 (Openverse).
+ *  Las normas del canal permiten solo estas licencias; el pixel art se hace igual despues. */
+const bajarLibre = async (consulta, destino) => {
+  const limpia = String(consulta).replace(/[^a-zA-Z0-9 ,.-]/g, ' ').trim().slice(0, 90);
+  const url = `https://api.openverse.org/v1/images/?q=${encodeURIComponent(limpia)}&license=cc0,pdm&page_size=8&format=json`;
+  try {
+    const r = await fetch(url, {headers: {'User-Agent': 'lqns/1.0'}, signal: AbortSignal.timeout(60000)});
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const j = await r.json();
+    for (const it of (j.results ?? [])) {
+      const u = it.url;
+      if (!u) continue;
+      try {
+        const f = await fetch(u, {headers: {'User-Agent': 'lqns/1.0'}, signal: AbortSignal.timeout(90000)});
+        if (!f.ok) continue;
+        const buf = Buffer.from(await f.arrayBuffer());
+        const jpeg = buf[0] === 0xff && buf[1] === 0xd8;
+        const png = buf[0] === 0x89 && buf[1] === 0x50;
+        if (buf.length < 8000 || !(jpeg || png)) continue;
+        fs.writeFileSync(destino, buf);
+        console.log(`    respaldo libre: ${String(it.title ?? '').slice(0, 40)} (${it.license})`);
+        return true;
+      } catch { /* siguiente resultado */ }
+    }
+  } catch (e) { console.log('    respaldo libre fallo: ' + String(e.message ?? e).slice(0, 60)); }
+  return false;
+};
+
 const aPixelArt = (entrada, salida) => {
   const r = spawnSync('python3', ['scripts/a_pixel_art.py', entrada, salida, String(ANCHO_PIXEL), String(COLORES), '540', '960'], {encoding: 'utf8', timeout: 120000});
   if (r.status !== 0 || !fs.existsSync(salida)) { console.log('    pixel art: ' + String(r.stderr ?? r.error?.message ?? '').slice(0, 140)); return false; }
@@ -91,7 +123,7 @@ const aPixelArt = (entrada, salida) => {
 /** El cuadro: la imagen del sujeto de fondo y, encima, capas que el motor mueve solas.
  *  Asi el plano no es una foto con zoom: tiene niebla que deriva, polvo que flota,
  *  estrellas que titilan y, donde toca, olas y rayos. */
-const escribirCuadro = (nombre, i, k, escena, variante = 0) => {
+const escribirCuadro = (nombre, i, k, escena, variante = 0, archivoBase = null) => {
   const t = String(escena.texto ?? '').toLowerCase();
   const mar = /mar|olas|oceano|barco|agua|costa|puerto|isla|hundi|naufrag/.test(t);
   const fuego = /fuego|incendio|explos|lava|volcan|arde|llama|quem/.test(t);
@@ -101,16 +133,18 @@ const escribirCuadro = (nombre, i, k, escena, variante = 0) => {
   //  cielo = arrastre de las filas de arriba (nubes, humo)
   //  latido = la luz sube y baja, como una lampara o un fuego vivo
   const capas = [{
-    t: 'foto', archivo: `${String(nombre).replace(/-b$/, '')}.png`, pan: true, pixel: 1,
+    t: 'foto', archivo: archivoBase ?? `${String(nombre).replace(/-b$/, '')}.png`, pan: true, pixel: 1,
     onda: (mar ? 0.62 : fuego ? 0.70 : 0.78) - variante * 0.04,
     ondaFuerza: (mar ? 4.5 : fuego ? 3 : 1.8) * (variante ? 1.3 : 1),
     cielo: 0.45,
     cieloFuerza: (fuego ? 3.2 : 2.2) * (variante ? 1.25 : 1),
     latido: (fuego ? 0.11 : noche ? 0.06 : 0.035) * (variante ? 1.4 : 1),
     // la variante entra mas cerca y por el otro lado: mismo sujeto, otro plano
-    zoom: variante ? 1.22 : 1,
-    x0: variante ? 0.06 : 0, x1: variante ? 1.06 : 1,
-    y0: variante ? 0.04 : 0, y1: variante ? 1.04 : 1,
+    zoom: [1, 1.22, 1.12, 1.3, 1.18, 1.26][variante % 6],
+    x0: [0, 0.06, -0.05, 0.1, -0.08, 0.03][variante % 6],
+    x1: [1, 1.06, 0.95, 1.1, 0.92, 1.03][variante % 6],
+    y0: [0, 0.04, 0.07, -0.05, 0.02, -0.07][variante % 6],
+    y1: [1, 1.04, 1.07, 0.95, 1.02, 0.93][variante % 6],
   }];
   if (noche || !fuego) capas.push({t: 'estrellas', n: 26 + k * 4, hasta: 0.5, semilla: i * 7 + k, color: '#dfe7f4'});
   capas.push({t: 'particulas', n: 16 + k * 3, tipo: fuego ? 'brasas' : 'polvo', semilla: i * 13 + k, color: fuego ? '#ffb347' : '#cfd8e6'});
@@ -149,7 +183,19 @@ let vistas = {};
 try { vistas = await describir(escenas); console.log(`  descripciones de la IA: ${Object.keys(vistas).length}/${escenas.length} escenas`); }
 catch (e) { console.log('  sin descripciones de la IA (' + String(e.message ?? e).slice(0, 80) + '); se usa el respaldo en ingles'); }
 
+/** Una sola foto rinde varios planos: mismo sujeto, otro encuadre y otra animacion. */
+const planosDeFoto = (nombre, i, k, escena, fondos) => {
+  const sufijos = ['', '-b', '-c', '-d', '-e', '-f'];
+  for (let v = 0; v < PLANOS_POR_IMAGEN; v++) {
+    const n2 = `${nombre}${sufijos[v]}`;
+    escribirCuadro(n2, i, k, escena, v, `${nombre}.png`);
+    fondos.push(`pintado:${n2}`);
+  }
+};
+
 let hechas = 0, fallidas = 0, primera = true;
+const catalogo = [];   // toda imagen que SI existe, para que ninguna escena se quede sin foto
+const pendientes = [];  // escenas que no completaron sus planos
 for (let i = 0; i < escenas.length; i++) {
   const escena = escenas[i];
   const n = planosDe(escena);
@@ -160,24 +206,44 @@ for (let i = 0; i < escenas.length; i++) {
     const crudo = path.join(dir, `${nombre}.src.jpg`);
     const final = path.join(dir, `${nombre}.png`);
     if (fs.existsSync(final)) {
-      escribirCuadro(nombre, i, k, escena, 0); fondos.push(`pintado:${nombre}`);
-      escribirCuadro(`${nombre}-b`, i, k, escena, 1); fondos.push(`pintado:${nombre}-b`);
+      catalogo.push({archivo: `${nombre}.png`, escena: i});
+      planosDeFoto(nombre, i, k, escena, fondos);
       continue;
     }
     if (!primera) await dormir(ESPERA_MS);
     primera = false;
     const vista = base ? base[k % base.length] : respaldo(escena, k, i);
     console.log(`  escena ${i + 1}, plano ${k + 1}/${n}: ${vista.slice(0, 70)}`);
-    if (await bajar(`${ESTILO}, ${vista}`, crudo) && aPixelArt(crudo, final)) {
+    if (await bajar(`${ESTILO}, ${vista}`, crudo, vista) && aPixelArt(crudo, final)) {
       fs.rmSync(crudo, {force: true});
-      escribirCuadro(nombre, i, k, escena, 0); fondos.push(`pintado:${nombre}`);
-      escribirCuadro(`${nombre}-b`, i, k, escena, 1); fondos.push(`pintado:${nombre}-b`);
+      catalogo.push({archivo: `${nombre}.png`, escena: i});
+      planosDeFoto(nombre, i, k, escena, fondos);
       hechas++;
     } else { fallidas++; }
   }
   // Solo se cambian los fondos si hay imagenes suficientes para esta escena; si no, se deja lo que habia.
   if (fondos.length >= PLANOS_POR_ESCENA) escena.fondo = fondos.slice(0, PLANOS_POR_ESCENA);
-  else console.log(`  escena ${i + 1}: ${fondos.length}/${PLANOS_POR_ESCENA} planos; conserva sus fondos anteriores`);
+  else { pendientes.push({i, escena, fondos}); console.log(`  escena ${i + 1}: ${fondos.length}/${PLANOS_POR_ESCENA} planos; se completara con fotos de otras escenas`); }
+}
+
+// RELLENO: ninguna escena vuelve al fondo dibujado. Si le faltan planos se le prestan
+// fotos reales de las escenas vecinas, cada una con otro encuadre y otra animacion.
+if (pendientes.length && catalogo.length) {
+  for (const {i, escena, fondos} of pendientes) {
+    const cerca = [...catalogo].sort((a, b) => Math.abs(a.escena - i) - Math.abs(b.escena - i));
+    let v = 0;
+    while (fondos.length < PLANOS_POR_ESCENA && v < cerca.length * 6) {
+      const foto = cerca[v % cerca.length];
+      const nombre = `${id}-${i}-r${v + 1}`;
+      escribirCuadro(nombre, i, v, escena, v % 6, foto.archivo);
+      fondos.push(`pintado:${nombre}`);
+      v++;
+    }
+    if (fondos.length >= PLANOS_POR_ESCENA) {
+      escena.fondo = fondos.slice(0, PLANOS_POR_ESCENA);
+      console.log(`  escena ${i + 1}: completada con fotos prestadas (sin fondos dibujados)`);
+    }
+  }
 }
 
 fs.writeFileSync(guionPath, JSON.stringify(guion, null, 2) + '\n');
