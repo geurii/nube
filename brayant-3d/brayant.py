@@ -61,7 +61,8 @@ PISO = mat('piso', '#3d2619', 0.7, '#4c3020', 3)
 COLCHA = mat('colcha', '#1f5560', 0.9, '#27626d', 5)
 SABANA = mat('sabana', '#b9b5ad', 0.9)
 ROSA = mat('rosa', '#b97c83', 0.9)
-PANTALLA = mat('pantalla', '#ffd99a', 0.9, emite=3.2)
+PANTALLA = mat('pantalla', '#f2c985', 0.9, emite=1.25)
+VENTANA = mat('ventana', '#23345c', 0.9, emite=0.9)
 
 def objeto(nombre, verts, caras, m, plano=True):
     me = bpy.data.meshes.new(nombre); me.from_pydata([tuple(v) for v in verts], [], caras); me.update()
@@ -97,6 +98,11 @@ def loft(nombre, anillos, m, n=10, ruido=0.0, giro=0.0, tapas=True):
     if tapas:
         caras.append(tuple(range(n))[::-1]); caras.append(tuple(range((len(anillos) - 1) * n, len(anillos) * n)))
     return objeto(nombre, verts, caras, m)
+
+def fino(anillos, ancho, fondo=None, cx=1.0):
+    """adelgaza una lista de anillos"""
+    fondo = ancho if fondo is None else fondo
+    return [((a[0][0] * cx, a[0][1], a[0][2]), a[1] * ancho, a[2] * fondo) + tuple(a[3:]) for a in anillos]
 
 def bola(nombre, c, r, m, sub=1, esc=(1, 1, 1), rot=(0, 0, 0), ruido=0.0):
     bm = bmesh.new(); bmesh.ops.create_icosphere(bm, subdivisions=sub, radius=r)
@@ -137,79 +143,132 @@ caja('raya2', (0.05, -0.285, 0.365), (1.70, 0.012, 0.016), COLCHA, bisel=0)
 caja('cabecera', (-0.95, 0.2, 0.55), (0.09, 1.0, 0.9), MADERA, bisel=0.02)
 caja('almohada', (-0.68, 0.24, 0.60), (0.34, 0.66, 0.13), SABANA, (0, 0.12, 0), 0.06)
 # mesa de noche, lámpara y panel
-caja('mesa', (0.62, 0.92, 0.42), (0.55, 0.40, 0.84), MADERA, bisel=0.02)
-caja('cajon', (0.62, 0.715, 0.66), (0.45, 0.012, 0.17), PISO)
-bola('tirador', (0.62, 0.70, 0.66), 0.018, METAL, 2)
-loft('pie', [((0.66, 0.9, 0.84), 0.075, 0.075), ((0.66, 0.9, 0.87), 0.05, 0.05), ((0.66, 0.9, 0.98), 0.018, 0.018), ((0.66, 0.9, 1.10), 0.018, 0.018)], MADERA, 8)
-loft('pantalla', [((0.66, 0.9, 1.08), 0.17, 0.17), ((0.66, 0.9, 1.30), 0.11, 0.11)], PANTALLA, 10, tapas=False)
+caja('mesa', (0.70, 0.92, 0.42), (0.55, 0.40, 0.84), MADERA, bisel=0.02)
+caja('cajon', (0.70, 0.715, 0.66), (0.45, 0.012, 0.17), PISO)
+bola('tirador', (0.70, 0.70, 0.66), 0.018, METAL, 2)
+loft('pie', [((0.74, 0.9, 0.84), 0.075, 0.075), ((0.74, 0.9, 0.87), 0.05, 0.05), ((0.74, 0.9, 0.98), 0.018, 0.018), ((0.74, 0.9, 1.10), 0.018, 0.018)], MADERA, 8)
+loft('pantalla', [((0.74, 0.9, 1.08), 0.17, 0.17), ((0.74, 0.9, 1.30), 0.11, 0.11)], PANTALLA, 10, tapas=False)
 caja('panel', (-0.55, 1.14, 0.95), (0.34, 0.05, 0.75), ROSA, bisel=0.03)
 caja('mueble', (-0.55, 1.05, 0.38), (0.6, 0.3, 0.76), MADERA)
 
 # ---------------- PIERNAS ----------------
 for s in (-1, 1):
-    cadera = (s * 0.115, 0.08, 0.64); rodilla = (s * 0.185, -0.40, 0.635); tobillo = (s * 0.20, -0.47, 0.11)
-    loft('muslo', [((s * 0.11, 0.17, 0.66), 0.105, 0.11), (cadera, 0.115, 0.105), ((s * 0.155, -0.18, 0.645), 0.098, 0.09),
-                   ((s * 0.18, -0.34, 0.642), 0.078, 0.076), ((s * 0.188, -0.43, 0.63), 0.074, 0.072)], PANT, 9, 0.004)
-    loft('pierna', [((s * 0.186, -0.40, 0.66), 0.07, 0.072), ((s * 0.19, -0.455, 0.55), 0.075, 0.075), ((s * 0.195, -0.455, 0.36), 0.064, 0.066),
-                    ((s * 0.20, -0.468, 0.18), 0.054, 0.056), ((s * 0.20, -0.47, 0.10), 0.062, 0.064)], PANT, 9, 0.004)
-    caja('bolsillo', (s * 0.262, -0.17, 0.645), (0.022, 0.17, 0.11), PANT, (0, 0, s * -0.12), 0.006)
-    loft('zapato', [((s * 0.20, -0.40, 0.065), 0.055, 0.045, (0, -1, 0)), ((s * 0.205, -0.48, 0.075), 0.068, 0.062, (0, -1, 0)),
-                    ((s * 0.21, -0.58, 0.06), 0.064, 0.045, (0, -1, 0)), ((s * 0.212, -0.65, 0.048), 0.038, 0.028, (0, -1, 0))], ZAP, 8)
-    caja('suela', (s * 0.207, -0.525, 0.015), (0.135, 0.29, 0.03), SUELA, bisel=0.012)
-loft('pelvis', [((0, 0.09, 0.58), 0.17, 0.12), ((0, 0.09, 0.68), 0.215, 0.145), ((0, 0.08, 0.74), 0.20, 0.13)], PANT, 11)
+    cadera = (s * 0.095, 0.08, 0.64); rodilla = (s * 0.165, -0.40, 0.635)
+    loft('muslo', fino([((s * 0.09, 0.15, 0.655), 0.098, 0.10), (cadera, 0.102, 0.092), ((s * 0.135, -0.18, 0.642), 0.082, 0.077),
+                   ((s * 0.162, -0.34, 0.640), 0.063, 0.062), ((s * 0.170, -0.43, 0.628), 0.060, 0.060)], 0.94), PANT, 11, 0.003)
+    loft('pierna', fino([((s * 0.167, -0.40, 0.655), 0.058, 0.060), ((s * 0.172, -0.452, 0.55), 0.061, 0.062), ((s * 0.178, -0.452, 0.36), 0.052, 0.055),
+                    ((s * 0.183, -0.468, 0.18), 0.043, 0.046), ((s * 0.183, -0.47, 0.10), 0.052, 0.055)], 0.96), PANT, 11, 0.003)
+    caja('costura', (s * 0.172, -0.245, 0.716), (0.075, 0.13, 0.008), PANT, (0.015, 0, s * -0.2), 0.003)
+    loft('zapato', [((s * 0.183, -0.40, 0.065), 0.050, 0.043, (0, -1, 0)), ((s * 0.188, -0.48, 0.072), 0.060, 0.058, (0, -1, 0)),
+                    ((s * 0.193, -0.575, 0.058), 0.056, 0.042, (0, -1, 0)), ((s * 0.195, -0.64, 0.047), 0.034, 0.026, (0, -1, 0))], ZAP, 9)
+    caja('suela', (s * 0.19, -0.52, 0.015), (0.118, 0.275, 0.03), SUELA, bisel=0.012)
+loft('pelvis', fino([((0, 0.09, 0.58), 0.17, 0.12), ((0, 0.09, 0.68), 0.215, 0.145), ((0, 0.08, 0.74), 0.20, 0.13)], 0.78, 0.82), PANT, 13)
 
 # ---------------- SUDADERA ----------------
-loft('torso', [((0, 0.065, 0.70), 0.232, 0.162), ((0, 0.065, 0.755), 0.222, 0.152), ((0, 0.07, 0.775), 0.245, 0.170),
+loft('torso', fino([((0, 0.065, 0.70), 0.232, 0.162), ((0, 0.065, 0.755), 0.222, 0.152), ((0, 0.07, 0.775), 0.245, 0.170),
                ((0, 0.065, 0.88), 0.228, 0.158), ((0, 0.055, 1.00), 0.232, 0.162), ((0, 0.045, 1.11), 0.260, 0.165),
-               ((0, 0.045, 1.19), 0.262, 0.148), ((0, 0.05, 1.245), 0.185, 0.118), ((0, 0.05, 1.285), 0.095, 0.085)], ROJO, 13, 0.0045)
-loft('elastico', [((0, 0.065, 0.695), 0.228, 0.158), ((0, 0.065, 0.752), 0.226, 0.156)], ROJO2, 13, 0.002, tapas=False)
+               ((0, 0.045, 1.19), 0.262, 0.148), ((0, 0.05, 1.245), 0.185, 0.118), ((0, 0.05, 1.285), 0.115, 0.095)], 0.78, 0.80), ROJO, 15, 0.0028)
+loft('elastico', fino([((0, 0.065, 0.695), 0.228, 0.158), ((0, 0.065, 0.752), 0.226, 0.156)], 0.79, 0.81), ROJO2, 15, 0.001, tapas=False)
 # cuello y capucha caída
 loft('cuello_rojo', [((0, 0.045, 1.245), 0.135, 0.108), ((0, 0.052, 1.30), 0.10, 0.092)], ROJO2, 11, tapas=False)
-loft('capucha', [((-0.155, 0.055, 1.235), 0.036, 0.04, (0.2, 1, 0.1)), ((-0.14, 0.155, 1.27), 0.058, 0.06, (0.6, 1, 0)),
-                 ((0.0, 0.205, 1.27), 0.085, 0.08, (1, 0, 0)), ((0.14, 0.155, 1.27), 0.058, 0.06, (0.6, -1, 0)),
-                 ((0.155, 0.055, 1.235), 0.036, 0.04, (-0.2, -1, -0.1))], ROJO, 8, 0.006)
+loft('capucha', [((-0.105, 0.055, 1.238), 0.026, 0.03, (0.2, 1, 0.1)), ((-0.098, 0.13, 1.262), 0.040, 0.042, (0.6, 1, 0)),
+                 ((0.0, 0.165, 1.255), 0.062, 0.052, (1, 0, 0)), ((0.098, 0.13, 1.262), 0.040, 0.042, (0.6, -1, 0)),
+                 ((0.105, 0.055, 1.238), 0.026, 0.03, (-0.2, -1, -0.1))], ROJO, 10, 0.003)
 for s in (-1, 1):
-    tubo('solapa', [(s * 0.135, 0.01, 1.255), (s * 0.095, -0.07, 1.24), (s * 0.015, -0.105, 1.19)], 0.026, ROJO)
-    tubo('cordon', [(s * 0.045, -0.115, 1.19), (s * 0.058, -0.138, 1.08), (s * 0.055, -0.128, 0.99)], 0.0065, CORDON)
-    tubo('punta', [(s * 0.055, -0.128, 0.99), (s * 0.055, -0.127, 0.955)], 0.0085, METAL)
-objeto('canguro', [(-0.09, -0.118, 0.955), (0.09, -0.118, 0.955), (0.165, -0.105, 0.85), (0.17, -0.108, 0.785), (-0.17, -0.108, 0.785), (-0.165, -0.105, 0.85),
-                   (-0.075, -0.108, 0.94), (0.075, -0.108, 0.94), (0.15, -0.085, 0.845), (0.155, -0.085, 0.795), (-0.155, -0.085, 0.795), (-0.15, -0.085, 0.845)],
+    tubo('solapa', [(s * 0.094, 0.01, 1.258), (s * 0.068, -0.052, 1.236), (s * 0.010, -0.082, 1.195)], 0.017, ROJO)
+    tubo('cordon', [(s * 0.036, -0.090, 1.19), (s * 0.045, -0.106, 1.09), (s * 0.043, -0.102, 1.0)], 0.0048, CORDON)
+    tubo('punta', [(s * 0.043, -0.102, 1.0), (s * 0.043, -0.102, 0.97)], 0.0065, METAL)
+def cang(v): return (v[0] * 0.78, v[1] * 0.80 + 0.004, v[2])
+objeto('canguro', [cang(v) for v in [(-0.09, -0.118, 0.955), (0.09, -0.118, 0.955), (0.165, -0.105, 0.85), (0.17, -0.108, 0.785), (-0.17, -0.108, 0.785), (-0.165, -0.105, 0.85),
+                   (-0.075, -0.108, 0.94), (0.075, -0.108, 0.94), (0.15, -0.085, 0.845), (0.155, -0.085, 0.795), (-0.155, -0.085, 0.795), (-0.15, -0.085, 0.845)]],
        [(0, 1, 2, 3, 4, 5), (0, 6, 7, 1), (1, 7, 8, 2), (2, 8, 9, 3), (3, 9, 10, 4), (4, 10, 11, 5), (5, 11, 6, 0)], ROJO)
-for (x, y, z, r) in [(0.09, -0.108, 1.12, 0.014), (-0.12, -0.100, 1.03, 0.019), (0.05, -0.128, 0.82, 0.011), (-0.07, -0.124, 0.865, 0.008)]:
-    bola('mancha', (x, y, z), r, MANCHA, 1, (1.3, 0.12, 0.8), ruido=0.35)
 
 # ---------------- BRAZOS, MANOS, TATUAJES ----------------
 def mano(s):
-    c = Vector((s * 0.355, -0.135, 0.585))
-    loft('palma', [((s * 0.350, -0.085, 0.625), 0.033, 0.021), ((s * 0.355, -0.13, 0.59), 0.047, 0.022), (c + Vector((0, -0.04, -0.012)), 0.046, 0.017)], PIEL, 8)
+    mx = s * 0.287
+    c = Vector((mx + s * 0.005, -0.135, 0.585))
+    loft('palma', [((mx, -0.085, 0.625), 0.029, 0.019), ((mx + s * 0.005, -0.13, 0.59), 0.041, 0.020), (c + Vector((0, -0.04, -0.012)), 0.040, 0.016)], PIEL, 8)
     for i in range(4):
-        x = s * (0.322 + i * 0.023)
-        largo = [0.085, 0.098, 0.093, 0.072][i if s > 0 else 3 - i]
-        loft('dedo', [((x, -0.17, 0.575), 0.0115, 0.0115), ((x + s * 0.003 * i, -0.17 - largo * 0.55, 0.552), 0.0105, 0.0105),
-                      ((x + s * 0.004 * i, -0.17 - largo, 0.538), 0.0085, 0.0085)], PIEL, 6)
-    loft('pulgar', [((s * 0.322, -0.11, 0.595), 0.016, 0.016), ((s * 0.288, -0.155, 0.568), 0.013, 0.013), ((s * 0.275, -0.19, 0.552), 0.0095, 0.0095)], PIEL, 6)
+        x = mx + s * (-0.027 + i * 0.020)
+        largo = [0.080, 0.092, 0.087, 0.068][i if s > 0 else 3 - i]
+        loft('dedo', [((x, -0.17, 0.575), 0.0100, 0.0100), ((x + s * 0.003 * i, -0.17 - largo * 0.55, 0.552), 0.0092, 0.0092),
+                      ((x + s * 0.004 * i, -0.17 - largo, 0.538), 0.0074, 0.0074)], PIEL, 7)
+    loft('pulgar', [((mx - s * 0.028, -0.11, 0.595), 0.0140, 0.0140), ((mx - s * 0.058, -0.155, 0.568), 0.0115, 0.0115), ((mx - s * 0.070, -0.19, 0.552), 0.0085, 0.0085)], PIEL, 7)
+
+def textura_tatuaje():
+    """diseño tribal: rejilla de arcos en punta con rombos, tinta negra con líneas de piel"""
+    W, Hh = 384, 768
+    img = bpy.data.images.new('tatuaje', W, Hh, alpha=True)
+    piel = (0.725, 0.510, 0.373); tinta = (0.055, 0.045, 0.045)
+    px = []
+    for j in range(Hh):
+        v = j / (Hh - 1)          # 0 = codo, 1 = muñeca
+        for i in range(W):
+            u = i / W
+            a = u * 4.0; b = (v - 0.30) * 9.5
+            borde = 0.045 * abs((u * 8.0) % 1.0 - 0.5) * 2
+            dentro = 0.31 + borde < v < 0.90 - borde
+            color = piel
+            if dentro:
+                color = tinta
+                for des in (0.0, 0.5):
+                    x = ((a + des) % 1.0) - 0.5
+                    y = ((b + des * 2.0) % 2.0) - 1.0
+                    ogiva = abs(abs(x) - 0.47 * math.cos(y * math.pi / 2) ** 2)
+                    if ogiva < 0.040: color = piel
+                x = ((a % 1.0) - 0.5); y = (b % 2.0) - 1.0
+                rombo = abs(x) * 2.2 + abs(y) * 1.25
+                if 0.46 < rombo < 0.60: color = piel
+                if rombo < 0.16: color = piel
+                gancho = math.hypot(x * 1.6, (abs(y) - 0.66) * 0.9)
+                if 0.13 < gancho < 0.185 and x * y > -0.02: color = piel
+            px.extend((color[0], color[1], color[2], 1.0))
+    img.pixels = px
+    img.pack()
+    return img
+
+def mat_tatuaje():
+    m = bpy.data.materials.new('piel_tatuada'); m.use_nodes = True
+    nt = m.node_tree; b = nt.nodes['Principled BSDF']; b.inputs['Roughness'].default_value = 0.65
+    tx = nt.nodes.new('ShaderNodeTexImage'); tx.image = textura_tatuaje(); tx.extension = 'REPEAT'
+    nt.links.new(tx.outputs['Color'], b.inputs['Base Color'])
+    return m
+
+def antebrazo_tatuado(codo, d, m):
+    """antebrazo liso con coordenadas para envolver el diseño"""
+    perfil_a = [(0.10, 0.040, 0.037), (0.24, 0.043, 0.039), (0.38, 0.041, 0.036), (0.54, 0.035, 0.031), (0.70, 0.029, 0.025), (0.86, 0.025, 0.022), (1.0, 0.022, 0.019)]
+    n = 18
+    u_ = d.normalized(); lat = Vector((1, 0, 0)) - u_ * u_.x; lat.normalize(); fr = u_.cross(lat).normalized()
+    verts = []
+    for t_, ra, rb in perfil_a:
+        c = codo + d * t_
+        for k in range(n):
+            ang = 2 * math.pi * k / n
+            verts.append(c + lat * math.cos(ang) * ra + fr * math.sin(ang) * rb)
+    caras = []; uvs = []
+    for i in range(len(perfil_a) - 1):
+        for k in range(n):
+            a0 = i * n + k; a1 = i * n + (k + 1) % n
+            caras.append((a0, a1, a1 + n, a0 + n))
+            va = perfil_a[i][0]; vb = perfil_a[i + 1][0]
+            uvs.append([(k / n, va), ((k + 1) / n, va), ((k + 1) / n, vb), (k / n, vb)])
+    me = bpy.data.meshes.new('antebrazo_t'); me.from_pydata([tuple(v) for v in verts], [], caras); me.update()
+    capa = me.uv_layers.new(name='uv')
+    for p, uv in zip(me.polygons, uvs):
+        for li, co_uv in zip(p.loop_indices, uv): capa.data[li].uv = co_uv
+    me.materials.append(m)
+    o = bpy.data.objects.new('antebrazo_t', me); sc.collection.objects.link(o)
 
 for s in (-1, 1):
-    hombro = (s * 0.22, 0.05, 1.18); codo = Vector((s * 0.348, 0.035, 0.915)); muneca = Vector((s * 0.35, -0.075, 0.63))
-    loft('manga', [((s * 0.17, 0.05, 1.19), 0.085, 0.085), (hombro, 0.092, 0.088), ((s * 0.295, 0.05, 1.065), 0.070, 0.070),
-                   ((s * 0.345, 0.04, 0.945), 0.064, 0.064), (tuple(codo + Vector((0, 0, -0.02))), 0.067, 0.065)], ROJO, 9, 0.006)
+    hombro = (s * 0.170, 0.05, 1.178); codo = Vector((s * 0.272, 0.035, 0.915)); muneca = Vector((s * 0.287, -0.075, 0.63))
+    loft('manga', [((s * 0.128, 0.05, 1.19), 0.060, 0.064), (hombro, 0.068, 0.066), ((s * 0.230, 0.05, 1.065), 0.051, 0.052),
+                   ((s * 0.270, 0.04, 0.945), 0.047, 0.047), (tuple(codo + Vector((0, 0, -0.02))), 0.050, 0.049)], ROJO, 11, 0.003)
     d = (muneca - codo)
-    remangado = codo + d * 0.16
-    loft('puno', [(tuple(codo + d * 0.02), 0.070, 0.068), (tuple(codo + d * 0.09), 0.060, 0.058), (tuple(remangado), 0.062, 0.060)], ROJO2, 10, 0.004)
-    loft('antebrazo', [(tuple(codo + d * 0.10), 0.048, 0.044), (tuple(codo + d * 0.38), 0.048, 0.042), (tuple(codo + d * 0.70), 0.036, 0.031), (tuple(muneca), 0.027, 0.023)], PIEL, 9)
-    # tatuaje negro: bandas y rombos
-    for (a, b) in [(0.30, 0.325), (0.54, 0.555)]:
-        ra = 0.0505 - (a - 0.38) * 0.03; rb = ra - 0.001
-        loft('banda', [(tuple(codo + d * a), ra, ra * 0.89), (tuple(codo + d * b), rb, rb * 0.89)], TINTA, 9, tapas=False)
-    u = d.normalized(); lat = Vector((1, 0, 0)) - u * u.x; lat.normalize(); fr = u.cross(lat).normalized()
-    if fr.y > 0: fr = -fr
-    for k, t in enumerate((0.37, 0.43, 0.49)):
-        radio = 0.049 - (t - 0.38) * 0.06
-        for j, desvio in enumerate((-0.42, 0.28)):
-            n_ = (fr * math.cos(desvio) + lat * s * math.sin(desvio)).normalized()
-            o = codo + d * (t + 0.02 * j) + n_ * (radio * 0.93)
-            lado_ = u.cross(n_).normalized()
-            objeto('rombo', [o + u * 0.024, o + lado_ * 0.015, o - u * 0.024, o - lado_ * 0.015], [(0, 1, 2, 3)], TINTA)
+    loft('puno', [(tuple(codo + d * 0.02), 0.053, 0.051), (tuple(codo + d * 0.09), 0.045, 0.043), (tuple(codo + d * 0.16), 0.047, 0.045)], ROJO2, 12, 0.002)
+    if s > 0:
+        antebrazo_tatuado(codo, d, mat_tatuaje())
+    else:
+        loft('antebrazo', [(tuple(codo + d * 0.10), 0.040, 0.037), (tuple(codo + d * 0.38), 0.040, 0.035), (tuple(codo + d * 0.70), 0.029, 0.025), (tuple(muneca), 0.022, 0.019)], PIEL, 12)
     mano(s)
 
 # ---------------- CABEZA ----------------
@@ -246,12 +305,15 @@ for s in (-1, 1):
     # orejas
     en_cabeza(bola('oreja', P(s * 0.103, 0.020, 0.005), 0.029, PIEL, 2, (0.48, 0.80, 1.18), (0.1, 0, s * -0.25)))
     en_cabeza(bola('hueco', P(s * 0.115, 0.014, 0.004), 0.0135, SOMBRA, 1, (0.3, 0.8, 1.15)))
-# arete de aro
-aro = []
-for k in range(13):
-    a = 2 * math.pi * k / 12
-    aro.append(P(-0.113 - 0.004 * math.cos(a), 0.010 + 0.013 * math.sin(a), -0.034 + 0.013 * math.cos(a)))
-en_cabeza(tubo('arete', aro, 0.0034, METAL))
+# aretes: el lóbulo atraviesa el aro, en las dos orejas
+for s in (-1, 1):
+    en_cabeza(bola('lobulo', P(s * 0.1015, 0.016, -0.025), 0.0125, PIEL, 2, (0.62, 0.85, 1.0)))
+    aro = []
+    for k in range(25):
+        a = 2 * math.pi * k / 24
+        r_ = 0.0155
+        aro.append(P(s * (0.1075 + 0.55 * r_ * math.sin(a)), 0.010 - 0.62 * r_ * math.sin(a), -0.0455 + r_ * math.cos(a)))
+    en_cabeza(tubo('arete', aro, 0.0033, METAL))
 # nariz
 y0 = frente(0, 0.03)
 nv = [P(0, y0 - 0.003, 0.040), P(-0.010, frente(0.010, 0.01) - 0.004, 0.006), P(0.010, frente(0.010, 0.01) - 0.004, 0.006), P(0, frente(0, 0) - 0.020, -0.005),
@@ -259,42 +321,79 @@ nv = [P(0, y0 - 0.003, 0.040), P(-0.010, frente(0.010, 0.01) - 0.004, 0.006), P(
       P(-0.012, frente(0.012, -0.03) - 0.006, -0.031), P(0.012, frente(0.012, -0.03) - 0.006, -0.031)]
 en_cabeza(objeto('nariz', nv, [(0, 1, 3), (0, 3, 2), (1, 4, 3), (2, 3, 5), (4, 6, 3), (3, 6, 5), (4, 7, 6), (6, 8, 5), (7, 8, 6),
                                (0, 2, 1), (1, 2, 8), (1, 8, 7), (1, 7, 4), (2, 5, 8)], PIEL))
-# barba corta (sombra), bigote, labios y chiva
-for z0_, z1_ in [(-0.119, -0.098), (-0.098, -0.075), (-0.075, -0.052)]:
-    pts_a = []; pts_b = []
-    for k in range(17):
-        t = -1 + 2 * k / 16
-        for lista, z in ((pts_a, z0_), (pts_b, z1_ if z1_ < -0.06 else z1_ + 0.045 * abs(t) ** 2)):
-            ancho = next(a0 + (a1 - a0) * (z - z0p) / (z1p - z0p) for (z0p, _, a0, _), (z1p, _, a1, _) in zip(perfil, perfil[1:]) if z0p - 0.002 <= z <= z1p)
-            x = t * ancho * 0.97
-            lista.append(Vector(P(x, frente(x, max(z, -0.118)) - 0.0028, z)))
-    vs = pts_a + pts_b
-    en_cabeza(objeto('rastro', vs, [(k, k + 1, 17 + k + 1, 17 + k) for k in range(16)], SOMBRA))
+# labios
 boca_z = -0.057
 def sobre(x, z, sale): return P(x, frente(x, z) - sale, z)
-en_cabeza(loft('labio_sup', [(sobre(-0.030, boca_z + 0.001, 0.003), 0.002, 0.002), (sobre(-0.011, boca_z + 0.0065, 0.008), 0.0055, 0.005), (sobre(0, boca_z + 0.0045, 0.008), 0.0048, 0.005),
-                             (sobre(0.011, boca_z + 0.0065, 0.008), 0.0055, 0.005), (sobre(0.030, boca_z + 0.001, 0.003), 0.002, 0.002)], LABIO, 7))
-en_cabeza(loft('labio_inf', [(sobre(-0.026, boca_z - 0.003, 0.003), 0.002, 0.002), (sobre(0, boca_z - 0.0085, 0.0095), 0.0072, 0.0065), (sobre(0.026, boca_z - 0.003, 0.003), 0.002, 0.002)], LABIO, 7))
+def ancho_en(z):
+    z = min(max(z, perfil[0][0]), perfil[-1][0])
+    for (z0p, _, a0, _), (z1p, _, a1, _) in zip(perfil, perfil[1:]):
+        if z0p <= z <= z1p: return a0 + (a1 - a0) * (z - z0p) / (z1p - z0p)
+    return 0.05
+en_cabeza(loft('labio_sup', [(sobre(-0.029, boca_z + 0.001, 0.003), 0.002, 0.002), (sobre(-0.011, boca_z + 0.0062, 0.0075), 0.0052, 0.0048), (sobre(0, boca_z + 0.0045, 0.0075), 0.0046, 0.0048),
+                             (sobre(0.011, boca_z + 0.0062, 0.0075), 0.0052, 0.0048), (sobre(0.029, boca_z + 0.001, 0.003), 0.002, 0.002)], LABIO, 9))
+en_cabeza(loft('labio_inf', [(sobre(-0.025, boca_z - 0.003, 0.003), 0.002, 0.002), (sobre(0, boca_z - 0.0085, 0.009), 0.0070, 0.0062), (sobre(0.025, boca_z - 0.003, 0.003), 0.002, 0.002)], LABIO, 9))
+def pelito(x, z, r, m, sale=0.0016):
+    en_cabeza(bola('pelito', sobre(x, z, sale), r, m, 1, (1, 0.55, 1.15), (random.random() * 3, random.random() * 3, random.random() * 3), 0.3))
+# sombra de barba en la mandíbula
+n_ = 0
+while n_ < 900:
+    z = random.uniform(-0.114, -0.040); x = random.uniform(-1, 1) * ancho_en(z) * 0.96
+    if z > -0.092 + 0.052 * (abs(x) / ancho_en(z)) ** 2: continue
+    if abs(x) < 0.033 and -0.072 < z < -0.047: continue
+    pelito(x, z, random.uniform(0.0017, 0.0030), BARBA if z < -0.086 else SOMBRA); n_ += 1
+# chiva y mosca densas
+n_ = 0
+while n_ < 420:
+    x = random.gauss(0, 0.016); z = random.uniform(-0.1175, -0.088)
+    if abs(x) > 0.036: continue
+    pelito(x, z, random.uniform(0.0028, 0.0044), BARBA, 0.0030); n_ += 1
+for _ in range(50):
+    pelito(random.gauss(0, 0.0042), random.uniform(-0.085, -0.071), 0.0027, BARBA, 0.0030)
+# bigote y unión suave con la chiva
 for s in (-1, 1):
-    en_cabeza(loft('bigote', [(sobre(s * 0.001, -0.043, 0.0075), 0.0062, 0.0045), (sobre(s * 0.020, -0.046, 0.0075), 0.0058, 0.0045), (sobre(s * 0.037, -0.059, 0.004), 0.0022, 0.0022)], BARBA, 6))
-    en_cabeza(tubo('chiva_lado', [sobre(s * 0.035, -0.061, 0.003), sobre(s * 0.033, -0.082, 0.004), sobre(s * 0.018, -0.099, 0.005)], 0.0044, BARBA))
-en_cabeza(bola('mosca', sobre(0, -0.076, 0.004), 0.0075, BARBA, 1, (1.1, 0.5, 1.0), ruido=0.2))
-en_cabeza(bola('chiva', P(0, frente(0, -0.100) + 0.003, -0.106), 0.026, BARBA, 2, (1.35, 0.62, 0.78), ruido=0.14))
+    for k in range(70):
+        q = random.random()
+        pelito(s * (0.002 + 0.035 * q), -0.0445 - 0.013 * q ** 2 + random.uniform(-0.0032, 0.0030), 0.0034 - 0.0012 * q, BARBA, 0.0066 - 0.0035 * q)
+    for k in range(55):
+        q = random.random()
+        pelito(s * (0.036 - 0.012 * q ** 2 + random.uniform(-0.003, 0.003)), -0.058 - 0.038 * q, 0.0025, BARBA, 0.0022)
 
 # pelo: base corta, lados degradados y rizos arriba
 en_cabeza(loft('nuca', [(P(0, 0.030, -0.040), 0.088, 0.088, (0, 0, 1)), (P(0, 0.034, 0.025), 0.1050, 0.098, (0, 0, 1)), (P(0, 0.030, 0.085), 0.1050, 0.108, (0, 0, 1))], LADO, 14, 0.001, tapas=False))
 en_cabeza(loft('casquete', [(P(0, 0.027, 0.083), 0.1065, 0.113, (0, 0, 1)), (P(0, 0.024, 0.125), 0.094, 0.103, (0, 0, 1)), (P(0, 0.022, 0.158), 0.056, 0.066, (0, 0, 1)), (P(0, 0.022, 0.170), 0.015, 0.018, (0, 0, 1))], PELO, 14, 0.002))
+def rizo(c, radio, grueso):
+    eje_a = Vector((random.gauss(0, 1), random.gauss(0, 1), random.gauss(0, 1))).normalized()
+    eje_b = eje_a.orthogonal().normalized(); eje_c = eje_a.cross(eje_b)
+    vueltas = random.uniform(0.72, 0.92)
+    pts = []
+    for k in range(9):
+        a = 2 * math.pi * vueltas * k / 8
+        pts.append(Vector(c) + eje_b * math.cos(a) * radio + eje_c * math.sin(a) * radio + eje_a * (k / 8 - 0.5) * radio * 0.9)
+    en_cabeza(loft('rizo', [(p, grueso * (1 - 0.45 * abs(k - 4) / 4), grueso * (1 - 0.45 * abs(k - 4) / 4)) for k, p in enumerate(pts)], PELO, n=5))
 rizos = 0
-while rizos < 300:
-    th = random.uniform(0, 2 * math.pi); fi = random.uniform(0.0, 1.35)
-    x = 0.098 * math.sin(fi) * math.cos(th); y = 0.022 + 0.106 * math.sin(fi) * math.sin(th); z = 0.092 + 0.092 * math.cos(fi)
+while rizos < 420:
+    th = random.uniform(0, 2 * math.pi); fi = math.acos(random.uniform(math.cos(1.38), 1.0))
+    x = 0.098 * math.sin(fi) * math.cos(th); y = 0.022 + 0.106 * math.sin(fi) * math.sin(th); z = 0.092 + 0.086 * math.cos(fi)
     delante = y < -0.045
-    if (delante and z < 0.108) or z < 0.093 or (abs(x) > 0.085 and z < 0.11 and y < 0.04): continue
-    if y > 0.075 and z < 0.115: z = random.uniform(0.06, 0.115)
-    en_cabeza(bola('rizo', P(x, y, z), random.uniform(0.0135, 0.021), PELO, 1, (1, 1, random.uniform(0.75, 1.1)), (random.random(), random.random(), random.random()), 0.22))
+    if (delante and z < 0.109) or z < 0.095 or (abs(x) > 0.086 and z < 0.112 and y < 0.04): continue
+    if y > 0.072 and z < 0.116: z = random.uniform(0.060, 0.116)
+    rizo(P(x, y, z), random.uniform(0.0090, 0.0135), random.uniform(0.0042, 0.0056))
     rizos += 1
-for x, z in [(-0.052, 0.112), (-0.030, 0.104), (-0.008, 0.108), (0.016, 0.101), (0.040, 0.109), (0.060, 0.104)]:
-    en_cabeza(bola('flequillo', P(x, frente(x, 0.098) - 0.004, z), 0.0165, PELO, 1, (1, 0.8, 0.9), (x * 30, z * 20, 0), 0.25))
+for x, z in [(-0.058, 0.112), (-0.040, 0.106), (-0.020, 0.109), (0.000, 0.103), (0.018, 0.108), (0.036, 0.102), (0.054, 0.110)]:
+    rizo(P(x, frente(x, 0.099) - 0.005, z), 0.0100, 0.0046)
+
+# lentes oscuros rectangulares: solo de noche
+if VISTA == 'noche':
+    LENTE = mat('lente', '#0b0d12', 0.08, metal=0.35)
+    MARCO = mat('marco', '#0c0b0c', 0.35)
+    yl = frente(0.037, 0.022) - 0.020
+    for s in (-1, 1):
+        forma = [(0.011, 0.037), (0.075, 0.039), (0.071, 0.008), (0.019, 0.006)]
+        cara_l = [Vector(P(s * x_, yl + max(0, x_ - 0.045) * 0.28, z_)) for x_, z_ in forma]
+        en_cabeza(objeto('lente', cara_l, [(0, 1, 2, 3)], LENTE))
+        en_cabeza(tubo('marco', cara_l + [cara_l[0], cara_l[1]], 0.0034, MARCO))
+        en_cabeza(tubo('patilla', [cara_l[1], P(s * 0.101, -0.058, 0.034), P(s * 0.111, 0.006, 0.024), P(s * 0.108, 0.030, 0.004)], 0.0030, MARCO))
+    en_cabeza(tubo('puente', [P(-0.011, yl, 0.033), P(0, yl - 0.004, 0.036), P(0.011, yl, 0.033)], 0.0027, MARCO))
 
 # girar la cabeza un poco y bajarla (pensativo)
 eje = Vector((0, 0.035, 1.34))
@@ -316,9 +415,11 @@ def luz(tipo, pos, energia, color, tam=0.5, hacia=(0, 0, 1.2)):
     o = bpy.data.objects.new('l', l); sc.collection.objects.link(o); o.location = pos
     if tipo == 'AREA': mira(o, hacia)
     return o
-luz('POINT', (0.66, 0.86, 1.16), 28, (1.0, 0.70, 0.40), 0.09)
-luz('AREA', (-1.25, -1.75, 2.15), 34, (1.0, 0.91, 0.82), 0.9)
-luz('AREA', (1.7, -1.0, 1.25), 9, (0.62, 0.72, 1.0), 1.2)
+if VISTA == 'noche':
+    bg.inputs['Color'].default_value = (0.012, 0.018, 0.042, 1)
+luz('POINT', (0.74, 0.86, 1.16), 30 if VISTA == 'noche' else 24, (1.0, 0.70, 0.40), 0.09)
+luz('AREA', (-1.25, -1.75, 2.15), 13 if VISTA == 'noche' else 34, (0.50, 0.62, 1.0) if VISTA == 'noche' else (1.0, 0.91, 0.82), 0.9)
+luz('AREA', (1.7, -1.0, 1.25), 11 if VISTA == 'noche' else 9, (0.35, 0.50, 1.0) if VISTA == 'noche' else (0.62, 0.72, 1.0), 1.2)
 luz('AREA', (0.9, 0.55, 2.2), 14, (1.0, 0.76, 0.48), 0.4)
 cam = bpy.data.cameras.new('c'); co = bpy.data.objects.new('c', cam); sc.collection.objects.link(co); sc.camera = co
 if VISTA == 'cara':

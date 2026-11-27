@@ -20,10 +20,10 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y blender
           blender --version
-      - name: Renderizar las dos vistas
+      - name: Renderizar las tres vistas
         run: |
           mkdir -p brayant-3d/salida
-          for vista in escena cara; do
+          for vista in escena cara noche; do
             blender -b --python-exit-code 1 -P brayant-3d/brayant.py -- "$PWD/brayant-3d/salida/$vista.png" "$vista"
             test -s "brayant-3d/salida/$vista.png"
           done
