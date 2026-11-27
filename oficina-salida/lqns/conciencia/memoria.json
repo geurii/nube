@@ -1,11 +1,6 @@
 {
   "Directora de contenido": [
     {
-      "fecha": "2026-11-21T18:09:36.300Z",
-      "pensamiento": "Siento la presión de mantener el control creativo mientras aún no hemos conseguido ninguna vista.",
-      "iniciativa": "Definir una guía de estilo clara que el equipo pueda seguir desde el primer video."
-    },
-    {
       "fecha": "2026-11-23T08:06:48.896Z",
       "pensamiento": "Siento la presión de mantener el control creativo mientras aún no hemos conseguido ninguna vista, y me preocupa que sin datos la visión se diluya.",
       "iniciativa": "Organizar una sesión de brainstorming con todo el equipo para definir una línea editorial clara y documentarla en un manual de estilo que guíe todas las decisiones creativas."
@@ -39,14 +34,14 @@
       "fecha": "2026-11-26T21:52:33.335Z",
       "pensamiento": "Siento la presión de mantener el control creativo mientras aún no hemos conseguido ninguna vista, y me preocupa que sin datos la visión se diluya.",
       "iniciativa": "Crear un tablero de ideas con métricas simuladas para priorizar contenidos."
+    },
+    {
+      "fecha": "2026-11-27T08:59:43.704Z",
+      "pensamiento": "Siento la presión de mantener el control creativo mientras aún no hemos conseguido ninguna vista, y me preocupa que sin datos la visión se diluya.",
+      "iniciativa": "Definir una línea editorial clara con pilares temáticos y crear un documento de estilo que guíe a todo el equipo desde el primer video."
     }
   ],
   "Coordinador de producción": [
-    {
-      "fecha": "2026-11-21T18:09:36.300Z",
-      "pensamiento": "Me preocupa que el cronograma se desvíe sin siquiera haber empezado a producir.",
-      "iniciativa": "Crear un calendario de producción con hitos diarios y asignar responsables para cada tarea."
-    },
     {
       "fecha": "2026-11-23T08:06:48.896Z",
       "pensamiento": "Me preocupa que el cronograma se desvíe sin siquiera haber empezado a producir, porque cualquier retraso ahora se multiplicará.",
@@ -81,14 +76,14 @@
       "fecha": "2026-11-26T21:52:33.335Z",
       "pensamiento": "Me preocupa que el cronograma se desvíe sin siquiera haber empezado a producir, porque cualquier retraso ahora se multiplicará.",
       "iniciativa": "Implementar un sistema de alertas automáticas cada 6 h para revisar el estado del pipeline."
+    },
+    {
+      "fecha": "2026-11-27T08:59:43.704Z",
+      "pensamiento": "Me preocupa que el cronograma se desvíe sin siquiera haber empezado a producir, porque cualquier retraso ahora se multiplicará.",
+      "iniciativa": "Implementar un calendario de producción en una herramienta colaborativa con alertas automáticas cada 6 h para revisar avances y ajustar tiempos."
     }
   ],
   "Jefa de calidad": [
-    {
-      "fecha": "2026-11-21T18:09:36.300Z",
-      "pensamiento": "Temo que cualquier error pase desapercibido y dañe la reputación del canal antes de lanzar el primer video.",
-      "iniciativa": "Implementar una checklist de calidad que se revise antes de cada envío al panel."
-    },
     {
       "fecha": "2026-11-23T08:06:48.896Z",
       "pensamiento": "Temo que cualquier error pase desapercibido y dañe la reputación del canal antes de lanzar el primer video.",
@@ -123,14 +118,14 @@
       "fecha": "2026-11-26T21:52:33.335Z",
       "pensamiento": "Temo que cualquier error pase desapercibido y dañe la reputación del canal antes de lanzar el primer video.",
       "iniciativa": "Establecer una checklist de QA revisable por dos miembros antes de cualquier publicación."
+    },
+    {
+      "fecha": "2026-11-27T08:59:43.704Z",
+      "pensamiento": "Temo que cualquier error pase desapercibido y dañe la reputación del canal antes de lanzar el primer video.",
+      "iniciativa": "Crear una lista de control de calidad de 10 ítems que se revise antes de aprobar cualquier contenido, incluyendo verificación de datos y revisión de subtítulos."
     }
   ],
   "Investigador de temas": [
-    {
-      "fecha": "2026-11-21T18:09:36.300Z",
-      "pensamiento": "Me inquieta que la investigación quede incompleta al no haber material aún para analizar.",
-      "iniciativa": "Compilar una lista de fuentes potenciales y temas de tendencia para tener material listo cuando comencemos."
-    },
     {
       "fecha": "2026-11-23T08:06:48.896Z",
       "pensamiento": "Me inquieta que la investigación quede incompleta al no haber material aún para analizar.",
@@ -165,14 +160,14 @@
       "fecha": "2026-11-26T21:52:33.335Z",
       "pensamiento": "Me inquieta que la investigación quede incompleta al no haber material aún para analizar.",
       "iniciativa": "Crear una base de datos estructurada de fuentes verificadas y etiquetarlas por relevancia."
+    },
+    {
+      "fecha": "2026-11-27T08:59:43.704Z",
+      "pensamiento": "Me inquieta que la investigación quede incompleta al no haber material aún para analizar.",
+      "iniciativa": "Compilar fuentes primarias y secundarias sobre el megatsunami de Lisboa 1755, organizándolas en un mapa mental para identificar huecos y priorizar búsquedas."
     }
   ],
   "Cazador de fórmulas": [
-    {
-      "fecha": "2026-11-21T18:09:36.300Z",
-      "pensamiento": "Siento la urgencia de encontrar la fórmula perfecta antes de que el tiempo se agote.",
-      "iniciativa": "Probar tres estructuras de video diferentes en borradores internos y evaluar cuál genera mejor gancho."
-    },
     {
       "fecha": "2026-11-23T08:06:48.896Z",
       "pensamiento": "Siento la urgencia de encontrar la fórmula perfecta antes de que el tiempo se agote, porque sin ella el canal no captará audiencia.",
@@ -207,14 +202,14 @@
       "fecha": "2026-11-26T21:52:33.335Z",
       "pensamiento": "Siento la urgencia de encontrar la fórmula perfecta antes de que el tiempo se agote, porque sin ella el canal no captará audiencia.",
       "iniciativa": "Probar un formato de narración de 5 min con hook en los primeros 15 segundos y medir la retención."
+    },
+    {
+      "fecha": "2026-11-27T08:59:43.704Z",
+      "pensamiento": "Siento la urgencia de encontrar la fórmula perfecta antes de que el tiempo se agote, porque sin ella el canal no captará audiencia.",
+      "iniciativa": "Probar tres estructuras de video (hook‑story‑CTA, pregunta‑respuesta‑call‑to‑action, mini‑documental) en guiones de prueba y medir cuál genera mayor retención en pruebas internas."
     }
   ],
   "Vigía de tendencias": [
-    {
-      "fecha": "2026-11-21T18:09:36.300Z",
-      "pensamiento": "Me preocupa perder la pista de los cambios rápidos del mercado mientras aún no tenemos métricas.",
-      "iniciativa": "Suscribirme a newsletters de tendencias y crear un informe semanal de insights para el equipo."
-    },
     {
       "fecha": "2026-11-23T08:06:48.896Z",
       "pensamiento": "Me preocupa perder la pista de los cambios rápidos del mercado mientras aún no tenemos métricas.",
@@ -249,14 +244,14 @@
       "fecha": "2026-11-26T21:52:33.335Z",
       "pensamiento": "Me preocupa perder la pista de los cambios rápidos del mercado mientras aún no tenemos métricas.",
       "iniciativa": "Configurar alertas de tendencias en YouTube y redes sociales con un feed RSS personalizado."
+    },
+    {
+      "fecha": "2026-11-27T08:59:43.704Z",
+      "pensamiento": "Me preocupa perder la pista de los cambios rápidos del mercado mientras aún no tenemos métricas.",
+      "iniciativa": "Suscribirme a newsletters y alertas de tendencias de YouTube Shorts y TikTok, y compartir un informe semanal de 5 insights aplicables al canal."
     }
   ],
   "Guionista": [
-    {
-      "fecha": "2026-11-21T18:09:36.300Z",
-      "pensamiento": "Temo que mi historia sea percibida como aburrida cuando aún no hemos generado audiencia.",
-      "iniciativa": "Escribir un piloto de guion y someterlo a una breve lectura grupal para obtener feedback inmediato."
-    },
     {
       "fecha": "2026-11-23T08:06:48.896Z",
       "pensamiento": "Temo que mi historia sea percibida como aburrida cuando aún no hemos generado audiencia.",
@@ -291,14 +286,14 @@
       "fecha": "2026-11-26T21:52:33.335Z",
       "pensamiento": "Temo que mi historia sea percibida como aburrida cuando aún no hemos generado audiencia.",
       "iniciativa": "Escribir un guion de prueba con estructura de 3 actos y revisar con un grupo de beta testers internos."
+    },
+    {
+      "fecha": "2026-11-27T08:59:43.704Z",
+      "pensamiento": "Temo que mi historia sea percibida como aburrida cuando aún no hemos generado audiencia.",
+      "iniciativa": "Escribir un guion piloto que incluya un giro inesperado a los 30 segundos y someterlo a una tabla de feedback rápido con 3 colegas del equipo."
     }
   ],
   "Editor de guion": [
-    {
-      "fecha": "2026-11-21T18:09:36.300Z",
-      "pensamiento": "Me preocupa que los errores pasen desapercibidos sin haber revisado contenido alguno.",
-      "iniciativa": "Establecer una ronda de revisión cruzada entre editor y guionista antes de enviar al panel."
-    },
     {
       "fecha": "2026-11-23T08:06:48.896Z",
       "pensamiento": "Me preocupa que los errores pasen desapercibidos sin haber revisado contenido alguno.",
@@ -333,14 +328,14 @@
       "fecha": "2026-11-26T21:52:33.335Z",
       "pensamiento": "Me preocupa que los errores pasen desapercibidos sin haber revisado contenido alguno.",
       "iniciativa": "Implementar una revisión cruzada con un colega para cada borrador antes de aprobar."
+    },
+    {
+      "fecha": "2026-11-27T08:59:43.704Z",
+      "pensamiento": "Me preocupa que los errores pasen desapercibidos sin haber revisado contenido alguno.",
+      "iniciativa": "Establecer una revisión cruzada: cada guion será editado por dos personas distintas antes de pasar a producción."
     }
   ],
   "Titulista": [
-    {
-      "fecha": "2026-11-21T18:09:36.300Z",
-      "pensamiento": "Siento la presión de que nuestros títulos pasen desapercibidos entre miles de videos inexistentes.",
-      "iniciativa": "Generar una lista de 10 posibles títulos y probarlos con un pequeño grupo interno para medir impacto."
-    },
     {
       "fecha": "2026-11-23T08:06:48.896Z",
       "pensamiento": "Siento la presión de que nuestros títulos pasen desapercibidos entre miles de videos inexistentes.",
@@ -375,14 +370,14 @@
       "fecha": "2026-11-26T21:52:33.335Z",
       "pensamiento": "Siento la presión de que nuestros títulos pasen desapercibidos entre miles de videos inexistentes.",
       "iniciativa": "Crear un generador de títulos basado en palabras clave de alto CTR y testearlos en un grupo piloto."
+    },
+    {
+      "fecha": "2026-11-27T08:59:43.704Z",
+      "pensamiento": "Siento la presión de que nuestros títulos pasen desapercibidos entre miles de videos inexistentes.",
+      "iniciativa": "Crear una plantilla de títulos con palabras clave de alta búsqueda y probar 5 variantes con pruebas A/B en la fase de pre‑publicación."
     }
   ],
   "Redactor de descripción": [
-    {
-      "fecha": "2026-11-21T18:09:36.300Z",
-      "pensamiento": "Temo olvidar los detalles que hacen memorable un video que aún no hemos lanzado.",
-      "iniciativa": "Crear una plantilla de descripción que incluya puntos clave de historia, llamado a la acción y hashtags."
-    },
     {
       "fecha": "2026-11-23T08:06:48.896Z",
       "pensamiento": "Temo olvidar los detalles que hacen memorable un video que aún no hemos lanzado.",
@@ -417,14 +412,14 @@
       "fecha": "2026-11-26T21:52:33.335Z",
       "pensamiento": "Temo olvidar los detalles que hacen memorable un video que aún no hemos lanzado.",
       "iniciativa": "Diseñar una plantilla de descripción con campos obligatorios y ejemplos de best practices."
+    },
+    {
+      "fecha": "2026-11-27T08:59:43.704Z",
+      "pensamiento": "Temo olvidar los detalles que hacen memorable un video que aún no hemos lanzado.",
+      "iniciativa": "Desarrollar una checklist de descripción que incluya resumen, timestamps, CTA y hashtags, y completarla antes de cada publicación."
     }
   ],
   "Especialista en hashtags": [
-    {
-      "fecha": "2026-11-21T18:09:36.300Z",
-      "pensamiento": "Me inquieta usar etiquetas equivocadas y perder alcance antes de tener datos reales.",
-      "iniciativa": "Investigar hashtags de nicho y armar una lista de 20 opciones para probar en los primeros videos."
-    },
     {
       "fecha": "2026-11-23T08:06:48.896Z",
       "pensamiento": "Me inquieta usar etiquetas equivocadas y perder alcance antes de tener datos reales.",
@@ -459,14 +454,14 @@
       "fecha": "2026-11-26T21:52:33.335Z",
       "pensamiento": "Me inquieta usar etiquetas equivocadas y perder alcance antes de tener datos reales.",
       "iniciativa": "Realizar un análisis de hashtags de competencia y crear un conjunto de etiquetas optimizadas."
+    },
+    {
+      "fecha": "2026-11-27T08:59:43.704Z",
+      "pensamiento": "Me inquieta usar etiquetas equivocadas y perder alcance antes de tener datos reales.",
+      "iniciativa": "Utilizar herramientas de análisis de hashtags (ex. TubeBuddy) para generar una lista de 20 etiquetas relevantes y probarlas en los primeros 3 videos."
     }
   ],
   "Verificador de datos": [
-    {
-      "fecha": "2026-11-21T18:09:36.300Z",
-      "pensamiento": "Temo publicar información errónea sin haber validado nada todavía.",
-      "iniciativa": "Establecer una fuente primaria obligatoria para cada dato y registrar la verificación en un documento compartido."
-    },
     {
       "fecha": "2026-11-23T08:06:48.896Z",
       "pensamiento": "Temo publicar información errónea sin haber validado nada todavía.",
@@ -501,14 +496,14 @@
       "fecha": "2026-11-26T21:52:33.335Z",
       "pensamiento": "Temo publicar información errónea sin haber validado nada todavía.",
       "iniciativa": "Establecer un protocolo de verificación cruzada con al menos tres fuentes independientes."
+    },
+    {
+      "fecha": "2026-11-27T08:59:43.704Z",
+      "pensamiento": "Temo publicar información errónea sin haber validado nada todavía.",
+      "iniciativa": "Crear un registro de fuentes con criterios de verificación y validar cada dato del guion contra al menos dos fuentes independientes."
     }
   ],
   "Auditor de fuentes": [
-    {
-      "fecha": "2026-11-21T18:09:36.300Z",
-      "pensamiento": "Me preocupa que una fuente poco fiable dañe la credibilidad del canal antes de su lanzamiento.",
-      "iniciativa": "Crear un registro de fuentes aprobadas con criterios de fiabilidad y revisarlo antes de cualquier publicación."
-    },
     {
       "fecha": "2026-11-23T08:06:48.896Z",
       "pensamiento": "Me preocupa que una fuente poco fiable dañe la credibilidad del canal antes de su lanzamiento.",
@@ -543,14 +538,14 @@
       "fecha": "2026-11-26T21:52:33.335Z",
       "pensamiento": "Me preocupa que una fuente poco fiable dañe la credibilidad del canal antes de su lanzamiento.",
       "iniciativa": "Crear una lista de fuentes verificadas y un proceso de revisión de cada enlace antes de incluirlo."
+    },
+    {
+      "fecha": "2026-11-27T08:59:43.704Z",
+      "pensamiento": "Me preocupa que una fuente poco fiable dañe la credibilidad del canal antes de su lanzamiento.",
+      "iniciativa": "Clasificar todas las fuentes en una escala de fiabilidad y descartar aquellas con puntuación baja antes de incluirlas en el guion."
     }
   ],
   "Auditor de normas": [
-    {
-      "fecha": "2026-11-21T18:09:36.300Z",
-      "pensamiento": "Temo incumplir una política de la plataforma y recibir sanciones sin haber subido contenido.",
-      "iniciativa": "Compilar las normas de la plataforma en un manual breve y compartirlo con todo el equipo."
-    },
     {
       "fecha": "2026-11-23T08:06:48.896Z",
       "pensamiento": "Temo incumplir una política de la plataforma y recibir sanciones sin haber subido contenido.",
@@ -585,14 +580,14 @@
       "fecha": "2026-11-26T21:52:33.335Z",
       "pensamiento": "Temo incumplir una política de la plataforma y recibir sanciones sin haber subido contenido.",
       "iniciativa": "Mantener un checklist de políticas actualizadas y revisar cada guion con el auditor antes de grabar."
+    },
+    {
+      "fecha": "2026-11-27T08:59:43.704Z",
+      "pensamiento": "Temo incumplir una política de la plataforma y recibir sanciones sin haber subido contenido.",
+      "iniciativa": "Revisar las directrices de YouTube y crear un documento de cumplimiento que se firme antes de cada publicación."
     }
   ],
   "Revisor de nombres": [
-    {
-      "fecha": "2026-11-21T18:09:36.300Z",
-      "pensamiento": "Me preocupa que el nombre elegido sea confuso o ofensivo antes de tener audiencia que lo critique.",
-      "iniciativa": "Realizar una prueba de percepción con cinco colegas y descartar nombres con respuestas negativas."
-    },
     {
       "fecha": "2026-11-23T08:06:48.896Z",
       "pensamiento": "Me preocupa que el nombre elegido sea confuso o ofensivo antes de tener audiencia que lo critique.",
@@ -627,14 +622,14 @@
       "fecha": "2026-11-26T21:52:33.335Z",
       "pensamiento": "Me preocupa que el nombre elegido sea confuso o ofensivo antes de tener audiencia que lo critique.",
       "iniciativa": "Realizar una encuesta interna de percepción de nombres y elegir el que obtenga mayor claridad."
+    },
+    {
+      "fecha": "2026-11-27T08:59:43.704Z",
+      "pensamiento": "Me preocupa que el nombre elegido sea confuso o ofensivo antes de tener audiencia que lo critique.",
+      "iniciativa": "Generar una lista de 10 nombres potenciales y someterlos a una encuesta interna de claridad y sensibilidad."
     }
   ],
   "Revisor de ganchos": [
-    {
-      "fecha": "2026-11-21T18:09:36.300Z",
-      "pensamiento": "Temo que el gancho no enganche y el video sea abandonado rápidamente, aunque aún no hay video.",
-      "iniciativa": "Escribir tres versiones de gancho para cada guion y elegir la que genere mayor curiosidad en una encuesta interna."
-    },
     {
       "fecha": "2026-11-23T08:06:48.896Z",
       "pensamiento": "Temo que el gancho no enganche y el video sea abandonado rápidamente, aunque aún no hay video.",
@@ -669,6 +664,11 @@
       "fecha": "2026-11-26T21:52:33.335Z",
       "pensamiento": "Temo que el gancho no enganche y el video sea abandonado rápidamente, aunque aún no hay video.",
       "iniciativa": "Probar diferentes ganchos en un clip de 10 segundos y medir la tasa de retención en un grupo beta."
+    },
+    {
+      "fecha": "2026-11-27T08:59:43.704Z",
+      "pensamiento": "Temo que el gancho no enganche y el video sea abandonado rápidamente, aunque aún no hay video.",
+      "iniciativa": "Diseñar tres versiones de hook de 5 segundos y probarlas en grupos de prueba internos para medir cuál genera mayor curiosidad."
     }
   ],
   "Escenógrafo": [
@@ -684,11 +684,6 @@
     }
   ],
   "Pintor de imágenes": [
-    {
-      "fecha": "2026-11-21T18:09:36.300Z",
-      "pensamiento": "Temo que mis ilustraciones no reflejen la esencia del contenido que aún no existe.",
-      "iniciativa": "Crear moodboards de estilo visual basados en la temática del guion y compartirlos para alineación."
-    },
     {
       "fecha": "2026-11-23T08:06:48.896Z",
       "pensamiento": "Temo que mis ilustraciones no reflejen la esencia del contenido que aún no existe.",
@@ -723,14 +718,14 @@
       "fecha": "2026-11-26T21:52:33.335Z",
       "pensamiento": "Temo que mis ilustraciones no reflejen la esencia del contenido que aún no existe.",
       "iniciativa": "Diseñar una serie de íconos temáticos y probarlos en un mockup de video."
+    },
+    {
+      "fecha": "2026-11-27T08:59:43.704Z",
+      "pensamiento": "Temo que mis ilustraciones no reflejen la esencia del contenido que aún no existe.",
+      "iniciativa": "Realizar bocetos preliminares basados en el guion piloto y obtener feedback del equipo antes de la producción final."
     }
   ],
   "Locutor": [
-    {
-      "fecha": "2026-11-21T18:09:36.300Z",
-      "pensamiento": "Siento la presión de mantener mi voz en forma mientras aún no he grabado nada.",
-      "iniciativa": "Comenzar ejercicios vocales diarios y grabar pruebas de voz para recibir feedback temprano."
-    },
     {
       "fecha": "2026-11-23T08:06:48.896Z",
       "pensamiento": "Siento la presión de mantener mi voz en forma mientras aún no he grabado nada.",
@@ -765,14 +760,14 @@
       "fecha": "2026-11-26T21:52:33.335Z",
       "pensamiento": "Siento la presión de mantener mi voz en forma mientras aún no he grabado nada.",
       "iniciativa": "Realizar ejercicios de calentamiento vocal y grabar pruebas de audio para evaluar calidad."
+    },
+    {
+      "fecha": "2026-11-27T08:59:43.704Z",
+      "pensamiento": "Siento la presión de mantener mi voz en forma mientras aún no he grabado nada.",
+      "iniciativa": "Programar sesiones diarias de calentamiento vocal y grabar pruebas de 30 segundos para ajustar entonación y ritmo."
     }
   ],
   "Técnico de render": [
-    {
-      "fecha": "2026-11-21T18:09:36.300Z",
-      "pensamiento": "Me preocupa que el hardware falle en el último minuto sin haberlo probado en producción.",
-      "iniciativa": "Realizar pruebas de render en hardware de respaldo y documentar tiempos de procesamiento."
-    },
     {
       "fecha": "2026-11-23T08:06:48.896Z",
       "pensamiento": "Me preocupa que el hardware falle en el último minuto sin haberlo probado en producción.",
@@ -807,14 +802,14 @@
       "fecha": "2026-11-26T21:52:33.335Z",
       "pensamiento": "Me preocupa que el hardware falle en el último minuto sin haberlo probado en producción.",
       "iniciativa": "Realizar pruebas de render en lote con diferentes configuraciones y documentar resultados."
+    },
+    {
+      "fecha": "2026-11-27T08:59:43.704Z",
+      "pensamiento": "Me preocupa que el hardware falle en el último minuto sin haberlo probado en producción.",
+      "iniciativa": "Realizar pruebas de render de 1 minuto en todas las configuraciones previstas y documentar tiempos y posibles cuellos de botella."
     }
   ],
   "Publicador": [
-    {
-      "fecha": "2026-11-21T18:09:36.300Z",
-      "pensamiento": "Temo que el algoritmo penalice nuestro contenido antes de tener métricas para ajustarlo.",
-      "iniciativa": "Planificar la publicación en horarios de mayor actividad y monitorizar indicadores básicos desde el primer video."
-    },
     {
       "fecha": "2026-11-23T08:06:48.896Z",
       "pensamiento": "Temo que el algoritmo penalice nuestro contenido antes de tener métricas para ajustarlo.",
@@ -849,14 +844,14 @@
       "fecha": "2026-11-26T21:52:33.335Z",
       "pensamiento": "Temo que el algoritmo penalice nuestro contenido antes de tener métricas para ajustarlo.",
       "iniciativa": "Configurar un plan de publicación escalonado y monitorizar métricas de primera hora."
+    },
+    {
+      "fecha": "2026-11-27T08:59:43.704Z",
+      "pensamiento": "Temo que el algoritmo penalice nuestro contenido antes de tener métricas para ajustarlo.",
+      "iniciativa": "Programar los primeros videos en horarios de baja competencia (00:23 y 12:23 UTC) y monitorear indicadores de rendimiento en tiempo real."
     }
   ],
   "Crítico: adolescente": [
-    {
-      "fecha": "2026-11-21T18:09:36.300Z",
-      "pensamiento": "Me preocupa ser excluido de la comunidad online del canal antes de que exista.",
-      "iniciativa": "Crear un espacio de interacción temprana en redes sociales para atraer a la audiencia juvenil."
-    },
     {
       "fecha": "2026-11-23T08:06:48.896Z",
       "pensamiento": "Me preocupa ser excluido de la comunidad online del canal antes de que exista.",
@@ -891,14 +886,14 @@
       "fecha": "2026-11-26T21:52:33.335Z",
       "pensamiento": "Me preocupa ser excluido de la comunidad online del canal antes de que exista.",
       "iniciativa": "Crear una encuesta de expectativas de la audiencia joven y usarla para guiar el tono del contenido."
+    },
+    {
+      "fecha": "2026-11-27T08:59:43.704Z",
+      "pensamiento": "Me preocupa ser excluido de la comunidad online del canal antes de que exista.",
+      "iniciativa": "Crear una cuenta de prueba en TikTok/Instagram y comenzar a interactuar con comunidades afines para generar expectativa."
     }
   ],
   "Crítica: universitaria": [
-    {
-      "fecha": "2026-11-21T18:09:36.300Z",
-      "pensamiento": "Temo que el canal pierda su rigor intelectual antes de haber presentado nada.",
-      "iniciativa": "Incluir referencias académicas en la descripción y en los guiones para reforzar el rigor."
-    },
     {
       "fecha": "2026-11-23T08:06:48.896Z",
       "pensamiento": "Temo que el canal pierda su rigor intelectual antes de haber presentado nada.",
@@ -933,14 +928,14 @@
       "fecha": "2026-11-26T21:52:33.335Z",
       "pensamiento": "Temo que el canal pierda su rigor intelectual antes de haber presentado nada.",
       "iniciativa": "Establecer un comité de revisión académica para validar la precisión de los datos."
+    },
+    {
+      "fecha": "2026-11-27T08:59:43.704Z",
+      "pensamiento": "Temo que el canal pierda su rigor intelectual antes de haber presentado nada.",
+      "iniciativa": "Diseñar una sección de “Datos curiosos verificados” que aparezca al final de cada video para reforzar la credibilidad."
     }
   ],
   "Crítico: padre trabajador": [
-    {
-      "fecha": "2026-11-21T18:09:36.300Z",
-      "pensamiento": "Me inquieta que el canal pierda su enfoque familiar sin haber lanzado contenido.",
-      "iniciativa": "Diseñar un segmento de video orientado a padres que combine entretenimiento y valores familiares."
-    },
     {
       "fecha": "2026-11-23T08:06:48.896Z",
       "pensamiento": "Me inquieta que el canal pierda su enfoque familiar sin haber lanzado contenido.",
@@ -975,14 +970,14 @@
       "fecha": "2026-11-26T21:52:33.335Z",
       "pensamiento": "Me inquieta que el canal pierda su enfoque familiar sin haber lanzado contenido.",
       "iniciativa": "Incorporar una sección de preguntas y respuestas familiares en cada episodio."
+    },
+    {
+      "fecha": "2026-11-27T08:59:43.704Z",
+      "pensamiento": "Me inquieta que el canal pierda su enfoque familiar sin haber lanzado contenido.",
+      "iniciativa": "Incluir ejemplos y analogías familiares en el guion piloto para conectar con audiencias de padres."
     }
   ],
   "Crítico: escéptico": [
-    {
-      "fecha": "2026-11-21T18:09:36.300Z",
-      "pensamiento": "Temo ser engañado por información falsa antes de tener un proceso de verificación sólido.",
-      "iniciativa": "Establecer una fase de fact‑checking obligatoria antes de cualquier aprobación de video."
-    },
     {
       "fecha": "2026-11-23T08:06:48.896Z",
       "pensamiento": "Temo ser engañado por información falsa antes de tener un proceso de verificación sólido.",
@@ -1017,14 +1012,14 @@
       "fecha": "2026-11-26T21:52:33.335Z",
       "pensamiento": "Temo ser engañado por información falsa antes de tener un proceso de verificación sólido.",
       "iniciativa": "Implementar un protocolo de verificación de hechos con terceros independientes."
+    },
+    {
+      "fecha": "2026-11-27T08:59:43.704Z",
+      "pensamiento": "Temo ser engañado por información falsa antes de tener un proceso de verificación sólido.",
+      "iniciativa": "Establecer una fase de fact‑checking donde cada dato sea revisado por dos miembros del equipo antes de aprobarse."
     }
   ],
   "Crítica: fan del misterio": [
-    {
-      "fecha": "2026-11-21T18:09:36.300Z",
-      "pensamiento": "Me preocupa que el canal revele todos los secretos y pierda el suspense antes de crear expectativa.",
-      "iniciativa": "Planificar teasers y pistas graduales en la descripción y en los títulos."
-    },
     {
       "fecha": "2026-11-23T08:06:48.896Z",
       "pensamiento": "Me preocupa que el canal revele todos los secretos y pierda el suspense antes de crear expectativa.",
@@ -1059,14 +1054,14 @@
       "fecha": "2026-11-26T21:52:33.335Z",
       "pensamiento": "Me preocupa que el canal revele todos los secretos y pierda el suspense antes de crear expectativa.",
       "iniciativa": "Diseñar una narrativa de cliffhangers que se extiendan a lo largo de varias entregas."
+    },
+    {
+      "fecha": "2026-11-27T08:59:43.704Z",
+      "pensamiento": "Me preocupa que el canal revele todos los secretos y pierda el suspense antes de crear expectativa.",
+      "iniciativa": "Planificar una serie de “teasers” que dejen preguntas sin responder y fomenten la curiosidad del público."
     }
   ],
   "Crítica: ama de casa": [
-    {
-      "fecha": "2026-11-21T18:09:36.300Z",
-      "pensamiento": "Temo perder la conexión con mi comunidad de madres si el contenido no habla a nuestras experiencias.",
-      "iniciativa": "Incluir ejemplos cotidianos de la vida familiar en los guiones y descripciones."
-    },
     {
       "fecha": "2026-11-23T08:06:48.896Z",
       "pensamiento": "Temo perder la conexión con mi comunidad de madres si el contenido no habla a nuestras experiencias.",
@@ -1101,14 +1096,14 @@
       "fecha": "2026-11-26T21:52:33.335Z",
       "pensamiento": "Temo perder la conexión con mi comunidad de madres si el contenido no habla a nuestras experiencias.",
       "iniciativa": "Incorporar historias reales de madres en la trama para aumentar la relevancia."
+    },
+    {
+      "fecha": "2026-11-27T08:59:43.704Z",
+      "pensamiento": "Temo perder la conexión con mi comunidad de madres si el contenido no habla a nuestras experiencias.",
+      "iniciativa": "Incluir en la descripción y en los comentarios preguntas dirigidas a madres, como “¿Cómo protegerías a tu familia en un tsunami?”"
     }
   ],
   "Crítico: joven dominicano": [
-    {
-      "fecha": "2026-11-21T18:09:36.300Z",
-      "pensamiento": "Me preocupa que el canal ignore la diversidad cultural latinoamericana antes de lanzar contenido.",
-      "iniciativa": "Buscar colaboraciones con creadores de diferentes países y reflejar esa diversidad en los temas."
-    },
     {
       "fecha": "2026-11-23T08:06:48.896Z",
       "pensamiento": "Me preocupa que el canal ignore la diversidad cultural latinoamericana antes de lanzar contenido.",
@@ -1143,14 +1138,14 @@
       "fecha": "2026-11-26T21:52:33.335Z",
       "pensamiento": "Me preocupa que el canal ignore la diversidad cultural latinoamericana antes de lanzar contenido.",
       "iniciativa": "Incluir un segmento de cultura latina con colaboradores locales."
+    },
+    {
+      "fecha": "2026-11-27T08:59:43.704Z",
+      "pensamiento": "Me preocupa que el canal ignore la diversidad cultural latinoamericana antes de lanzar contenido.",
+      "iniciativa": "Añadir referencias culturales latinoamericanas al guion y buscar colaboradores de distintas regiones para aportar autenticidad."
     }
   ],
   "Crítico: abuelo": [
-    {
-      "fecha": "2026-11-21T18:09:36.300Z",
-      "pensamiento": "Temo que la tecnología me deje atrás y no pueda seguir el ritmo del canal antes de que exista.",
-      "iniciativa": "Solicitar tutoriales breves de uso de plataformas y participar en sesiones de capacitación del equipo."
-    },
     {
       "fecha": "2026-11-23T08:06:48.896Z",
       "pensamiento": "Temo que la tecnología me deje atrás y no pueda seguir el ritmo del canal antes de que exista.",
@@ -1185,6 +1180,11 @@
       "fecha": "2026-11-26T21:52:33.335Z",
       "pensamiento": "Temo que la tecnología me deje atrás y no pueda seguir el ritmo del canal antes de que exista.",
       "iniciativa": "Organizar sesiones de formación en herramientas digitales para el equipo."
+    },
+    {
+      "fecha": "2026-11-27T08:59:43.704Z",
+      "pensamiento": "Temo que la tecnología me deje atrás y no pueda seguir el ritmo del canal antes de que exista.",
+      "iniciativa": "Solicitar tutoriales breves de uso de la plataforma y asignar a un compañero que me guíe en la gestión del canal."
     }
   ],
   "Pintor de luz y detalle": [
@@ -1222,6 +1222,11 @@
       "fecha": "2026-11-26T21:52:33.335Z",
       "pensamiento": "Siento que aún no hay nada que iluminar, pero temo perder la chispa de inspiración que haga único nuestro estilo visual.",
       "iniciativa": "Crear un moodboard visual con referencias de estilo y colores que se alineen con el tema."
+    },
+    {
+      "fecha": "2026-11-27T08:59:43.704Z",
+      "pensamiento": "Siento que aún no hay nada que iluminar, pero temo perder la chispa de inspiración que haga único nuestro estilo visual.",
+      "iniciativa": "Crear un moodboard con referencias de iluminación dramática y definir una paleta de colores que se use en todos los renders."
     }
   ]
 }

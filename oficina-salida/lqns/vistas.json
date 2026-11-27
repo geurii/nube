@@ -1,8 +1,8 @@
 {
-  "fecha": "2026-11-26T21:51:50.647Z",
+  "fecha": "2026-11-27T08:59:09.969Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 1332,
-  "ganadasDesdeElUltimoCiclo": 1,
+  "total": 1359,
+  "ganadasDesdeElUltimoCiclo": 27,
   "videos": [
     {
       "id": "xL9E7Ru2UM4",
@@ -14,13 +14,13 @@
       "id": "ERL-GCARL8I",
       "titulo": "¿Por qué un lápiz roto tiene 68 millones de vistas?",
       "publicado": "2026-11-25T21:38:46+00:00",
-      "vistas": 978
+      "vistas": 987
     },
     {
       "id": "VXbbW_o1PWo",
       "titulo": "Nintendo nació vendiendo cartas: la historia antes de los videojuegos",
       "publicado": "2026-11-25T17:08:39+00:00",
-      "vistas": 129
+      "vistas": 146
     },
     {
       "id": "ju9-ibZWM5s",
@@ -86,7 +86,7 @@
       "id": "Nd2x5UMBiLM",
       "titulo": "Sabías que la acusaron de fraude un año después de elegirla 🚨",
       "publicado": "2026-11-21T16:00:33+00:00",
-      "vistas": 13
+      "vistas": 14
     },
     {
       "id": "yp4bUZPqnS4",
@@ -96,10 +96,6 @@
     }
   ],
   "historia": [
-    {
-      "fecha": "2026-11-24T15:05:15.082Z",
-      "total": 2222
-    },
     {
       "fecha": "2026-11-24T15:29:59.183Z",
       "total": 2223
@@ -335,6 +331,10 @@
     {
       "fecha": "2026-11-26T21:51:50.647Z",
       "total": 1332
+    },
+    {
+      "fecha": "2026-11-27T08:59:09.968Z",
+      "total": 1359
     }
   ]
 }
