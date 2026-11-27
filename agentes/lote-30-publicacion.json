@@ -15,7 +15,7 @@
       "id": "lqns-flannan-faro-desaparecido",
       "slug": "flannan-faro-desaparecido",
       "titulo": "Tres fareros desaparecieron y el faro quedó vacío",
-      "estado": "aprobado",
+      "estado": "publicando",
       "aprobado": true,
       "duracionSegundos": null,
       "publicadoEn": {
@@ -23,7 +23,8 @@
         "facebook": false,
         "instagram": false,
         "tiktok": false
-      }
+      },
+      "reservadoEn": "2026-11-27T21:10:01.336Z"
     },
     {
       "id": "lqns-db-cooper-salto-imposible",
