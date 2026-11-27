@@ -36,15 +36,16 @@ fs.mkdirSync(dir, {recursive: true});
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
 
 /** El lote exige diez visuales por escena para sostener escenas largas sin repetir imagen. */
-const PLANOS_POR_ESCENA = 10;
-const planosDe = () => PLANOS_POR_ESCENA;
+const PLANOS_POR_ESCENA = 10;   // lo que exige el control del lote
+const IMAGENES_POR_ESCENA = 5;  // cada imagen rinde dos planos: otro encuadre y otra animacion
+const planosDe = () => IMAGENES_POR_ESCENA;
 
 /** Pide a la IA de texto una descripcion EN INGLES de lo que se ve en cada plano. */
 const describir = async (escenas) => {
   const lista = escenas.map((e, i) => `${i}. [${anclaDe(i) || 'escena'}] ${String(e.texto ?? '').slice(0, 220)}`).join('\n');
   const bruto = await chatAlternativo([
     {role: 'system', content: 'Eres director de arte de un canal de misterio. Describes imagenes concretas, en ingles, para generar pixel art. Cada descripcion DEBE fijar la epoca y el lugar del hecho (por ejemplo "1900 scottish island", "1917 canadian harbour"), porque si no el generador mete objetos modernos donde no van. Respondes SOLO con JSON.'},
-    {role: 'user', content: `Tema: "${guion.titulo}".\n\nPara CADA escena da ${PLANOS_POR_ESCENA} descripciones DISTINTAS en ingles (8 a 16 palabras) de lo que se ve: el objeto, lugar o suceso que la frase nombra, desde angulos y momentos diferentes. EMPIEZA CADA UNA por el ano y el lugar del hecho. Concreto y fotografiable: nada abstracto, ningun texto en la imagen, ninguna persona reconocible, ningun nombre propio de persona, y ningun objeto que no existiera en esa epoca.\n\nESCENAS:\n${lista}\n\nDevuelve {"escenas":[{"indice":N,"vistas":["...","..."]}]}`},
+    {role: 'user', content: `Tema: "${guion.titulo}".\n\nPara CADA escena da ${IMAGENES_POR_ESCENA} descripciones DISTINTAS en ingles (8 a 16 palabras) de lo que se ve: el objeto, lugar o suceso que la frase nombra, desde angulos y momentos diferentes. EMPIEZA CADA UNA por el ano y el lugar del hecho. Concreto y fotografiable: nada abstracto, ningun texto en la imagen, ninguna persona reconocible, ningun nombre propio de persona, y ningun objeto que no existiera en esa epoca.\n\nESCENAS:\n${lista}\n\nDevuelve {"escenas":[{"indice":N,"vistas":["...","..."]}]}`},
   ], {maxTokens: 2200, json: true});
   // chatAlternativo devuelve {texto, proveedor, modelo}: hay que PARSEAR el texto.
   // (Antes se leia r.escenas directamente y siempre salia vacio: por eso decia '0/5 escenas'.)
@@ -90,7 +91,7 @@ const aPixelArt = (entrada, salida) => {
 /** El cuadro: la imagen del sujeto de fondo y, encima, capas que el motor mueve solas.
  *  Asi el plano no es una foto con zoom: tiene niebla que deriva, polvo que flota,
  *  estrellas que titilan y, donde toca, olas y rayos. */
-const escribirCuadro = (nombre, i, k, escena) => {
+const escribirCuadro = (nombre, i, k, escena, variante = 0) => {
   const t = String(escena.texto ?? '').toLowerCase();
   const mar = /mar|olas|oceano|barco|agua|costa|puerto|isla|hundi|naufrag/.test(t);
   const fuego = /fuego|incendio|explos|lava|volcan|arde|llama|quem/.test(t);
@@ -100,12 +101,16 @@ const escribirCuadro = (nombre, i, k, escena) => {
   //  cielo = arrastre de las filas de arriba (nubes, humo)
   //  latido = la luz sube y baja, como una lampara o un fuego vivo
   const capas = [{
-    t: 'foto', archivo: `${nombre}.png`, x0: 0, y0: 0, x1: 1, y1: 1, zoom: 1, pan: true, pixel: 1,
-    onda: mar ? 0.62 : fuego ? 0.70 : 0.78,
-    ondaFuerza: mar ? 4.5 : fuego ? 3 : 1.8,
+    t: 'foto', archivo: `${String(nombre).replace(/-b$/, '')}.png`, pan: true, pixel: 1,
+    onda: (mar ? 0.62 : fuego ? 0.70 : 0.78) - variante * 0.04,
+    ondaFuerza: (mar ? 4.5 : fuego ? 3 : 1.8) * (variante ? 1.3 : 1),
     cielo: 0.45,
-    cieloFuerza: fuego ? 3.2 : 2.2,
-    latido: fuego ? 0.11 : noche ? 0.06 : 0.035,
+    cieloFuerza: (fuego ? 3.2 : 2.2) * (variante ? 1.25 : 1),
+    latido: (fuego ? 0.11 : noche ? 0.06 : 0.035) * (variante ? 1.4 : 1),
+    // la variante entra mas cerca y por el otro lado: mismo sujeto, otro plano
+    zoom: variante ? 1.22 : 1,
+    x0: variante ? 0.06 : 0, x1: variante ? 1.06 : 1,
+    y0: variante ? 0.04 : 0, y1: variante ? 1.04 : 1,
   }];
   if (noche || !fuego) capas.push({t: 'estrellas', n: 26 + k * 4, hasta: 0.5, semilla: i * 7 + k, color: '#dfe7f4'});
   capas.push({t: 'particulas', n: 16 + k * 3, tipo: fuego ? 'brasas' : 'polvo', semilla: i * 13 + k, color: fuego ? '#ffb347' : '#cfd8e6'});
@@ -154,21 +159,25 @@ for (let i = 0; i < escenas.length; i++) {
     const nombre = `${id}-${i}-${k + 1}`;
     const crudo = path.join(dir, `${nombre}.src.jpg`);
     const final = path.join(dir, `${nombre}.png`);
-    if (fs.existsSync(final)) { escribirCuadro(nombre, i, k, escena); fondos.push(`pintado:${nombre}`); continue; }
+    if (fs.existsSync(final)) {
+      escribirCuadro(nombre, i, k, escena, 0); fondos.push(`pintado:${nombre}`);
+      escribirCuadro(`${nombre}-b`, i, k, escena, 1); fondos.push(`pintado:${nombre}-b`);
+      continue;
+    }
     if (!primera) await dormir(ESPERA_MS);
     primera = false;
     const vista = base ? base[k % base.length] : respaldo(escena, k, i);
     console.log(`  escena ${i + 1}, plano ${k + 1}/${n}: ${vista.slice(0, 70)}`);
     if (await bajar(`${ESTILO}, ${vista}`, crudo) && aPixelArt(crudo, final)) {
       fs.rmSync(crudo, {force: true});
-      escribirCuadro(nombre, i, k, escena);
-      fondos.push(`pintado:${nombre}`);
+      escribirCuadro(nombre, i, k, escena, 0); fondos.push(`pintado:${nombre}`);
+      escribirCuadro(`${nombre}-b`, i, k, escena, 1); fondos.push(`pintado:${nombre}-b`);
       hechas++;
     } else { fallidas++; }
   }
   // Solo se cambian los fondos si hay imagenes suficientes para esta escena; si no, se deja lo que habia.
-  if (fondos.length >= n) escena.fondo = fondos;
-  else console.log(`  escena ${i + 1}: ${fondos.length}/${n} imagenes; conserva sus fondos anteriores`);
+  if (fondos.length >= PLANOS_POR_ESCENA) escena.fondo = fondos.slice(0, PLANOS_POR_ESCENA);
+  else console.log(`  escena ${i + 1}: ${fondos.length}/${PLANOS_POR_ESCENA} planos; conserva sus fondos anteriores`);
 }
 
 fs.writeFileSync(guionPath, JSON.stringify(guion, null, 2) + '\n');

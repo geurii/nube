@@ -31,7 +31,7 @@ jobs:
   renderizar:
     needs: repartir
     runs-on: ubuntu-24.04
-    timeout-minutes: 45
+    timeout-minutes: 100   # las imagenes solas tardan ~20 min; con 45 el job se cancelaba a medias y ni guardaba la cache
     strategy:
       fail-fast: false            # que un Short malo no cancele a los otros 29
       max-parallel: 20
