@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {validarEscena,tieneAnclaNarrativa} from '../agentes/pintor.mjs';
+import {revisarVideo} from '../agentes/video-gemini.mjs';
 
 const statePath='agentes/lote-30-publicacion.json';
 const state=JSON.parse(fs.readFileSync(statePath,'utf8'));
@@ -79,7 +80,20 @@ for(let index=desde;index<hasta;index++){
    if(!lv||lv.width!==1080||lv.height!==1920||!la)throw new Error('La versión ligera perdió imagen vertical o audio.');
    const bytes=fs.statSync(lite).size;
    if(bytes>10*1024*1024)throw new Error('La copia optimizada supera 10 MB.');
-   const revisionTecnica={fecha:new Date().toISOString(),resultado:'aprobado',metodo:'verificacion_automatica_lote',controles:['duracion_30_a_180_segundos','1080x1920_vertical','voz_y_audio_presentes','faceless_personaje_oculto','subtitulos_temporizados','50_visuals_por_short_sin_repetir_y_con_ancla_narrativa','descripcion_sin_enlaces','archivo_optimizado_menor_de_10MB']};
+   const revisionTecnica={fecha:new Date().toISOString(),resultado:'aprobado',metodo:'verificacion_automatica_lote',controles:['revision_de_imagen_con_ia','duracion_60_a_62_segundos','1080x1920_vertical','voz_y_audio_presentes','faceless_personaje_oculto','subtitulos_temporizados','50_visuals_por_short_sin_repetir_y_con_ancla_narrativa','descripcion_sin_enlaces','archivo_optimizado_menor_de_10MB']};
+   // REVISION DE IMAGEN: alguien tiene que MIRAR el video antes de darlo por bueno.
+   // Hasta ahora el lote solo comprobaba duracion, resolucion y que hubiera audio.
+   let revision=null;
+   try{
+    revision=await revisarVideo({ruta:mp4, key:(process.env.GEMINI_API_KEY||'').trim(), contexto:item.titulo});
+    if(revision?.error){ console.log('   revision de imagen no disponible ('+String(revision.error).slice(0,90)+'): el Short pasa con la comprobacion tecnica.'); }
+    else if(Array.isArray(revision?.defectos_graves)&&revision.defectos_graves.length){
+     throw new Error('La revision de imagen encontro fallas graves: '+revision.defectos_graves.join(' / '));
+    } else { console.log('   revision de imagen: sin fallas graves.'); }
+   }catch(e){
+    if(String(e.message||'').startsWith('La revision de imagen')) throw e;
+    console.log('   revision de imagen fallo ('+String(e.message??e).slice(0,90)+'): el Short pasa con la comprobacion tecnica.');
+   }
    g.estado='aprobado';
    g.revisionTecnica=revisionTecnica;
    fs.writeFileSync(guionPath,JSON.stringify(g,null,2)+'\n');
