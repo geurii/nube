@@ -5,9 +5,9 @@
   "total": 30,
   "completedCount": 30,
   "intervalMinutes": 20,
-  "nextIndex": 0,
-  "nextAt": null,
-  "lastPublishedAt": null,
+  "nextIndex": 1,
+  "nextAt": "2026-11-27T21:30:01.336Z",
+  "lastPublishedAt": "2026-11-27T21:13:51.645Z",
   "runId": 46042972544,
   "artifact": "lote-30-videos",
   "items": [
@@ -15,16 +15,25 @@
       "id": "lqns-flannan-faro-desaparecido",
       "slug": "flannan-faro-desaparecido",
       "titulo": "Tres fareros desaparecieron y el faro quedó vacío",
-      "estado": "publicando",
+      "estado": "publicado_en_todas",
       "aprobado": true,
       "duracionSegundos": null,
       "publicadoEn": {
-        "youtube": false,
-        "facebook": false,
-        "instagram": false,
-        "tiktok": false
+        "youtube": true,
+        "facebook": true,
+        "instagram": true,
+        "tiktok": true
       },
-      "reservadoEn": "2026-11-27T21:10:01.336Z"
+      "reservadoEn": "2026-11-27T21:10:01.336Z",
+      "publicacionDetalle": {
+        "youtube": "confirmado",
+        "facebook": "confirmado",
+        "instagram": "confirmado",
+        "tiktok": "confirmado"
+      },
+      "ultimoIntento": "2026-11-27T21:13:51.645Z",
+      "publicado": true,
+      "publicadoEnHora": "2026-11-27T21:13:51.645Z"
     },
     {
       "id": "lqns-db-cooper-salto-imposible",

@@ -1,6 +1,15 @@
 {
-  "total": 13,
+  "total": 14,
   "posts": [
+    {
+      "id": "lqns-flannan-faro-desaparecido",
+      "titulo": "Tres fareros desaparecieron y el faro quedó vacío",
+      "fecha": "2026-11-27T21:11:57.546Z",
+      "accion": "create_video_post",
+      "alojamiento": "temporal-72h",
+      "video_url": "https://grouped-sideboard-84.beacon.host/lqns-flannan-faro-desaparecido.mp4",
+      "respuesta": "{\"result\":\"Published video post (Reel) to Instagram account 17841461180305578. Media id: 17915833875481881.\"}\n"
+    },
     {
       "id": "lqns-ovni-tic-tac-pentagono",
       "titulo": "¿Ovnis reales captados en cámara?",
