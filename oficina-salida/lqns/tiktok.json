@@ -1,6 +1,16 @@
 {
-  "total": 14,
+  "total": 15,
   "posts": [
+    {
+      "id": "lqns-db-cooper-salto-imposible",
+      "titulo": "El hombre que saltó de un avión con el rescate y desapareció",
+      "fecha": "2026-11-27T21:33:40.877Z",
+      "accion": "createPost",
+      "programado": "ahora",
+      "alojamiento": "temporal-72h",
+      "video_url": "https://buttery-apron-21.beacon.host/lqns-db-cooper-salto-imposible.mp4",
+      "respuesta": "{\"id\":\"6b09f6c5585cafb820e2f5dc\",\"canal\":\"loquenosabias.do\",\"programado\":\"ahora\",\"status\":\"sent\",\"externalLink\":\"https://tiktok.com/@loquenosabias.do/video/7712967223169535265\"}"
+    },
     {
       "id": "lqns-flannan-faro-desaparecido",
       "titulo": "Tres fareros desaparecieron y el faro quedó vacío",
