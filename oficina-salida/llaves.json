@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-26T22:53:56.291Z",
+  "fecha": "2026-11-27T00:39:32.571Z",
   "resultados": [
     {
       "id": "groq",
@@ -9,7 +9,7 @@
       ],
       "estado": "ok",
       "detalle": "responde (openai/gpt-oss-120b, 0.2 s)",
-      "ms": 190
+      "ms": 181
     },
     {
       "id": "gemini",
@@ -18,7 +18,7 @@
         "GEMINI_API_KEY"
       ],
       "estado": "error",
-      "detalle": "Gemini: error 503"
+      "detalle": "Gemini: The operation was aborted due to timeout"
     },
     {
       "id": "openrouter",
@@ -27,8 +27,8 @@
         "OPENROUTER_API_KEY"
       ],
       "estado": "ok",
-      "detalle": "responde (inclusionai/ling-3.2-flash:free, 0.9 s)",
-      "ms": 910
+      "detalle": "responde (baidu/ernie-5.5-flash-preview:free, 1.1 s)",
+      "ms": 1086
     },
     {
       "id": "cerebras",
@@ -38,7 +38,7 @@
       ],
       "estado": "ok",
       "detalle": "responde (gpt-oss-120b, 0.3 s)",
-      "ms": 268
+      "ms": 295
     },
     {
       "id": "mistral",
@@ -65,8 +65,8 @@
         "NVIDIA_API_KEY"
       ],
       "estado": "ok",
-      "detalle": "responde (mistralai/mistral-large-4-1t-a52b, 1.5 s)",
-      "ms": 1498
+      "detalle": "responde (mistralai/mistral-large-4-1t-a52b, 1.8 s)",
+      "ms": 1827
     },
     {
       "id": "cohere",
@@ -120,8 +120,8 @@
         "POLLINATIONS_API_KEY"
       ],
       "estado": "ok",
-      "detalle": "responde (openai-fast, 0.4 s) · sin cuenta",
-      "ms": 436
+      "detalle": "responde (openai-fast, 0.3 s) · sin cuenta",
+      "ms": 252
     },
     {
       "id": "ovh",
@@ -130,8 +130,8 @@
         "OVH_API_KEY"
       ],
       "estado": "ok",
-      "detalle": "responde (Meta-Llama-3_3-70B-Instruct, 1.9 s) · sin cuenta",
-      "ms": 1858
+      "detalle": "responde (Meta-Llama-3_3-70B-Instruct, 1.4 s) · sin cuenta",
+      "ms": 1417
     },
     {
       "id": "windsor",
@@ -140,8 +140,8 @@
         "WINDSOR_API_KEY"
       ],
       "estado": "ok",
-      "detalle": "responde (1.0 s)",
-      "ms": 977
+      "detalle": "responde (0.7 s)",
+      "ms": 728
     },
     {
       "id": "buffer",
@@ -151,7 +151,7 @@
       ],
       "estado": "ok",
       "detalle": "responde (1 organización)",
-      "ms": 564
+      "ms": 526
     },
     {
       "id": "youtube",
@@ -162,8 +162,8 @@
         "YT_REFRESH_TOKEN"
       ],
       "estado": "ok",
-      "detalle": "conectado (0.5 s)",
-      "ms": 481
+      "detalle": "conectado (0.3 s)",
+      "ms": 333
     },
     {
       "id": "videos",
@@ -173,7 +173,7 @@
       ],
       "estado": "error",
       "detalle": "GitHub: error 401 (llave inválida o sin acceso al repositorio)",
-      "ms": 375
+      "ms": 320
     },
     {
       "id": "ntfy",
