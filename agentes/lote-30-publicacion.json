@@ -63,7 +63,7 @@
       "id": "lqns-alcatraz-fuga-cabezas-falsas",
       "slug": "alcatraz-fuga-cabezas-falsas",
       "titulo": "La fuga de Alcatraz que dejó cabezas falsas en las camas",
-      "estado": "aprobado",
+      "estado": "publicando",
       "aprobado": true,
       "duracionSegundos": null,
       "publicadoEn": {
@@ -71,7 +71,8 @@
         "facebook": false,
         "instagram": false,
         "tiktok": false
-      }
+      },
+      "reservadoEn": "2026-11-27T21:50:01.481Z"
     },
     {
       "id": "lqns-max-headroom-senal-secuestrada",
