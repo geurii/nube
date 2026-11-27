@@ -1,0 +1,115 @@
+{
+  "titulo": "El barco de la Marina que desapareció con unas 306 personas",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "velocidad": -2,
+  "tono": -6,
+  "audio": "audio/lqns-uss-cyclops-desaparecio.wav",
+  "musica": "musica/firma-canal.mp3",
+  "orientacion": "vertical",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-27T10:43:32.944Z",
+  "estilo": "gancho",
+  "ganchoTexto": "Un enorme barco de la Marina salió de Barbados rumbo a Baltimore con unas trescientas seis personas a bordo.",
+  "publicacion": {
+    "titulo": "El barco de la Marina que desapareció con unas 306 personas",
+    "descripcion": "El USS Cyclops salió del Caribe en 1918 con alrededor de 306 personas y nunca llegó a Baltimore. #USSCyclops #Marina #Historia #Misterios #LoQueNoSabias"
+  },
+  "estado": "pendiente_revision_tecnica",
+  "revisionEditorial": {
+    "tipo": "prevalidacion_por_fuente",
+    "fuentes": [
+      {
+        "url": "https://www.history.navy.mil/about-us/leadership/director/directors-corner/h-grams/h-gram-016.html"
+      }
+    ],
+    "nota": "Guion original preparado con fuente identificada; aprobación final pendiente de render y controles técnicos."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Un enorme barco de la Marina salió de Barbados rumbo a Baltimore con unas trescientas seis personas a bordo.",
+      "fondo": [
+        "pintado:lqns-uss-cyclops-desaparecio-s1-a",
+        "pintado:lqns-uss-cyclops-desaparecio-s1-b",
+        "pintado:lqns-uss-cyclops-desaparecio-s1-c",
+        "pintado:lqns-uss-cyclops-desaparecio-s1-d",
+        "pintado:lqns-uss-cyclops-desaparecio-s1-e",
+        "pintado:lqns-uss-cyclops-desaparecio-s1-f",
+        "pintado:lqns-uss-cyclops-desaparecio-s1-g",
+        "pintado:lqns-uss-cyclops-desaparecio-s1-h",
+        "pintado:lqns-uss-cyclops-desaparecio-s1-i",
+        "pintado:lqns-uss-cyclops-desaparecio-s1-j"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El USS Cyclops transportaba mineral de manganeso cuando zarpó en marzo de mil novecientos dieciocho. El barco quedó en el centro de la investigación.",
+      "fondo": [
+        "pintado:lqns-uss-cyclops-desaparecio-s2-a",
+        "pintado:lqns-uss-cyclops-desaparecio-s2-b",
+        "pintado:lqns-uss-cyclops-desaparecio-s2-c",
+        "pintado:lqns-uss-cyclops-desaparecio-s2-d",
+        "pintado:lqns-uss-cyclops-desaparecio-s2-e",
+        "pintado:lqns-uss-cyclops-desaparecio-s2-f",
+        "pintado:lqns-uss-cyclops-desaparecio-s2-g",
+        "pintado:lqns-uss-cyclops-desaparecio-s2-h",
+        "pintado:lqns-uss-cyclops-desaparecio-s2-i",
+        "pintado:lqns-uss-cyclops-desaparecio-s2-j"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "No envió una llamada de socorro, no llegó a su destino y ninguna búsqueda encontró un resto confirmado. El barco quedó en el centro de la investigación.",
+      "fondo": [
+        "pintado:lqns-uss-cyclops-desaparecio-s3-a",
+        "pintado:lqns-uss-cyclops-desaparecio-s3-b",
+        "pintado:lqns-uss-cyclops-desaparecio-s3-c",
+        "pintado:lqns-uss-cyclops-desaparecio-s3-d",
+        "pintado:lqns-uss-cyclops-desaparecio-s3-e",
+        "pintado:lqns-uss-cyclops-desaparecio-s3-f",
+        "pintado:lqns-uss-cyclops-desaparecio-s3-g",
+        "pintado:lqns-uss-cyclops-desaparecio-s3-h",
+        "pintado:lqns-uss-cyclops-desaparecio-s3-i",
+        "pintado:lqns-uss-cyclops-desaparecio-s3-j"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Durante la guerra se sospechó de un submarino alemán, pero los registros revisados no mostraron evidencia de ataque.",
+      "fondo": [
+        "pintado:lqns-uss-cyclops-desaparecio-s4-a",
+        "pintado:lqns-uss-cyclops-desaparecio-s4-b",
+        "pintado:lqns-uss-cyclops-desaparecio-s4-c",
+        "pintado:lqns-uss-cyclops-desaparecio-s4-d",
+        "pintado:lqns-uss-cyclops-desaparecio-s4-e",
+        "pintado:lqns-uss-cyclops-desaparecio-s4-f",
+        "pintado:lqns-uss-cyclops-desaparecio-s4-g",
+        "pintado:lqns-uss-cyclops-desaparecio-s4-h",
+        "pintado:lqns-uss-cyclops-desaparecio-s4-i",
+        "pintado:lqns-uss-cyclops-desaparecio-s4-j"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "Tormenta, falla estructural o sobrecarga son hipótesis, no respuestas. El Cyclops sigue perdido con trescientas seis personas y jamás se halló un resto del barco. ¿Lo hundió una tormenta, o el peso de carga que llevaba encima? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pintado:lqns-uss-cyclops-desaparecio-s5-a",
+        "pintado:lqns-uss-cyclops-desaparecio-s5-b",
+        "pintado:lqns-uss-cyclops-desaparecio-s5-c",
+        "pintado:lqns-uss-cyclops-desaparecio-s5-d",
+        "pintado:lqns-uss-cyclops-desaparecio-s5-e",
+        "pintado:lqns-uss-cyclops-desaparecio-s5-f",
+        "pintado:lqns-uss-cyclops-desaparecio-s5-g",
+        "pintado:lqns-uss-cyclops-desaparecio-s5-h",
+        "pintado:lqns-uss-cyclops-desaparecio-s5-i",
+        "pintado:lqns-uss-cyclops-desaparecio-s5-j"
+      ]
+    }
+  ]
+}

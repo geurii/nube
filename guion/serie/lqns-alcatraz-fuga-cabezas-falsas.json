@@ -1,0 +1,115 @@
+{
+  "titulo": "La fuga de Alcatraz que dejó cabezas falsas en las camas",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "velocidad": -2,
+  "tono": -6,
+  "audio": "audio/lqns-alcatraz-fuga-cabezas-falsas.wav",
+  "musica": "musica/firma-canal.mp3",
+  "orientacion": "vertical",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-27T10:43:32.926Z",
+  "estilo": "gancho",
+  "ganchoTexto": "Tres presos desaparecieron de la prisión de Alcatraz en junio de mil novecientos sesenta y dos. Cuando los guardias revisaron sus celdas, encontraron camas ocupadas… aparentemente.",
+  "publicacion": {
+    "titulo": "La fuga de Alcatraz que dejó cabezas falsas en las camas",
+    "descripcion": "En 1962, tres presos desaparecieron de Alcatraz. Dejaron cabezas falsas y nunca se confirmó si sobrevivieron. #Alcatraz #Misterios #Historia #Prision #LoQueNoSabias"
+  },
+  "estado": "pendiente_revision_tecnica",
+  "revisionEditorial": {
+    "tipo": "prevalidacion_por_fuente",
+    "fuentes": [
+      {
+        "url": "https://www.fbi.gov/history/cases-and-criminals/alcatraz-escape"
+      }
+    ],
+    "nota": "Guion original preparado con fuente identificada; aprobación final pendiente de render y controles técnicos."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Tres presos desaparecieron de la prisión de Alcatraz en junio de mil novecientos sesenta y dos. Cuando los guardias revisaron sus celdas, encontraron camas ocupadas… aparentemente.",
+      "fondo": [
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s1-a",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s1-b",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s1-c",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s1-d",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s1-e",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s1-f",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s1-g",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s1-h",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s1-i",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s1-j"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Dentro de la prisión, las cabezas eran muñecos de yeso, pintura y cabello real. Desde la puerta, parecían presos durmiendo.",
+      "fondo": [
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s2-a",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s2-b",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s2-c",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s2-d",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s2-e",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s2-f",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s2-g",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s2-h",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s2-i",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s2-j"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Frank Morris y los hermanos Anglin habían agrandado ventilaciones y excavado una ruta hasta el techo del edificio de la prisión.",
+      "fondo": [
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s3-a",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s3-b",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s3-c",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s3-d",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s3-e",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s3-f",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s3-g",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s3-h",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s3-i",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s3-j"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Construyeron un pequeño barco improvisado con impermeables y dejaron la isla por la costa, pero el agua de la bahía era helada.",
+      "fondo": [
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s4-a",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s4-b",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s4-c",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s4-d",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s4-e",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s4-f",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s4-g",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s4-h",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s4-i",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s4-j"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "El edificio sigue en pie; el FBI nunca confirmó que murieran ni que sobrevivieran. Las cabezas de yeso engañaron a los guardias y la balsa nunca apareció entera. ¿Se ahogaron en la bahía fría, o de verdad lo lograron? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s5-a",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s5-b",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s5-c",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s5-d",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s5-e",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s5-f",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s5-g",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s5-h",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s5-i",
+        "pintado:lqns-alcatraz-fuga-cabezas-falsas-s5-j"
+      ]
+    }
+  ]
+}

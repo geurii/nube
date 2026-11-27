@@ -1,0 +1,116 @@
+{
+  "titulo": "El día que alguien secuestró la señal de televisión",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "velocidad": -2,
+  "tono": -6,
+  "audio": "audio/lqns-max-headroom-senal-secuestrada.wav",
+  "musica": "musica/firma-canal.mp3",
+  "orientacion": "vertical",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-27T10:43:32.938Z",
+  "estilo": "gancho",
+  "ganchoTexto": "En directo, la televisión dejó de mostrar su programa y apareció una transmisión pirata con una máscara extraña.",
+  "publicacion": {
+    "titulo": "El día que alguien secuestró la señal de televisión",
+    "descripcion": "En 1987, una señal de televisión de Chicago fue interrumpida por una transmisión pirata que nunca se atribuyó. #MaxHeadroom #Television #Misterio #Tecnologia #LoQueNoSabias"
+  },
+  "estado": "pendiente_revision_tecnica",
+  "revisionEditorial": {
+    "tipo": "prevalidacion_por_fuente",
+    "fuentes": [
+      {
+        "url": "https://news.wttw.com/2017/11/21/30-years-later-notorious-max-headroom-incident-remains-mystery"
+      }
+    ],
+    "nota": "Guion original preparado con fuente identificada; aprobación final pendiente de render y controles técnicos."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "En directo, la televisión dejó de mostrar su programa y apareció una transmisión pirata con una máscara extraña.",
+      "fondo": [
+        "pintado:lqns-max-headroom-senal-secuestrada-s1-a",
+        "pintado:lqns-max-headroom-senal-secuestrada-s1-b",
+        "pintado:lqns-max-headroom-senal-secuestrada-s1-c",
+        "pintado:lqns-max-headroom-senal-secuestrada-s1-d",
+        "pintado:lqns-max-headroom-senal-secuestrada-s1-e",
+        "pintado:lqns-max-headroom-senal-secuestrada-s1-f",
+        "pintado:lqns-max-headroom-senal-secuestrada-s1-g",
+        "pintado:lqns-max-headroom-senal-secuestrada-s1-h",
+        "pintado:lqns-max-headroom-senal-secuestrada-s1-i",
+        "pintado:lqns-max-headroom-senal-secuestrada-s1-j"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Ocurrió el veintidós de noviembre de mil novecientos ochenta y siete, cuando dos canales de Chicago fueron interceptados. La interrupción apareció en los televisores de Chicago.",
+      "fondo": [
+        "pintado:lqns-max-headroom-senal-secuestrada-s2-a",
+        "pintado:lqns-max-headroom-senal-secuestrada-s2-b",
+        "pintado:lqns-max-headroom-senal-secuestrada-s2-c",
+        "pintado:lqns-max-headroom-senal-secuestrada-s2-d",
+        "pintado:lqns-max-headroom-senal-secuestrada-s2-e",
+        "pintado:lqns-max-headroom-senal-secuestrada-s2-f",
+        "pintado:lqns-max-headroom-senal-secuestrada-s2-g",
+        "pintado:lqns-max-headroom-senal-secuestrada-s2-h",
+        "pintado:lqns-max-headroom-senal-secuestrada-s2-i",
+        "pintado:lqns-max-headroom-senal-secuestrada-s2-j"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "La primera interrupción en televisión duró unos treinta segundos. La segunda, en otra estación, se extendió cerca de noventa.",
+      "fondo": [
+        "pintado:lqns-max-headroom-senal-secuestrada-s3-a",
+        "pintado:lqns-max-headroom-senal-secuestrada-s3-b",
+        "pintado:lqns-max-headroom-senal-secuestrada-s3-c",
+        "pintado:lqns-max-headroom-senal-secuestrada-s3-d",
+        "pintado:lqns-max-headroom-senal-secuestrada-s3-e",
+        "pintado:lqns-max-headroom-senal-secuestrada-s3-f",
+        "pintado:lqns-max-headroom-senal-secuestrada-s3-g",
+        "pintado:lqns-max-headroom-senal-secuestrada-s3-h",
+        "pintado:lqns-max-headroom-senal-secuestrada-s3-i",
+        "pintado:lqns-max-headroom-senal-secuestrada-s3-j"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "La Comisión Federal de Comunicaciones investigó. La señal exigía conocimientos técnicos y acceso a equipos de transmisión. La interrupción apareció en los televisores de Chicago.",
+      "fondo": [
+        "pintado:lqns-max-headroom-senal-secuestrada-s4-a",
+        "pintado:lqns-max-headroom-senal-secuestrada-s4-b",
+        "pintado:lqns-max-headroom-senal-secuestrada-s4-c",
+        "pintado:lqns-max-headroom-senal-secuestrada-s4-d",
+        "pintado:lqns-max-headroom-senal-secuestrada-s4-e",
+        "pintado:lqns-max-headroom-senal-secuestrada-s4-f",
+        "pintado:lqns-max-headroom-senal-secuestrada-s4-g",
+        "pintado:lqns-max-headroom-senal-secuestrada-s4-h",
+        "pintado:lqns-max-headroom-senal-secuestrada-s4-i",
+        "pintado:lqns-max-headroom-senal-secuestrada-s4-j"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "Nadie fue identificado, ni entonces ni décadas después. No fue un hackeo de internet: alguien pisó la señal de dos canales de televisión en una noche y desapareció sin pedir nada. ¿Broma de aficionados, o alguien que sabía demasiado? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pintado:lqns-max-headroom-senal-secuestrada-s5-a",
+        "pintado:lqns-max-headroom-senal-secuestrada-s5-b",
+        "pintado:lqns-max-headroom-senal-secuestrada-s5-c",
+        "pintado:lqns-max-headroom-senal-secuestrada-s5-d",
+        "pintado:lqns-max-headroom-senal-secuestrada-s5-e",
+        "pintado:lqns-max-headroom-senal-secuestrada-s5-f",
+        "pintado:lqns-max-headroom-senal-secuestrada-s5-g",
+        "pintado:lqns-max-headroom-senal-secuestrada-s5-h",
+        "pintado:lqns-max-headroom-senal-secuestrada-s5-i",
+        "pintado:lqns-max-headroom-senal-secuestrada-s5-j"
+      ]
+    }
+  ],
+  "slug": "max-headroom-senal-secuestrada"
+}

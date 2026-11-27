@@ -1,0 +1,116 @@
+{
+  "titulo": "La bomba nuclear que cayó al mar y nunca fue recuperada",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "velocidad": -2,
+  "tono": -6,
+  "audio": "audio/lqns-tybee-bomba-perdida-1958.wav",
+  "musica": "musica/firma-canal.mp3",
+  "orientacion": "vertical",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-27T10:43:33.015Z",
+  "estilo": "gancho",
+  "ganchoTexto": "Un bombardero militar chocó con otro avión y el piloto pidió soltar su bomba para poder aterrizar.",
+  "publicacion": {
+    "titulo": "La bomba nuclear que cayó al mar y nunca fue recuperada",
+    "descripcion": "Tras una colisión aérea en 1958, una bomba fue arrojada al agua cerca de Tybee Island. La Fuerza Aérea dijo que no podía detonar nuclearmente. #Historia #Aviacion #Tybee #Misterio #LoQueNoSabias"
+  },
+  "estado": "pendiente_revision_tecnica",
+  "revisionEditorial": {
+    "tipo": "prevalidacion_por_fuente",
+    "fuentes": [
+      {
+        "url": "https://www.af.mil/News/Article-Display/Article/135895/interagency-team-checking-for-h-bomb-lost-in-1958/"
+      }
+    ],
+    "nota": "Guion original preparado con fuente identificada; aprobación final pendiente de render y controles técnicos."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Un bombardero militar chocó con otro avión y el piloto pidió soltar su bomba para poder aterrizar.",
+      "fondo": [
+        "pintado:lqns-tybee-bomba-perdida-1958-s1-a",
+        "pintado:lqns-tybee-bomba-perdida-1958-s1-b",
+        "pintado:lqns-tybee-bomba-perdida-1958-s1-c",
+        "pintado:lqns-tybee-bomba-perdida-1958-s1-d",
+        "pintado:lqns-tybee-bomba-perdida-1958-s1-e",
+        "pintado:lqns-tybee-bomba-perdida-1958-s1-f",
+        "pintado:lqns-tybee-bomba-perdida-1958-s1-g",
+        "pintado:lqns-tybee-bomba-perdida-1958-s1-h",
+        "pintado:lqns-tybee-bomba-perdida-1958-s1-i",
+        "pintado:lqns-tybee-bomba-perdida-1958-s1-j"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En mil novecientos cincuenta y ocho, un B-47 arrojó un arma nuclear cerca de Tybee Island, Georgia.",
+      "fondo": [
+        "pintado:lqns-tybee-bomba-perdida-1958-s2-a",
+        "pintado:lqns-tybee-bomba-perdida-1958-s2-b",
+        "pintado:lqns-tybee-bomba-perdida-1958-s2-c",
+        "pintado:lqns-tybee-bomba-perdida-1958-s2-d",
+        "pintado:lqns-tybee-bomba-perdida-1958-s2-e",
+        "pintado:lqns-tybee-bomba-perdida-1958-s2-f",
+        "pintado:lqns-tybee-bomba-perdida-1958-s2-g",
+        "pintado:lqns-tybee-bomba-perdida-1958-s2-h",
+        "pintado:lqns-tybee-bomba-perdida-1958-s2-i",
+        "pintado:lqns-tybee-bomba-perdida-1958-s2-j"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "La Fuerza Aérea explicó que el arma no tenía una cápsula de armado nuclear, aunque contenía explosivos convencionales. La bomba permaneció perdida bajo el agua.",
+      "fondo": [
+        "pintado:lqns-tybee-bomba-perdida-1958-s3-a",
+        "pintado:lqns-tybee-bomba-perdida-1958-s3-b",
+        "pintado:lqns-tybee-bomba-perdida-1958-s3-c",
+        "pintado:lqns-tybee-bomba-perdida-1958-s3-d",
+        "pintado:lqns-tybee-bomba-perdida-1958-s3-e",
+        "pintado:lqns-tybee-bomba-perdida-1958-s3-f",
+        "pintado:lqns-tybee-bomba-perdida-1958-s3-g",
+        "pintado:lqns-tybee-bomba-perdida-1958-s3-h",
+        "pintado:lqns-tybee-bomba-perdida-1958-s3-i",
+        "pintado:lqns-tybee-bomba-perdida-1958-s3-j"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "En 2004, un equipo interinstitucional investigó una posible ubicación en Wassaw Sound y tomó muestras. La bomba permaneció perdida bajo el agua.",
+      "fondo": [
+        "pintado:lqns-tybee-bomba-perdida-1958-s4-a",
+        "pintado:lqns-tybee-bomba-perdida-1958-s4-b",
+        "pintado:lqns-tybee-bomba-perdida-1958-s4-c",
+        "pintado:lqns-tybee-bomba-perdida-1958-s4-d",
+        "pintado:lqns-tybee-bomba-perdida-1958-s4-e",
+        "pintado:lqns-tybee-bomba-perdida-1958-s4-f",
+        "pintado:lqns-tybee-bomba-perdida-1958-s4-g",
+        "pintado:lqns-tybee-bomba-perdida-1958-s4-h",
+        "pintado:lqns-tybee-bomba-perdida-1958-s4-i",
+        "pintado:lqns-tybee-bomba-perdida-1958-s4-j"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "La bomba no fue recuperada. El caso es un problema de localización y seguridad, no prueba de una explosión oculta: cayó tras un choque en el aire y el ejército dejó de buscarla a los dos meses. Sigue en algún punto del fango. ¿La encontrarán algún día? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pintado:lqns-tybee-bomba-perdida-1958-s5-a",
+        "pintado:lqns-tybee-bomba-perdida-1958-s5-b",
+        "pintado:lqns-tybee-bomba-perdida-1958-s5-c",
+        "pintado:lqns-tybee-bomba-perdida-1958-s5-d",
+        "pintado:lqns-tybee-bomba-perdida-1958-s5-e",
+        "pintado:lqns-tybee-bomba-perdida-1958-s5-f",
+        "pintado:lqns-tybee-bomba-perdida-1958-s5-g",
+        "pintado:lqns-tybee-bomba-perdida-1958-s5-h",
+        "pintado:lqns-tybee-bomba-perdida-1958-s5-i",
+        "pintado:lqns-tybee-bomba-perdida-1958-s5-j"
+      ]
+    }
+  ],
+  "slug": "tybee-bomba-perdida-1958"
+}

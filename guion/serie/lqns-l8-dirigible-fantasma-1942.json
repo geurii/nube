@@ -1,0 +1,115 @@
+{
+  "titulo": "El dirigible que aterrizó vacío y sin su tripulación",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "velocidad": -2,
+  "tono": -6,
+  "audio": "audio/lqns-l8-dirigible-fantasma-1942.wav",
+  "musica": "musica/firma-canal.mp3",
+  "orientacion": "vertical",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-27T10:43:32.990Z",
+  "estilo": "gancho",
+  "ganchoTexto": "Un dirigible de la Marina aterrizó contra edificios en California y los equipos de rescate encontraron su cabina vacía.",
+  "publicacion": {
+    "titulo": "El dirigible que aterrizó vacío y sin su tripulación",
+    "descripcion": "En 1942, el dirigible naval L-8 cayó en California con su cabina vacía. Sus dos tripulantes nunca fueron encontrados. #Dirigible #Marina #Misterio #Historia #LoQueNoSabias"
+  },
+  "estado": "pendiente_revision_tecnica",
+  "revisionEditorial": {
+    "tipo": "prevalidacion_por_fuente",
+    "fuentes": [
+      {
+        "url": "https://www.history.navy.mil/content/history/museums/nnam/explore/collections/aircraft/l/l-8-ghost-ship.html"
+      }
+    ],
+    "nota": "Guion original preparado con fuente identificada; aprobación final pendiente de render y controles técnicos."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Un dirigible de la Marina aterrizó contra edificios en California y los equipos de rescate encontraron su cabina vacía.",
+      "fondo": [
+        "pintado:lqns-l8-dirigible-fantasma-1942-s1-a",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s1-b",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s1-c",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s1-d",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s1-e",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s1-f",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s1-g",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s1-h",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s1-i",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s1-j"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El dieciséis de agosto de mil novecientos cuarenta y dos, el L-8 salió de patrulla antisubmarina. El dirigible, un zepelín, quedó registrado en imágenes.",
+      "fondo": [
+        "pintado:lqns-l8-dirigible-fantasma-1942-s2-a",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s2-b",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s2-c",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s2-d",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s2-e",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s2-f",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s2-g",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s2-h",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s2-i",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s2-j"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Los dos tripulantes avisaron por radio desde el dirigible que investigarían una mancha de aceite en el mar.",
+      "fondo": [
+        "pintado:lqns-l8-dirigible-fantasma-1942-s3-a",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s3-b",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s3-c",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s3-d",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s3-e",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s3-f",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s3-g",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s3-h",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s3-i",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s3-j"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Horas después, el dirigible apareció sobre Daly City sin Ernest Cody ni Charles Adams, y el interior estaba en orden.",
+      "fondo": [
+        "pintado:lqns-l8-dirigible-fantasma-1942-s4-a",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s4-b",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s4-c",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s4-d",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s4-e",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s4-f",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s4-g",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s4-h",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s4-i",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s4-j"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "La Marina investigó y nunca estableció qué ocurrió. El dirigible volvió solo, con la puerta abierta, los chalecos salvavidas en su sitio y la radio funcionando. Dos hombres salieron en patrulla por la mañana y la aeronave regresó sin ellos. ¿Cayeron al agua, o pasó otra cosa? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pintado:lqns-l8-dirigible-fantasma-1942-s5-a",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s5-b",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s5-c",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s5-d",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s5-e",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s5-f",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s5-g",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s5-h",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s5-i",
+        "pintado:lqns-l8-dirigible-fantasma-1942-s5-j"
+      ]
+    }
+  ]
+}

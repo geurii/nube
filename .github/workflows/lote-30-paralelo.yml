@@ -53,8 +53,20 @@ jobs:
           timeout 5m npm install --no-save --no-audit --no-fund msedge-tts@2.1.1
       - name: Preparar guiones y visuales
         run: |
+          pip install --break-system-packages --quiet pillow
           node scripts/probar-lote-30.mjs
           node scripts/preparar-lote-30.mjs
+      - name: Imagenes de escena en pixel art
+        continue-on-error: true   # si fallan, el Short se renderiza con el pixel art dibujado de antes
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+        run: |
+          ID=$(node -e "const s=require('./agentes/lote-30-publicacion.json');console.log(s.items[${{ matrix.i }}].id)")
+          echo "Short: $ID"
+          node scripts/imagenes-lote.mjs "$ID"
       - name: Renderizar solo el Short ${{ matrix.i }}
         env:
           LOTE_INDEX: ${{ matrix.i }}

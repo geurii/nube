@@ -1,0 +1,116 @@
+{
+  "titulo": "El periódico que inventó criaturas viviendo en la Luna",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "velocidad": -2,
+  "tono": -6,
+  "audio": "audio/lqns-gran-engano-lunar-1835.wav",
+  "musica": "musica/firma-canal.mp3",
+  "orientacion": "vertical",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-27T10:43:32.980Z",
+  "estilo": "gancho",
+  "ganchoTexto": "Un periódico aseguró que un astrónomo había descubierto animales y criaturas aladas viviendo en la Luna.",
+  "publicacion": {
+    "titulo": "El periódico que inventó criaturas viviendo en la Luna",
+    "descripcion": "En 1835, un periódico publicó una falsa historia sobre animales lunares y engañó a muchos lectores. #Luna #Periodismo #Historia #Engano #LoQueNoSabias"
+  },
+  "estado": "pendiente_revision_tecnica",
+  "revisionEditorial": {
+    "tipo": "prevalidacion_por_fuente",
+    "fuentes": [
+      {
+        "url": "https://www.loc.gov/collections/finding-our-place-in-the-cosmos-with-carl-sagan/articles-and-essays/life-on-other-worlds/peoples-and-creatures-of-the-moon/"
+      }
+    ],
+    "nota": "Guion original preparado con fuente identificada; aprobación final pendiente de render y controles técnicos."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Un periódico aseguró que un astrónomo había descubierto animales y criaturas aladas viviendo en la Luna.",
+      "fondo": [
+        "pintado:lqns-gran-engano-lunar-1835-s1-a",
+        "pintado:lqns-gran-engano-lunar-1835-s1-b",
+        "pintado:lqns-gran-engano-lunar-1835-s1-c",
+        "pintado:lqns-gran-engano-lunar-1835-s1-d",
+        "pintado:lqns-gran-engano-lunar-1835-s1-e",
+        "pintado:lqns-gran-engano-lunar-1835-s1-f",
+        "pintado:lqns-gran-engano-lunar-1835-s1-g",
+        "pintado:lqns-gran-engano-lunar-1835-s1-h",
+        "pintado:lqns-gran-engano-lunar-1835-s1-i",
+        "pintado:lqns-gran-engano-lunar-1835-s1-j"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En mil ochocientos treinta y cinco, el periódico New York Sun publicó una serie de artículos sobre supuestos hallazgos lunares. La Luna fue el escenario de aquella historia.",
+      "fondo": [
+        "pintado:lqns-gran-engano-lunar-1835-s2-a",
+        "pintado:lqns-gran-engano-lunar-1835-s2-b",
+        "pintado:lqns-gran-engano-lunar-1835-s2-c",
+        "pintado:lqns-gran-engano-lunar-1835-s2-d",
+        "pintado:lqns-gran-engano-lunar-1835-s2-e",
+        "pintado:lqns-gran-engano-lunar-1835-s2-f",
+        "pintado:lqns-gran-engano-lunar-1835-s2-g",
+        "pintado:lqns-gran-engano-lunar-1835-s2-h",
+        "pintado:lqns-gran-engano-lunar-1835-s2-i",
+        "pintado:lqns-gran-engano-lunar-1835-s2-j"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Las historias describían bisontes, unicornios y seres parecidos a murciélagos, con templos y bosques en nuestro satélite. El periódico publicó la versión que después fue cuestionada.",
+      "fondo": [
+        "pintado:lqns-gran-engano-lunar-1835-s3-a",
+        "pintado:lqns-gran-engano-lunar-1835-s3-b",
+        "pintado:lqns-gran-engano-lunar-1835-s3-c",
+        "pintado:lqns-gran-engano-lunar-1835-s3-d",
+        "pintado:lqns-gran-engano-lunar-1835-s3-e",
+        "pintado:lqns-gran-engano-lunar-1835-s3-f",
+        "pintado:lqns-gran-engano-lunar-1835-s3-g",
+        "pintado:lqns-gran-engano-lunar-1835-s3-h",
+        "pintado:lqns-gran-engano-lunar-1835-s3-i",
+        "pintado:lqns-gran-engano-lunar-1835-s3-j"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "El periódico atribuyó al astrónomo John Herschel unas observaciones inventadas por el periodista Richard Locke.",
+      "fondo": [
+        "pintado:lqns-gran-engano-lunar-1835-s4-a",
+        "pintado:lqns-gran-engano-lunar-1835-s4-b",
+        "pintado:lqns-gran-engano-lunar-1835-s4-c",
+        "pintado:lqns-gran-engano-lunar-1835-s4-d",
+        "pintado:lqns-gran-engano-lunar-1835-s4-e",
+        "pintado:lqns-gran-engano-lunar-1835-s4-f",
+        "pintado:lqns-gran-engano-lunar-1835-s4-g",
+        "pintado:lqns-gran-engano-lunar-1835-s4-h",
+        "pintado:lqns-gran-engano-lunar-1835-s4-i",
+        "pintado:lqns-gran-engano-lunar-1835-s4-j"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "La Gran Broma Lunar demuestra cómo un relato convincente en un periódico puede viajar más rápido que la verificación. Vendió ejemplares durante semanas y el diario nunca se retractó del todo. Casi dos siglos después seguimos cayendo igual. ¿Estafador, o genio del negocio? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pintado:lqns-gran-engano-lunar-1835-s5-a",
+        "pintado:lqns-gran-engano-lunar-1835-s5-b",
+        "pintado:lqns-gran-engano-lunar-1835-s5-c",
+        "pintado:lqns-gran-engano-lunar-1835-s5-d",
+        "pintado:lqns-gran-engano-lunar-1835-s5-e",
+        "pintado:lqns-gran-engano-lunar-1835-s5-f",
+        "pintado:lqns-gran-engano-lunar-1835-s5-g",
+        "pintado:lqns-gran-engano-lunar-1835-s5-h",
+        "pintado:lqns-gran-engano-lunar-1835-s5-i",
+        "pintado:lqns-gran-engano-lunar-1835-s5-j"
+      ]
+    }
+  ],
+  "slug": "gran-engano-lunar-1835"
+}

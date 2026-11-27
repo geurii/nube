@@ -54,6 +54,8 @@ export const Fondo: React.FC<Props> = ({fondo, indice, duracion}) => {
       width: '100%',
       height: '100%',
       objectFit: 'cover',
+      // pixel art: al ampliar y al hacer zoom los pixeles se mantienen cuadrados, no se emborronan
+      imageRendering: 'pixelated',
       transform: `scale(${escala}) translate(${dx}px, ${dy}px)`,
     };
     contenido = esVideo(fondo) ? (

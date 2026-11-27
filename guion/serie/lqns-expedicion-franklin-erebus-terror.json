@@ -1,0 +1,115 @@
+{
+  "titulo": "Los barcos atrapados en el hielo que desaparecieron en el Ártico",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "velocidad": -2,
+  "tono": -6,
+  "audio": "audio/lqns-expedicion-franklin-erebus-terror.wav",
+  "musica": "musica/firma-canal.mp3",
+  "orientacion": "vertical",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-27T10:43:32.993Z",
+  "estilo": "gancho",
+  "ganchoTexto": "Dos barcos británicos quedaron atrapados en el hielo del Ártico durante una expedición para hallar una ruta marítima.",
+  "publicacion": {
+    "titulo": "Los barcos atrapados en el hielo que desaparecieron en el Ártico",
+    "descripcion": "La expedición Franklin se perdió en 1845 buscando el Paso del Noroeste. Los restos de sus barcos aparecieron en 2014 y 2016. #Arqueologia #Artico #Historia #Misterios #LoQueNoSabias"
+  },
+  "estado": "pendiente_revision_tecnica",
+  "revisionEditorial": {
+    "tipo": "prevalidacion_por_fuente",
+    "fuentes": [
+      {
+        "url": "https://parks.canada.ca/lhn-nhs/nu/epaveswrecks/culture/archeologie-archeology/decouvertes-discoveries"
+      }
+    ],
+    "nota": "Guion original preparado con fuente identificada; aprobación final pendiente de render y controles técnicos."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Dos barcos británicos quedaron atrapados en el hielo del Ártico durante una expedición para hallar una ruta marítima.",
+      "fondo": [
+        "pintado:lqns-expedicion-franklin-erebus-terror-s1-a",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s1-b",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s1-c",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s1-d",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s1-e",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s1-f",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s1-g",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s1-h",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s1-i",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s1-j"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Los barcos quedaron atrapados en el hielo del Ártico: el HMS Erebus y el HMS Terror zarparon en mil ochocientos cuarenta y cinco.",
+      "fondo": [
+        "pintado:lqns-expedicion-franklin-erebus-terror-s2-a",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s2-b",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s2-c",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s2-d",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s2-e",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s2-f",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s2-g",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s2-h",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s2-i",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s2-j"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Los barcos quedaron atrapados y la expedición desapareció; durante décadas solo hubo pistas dispersas, relatos inuit y búsquedas fallidas.",
+      "fondo": [
+        "pintado:lqns-expedicion-franklin-erebus-terror-s3-a",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s3-b",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s3-c",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s3-d",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s3-e",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s3-f",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s3-g",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s3-h",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s3-i",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s3-j"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "Parks Canada localizó el Erebus en 2014 y el Terror en 2016, usando sonar de barrido lateral y conocimiento inuit.",
+      "fondo": [
+        "pintado:lqns-expedicion-franklin-erebus-terror-s4-a",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s4-b",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s4-c",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s4-d",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s4-e",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s4-f",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s4-g",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s4-h",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s4-i",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s4-j"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "Los pabecios hundidos resolvieron dónde terminaron las naves, pero las circunstancias finales de la tripulación siguen investigándose. Ciento veintinueve hombres salieron y ninguno volvió; las pruebas apuntan al hielo, al hambre y al plomo de las conservas. ¿Los mató el Ártico, o su propia comida? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pintado:lqns-expedicion-franklin-erebus-terror-s5-a",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s5-b",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s5-c",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s5-d",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s5-e",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s5-f",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s5-g",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s5-h",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s5-i",
+        "pintado:lqns-expedicion-franklin-erebus-terror-s5-j"
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "fase": "preparando",
+  "fase": "preparado",
   "canal": "lqns",
   "total": 30,
   "completedCount": 0,
@@ -21,6 +21,7 @@
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     },
@@ -34,6 +35,7 @@
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     },
@@ -47,6 +49,7 @@
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     },
@@ -60,19 +63,21 @@
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     },
     {
       "id": "lqns-uss-cyclops-desaparecio",
       "slug": "uss-cyclops-desaparecio",
-      "titulo": "El barco de la Marina que desapareció con 306 personas",
+      "titulo": "El barco de la Marina que desapareció con unas 306 personas",
       "estado": "pendiente_render",
       "aprobado": false,
       "duracionSegundos": null,
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     },
@@ -86,6 +91,7 @@
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     },
@@ -99,6 +105,7 @@
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     },
@@ -112,6 +119,7 @@
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     },
@@ -125,6 +133,7 @@
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     },
@@ -138,6 +147,7 @@
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     },
@@ -151,6 +161,7 @@
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     },
@@ -164,6 +175,7 @@
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     },
@@ -177,6 +189,7 @@
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     },
@@ -190,6 +203,7 @@
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     },
@@ -203,6 +217,7 @@
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     },
@@ -216,6 +231,7 @@
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     },
@@ -229,6 +245,7 @@
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     },
@@ -242,6 +259,7 @@
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     },
@@ -255,6 +273,7 @@
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     },
@@ -268,6 +287,7 @@
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     },
@@ -281,6 +301,7 @@
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     },
@@ -294,6 +315,7 @@
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     },
@@ -307,6 +329,7 @@
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     },
@@ -320,6 +343,7 @@
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     },
@@ -333,6 +357,7 @@
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     },
@@ -346,6 +371,7 @@
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     },
@@ -359,6 +385,7 @@
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     },
@@ -372,6 +399,7 @@
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     },
@@ -385,6 +413,7 @@
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     },
@@ -398,6 +427,7 @@
       "publicadoEn": {
         "youtube": false,
         "facebook": false,
+        "instagram": false,
         "tiktok": false
       }
     }

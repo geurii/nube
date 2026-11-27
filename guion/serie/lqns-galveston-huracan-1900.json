@@ -1,0 +1,115 @@
+{
+  "titulo": "La tormenta que borró barrios enteros de Galveston",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "velocidad": -2,
+  "tono": -6,
+  "audio": "audio/lqns-galveston-huracan-1900.wav",
+  "musica": "musica/firma-canal.mp3",
+  "orientacion": "vertical",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-27T10:43:32.969Z",
+  "estilo": "gancho",
+  "ganchoTexto": "Una ciudad costera quedó cubierta por el agua durante una tormenta que destruyó miles de viviendas.",
+  "publicacion": {
+    "titulo": "La tormenta que borró barrios enteros de Galveston",
+    "descripcion": "El huracán de 1900 inundó Galveston con una marejada devastadora y causó al menos 6.000 muertes. #Huracan #Galveston #Historia #Clima #LoQueNoSabias"
+  },
+  "estado": "pendiente_revision_tecnica",
+  "revisionEditorial": {
+    "tipo": "prevalidacion_por_fuente",
+    "fuentes": [
+      {
+        "url": "https://vlab.noaa.gov/web/nws-heritage/-/galveston-storm-of-1900"
+      }
+    ],
+    "nota": "Guion original preparado con fuente identificada; aprobación final pendiente de render y controles técnicos."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Una ciudad costera quedó cubierta por el agua durante una tormenta que destruyó miles de viviendas.",
+      "fondo": [
+        "pintado:lqns-galveston-huracan-1900-s1-a",
+        "pintado:lqns-galveston-huracan-1900-s1-b",
+        "pintado:lqns-galveston-huracan-1900-s1-c",
+        "pintado:lqns-galveston-huracan-1900-s1-d",
+        "pintado:lqns-galveston-huracan-1900-s1-e",
+        "pintado:lqns-galveston-huracan-1900-s1-f",
+        "pintado:lqns-galveston-huracan-1900-s1-g",
+        "pintado:lqns-galveston-huracan-1900-s1-h",
+        "pintado:lqns-galveston-huracan-1900-s1-i",
+        "pintado:lqns-galveston-huracan-1900-s1-j"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El ocho de septiembre de mil novecientos, un huracán llegó a Galveston, Texas, con una marejada enorme. La ciudad quedó marcada por este episodio histórico.",
+      "fondo": [
+        "pintado:lqns-galveston-huracan-1900-s2-a",
+        "pintado:lqns-galveston-huracan-1900-s2-b",
+        "pintado:lqns-galveston-huracan-1900-s2-c",
+        "pintado:lqns-galveston-huracan-1900-s2-d",
+        "pintado:lqns-galveston-huracan-1900-s2-e",
+        "pintado:lqns-galveston-huracan-1900-s2-f",
+        "pintado:lqns-galveston-huracan-1900-s2-g",
+        "pintado:lqns-galveston-huracan-1900-s2-h",
+        "pintado:lqns-galveston-huracan-1900-s2-i",
+        "pintado:lqns-galveston-huracan-1900-s2-j"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Las olas y el agua subieron sobre la isla y golpearon edificios, calles y refugios, mientras los escombros se convertían en proyectiles.",
+      "fondo": [
+        "pintado:lqns-galveston-huracan-1900-s3-a",
+        "pintado:lqns-galveston-huracan-1900-s3-b",
+        "pintado:lqns-galveston-huracan-1900-s3-c",
+        "pintado:lqns-galveston-huracan-1900-s3-d",
+        "pintado:lqns-galveston-huracan-1900-s3-e",
+        "pintado:lqns-galveston-huracan-1900-s3-f",
+        "pintado:lqns-galveston-huracan-1900-s3-g",
+        "pintado:lqns-galveston-huracan-1900-s3-h",
+        "pintado:lqns-galveston-huracan-1900-s3-i",
+        "pintado:lqns-galveston-huracan-1900-s3-j"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "El Servicio Meteorológico Nacional estima que murieron al menos seis mil personas en pocas horas. La ciudad quedó marcada por este episodio histórico.",
+      "fondo": [
+        "pintado:lqns-galveston-huracan-1900-s4-a",
+        "pintado:lqns-galveston-huracan-1900-s4-b",
+        "pintado:lqns-galveston-huracan-1900-s4-c",
+        "pintado:lqns-galveston-huracan-1900-s4-d",
+        "pintado:lqns-galveston-huracan-1900-s4-e",
+        "pintado:lqns-galveston-huracan-1900-s4-f",
+        "pintado:lqns-galveston-huracan-1900-s4-g",
+        "pintado:lqns-galveston-huracan-1900-s4-h",
+        "pintado:lqns-galveston-huracan-1900-s4-i",
+        "pintado:lqns-galveston-huracan-1900-s4-j"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "La ciudad elevó el terreno metros enteros, casa por casa, y cambió la ingeniería ante huracanes. Pero llegó después de la noche más mortal del país. Murieron entre seis y doce mil personas. ¿Se pudo avisar a tiempo a la gente? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pintado:lqns-galveston-huracan-1900-s5-a",
+        "pintado:lqns-galveston-huracan-1900-s5-b",
+        "pintado:lqns-galveston-huracan-1900-s5-c",
+        "pintado:lqns-galveston-huracan-1900-s5-d",
+        "pintado:lqns-galveston-huracan-1900-s5-e",
+        "pintado:lqns-galveston-huracan-1900-s5-f",
+        "pintado:lqns-galveston-huracan-1900-s5-g",
+        "pintado:lqns-galveston-huracan-1900-s5-h",
+        "pintado:lqns-galveston-huracan-1900-s5-i",
+        "pintado:lqns-galveston-huracan-1900-s5-j"
+      ]
+    }
+  ]
+}

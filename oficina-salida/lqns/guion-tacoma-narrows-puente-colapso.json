@@ -1,0 +1,116 @@
+{
+  "titulo": "El puente que empezó a retorcerse hasta caer al agua",
+  "formato": "short",
+  "plataforma": "youtube",
+  "canal": "lqns",
+  "voz": "es-MX-JorgeNeural",
+  "vozGemini": "Sadaltager",
+  "velocidad": -2,
+  "tono": -6,
+  "audio": "audio/lqns-tacoma-narrows-puente-colapso.wav",
+  "musica": "musica/firma-canal.mp3",
+  "orientacion": "vertical",
+  "personaje": {
+    "visible": false
+  },
+  "creado": "2026-11-27T10:43:33.004Z",
+  "estilo": "gancho",
+  "ganchoTexto": "Un puente colgante comenzó a retorcerse con el viento hasta que su tablero se partió y cayó al agua.",
+  "publicacion": {
+    "titulo": "El puente que empezó a retorcerse hasta caer al agua",
+    "descripcion": "El puente Tacoma Narrows colapsó en 1940 cuando el viento alimentó una oscilación torsional creciente. #Ingenieria #Puentes #Historia #Ciencia #LoQueNoSabias"
+  },
+  "estado": "pendiente_revision_tecnica",
+  "revisionEditorial": {
+    "tipo": "prevalidacion_por_fuente",
+    "fuentes": [
+      {
+        "url": "https://wsdot.wa.gov/TNBHistory/bridges-failure.htm"
+      }
+    ],
+    "nota": "Guion original preparado con fuente identificada; aprobación final pendiente de render y controles técnicos."
+  },
+  "escenas": [
+    {
+      "tipo": "hook",
+      "texto": "Un puente colgante comenzó a retorcerse con el viento hasta que su tablero se partió y cayó al agua.",
+      "fondo": [
+        "pintado:lqns-tacoma-narrows-puente-colapso-s1-a",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s1-b",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s1-c",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s1-d",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s1-e",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s1-f",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s1-g",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s1-h",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s1-i",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s1-j"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El siete de noviembre de mil novecientos cuarenta, el puente Tacoma Narrows sufrió movimientos cada vez más violentos.",
+      "fondo": [
+        "pintado:lqns-tacoma-narrows-puente-colapso-s2-a",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s2-b",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s2-c",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s2-d",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s2-e",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s2-f",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s2-g",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s2-h",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s2-i",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s2-j"
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Los ingenieros habían observado oscilaciones verticales desde su apertura, pero aquel día el movimiento cambió de forma. El puente quedó registrado mientras oscilaba.",
+      "fondo": [
+        "pintado:lqns-tacoma-narrows-puente-colapso-s3-a",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s3-b",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s3-c",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s3-d",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s3-e",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s3-f",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s3-g",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s3-h",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s3-i",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s3-j"
+      ]
+    },
+    {
+      "tipo": "revelacion",
+      "texto": "La explicación principal del colapso del puente Tacoma Narrows es el flutter torsional: el viento interactuó con la estructura y alimentó el giro, aunque los ingenieros siguen discutiendo detalles.",
+      "fondo": [
+        "pintado:lqns-tacoma-narrows-puente-colapso-s4-a",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s4-b",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s4-c",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s4-d",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s4-e",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s4-f",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s4-g",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s4-h",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s4-i",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s4-j"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "texto": "El colapso cambió la ingeniería y probó que el viento se calcula junto con la estructura. El puente se retorció una hora entera ante las cámaras, con viento moderado. ¿Fallo de cálculo, o exceso de confianza? Comparte este video con un amigo que haría lo mismo, sígueme.",
+      "fondo": [
+        "pintado:lqns-tacoma-narrows-puente-colapso-s5-a",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s5-b",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s5-c",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s5-d",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s5-e",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s5-f",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s5-g",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s5-h",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s5-i",
+        "pintado:lqns-tacoma-narrows-puente-colapso-s5-j"
+      ]
+    }
+  ],
+  "slug": "tacoma-narrows-puente-colapso"
+}
