@@ -55,8 +55,8 @@ for(let index=0;index<hasta;index++){
    if(!fs.existsSync(mp4)||!fs.existsSync(lite))throw new Error('Falta el MP4 original o la copia optimizada.');
    const m=probe(mp4),v=(m.streams??[]).find(x=>x.codec_type==='video'),a=(m.streams??[]).find(x=>x.codec_type==='audio'),seconds=Number(m.format?.duration);
    const timed=path.join('guion/serie',id+'.palabras.json');
-   if(!Number.isFinite(seconds)||seconds<45||seconds>61){
-    if(seconds<45&&attempt===1){
+   if(!Number.isFinite(seconds)||seconds<60||seconds>62){
+    if(seconds<60&&attempt===1){
      g.escenas[4].texto+=' La fuente consultada permite separar los hechos confirmados de las hipótesis que todavía no tienen evidencia suficiente.';
      fs.writeFileSync(guionPath,JSON.stringify(g,null,2)+'\n');
      console.warn('Duración menor de 30s; se amplía la última escena y se vuelve a grabar la voz.');
