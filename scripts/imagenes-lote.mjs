@@ -95,7 +95,18 @@ const escribirCuadro = (nombre, i, k, escena) => {
   const mar = /mar|olas|oceano|barco|agua|costa|puerto|isla|hundi|naufrag/.test(t);
   const fuego = /fuego|incendio|explos|lava|volcan|arde|llama|quem/.test(t);
   const noche = /noche|oscur|madrugada|estrella|cielo/.test(t);
-  const capas = [{t: 'foto', archivo: `${nombre}.png`, x0: 0, y0: 0, x1: 1, y1: 1, zoom: 1, pan: true, pixel: 1}];
+  // La imagen no se queda quieta: se mueve por dentro segun lo que muestra la escena.
+  //  onda = vaiven de las filas de abajo (agua, lava, multitud)
+  //  cielo = arrastre de las filas de arriba (nubes, humo)
+  //  latido = la luz sube y baja, como una lampara o un fuego vivo
+  const capas = [{
+    t: 'foto', archivo: `${nombre}.png`, x0: 0, y0: 0, x1: 1, y1: 1, zoom: 1, pan: true, pixel: 1,
+    onda: mar ? 0.62 : fuego ? 0.70 : 0.78,
+    ondaFuerza: mar ? 4.5 : fuego ? 3 : 1.8,
+    cielo: 0.45,
+    cieloFuerza: fuego ? 3.2 : 2.2,
+    latido: fuego ? 0.11 : noche ? 0.06 : 0.035,
+  }];
   if (noche || !fuego) capas.push({t: 'estrellas', n: 26 + k * 4, hasta: 0.5, semilla: i * 7 + k, color: '#dfe7f4'});
   capas.push({t: 'particulas', n: 16 + k * 3, tipo: fuego ? 'brasas' : 'polvo', semilla: i * 13 + k, color: fuego ? '#ffb347' : '#cfd8e6'});
   // Nada de olas ni rayos dibujados encima: la imagen ya trae su mar y su fuego, y una ola

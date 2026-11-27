@@ -202,13 +202,40 @@ export function pintar(g: G, esc: EscenaPintada, t: number, lw: number, lh: numb
         const vaivén = e.pan === false ? 0.5 : 0.5 + 0.35 * Math.sin(t * 0.22);
         const ox = Math.max(0, Math.min(im.w - vw, (im.w - vw) * vaivén));
         const oy = Math.max(0, Math.min(im.h - vh, (im.h - vh) * 0.4));
+        // LA IMAGEN SE MUEVE POR DENTRO, no solo la camara:
+        //  - onda: las filas de abajo (agua, lava, multitud) se desplazan con una ola lenta
+        //  - cielo: las filas de arriba (nubes, humo) se arrastran de lado
+        //  - latido: el brillo sube y baja muy poco, como una lampara o un fuego vivo
+        const ondaDesde = num(e.onda, 0.72, 0, 1);      // a partir de que altura empieza el vaiven
+        const ondaFuerza = num(e.ondaFuerza, 3, 0, 12); // en pixeles del lienzo
+        const cieloHasta = num(e.cielo, 0.42, 0, 1);    // hasta que altura se arrastra el cielo
+        const cieloFuerza = num(e.cieloFuerza, 2.2, 0, 10);
+        const latido = num(e.latido, 0.05, 0, 0.4);
+        const brillo = 1 + latido * Math.sin(t * 1.7);
         for (let y = 0; y < h; y += paso) {
-          const sy = Math.min(im.h - 1, Math.floor(oy + (y / h) * vh));
+          const py = y / h;
+          let desvio = 0;
+          if (py >= ondaDesde) {
+            const prof = (py - ondaDesde) / Math.max(0.001, 1 - ondaDesde);
+            desvio += Math.sin(t * 1.25 + py * 14) * ondaFuerza * prof;
+          }
+          if (py <= cieloHasta) {
+            const prof = 1 - py / Math.max(0.001, cieloHasta);
+            desvio += Math.sin(t * 0.28) * cieloFuerza * prof + t * 0.9 * prof;
+          }
+          const sy = Math.min(im.h - 1, Math.floor(oy + py * vh));
           for (let x = 0; x < w; x += paso) {
-            const sx = Math.min(im.w - 1, Math.floor(ox + (x / w) * vw));
+            let mx = ox + ((x + desvio) / w) * vw;
+            // se envuelve dentro de la ventana para que el borde no quede vacio
+            while (mx < ox) mx += vw;
+            while (mx >= ox + vw) mx -= vw;
+            const sx = Math.min(im.w - 1, Math.floor(mx));
             const k = (sy * im.w + sx) * 4;
             if (im.d[k + 3] < 128) continue;
-            g.rect(x0 + x, y0 + y, paso, paso, [im.d[k], im.d[k + 1], im.d[k + 2]]);
+            const c: RGB = brillo === 1
+              ? [im.d[k], im.d[k + 1], im.d[k + 2]]
+              : [Math.min(255, im.d[k] * brillo), Math.min(255, im.d[k + 1] * brillo), Math.min(255, im.d[k + 2] * brillo)];
+            g.rect(x0 + x, y0 + y, paso, paso, c);
           }
         }
         break;
