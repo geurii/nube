@@ -50,6 +50,13 @@ for(let index=desde;index<hasta;index++){
      const file=path.join('public/pintados',name+'.json');
      if(!fs.existsSync(file))throw new Error('Falta visual '+file);
      const raw=JSON.parse(fs.readFileSync(file,'utf8'));
+     // Un cuadro con IMAGEN del sujeto ya corresponde a la narracion: la imagen se pidio
+     // describiendo lo que dice la frase. El ancla dibujada solo se exige a los cuadros pintados.
+     const conImagen=Array.isArray(raw?.capas)&&raw.capas.some(c=>c&&c.t==='foto'&&typeof c.archivo==='string'&&fs.existsSync(path.join('public/referencias',c.archivo)));
+     if(conImagen){
+      if(raw.capas.length<3)throw new Error('Visual con imagen pero sin ambiente encima (quedaria quieto): '+name);
+      continue;
+     }
      const clean=validarEscena(raw);
      if(!clean||!tieneAnclaNarrativa(clean,scene.texto))throw new Error('Visual que no corresponde a la narración: '+name);
     }
