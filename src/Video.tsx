@@ -18,7 +18,9 @@ export const Video: React.FC<VideoProps> = ({guion, musica, tiempos}) => {
 
   const aFrame = (s: number) => Math.round(s * fps);
   const SOLAPE = Math.round(fps / 3); // fundido entre fondos (~0,33 s)
-  const personajeVisible = guion.personaje?.visible !== false;
+  // REGLA DEL DUENO (27 nov 2026): el personaje de la lupa NO SALE EN NINGUN VIDEO, JAMAS.
+  // Se fuerza aqui, en el motor, para que no pueda colarse aunque un guion lo active.
+  const personajeVisible = false;
   const gancho = guion.estilo === 'gancho'; // edición de gancho: cortes más rápidos, glitch, escaneo y titular
   const maxPorFondo = MAX_SEGUNDOS_POR_FONDO;
 

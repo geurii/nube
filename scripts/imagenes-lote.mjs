@@ -16,7 +16,7 @@ import {chatAlternativo} from '../agentes/llm.mjs';
 const id = process.argv[2];
 if (!id) throw new Error('Falta el id del Short. Ejemplo: node scripts/imagenes-lote.mjs lqns-flannan-faro-desaparecido');
 
-const ANCHO_PIXEL = 288;   // ancho del lienzo de pixel art antes de ampliar
+const ANCHO_PIXEL = 270;   // ancho del arte antes de ampliar (270 x2 = 540, el lienzo exacto del motor)
 const COLORES = 48;        // tamano de la paleta
 const SEGUNDOS_POR_PLANO = 3;
 const ESPERA_MS = 47000;   // Pollinations deja 1 imagen cada 45 s por IP
@@ -24,7 +24,9 @@ const ESTILO = 'pixel art scene, detailed 16-bit game background, dithering, dar
 
 const guionPath = path.join('guion', 'serie', `${id}.json`);
 const guion = JSON.parse(fs.readFileSync(guionPath, 'utf8'));
-const dir = path.join('public', 'generados');
+const dir = path.join('public', 'referencias');          // de aqui las carga el motor
+const dirCuadros = path.join('public', 'pintados');
+fs.mkdirSync(dirCuadros, {recursive: true});
 fs.mkdirSync(dir, {recursive: true});
 
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -72,11 +74,31 @@ const bajar = async (prompt, destino) => {
 
 /** Convierte a pixel art con Pillow. Se probo contra FFmpeg y FFmpeg dejaba grano; Pillow sale limpio. */
 const aPixelArt = (entrada, salida) => {
-  const r = spawnSync('python3', ['scripts/a_pixel_art.py', entrada, salida, String(ANCHO_PIXEL), String(COLORES)], {encoding: 'utf8', timeout: 120000});
+  const r = spawnSync('python3', ['scripts/a_pixel_art.py', entrada, salida, String(ANCHO_PIXEL), String(COLORES), '540', '960'], {encoding: 'utf8', timeout: 120000});
   if (r.status !== 0 || !fs.existsSync(salida)) { console.log('    pixel art: ' + String(r.stderr ?? r.error?.message ?? '').slice(0, 140)); return false; }
   return true;
 };
 
+/** El cuadro: la imagen del sujeto de fondo y, encima, capas que el motor mueve solas.
+ *  Asi el plano no es una foto con zoom: tiene niebla que deriva, polvo que flota,
+ *  estrellas que titilan y, donde toca, olas y rayos. */
+const escribirCuadro = (nombre, i, k, escena) => {
+  const t = String(escena.texto ?? '').toLowerCase();
+  const mar = /mar|olas|oceano|barco|agua|costa|puerto|isla|hundi|naufrag/.test(t);
+  const fuego = /fuego|incendio|explos|lava|volcan|arde|llama|quem/.test(t);
+  const noche = /noche|oscur|madrugada|estrella|cielo/.test(t);
+  const capas = [{t: 'foto', archivo: `${nombre}.png`, x0: 0, y0: 0, x1: 1, y1: 1, zoom: 1, pan: true, pixel: 1}];
+  if (noche || !fuego) capas.push({t: 'estrellas', n: 26 + k * 4, hasta: 0.5, semilla: i * 7 + k, color: '#dfe7f4'});
+  capas.push({t: 'particulas', n: 16 + k * 3, tipo: fuego ? 'brasas' : 'polvo', semilla: i * 13 + k, color: fuego ? '#ffb347' : '#cfd8e6'});
+  // Nada de olas ni rayos dibujados encima: la imagen ya trae su mar y su fuego, y una ola
+  // de bloques sobre una escena detallada se ve como un parche. Solo ambiente que no tapa.
+  if (mar) capas.push({t: 'particulas', n: 10 + k * 2, tipo: 'polvo', y: 0.82, semilla: i * 17 + k, color: '#bcd4e8'});
+  capas.push({t: 'niebla', y: 0.93, alpha: 0.22, semilla: i * 3 + k, color: '#0b1020'});
+  const cuadro = {cielo: ['#0a0f1c', '#1b2740', '#3c567a'], capas};
+  fs.writeFileSync(path.join(dirCuadros, `${nombre}.json`), JSON.stringify(cuadro));
+};
+
+if (guion.personaje && guion.personaje.visible !== false) { guion.personaje.visible = false; }
 const escenas = guion.escenas ?? [];
 console.log(`Imagenes de escena para ${id}: ${escenas.length} escenas.`);
 
@@ -94,14 +116,15 @@ for (let i = 0; i < escenas.length; i++) {
     const nombre = `${id}-${i}-${k + 1}`;
     const crudo = path.join(dir, `${nombre}.src.jpg`);
     const final = path.join(dir, `${nombre}.png`);
-    if (fs.existsSync(final)) { fondos.push(`generados/${nombre}.png`); continue; }
+    if (fs.existsSync(final)) { escribirCuadro(nombre, i, k, escena); fondos.push(`pintado:${nombre}`); continue; }
     if (!primera) await dormir(ESPERA_MS);
     primera = false;
     const vista = base[k % base.length];
     console.log(`  escena ${i + 1}, plano ${k + 1}/${n}: ${vista.slice(0, 70)}`);
     if (await bajar(`${ESTILO}, ${vista}`, crudo) && aPixelArt(crudo, final)) {
       fs.rmSync(crudo, {force: true});
-      fondos.push(`generados/${nombre}.png`);
+      escribirCuadro(nombre, i, k, escena);
+      fondos.push(`pintado:${nombre}`);
       hechas++;
     } else { fallidas++; }
   }

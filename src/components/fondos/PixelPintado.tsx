@@ -40,6 +40,8 @@ const Lienzo: React.FC<{id: string}> = ({id}) => {
         const capaSinObjeto = esc.capas.some((cap) => CAPAS_PROHIBIDAS.has(String(cap?.t ?? '')));
         const protagonista = esc.capas.some((cap) => {
           const tipo = String(cap?.t ?? '');
+          // la imagen del sujeto es el protagonista: es exactamente la cosa de la que habla la voz
+          if (tipo === 'foto' && String(cap?.archivo ?? '').length > 3) return true;
           if (!OBJETOS_NARRATIVOS.has(tipo)) return false;
           if (tipo === 'bosque') return Number(cap?.n ?? 0) >= 6;
           const medidas = ['w','h','r','alto'].map((k) => Number(cap?.[k])).filter(Number.isFinite);
