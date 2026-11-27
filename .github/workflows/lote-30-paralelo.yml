@@ -56,6 +56,18 @@ jobs:
           pip install --break-system-packages --quiet pillow
           node scripts/probar-lote-30.mjs
           node scripts/preparar-lote-30.mjs
+      # Las imagenes cuestan 39 minutos por Short (1 cada 45 s, limite gratis de Pollinations).
+      # Guardadas en cache, un reintento las reutiliza y empieza a renderizar en minutos.
+      - name: Buscar imagenes ya generadas
+        id: cache-img
+        uses: actions/cache@v4
+        with:
+          path: |
+            public/referencias
+            public/pintados
+          key: imagenes-lote30-${{ matrix.i }}-${{ hashFiles('agentes/lote-30-contenidos.json') }}
+          restore-keys: |
+            imagenes-lote30-${{ matrix.i }}-
       - name: Imagenes de escena en pixel art
         continue-on-error: true   # si fallan, el Short se renderiza con el pixel art dibujado de antes
         env:
