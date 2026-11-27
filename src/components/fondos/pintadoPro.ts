@@ -112,10 +112,21 @@ export const poligono = (g: G, pts: Pt[], r: RGB[], luz = 'izq', borde = true) =
 const poli = (g: G, pts: Pt[], r: RGB[], luz?: string, borde?: boolean) => poligono(g, pts, r, luz, borde);
 
 /** Dibuja una forma "pro". Devuelve true si el tipo existe (aunque no haya dibujado nada). */
+/** Objetos que no traian animacion propia: se quedaban clavados como una foto. */
+const SIN_VIDA_PROPIA = new Set(['barril','bosque','caballo','calendario','castillo','cerveceria','ciudad','corona',
+  'duna','hidrofono','hielo','iglesia','microfono','reloj','roca','tren','libro','moneda','poligono','linea']);
+/** Semilla estable por tipo: cada objeto respira a su ritmo y no todos a la vez. */
+const fase = (k: string) => { let h = 0; for (let i = 0; i < k.length; i++) h = (h * 31 + k.charCodeAt(i)) % 997; return h / 997 * Math.PI * 2; };
+
 export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: number): boolean {
   const S = Math.min(lw, lh);
-  const X = (v: unknown, d = 0.5) => num(v, d) * lw;
-  const Y = (v: unknown, d = 0.5) => num(v, d) * lh;
+  // VIDA MINIMA: lo que no se animaba solo, ahora respira y se mece un poco. Nada en el cuadro queda congelado.
+  const vivo = SIN_VIDA_PROPIA.has(String(e.t));
+  const f = vivo ? fase(String(e.t)) : 0;
+  const flotaY = vivo ? Math.sin(t * 0.85 + f) * 0.0055 : 0;
+  const flotaX = vivo ? Math.sin(t * 0.52 + f * 1.7) * 0.0035 : 0;
+  const X = (v: unknown, d = 0.5) => (num(v, d) + flotaX) * lw;
+  const Y = (v: unknown, d = 0.5) => (num(v, d) + flotaY) * lh;
   const luz = ['izq', 'der', 'arriba'].includes(String(e.luz)) ? String(e.luz) : 'izq';
   switch (e.t) {
     case 'poligono': {
@@ -183,7 +194,11 @@ export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: n
       const cx=X(e.x,0.5),cy=Y(e.y,0.48),rad=num(e.r,0.18,0.06,0.35)*S*1.8,r=rampaDeE(e,'#d9b66f',5);
       g.ellO(cx,cy,rad,rad,r);g.ellO(cx,cy,rad*0.82,rad*0.82,[r[0],r[1],r[2]]);
       for(let k=0;k<12;k++){const a=k*Math.PI/6-Math.PI/2;g.set(cx+Math.cos(a)*rad*0.68,cy+Math.sin(a)*rad*0.68,r[4]);}
-      g.line(cx,cy,cx+rad*0.48,cy-rad*0.2,[45,32,22],Math.max(2,Math.round(u*2)));g.line(cx,cy,cx-rad*0.08,cy-rad*0.5,[45,32,22],Math.max(2,Math.round(u*2)));g.ellA(cx,cy,3,3,[35,25,20],1);
+      // las agujas giran: el minutero da una vuelta cada 12 s y la hora avanza 12 veces mas lento
+      const aM=t*0.52-Math.PI/2, aH=t*0.52/12-Math.PI/2+0.9;
+      g.line(cx,cy,cx+Math.cos(aM)*rad*0.62,cy+Math.sin(aM)*rad*0.62,[45,32,22],Math.max(2,Math.round(u*2)));
+      g.line(cx,cy,cx+Math.cos(aH)*rad*0.4,cy+Math.sin(aH)*rad*0.4,[45,32,22],Math.max(2,Math.round(u*2)));
+      g.ellA(cx,cy,3,3,[35,25,20],1);
       break;
     }
     case 'castillo': {
@@ -318,13 +333,22 @@ export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: n
       break;
     }
     case 'tren': {
-      const cx=X(e.x,0.5), base=Y(e.y,0.78), w=num(e.w,0.58,0.38,0.82)*lw, h=num(e.h,0.42,0.25,0.65)*lh, r=rampaDeE(e,'#4d5968',5);
+      // el tren avanza despacio por el cuadro y se mece sobre las vias
+      const avance=Math.sin(t*0.35)*0.05, vaiven=Math.sin(t*2.1)*0.004;
+      const cx=(num(e.x,0.5)+avance)*lw, base=(num(e.y,0.78)+vaiven)*lh, w=num(e.w,0.58,0.38,0.82)*lw, h=num(e.h,0.42,0.25,0.65)*lh, r=rampaDeE(e,'#4d5968',5);
       g.rect(cx-w*0.42,base-h*0.68,w*0.62,h*0.58,r[2]);
       g.rect(cx-w*0.28,base-h*0.94,w*0.24,h*0.28,r[3]);
       g.rect(cx+w*0.12,base-h*0.45,w*0.22,h*0.32,r[1]);
       g.rect(cx-w*0.38,base-h*0.16,w*0.67,h*0.1,r[0]);
-      for(const dx of [-0.28,-0.08,0.18]){g.ellO(cx+w*dx,base,w*0.075,w*0.075,[[30,34,42]]);g.ellA(cx+w*dx,base,w*0.035,w*0.035,[165,170,178],1);}
-      g.ellA(cx-w*0.16,base-h*0.96, w*0.06,h*0.05,[95,100,105],0.45);
+      for(const dx of [-0.28,-0.08,0.18]){
+        g.ellO(cx+w*dx,base,w*0.075,w*0.075,[[30,34,42]]);
+        const ar=t*3.2; // radio que gira: se ve que la rueda rueda
+        g.line(cx+w*dx-Math.cos(ar)*w*0.05,base-Math.sin(ar)*w*0.05,cx+w*dx+Math.cos(ar)*w*0.05,base+Math.sin(ar)*w*0.05,[165,170,178],Math.max(1,u));
+        g.ellA(cx+w*dx,base,w*0.03,w*0.03,[165,170,178],1);
+      }
+      // humo que sube y se deshace
+      for(let k=0;k<4;k++){const p=((t*0.5+k*0.25)%1);
+        g.ellA(cx-w*0.16+Math.sin(t*0.8+k)*w*0.03, base-h*0.96-p*h*0.5, w*(0.045+p*0.06), h*(0.035+p*0.05),[95,100,105],0.45*(1-p));}
       break;
     }
     case 'submarino': {
@@ -834,7 +858,13 @@ export function dibujarPro(g: G, e: Pro, t: number, lw: number, lh: number, u: n
       while (x < lw && i < 60) {
         const w = (0.04 + hs(i, 1) * 0.07) * lw, h = alto * (0.35 + hs(i, 2) * 0.65);
         poli(g, [[x, base], [x, base - h], [x + w, base - h], [x + w, base]], r, 'izq');
-        for (let wy = base - h + 5; wy < base - 6; wy += 8) for (let wx = x + 4; wx < x + w - 4; wx += 7) if (hs(Math.floor(wx), Math.floor(wy), 7) > 0.55) g.rect(wx, wy, 3, 4, [255, 214, 120]);
+        for (let wy = base - h + 5; wy < base - 6; wy += 8) for (let wx = x + 4; wx < x + w - 4; wx += 7) {
+          const sem = hs(Math.floor(wx), Math.floor(wy), 7);
+          if (sem <= 0.55) continue;
+          // cada ventana parpadea a su ritmo: la ciudad se ve habitada, no un decorado
+          const vida = 0.55 + 0.45 * Math.sin(t * (0.5 + sem * 1.6) + sem * 31);
+          if (vida > 0.42) g.rect(wx, wy, 3, 4, [255, 214, 120], Math.min(1, vida));
+        }
         x += w + 1 + hs(i, 3) * 3; i++;
       }
       return true;

@@ -15,7 +15,17 @@ const probe=(file)=>{
 const failures=[];
 if(!Array.isArray(state.items)||state.items.length!==30)throw new Error('El renderizador requiere exactamente 30 Shorts.');
 if(new Set(state.items.map(x=>x.id)).size!==30)throw new Error('Hay IDs repetidos: se detiene antes de renderizar.');
-for(let index=0;index<state.items.length;index++){
+// PRUEBA DE UNO: con LOTE_SOLO=1 se renderiza solo el primero (o los N primeros) para verlo antes de gastar
+// las horas de los 30. La publicacion sigue bloqueada: solo 30/30 aprobados la desbloquea.
+const SOLO=Math.max(0,Math.min(30,Number(process.env.LOTE_SOLO??0)||0));
+// UNO SOLO POR MAQUINA: con LOTE_INDEX=n esta ejecucion renderiza unicamente el Short n.
+// Asi los 30 corren en paralelo, cada uno en su maquina, en vez de 4 horas en fila.
+const UNO=process.env.LOTE_INDEX===undefined||process.env.LOTE_INDEX===''?-1:Number(process.env.LOTE_INDEX);
+const desde=UNO>=0?UNO:0;
+const hasta=UNO>=0?UNO+1:(SOLO>0?SOLO:state.items.length);
+if(UNO>=0)console.log('MODO UNO: solo el Short '+(UNO+1)+' de 30.');
+else if(SOLO>0)console.log('MODO PRUEBA: se renderizan '+SOLO+' de 30. No se publicara nada.');
+for(let index=desde;index<hasta;index++){
  const item=state.items[index],id=item.id,guionPath=path.join('guion/serie',id+'.json');
  item.estado='renderizando';item.aprobado=false;state.fase='renderizando_secuencial';save();
  let accepted=false,lastError='';
@@ -50,8 +60,8 @@ for(let index=0;index<state.items.length;index++){
    if(!fs.existsSync(mp4)||!fs.existsSync(lite))throw new Error('Falta el MP4 original o la copia optimizada.');
    const m=probe(mp4),v=(m.streams??[]).find(x=>x.codec_type==='video'),a=(m.streams??[]).find(x=>x.codec_type==='audio'),seconds=Number(m.format?.duration);
    const timed=path.join('guion/serie',id+'.palabras.json');
-   if(!Number.isFinite(seconds)||seconds<30||seconds>180){
-    if(seconds<30&&attempt===1){
+   if(!Number.isFinite(seconds)||seconds<60||seconds>62){
+    if(seconds<45&&attempt===1){
      g.escenas[4].texto+=' La fuente consultada permite separar los hechos confirmados de las hipótesis que todavía no tienen evidencia suficiente.';
      fs.writeFileSync(guionPath,JSON.stringify(g,null,2)+'\n');
      console.warn('Duración menor de 30s; se amplía la última escena y se vuelve a grabar la voz.');
@@ -94,6 +104,19 @@ for(let index=0;index<state.items.length;index++){
 }
 state.completedCount=state.items.filter(x=>x.aprobado).length;
 state.errores=failures;
+if(UNO>=0){
+ state.fase='parcial';save();
+ const it=state.items[UNO];
+ console.log((it.aprobado?'APROBADO':'FALLO')+' el Short '+(UNO+1)+'/30: '+it.id+(it.duracionSegundos?' ('+it.duracionSegundos+' s)':''));
+ process.exit(it.aprobado?0:1);
+}
+if(SOLO>0){
+ state.fase='prueba';
+ save();
+ const ok=state.items.slice(0,hasta).filter(x=>x.aprobado).length;
+ console.log('PRUEBA: '+ok+'/'+hasta+' renderizados y aprobados. La publicacion sigue bloqueada.');
+ process.exit(ok===hasta?0:1);
+}
 if(state.completedCount===30&&state.items.every(x=>x.estado==='renderizado_aprobado'&&x.aprobado)){
  state.fase='renderizados_30_pendiente_artifacto';
  console.log('30/30 renderizados y aprobados. Publicación sigue bloqueada hasta verificar el artefacto.');

@@ -1,0 +1,98 @@
+name: Lote 30 - render en paralelo
+# Los 30 Shorts a la vez, cada uno en su maquina. En fila tardaba mas de 4 horas; asi, unos 15 minutos.
+# La publicacion NO se activa aqui: solo cuando los 30 estan aprobados y juntos en un artefacto.
+on:
+  workflow_dispatch:
+    inputs:
+      cuantos:
+        description: 'Cuantos Shorts: 1 para probar, 30 para el lote completo.'
+        required: false
+        default: '3'
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: lote-30-paralelo
+  cancel-in-progress: false
+
+jobs:
+  repartir:
+    runs-on: ubuntu-24.04
+    outputs:
+      indices: ${{ steps.lista.outputs.indices }}
+    steps:
+      - id: lista
+        run: |
+          N=${{ github.event.inputs.cuantos }}
+          echo "indices=$(seq 0 $((N-1)) | jq -R . | jq -sc .)" >> "$GITHUB_OUTPUT"
+
+  renderizar:
+    needs: repartir
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false            # que un Short malo no cancele a los otros 29
+      max-parallel: 20
+      matrix:
+        i: ${{ fromJson(needs.repartir.outputs.indices) }}
+    env:
+      NODE_OPTIONS: --max-old-space-size=7168
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Preparar FFmpeg y Chrome para Remotion
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg libnss3 libdbus-1-3 libatk1.0-0 libasound2t64 libxrandr2 libxkbcommon-dev libxfixes3 libxcomposite1 libxdamage1 libgbm-dev libcups2 libcairo2 libpango-1.0-0 libatk-bridge2.0-0
+          timeout 15m npm install --no-audit --no-fund
+          timeout 5m npm install --no-save --no-audit --no-fund msedge-tts@2.1.1
+      - name: Preparar guiones y visuales
+        run: |
+          node scripts/probar-lote-30.mjs
+          node scripts/preparar-lote-30.mjs
+      - name: Renderizar solo el Short ${{ matrix.i }}
+        env:
+          LOTE_INDEX: ${{ matrix.i }}
+        run: node scripts/render-lote-30.mjs
+      - name: Guardar este Short
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: short-${{ matrix.i }}
+          path: |
+            out/serie/*-subida.mp4
+            guion/serie/*.json
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 14
+
+  juntar:
+    needs: [repartir, renderizar]
+    if: always()
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: short-*
+          merge-multiple: true
+          path: juntos
+      - name: Contar y reportar
+        run: |
+          N=${{ github.event.inputs.cuantos }}
+          HAY=$(find juntos -name '*-subida.mp4' | wc -l)
+          echo "Shorts terminados: $HAY de $N"
+          find juntos -name '*-subida.mp4' -printf '%f  %sB\n' | sort
+          [ "$HAY" -eq "$N" ] || { echo "Faltan Shorts: no se habilita publicacion."; exit 1; }
+      - name: Guardar el lote completo
+        uses: actions/upload-artifact@v4
+        with:
+          name: lote-30-videos
+          path: juntos/**/*-subida.mp4
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 14

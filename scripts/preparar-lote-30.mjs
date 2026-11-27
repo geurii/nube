@@ -71,7 +71,7 @@ for(let ti=0;ti<config.topics.length;ti++){
  const words=scenes.reduce((n,s)=>n+s.texto.trim().split(/\s+/).length,0);
  if(words<95)throw new Error('La locución debe alcanzar al menos 95 palabras: '+id);
  const g={
-  titulo:topic.title,formato:'short',plataforma:'youtube',canal:'lqns',voz:'es-MX-JorgeNeural',vozGemini:'Sadaltager',
+  titulo:topic.title,formato:'short',plataforma:'youtube',canal:'lqns',voz:'es-MX-JorgeNeural',vozGemini:'Sadaltager',velocidad:-2,tono:-6,
   audio:'audio/'+id+'.wav',musica:'musica/firma-canal.mp3',orientacion:'vertical',personaje:{visible:false},
   creado:new Date().toISOString(),estilo:'gancho',ganchoTexto:scenes[0].texto,
   publicacion:{titulo:topic.title,descripcion:topic.desc},estado:'pendiente_revision_tecnica',

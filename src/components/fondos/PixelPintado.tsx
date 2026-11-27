@@ -8,8 +8,10 @@ import type {PropsEscena} from './Escenas';
 
 const {fontFamily: FUENTE_PIXEL} = loadFont();
 const F = 2;
-const OBJETOS_NARRATIVOS = new Set(['barco','pez','hielo','faro','ovni','explosion','ciudad','bosque','arbol','edificio','central','pergamino','calendario','reloj','castillo','corona','libro','moneda','iglesia','caballo','silueta','astro','duna','montanas','hidrofono','sonar','microfono','volcan','fuego','lago','avion','tren','submarino','barril','cerveza','cerveceria','tsunami','deslizamiento','terremoto','nubes','olas','paracaidas','televisor','esfera','dodecaedro','zepelin','radio','telegrafo','aurora','vaca','puente','satelite','bomba','tornado','fosil','periodico']);
-const CAPAS_PROHIBIDAS = new Set(['circulo','rect','poligono','linea','texto','foto']);
+// Ambiente (paisaje, clima, efectos): decoran, pero no son el sujeto. Un plano solo con ambiente se rechaza.
+const AMBIENTE = new Set(['bosque','nubes','olas','roca','astro','duna','montanas','lago','silueta']);
+const OBJETOS_NARRATIVOS = new Set(['aurora','barco','pez','hielo','faro','ovni','explosion','ciudad','arbol','edificio','central','pergamino','calendario','reloj','castillo','corona','libro','moneda','iglesia','caballo','hidrofono','sonar','microfono','volcan','fuego','avion','tren','submarino','barril','cerveza','cerveceria','tsunami','deslizamiento','terremoto','paracaidas','televisor','esfera','dodecaedro','zepelin','radio','telegrafo','vaca','puente','satelite','bomba','tornado','fosil','periodico']);
+const CAPAS_PROHIBIDAS = new Set(['circulo','rect','poligono','linea','texto']);
 
 const Lienzo: React.FC<{id: string}> = ({id}) => {
   const {width, height, fps, durationInFrames} = useVideoConfig();
@@ -44,7 +46,7 @@ const Lienzo: React.FC<{id: string}> = ({id}) => {
           return Math.max(0, ...medidas) >= 0.08;
         });
         if (capaSinObjeto || !protagonista) {
-          throw new Error('Cuadro rechazado: contiene geometría suelta o no tiene un objeto protagonista reconocible y visible: ' + id);
+          throw new Error('Cuadro rechazado: no dibuja el sujeto del que habla la frase (solo paisaje, efectos o siluetas), o tiene geometría suelta: ' + id);
         }
         // fotos de referencia: se cargan y se leen como píxeles antes de dibujar (si una falla, la escena se pinta sin ella)
         const pedidas: {clave: string; ruta: string}[] = [];

@@ -180,7 +180,37 @@ export function pintar(g: G, esc: EscenaPintada, t: number, lw: number, lh: numb
         break;
       }
       case 'foto': {
-        // Compatibilidad defensiva: los cuadros antiguos con fotos se ignoran.
+        // Foto real de licencia libre leida como pixeles y dibujada en bloques: pixel art del sujeto de verdad.
+        // Formato que escribe el Pintor: {t:'foto', archivo, x0, y0, x1, y1, zoom, pan}. Tambien admite x/y/w/h.
+        const archivo = String(e.archivo ?? '').replace(/[^a-z0-9._-]/gi, '');
+        const im = archivo ? IMAGENES.get(archivo) : undefined;
+        if (!im || !im.w || !im.h) break;
+        const tieneCaja = e.x0 !== undefined || e.x1 !== undefined;
+        const ax = tieneCaja ? num(e.x0, 0) : num(e.x, 0.5) - num(e.w, 1, 0.05, 1) / 2;
+        const ay = tieneCaja ? num(e.y0, 0) : num(e.y, 0.5) - num(e.h, 1, 0.05, 1) / 2;
+        const bx = tieneCaja ? num(e.x1, 1) : ax + num(e.w, 1, 0.05, 1);
+        const by = tieneCaja ? num(e.y1, 1) : ay + num(e.h, 1, 0.05, 1);
+        const x0 = Math.round(Math.min(ax, bx) * lw);
+        const y0 = Math.round(Math.min(ay, by) * lh);
+        const w = Math.max(8, Math.round(Math.abs(bx - ax) * lw));
+        const h = Math.max(8, Math.round(Math.abs(by - ay) * lh));
+        const paso = Math.max(1, Math.round(num(e.pixel, 3, 1, 8)));
+        const zoom = num(e.zoom, 1, 1, 2.5);
+        // recorte que cubre la caja (sin deformar la foto), con deriva lenta si el Pintor pidio pan
+        const s = Math.max(w / im.w, h / im.h) * zoom;
+        const vw = Math.min(im.w, w / s), vh = Math.min(im.h, h / s);
+        const vaivén = e.pan === false ? 0.5 : 0.5 + 0.35 * Math.sin(t * 0.22);
+        const ox = Math.max(0, Math.min(im.w - vw, (im.w - vw) * vaivén));
+        const oy = Math.max(0, Math.min(im.h - vh, (im.h - vh) * 0.4));
+        for (let y = 0; y < h; y += paso) {
+          const sy = Math.min(im.h - 1, Math.floor(oy + (y / h) * vh));
+          for (let x = 0; x < w; x += paso) {
+            const sx = Math.min(im.w - 1, Math.floor(ox + (x / w) * vw));
+            const k = (sy * im.w + sx) * 4;
+            if (im.d[k + 3] < 128) continue;
+            g.rect(x0 + x, y0 + y, paso, paso, [im.d[k], im.d[k + 1], im.d[k + 2]]);
+          }
+        }
         break;
       }
       case 'texto': {
