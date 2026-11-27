@@ -18,9 +18,14 @@ if(new Set(state.items.map(x=>x.id)).size!==30)throw new Error('Hay IDs repetido
 // PRUEBA DE UNO: con LOTE_SOLO=1 se renderiza solo el primero (o los N primeros) para verlo antes de gastar
 // las horas de los 30. La publicacion sigue bloqueada: solo 30/30 aprobados la desbloquea.
 const SOLO=Math.max(0,Math.min(30,Number(process.env.LOTE_SOLO??0)||0));
-const hasta=SOLO>0?SOLO:state.items.length;
-if(SOLO>0)console.log('MODO PRUEBA: se renderizan '+SOLO+' de 30. No se publicara nada.');
-for(let index=0;index<hasta;index++){
+// UNO SOLO POR MAQUINA: con LOTE_INDEX=n esta ejecucion renderiza unicamente el Short n.
+// Asi los 30 corren en paralelo, cada uno en su maquina, en vez de 4 horas en fila.
+const UNO=process.env.LOTE_INDEX===undefined||process.env.LOTE_INDEX===''?-1:Number(process.env.LOTE_INDEX);
+const desde=UNO>=0?UNO:0;
+const hasta=UNO>=0?UNO+1:(SOLO>0?SOLO:state.items.length);
+if(UNO>=0)console.log('MODO UNO: solo el Short '+(UNO+1)+' de 30.');
+else if(SOLO>0)console.log('MODO PRUEBA: se renderizan '+SOLO+' de 30. No se publicara nada.');
+for(let index=desde;index<hasta;index++){
  const item=state.items[index],id=item.id,guionPath=path.join('guion/serie',id+'.json');
  item.estado='renderizando';item.aprobado=false;state.fase='renderizando_secuencial';save();
  let accepted=false,lastError='';
@@ -99,6 +104,12 @@ for(let index=0;index<hasta;index++){
 }
 state.completedCount=state.items.filter(x=>x.aprobado).length;
 state.errores=failures;
+if(UNO>=0){
+ state.fase='parcial';save();
+ const it=state.items[UNO];
+ console.log((it.aprobado?'APROBADO':'FALLO')+' el Short '+(UNO+1)+'/30: '+it.id+(it.duracionSegundos?' ('+it.duracionSegundos+' s)':''));
+ process.exit(it.aprobado?0:1);
+}
 if(SOLO>0){
  state.fase='prueba';
  save();
