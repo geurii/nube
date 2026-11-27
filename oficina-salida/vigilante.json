@@ -1,19 +1,18 @@
 {
   "alertas": {
-    "corrida-Lote 30 - render secuencial": "2026-11-27T08:27:32.875Z"
+    "sin-publicar": "2026-11-27T21:14:49.960Z"
   },
-  "fecha": "2026-11-27T08:27:33.118Z",
+  "fecha": "2026-11-27T21:14:49.999Z",
   "ok": [
     "YouTube conectado",
     "analítica autorizada",
     "Groq responde",
     "Gemini responde",
     "Windsor responde",
-    "Buffer responde",
-    "hay publicaciones recientes"
+    "Buffer responde"
   ],
   "problemas": [
-    "Falló \"Lote 30 - render secuencial\" en GitHub"
+    "Llevan más de 36 horas sin publicar"
   ],
-  "resumenDia": "2026-11-26"
+  "resumenDia": "2026-11-27"
 }

@@ -1,5 +1,23 @@
 [
   {
+    "id": "mwzhcc144ry6",
+    "fecha": "2026-11-27T21:14:49.960Z",
+    "canal": "lqns",
+    "canalNombre": "Vigilante",
+    "tipo": "alerta",
+    "titulo": "Llevan más de 36 horas sin publicar",
+    "texto": "El último video público salió hace 45 horas. La meta exige constancia."
+  },
+  {
+    "id": "mwzhcc1212nx",
+    "fecha": "2026-11-27T21:14:49.958Z",
+    "canal": "lqns",
+    "canalNombre": "Vigilante",
+    "tipo": "reporte",
+    "titulo": "Resumen del día",
+    "texto": "Últimas 24 h: 1 video(s) en YouTube, 1 en Facebook, 1 en Instagram, 1 en TikTok. Pendiente: Llevan más de 36 horas sin publicar"
+  },
+  {
     "id": "mwypxll7lw0a",
     "fecha": "2026-11-27T08:27:32.875Z",
     "canal": "lqns",
@@ -676,23 +694,5 @@
     "tipo": "alerta",
     "titulo": "Guion rechazado: ¿Por qué el lago Natron se vuelve rojo y mata a los animales que se acercan?",
     "texto": "El Verificador no aprobó \"¿Por qué el lago Natron se vuelve rojo y mata a los animales que se acercan?\" tras 4 intentos: El gancho inicial debe tener 14 palabras o menos para formato short. Aprobados: 12. Rechazados: 64. Con error: 14. No se publica. Próximo ciclo en 10 h."
-  },
-  {
-    "id": "mwuvsbs5lpo4",
-    "fecha": "2026-11-24T16:00:19.877Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "reporte",
-    "titulo": "Fórmula del momento",
-    "texto": "Lo que hoy funciona para Lo Que No Sabías: Título que plantea una pregunta intrigante o una afirmación impactante + elemento de misterio o dato sorprendente + referencia a un caso/objeto específico El mejor video ahora: \"Why Is Antarctica Closed? The Operation Highjump Mystery\" (25909 vistas/hora)."
-  },
-  {
-    "id": "mwuuwu3a9umj",
-    "fecha": "2026-11-24T15:35:50.614Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: Qué oculta el zumbido de Taos que nadie puede explicar",
-    "texto": "El Verificador no aprobó \"Qué oculta el zumbido de Taos que nadie puede explicar\" tras 4 intentos: Falta la frase de cierre exacta: \"¿Qué explicación te convence sobre \"Qué oculta el zumbido de Taos que nadie puede explicar\"? Sígueme para descubrir más mister Aprobados: 12. Rechazados: 63. Con error: 14. No se publica. Próximo ciclo en 10 h."
   }
 ]
