@@ -87,7 +87,7 @@
       "id": "lqns-max-headroom-senal-secuestrada",
       "slug": "max-headroom-senal-secuestrada",
       "titulo": "El día que alguien secuestró la señal de televisión",
-      "estado": "aprobado",
+      "estado": "publicando",
       "aprobado": true,
       "duracionSegundos": null,
       "publicadoEn": {
@@ -95,7 +95,8 @@
         "facebook": false,
         "instagram": false,
         "tiktok": false
-      }
+      },
+      "reservadoEn": "2026-11-27T22:10:01.581Z"
     },
     {
       "id": "lqns-uss-cyclops-desaparecio",
