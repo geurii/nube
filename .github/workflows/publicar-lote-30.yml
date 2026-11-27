@@ -1,6 +1,18 @@
 name: Lote 30 - publicar cada veinte minutos
 on:
   workflow_dispatch:
+    inputs:
+      activar:
+        description: 'Escribe SI para encender la cola de los 30 (solo la primera vez).'
+        required: false
+        default: 'no'
+  # Arranca cuando una persona sube el estado de la cola (los guardados del propio robot no disparan esto).
+  push:
+    branches: [main]
+    paths: ['agentes/lote-30-publicacion.json']
+  # Respaldo: si la cadena se corta, GitHub la vuelve a despertar sola.
+  schedule:
+    - cron: '7,27,47 * * * *'
 permissions:
   contents: write
   actions: write
@@ -10,13 +22,26 @@ concurrency:
 jobs:
   publicar:
     runs-on: ubuntu-24.04
-    timeout-minutes: 45
+    timeout-minutes: 55
     steps:
+      # ref: main para leer siempre el estado más reciente y no repetir videos.
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Comprobar barrera 30 de 30 y reloj de veinte minutos
+      - name: Encender la cola
+        if: github.event.inputs.activar == 'SI'
+        run: |
+          node scripts/publicar-lote-30.mjs --activate
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add agentes/lote-30-publicacion.json
+          git diff --cached --quiet || git commit -m "Lote 30: cola encendida"
+          git pull --rebase -X theirs origin main
+          git push
+      - name: Comprobar la cola y el reloj de veinte minutos
         id: cola
         run: node scripts/publicar-lote-30.mjs --prepare
       - name: Preparar ffprobe para verificar y publicar
@@ -24,17 +49,39 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y ffmpeg
-      - name: Descargar el artefacto del render de los 30 Shorts
+      # El artefacto short-N trae el video Y su guion (título y descripción).
+      - name: Descargar el Short que toca
         if: steps.cola.outputs.enabled == 'true'
         uses: actions/download-artifact@v4
         with:
-          name: ${{ steps.cola.outputs.artifact }}
-          path: out/serie
+          name: short-${{ steps.cola.outputs.index }}
+          path: .
           repository: ${{ github.repository }}
           run-id: ${{ steps.cola.outputs.run_id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Comprobar que están el video y el guion correctos
+        if: steps.cola.outputs.enabled == 'true'
+        env:
+          ID: ${{ steps.cola.outputs.id }}
+        run: |
+          test -s "out/serie/$ID-subida.mp4" || { echo "Falta el video de $ID"; exit 1; }
+          test -s "guion/serie/$ID.json" || { echo "Falta el guion de $ID"; exit 1; }
+      - name: Reservar el video para no subirlo dos veces
+        id: reserva
+        if: steps.cola.outputs.enabled == 'true'
+        env:
+          ID: ${{ steps.cola.outputs.id }}
+          LOTE_INDEX: ${{ steps.cola.outputs.index }}
+        run: |
+          node scripts/publicar-lote-30.mjs --reserve
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add agentes/lote-30-publicacion.json
+          git commit -m "Lote 30: reservar $ID"
+          git pull --rebase --autostash -X theirs origin main
+          git push
       - name: Publicar un solo Short en YouTube, Facebook, Instagram y TikTok
-        if: always() && steps.cola.outputs.enabled == 'true'
+        if: steps.reserva.outcome == 'success'
         continue-on-error: true
         env:
           ID: ${{ steps.cola.outputs.id }}
@@ -50,42 +97,42 @@ jobs:
           FB_VIDEOS_TOKEN: ${{ secrets.FB_VIDEOS_TOKEN }}
         run: |
           set +e
-          test -s "out/serie/$ID-subida.mp4"
-          if [ "$?" -ne 0 ]; then echo "No se descargó el MP4 optimizado."; exit 1; fi
           cp "out/serie/$ID-subida.mp4" "out/serie/$ID.mp4"
           node agentes/subir.mjs
           YT_RC=$?
           node agentes/facebook.mjs
           REDES_RC=$?
-          echo "Resultado técnico: YouTube=$YT_RC; redes=$REDES_RC. La cola solo avanza si las cuatro plataformas confirman."
+          echo "Resultado técnico: YouTube=$YT_RC; redes=$REDES_RC."
           exit 0
-      - name: Confirmar redes y mover el puntero solo si todo salió bien
-        if: always() && steps.cola.outputs.enabled == 'true'
+      - name: Anotar el resultado y pasar al siguiente
+        if: always() && steps.reserva.outcome == 'success'
         env:
           ID: ${{ steps.cola.outputs.id }}
           LOTE_INDEX: ${{ steps.cola.outputs.index }}
         run: node scripts/publicar-lote-30.mjs --finalize
-      - name: Esperar veinte minutos y activar el siguiente Short
-        if: success() && steps.cola.outputs.enabled == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          GITHUB_API_URL: ${{ github.api_url }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
-        run: |
-          listo=$(node --input-type=module -e 'import fs from "node:fs"; const x=JSON.parse(fs.readFileSync("agentes/lote-30-publicacion.json","utf8")); process.stdout.write(x.fase==="ready_to_publish" && Number(x.nextIndex)<30 ? "si" : "no");')
-          if [ "$listo" != "si" ]; then echo "Cola completa o bloqueada; no se encadena otro Short."; exit 0; fi
-          sleep 1200
-          curl --fail-with-body --silent --show-error -X POST \
-            -H "Authorization: Bearer $GH_TOKEN" \
-            -H "Accept: application/vnd.github+json" \
-            "$GITHUB_API_URL/repos/$GITHUB_REPOSITORY/actions/workflows/publicar-lote-30.yml/dispatches" \
-            -d '{"ref":"main"}'
+      # Se guarda ANTES de llamar al siguiente.
       - name: Guardar registros y estado de la cola
-        if: always() && steps.cola.outputs.enabled == 'true'
+        if: always() && steps.reserva.outcome == 'success'
         run: |
           git config user.name "github-actions"
           git config user.email "actions@users.noreply.github.com"
           git add -A agentes/lote-30-publicacion.json oficina-salida/lqns
           git diff --cached --quiet || git commit -m "Lote 30: guardar confirmaciones y progreso de publicación"
-          git pull --rebase --autostash -X theirs origin main
-          git push
+          for intento in 1 2 3 4 5; do
+            git pull --rebase --autostash -X theirs origin main && git push && exit 0
+            sleep 15
+          done
+          exit 1
+      - name: Esperar y activar el siguiente Short
+        if: always() && steps.reserva.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          espera=$(node -e 'const x=require("./agentes/lote-30-publicacion.json"); if(x.fase!=="ready_to_publish"){console.log(-1)}else{console.log(Math.max(0,Math.floor((Date.parse(x.nextAt)-Date.now())/1000)-150))}')
+          if [ "$espera" -lt 0 ]; then echo "Cola terminada."; exit 0; fi
+          sleep "$espera"
+          curl --fail-with-body --silent --show-error --retry 3 -X POST \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "$GITHUB_API_URL/repos/$GITHUB_REPOSITORY/actions/workflows/publicar-lote-30.yml/dispatches" \
+            -d '{"ref":"main"}'
