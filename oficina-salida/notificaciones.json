@@ -1,5 +1,14 @@
 [
   {
+    "id": "mwypxll7lw0a",
+    "fecha": "2026-11-27T08:27:32.875Z",
+    "canal": "lqns",
+    "canalNombre": "Vigilante",
+    "tipo": "alerta",
+    "titulo": "Falló \"Lote 30 - render secuencial\" en GitHub",
+    "texto": "2 corrida(s) fallida(s) en 24 h; la última: https://github.com/geurii/nube/actions/runs/45922591036"
+  },
+  {
     "id": "mwy2fy2ztr58",
     "fecha": "2026-11-26T21:29:58.091Z",
     "canal": "lqns",
@@ -685,14 +694,5 @@
     "tipo": "alerta",
     "titulo": "Guion rechazado: Qué oculta el zumbido de Taos que nadie puede explicar",
     "texto": "El Verificador no aprobó \"Qué oculta el zumbido de Taos que nadie puede explicar\" tras 4 intentos: Falta la frase de cierre exacta: \"¿Qué explicación te convence sobre \"Qué oculta el zumbido de Taos que nadie puede explicar\"? Sígueme para descubrir más mister Aprobados: 12. Rechazados: 63. Con error: 14. No se publica. Próximo ciclo en 10 h."
-  },
-  {
-    "id": "mwuuueud7786",
-    "fecha": "2026-11-24T15:33:57.542Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: Qué oculta el zumbido de Taos que nadie puede explicar",
-    "texto": "El Verificador no aprobó \"Qué oculta el zumbido de Taos que nadie puede explicar\" tras 4 intentos: Falta la frase de cierre exacta: \"¿Qué explicación te convence sobre \"Qué oculta el zumbido de Taos que nadie puede explicar\"? Sígueme para descubrir más mister Aprobados: 12. Rechazados: 62. Con error: 14. No se publica. Próximo ciclo en 10 h."
   }
 ]
