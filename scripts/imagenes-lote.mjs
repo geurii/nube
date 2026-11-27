@@ -35,6 +35,29 @@ fs.mkdirSync(dir, {recursive: true});
 
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
 
+const MODELO = path.join('modelos', 'midas.onnx');
+/** Modelo de profundidad MiDaS small: gratis, sin llave, se baja una vez (66 MB). */
+const asegurarModelo = async () => {
+  if (fs.existsSync(MODELO) && fs.statSync(MODELO).size > 10e6) return true;
+  fs.mkdirSync('modelos', {recursive: true});
+  try {
+    const r = await fetch('https://github.com/isl-org/MiDaS/releases/download/v2_1/model-small.onnx', {signal: AbortSignal.timeout(300000)});
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    fs.writeFileSync(MODELO, Buffer.from(await r.arrayBuffer()));
+    console.log('Modelo de profundidad listo.');
+    return true;
+  } catch (e) { console.log('Sin modelo de profundidad (' + String(e.message ?? e).slice(0, 60) + '): las fotos iran en un solo plano.'); return false; }
+};
+let hayProfundidad = await asegurarModelo();
+
+/** Corta la imagen pixelada en tres planos para que el motor le de profundidad. */
+const cortarCapas = (arte) => {
+  if (!hayProfundidad) return false;
+  const r = spawnSync('python3', ['-I', 'scripts/capas_profundidad.py', arte, MODELO, '2'], {encoding: 'utf8'});
+  if (r.status !== 0) { console.log('    sin capas: ' + String(r.stderr ?? '').trim().slice(-120)); return false; }
+  return true;
+};
+
 /** El lote exige diez visuales por escena para sostener escenas largas sin repetir imagen. */
 const PLANOS_POR_ESCENA = 10;   // lo que exige el control del lote
 const IMAGENES_POR_ESCENA = 3;  // menos descargas = menos riesgo de quedarse sin fotos
@@ -123,7 +146,7 @@ const aPixelArt = (entrada, salida) => {
 /** El cuadro: la imagen del sujeto de fondo y, encima, capas que el motor mueve solas.
  *  Asi el plano no es una foto con zoom: tiene niebla que deriva, polvo que flota,
  *  estrellas que titilan y, donde toca, olas y rayos. */
-const escribirCuadro = (nombre, i, k, escena, variante = 0, archivoBase = null) => {
+const escribirCuadro = (nombre, i, k, escena, variante = 0, archivoBase = null, conCapas = true) => {
   const t = String(escena.texto ?? '').toLowerCase();
   const mar = /mar|olas|oceano|barco|agua|costa|puerto|isla|hundi|naufrag/.test(t);
   const fuego = /fuego|incendio|explos|lava|volcan|arde|llama|quem/.test(t);
@@ -132,8 +155,16 @@ const escribirCuadro = (nombre, i, k, escena, variante = 0, archivoBase = null) 
   //  onda = vaiven de las filas de abajo (agua, lava, multitud)
   //  cielo = arrastre de las filas de arriba (nubes, humo)
   //  latido = la luz sube y baja, como una lampara o un fuego vivo
-  const capas = [{
-    t: 'foto', archivo: archivoBase ?? `${String(nombre).replace(/-b$/, '')}.png`, pan: true, pixel: 1,
+  const fichero = archivoBase ?? `${String(nombre).replace(/-[a-f]$/, '')}.png`;
+  const capas = [conCapas ? {
+    // tres planos de profundidad: el fondo, el medio y lo que esta cerca, cada uno a su velocidad
+    t: 'foto3d', archivo: fichero, pixel: 2,
+    deriva: 14 + variante * 4,
+    sentido: variante % 2 ? -1 : 1,
+    ondaFuerza: 0,
+    latido: 0,
+  } : {
+    t: 'foto', archivo: fichero, pan: true, pixel: 1,
     onda: (mar ? 0.62 : fuego ? 0.70 : 0.78) - variante * 0.04,
     ondaFuerza: (mar ? 4.5 : fuego ? 3 : 1.8) * (variante ? 1.3 : 1),
     cielo: 0.45,
@@ -184,11 +215,11 @@ try { vistas = await describir(escenas); console.log(`  descripciones de la IA: 
 catch (e) { console.log('  sin descripciones de la IA (' + String(e.message ?? e).slice(0, 80) + '); se usa el respaldo en ingles'); }
 
 /** Una sola foto rinde varios planos: mismo sujeto, otro encuadre y otra animacion. */
-const planosDeFoto = (nombre, i, k, escena, fondos) => {
+const planosDeFoto = (nombre, i, k, escena, fondos, conCapas) => {
   const sufijos = ['', '-b', '-c', '-d', '-e', '-f'];
   for (let v = 0; v < PLANOS_POR_IMAGEN; v++) {
     const n2 = `${nombre}${sufijos[v]}`;
-    escribirCuadro(n2, i, k, escena, v, `${nombre}.png`);
+    escribirCuadro(n2, i, k, escena, v, `${nombre}.png`, conCapas);
     fondos.push(`pintado:${n2}`);
   }
 };
@@ -206,8 +237,9 @@ for (let i = 0; i < escenas.length; i++) {
     const crudo = path.join(dir, `${nombre}.src.jpg`);
     const final = path.join(dir, `${nombre}.png`);
     if (fs.existsSync(final)) {
-      catalogo.push({archivo: `${nombre}.png`, escena: i});
-      planosDeFoto(nombre, i, k, escena, fondos);
+      const cap = fs.existsSync(path.join(dir, `${nombre}.l2.png`)) || cortarCapas(final);
+      catalogo.push({archivo: `${nombre}.png`, escena: i, capas: cap});
+      planosDeFoto(nombre, i, k, escena, fondos, cap);
       continue;
     }
     if (!primera) await dormir(ESPERA_MS);
@@ -216,8 +248,9 @@ for (let i = 0; i < escenas.length; i++) {
     console.log(`  escena ${i + 1}, plano ${k + 1}/${n}: ${vista.slice(0, 70)}`);
     if (await bajar(`${ESTILO}, ${vista}`, crudo, vista) && aPixelArt(crudo, final)) {
       fs.rmSync(crudo, {force: true});
-      catalogo.push({archivo: `${nombre}.png`, escena: i});
-      planosDeFoto(nombre, i, k, escena, fondos);
+      const cap = cortarCapas(final);
+      catalogo.push({archivo: `${nombre}.png`, escena: i, capas: cap});
+      planosDeFoto(nombre, i, k, escena, fondos, cap);
       hechas++;
     } else { fallidas++; }
   }
@@ -235,7 +268,7 @@ if (pendientes.length && catalogo.length) {
     while (fondos.length < PLANOS_POR_ESCENA && v < cerca.length * 6) {
       const foto = cerca[v % cerca.length];
       const nombre = `${id}-${i}-r${v + 1}`;
-      escribirCuadro(nombre, i, v, escena, v % 6, foto.archivo);
+      escribirCuadro(nombre, i, v, escena, v % 6, foto.archivo, foto.capas !== false);
       fondos.push(`pintado:${nombre}`);
       v++;
     }

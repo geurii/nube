@@ -53,7 +53,7 @@ jobs:
           timeout 5m npm install --no-save --no-audit --no-fund msedge-tts@2.1.1
       - name: Preparar guiones y visuales
         run: |
-          pip install --break-system-packages --quiet pillow
+          pip install --break-system-packages --quiet pillow onnxruntime numpy
           node scripts/probar-lote-30.mjs
           node scripts/preparar-lote-30.mjs
       # Las imagenes cuestan 39 minutos por Short (1 cada 45 s, limite gratis de Pollinations).
@@ -65,6 +65,7 @@ jobs:
           path: |
             public/referencias
             public/pintados
+            modelos
           key: imagenes-lote30-${{ matrix.i }}-${{ hashFiles('agentes/lote-30-contenidos.json') }}
           restore-keys: |
             imagenes-lote30-${{ matrix.i }}-

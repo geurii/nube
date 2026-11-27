@@ -179,6 +179,47 @@ export function pintar(g: G, esc: EscenaPintada, t: number, lw: number, lh: numb
         if (e.simbolos !== false) for (let i = 0; i < 6; i++) g.ring(x + w * (0.2 + hs(i, 51) * 0.6), y + h * (0.2 + hs(i, 52) * 0.6), 4 + hs(i, 53) * 6, 1, [120, 40, 40]);
         break;
       }
+      case 'foto3d': {
+        // TRES PLANOS DE PROFUNDIDAD: lejos, medio y cerca, cada uno a su velocidad.
+        // Asi las cosas pasan unas por delante de otras y deja de parecer una foto
+        // deslizandose. Todo se dibuja en bloques del mismo tamano: sigue siendo pixel art.
+        const archivo = String(e.archivo ?? '').replace(/[^a-z0-9._-]/gi, '');
+        const raiz = archivo.replace(/\.png$/i, '');
+        if (!raiz) break;
+        const paso = Math.max(1, Math.round(num(e.pixel, 2, 1, 6)));
+        const dir = Number(e.sentido) === -1 ? -1 : 1;
+        const amp = num(e.deriva, 18, 0, 60);     // recorrido del plano mas cercano
+        const vel = [0.2, 0.55, 1];
+        const latido = num(e.latido, 0.05, 0, 0.4);
+        const brillo = 1 + latido * Math.sin(t * 1.7);
+        const ondaFuerza = num(e.ondaFuerza, 3, 0, 12);
+        for (let capa = 0; capa < 3; capa++) {
+          const im = IMAGENES.get(`${raiz}.l${capa}.png`);
+          if (!im || !im.w || !im.h) continue;
+          const zoom = 1.16 + capa * 0.07;        // sobra de imagen: el borde nunca entra en cuadro
+          const s = Math.max(lw / im.w, lh / im.h) * zoom;
+          const vw = Math.min(im.w, lw / s), vh = Math.min(im.h, lh / s);
+          const libreX = Math.max(0, im.w - vw), libreY = Math.max(0, im.h - vh);
+          const avance = (Math.sin(t * 0.2) * amp * vel[capa] * dir) / s;
+          const ox = Math.max(0, Math.min(libreX, libreX / 2 + avance));
+          const oy = Math.max(0, Math.min(libreY, libreY * 0.45 + (capa === 2 ? Math.sin(t * 0.5) * 2 : 0)));
+          for (let y = 0; y < lh; y += paso) {
+            const py = y / lh;
+            const desvio = capa === 2 ? Math.sin(t * 1.25 + py * 14) * ondaFuerza * py : 0;
+            const sy = Math.min(im.h - 1, Math.max(0, Math.floor(oy + py * vh)));
+            for (let x = 0; x < lw; x += paso) {
+              const sx = Math.min(im.w - 1, Math.max(0, Math.floor(ox + ((x + desvio) / lw) * vw)));
+              const k = (sy * im.w + sx) * 4;
+              if (im.d[k + 3] < 128) continue;
+              const c: RGB = brillo === 1
+                ? [im.d[k], im.d[k + 1], im.d[k + 2]]
+                : [Math.min(255, im.d[k] * brillo), Math.min(255, im.d[k + 1] * brillo), Math.min(255, im.d[k + 2] * brillo)];
+              g.rect(x, y, paso, paso, c);
+            }
+          }
+        }
+        break;
+      }
       case 'foto': {
         // Foto real de licencia libre leida como pixeles y dibujada en bloques: pixel art del sujeto de verdad.
         // Formato que escribe el Pintor: {t:'foto', archivo, x0, y0, x1, y1, zoom, pan}. Tambien admite x/y/w/h.

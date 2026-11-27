@@ -41,7 +41,7 @@ const Lienzo: React.FC<{id: string}> = ({id}) => {
         const protagonista = esc.capas.some((cap) => {
           const tipo = String(cap?.t ?? '');
           // la imagen del sujeto es el protagonista: es exactamente la cosa de la que habla la voz
-          if (tipo === 'foto' && String(cap?.archivo ?? '').length > 3) return true;
+          if ((tipo === 'foto' || tipo === 'foto3d') && String(cap?.archivo ?? '').length > 3) return true;
           if (!OBJETOS_NARRATIVOS.has(tipo)) return false;
           if (tipo === 'bosque') return Number(cap?.n ?? 0) >= 6;
           const medidas = ['w','h','r','alto'].map((k) => Number(cap?.[k])).filter(Number.isFinite);
@@ -53,8 +53,16 @@ const Lienzo: React.FC<{id: string}> = ({id}) => {
         // fotos de referencia: se cargan y se leen como píxeles antes de dibujar (si una falla, la escena se pinta sin ella)
         const pedidas: {clave: string; ruta: string}[] = [];
         for (const cap of esc.capas) {
-          const archivo = cap.t === 'foto' ? String(cap.archivo ?? '').replace(/[^a-z0-9._-]/gi, '') : '';
-          if (archivo) pedidas.push({clave: archivo, ruta: `referencias/${archivo}`});
+          const archivo = (cap.t === 'foto' || cap.t === 'foto3d') ? String(cap.archivo ?? '').replace(/[^a-z0-9._-]/gi, '') : '';
+          if (!archivo) continue;
+          if (cap.t === 'foto3d') {
+            // tres planos de profundidad: lejos, medio y cerca
+            const raiz = archivo.replace(/\.png$/i, '');
+            for (let capa = 0; capa < 3; capa++) {
+              const nombre = `${raiz}.l${capa}.png`;
+              pedidas.push({clave: nombre, ruta: `referencias/${nombre}`});
+            }
+          } else pedidas.push({clave: archivo, ruta: `referencias/${archivo}`});
         }
         const escenario = typeof esc.escenario === 'string' ? esc.escenario.replace(/[^a-z0-9-]/gi, '') : '';
         if (escenario) pedidas.push({clave: `escenarios/${escenario}`, ruta: `escenarios/${escenario}.png`});
