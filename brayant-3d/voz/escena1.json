@@ -1,0 +1,67 @@
+[
+  {
+    "texto": "Si",
+    "inicio": 0.1,
+    "fin": 0.35
+  },
+  {
+    "texto": "Brayant",
+    "inicio": 0.3625,
+    "fin": 0.825
+  },
+  {
+    "texto": "sale",
+    "inicio": 0.8375,
+    "fin": 1.125
+  },
+  {
+    "texto": "positivo",
+    "inicio": 1.1375,
+    "fin": 1.75
+  },
+  {
+    "texto": "lo",
+    "inicio": 2.05,
+    "fin": 2.175
+  },
+  {
+    "texto": "echan",
+    "inicio": 2.1875,
+    "fin": 2.4625
+  },
+  {
+    "texto": "de",
+    "inicio": 2.475,
+    "fin": 2.55
+  },
+  {
+    "texto": "su",
+    "inicio": 2.5625,
+    "fin": 2.7
+  },
+  {
+    "texto": "casa",
+    "inicio": 2.7125,
+    "fin": 3.1375
+  },
+  {
+    "texto": "Le",
+    "inicio": 4,
+    "fin": 4.175
+  },
+  {
+    "texto": "quedan",
+    "inicio": 4.1875,
+    "fin": 4.55
+  },
+  {
+    "texto": "treinta",
+    "inicio": 4.5625,
+    "fin": 4.875
+  },
+  {
+    "texto": "días",
+    "inicio": 4.8875,
+    "fin": 5.375
+  }
+]
