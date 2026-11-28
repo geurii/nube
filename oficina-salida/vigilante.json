@@ -1,18 +1,15 @@
 {
-  "alertas": {
-    "sin-publicar": "2026-11-27T21:14:49.960Z"
-  },
-  "fecha": "2026-11-28T07:45:05.516Z",
+  "alertas": {},
+  "fecha": "2026-11-28T19:59:38.170Z",
   "ok": [
     "YouTube conectado",
     "analítica autorizada",
     "Groq responde",
     "Gemini responde",
     "Windsor responde",
-    "Buffer responde"
+    "Buffer responde",
+    "hay publicaciones recientes"
   ],
-  "problemas": [
-    "Llevan más de 36 horas sin publicar"
-  ],
-  "resumenDia": "2026-11-27"
+  "problemas": [],
+  "resumenDia": "2026-11-28"
 }

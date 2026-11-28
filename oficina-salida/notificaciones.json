@@ -1,5 +1,14 @@
 [
   {
+    "id": "mx0u3hdmmscg",
+    "fecha": "2026-11-28T19:59:38.170Z",
+    "canal": "lqns",
+    "canalNombre": "Vigilante",
+    "tipo": "reporte",
+    "titulo": "Resumen del día",
+    "texto": "Últimas 24 h: 14 video(s) en YouTube, 14 en Facebook, 14 en Instagram, 14 en TikTok. Todo en orden."
+  },
+  {
     "id": "mwzhcc144ry6",
     "fecha": "2026-11-27T21:14:49.960Z",
     "canal": "lqns",
@@ -685,14 +694,5 @@
     "tipo": "alerta",
     "titulo": "Guion rechazado: Sabías que la ciudad subterránea de Derinkuyu ocultó a 20 000 personas durante la guerra?",
     "texto": "El Verificador no aprobó \"Sabías que la ciudad subterránea de Derinkuyu ocultó a 20 000 personas durante la guerra?\" tras 4 intentos: Atribuye hechos y lugares al mundo real sin aclarar que es ficción. Aprobados: 12. Rechazados: 65. Con error: 14. No se publica. Próximo ciclo en 10 h."
-  },
-  {
-    "id": "mwuvugv9aux3",
-    "fecha": "2026-11-24T16:01:59.781Z",
-    "canal": "lqns",
-    "canalNombre": "Lo Que No Sabías",
-    "tipo": "alerta",
-    "titulo": "Guion rechazado: ¿Por qué el lago Natron se vuelve rojo y mata a los animales que se acercan?",
-    "texto": "El Verificador no aprobó \"¿Por qué el lago Natron se vuelve rojo y mata a los animales que se acercan?\" tras 4 intentos: El gancho inicial debe tener 14 palabras o menos para formato short. Aprobados: 12. Rechazados: 64. Con error: 14. No se publica. Próximo ciclo en 10 h."
   }
 ]
