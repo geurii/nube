@@ -135,7 +135,7 @@
       "id": "lqns-vuelo-2501-lago-michigan",
       "slug": "vuelo-2501-lago-michigan",
       "titulo": "El vuelo que cayó al lago Michigan y no dejó sobrevivientes",
-      "estado": "aprobado",
+      "estado": "publicando",
       "aprobado": true,
       "duracionSegundos": null,
       "publicadoEn": {
@@ -143,7 +143,8 @@
         "facebook": false,
         "instagram": false,
         "tiktok": false
-      }
+      },
+      "reservadoEn": "2026-11-28T02:10:51.840Z"
     },
     {
       "id": "lqns-uss-scorpion-submarino-perdido",
