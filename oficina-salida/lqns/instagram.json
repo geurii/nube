@@ -1,6 +1,15 @@
 {
-  "total": 25,
+  "total": 26,
   "posts": [
+    {
+      "id": "lqns-galveston-huracan-1900",
+      "titulo": "La tormenta que borró barrios enteros de Galveston",
+      "fecha": "2026-11-28T16:15:52.740Z",
+      "accion": "create_video_post",
+      "alojamiento": "temporal-72h",
+      "video_url": "https://cobbled-shell-55.beacon.host/lqns-galveston-huracan-1900.mp4",
+      "respuesta": "{\"result\":\"Published video post (Reel) to Instagram account 17841461180305578. Media id: 18154065514562561.\"}\n"
+    },
     {
       "id": "lqns-krakatoa-erupcion-1883",
       "titulo": "La erupción que se escuchó a miles de kilómetros",
