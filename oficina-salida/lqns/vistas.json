@@ -1,20 +1,56 @@
 {
-  "fecha": "2026-11-28T08:21:42.525Z",
+  "fecha": "2026-11-28T20:30:23.390Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 1697,
-  "ganadasDesdeElUltimoCiclo": 338,
+  "total": 1212,
+  "ganadasDesdeElUltimoCiclo": 0,
   "videos": [
+    {
+      "id": "FQTl-iEU-Xw",
+      "titulo": "Cuando los radares de Washington detectaron objetos desconocidos",
+      "publicado": "2026-11-28T20:15:09+00:00",
+      "vistas": 0
+    },
+    {
+      "id": "lJYK9u0YPLM",
+      "titulo": "Las luces misteriosas del bosque de Rendlesham",
+      "publicado": "2026-11-28T18:15:23+00:00",
+      "vistas": 0
+    },
+    {
+      "id": "2wptFjobRSs",
+      "titulo": "La tormenta que borró barrios enteros de Galveston",
+      "publicado": "2026-11-28T16:14:43+00:00",
+      "vistas": 2
+    },
+    {
+      "id": "PxNqrqnkU7w",
+      "titulo": "La erupción que se escuchó a miles de kilómetros",
+      "publicado": "2026-11-28T14:13:46+00:00",
+      "vistas": 6
+    },
+    {
+      "id": "A_dXcXuugbs",
+      "titulo": "El dirigible gigante que cayó envuelto en llamas",
+      "publicado": "2026-11-28T12:13:50+00:00",
+      "vistas": 0
+    },
+    {
+      "id": "QxiDLAwNzDY",
+      "titulo": "La explosión que arrasó un puerto canadiense en segundos",
+      "publicado": "2026-11-28T10:13:30+00:00",
+      "vistas": 3
+    },
     {
       "id": "JFOWgtHGdg4",
       "titulo": "El objeto romano de doce caras que nadie sabe para qué servía",
       "publicado": "2026-11-28T08:13:14+00:00",
-      "vistas": 0
+      "vistas": 382
     },
     {
       "id": "QyFzLFjqVYs",
       "titulo": "Las esferas de piedra perfectamente redondas de Costa Rica",
       "publicado": "2026-11-28T06:12:16+00:00",
-      "vistas": 88
+      "vistas": 391
     },
     {
       "id": "bJYP0J-zL44",
@@ -26,25 +62,25 @@
       "id": "NLjq2V1Vp2o",
       "titulo": "El vuelo que cayó al lago Michigan y no dejó sobrevivientes",
       "publicado": "2026-11-28T02:11:23+00:00",
-      "vistas": 115
+      "vistas": 130
     },
     {
       "id": "UD4NVQ5FivY",
       "titulo": "El barco de la Marina que desapareció con unas 306 personas",
       "publicado": "2026-11-28T00:11:01+00:00",
-      "vistas": 14
+      "vistas": 16
     },
     {
       "id": "ffJ7tgTBWbg",
       "titulo": "El día que alguien secuestró la señal de televisión",
       "publicado": "2026-11-27T22:10:35+00:00",
-      "vistas": 16
+      "vistas": 17
     },
     {
       "id": "jLZfFnPMy2c",
       "titulo": "La fuga de Alcatraz que dejó cabezas falsas en las camas",
       "publicado": "2026-11-27T21:50:37+00:00",
-      "vistas": 220
+      "vistas": 219
     },
     {
       "id": "IHF8xBiOZSc",
@@ -56,50 +92,10 @@
       "id": "u6nAYHAy1Sc",
       "titulo": "Tres fareros desaparecieron y el faro quedó vacío",
       "publicado": "2026-11-27T21:10:59+00:00",
-      "vistas": 38
-    },
-    {
-      "id": "xL9E7Ru2UM4",
-      "titulo": "¿Ovnis reales captados en cámara?",
-      "publicado": "2026-11-25T23:58:43+00:00",
-      "vistas": 8
-    },
-    {
-      "id": "ERL-GCARL8I",
-      "titulo": "¿Por qué un lápiz roto tiene 68 millones de vistas?",
-      "publicado": "2026-11-25T21:38:46+00:00",
-      "vistas": 1007
-    },
-    {
-      "id": "VXbbW_o1PWo",
-      "titulo": "Nintendo nació vendiendo cartas: la historia antes de los videojuegos",
-      "publicado": "2026-11-25T17:08:39+00:00",
-      "vistas": 151
-    },
-    {
-      "id": "ju9-ibZWM5s",
-      "titulo": "⚡ La ola de 524 metros: El megatsunami que escaló una montaña en Alaska (1958)",
-      "publicado": "2026-11-24T21:05:01+00:00",
-      "vistas": 5
-    },
-    {
-      "id": "i0w6F46yv3o",
-      "titulo": "🕰️ ¿297 años falsos? La teoría que borra a Carlomagno",
-      "publicado": "2026-11-24T17:46:03+00:00",
-      "vistas": 4
-    },
-    {
-      "id": "xE32CX_fsXM",
-      "titulo": "🌋 ¿Qué secreto ancestral esconde el cráter de la Isla de Pascua?",
-      "publicado": "2026-11-24T16:28:54+00:00",
-      "vistas": 25
+      "vistas": 40
     }
   ],
   "historia": [
-    {
-      "fecha": "2026-11-24T16:00:17.797Z",
-      "total": 2223
-    },
     {
       "fecha": "2026-11-24T16:08:11.638Z",
       "total": 2223
@@ -335,6 +331,10 @@
     {
       "fecha": "2026-11-28T08:21:42.525Z",
       "total": 1697
+    },
+    {
+      "fecha": "2026-11-28T20:30:23.390Z",
+      "total": 1212
     }
   ]
 }

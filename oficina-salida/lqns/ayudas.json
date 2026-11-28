@@ -1,43 +1,43 @@
 {
   "plan": [
-    "Crear y lanzar la serie de 3 videos sobre el megatsunami de Lituya Bay 1958, con títulos atractivos y emojis, maximizando la curiosidad y la retención: Equipo de Guion y Producción: Monetizar 15,000 vistas y 300 suscripciones nuevas antes d",
-    "Desarrollar miniaturas A/B con colores contrastantes y textos legibles para los tres episodios, optimizando CTR y retención: Equipo de Diseño Gráfico: Aumentar el CTR en un 25 % y mantener la retención > 60 % antes del 13 de diciembre",
-    "Planificar y programar las publicaciones en los días de mayor actividad de la audiencia, con intervalos de 1‑2 días, y medir la retención para ajustes en tiempo real: Equipo de Programación y Análisis de Datos: Lograr un crecimiento del 10 "
+    "Crear y lanzar la serie de 3 videos sobre el megatsunami de Lituya Bay 1958, con títulos breves, emojis y preguntas intrigantes, y publicar el primer episodio el 5 de noviembre.: Jules (Productora): Generar al menos 500 vistas y 50 suscripc",
+    "Desarrollar miniaturas A/B con colores contrastantes y textos legibles para los próximos 3 episodios, optimizando la tasa de clics en el 70% de la audiencia objetivo.: Ana (Diseñadora Gráfica): Aumentar la CTR a 4.5% y lograr 300 vistas adi",
+    "Programar la publicación de los tres episodios con intervalos de 1‑2 días, ajustando la hora a la mayor actividad de la audiencia, y medir la retención para ajustes de contenido en tiempo real.: Luis (Analista de Datos): Mantener una retenc"
   ],
   "ganchos": [
-    "¿Te imaginas que [TEMA] se reveló cuando [CIFRA] se volvió real? | Imagen de un mapa antiguo con un punto resaltado",
-    "¿Sabías que [TEMA] pagó [CIFRA] por un objeto que nadie entendía? | Imagen de una puerta antigua con luces parpadeantes",
-    "[TEMA] y la cifra [CIFRA] que nadie pudo prever: ¿qué secretos esconden? | Imagen de una caja de madera con símbolos misteriosos",
-    "¿Qué [VERBO] realmente [SUSTANTIVO] cuando [CIFRA] apareció? | Imagen de un reloj de arena con números flotantes",
-    "[TEMA] y [CIFRA] en una historia que nadie imaginó: ¿estás listo? | Imagen de un espejo antiguo reflejando un paisaje desconocido"
+    "¿Qué secretos guarda [TEMA] cuando [CIFRA] se vuelve real? | Imagen: mapa antiguo con un punto rojo resaltado",
+    "[TEMA] revelado: ¿sabías que [CIFRA] cambió todo? | Imagen: puerta antigua abierta con luz tenue",
+    "¿Qué ocurrió cuando [TEMA] se encontró con [CIFRA]? | Imagen: objeto histórico parcialmente descubierto",
+    "[TEMA] y [CIFRA]: la conexión que nadie vio venir | Imagen: crónica de un evento histórico con detalles en negrita",
+    "¿Cómo transformó [TEMA] a la era de [CIFRA]? | Imagen: ilustración de un evento misterioso con sombras intrigantes"
   ],
   "mejorasGuion": [
-    "1️⃣ Gancho inicial más impactante: sustituir “Sabías que Stonehenge fue construido durante más de 1500 años?” por un título breve con emoji y pregunta, por ejemplo, “🔍 ¿Qué secretos guarda Stonehenge tras 6500 años?” pa",
-    "2️⃣ Ritmo narrativo: dividir la información en bloques de 2-3 frases y usar transiciones con palabras como “Pero lo que no sabías…” o “Además, ¿sabías que…?” para mantener el flujo y evitar que el espectador pierda el hi",
-    "3️⃣ Cierre con CTA más fuerte y específico: reemplazar “Comparte este video con un amigo que haría lo mismo, sígueme” por “Si te intriga este misterio, suscríbete y activa la campanita para descubrir más enigmas. Déjame "
+    "Añadir un gancho inicial con datos reales o cifras impactantes, por ejemplo: \"¿Sabías que el cráter de la Isla de Pascua tiene una anomalía que solo el 0.3% de los satélites ha detectado?\" para captar la atención desde e",
+    "Reestructurar el ritmo introduciendo micro‑cliffhangers cada 15‑20 segundos (ej. \"El equipo intentó abrir la cámara, pero la puerta emitió un sonido que nadie había escuchado antes…\") para mantener la retención y evitar ",
+    "Cerrar con una llamada a la acción más potente y vinculada al próximo video, como: \"¿Qué crees que hay detrás de esa puerta? Deja tu teoría en los comentarios y suscríbete, porque en el próximo episodio revelaremos la le"
   ],
   "temas": [
-    "The Green Children of Woolpit",
-    "Lake Peigneur",
-    "The moving rocks of Death Valley",
-    "The phantom time hypothesis",
-    "The disappearing lake of Cerknica"
+    "The Mystery of the Oak Island Treasure",
+    "The Voynich Manuscript",
+    "The Nazca Lines",
+    "The Piri Reis Map (not listed)",
+    "The Mystery of the Greenhouse Effect"
   ],
   "titulos": [
-    "¿Por qué un lápiz roto tiene 68 millones de vistas?",
-    "La fuga de Alcatraz que dejó cabezas falsas en las camas",
-    "Nintendo nació vendiendo cartas: la historia antes de los videojuegos",
-    "El vuelo que cayó al lago Michigan y no dejó sobrevivientes"
+    "Las [objeto] de [adjetivo] de [país]",
+    "El objeto [adjetivo] de [número] caras que nadie sabe para qué servía",
+    "La fuga de [lugar] que dejó [detalle]",
+    "El vuelo que cayó a [lugar] y no dejó [resultado]"
   ],
-  "fecha": "2026-11-28T08:21:42.640Z",
+  "fecha": "2026-11-28T20:30:23.542Z",
   "iniciativas": [
-    "Valentina (Directora de contenido): Crear un documento de visión con ejemplos visuales y métricas de referencia para guiar al equipo y preservar la coherencia creativa.",
-    "Carolina (Coordinador de producción): Implementar un calendario de producción automatizado con alertas cada 2 h y un plan de contingencia de guiones aprobados listos para usar.",
-    "Fernanda (Jefa de calidad): Diseñar una checklist de calidad de 10 puntos que incluya revisión de datos, audio y subtítulos antes de cualquier publicación.",
-    "Camila (Investigador de temas): Compilar una base de fuentes fiables y asignar mini‑tareas de recopilación de datos a cada miembro para avanzar mientras se produce el contenido.",
-    "Daniela (Cazador de fórmulas): Probar tres estructuras de guion (gancho‑problema‑solución, misterio‑revelación, lista‑valor) en videos piloto de 30 s y medir el engagement interno.",
-    "Julieta (Vigía de tendencias): Configurar alertas diarias en Google Trends y TikTok Pulse y compartir un resumen de 5 tendencias emergentes cada mañana.",
-    "Lucía (Guionista): Escribir versiones alternativas de los primeros 3 minutos con diferentes tonos y hacer una votación interna para elegir la más impactante.",
-    "Mariana (Editor de guion): Establecer una ronda de revisión cruzada: cada guion será revisado por dos editores diferentes antes de aprobarse."
+    "Valentina (Directora de contenido): Definir una línea editorial clara y un moodboard visual que sirva de guía constante para todo el equipo, de modo que la visión se mantenga aun sin métricas.",
+    "Carolina (Coordinador de producción): Crear un calendario maestro con buffers de 2 h entre cada publicación y asignar responsables de revisión inmediata para evitar desvíos.",
+    "Fernanda (Jefa de calidad): Implementar una checklist de calidad paso a paso que incluya revisión de datos, sonido y estética antes de aprobar cualquier pieza.",
+    "Camila (Investigador de temas): Compilar una base de fuentes fiables y estructurar un esquema de preguntas que guíe la investigación futura, de modo que cuando el material llegue ya tengamos el marco listo.",
+    "Daniela (Cazador de fórmulas): Probar tres estructuras de guion diferentes (historia, dato‑impacto, misterio) en mini‑videos de prueba y medir la retención interna del equipo.",
+    "Julieta (Vigía de tendencias): Configurar alertas diarias en herramientas de tendencias (Google Trends, TikTok Discover) y compartir un briefing de 5 min cada mañana.",
+    "Lucía (Guionista): Escribir un gancho de 15 segundos al inicio de cada guion y someterlo a prueba de “primeras impresiones” entre los miembros del equipo.",
+    "Mariana (Editor de guion): Establecer una ronda de revisión cruzada donde cada guion sea leído por al menos dos colegas antes de pasar a producción."
   ]
 }
