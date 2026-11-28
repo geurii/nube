@@ -45,7 +45,8 @@ img = Image.open('brayant-3d/gen/base.png').convert('RGB').resize((W, H), Image.
 def paso(p, i, t, kw):
     log('paso', i + 1)
     return kw
-out = pipe(conditions=[LTXVideoCondition(image=img, frame_index=0)],
+conds = None if n == '8' else [LTXVideoCondition(image=img, frame_index=0)]   # la puerta se crea solo con texto
+out = pipe(conditions=conds,
            prompt_embeds=emb, prompt_attention_mask=mask, width=W, height=H, num_frames=CUADROS, frame_rate=24,
            timesteps=[1000, 993, 987, 981, 975, 909, 725], guidance_scale=1.0,
            decode_timestep=0.05, decode_noise_scale=0.025, image_cond_noise_scale=0.0,
