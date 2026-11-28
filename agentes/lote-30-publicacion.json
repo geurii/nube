@@ -255,7 +255,7 @@
       "id": "lqns-hindenburg-incendio-1937",
       "slug": "hindenburg-incendio-1937",
       "titulo": "El dirigible gigante que cayó envuelto en llamas",
-      "estado": "aprobado",
+      "estado": "publicando",
       "aprobado": true,
       "duracionSegundos": null,
       "publicadoEn": {
@@ -263,7 +263,8 @@
         "facebook": false,
         "instagram": false,
         "tiktok": false
-      }
+      },
+      "reservadoEn": "2026-11-28T12:13:09.024Z"
     },
     {
       "id": "lqns-krakatoa-erupcion-1883",
