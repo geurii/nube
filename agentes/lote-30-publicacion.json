@@ -279,7 +279,7 @@
       "id": "lqns-krakatoa-erupcion-1883",
       "slug": "krakatoa-erupcion-1883",
       "titulo": "La erupción que se escuchó a miles de kilómetros",
-      "estado": "aprobado",
+      "estado": "publicando",
       "aprobado": true,
       "duracionSegundos": null,
       "publicadoEn": {
@@ -287,7 +287,8 @@
         "facebook": false,
         "instagram": false,
         "tiktok": false
-      }
+      },
+      "reservadoEn": "2026-11-28T14:13:26.532Z"
     },
     {
       "id": "lqns-galveston-huracan-1900",
