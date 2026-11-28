@@ -1,0 +1,28 @@
+name: Brayant - voz
+on:
+  push:
+    branches: [brayant-3d]
+    paths: ['brayant-3d/voz/voz.mjs', '.github/workflows/brayant-voz.yml']
+permissions:
+  contents: write
+jobs:
+  voz:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Generar la voz Jorge
+        run: |
+          mkdir -p /tmp/v && cd /tmp/v && npm init -y >/dev/null && npm install --no-audit --no-fund msedge-tts@2.1.1
+          cp "$GITHUB_WORKSPACE/brayant-3d/voz/voz.mjs" /tmp/v/voz.mjs
+          cd /tmp/v && mkdir -p brayant-3d/voz && node voz.mjs && cp brayant-3d/voz/escena1.* "$GITHUB_WORKSPACE/brayant-3d/voz/"
+      - name: Guardar en la rama
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add -f brayant-3d/voz/escena1.mp3 brayant-3d/voz/escena1.json
+          git commit -m "Brayant: voz de la escena 1"
+          git push
