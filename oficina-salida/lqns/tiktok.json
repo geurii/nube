@@ -1,6 +1,16 @@
 {
-  "total": 23,
+  "total": 24,
   "posts": [
+    {
+      "id": "lqns-hindenburg-incendio-1937",
+      "titulo": "El dirigible gigante que cayó envuelto en llamas",
+      "fecha": "2026-11-28T12:17:56.631Z",
+      "accion": "createPost",
+      "programado": "ahora",
+      "alojamiento": "temporal-72h",
+      "video_url": "https://trim-scroll-58.beacon.host/lqns-hindenburg-incendio-1937.mp4",
+      "respuesta": "{\"id\":\"6b0ac605c6d7f1e7223e7c72\",\"canal\":\"loquenosabias.do\",\"programado\":\"ahora\",\"status\":\"sent\",\"externalLink\":\"https://tiktok.com/@loquenosabias.do/video/7713195101232581927\"}"
+    },
     {
       "id": "lqns-halifax-explosion-1917",
       "titulo": "La explosión que arrasó un puerto canadiense en segundos",
