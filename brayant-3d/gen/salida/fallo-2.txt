@@ -1,0 +1,41 @@
+[     2s] disco libre GB: 93.0
+You set `add_prefix_space`. The tokenizer needs to be converted from the slow tokenizers
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]
+Fetching 4 files:  25%|██▌       | 1/4 [01:16<03:48, 76.27s/it]
+Fetching 4 files:  50%|█████     | 2/4 [01:26<01:26, 43.02s/it]
+Fetching 4 files:  75%|███████▌  | 3/4 [01:27<00:29, 29.11s/it]
+Fetching 4 files: 100%|██████████| 4/4 [01:27<00:00, 21.96s/it]
+Fetching 4 files: 100%|██████████| 4/4 [01:27<00:00, 21.96s/it]
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]
+Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:13,  4.64s/it]
+Loading checkpoint shards:  50%|█████     | 2/4 [00:13<00:14,  7.14s/it]
+Loading checkpoint shards:  75%|███████▌  | 3/4 [00:24<00:09,  9.11s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:33<00:00,  9.02s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:33<00:00,  8.46s/it]
+[   125s] lector de texto cargado
+[   128s] texto listo
+[   128s] disco libre GB: 93.0
+[   160s] generador cargado
+Traceback (most recent call last):
+  File "/home/runner/work/nube/nube/brayant-3d/gen/generar.py", line 47, in <module>
+    out = pipe(conditions=[LTXVideoCondition(image=img, frame_index=0)],
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/diffusers/pipelines/ltx/pipeline_ltx_condition.py", line 1107, in __call__
+    timesteps, num_inference_steps = retrieve_timesteps(self.scheduler, num_inference_steps, device, timesteps)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/diffusers/pipelines/ltx/pipeline_ltx_condition.py", line 192, in retrieve_timesteps
+    scheduler.set_timesteps(timesteps=timesteps, device=device, **kwargs)
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/diffusers/schedulers/scheduling_flow_match_euler_discrete.py", line 276, in set_timesteps
+    raise ValueError("`mu` must be passed when `use_dynamic_shifting` is set to be `True`")
+ValueError: `mu` must be passed when `use_dynamic_shifting` is set to be `True`
+--- memoria
+               total        used        free      shared  buff/cache   available
+Mem:              15           0          12           0           2          14
+Swap:              2           0           2
+--- disco
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/cow-root  145G   64G   81G  45% /
+--- sistema
