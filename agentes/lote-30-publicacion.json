@@ -231,7 +231,7 @@
       "id": "lqns-halifax-explosion-1917",
       "slug": "halifax-explosion-1917",
       "titulo": "La explosión que arrasó un puerto canadiense en segundos",
-      "estado": "aprobado",
+      "estado": "publicando",
       "aprobado": true,
       "duracionSegundos": null,
       "publicadoEn": {
@@ -239,7 +239,8 @@
         "facebook": false,
         "instagram": false,
         "tiktok": false
-      }
+      },
+      "reservadoEn": "2026-11-28T10:12:43.583Z"
     },
     {
       "id": "lqns-hindenburg-incendio-1937",
