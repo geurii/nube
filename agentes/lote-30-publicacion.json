@@ -5,9 +5,9 @@
   "total": 30,
   "completedCount": 30,
   "intervalMinutes": 120,
-  "nextIndex": 14,
-  "nextAt": "2026-11-28T20:14:16.351Z",
-  "lastPublishedAt": "2026-11-28T18:17:53.989Z",
+  "nextIndex": 15,
+  "nextAt": "2026-11-28T22:14:40.460Z",
+  "lastPublishedAt": "2026-11-28T20:19:07.035Z",
   "runId": 46042972544,
   "artifact": "lote-30-videos",
   "items": [
@@ -351,16 +351,25 @@
       "id": "lqns-washington-ufo-radar-1952",
       "slug": "washington-ufo-radar-1952",
       "titulo": "Cuando los radares de Washington detectaron objetos desconocidos",
-      "estado": "publicando",
+      "estado": "publicado_en_todas",
       "aprobado": true,
       "duracionSegundos": null,
       "publicadoEn": {
-        "youtube": false,
-        "facebook": false,
-        "instagram": false,
-        "tiktok": false
+        "youtube": true,
+        "facebook": true,
+        "instagram": true,
+        "tiktok": true
       },
-      "reservadoEn": "2026-11-28T20:14:40.460Z"
+      "reservadoEn": "2026-11-28T20:14:40.460Z",
+      "publicacionDetalle": {
+        "youtube": "confirmado",
+        "facebook": "confirmado",
+        "instagram": "confirmado",
+        "tiktok": "confirmado"
+      },
+      "ultimoIntento": "2026-11-28T20:19:07.035Z",
+      "publicado": true,
+      "publicadoEnHora": "2026-11-28T20:19:07.035Z"
     },
     {
       "id": "lqns-gran-engano-lunar-1835",
