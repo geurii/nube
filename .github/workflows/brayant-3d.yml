@@ -10,27 +10,53 @@ concurrency:
   group: brayant-3d
   cancel-in-progress: true
 jobs:
-  imagen:
+  cuadros:
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    timeout-minutes: 60
+    strategy:
+      fail-fast: true
+      max-parallel: 8
+      matrix:
+        parte: [0, 1, 2, 3, 4, 5, 6, 7]
     steps:
       - uses: actions/checkout@v4
       - name: Instalar Blender
         run: |
           sudo apt-get update
           sudo apt-get install -y blender
-          blender --version
-      - name: Renderizar las tres vistas
+      - name: Renderizar 15 cuadros
         run: |
+          mkdir -p cuadros
+          INI=$(( ${{ matrix.parte }} * 15 ))
+          blender -b --python-exit-code 1 -P brayant-3d/brayant.py -- "$PWD/cuadros" anim "$INI" "$(( INI + 14 ))" | grep -v '^Fra:'
+          test "$(ls cuadros/*.png | wc -l)" -eq 15
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cuadros-${{ matrix.parte }}
+          path: cuadros/*.png
+          retention-days: 3
+  video:
+    needs: cuadros
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: cuadros-*
+          merge-multiple: true
+          path: cuadros
+      - name: Armar el video de 5 segundos
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          test "$(ls cuadros/*.png | wc -l)" -eq 120
           mkdir -p brayant-3d/salida
-          for vista in escena cara noche; do
-            blender -b --python-exit-code 1 -P brayant-3d/brayant.py -- "$PWD/brayant-3d/salida/$vista.png" "$vista"
-            test -s "brayant-3d/salida/$vista.png"
-          done
-      - name: Guardar las imágenes en la rama
+          ffmpeg -y -framerate 24 -i cuadros/c%04d.png -vf "hqdn3d=2:1.5:3:3,scale=1080:1920:flags=lanczos,unsharp=5:5:0.4" -c:v libx264 -crf 19 -pix_fmt yuv420p -movflags +faststart brayant-3d/salida/prueba-5s.mp4
+      - name: Guardar el video en la rama
         run: |
           git config user.name "github-actions"
           git config user.email "actions@users.noreply.github.com"
-          git add -f brayant-3d/salida/*.png
-          git commit -m "Brayant 3D: imagen de prueba"
+          git add -f brayant-3d/salida/prueba-5s.mp4
+          git commit -m "Brayant 3D: prueba animada de 5 segundos"
           git push

@@ -5,6 +5,9 @@ from mathutils import Vector, Matrix
 
 args = sys.argv[sys.argv.index('--') + 1:] if '--' in sys.argv else ['brayant.png', 'escena']
 SALIDA, VISTA = args[0], (args[1] if len(args) > 1 else 'escena')
+ANIM = VISTA == 'anim'
+CUADRO_INI = int(args[2]) if len(args) > 2 else 0
+CUADRO_FIN = int(args[3]) if len(args) > 3 else 119
 random.seed(7)
 bpy.ops.wm.read_factory_settings(use_empty=True)
 sc = bpy.context.scene
@@ -45,12 +48,12 @@ BARBA = mat('barba', '#231711', 0.95)
 SOMBRA = mat('sombra', '#8a5c44', 0.9, '#6e4936', 55)
 BLANCO = mat('blanco', '#d9d2c8', 0.4)
 IRIS = mat('iris', '#2a170c', 0.2)
-ROJO = mat('rojo', '#a5423c', 0.95, '#7d3330', 5.5)
+ROJO = mat('rojo', '#9c3a36', 0.96, '#74302d', 6.5)
 ROJO2 = mat('rojo2', '#7f3130', 0.95, '#652725', 8)
 MANCHA = mat('mancha', '#6f2f2b', 1.0)
 CORDON = mat('cordon', '#b9b0a2', 0.9)
 METAL = mat('metal', '#c9ccd2', 0.25, metal=1.0)
-PANT = mat('pant', '#34373d', 0.92, '#4a4d53', 4)
+PANT = mat('pant', '#34363a', 0.94, '#4b4a44', 6)
 TINTA = mat('tinta', '#12100f', 0.85)
 ZAP = mat('zap', '#26211e', 0.8)
 SUELA = mat('suela', '#8d8478', 0.9)
@@ -63,6 +66,32 @@ SABANA = mat('sabana', '#b9b5ad', 0.9)
 ROSA = mat('rosa', '#b97c83', 0.9)
 PANTALLA = mat('pantalla', '#f2c985', 0.9, emite=1.25)
 VENTANA = mat('ventana', '#23345c', 0.9, emite=0.9)
+
+def gastar(m, color, escala, desde=0.54, hasta=0.70, fuerza=0.55):
+    """segunda capa de manchas suaves sobre la tela"""
+    nt = m.node_tree; b = nt.nodes['Principled BSDF']
+    if not b.inputs['Base Color'].links: return
+    base = b.inputs['Base Color'].links[0].from_socket
+    tc = nt.nodes.new('ShaderNodeTexCoord'); n = nt.nodes.new('ShaderNodeTexNoise')
+    n.inputs['Scale'].default_value = escala; n.inputs['Detail'].default_value = 9; n.inputs['Roughness'].default_value = 0.72
+    mr = nt.nodes.new('ShaderNodeMapRange')
+    mr.inputs['From Min'].default_value = desde; mr.inputs['From Max'].default_value = hasta; mr.inputs['To Max'].default_value = fuerza
+    mx = nt.nodes.new('ShaderNodeMixRGB'); mx.inputs['Color2'].default_value = lin(color)
+    nt.links.new(tc.outputs['Object'], n.inputs['Vector']); nt.links.new(n.outputs['Fac'], mr.inputs['Value'])
+    nt.links.new(mr.outputs['Result'], mx.inputs['Fac']); nt.links.new(base, mx.inputs['Color1'])
+    nt.links.new(mx.outputs['Color'], b.inputs['Base Color'])
+gastar(ROJO, '#4a2724', 14)
+gastar(ROJO, '#b9655c', 31, 0.57, 0.70, 0.45)   # zonas desteñidas
+gastar(PANT, '#5a5044', 11)
+
+def hilos(centro_y_puntos, n, m, largo=0.012):
+    """hilachas en los bordes gastados"""
+    pts = [Vector(p) for p in centro_y_puntos]
+    for _ in range(n):
+        i = random.randrange(len(pts) - 1); q = random.random()
+        p = pts[i].lerp(pts[i + 1], q)
+        fin = p + Vector((random.uniform(-0.004, 0.004), random.uniform(-0.006, 0.001), -random.uniform(0.003, largo)))
+        loft('hilo', [(p, 0.0017, 0.0017), (fin, 0.0005, 0.0005)], m, n=3)
 
 def objeto(nombre, verts, caras, m, plano=True):
     me = bpy.data.meshes.new(nombre); me.from_pydata([tuple(v) for v in verts], [], caras); me.update()
@@ -183,6 +212,11 @@ objeto('canguro', [cang(v) for v in [(-0.09, -0.118, 0.955), (0.09, -0.118, 0.95
                    (-0.075, -0.108, 0.94), (0.075, -0.108, 0.94), (0.15, -0.085, 0.845), (0.155, -0.085, 0.795), (-0.155, -0.085, 0.795), (-0.15, -0.085, 0.845)]],
        [(0, 1, 2, 3, 4, 5), (0, 6, 7, 1), (1, 7, 8, 2), (2, 8, 9, 3), (3, 9, 10, 4), (4, 10, 11, 5), (5, 11, 6, 0)], ROJO)
 
+def borde(y_frente, z, ancho, n=14):
+    return [(ancho * (-1 + 2 * k / (n - 1)), y_frente + 0.055 * (-1 + 2 * k / (n - 1)) ** 2, z) for k in range(n)]
+hilos(borde(-0.064, 0.697, 0.165), 90, ROJO2)
+hilos([cang(v) for v in [(-0.165, -0.107, 0.85), (-0.09, -0.121, 0.955), (0.09, -0.121, 0.955), (0.165, -0.107, 0.85)]], 40, ROJO2, 0.008)
+
 # ---------------- BRAZOS, MANOS, TATUAJES ----------------
 def mano(s):
     mx = s * 0.287
@@ -259,17 +293,56 @@ def antebrazo_tatuado(codo, d, m):
     me.materials.append(m)
     o = bpy.data.objects.new('antebrazo_t', me); sc.collection.objects.link(o)
 
-for s in (-1, 1):
-    hombro = (s * 0.170, 0.05, 1.178); codo = Vector((s * 0.272, 0.035, 0.915)); muneca = Vector((s * 0.287, -0.075, 0.63))
-    loft('manga', [((s * 0.128, 0.05, 1.19), 0.060, 0.064), (hombro, 0.068, 0.066), ((s * 0.230, 0.05, 1.065), 0.051, 0.052),
-                   ((s * 0.270, 0.04, 0.945), 0.047, 0.047), (tuple(codo + Vector((0, 0, -0.02))), 0.050, 0.049)], ROJO, 11, 0.003)
+def brazo(s, hombro, codo, muneca, tatuado):
+    hombro = Vector(hombro); codo = Vector(codo); muneca = Vector(muneca)
+    a = (codo - hombro)
+    loft('manga', [(Vector((s * 0.128, 0.05, 1.19)), 0.060, 0.064), (hombro, 0.068, 0.066), (hombro + a * 0.45, 0.051, 0.052),
+                   (hombro + a * 0.86, 0.047, 0.047), (codo + a.normalized() * 0.012, 0.050, 0.049)], ROJO, 11, 0.003)
     d = (muneca - codo)
-    loft('puno', [(tuple(codo + d * 0.02), 0.053, 0.051), (tuple(codo + d * 0.09), 0.045, 0.043), (tuple(codo + d * 0.16), 0.047, 0.045)], ROJO2, 12, 0.002)
-    if s > 0:
+    loft('puno', [(codo + d * 0.02, 0.053, 0.051), (codo + d * 0.09, 0.045, 0.043), (codo + d * 0.16, 0.047, 0.045)], ROJO2, 12, 0.002)
+    hilos([codo + d * 0.165 + Vector((x_, -0.044, 0)) for x_ in (-0.036, -0.012, 0.012, 0.036)], 16, ROJO2)
+    if tatuado:
         antebrazo_tatuado(codo, d, mat_tatuaje())
     else:
-        loft('antebrazo', [(tuple(codo + d * 0.10), 0.040, 0.037), (tuple(codo + d * 0.38), 0.040, 0.035), (tuple(codo + d * 0.70), 0.029, 0.025), (tuple(muneca), 0.022, 0.019)], PIEL, 12)
-    mano(s)
+        loft('antebrazo', [(codo + d * 0.10, 0.040, 0.037), (codo + d * 0.38, 0.040, 0.035), (codo + d * 0.70, 0.029, 0.025), (muneca, 0.022, 0.019)], PIEL, 12)
+
+# brazo izquierdo (el del tatuaje): apoyado en la cama
+brazo(1, (0.170, 0.05, 1.178), (0.272, 0.035, 0.915), (0.287, -0.075, 0.63), True)
+mano(1)
+
+HOMBRO_D = Vector((-0.170, 0.05, 1.178))
+MUNECA_REPOSO = Vector((-0.287, -0.075, 0.63))
+MUNECA_CUELLO = Vector((-0.135, -0.165, 1.185))
+L1 = (Vector((-0.272, 0.035, 0.915)) - HOMBRO_D).length
+L2 = (MUNECA_REPOSO - Vector((-0.272, 0.035, 0.915))).length
+
+def codo_para(muneca, polo):
+    """cinemática de dos huesos: dónde queda el codo"""
+    v = muneca - HOMBRO_D; dist = min(v.length, (L1 + L2) * 0.999); u = v.normalized()
+    x = (L1 * L1 - L2 * L2 + dist * dist) / (2 * dist)
+    h = math.sqrt(max(L1 * L1 - x * x, 0.0))
+    p = polo - u * polo.dot(u); p.normalize()
+    return HOMBRO_D + u * x + p * h
+
+dinamicos = []
+def brazo_derecho(k):
+    """k: 0 = mano en la cama, 1 = mano en el cuello"""
+    antes = set(sc.collection.objects)
+    random.seed(311)
+    muneca = MUNECA_REPOSO.lerp(MUNECA_CUELLO, k) + Vector((-0.10, -0.12, 0)) * math.sin(math.pi * k)
+    polo = Vector((-0.35, 0.9, -0.2)).lerp(Vector((-0.75, -0.25, -0.65)), k)
+    codo = codo_para(muneca, polo)
+    brazo(-1, HOMBRO_D, codo, muneca, False)
+    antes_mano = set(sc.collection.objects)
+    mano(-1)
+    dir_reposo = Vector((0.0, -0.93, -0.36)).normalized()
+    dir_cuello = Vector((0.62, 0.30, 0.72)).normalized()
+    giro = dir_reposo.rotation_difference(dir_reposo.lerp(dir_cuello, k).normalized()).to_matrix().to_4x4()
+    base = Vector((-0.287, -0.080, 0.628))
+    M = Matrix.Translation(muneca + (base - MUNECA_REPOSO)) @ giro @ Matrix.Translation(-base)
+    for o in set(sc.collection.objects) - antes_mano:
+        o.matrix_world = M
+    dinamicos.extend(set(sc.collection.objects) - antes)
 
 # ---------------- CABEZA ----------------
 H = Vector((0.0, 0.015, 1.455))
@@ -329,9 +402,17 @@ def ancho_en(z):
     for (z0p, _, a0, _), (z1p, _, a1, _) in zip(perfil, perfil[1:]):
         if z0p <= z <= z1p: return a0 + (a1 - a0) * (z - z0p) / (z1p - z0p)
     return 0.05
-en_cabeza(loft('labio_sup', [(sobre(-0.029, boca_z + 0.001, 0.003), 0.002, 0.002), (sobre(-0.011, boca_z + 0.0062, 0.0075), 0.0052, 0.0048), (sobre(0, boca_z + 0.0045, 0.0075), 0.0046, 0.0048),
-                             (sobre(0.011, boca_z + 0.0062, 0.0075), 0.0052, 0.0048), (sobre(0.029, boca_z + 0.001, 0.003), 0.002, 0.002)], LABIO, 9))
-en_cabeza(loft('labio_inf', [(sobre(-0.025, boca_z - 0.003, 0.003), 0.002, 0.002), (sobre(0, boca_z - 0.0085, 0.009), 0.0070, 0.0062), (sobre(0.025, boca_z - 0.003, 0.003), 0.002, 0.002)], LABIO, 9))
+def labios(sonrisa):
+    sube = 0.0095 * sonrisa; abre = 0.0065 * sonrisa; ancho = 1 + 0.14 * sonrisa
+    creados = []
+    creados.append(loft('labio_sup', [(sobre(-0.029 * ancho, boca_z + 0.001 + sube, 0.0035), 0.002, 0.002), (sobre(-0.011, boca_z + 0.0062 + sube * 0.25, 0.0075), 0.0052, 0.0046), (sobre(0, boca_z + 0.0045 + sube * 0.2, 0.0075), 0.0046, 0.0046),
+                             (sobre(0.011, boca_z + 0.0062 + sube * 0.25, 0.0075), 0.0052, 0.0046), (sobre(0.029 * ancho, boca_z + 0.001 + sube, 0.0035), 0.002, 0.002)], LABIO, 9))
+    creados.append(loft('labio_inf', [(sobre(-0.026 * ancho, boca_z - 0.002 + sube, 0.0035), 0.002, 0.002), (sobre(0, boca_z - 0.0085 - abre, 0.009), 0.0066, 0.0058), (sobre(0.026 * ancho, boca_z - 0.002 + sube, 0.0035), 0.002, 0.002)], LABIO, 9))
+    if sonrisa > 0.22:
+        creados.append(loft('dientes', [(sobre(-0.019 * ancho, boca_z + sube * 0.45, 0.0050), 0.0010, 0.0010), (sobre(0, boca_z - abre * 0.55, 0.0074), max(0.0012, abre * 0.62), 0.0022),
+                                        (sobre(0.019 * ancho, boca_z + sube * 0.45, 0.0050), 0.0010, 0.0010)], BLANCO, 8))
+    return creados
+
 def pelito(x, z, r, m, sale=0.0016):
     en_cabeza(bola('pelito', sobre(x, z, sale), r, m, 1, (1, 0.55, 1.15), (random.random() * 3, random.random() * 3, random.random() * 3), 0.3))
 # sombra de barba en la mandíbula
@@ -383,7 +464,7 @@ for x, z in [(-0.058, 0.112), (-0.040, 0.106), (-0.020, 0.109), (0.000, 0.103), 
     rizo(P(x, frente(x, 0.099) - 0.005, z), 0.0100, 0.0046)
 
 # lentes oscuros rectangulares: solo de noche
-if VISTA == 'noche':
+if VISTA in ('noche', 'anim'):
     LENTE = mat('lente', '#0b0d12', 0.08, metal=0.35)
     MARCO = mat('marco', '#0c0b0c', 0.35)
     yl = frente(0.037, 0.022) - 0.020
@@ -395,13 +476,38 @@ if VISTA == 'noche':
         en_cabeza(tubo('patilla', [cara_l[1], P(s * 0.101, -0.058, 0.034), P(s * 0.111, 0.006, 0.024), P(s * 0.108, 0.030, 0.004)], 0.0030, MARCO))
     en_cabeza(tubo('puente', [P(-0.011, yl, 0.033), P(0, yl - 0.004, 0.036), P(0.011, yl, 0.033)], 0.0027, MARCO))
 
-# girar la cabeza un poco y bajarla (pensativo)
 eje = Vector((0, 0.035, 1.34))
-rot = Matrix.Translation(eje) @ Matrix.Rotation(math.radians(-9), 4, 'Z') @ Matrix.Rotation(math.radians(5), 4, 'X') @ Matrix.Translation(-eje)
 bpy.context.view_layer.update()
-for o in cabeza_obj:
-    if o.name.startswith('cuello'): continue
-    o.matrix_world = rot @ o.matrix_world
+base_cabeza = [(o, o.matrix_world.copy()) for o in cabeza_obj if not o.name.startswith('cuello')]
+def pose(bajar, girar, ladear, sonrisa, mano_k, respira):
+    for o in list(dinamicos):
+        bpy.data.objects.remove(o, do_unlink=True)
+    dinamicos.clear()
+    brazo_derecho(mano_k)
+    R = (Matrix.Translation(eje + Vector((0, 0, respira))) @ Matrix.Rotation(math.radians(girar), 4, 'Z')
+         @ Matrix.Rotation(math.radians(ladear), 4, 'Y') @ Matrix.Rotation(math.radians(bajar), 4, 'X') @ Matrix.Translation(-eje))
+    for o, m0 in base_cabeza:
+        o.matrix_world = R @ m0
+    for o in labios(sonrisa):
+        o.matrix_world = R
+        dinamicos.append(o)
+
+def curva(claves, s):
+    """interpola suave entre (segundo, valor)"""
+    if s <= claves[0][0]: return claves[0][1]
+    for (a, va), (b, vb) in zip(claves, claves[1:]):
+        if s <= b:
+            q = (s - a) / (b - a); q = q * q * (3 - 2 * q)
+            return va + (vb - va) * q
+    return claves[-1][1]
+
+def pose_en(s):
+    pose(curva([(0, 14), (0.7, 13), (1.7, -9), (3.0, -5), (4.2, -7), (5, -3)], s),
+         curva([(0, -4), (1.7, -12), (3.0, -6), (4.2, -14), (5, -10)], s),
+         curva([(0, 0), (1.6, 0), (2.6, 13), (3.9, 15), (5, 9)], s),
+         curva([(0, 0), (1.5, 0.05), (2.4, 0.85), (3.4, 1.0), (5, 0.8)], s),
+         curva([(0, 0), (1.9, 0), (3.25, 1.0), (5, 1.0)], s) + (0.018 * math.sin(2 * math.pi * 2.2 * (s - 3.25)) if s > 3.25 else 0),
+         0.0035 * math.sin(2 * math.pi * s / 2.6))
 
 # ---------------- LUCES Y CÁMARA ----------------
 w = bpy.data.worlds.new('w'); sc.world = w; w.use_nodes = True
@@ -421,6 +527,10 @@ luz('POINT', (0.74, 0.86, 1.16), 30 if VISTA == 'noche' else 24, (1.0, 0.70, 0.4
 luz('AREA', (-1.25, -1.75, 2.15), 13 if VISTA == 'noche' else 34, (0.50, 0.62, 1.0) if VISTA == 'noche' else (1.0, 0.91, 0.82), 0.9)
 luz('AREA', (1.7, -1.0, 1.25), 11 if VISTA == 'noche' else 9, (0.35, 0.50, 1.0) if VISTA == 'noche' else (0.62, 0.72, 1.0), 1.2)
 luz('AREA', (0.9, 0.55, 2.2), 14, (1.0, 0.76, 0.48), 0.4)
+if ANIM:
+    bg.inputs['Color'].default_value = (0.022, 0.022, 0.036, 1)
+    luz('AREA', (-0.95, -1.55, 1.75), 20, (1.0, 0.74, 0.50), 0.7)
+    luz('AREA', (0.2, 0.2, 2.35), 12, (1.0, 0.78, 0.46), 0.5, (0.0, 0.4, 1.1))
 cam = bpy.data.cameras.new('c'); co = bpy.data.objects.new('c', cam); sc.collection.objects.link(co); sc.camera = co
 if VISTA == 'cara':
     co.location = (-0.30, -1.15, 1.52); mira(co, (0.0, 0.0, 1.43)); cam.lens = 88
@@ -429,10 +539,24 @@ else:
     co.location = (-0.82, -2.65, 1.42); mira(co, (0.02, 0.0, 0.885)); cam.lens = 58
     ancho, alto = 720, 1280
 
-sc.render.engine = 'CYCLES'; sc.cycles.device = 'CPU'; sc.cycles.samples = 96; sc.cycles.use_denoising = False
-sc.render.resolution_x, sc.render.resolution_y = ancho, alto
+sc.render.engine = 'CYCLES'; sc.cycles.device = 'CPU'; sc.cycles.use_denoising = False
+sc.cycles.samples = 56 if ANIM else 96
 sc.render.image_settings.file_format = 'PNG'
 sc.view_settings.view_transform = 'Filmic'
-sc.render.filepath = SALIDA
-bpy.ops.render.render(write_still=True)
+if ANIM:
+    # la lente se acerca muy poco; el movimiento principal es del personaje
+    sc.render.resolution_x, sc.render.resolution_y = 540, 960
+    sc.render.use_persistent_data = True
+    for n_cuadro in range(CUADRO_INI, CUADRO_FIN + 1):
+        s = n_cuadro / 24
+        pose_en(s)
+        co.location = Vector((-0.80, -2.50, 1.40)).lerp(Vector((-0.74, -2.36, 1.38)), s / 5)
+        mira(co, (0.0, 0.0, 0.93))
+        sc.render.filepath = SALIDA + '/c%04d.png' % n_cuadro
+        bpy.ops.render.render(write_still=True)
+else:
+    sc.render.resolution_x, sc.render.resolution_y = ancho, alto
+    pose(5, -9, 0, 0.0, 0.0, 0.0)
+    sc.render.filepath = SALIDA
+    bpy.ops.render.render(write_still=True)
 print('LISTO', SALIDA)
