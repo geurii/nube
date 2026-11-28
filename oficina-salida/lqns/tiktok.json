@@ -1,6 +1,16 @@
 {
-  "total": 20,
+  "total": 21,
   "posts": [
+    {
+      "id": "lqns-esferas-piedra-diquis",
+      "titulo": "Las esferas de piedra perfectamente redondas de Costa Rica",
+      "fecha": "2026-11-28T06:16:21.034Z",
+      "accion": "createPost",
+      "programado": "ahora",
+      "alojamiento": "temporal-72h",
+      "video_url": "https://vanilla-hollow-67.beacon.host/lqns-esferas-piedra-diquis.mp4",
+      "respuesta": "{\"id\":\"6b0a7144fe7140cdac947eca\",\"canal\":\"loquenosabias.do\",\"programado\":\"ahora\",\"status\":\"sent\",\"externalLink\":\"https://tiktok.com/@loquenosabias.do/video/7713101857010371879\"}"
+    },
     {
       "id": "lqns-uss-scorpion-submarino-perdido",
       "titulo": "El submarino nuclear que se perdió en el Atlántico",
