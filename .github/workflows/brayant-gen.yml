@@ -40,8 +40,19 @@ jobs:
         run: |
           mkdir -p "$HF_HOME"
           df -h "$HF_HOME"; free -g
-          python brayant-3d/gen/generar.py "${{ matrix.escena }}"
+          set -o pipefail
+          python -X faulthandler -u brayant-3d/gen/generar.py "${{ matrix.escena }}" 2>&1 | tee registro.txt
           test -s "escena${{ matrix.escena }}.mp4"
+      - name: Guardar el motivo del fallo
+        if: failure()
+        run: |
+          mkdir -p brayant-3d/gen/salida
+          { tr '\r' '\n' < registro.txt | grep -v '^$' | tail -n 60; echo "--- memoria"; free -g; echo "--- disco"; df -h /; echo "--- sistema"; sudo dmesg | grep -iE 'out of memory|killed process' | tail -n 5; } > "brayant-3d/gen/salida/fallo-${{ matrix.escena }}.txt" || true
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add -f "brayant-3d/gen/salida/fallo-${{ matrix.escena }}.txt"
+          git commit -m "Brayant: motivo del fallo escena ${{ matrix.escena }}"
+          git pull --rebase origin brayant-3d && git push
       - uses: actions/upload-artifact@v4
         with:
           name: escena-${{ matrix.escena }}
