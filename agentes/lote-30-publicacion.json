@@ -5,9 +5,9 @@
   "total": 30,
   "completedCount": 30,
   "intervalMinutes": 120,
-  "nextIndex": 5,
-  "nextAt": "2026-11-28T02:10:23.433Z",
-  "lastPublishedAt": "2026-11-28T00:13:55.115Z",
+  "nextIndex": 6,
+  "nextAt": "2026-11-28T04:10:51.840Z",
+  "lastPublishedAt": "2026-11-28T02:14:39.989Z",
   "runId": 46042972544,
   "artifact": "lote-30-videos",
   "items": [
@@ -135,16 +135,25 @@
       "id": "lqns-vuelo-2501-lago-michigan",
       "slug": "vuelo-2501-lago-michigan",
       "titulo": "El vuelo que cayó al lago Michigan y no dejó sobrevivientes",
-      "estado": "publicando",
+      "estado": "publicado_en_todas",
       "aprobado": true,
       "duracionSegundos": null,
       "publicadoEn": {
-        "youtube": false,
-        "facebook": false,
-        "instagram": false,
-        "tiktok": false
+        "youtube": true,
+        "facebook": true,
+        "instagram": true,
+        "tiktok": true
       },
-      "reservadoEn": "2026-11-28T02:10:51.840Z"
+      "reservadoEn": "2026-11-28T02:10:51.840Z",
+      "publicacionDetalle": {
+        "youtube": "confirmado",
+        "facebook": "confirmado",
+        "instagram": "confirmado",
+        "tiktok": "confirmado"
+      },
+      "ultimoIntento": "2026-11-28T02:14:39.989Z",
+      "publicado": true,
+      "publicadoEnHora": "2026-11-28T02:14:39.989Z"
     },
     {
       "id": "lqns-uss-scorpion-submarino-perdido",

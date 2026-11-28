@@ -1,6 +1,15 @@
 {
-  "total": 18,
+  "total": 19,
   "posts": [
+    {
+      "id": "lqns-vuelo-2501-lago-michigan",
+      "titulo": "El vuelo que cayó al lago Michigan y no dejó sobrevivientes",
+      "fecha": "2026-11-28T02:12:47.213Z",
+      "accion": "create_video_post",
+      "alojamiento": "temporal-72h",
+      "video_url": "https://orange-dinghy-55.beacon.host/lqns-vuelo-2501-lago-michigan.mp4",
+      "respuesta": "{\"result\":\"Published video post (Reel) to Instagram account 17841461180305578. Media id: 18106113986526735.\"}\n"
+    },
     {
       "id": "lqns-uss-cyclops-desaparecio",
       "titulo": "El barco de la Marina que desapareció con unas 306 personas",
