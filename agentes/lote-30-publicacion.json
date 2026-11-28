@@ -111,7 +111,7 @@
       "id": "lqns-uss-cyclops-desaparecio",
       "slug": "uss-cyclops-desaparecio",
       "titulo": "El barco de la Marina que desapareció con unas 306 personas",
-      "estado": "aprobado",
+      "estado": "publicando",
       "aprobado": true,
       "duracionSegundos": null,
       "publicadoEn": {
@@ -119,7 +119,8 @@
         "facebook": false,
         "instagram": false,
         "tiktok": false
-      }
+      },
+      "reservadoEn": "2026-11-28T00:10:23.433Z"
     },
     {
       "id": "lqns-vuelo-2501-lago-michigan",
