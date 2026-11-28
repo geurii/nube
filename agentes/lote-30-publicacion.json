@@ -303,7 +303,7 @@
       "id": "lqns-galveston-huracan-1900",
       "slug": "galveston-huracan-1900",
       "titulo": "La tormenta que borró barrios enteros de Galveston",
-      "estado": "aprobado",
+      "estado": "publicando",
       "aprobado": true,
       "duracionSegundos": null,
       "publicadoEn": {
@@ -311,7 +311,8 @@
         "facebook": false,
         "instagram": false,
         "tiktok": false
-      }
+      },
+      "reservadoEn": "2026-11-28T16:13:50.210Z"
     },
     {
       "id": "lqns-rendlesham-luces-bosque-1980",
