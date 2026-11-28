@@ -159,7 +159,7 @@
       "id": "lqns-uss-scorpion-submarino-perdido",
       "slug": "uss-scorpion-submarino-perdido",
       "titulo": "El submarino nuclear que se perdió en el Atlántico",
-      "estado": "aprobado",
+      "estado": "publicando",
       "aprobado": true,
       "duracionSegundos": null,
       "publicadoEn": {
@@ -167,7 +167,8 @@
         "facebook": false,
         "instagram": false,
         "tiktok": false
-      }
+      },
+      "reservadoEn": "2026-11-28T04:11:10.637Z"
     },
     {
       "id": "lqns-esferas-piedra-diquis",
