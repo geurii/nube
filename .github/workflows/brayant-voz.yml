@@ -18,11 +18,12 @@ jobs:
         run: |
           mkdir -p /tmp/v && cd /tmp/v && npm init -y >/dev/null && npm install --no-audit --no-fund msedge-tts@2.1.1
           cp "$GITHUB_WORKSPACE/brayant-3d/voz/voz.mjs" /tmp/v/voz.mjs
-          cd /tmp/v && mkdir -p brayant-3d/voz && node voz.mjs && cp brayant-3d/voz/escena1.* "$GITHUB_WORKSPACE/brayant-3d/voz/"
+          cd /tmp/v && mkdir -p brayant-3d/voz && node voz.mjs && cp brayant-3d/voz/l*.mp3 brayant-3d/voz/palabras.json "$GITHUB_WORKSPACE/brayant-3d/voz/"
       - name: Guardar en la rama
         run: |
           git config user.name "github-actions"
           git config user.email "actions@users.noreply.github.com"
-          git add -f brayant-3d/voz/escena1.mp3 brayant-3d/voz/escena1.json
-          git commit -m "Brayant: voz de la escena 1"
+          git add -f brayant-3d/voz/l*.mp3 brayant-3d/voz/palabras.json
+          git commit -m "Brayant: voz del Dia 1"
+          git pull --rebase origin brayant-3d
           git push
