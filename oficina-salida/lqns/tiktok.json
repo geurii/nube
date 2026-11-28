@@ -1,6 +1,16 @@
 {
-  "total": 24,
+  "total": 25,
   "posts": [
+    {
+      "id": "lqns-krakatoa-erupcion-1883",
+      "titulo": "La erupción que se escuchó a miles de kilómetros",
+      "fecha": "2026-11-28T14:17:18.550Z",
+      "accion": "createPost",
+      "programado": "ahora",
+      "alojamiento": "temporal-72h",
+      "video_url": "https://buffed-warbler-31.beacon.host/lqns-krakatoa-erupcion-1883.mp4",
+      "respuesta": "{\"id\":\"6b0ae1ffb793a21e71ecf19b\",\"canal\":\"loquenosabias.do\",\"programado\":\"ahora\",\"status\":\"sent\",\"externalLink\":\"https://tiktok.com/@loquenosabias.do/video/7713225852879785249\"}"
+    },
     {
       "id": "lqns-hindenburg-incendio-1937",
       "titulo": "El dirigible gigante que cayó envuelto en llamas",

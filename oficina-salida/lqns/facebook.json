@@ -1,6 +1,15 @@
 {
-  "total": 24,
+  "total": 25,
   "posts": [
+    {
+      "id": "lqns-krakatoa-erupcion-1883",
+      "titulo": "La erupción que se escuchó a miles de kilómetros",
+      "fecha": "2026-11-28T14:14:25.375Z",
+      "accion": "create_reel",
+      "alojamiento": "temporal-72h",
+      "video_url": "https://buffed-warbler-31.beacon.host/lqns-krakatoa-erupcion-1883.mp4",
+      "respuesta": "{\"result\":\"Published Reel to Facebook Page 1414517028413600. Video id: 2305579203338573. Post id: 1414517028413600_122109324099552661.\"}\n"
+    },
     {
       "id": "lqns-hindenburg-incendio-1937",
       "titulo": "El dirigible gigante que cayó envuelto en llamas",

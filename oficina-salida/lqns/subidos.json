@@ -1,6 +1,12 @@
 {
-  "total": 25,
+  "total": 26,
   "videos": [
+    {
+      "id": "PxNqrqnkU7w",
+      "titulo": "La erupción que se escuchó a miles de kilómetros",
+      "fecha": "2026-11-28T14:13:29.478Z",
+      "url": "https://youtu.be/PxNqrqnkU7w"
+    },
     {
       "id": "A_dXcXuugbs",
       "titulo": "El dirigible gigante que cayó envuelto en llamas",

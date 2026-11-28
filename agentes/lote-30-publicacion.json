@@ -5,9 +5,9 @@
   "total": 30,
   "completedCount": 30,
   "intervalMinutes": 120,
-  "nextIndex": 11,
-  "nextAt": "2026-11-28T14:13:09.024Z",
-  "lastPublishedAt": "2026-11-28T12:17:56.738Z",
+  "nextIndex": 12,
+  "nextAt": "2026-11-28T16:13:26.532Z",
+  "lastPublishedAt": "2026-11-28T14:17:18.628Z",
   "runId": 46042972544,
   "artifact": "lote-30-videos",
   "items": [
@@ -279,16 +279,25 @@
       "id": "lqns-krakatoa-erupcion-1883",
       "slug": "krakatoa-erupcion-1883",
       "titulo": "La erupción que se escuchó a miles de kilómetros",
-      "estado": "publicando",
+      "estado": "publicado_en_todas",
       "aprobado": true,
       "duracionSegundos": null,
       "publicadoEn": {
-        "youtube": false,
-        "facebook": false,
-        "instagram": false,
-        "tiktok": false
+        "youtube": true,
+        "facebook": true,
+        "instagram": true,
+        "tiktok": true
       },
-      "reservadoEn": "2026-11-28T14:13:26.532Z"
+      "reservadoEn": "2026-11-28T14:13:26.532Z",
+      "publicacionDetalle": {
+        "youtube": "confirmado",
+        "facebook": "confirmado",
+        "instagram": "confirmado",
+        "tiktok": "confirmado"
+      },
+      "ultimoIntento": "2026-11-28T14:17:18.628Z",
+      "publicado": true,
+      "publicadoEnHora": "2026-11-28T14:17:18.628Z"
     },
     {
       "id": "lqns-galveston-huracan-1900",
