@@ -35,9 +35,10 @@ from diffusers.pipelines.ltx.pipeline_ltx_condition import LTXVideoCondition
 from diffusers.utils import export_to_video
 tr = LTXVideoTransformer3DModel.from_single_file(PESOS, torch_dtype=torch.float32)
 vae = AutoencoderKLLTXVideo.from_single_file(PESOS, torch_dtype=torch.float32)
-sch = FlowMatchEulerDiscreteScheduler.from_pretrained(REPO, subfolder='scheduler')
+sch = FlowMatchEulerDiscreteScheduler.from_pretrained(REPO, subfolder='scheduler', use_dynamic_shifting=False, shift=1.0, shift_terminal=None)
 pipe = LTXConditionPipeline(scheduler=sch, vae=vae, text_encoder=None, tokenizer=None, transformer=tr)
 pipe.vae.enable_tiling()
+pipe.vae.use_framewise_decoding = True   # arma el video por tandas: menos memoria
 log('generador cargado')
 
 img = Image.open('brayant-3d/gen/base.png').convert('RGB').resize((W, H), Image.LANCZOS)
