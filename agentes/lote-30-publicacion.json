@@ -207,7 +207,7 @@
       "id": "lqns-dodecaedros-romanos-misterio",
       "slug": "dodecaedros-romanos-misterio",
       "titulo": "El objeto romano de doce caras que nadie sabe para qué servía",
-      "estado": "aprobado",
+      "estado": "publicando",
       "aprobado": true,
       "duracionSegundos": null,
       "publicadoEn": {
@@ -215,7 +215,8 @@
         "facebook": false,
         "instagram": false,
         "tiktok": false
-      }
+      },
+      "reservadoEn": "2026-11-28T08:12:03.498Z"
     },
     {
       "id": "lqns-halifax-explosion-1917",
