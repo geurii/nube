@@ -1,9 +1,9 @@
 {
-  "fecha": "2026-11-27T08:59:15.998Z",
+  "fecha": "2026-11-28T08:21:47.133Z",
   "resumen": [
-    "Último chequeo del Vigilante: 2026-11-27T08:27:33.118Z.",
-    "Bien: YouTube conectado, analítica autorizada, Groq responde, Gemini responde, Windsor responde, Buffer responde, hay publicaciones recientes.",
-    "Problemas: Falló \"Lote 30 - render secuencial\" en GitHub.",
+    "Último chequeo del Vigilante: 2026-11-28T07:45:05.516Z.",
+    "Bien: YouTube conectado, analítica autorizada, Groq responde, Gemini responde, Windsor responde, Buffer responde.",
+    "Problemas: Llevan más de 36 horas sin publicar.",
     "Recordatorio: los archivos de claves del Escritorio deben borrarse y el permiso de Google debe seguir \"En producción\"."
   ]
 }

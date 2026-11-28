@@ -1,43 +1,43 @@
 {
   "plan": [
-    "Crear serie de 3 videos sobre el megatsunami de Lituya Bay 1958 con títulos A/B y colores contrastantes: Equipo de Producción y Diseño: Generar al menos 20,000 vistas y 500 suscripciones nuevas antes del 13 de diciembre",
-    "Desarrollar miniatura A/B para el video sobre el terremoto de Lisboa 1755 con cifra impactante y mapa antiguo: Equipo de Marketing y Visuales: Alcanzar 15,000 vistas y 300 interacciones (likes/comentarios) antes del 13 de diciembre",
-    "Programar publicación de los tres episodios en días de mayor actividad (miércoles y viernes) y promocionarlos en redes con CTA claro: Equipo de Social Media y Community Manager: Obtener 10,000 vistas totales y 200 nuevos seguidores antes de"
+    "Crear y lanzar la serie de 3 videos sobre el megatsunami de Lituya Bay 1958, con títulos atractivos y emojis, maximizando la curiosidad y la retención: Equipo de Guion y Producción: Monetizar 15,000 vistas y 300 suscripciones nuevas antes d",
+    "Desarrollar miniaturas A/B con colores contrastantes y textos legibles para los tres episodios, optimizando CTR y retención: Equipo de Diseño Gráfico: Aumentar el CTR en un 25 % y mantener la retención > 60 % antes del 13 de diciembre",
+    "Planificar y programar las publicaciones en los días de mayor actividad de la audiencia, con intervalos de 1‑2 días, y medir la retención para ajustes en tiempo real: Equipo de Programación y Análisis de Datos: Lograr un crecimiento del 10 "
   ],
   "ganchos": [
-    "¿Sabías que [TEMA] se reveló cuando [CIFRA] se volvió real? | Imagen de un mapa antiguo con un punto resaltado",
-    "¿Te imaginas que [TEMA] se reveló cuando [CIFRA] se volvió real? | Imagen de una puerta antigua abierta a la luz",
-    "¿Qué [VERBO] realmente [SUSTANTIVO]? | Imagen de una puerta entreabierta con luces parpadeantes",
-    "¿Sabías que [SUSTANTIVO] pagó [MONTO] por [OBJETO]? | Imagen de una puerta antigua con un candado oxidado",
-    "¿Por qué [TEMA] tiene [CIFRA] misterios ocultos? | Imagen de un mapa antiguo con líneas de conexión"
+    "¿Te imaginas que [TEMA] se reveló cuando [CIFRA] se volvió real? | Imagen de un mapa antiguo con un punto resaltado",
+    "¿Sabías que [TEMA] pagó [CIFRA] por un objeto que nadie entendía? | Imagen de una puerta antigua con luces parpadeantes",
+    "[TEMA] y la cifra [CIFRA] que nadie pudo prever: ¿qué secretos esconden? | Imagen de una caja de madera con símbolos misteriosos",
+    "¿Qué [VERBO] realmente [SUSTANTIVO] cuando [CIFRA] apareció? | Imagen de un reloj de arena con números flotantes",
+    "[TEMA] y [CIFRA] en una historia que nadie imaginó: ¿estás listo? | Imagen de un espejo antiguo reflejando un paisaje desconocido"
   ],
   "mejorasGuion": [
-    "1. Gancho inicial más impactante y breve: cambia la frase introductoria por algo como \"¿Sabías que existe un mar sin costas donde flotan miles de algas?\" para captar atención en los primeros segundos.",
-    "2. Ritmo y estructura: divide el guion en secciones claras con subtítulos visuales (ej. \"Ubicación\", \"Características\", \"Historia\", \"Datos curiosos\") y añade transiciones rápidas para mantener la retención, evitando párr",
-    "3. Cierre más fuerte y CTA: termina con una pregunta que invite a la interacción, por ejemplo, \"¿Qué crees que pasa cuando las algas se desplazan con el viento? Déjamelo saber en los comentarios y suscríbete para descubr"
+    "1️⃣ Gancho inicial más impactante: sustituir “Sabías que Stonehenge fue construido durante más de 1500 años?” por un título breve con emoji y pregunta, por ejemplo, “🔍 ¿Qué secretos guarda Stonehenge tras 6500 años?” pa",
+    "2️⃣ Ritmo narrativo: dividir la información en bloques de 2-3 frases y usar transiciones con palabras como “Pero lo que no sabías…” o “Además, ¿sabías que…?” para mantener el flujo y evitar que el espectador pierda el hi",
+    "3️⃣ Cierre con CTA más fuerte y específico: reemplazar “Comparte este video con un amigo que haría lo mismo, sígueme” por “Si te intriga este misterio, suscríbete y activa la campanita para descubrir más enigmas. Déjame "
   ],
   "temas": [
-    "The Bloop",
+    "The Green Children of Woolpit",
     "Lake Peigneur",
     "The moving rocks of Death Valley",
-    "Lake Nyos disaster",
-    "The Great Moon Hoax"
+    "The phantom time hypothesis",
+    "The disappearing lake of Cerknica"
   ],
   "titulos": [
-    "¿Por qué <objeto> tiene <número> vistas?",
-    "<Nombre> nació vendiendo <producto>: la historia antes de <tema>",
-    "¿Qué <oculta> realmente el <objeto>? 🕵️‍♂️",
-    "⚡ <año>: El inventor que <acción> con <objeto>"
+    "¿Por qué un lápiz roto tiene 68 millones de vistas?",
+    "La fuga de Alcatraz que dejó cabezas falsas en las camas",
+    "Nintendo nació vendiendo cartas: la historia antes de los videojuegos",
+    "El vuelo que cayó al lago Michigan y no dejó sobrevivientes"
   ],
-  "fecha": "2026-11-27T21:35:25.891Z",
+  "fecha": "2026-11-28T08:21:42.640Z",
   "iniciativas": [
-    "Valentina (Directora de contenido): Definir una línea editorial clara con ejemplos visuales y compartirla con todo el equipo para alinear la creatividad desde el inicio.",
-    "Carolina (Coordinador de producción): Crear una tabla Gantt con hitos de 12 h y 3 h y asignar buffers de 1 h para cada fase, de modo que podamos reusar guiones aprobados rápidamente.",
-    "Fernanda (Jefa de calidad): Implementar una checklist de calidad con doble verificación antes de cada publicación, incluso para los Shorts.",
-    "Camila (Investigador de temas): Recopilar fuentes académicas y archivos históricos sobre el terremoto de Lisboa de 1755 y su tsunami para crear un dossier de referencia.",
-    "Daniela (Cazador de fórmulas): Probar tres estructuras de guion (gancho‑dato‑misterio, pregunta‑respuesta‑impacto, cronología‑sorpresa‑reflexión) en los próximos Shorts y medir la retención interna.",
-    "Julieta (Vigía de tendencias): Suscribirme a newsletters de tendencias de YouTube y configurar alertas de hashtags emergentes para adaptar títulos y descripciones en tiempo real.",
-    "Lucía (Guionista): Escribir un guion que inicie con la frase «¿Sabías que el terremoto de Lisboa reveló una cifra que nadie pudo prever?» y usar la cifra del 1755 como gancho.",
-    "Mariana (Editor de guion): Utilizar la herramienta de comparación de versiones para revisar cada línea del guion y marcar posibles inconsistencias antes de pasar a producción."
+    "Valentina (Directora de contenido): Crear un documento de visión con ejemplos visuales y métricas de referencia para guiar al equipo y preservar la coherencia creativa.",
+    "Carolina (Coordinador de producción): Implementar un calendario de producción automatizado con alertas cada 2 h y un plan de contingencia de guiones aprobados listos para usar.",
+    "Fernanda (Jefa de calidad): Diseñar una checklist de calidad de 10 puntos que incluya revisión de datos, audio y subtítulos antes de cualquier publicación.",
+    "Camila (Investigador de temas): Compilar una base de fuentes fiables y asignar mini‑tareas de recopilación de datos a cada miembro para avanzar mientras se produce el contenido.",
+    "Daniela (Cazador de fórmulas): Probar tres estructuras de guion (gancho‑problema‑solución, misterio‑revelación, lista‑valor) en videos piloto de 30 s y medir el engagement interno.",
+    "Julieta (Vigía de tendencias): Configurar alertas diarias en Google Trends y TikTok Pulse y compartir un resumen de 5 tendencias emergentes cada mañana.",
+    "Lucía (Guionista): Escribir versiones alternativas de los primeros 3 minutos con diferentes tonos y hacer una votación interna para elegir la más impactante.",
+    "Mariana (Editor de guion): Establecer una ronda de revisión cruzada: cada guion será revisado por dos editores diferentes antes de aprobarse."
   ]
 }

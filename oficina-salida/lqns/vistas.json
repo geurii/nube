@@ -1,105 +1,101 @@
 {
-  "fecha": "2026-11-27T08:59:09.969Z",
+  "fecha": "2026-11-28T08:21:42.525Z",
   "canalId": "UCRP7B4qn9gFoPe60ARIZ3Hg",
-  "total": 1359,
-  "ganadasDesdeElUltimoCiclo": 27,
+  "total": 1697,
+  "ganadasDesdeElUltimoCiclo": 338,
   "videos": [
+    {
+      "id": "JFOWgtHGdg4",
+      "titulo": "El objeto romano de doce caras que nadie sabe para qué servía",
+      "publicado": "2026-11-28T08:13:14+00:00",
+      "vistas": 0
+    },
+    {
+      "id": "QyFzLFjqVYs",
+      "titulo": "Las esferas de piedra perfectamente redondas de Costa Rica",
+      "publicado": "2026-11-28T06:12:16+00:00",
+      "vistas": 88
+    },
+    {
+      "id": "bJYP0J-zL44",
+      "titulo": "El submarino nuclear que se perdió en el Atlántico",
+      "publicado": "2026-11-28T04:11:53+00:00",
+      "vistas": 1
+    },
+    {
+      "id": "NLjq2V1Vp2o",
+      "titulo": "El vuelo que cayó al lago Michigan y no dejó sobrevivientes",
+      "publicado": "2026-11-28T02:11:23+00:00",
+      "vistas": 115
+    },
+    {
+      "id": "UD4NVQ5FivY",
+      "titulo": "El barco de la Marina que desapareció con unas 306 personas",
+      "publicado": "2026-11-28T00:11:01+00:00",
+      "vistas": 14
+    },
+    {
+      "id": "ffJ7tgTBWbg",
+      "titulo": "El día que alguien secuestró la señal de televisión",
+      "publicado": "2026-11-27T22:10:35+00:00",
+      "vistas": 16
+    },
+    {
+      "id": "jLZfFnPMy2c",
+      "titulo": "La fuga de Alcatraz que dejó cabezas falsas en las camas",
+      "publicado": "2026-11-27T21:50:37+00:00",
+      "vistas": 220
+    },
+    {
+      "id": "IHF8xBiOZSc",
+      "titulo": "El hombre que saltó de un avión con el rescate y desapareció",
+      "publicado": "2026-11-27T21:31:07+00:00",
+      "vistas": 5
+    },
+    {
+      "id": "u6nAYHAy1Sc",
+      "titulo": "Tres fareros desaparecieron y el faro quedó vacío",
+      "publicado": "2026-11-27T21:10:59+00:00",
+      "vistas": 38
+    },
     {
       "id": "xL9E7Ru2UM4",
       "titulo": "¿Ovnis reales captados en cámara?",
       "publicado": "2026-11-25T23:58:43+00:00",
-      "vistas": 7
+      "vistas": 8
     },
     {
       "id": "ERL-GCARL8I",
       "titulo": "¿Por qué un lápiz roto tiene 68 millones de vistas?",
       "publicado": "2026-11-25T21:38:46+00:00",
-      "vistas": 987
+      "vistas": 1007
     },
     {
       "id": "VXbbW_o1PWo",
       "titulo": "Nintendo nació vendiendo cartas: la historia antes de los videojuegos",
       "publicado": "2026-11-25T17:08:39+00:00",
-      "vistas": 146
+      "vistas": 151
     },
     {
       "id": "ju9-ibZWM5s",
       "titulo": "⚡ La ola de 524 metros: El megatsunami que escaló una montaña en Alaska (1958)",
       "publicado": "2026-11-24T21:05:01+00:00",
-      "vistas": 4
+      "vistas": 5
     },
     {
       "id": "i0w6F46yv3o",
       "titulo": "🕰️ ¿297 años falsos? La teoría que borra a Carlomagno",
       "publicado": "2026-11-24T17:46:03+00:00",
-      "vistas": 2
+      "vistas": 4
     },
     {
       "id": "xE32CX_fsXM",
       "titulo": "🌋 ¿Qué secreto ancestral esconde el cráter de la Isla de Pascua?",
       "publicado": "2026-11-24T16:28:54+00:00",
-      "vistas": 24
-    },
-    {
-      "id": "85i8fzFF970",
-      "titulo": "¿Qué oculta el zumbido de Taos que nadie puede explicar? 🌍",
-      "publicado": "2026-11-24T15:05:06+00:00",
-      "vistas": 2
-    },
-    {
-      "id": "hVawPPY5K_Y",
-      "titulo": "⚡ 1884: El inventor que encendió Niágara con su motor AC",
-      "publicado": "2026-11-22T16:44:58+00:00",
-      "vistas": 39
-    },
-    {
-      "id": "FEwqFlpnAe4",
-      "titulo": "Sabías que la explosión de Chernóbil cambió todo 🌍",
-      "publicado": "2026-11-22T16:25:30+00:00",
-      "vistas": 5
-    },
-    {
-      "id": "9CKxsZ7hmUg",
-      "titulo": "🌊 El Bloop: ¡5,000 km de misterio bajo el hielo!",
-      "publicado": "2026-11-22T07:41:49+00:00",
-      "vistas": 28
-    },
-    {
-      "id": "HHnlDcvo_vU",
-      "titulo": "🔎 34 cm de Bronce: El Secreto del Primer Ordenador 🧩",
-      "publicado": "2026-11-22T04:24:01+00:00",
-      "vistas": 14
-    },
-    {
-      "id": "76aNbQdWBSc",
-      "titulo": "Sabías que una ola de melaza arrasó Boston? 🍯",
-      "publicado": "2026-11-22T03:59:28+00:00",
-      "vistas": 14
-    },
-    {
-      "id": "8YRV5me-3uM",
-      "titulo": "¿Qué oculta realmente el Mary Celeste? 🕵️‍♂️",
-      "publicado": "2026-11-22T03:32:55+00:00",
-      "vistas": 50
-    },
-    {
-      "id": "Nd2x5UMBiLM",
-      "titulo": "Sabías que la acusaron de fraude un año después de elegirla 🚨",
-      "publicado": "2026-11-21T16:00:33+00:00",
-      "vistas": 14
-    },
-    {
-      "id": "yp4bUZPqnS4",
-      "titulo": "Sabías que dos jóvenes genios de una lista famosa suman 40 años de cárcel ⚖️",
-      "publicado": "2026-11-21T04:00:38+00:00",
-      "vistas": 23
+      "vistas": 25
     }
   ],
   "historia": [
-    {
-      "fecha": "2026-11-24T15:29:59.183Z",
-      "total": 2223
-    },
     {
       "fecha": "2026-11-24T16:00:17.797Z",
       "total": 2223
@@ -335,8 +331,10 @@
     {
       "fecha": "2026-11-27T08:59:09.968Z",
       "total": 1359
+    },
+    {
+      "fecha": "2026-11-28T08:21:42.525Z",
+      "total": 1697
     }
-  ],
-  "error": "feed 503",
-  "fechaError": "2026-11-27T21:35:25.678Z"
+  ]
 }
