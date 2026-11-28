@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/runner/work/nube/nube/brayant-3d/gen/generar.py", line 6, in <module>
+    prompt = json.load(open('brayant-3d/gen/escenas.json', encoding='utf-8-sig'))[n]
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+KeyError: '8'
+--- memoria
+               total        used        free      shared  buff/cache   available
+Mem:              15           0          12           0           2          14
+Swap:              2           0           2
+--- disco
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/cow-root  145G   58G   87G  40% /
+--- sistema
