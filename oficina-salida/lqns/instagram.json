@@ -1,6 +1,15 @@
 {
-  "total": 22,
+  "total": 23,
   "posts": [
+    {
+      "id": "lqns-halifax-explosion-1917",
+      "titulo": "La explosión que arrasó un puerto canadiense en segundos",
+      "fecha": "2026-11-28T10:14:43.938Z",
+      "accion": "create_video_post",
+      "alojamiento": "temporal-72h",
+      "video_url": "https://oaken-stove-35.beacon.host/lqns-halifax-explosion-1917.mp4",
+      "respuesta": "{\"result\":\"Published video post (Reel) to Instagram account 17841461180305578. Media id: 18123211703072000.\"}\n"
+    },
     {
       "id": "lqns-dodecaedros-romanos-misterio",
       "titulo": "El objeto romano de doce caras que nadie sabe para qué servía",

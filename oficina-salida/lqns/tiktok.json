@@ -1,6 +1,16 @@
 {
-  "total": 22,
+  "total": 23,
   "posts": [
+    {
+      "id": "lqns-halifax-explosion-1917",
+      "titulo": "La explosión que arrasó un puerto canadiense en segundos",
+      "fecha": "2026-11-28T10:16:37.946Z",
+      "accion": "createPost",
+      "programado": "ahora",
+      "alojamiento": "temporal-72h",
+      "video_url": "https://oaken-stove-35.beacon.host/lqns-halifax-explosion-1917.mp4",
+      "respuesta": "{\"id\":\"6b0aa995669c22f85de35412\",\"canal\":\"loquenosabias.do\",\"programado\":\"ahora\",\"status\":\"sent\",\"externalLink\":\"https://tiktok.com/@loquenosabias.do/video/7713163832713088295\"}"
+    },
     {
       "id": "lqns-dodecaedros-romanos-misterio",
       "titulo": "El objeto romano de doce caras que nadie sabe para qué servía",

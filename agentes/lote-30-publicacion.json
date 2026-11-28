@@ -5,9 +5,9 @@
   "total": 30,
   "completedCount": 30,
   "intervalMinutes": 120,
-  "nextIndex": 9,
-  "nextAt": "2026-11-28T10:12:03.498Z",
-  "lastPublishedAt": "2026-11-28T08:16:07.839Z",
+  "nextIndex": 10,
+  "nextAt": "2026-11-28T12:12:43.583Z",
+  "lastPublishedAt": "2026-11-28T10:16:38.250Z",
   "runId": 46042972544,
   "artifact": "lote-30-videos",
   "items": [
@@ -231,16 +231,25 @@
       "id": "lqns-halifax-explosion-1917",
       "slug": "halifax-explosion-1917",
       "titulo": "La explosión que arrasó un puerto canadiense en segundos",
-      "estado": "publicando",
+      "estado": "publicado_en_todas",
       "aprobado": true,
       "duracionSegundos": null,
       "publicadoEn": {
-        "youtube": false,
-        "facebook": false,
-        "instagram": false,
-        "tiktok": false
+        "youtube": true,
+        "facebook": true,
+        "instagram": true,
+        "tiktok": true
       },
-      "reservadoEn": "2026-11-28T10:12:43.583Z"
+      "reservadoEn": "2026-11-28T10:12:43.583Z",
+      "publicacionDetalle": {
+        "youtube": "confirmado",
+        "facebook": "confirmado",
+        "instagram": "confirmado",
+        "tiktok": "confirmado"
+      },
+      "ultimoIntento": "2026-11-28T10:16:38.250Z",
+      "publicado": true,
+      "publicadoEnHora": "2026-11-28T10:16:38.250Z"
     },
     {
       "id": "lqns-hindenburg-incendio-1937",

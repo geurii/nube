@@ -1,6 +1,12 @@
 {
-  "total": 23,
+  "total": 24,
   "videos": [
+    {
+      "id": "QxiDLAwNzDY",
+      "titulo": "La explosión que arrasó un puerto canadiense en segundos",
+      "fecha": "2026-11-28T10:12:47.995Z",
+      "url": "https://youtu.be/QxiDLAwNzDY"
+    },
     {
       "id": "JFOWgtHGdg4",
       "titulo": "El objeto romano de doce caras que nadie sabe para qué servía",
