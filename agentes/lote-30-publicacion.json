@@ -183,7 +183,7 @@
       "id": "lqns-esferas-piedra-diquis",
       "slug": "esferas-piedra-diquis",
       "titulo": "Las esferas de piedra perfectamente redondas de Costa Rica",
-      "estado": "aprobado",
+      "estado": "publicando",
       "aprobado": true,
       "duracionSegundos": null,
       "publicadoEn": {
@@ -191,7 +191,8 @@
         "facebook": false,
         "instagram": false,
         "tiktok": false
-      }
+      },
+      "reservadoEn": "2026-11-28T06:11:43.958Z"
     },
     {
       "id": "lqns-dodecaedros-romanos-misterio",
