@@ -327,7 +327,7 @@
       "id": "lqns-rendlesham-luces-bosque-1980",
       "slug": "rendlesham-luces-bosque-1980",
       "titulo": "Las luces misteriosas del bosque de Rendlesham",
-      "estado": "aprobado",
+      "estado": "publicando",
       "aprobado": true,
       "duracionSegundos": null,
       "publicadoEn": {
@@ -335,7 +335,8 @@
         "facebook": false,
         "instagram": false,
         "tiktok": false
-      }
+      },
+      "reservadoEn": "2026-11-28T18:14:16.351Z"
     },
     {
       "id": "lqns-washington-ufo-radar-1952",
