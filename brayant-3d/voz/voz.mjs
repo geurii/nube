@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import {MsEdgeTTS, OUTPUT_FORMAT} from 'msedge-tts';
 const lineas = [
-  'Si Brayant sale positivo, lo echan de su casa. Le quedan treinta días.',
+  'Una sola prueba... y Brayant se queda sin casa. Y la tiene en treinta días.',
   'Y puede perder algo más: un trabajo en Estados Unidos y su sueño de entrar a la Marina.',
   'Cien veces dijo: mañana lo dejo. Y ese mañana nunca llegaba.',
   'Pero hoy dijo: ya.',
